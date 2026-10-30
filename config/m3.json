@@ -1,0 +1,8 @@
+{
+  "base_model": "runwayml/stable-diffusion-v1-5",
+  "default_model": "base",
+  "max_prompt_tokens": 77,
+  "models": {
+    "base": {}
+  }
+}
