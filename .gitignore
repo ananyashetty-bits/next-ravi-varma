@@ -1,0 +1,10 @@
+*.safetensors
+*.ckpt
+*.png
+*.jpg
+images/
+runs/
+.ipynb_checkpoints/
+__pycache__/
+!fixtures/*.png
+!docs/figures/*.png
