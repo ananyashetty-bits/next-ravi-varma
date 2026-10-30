@@ -1,0 +1,11 @@
+{
+  "id": "s01",
+  "raw": "A simple placeholder scene",
+  "epic": "Unknown",
+  "characters": [],
+  "setting": {"name": "nowhere", "visual": "blank"},
+  "action": "standing",
+  "mood": "neutral",
+  "unknown_entities": [],
+  "kb_version": "kb0.1"
+}

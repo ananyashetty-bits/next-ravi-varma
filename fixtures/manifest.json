@@ -1,0 +1,11 @@
+{
+  "git_sha": "abc1234",
+  "config_hash": "def5678",
+  "model": "rrv_v1",
+  "model_sha256": "1234567890abcdef",
+  "versions": {"torch": "2.0", "diffusers": "0.21"},
+  "gpu": "Tesla T4",
+  "images": [
+    {"scene_id": "s01", "condition": "c0_base_raw", "seed": 1, "prompt": "dummy", "path": "fixtures/img_red.png", "gen_seconds": 2.5}
+  ]
+}
