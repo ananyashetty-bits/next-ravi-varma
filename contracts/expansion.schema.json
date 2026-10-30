@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "scene_id", "condition", "split", "positive", "negative", 
+    "phrases_kept", "phrases_dropped", "token_count", 
+    "trigger_first", "names_leaked", "source", "layout", 
+    "llm_model", "prompt_version", "kb_version", "latency_s"
+  ],
+  "additionalProperties": true
+}
