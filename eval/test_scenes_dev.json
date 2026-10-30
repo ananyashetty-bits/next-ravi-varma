@@ -1,0 +1,81 @@
+[
+  {"id": "s09", "split": "dev", "tier": 1, "expected_epic": "Ramayana", "expected_characters": ["Sita"],
+   "text": "Sita sitting alone under a tree in the Ashoka grove, sorrowful, the garden quiet at dusk",
+   "seen_in_training": true, "contributed_by": "B",
+   "checklist": [
+     {"id": "c1", "q": "Is there exactly one person in the image?", "type": "count", "weight": 1.0},
+     {"id": "c2", "q": "Is the person a woman?", "type": "figure", "weight": 1.0},
+     {"id": "c3", "q": "Is she sitting?", "type": "pose", "weight": 1.0},
+     {"id": "c4", "q": "Is there a tree close to her?", "type": "setting", "weight": 1.0},
+     {"id": "c5", "q": "Does she look sad or downcast?", "type": "mood", "weight": 0.5}]},
+
+  {"id": "s10", "split": "dev", "tier": 1, "expected_epic": "Mahabharata", "expected_characters": ["Karna"],
+   "text": "Karna standing proudly with his bow at sunrise, golden armour shining",
+   "seen_in_training": false, "contributed_by": "B",
+   "checklist": [
+     {"id": "c1", "q": "Is there exactly one person in the image?", "type": "count", "weight": 1.0},
+     {"id": "c2", "q": "Is the person a man standing upright?", "type": "pose", "weight": 1.0},
+     {"id": "c3", "q": "Is he holding a bow?", "type": "object", "weight": 1.0},
+     {"id": "c4", "q": "Is he wearing golden armour or a golden breastplate?", "type": "attire", "weight": 1.0},
+     {"id": "c5", "q": "Is the sky bright with warm morning light?", "type": "setting", "weight": 0.5}]},
+
+  {"id": "s11", "split": "dev", "tier": 2, "expected_epic": "Mahabharata", "expected_characters": ["Arjuna", "Subhadra"],
+   "text": "Arjuna and Subhadra slipping away together through the palace garden, she holding his arm and looking back nervously",
+   "seen_in_training": true, "contributed_by": "B",
+   "checklist": [
+     {"id": "c1", "q": "Are there exactly two people in the image?", "type": "count", "weight": 1.0},
+     {"id": "c2", "q": "Is one of them a man and the other a woman?", "type": "figure", "weight": 1.0},
+     {"id": "c3", "q": "Is the woman holding the man's arm or hand?", "type": "pose", "weight": 1.0},
+     {"id": "c4", "q": "Is the woman wearing a sari?", "type": "attire", "weight": 0.5},
+     {"id": "c5", "q": "Is the scene outdoors with plants or trees?", "type": "setting", "weight": 0.5}]},
+
+  {"id": "s12", "split": "dev", "tier": 2, "expected_epic": "Ramayana", "expected_characters": ["Hanuman", "Rama"],
+   "text": "Hanuman kneeling before Rama and offering him Sita's ring, Rama reaching out to take it",
+   "seen_in_training": false, "contributed_by": "B",
+   "checklist": [
+     {"id": "c1", "q": "Are there two main figures?", "type": "count", "weight": 1.0},
+     {"id": "c2", "q": "Is one figure kneeling?", "type": "pose", "weight": 1.0},
+     {"id": "c3", "q": "Does one figure have monkey-like features, such as a monkey face or a tail?", "type": "figure", "weight": 1.0},
+     {"id": "c4", "q": "Is one figure holding out a hand toward the other?", "type": "pose", "weight": 1.0},
+     {"id": "c5", "q": "Is the other figure a man wearing a crown or a royal headdress?", "type": "attire", "weight": 0.5}]},
+
+  {"id": "s13", "split": "dev", "tier": 3, "expected_epic": "Mahabharata", "expected_characters": ["Krishna", "Duryodhana"],
+   "text": "Krishna as the peace envoy standing in Duryodhana's royal court, speaking to the king on his throne while ministers and courtiers watch",
+   "seen_in_training": true, "contributed_by": "B",
+   "checklist": [
+     {"id": "c1", "q": "Are there more than three people in the image?", "type": "count", "weight": 1.0},
+     {"id": "c2", "q": "Is one person seated on a throne or raised seat?", "type": "pose", "weight": 1.0},
+     {"id": "c3", "q": "Is a person standing and facing the seated person?", "type": "pose", "weight": 1.0},
+     {"id": "c4", "q": "Is the scene indoors, in a hall with pillars or rich decoration?", "type": "setting", "weight": 1.0},
+     {"id": "c5", "q": "Does one figure have blue or dark blue skin?", "type": "figure", "weight": 0.5}]},
+
+  {"id": "s14", "split": "dev", "tier": 3, "expected_epic": "Ramayana", "expected_characters": ["Rama", "Sita", "Lakshmana"],
+   "text": "Rama, Sita and Lakshmana leaving for exile on foot through the forest, the people of Ayodhya weeping behind them",
+   "seen_in_training": false, "contributed_by": "B",
+   "checklist": [
+     {"id": "c1", "q": "Are there at least three people in the image?", "type": "count", "weight": 1.0},
+     {"id": "c2", "q": "Is there a woman among the main figures?", "type": "figure", "weight": 1.0},
+     {"id": "c3", "q": "Are the main figures walking?", "type": "pose", "weight": 1.0},
+     {"id": "c4", "q": "Are there trees or a forest?", "type": "setting", "weight": 1.0},
+     {"id": "c5", "q": "Is there a crowd of people in the background?", "type": "count", "weight": 0.5}]},
+
+  {"id": "s15", "split": "dev", "tier": 4, "expected_epic": "Mahabharata", "expected_characters": ["Savitri", "Satyavan", "Yama"],
+   "text": "Savithri pleading with Yama for her husband's life, Satyavan lying lifeless with his head in her lap in the forest",
+   "seen_in_training": false, "contributed_by": "B",
+   "checklist": [
+     {"id": "c1", "q": "Is a woman sitting or kneeling on the ground?", "type": "pose", "weight": 1.0},
+     {"id": "c2", "q": "Is a man lying down with his head on the woman's lap?", "type": "pose", "weight": 1.0},
+     {"id": "c3", "q": "Is there a third figure standing over them?", "type": "count", "weight": 1.0},
+     {"id": "c4", "q": "Is the scene outdoors among trees?", "type": "setting", "weight": 0.5},
+     {"id": "c5", "q": "Is the woman's face or gesture pleading or distressed?", "type": "mood", "weight": 0.5}]},
+
+  {"id": "s16", "split": "dev", "tier": 5, "expected_epic": "Mahabharata", "expected_characters": ["Arjuna", "Krishna"],
+   "text": "in the middle of the great battel at kurukshetra arjun drops his bow and sits down in his chariot, he cant bring himself to fight his own family. krishn turns around from the horses to talk to him. armies with banners and elephants everywhere, dust in the air, conch shells blowing, like the whole world is waiting. make it epic and sad at the same time, golden evening light",
+   "seen_in_training": false, "contributed_by": "B",
+   "checklist": [
+     {"id": "c1", "q": "Is there a chariot?", "type": "object", "weight": 1.0},
+     {"id": "c2", "q": "Is a man sitting down inside or on the chariot?", "type": "pose", "weight": 1.0},
+     {"id": "c3", "q": "Is a second man in the chariot turned toward him?", "type": "pose", "weight": 1.0},
+     {"id": "c4", "q": "Are there horses pulling the chariot?", "type": "object", "weight": 1.0},
+     {"id": "c5", "q": "Are there armies, banners or elephants in the background?", "type": "setting", "weight": 0.5}]}
+]
