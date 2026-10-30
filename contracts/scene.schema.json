@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "id", "raw", "epic", "characters", "setting", 
+    "action", "mood", "unknown_entities", "kb_version"
+  ],
+  "additionalProperties": true
+}
