@@ -1,0 +1,22 @@
+[
+  {
+    "scene_id": "s07", 
+    "players": {
+      "char": "a crowned king in a saffron dhoti, a fallen warrior in golden armor",
+      "action": "kneeling and weeping over the fallen body",
+      "setting": "open battlefield, broken chariot, dusty sky",
+      "mood": "dim dramatic light, shadowed faces",
+      "tail": "oil painting, canvas texture, classical indian art"
+    }
+  },
+  {
+    "scene_id": "s08", 
+    "players": {
+      "char": "a royal woman in a red sari with gold embroidery",
+      "action": "sitting gracefully and looking sorrowful",
+      "setting": "dense forest grove, large ashoka trees",
+      "mood": "soft dappled sunlight, melancholic atmosphere",
+      "tail": "oil painting, canvas texture, classical indian art"
+    }
+  }
+]
