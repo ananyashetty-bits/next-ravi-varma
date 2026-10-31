@@ -1,0 +1,450 @@
+[
+  {
+    "scene_id": "s07",
+    "coalition": "empty",
+    "condition": "shap",
+    "positive": "rrvarma style",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s07",
+    "coalition": "char",
+    "condition": "shap",
+    "positive": "rrvarma style, a crowned king in a saffron dhoti, a fallen warrior in golden armor",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s07",
+    "coalition": "action",
+    "condition": "shap",
+    "positive": "rrvarma style, kneeling and weeping over the fallen body",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s07",
+    "coalition": "setting",
+    "condition": "shap",
+    "positive": "rrvarma style, open battlefield, broken chariot, dusty sky",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s07",
+    "coalition": "mood",
+    "condition": "shap",
+    "positive": "rrvarma style, dim dramatic light, shadowed faces",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s07",
+    "coalition": "tail",
+    "condition": "shap",
+    "positive": "rrvarma style, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s07",
+    "coalition": "char+action",
+    "condition": "shap",
+    "positive": "rrvarma style, a crowned king in a saffron dhoti, a fallen warrior in golden armor, kneeling and weeping over the fallen body",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s07",
+    "coalition": "char+setting",
+    "condition": "shap",
+    "positive": "rrvarma style, a crowned king in a saffron dhoti, a fallen warrior in golden armor, open battlefield, broken chariot, dusty sky",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s07",
+    "coalition": "char+mood",
+    "condition": "shap",
+    "positive": "rrvarma style, a crowned king in a saffron dhoti, a fallen warrior in golden armor, dim dramatic light, shadowed faces",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s07",
+    "coalition": "char+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, a crowned king in a saffron dhoti, a fallen warrior in golden armor, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s07",
+    "coalition": "action+setting",
+    "condition": "shap",
+    "positive": "rrvarma style, kneeling and weeping over the fallen body, open battlefield, broken chariot, dusty sky",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s07",
+    "coalition": "action+mood",
+    "condition": "shap",
+    "positive": "rrvarma style, kneeling and weeping over the fallen body, dim dramatic light, shadowed faces",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s07",
+    "coalition": "action+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, kneeling and weeping over the fallen body, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s07",
+    "coalition": "setting+mood",
+    "condition": "shap",
+    "positive": "rrvarma style, open battlefield, broken chariot, dusty sky, dim dramatic light, shadowed faces",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s07",
+    "coalition": "setting+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, open battlefield, broken chariot, dusty sky, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s07",
+    "coalition": "mood+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, dim dramatic light, shadowed faces, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s07",
+    "coalition": "char+action+setting",
+    "condition": "shap",
+    "positive": "rrvarma style, a crowned king in a saffron dhoti, a fallen warrior in golden armor, kneeling and weeping over the fallen body, open battlefield, broken chariot, dusty sky",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s07",
+    "coalition": "char+action+mood",
+    "condition": "shap",
+    "positive": "rrvarma style, a crowned king in a saffron dhoti, a fallen warrior in golden armor, kneeling and weeping over the fallen body, dim dramatic light, shadowed faces",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s07",
+    "coalition": "char+action+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, a crowned king in a saffron dhoti, a fallen warrior in golden armor, kneeling and weeping over the fallen body, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s07",
+    "coalition": "char+setting+mood",
+    "condition": "shap",
+    "positive": "rrvarma style, a crowned king in a saffron dhoti, a fallen warrior in golden armor, open battlefield, broken chariot, dusty sky, dim dramatic light, shadowed faces",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s07",
+    "coalition": "char+setting+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, a crowned king in a saffron dhoti, a fallen warrior in golden armor, open battlefield, broken chariot, dusty sky, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s07",
+    "coalition": "char+mood+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, a crowned king in a saffron dhoti, a fallen warrior in golden armor, dim dramatic light, shadowed faces, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s07",
+    "coalition": "action+setting+mood",
+    "condition": "shap",
+    "positive": "rrvarma style, kneeling and weeping over the fallen body, open battlefield, broken chariot, dusty sky, dim dramatic light, shadowed faces",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s07",
+    "coalition": "action+setting+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, kneeling and weeping over the fallen body, open battlefield, broken chariot, dusty sky, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s07",
+    "coalition": "action+mood+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, kneeling and weeping over the fallen body, dim dramatic light, shadowed faces, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s07",
+    "coalition": "setting+mood+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, open battlefield, broken chariot, dusty sky, dim dramatic light, shadowed faces, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s07",
+    "coalition": "char+action+setting+mood",
+    "condition": "shap",
+    "positive": "rrvarma style, a crowned king in a saffron dhoti, a fallen warrior in golden armor, kneeling and weeping over the fallen body, open battlefield, broken chariot, dusty sky, dim dramatic light, shadowed faces",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s07",
+    "coalition": "char+action+setting+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, a crowned king in a saffron dhoti, a fallen warrior in golden armor, kneeling and weeping over the fallen body, open battlefield, broken chariot, dusty sky, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s07",
+    "coalition": "char+action+mood+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, a crowned king in a saffron dhoti, a fallen warrior in golden armor, kneeling and weeping over the fallen body, dim dramatic light, shadowed faces, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s07",
+    "coalition": "char+setting+mood+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, a crowned king in a saffron dhoti, a fallen warrior in golden armor, open battlefield, broken chariot, dusty sky, dim dramatic light, shadowed faces, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s07",
+    "coalition": "action+setting+mood+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, kneeling and weeping over the fallen body, open battlefield, broken chariot, dusty sky, dim dramatic light, shadowed faces, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s07",
+    "coalition": "char+action+setting+mood+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, a crowned king in a saffron dhoti, a fallen warrior in golden armor, kneeling and weeping over the fallen body, open battlefield, broken chariot, dusty sky, dim dramatic light, shadowed faces, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s08",
+    "coalition": "empty",
+    "condition": "shap",
+    "positive": "rrvarma style",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s08",
+    "coalition": "char",
+    "condition": "shap",
+    "positive": "rrvarma style, a royal woman in a red sari with gold embroidery",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s08",
+    "coalition": "action",
+    "condition": "shap",
+    "positive": "rrvarma style, sitting gracefully and looking sorrowful",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s08",
+    "coalition": "setting",
+    "condition": "shap",
+    "positive": "rrvarma style, dense forest grove, large ashoka trees",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s08",
+    "coalition": "mood",
+    "condition": "shap",
+    "positive": "rrvarma style, soft dappled sunlight, melancholic atmosphere",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s08",
+    "coalition": "tail",
+    "condition": "shap",
+    "positive": "rrvarma style, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s08",
+    "coalition": "char+action",
+    "condition": "shap",
+    "positive": "rrvarma style, a royal woman in a red sari with gold embroidery, sitting gracefully and looking sorrowful",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s08",
+    "coalition": "char+setting",
+    "condition": "shap",
+    "positive": "rrvarma style, a royal woman in a red sari with gold embroidery, dense forest grove, large ashoka trees",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s08",
+    "coalition": "char+mood",
+    "condition": "shap",
+    "positive": "rrvarma style, a royal woman in a red sari with gold embroidery, soft dappled sunlight, melancholic atmosphere",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s08",
+    "coalition": "char+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, a royal woman in a red sari with gold embroidery, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s08",
+    "coalition": "action+setting",
+    "condition": "shap",
+    "positive": "rrvarma style, sitting gracefully and looking sorrowful, dense forest grove, large ashoka trees",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s08",
+    "coalition": "action+mood",
+    "condition": "shap",
+    "positive": "rrvarma style, sitting gracefully and looking sorrowful, soft dappled sunlight, melancholic atmosphere",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s08",
+    "coalition": "action+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, sitting gracefully and looking sorrowful, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s08",
+    "coalition": "setting+mood",
+    "condition": "shap",
+    "positive": "rrvarma style, dense forest grove, large ashoka trees, soft dappled sunlight, melancholic atmosphere",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s08",
+    "coalition": "setting+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, dense forest grove, large ashoka trees, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s08",
+    "coalition": "mood+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, soft dappled sunlight, melancholic atmosphere, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s08",
+    "coalition": "char+action+setting",
+    "condition": "shap",
+    "positive": "rrvarma style, a royal woman in a red sari with gold embroidery, sitting gracefully and looking sorrowful, dense forest grove, large ashoka trees",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s08",
+    "coalition": "char+action+mood",
+    "condition": "shap",
+    "positive": "rrvarma style, a royal woman in a red sari with gold embroidery, sitting gracefully and looking sorrowful, soft dappled sunlight, melancholic atmosphere",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s08",
+    "coalition": "char+action+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, a royal woman in a red sari with gold embroidery, sitting gracefully and looking sorrowful, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s08",
+    "coalition": "char+setting+mood",
+    "condition": "shap",
+    "positive": "rrvarma style, a royal woman in a red sari with gold embroidery, dense forest grove, large ashoka trees, soft dappled sunlight, melancholic atmosphere",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s08",
+    "coalition": "char+setting+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, a royal woman in a red sari with gold embroidery, dense forest grove, large ashoka trees, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s08",
+    "coalition": "char+mood+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, a royal woman in a red sari with gold embroidery, soft dappled sunlight, melancholic atmosphere, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s08",
+    "coalition": "action+setting+mood",
+    "condition": "shap",
+    "positive": "rrvarma style, sitting gracefully and looking sorrowful, dense forest grove, large ashoka trees, soft dappled sunlight, melancholic atmosphere",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s08",
+    "coalition": "action+setting+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, sitting gracefully and looking sorrowful, dense forest grove, large ashoka trees, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s08",
+    "coalition": "action+mood+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, sitting gracefully and looking sorrowful, soft dappled sunlight, melancholic atmosphere, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s08",
+    "coalition": "setting+mood+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, dense forest grove, large ashoka trees, soft dappled sunlight, melancholic atmosphere, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s08",
+    "coalition": "char+action+setting+mood",
+    "condition": "shap",
+    "positive": "rrvarma style, a royal woman in a red sari with gold embroidery, sitting gracefully and looking sorrowful, dense forest grove, large ashoka trees, soft dappled sunlight, melancholic atmosphere",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s08",
+    "coalition": "char+action+setting+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, a royal woman in a red sari with gold embroidery, sitting gracefully and looking sorrowful, dense forest grove, large ashoka trees, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s08",
+    "coalition": "char+action+mood+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, a royal woman in a red sari with gold embroidery, sitting gracefully and looking sorrowful, soft dappled sunlight, melancholic atmosphere, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s08",
+    "coalition": "char+setting+mood+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, a royal woman in a red sari with gold embroidery, dense forest grove, large ashoka trees, soft dappled sunlight, melancholic atmosphere, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s08",
+    "coalition": "action+setting+mood+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, sitting gracefully and looking sorrowful, dense forest grove, large ashoka trees, soft dappled sunlight, melancholic atmosphere, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s08",
+    "coalition": "char+action+setting+mood+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, a royal woman in a red sari with gold embroidery, sitting gracefully and looking sorrowful, dense forest grove, large ashoka trees, soft dappled sunlight, melancholic atmosphere, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  }
+]
