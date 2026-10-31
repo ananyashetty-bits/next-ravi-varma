@@ -8,14 +8,23 @@
   "cfg": 7.0, 
   "size": 512,
   "max_prompt_tokens": 70,
+  "dev_seeds": [1, 2],
+  "heldout_seeds": [1, 2, 3, 4],
   "default_model": "rrv_v1",
   "models": {
     "base": {},
     "rrv_v1": {
         "lora_path": "/content/drive/MyDrive/m2/hub/rrvarma_lora_v1/pytorch_lora_weights.safetensors",
         "scale": 1.0, 
-        "sha256": "pending", 
-        "source": "M2 winner"
+        "sha256": "067ee19f2281880c6ed7dd57371c290a3d4a5867c427883b290f140d431c45c3",
+        "source": "M2 winner D_lr2e-4 step 800"
     }
+  },
+  "llm": {
+    "backend": "hf_local",
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "model_large": "Qwen/Qwen2.5-7B-Instruct",
+    "temperature": 0.0,
+    "prompt_version": "v1"
   }
 }
