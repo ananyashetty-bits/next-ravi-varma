@@ -1,6 +1,6 @@
-# Member B eval profile. Judge model: Qwen/Qwen2-VL-2B-Instruct (fp16, ~5 GB on a T4).
-# Pin exact versions after the first successful Colab run: pip freeze | grep -E "transformers|accelerate|qwen"
-transformers>=4.45
-accelerate
-pillow
-numpy
+# Member B eval profile. Judge: Qwen/Qwen2-VL-2B-Instruct, fp16.
+# Verified on a Colab T4 on 2026-11-01 (see eval/JUDGE_NOTES.md). torch comes from Colab (2.11.0+cu130); don't pin it here.
+transformers==5.21.0
+accelerate==1.15.0
+pillow==11.3.0
+numpy==2.1.3
