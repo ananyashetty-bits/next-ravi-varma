@@ -1,0 +1,8 @@
+[
+  {"id": "s01", "split": "dev", "tier": 1, "expected_epic": "Unknown", "expected_characters": [],
+   "text": "A simple placeholder scene", "seen_in_training": false, "contributed_by": "B",
+   "checklist": [
+     {"id": "c1", "q": "Is the image mostly red?", "type": "setting", "weight": 1.0},
+     {"id": "c2", "q": "Is there a person in the image?", "type": "figure", "weight": 1.0},
+     {"id": "c3", "q": "Is the image a single flat colour?", "type": "setting", "weight": 0.5}]}
+]
