@@ -12,6 +12,43 @@
 * **H-A5 (Style vs. Faithfulness):** The `tail` player will have a positive Shapley value for style, but a near-zero or negative value for faithfulness.
 * **H-A6 (Names):** Raw character names will add ~0 to faithfulness once the visual descriptions are already present in the prompt.
 
+## Section B (Member B: Evaluation)
+
+Pre-registered by the merge of this section, before B scores any dev images (the first `results/*_dev.json` from A's c0/c1). After results exist, nothing below is edited; changes go under *Section B deviations* as dated lines.
+
+### B.1 Data and protocol
+| Item | Value |
+|---|---|
+| Dev set | `eval/test_scenes_dev.json`, 32 scenes (8 per member), tiers 1-5, name-free checklists. Automated scores use seeds 1-2; human ratings use seed 1 only |
+| Held-out set | 12 scenes written by B, kept private (outside the repo and the shared Drive) until Day 5. Run by B with the frozen code at the S3 commit, seeds 1-4. **Reported, never used to choose** |
+| Unit of analysis | The scene: seeds, then raters, are averaged within a scene before comparing |
+| Human ratings | Blind contact sheets (random codes; key kept private by B until all ratings are in), 1-5 for faithfulness, style and quality, plus one failure tag from the fixed taxonomy (`eval/RATING_GUIDE.md`). At least 2 raters per image; raters submit before discussing |
+| Statistics | `eval/stats.py` `paired(a, b)`: mean per-scene difference, paired bootstrap 95% CI over scenes (5000 resamples, seed 0), win/tie/loss counts. No p-values or significance claims |
+
+### B.2 Tie bands (fixed now)
+- Human ratings: **0.25** points (mean of two raters on a 1-5 scale).
+- Automated scores: M2's `tie_band` **0.0295** (`m2kit/thresholds.json`).
+
+### B.3 Default pipeline for M4 (selection rule, from Overview §10, fixed now)
+Chosen at S3 on **dev only**:
+1. Eligible if the mean style rating is ≥ c1's mean minus 0.3, **and** `max_train_dino` p95 ≤ 0.85 (M2's `mem_flag_dino_p95`).
+2. Among eligible conditions, rank by mean human faithfulness.
+3. If the paired CI between the top condition and the next-simplest eligible one includes 0, pick the simpler one. Simplest first: c1 < c2 < c4 < c3 < c5/c6; `rrv_v1` before `rrv_names`.
+4. Recorded in `docs/TEAM_DECISIONS_M3.md`. Held-out results don't change the choice.
+
+### B.4 Hypotheses
+- **H-B1 (judge validity):** the checklist judge's per-image score correlates with mean human faithfulness at Spearman ρ ≥ 0.4, **and** at least as well as `clip_raw` does. If either fails, the judge is reported as unreliable, humans are the only faithfulness evidence, and the SHAP faithfulness chart uses `clip_raw` plus a human subset.
+- **H-B2 (style proxy):** `style_margin` correlates positively with the human style rating (ρ > 0); reported either way.
+- **H-B3 (seen vs unseen):** the faithfulness gain of c3 over c1 is larger on scenes with `seen_in_training: false` than on seen ones (prediction only; dev has few seen scenes, so this is descriptive).
+- **H-B4 (coverage):** scenes whose characters have `coverage` low/none (from C's KB) have lower faithfulness than high/medium ones, in every condition.
+- **H-B5 (rater agreement):** inter-rater agreement on faithfulness is Spearman ρ ≥ 0.5. If lower, results are reported with the spread and treated as weaker evidence.
+- **Judge robustness check:** on 20 images, shuffling question order changes the checklist score by < 0.05 on average.
+
+### Section B deviations
+Rule: after results exist, the text above is never edited. Each change gets one dated line here: `YYYY-MM-DD: <what changed>, <why>, <which results it affects>`.
+
+<!-- no deviations yet -->
+
 ## Section D (Member D: Expander)
 
 Pre-registered by the merge of this section, before D's first scored run (the first `results/c2_template@rrv_v1_dev.json`). After results exist, nothing below is edited; changes go under *Section D deviations* as dated lines.
