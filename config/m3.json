@@ -23,7 +23,9 @@
   "llm": {
     "backend": "hf_local",
     "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
     "model_large": "Qwen/Qwen2.5-7B-Instruct",
+    "model_large_revision": "a09a35458c702b33eeacc393d103063234e8bc28",
     "temperature": 0.0,
     "prompt_version": "v1"
   }
