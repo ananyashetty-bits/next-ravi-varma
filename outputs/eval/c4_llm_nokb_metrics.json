@@ -1,0 +1,9 @@
+{
+  "manifest": "outputs/images/c4_llm_nokb/dev/manifest.json",
+  "model": "rrv_v1",
+  "git_sha": "2f71bd1",
+  "total_requested": 32,
+  "valid_images": 0,
+  "avg_gen_seconds": 4.988,
+  "sample_hashes": []
+}

@@ -1,0 +1,9 @@
+{
+  "manifest": "outputs/images/c0_base_raw/dev/manifest.json",
+  "model": "base",
+  "git_sha": "ecde613",
+  "total_requested": 32,
+  "valid_images": 0,
+  "avg_gen_seconds": 6.217,
+  "sample_hashes": []
+}

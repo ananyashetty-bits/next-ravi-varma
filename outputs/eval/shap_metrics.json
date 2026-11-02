@@ -1,0 +1,9 @@
+{
+  "manifest": "outputs/images/shap/dev/manifest.json",
+  "model": "rrv_v1",
+  "git_sha": "ecde613",
+  "total_requested": 128,
+  "valid_images": 0,
+  "avg_gen_seconds": 5.02,
+  "sample_hashes": []
+}
