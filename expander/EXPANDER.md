@@ -2,7 +2,7 @@
 
 `expand(text, scene=None, mode="llm_kb") -> ExpandedPrompt` turns a user's epic-scene sentence into a prompt the M2 model (`rrv_v1`) can render: name-free visual phrases, the trigger first, the style tail last, under the token limit. It runs a **local** instruct LLM (no paid API) with a deterministic template as the fallback.
 
-> **Status: skeleton (Day 1).** Design sections are written. Everything marked `TODO(results)` waits for measured numbers from `outputs/expansions/`, `results/` or B's tables; no number goes in by hand. Contracts referred to: Overview v2 §6 (`config/m3.json`, SceneSpec, ExpandedPrompt, signatures, CLI).
+> **Status (2026-11-03):** the design and all modes are built and tested (`tests/test_expander_*.py`). Measured so far: the T4 smoke test and the **c4** dev expansions on the 16 dev scenes on `main` (`outputs/expansions/c4_llm_nokb_dev.json`). **c2 and c3 wait for C's parser and KB** (#21). Everything still marked `TODO(results)` waits for numbers from `outputs/expansions/`, `results/` or B's tables; no number goes in by hand. Contracts referred to: Overview v2 §6 (`config/m3.json`, SceneSpec, ExpandedPrompt, signatures, CLI).
 
 ## 1. Design principle
 
@@ -23,7 +23,7 @@ The LLM writes **only the scene phrases**, ordered from most to least important.
 | `llm_kb_layout` | `c5_llm_kb_layout` (optional) | c3 plus a leading layout phrase from the reply's `layout` JSON | `llm` / `fallback` | `v1_layout` | D |
 | `llm_kb` + `--kb kb/kb_llm.json` | `c6_llm_kbllm` | c3 with LLM-written KB descriptions | `llm` / `fallback` | `v1` | C |
 | `llm_kb` + `--llm large` (= `llm.model_large`; or `--llm_model <id>`) | `c3_7b` (optional) | c3 with the larger LLM | `llm` / `fallback` | `v1` | D |
-| `llm_kb` + `--scene_negatives` | `c3_neg` (optional) | c3 positive; negative = config negative + 3-6 LLM scene negatives | `llm` / `fallback` | `v1_neg` | D |
+| `llm_kb` + `--scene_negatives` | `c3_neg` (optional) | c3 positive (same cached calls); negative = config negative + 3-6 LLM scene negatives from one extra call | `llm` / `fallback` | `v1` (negatives call: `neg_prompt_version` `v1_neg`) | D |
 | `llm_kb` + `--prompt_version v2` | `c3_v2` (optional; **proposed ID**) | c3 with prompt v2 (SHAP value-per-token ordering) | `llm` / `fallback` | `v2` | D |
 
 `batch_expand.py` sets `condition` from `--condition`, otherwise from the `--out` file name (`<condition>_<split>.json`), otherwise from the mode. Hypotheses for these comparisons: `experiments/HYPOTHESES.md`, section D.
@@ -69,7 +69,8 @@ Rules:
 
 - **Budget:** `max_prompt_tokens` = **70**, counted **excluding** the start/end tokens with the team's one counter `common/tokens.py` `n_tokens(text)` (CLIP BPE of the base model's tokenizer). It stays 70 until A's `pipeline/TOKEN_BUDGET.md` says otherwise. The M2 helper `generate.py n_tokens` counts **including** start/end tokens and is never used here.
 - **`assemble(trigger, phrases, style_tail, max_tokens, *, counter=None)`:** adds phrases greedily in priority order and skips any phrase that does not fit, so a shorter later phrase can still be kept. Trigger and tail are always kept, and an empty tail adds no trailing comma. `phrases_dropped` lists **budget drops only**; name removals go to `phrases_scrubbed`.
-- **Fixed cost (prep measurement, re-checked by the slow tokenizer test):** trigger 4 tokens, proposed tail 20, `"<trigger>, <tail>"` 25, so about 44 tokens remain for scene phrases. `TODO(results)`: distribution of `token_count` and of the number of dropped phrases per condition (from `check_expansions.py`).
+- **Fixed cost (team config since #18, measured with `common/tokens.py` on 2026-11-03):** trigger `rrvarma style` 4 tokens; `"<trigger>, <tail>"` with the team tail `oil painting, canvas texture, classical indian art` 14 tokens, so **56 tokens** remain for scene phrases. (The tail first proposed here, M2's v2 suffix, would have cost 25.)
+- **Measured, c4 dev (16 scenes):** `token_count` mean 62.4, min 40, max 70; on average 8.2 phrases kept and 0.75 dropped for the budget per record. `TODO(results)`: the same for c2 and c3.
 
 ## 6. Name scrub
 
@@ -78,7 +79,8 @@ Rules:
 - **Matcher** (`expander/names.py`, shared with A's CI so the two cannot disagree): text normalised with NFKD to ASCII; whole words (`\b…\b`, multi-word aliases joined by `\s+`, longest first); **case-insensitive by default**.
 - **Case policy for English-word aliases:** aliases that are also ordinary words are matched **only when capitalised**: `Ram`, `Lava`, `Kush`/`Kusha`, `Bali`, `Kali`, `Tara`, `Kama`, `Hamsa`, `Uma`, `Hari`, `Agni`, `Surya`, `Usha`, `Matsya`, `Varaha`, … (full list in `names_seed_meta.json → risk.case_sensitive_only`). This keeps "a ram", "kusha grass" and "flowing lava" in the prompt. The LLM capitalises proper names. Honorifics and class nouns (`Devi`, `Sri`, `Rakshasa`, `Apsara`, `Gopi`) and `ashoka grove` are not names. In prep, the list had 0 false positives on 178 name-free M2 texts.
 - **Record fields:** `names_leaked` = names found **before** repair (B reports how often the LLM leaks). `names_after_repair` = names left in the final phrases, which **must be `[]`**. `phrases_scrubbed` = phrases removed for names.
-- **Known cost:** rivers and mounts that are also names (`Ganga`, `Yamuna`, `Sarayu`, `Nandi`, `Garuda`) are scrubbed, which can remove a setting phrase. `TODO(results)`: how often this happened.
+- **Known cost:** rivers and mounts that are also names (`Ganga`, `Yamuna`, `Sarayu`, `Nandi`, `Garuda`) are scrubbed, which can remove a setting phrase. Measured in c4 dev: **0 phrases scrubbed** in 16 records, because the one re-ask removed every leaked name. `TODO(results)`: c2/c3.
+- **Measured leak rate before repair, c4 dev:** 12 of 16 records (75%). Most frequent: Arjuna 4, Krishna 4, Sita 3, Hanuman 3, Rama 2, Lakshmana 2. **After repair: 0.**
 - **Template mode:** there is no LLM to re-ask, so the matched name is deleted from the phrase, dangling connectors are tidied, and the phrase is dropped if fewer than 2 content words remain.
 
 ## 7. Cache
@@ -89,7 +91,22 @@ Rules:
 
 ## 8. Configuration and open team decisions
 
-D reads `trigger`, `style_tail`, `negative`, `max_prompt_tokens` and `llm.*` from `config/m3.json`; nothing is hardcoded. Until the team file exists, `expander/_shims/m3.default.json` holds the proposal below.
+D reads `trigger`, `style_tail`, `negative`, `max_prompt_tokens` and `llm.*` from `config/m3.json`; nothing is hardcoded. Keys missing from the team file are filled from `expander/_shims/m3.default.json`, and team values always win.
+
+**As merged (config PR #18, 2026-11-01):**
+
+| Key | Team value | Note |
+|---|---|---|
+| `trigger` | `rrvarma style` | M2 handoff |
+| `style_tail` | `oil painting, canvas texture, classical indian art` | chosen by the team (A); the winner's train_v1 captions have no fixed tail, so any tail is an addition the model was not trained with. A's token-budget and SHAP runs measure it |
+| `negative` | `ugly, blurry, bad anatomy` | differs from M2's evaluation negative (`lowres, blurry, deformed, extra limbs, bad anatomy, text, watermark`); flagged in #18 |
+| `max_prompt_tokens` | 70 (excluding start/end) | until `TOKEN_BUDGET.md` |
+| `llm.model` / `revision` | `Qwen/Qwen3-4B-Instruct-2507` @ `cdbee75f17c01a7cc42f958dc650907174af0554` | 4-bit NF4, fp16 compute; verified on a T4 (§12) |
+| `llm.model_large` / `model_large_revision` | `Qwen/Qwen2.5-7B-Instruct` @ `a09a35458c702b33eeacc393d103063234e8bc28` | `c3_7b` only |
+| `llm.temperature` / `prompt_version` | `0.0` / `v1` | final version posted at S3 |
+| `models.rrv_v1.scale` | 1.0 | **open:** M2's handoff recommends 0.8; A to confirm (#16). c4 images so far were made at 1.0 |
+
+**History, the Day-1 proposal (superseded):**
 
 | Key | Proposed value | Status |
 |---|---|---|
@@ -101,25 +118,56 @@ D reads `trigger`, `style_tail`, `negative`, `max_prompt_tokens` and `llm.*` fro
 | `llm.model_large` | `Qwen/Qwen2.5-7B-Instruct` (for `c3_7b`) | optional experiment |
 | `llm.temperature` / `prompt_version` | `0.0` / `v1` | frozen version posted at S3 |
 
-Other open items: scene ID block `s25`-`s32` for D's dev scenes (pending B's confirmation); `names_leaked` before repair plus the extra field `names_after_repair` (needs B's agreement, issue `needs:B`); A's CI importing `expander.names` (issue `needs:A`); the ID `c3_v2` for prompt v2.
+Settled since Day 1: scene IDs `s25`-`s32` (B, #22); B's scene check uses `expander/names_seed.json` for its no-names rule. Still open: A's CI importing `expander.names` (#16); the ID `c3_v2` for prompt v2.
 
 ## 9. Ladder results (c2 → c4 → c3)
 
 `TODO(results)`: B's dev table for `c2_template`, `c4_llm_nokb`, `c3_llm_kb` @ `rrv_v1`: human faithfulness, style, quality; checklist judge; `clip_raw`; `style_margin`; paired diffs with 95% CI and win/tie/loss, per tier and seen/unseen. Sources: `results/c{2,3,4}_*@rrv_v1_dev.json`, `eval/EVAL_REPORT.md`. State H-D1/H-D2 outcomes with the pre-registered rule. Held-out rows are added after B's Day-5 run.
 
-`TODO(results)`: process table per file from `check_expansions.py`: % valid, leaks before and after repair, fallback rate, mean `token_count`, mean number of dropped and scrubbed phrases.
+Process table per file from `check_expansions.py --strict` (real CLIP counter):
+
+| file | n | valid | trigger-first | within budget | leaks before | leaks after | fallback | latency mean / median (s) | tokens mean / max | dropped / rec |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| `c4_llm_nokb_dev.json` (16 scenes, 2026-11-02) | 16 | 100.0% | 100.0% | 100.0% | 75.0% | 0 | 0.0% | 21.03 / 13.57 | 62.4 / 70 | 0.75 |
+| `c2_template_dev.json` | `TODO(results)`: waits for C's KB and parser |
+| `c3_llm_kb_dev.json` | `TODO(results)`: waits for C's KB and parser |
+
+The c4 mean latency includes the model load in the first scene's `latency_s` (`model_load_s` 124 s on a fresh runtime, with the download). Without it: mean 13.3 s, median 12.9 s per scene. `json_retry` was false for all 16 records; the 12 second calls were all name re-asks.
 
 ## 10. Optional experiments
 
-`TODO(results)`: c5 (H-D3), c3_7b (H-D4), c3_neg (H-D5), prompt v2 (H-D6), each with the result, or "not run" and the reason (Overview §14 cut order: negatives → LLM size → c5).
+| Condition | Built | Run | Note |
+|---|---|---|---|
+| `c5_llm_kb_layout` (H-D3) | yes (`--mode llm_kb_layout`) | not yet | needs c3 first |
+| `c3_7b` (H-D4) | yes (`--llm large`) | not yet | needs c3 first |
+| `c3_neg` (H-D5) | yes (`--scene_negatives`, prompt `v1_neg`) | not yet | needs c3 first |
+| `c3_v2` (H-D6) | no | not yet | needs A's SHAP table and B's failure notes |
+
+`TODO(results)`: each with the result, or "not run" and the reason (Overview §14 cut order: negatives → LLM size → c5).
 
 ## 11. Failure modes with examples
 
-`TODO(results)`: from B's Day-4 failure notes (`needs:D`) and `phrases_dropped`: for 3-5 bad images, the scene, the expansion, the image code and the diagnosed cause (figure phrase dropped by budget, KB description too vague, tail pushed out, name scrub removed a setting phrase, layout ignored). Include failures, not only successes.
+Seen so far at the **expansion** stage (from records, not from scored images):
+- **The LLM reaches for names** (c4: 75% of records before repair). One re-ask fixed all of them; nothing was scrubbed.
+- **The stand-in parser breaks the action text** (c2 preview on the 16 dev scenes, with the stand-in parser and KB; not committed, not scored). It cuts known names out of the sentence and leaves fragments: s12 "kneeling before and offering him 's ring"; s29 "lying on a bed of arrows on the field of while the and gather around him". The fix is C's parser returning the action already name-free (#21); the scrub can delete words but cannot rewrite them.
+- **Characters missing from the KB get no description or the wrong one** (same preview): s10 has no description for its warrior; s29's old warrior picked up another character's description. KB coverage for the dev characters is requested in #21.
+
+`TODO(results)`: from B's Day-4 failure notes (`needs:D`) and `phrases_dropped`, for 3-5 bad images: the scene, the expansion, the image code and the diagnosed cause (figure phrase dropped by budget, KB description too vague, tail pushed out, name scrub removed a setting phrase, layout ignored). Include failures, not only successes.
 
 ## 12. Measured latency
 
-`TODO(results)`: LLM load time, seconds per scene (mean/median `latency_s`) for each LLM model on a T4, peak VRAM from `python -m expander.llm --smoke`, and the template-mode time. Expansion runs alone in the `llm` session: expand everything, `close()`, then generate in a new `gen` session.
+Colab T4, `Qwen/Qwen3-4B-Instruct-2507` @ `cdbee75f`, 4-bit NF4 (requirements as pinned in `requirements_llm.txt`, torch 2.11.0+cu130):
+
+| Measure | Value | Source |
+|---|---|---|
+| Load, first run on a fresh runtime (includes the 8 GB download) | 114-194 s | smoke test 2026-11-01; c4 run 2026-11-02 |
+| Load, weights already cached | 23-33 s | Day-2 preview runs |
+| Seconds per LLM call (warm) | 7.1-8.0 s | smoke test; Day-2 preview; c4 run (28 calls) |
+| Seconds per scene, c4 (one call, or two with a name re-ask) | mean 13.3 s, median 12.9 s (excluding the load) | `c4_llm_nokb_dev.json` |
+| Peak VRAM | 2.77-2.81 GiB; `close()` frees it to 0.01 GiB | smoke test; batch logs |
+| Template mode (c2) | about 0.01 s per scene, CPU | c2 preview |
+
+`TODO(results)`: c3 (longer user message) and `c3_7b`. Expansion runs alone in the `llm` session: expand everything, `close()`, then generate in a new `gen` session.
 
 ## 13. Commands
 
@@ -131,9 +179,13 @@ python expander/batch_expand.py --scenes eval/test_scenes_dev.json --mode templa
 python expander/batch_expand.py --scenes eval/test_scenes_dev.json --mode llm_kb   --out outputs/expansions/c3_llm_kb_dev.json
 python expander/batch_expand.py --scenes eval/test_scenes_dev.json --mode llm_nokb --out outputs/expansions/c4_llm_nokb_dev.json
 python expander/check_expansions.py outputs/expansions/c2_template_dev.json outputs/expansions/c3_llm_kb_dev.json outputs/expansions/c4_llm_nokb_dev.json --strict
+# optional (Day 4)
+python expander/batch_expand.py --scenes eval/test_scenes_dev.json --mode llm_kb --scene_negatives --out outputs/expansions/c3_neg_dev.json
 ```
 
-`batch_expand.py` flags: `--scenes --mode --out [--kb] [--cache] [--condition] [--split] [--llm default|large|fake] [--llm_model] [--llm_revision] [--no_4bit] [--prompt_version] [--limit N] [--config] [--overwrite] [--counter auto|clip|approx]`. It resumes an existing `--out` and loads the LLM only on a cache miss. `check_expansions.py FILE... [--max_tokens N] [--json OUT] [--strict] [--names PATH] [--no_recount] [--config]`.
+Images (A's `gen` profile) and scores (B's `eval/score.py`, `eval` profile): `RUNBOOK_COLAB.md` steps 8 and 8b.
+
+`batch_expand.py` flags: `--scenes --mode --out [--kb] [--cache] [--condition] [--split] [--llm default|large|fake] [--llm_model] [--llm_revision] [--no_4bit] [--prompt_version] [--limit N] [--config] [--overwrite] [--counter auto|clip|approx] [--scene_negatives]`. It resumes an existing `--out` and loads the LLM only on a cache miss. `check_expansions.py FILE... [--max_tokens N] [--json OUT] [--strict] [--names PATH] [--no_recount] [--config]`.
 
 Held-out (B, Day 5, frozen S3 sha, private cache): `TODO(results)`: confirm the frozen sha, the final `prompt_version` and the exact flags at S3. Draft:
 ```
