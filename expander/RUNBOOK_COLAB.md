@@ -128,15 +128,63 @@ IMG = "/content/drive/MyDrive/m3/images"
 !python pipeline/run_batch.py --expansions outputs/expansions/c4_llm_nokb_dev.json --model rrv_v1 --seeds 1 2 --out {IMG}/c4_llm_nokb@rrv_v1/dev
 ```
 
-3. Scoring runs in a third runtime (`eval` profile): `python eval/score.py --manifest {IMG}/<cond>@rrv_v1/dev/manifest.json --out results/<cond>@rrv_v1_dev.json`. `score.py` copies `token_count`, `trigger_first`, `names_leaked` and `source` from the expansion file.
+3. Scoring runs in a third runtime (`eval` profile), step 8b.
+
+## 8b. Score a condition (`eval` profile, B's `eval/score.py`)
+
+The owner of a condition scores it (Overview §8) and commits `results/<condition>@rrv_v1_dev.json`. New T4 runtime, step 1, then:
+
+```python
+!pip install -q -r eval/requirements_eval.txt        # B's pins (transformers 5.21.0): never in the same runtime as the llm profile
+# score.py reads the M2 reference sets from YOUR Drive; all three must list images:
+!ls /content/drive/MyDrive/m2/eval/eval_holdout | head -3; ls /content/drive/MyDrive/m2/eval/control_art | head -3; ls /content/drive/MyDrive/m2/dataset/train_v1 | head -3
+```
+
+If one of the `ls` lines fails, add a shortcut to the team's `m2` folder in *My Drive*, or score with `--no_m2` (judge only) and say so in the PR.
+
+**c4 images made by A** (Drive folder `images`, shared by link, made on 2026-11-02 at `scale` 1.0). Their manifest labels the condition `c4_llm_nokb_0` … `c4_llm_nokb_15`, one label per scene, which would split the summary into 16 conditions. This cell copies the images into your Drive and writes a manifest with the single label `c4_llm_nokb`. The images and prompts are unchanged; the prompts were checked against `outputs/expansions/c4_llm_nokb_dev.json`:
+
+```python
+import gdown, json, os
+SRC = "https://drive.google.com/drive/folders/1o0R21VK-8gFyY33NskF2wtGnDAEclosI"
+DST = "/content/drive/MyDrive/m3/images/c4_llm_nokb@rrv_v1/dev"
+os.makedirs(DST, exist_ok=True)
+files = [f for f in gdown.download_folder(url=SRC, skip_download=True, quiet=True) if f.path.startswith("c4_llm_nokb/dev/")]
+for f in files:
+    out = os.path.join(DST, os.path.basename(f.path))
+    if not os.path.exists(out):
+        gdown.download(id=f.id, output=out, quiet=True)
+m = json.load(open(os.path.join(DST, "manifest.json")))
+for it in m["images"]:
+    it["condition"] = "c4_llm_nokb"
+    it["path"] = os.path.join(DST, os.path.basename(it["path"]))
+m["note"] = "copied from A's images/c4_llm_nokb/dev; condition label unified (was c4_llm_nokb_<i>)"
+json.dump(m, open(os.path.join(DST, "manifest_d.json"), "w"), indent=2)
+print(len(m["images"]), "images ->", DST)
+```
+
+Then score, check and push:
+
+```python
+IMG = "/content/drive/MyDrive/m3/images"
+!python eval/score.py --manifest {IMG}/c4_llm_nokb@rrv_v1/dev/manifest_d.json --out results/c4_llm_nokb@rrv_v1_dev.json
+!git config user.name "<your GitHub login>" && git config user.email "<id>+<login>@users.noreply.github.com"
+!git checkout -B d/c4-dev-scores && git add results/c4_llm_nokb@rrv_v1_dev.json
+!git commit -m "[expander] score c4_llm_nokb on dev (16 scenes, seeds 1-2, scale 1.0)" && git push -u origin d/c4-dev-scores
+```
+
+For your own generation runs (step 8), the manifest already has one label per condition: score `{IMG}/<cond>@rrv_v1/dev/manifest.json` directly. The judge takes about 5 s per image on a T4 (`eval/JUDGE_NOTES.md`), so about 5 minutes per condition plus model loads. The judge cache goes to `m3/cache/judge_cache.json` on your Drive, so re-runs are free.
 
 ## 9. Optional experiments (Day 4; write the hypothesis first; cut order: negatives → LLM size → c5)
 
 ```python
 !python expander/batch_expand.py --scenes $SCENES --mode llm_kb_layout --split dev --out outputs/expansions/c5_llm_kb_layout_dev.json
 !python expander/batch_expand.py --scenes $SCENES --mode llm_kb --llm large --split dev --out outputs/expansions/c3_7b_dev.json
-!python expander/check_expansions.py outputs/expansions/c5_llm_kb_layout_dev.json outputs/expansions/c3_7b_dev.json --strict
+!python expander/batch_expand.py --scenes $SCENES --mode llm_kb --scene_negatives --split dev --out outputs/expansions/c3_neg_dev.json
+!python expander/check_expansions.py outputs/expansions/c5_llm_kb_layout_dev.json outputs/expansions/c3_7b_dev.json outputs/expansions/c3_neg_dev.json --strict
 ```
+
+- `c3_neg` reuses c3's cached positive calls, so its `positive` is identical to c3's. One extra call (prompt `v1_neg`, cached separately) returns 3-6 anachronism negatives. They are appended to the config negative and fitted under 70 tokens; phrases with names, or already in the config negative, are dropped. Records carry `negatives_added`, `neg_prompt_version` and `neg_error`. If the negatives reply is unusable, the record keeps the config negative and sets `neg_error`; it never crashes. Check `negatives_added` by eye on a few scenes (H-D5).
 
 - `--llm large` uses `llm.model_large` and `llm.model_large_revision`. `--llm_model X [--llm_revision R]` overrides the model id.
 - `c5` records carry `layout` and use prompt `v1_layout` (or `v1ex_layout` with `--prompt_version v1ex`).

@@ -45,6 +45,8 @@ CONTRACT_FIELDS = ("scene_id", "condition", "split", "positive", "negative", "ph
                    "token_count", "trigger_first", "names_leaked", "source", "layout", "llm_model",
                    "prompt_version", "kb_version", "latency_s")
 
+NEG_PROMPT_VERSION = "v1_neg"  # c3_neg: one extra LLM call for scene-specific negatives (D guide Day 4)
+MAX_SCENE_NEGATIVES = 6
 RETRY_INSTRUCTION = "Return ONLY valid JSON"
 REPAIR_INSTRUCTION = "Remove proper names; describe by clothing, pose and setting."
 
@@ -318,10 +320,46 @@ def _llm_phrases(text: str, scene: dict, mode: str, client: LLMClient, cache: Ca
     return {"phrases": phrases, "lead": lead, "layout": layout, "leaked": leaked, "scrubbed": scrubbed}
 
 
+def _scene_negatives(text: str, scene: dict, mode: str, client: LLMClient, cache: Cache | None, model: str,
+                     kb_version: str, matcher: NameMatcher, base_negative: str, max_tokens: int,
+                     count: CountFn, state: dict) -> tuple[str, list[str]]:
+    """c3_neg: ask the LLM for 3-6 anachronism negatives and append them to the config negative.
+
+    A separate call with its own ``prompt_version`` (``v1_neg``), so the positive stays identical to c3's.
+    Phrases with names, or already in the config negative, are dropped; the result is fitted under
+    ``max_tokens`` with the same counter. Raises on an unusable reply (caller keeps the config negative).
+    """
+    system = load_system_prompt(NEG_PROMPT_VERSION)
+    user = build_user_message(text, scene, mode)
+    key = cache_key(NEG_PROMPT_VERSION, model, kb_version, mode, user)
+    reply = cache.get(key) if cache is not None else None
+    if reply is None:
+        reply = client.complete(system, user)
+        state["llm_calls"] += 1
+        if not isinstance(reply, str):
+            raise _InvalidReply(f"LLM returned {type(reply).__name__}, not str")
+        if cache is not None:
+            cache.put(key, reply, model=model, prompt_version=NEG_PROMPT_VERSION, mode=mode, kb_version=kb_version)
+    else:
+        state["cache_hits"] += 1
+    obj = extract_json(reply)
+    if not obj or not isinstance(obj.get("negatives"), list):
+        raise _InvalidReply("no valid negatives JSON")
+    have = {p.strip().casefold() for p in base_negative.split(",")}
+    phrases = [p for p in clean_phrases(obj["negatives"]) if p.casefold() not in have and not matcher.find(p)]
+    negative, added = base_negative, []
+    for p in phrases[:MAX_SCENE_NEGATIVES]:
+        candidate = f"{negative}, {p}" if negative else p
+        if count(candidate) <= max_tokens:
+            negative, added = candidate, [*added, p]
+    return negative, added
+
+
 def expand(text: str, scene: dict | None = None, mode: str = "llm_kb", *, llm: LLMClient | None = None,
            cache: Cache | None = None, kb_path: str | None = None, condition: str | None = None,
            split: str = "", count_fn: CountFn | None = None, cfg: dict | None = None,
-           prompt_version: str | None = None, matcher: NameMatcher | None = None) -> dict:
+           prompt_version: str | None = None, matcher: NameMatcher | None = None,
+           scene_negatives: bool = False) -> dict:
     """Expand one scene into an ``ExpandedPrompt`` dict (the 16 contract fields of §6.4 plus extras).
 
     - ``scene``: C's SceneSpec; parsed from ``text`` with the resolved parser when ``None`` (not for raw).
@@ -332,10 +370,14 @@ def expand(text: str, scene: dict | None = None, mode: str = "llm_kb", *, llm: L
     - ``condition``: condition ID (default from ``mode``, see ``resolve_condition``); ``split``: "dev"/"heldout".
     - ``count_fn``: token counter (default: the ONE counter, ``common.tokens.n_tokens``).
     - ``cfg``: config dict (default: ``_cfg.load_config()``); ``prompt_version`` overrides ``cfg.llm``.
+    - ``scene_negatives``: c3_neg; after the positive is built, one extra LLM call adds 3-6 anachronism
+      negatives to the config negative (``negatives_added``). LLM modes only; never raises.
     """
     t0 = time.perf_counter()
     if mode not in MODES:
         raise ValueError(f"unknown mode {mode!r}; expected one of {MODES}")
+    if scene_negatives and mode not in LLM_MODES:
+        raise ValueError(f"scene_negatives needs an LLM mode {sorted(LLM_MODES)}, not {mode!r}")
     if not isinstance(text, str) or not text.strip():
         raise ValueError("expand() needs non-empty text")
     cfg = cfg if cfg is not None else load_config()
@@ -402,9 +444,25 @@ def expand(text: str, scene: dict | None = None, mode: str = "llm_kb", *, llm: L
                        phrases_dropped=tpl["phrases_dropped"], phrases_scrubbed=tpl["phrases_scrubbed"],
                        names_leaked=list(dict.fromkeys([*llm_leaked, *tpl["names_leaked"]])), source="fallback",
                        template_version=TEMPLATE_VERSION)
+        if scene_negatives:
+            rec.update(negatives_added=[], neg_prompt_version=NEG_PROMPT_VERSION, neg_error=None)
+            try:
+                if client is None:
+                    raise LLMUnavailableError('config llm.backend is "none"')
+                neg_state = {"llm_calls": 0, "cache_hits": 0}
+                try:
+                    rec["negative"], rec["negatives_added"] = _scene_negatives(
+                        text, scene, mode, client, cache, model, rec["kb_version"], matcher, cfg["negative"],
+                        int(cfg["max_prompt_tokens"]), count, neg_state)
+                finally:
+                    rec["llm_calls"] += neg_state["llm_calls"]
+                    rec["cache_hits"] += neg_state["cache_hits"]
+            except Exception as e:  # noqa: BLE001 - a failed negatives call keeps the config negative
+                rec["neg_error"] = f"{type(e).__name__}: {e}"
 
     rec["token_count"] = count(rec["positive"])
     rec["trigger_first"] = rec["positive"].startswith(trigger)
-    rec["names_after_repair"] = matcher.find(rec["positive"])
+    rec["names_after_repair"] = list(dict.fromkeys(
+        [*matcher.find(rec["positive"]), *matcher.find(" ; ".join(rec.get("negatives_added") or []))]))
     rec["latency_s"] = round(time.perf_counter() - t0, 4)
     return {**{k: rec[k] for k in CONTRACT_FIELDS}, **{k: v for k, v in rec.items() if k not in CONTRACT_FIELDS}}

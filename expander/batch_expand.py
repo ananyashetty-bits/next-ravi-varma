@@ -174,12 +174,17 @@ def build_parser() -> argparse.ArgumentParser:
     ap.add_argument("--overwrite", action="store_true", help="ignore an existing --out instead of resuming")
     ap.add_argument("--counter", choices=("auto", "clip", "approx"), default="auto",
                     help="token counter: clip = common.tokens.n_tokens; approx = CPU stand-in for dry runs")
+    ap.add_argument("--scene_negatives", action="store_true",
+                    help="c3_neg: add 3-6 LLM anachronism negatives to the config negative (LLM modes only; "
+                         "use --out outputs/expansions/c3_neg_<split>.json)")
     return ap
 
 
 def run(argv: list[str] | None = None) -> dict:
     """Run the batch; returns the summary dict (``main`` prints it)."""
     a = build_parser().parse_args(argv)
+    if a.scene_negatives and a.mode not in LLM_MODES:
+        raise SystemExit(f"[batch_expand] --scene_negatives needs an LLM mode, not --mode {a.mode}")
     cfg = load_config(a.config)
     if a.no_4bit:
         cfg.setdefault("llm", {})["load_in_4bit"] = False
@@ -223,7 +228,8 @@ def run(argv: list[str] | None = None) -> dict:
             scene = parse(text, scene_id=sid, kb_path=a.kb) if parse else {"id": sid}
             loads_before = getattr(client, "loads", 0)
             rec = expand(text, scene, a.mode, llm=client, cache=cache, kb_path=a.kb, condition=condition,
-                         split=split, count_fn=count_fn, cfg=cfg, prompt_version=pv)
+                         split=split, count_fn=count_fn, cfg=cfg, prompt_version=pv,
+                         scene_negatives=a.scene_negatives)
             if getattr(client, "load_error", None) is not None:  # a whole file of template fallbacks is not c3
                 raise SystemExit(f"[batch_expand] the LLM failed to load ({client.load_error!r}); stopped before "
                                  f"{sid}. {len(new)} new records were written. Fix the load (see RUNBOOK_COLAB.md) "
