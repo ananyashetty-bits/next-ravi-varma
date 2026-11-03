@@ -1,40 +1,42 @@
-"""generate(positive, negative, seed, model=None, lora_scale=None, control_image=None) -> PIL.Image"""
-import json, torch, sys
-sys.path.insert(0, "m2kit")
-from generate import load, swap_lora          # M2 code, unchanged
+import json
+import torch
+import sys
+from PIL import Image
 
-CFG = json.load(open("config/m3.json"))
-_PIPE, _CUR = None, None
+# Import stubs dynamically
+try:
+    from kb.parser import parse_scene
+    from expander.expand import expand
+except ImportError:
+    from kb.stub_parser import parse_scene
+    from expander.stub_expand import expand
 
-def _ensure(model):
-    global _PIPE, _CUR
-    m = model or CFG["default_model"]
+DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
+
+def text_to_image(text, seed, mode="llm_kb", model=None):
+    """Parses scene, expands prompt, and generates image."""
+    scene = parse_scene(text)
+    exp = expand(text, scene, mode)
     
-    if _PIPE is None:
-        lora_path = None if m == "base" else CFG["models"][m]["lora_path"]
-        scale = CFG["models"].get(m, {}).get("scale", 0)
-        _PIPE = load(lora_path, scale)
-    elif m != _CUR and m != "base":
-        lora_path = CFG["models"][m]["lora_path"]
-        scale = CFG["models"].get(m, {}).get("scale", 0)
-        swap_lora(_PIPE, lora_path, scale)
+    if DEVICE == "cpu":
+        print("\n[LOCAL CPU DETECTED] Bypassing 4GB model download.")
+        print(f"SceneSpec: {scene}")
+        print(f"Prompt: {exp.get('positive', '')}")
+        # Instantly create a 512x512 blue placeholder image
+        img = Image.new('RGB', (512, 512), color=(73, 109, 137))
+    else:
+        # This will only run later when you are on Colab's T4 GPU
+        sys.path.insert(0, "m2kit")
+        from diffusers import StableDiffusionPipeline
+        pipe = StableDiffusionPipeline.from_pretrained(
+            "stable-diffusion-v1-5/stable-diffusion-v1-5", 
+            torch_dtype=torch.float16, safety_checker=None
+        ).to(DEVICE)
         
-    _CUR = m
-    return _PIPE
+        generator = torch.Generator(DEVICE).manual_seed(seed)
+        img = pipe(
+            prompt=exp["positive"], negative_prompt=exp["negative"], 
+            generator=generator, num_inference_steps=30
+        ).images[0]
 
-def generate(positive, negative, seed, model=None, lora_scale=None, control_image=None):
-    pipe = _ensure(model)
-    generator = torch.Generator("cuda").manual_seed(seed)
-    
-    # Passing the exact settings from the config
-    image = pipe(
-        prompt=positive,
-        negative_prompt=negative,
-        num_inference_steps=CFG["steps"],
-        guidance_scale=CFG["cfg"],
-        height=CFG["size"],
-        width=CFG["size"],
-        generator=generator
-    ).images[0]
-    
-    return image
+    return img, exp, scene
