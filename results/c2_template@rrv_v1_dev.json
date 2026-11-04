@@ -1,0 +1,737 @@
+{
+ "manifest": "/content/drive/MyDrive/m3/images/c2_template@rrv_v1/dev/manifest.json",
+ "scenes_file": "/content/m3/eval/test_scenes_dev.json",
+ "scored_at": "2026-11-04T21:56:47.107824",
+ "judge": "Qwen/Qwen2-VL-2B-Instruct",
+ "n_images": 32,
+ "summary": {
+  "c2_template": {
+   "checklist": {
+    "mean": 0.5695620269152439,
+    "ci95": [
+     0.48133884782478875,
+     0.6589135750785904
+    ],
+    "n_scenes": 16
+   },
+   "clip_raw": {
+    "mean": 0.26761819422245026,
+    "ci95": [
+     0.2551868697046302,
+     0.2786315901204944
+    ],
+    "n_scenes": 16
+   },
+   "style_margin": {
+    "mean": 0.07826734147965908,
+    "ci95": [
+     0.05575789641588926,
+     0.09986314377747474
+    ],
+    "n_scenes": 16
+   },
+   "max_train_dino": {
+    "mean": 0.6852115523070097,
+    "ci95": [
+     0.6523581560701132,
+     0.7150189110543579
+    ],
+    "n_scenes": 16
+   }
+  }
+ },
+ "per_scene": {
+  "c2_template": {
+   "checklist": {
+    "s09": 0.8881009287304349,
+    "s10": 0.5745794781380229,
+    "s11": 0.573870218009688,
+    "s12": 0.77248571978675,
+    "s13": 0.8457333876027001,
+    "s14": 0.8225960590773158,
+    "s15": 0.5567997028119862,
+    "s16": 0.18383571153713596,
+    "s25": 0.5079565261257812,
+    "s26": 0.5056654062122107,
+    "s27": 0.5726587194949389,
+    "s28": 0.491942647099495,
+    "s29": 0.5314778853207827,
+    "s30": 0.3457232274942928,
+    "s31": 0.43172468058764935,
+    "s32": 0.5078421326147186
+   },
+   "clip_raw": {
+    "s09": 0.30717937648296356,
+    "s10": 0.22571860253810883,
+    "s11": 0.276607871055603,
+    "s12": 0.2880251407623291,
+    "s13": 0.285921186208725,
+    "s14": 0.2795266658067703,
+    "s15": 0.2756230980157852,
+    "s16": 0.2192998230457306,
+    "s25": 0.25724122673273087,
+    "s26": 0.2727005332708359,
+    "s27": 0.23424158245325089,
+    "s28": 0.2503734976053238,
+    "s29": 0.29141266644001007,
+    "s30": 0.27046604454517365,
+    "s31": 0.28357836604118347,
+    "s32": 0.26397542655467987
+   },
+   "style_margin": {
+    "s09": 0.1388128697872162,
+    "s10": 0.08394068479537964,
+    "s11": 0.11088258028030396,
+    "s12": 0.052504897117614746,
+    "s13": 0.014467000961303711,
+    "s14": 0.09353682398796082,
+    "s15": 0.14574569463729858,
+    "s16": 0.038215696811676025,
+    "s25": -0.0009098052978515625,
+    "s26": 0.0216444730758667,
+    "s27": 0.09090486168861389,
+    "s28": 0.09645318984985352,
+    "s29": 0.038307249546051025,
+    "s30": 0.09987959265708923,
+    "s31": 0.1360868513584137,
+    "s32": 0.09180480241775513
+   },
+   "max_train_dino": {
+    "s09": 0.6474601328372955,
+    "s10": 0.6585422456264496,
+    "s11": 0.7035301327705383,
+    "s12": 0.7422161102294922,
+    "s13": 0.5694360435009003,
+    "s14": 0.7013448476791382,
+    "s15": 0.7469397485256195,
+    "s16": 0.7228198349475861,
+    "s25": 0.5157614946365356,
+    "s26": 0.6672860682010651,
+    "s27": 0.7936733365058899,
+    "s28": 0.7091211378574371,
+    "s29": 0.7050303518772125,
+    "s30": 0.7046457529067993,
+    "s31": 0.7319980263710022,
+    "s32": 0.6435795724391937
+   }
+  }
+ },
+ "items": [
+  {
+   "scene_id": "s09",
+   "condition": "c2_template",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c2_template@rrv_v1/dev/s09_c2_template_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, young woman in a red saree with a gold border, the young princess sitting alone under a tree in the garden grove, sorrowful, the garden quiet at dusk, quiet garden grove, flowering trees, layered pearl necklaces, gold bangles, oil painting, canvas texture, classical indian art",
+   "checklist": 0.8946124116579691,
+   "checklist_detail": {
+    "c1": 0.8760089874267578,
+    "c2": 0.9475424885749817,
+    "c3": 0.9634696245193481,
+    "c4": 0.9899427890777588,
+    "c5": 0.49758392572402954
+   },
+   "clip_raw": 0.3118206858634949,
+   "style_margin": 0.1182968020439148,
+   "max_train_dino": 0.5793197751045227
+  },
+  {
+   "scene_id": "s09",
+   "condition": "c2_template",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c2_template@rrv_v1/dev/s09_c2_template_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, young woman in a red saree with a gold border, the young princess sitting alone under a tree in the garden grove, sorrowful, the garden quiet at dusk, quiet garden grove, flowering trees, layered pearl necklaces, gold bangles, oil painting, canvas texture, classical indian art",
+   "checklist": 0.8815894458029006,
+   "checklist_detail": {
+    "c1": 0.8888845443725586,
+    "c2": 0.9877678751945496,
+    "c3": 0.9547771215438843,
+    "c4": 0.977532148361206,
+    "c5": 0.31638163328170776
+   },
+   "clip_raw": 0.30253806710243225,
+   "style_margin": 0.15932893753051758,
+   "max_train_dino": 0.7156004905700684
+  },
+  {
+   "scene_id": "s10",
+   "condition": "c2_template",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c2_template@rrv_v1/dev/s10_c2_template_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, tall warrior in shining golden armour, the warrior in golden armour standing proudly with his bow at sunrise, golden armour shining, large gold earrings, holding a bow, oil painting, canvas texture, classical indian art",
+   "checklist": 0.6100195580058627,
+   "checklist_detail": {
+    "c1": 0.23400026559829712,
+    "c2": 0.8090161681175232,
+    "c3": 0.4694485366344452,
+    "c4": 0.787259578704834,
+    "c5": 0.8907269239425659
+   },
+   "clip_raw": 0.2264138013124466,
+   "style_margin": 0.07521814107894897,
+   "max_train_dino": 0.6758332252502441
+  },
+  {
+   "scene_id": "s10",
+   "condition": "c2_template",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c2_template@rrv_v1/dev/s10_c2_template_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, tall warrior in shining golden armour, the warrior in golden armour standing proudly with his bow at sunrise, golden armour shining, large gold earrings, holding a bow, oil painting, canvas texture, classical indian art",
+   "checklist": 0.5391393982701831,
+   "checklist_detail": {
+    "c1": 0.8597810864448547,
+    "c2": 0.5591485500335693,
+    "c3": 0.1103171780705452,
+    "c4": 0.6021644473075867,
+    "c5": 0.5894320607185364
+   },
+   "clip_raw": 0.22502340376377106,
+   "style_margin": 0.0926632285118103,
+   "max_train_dino": 0.641251266002655
+  },
+  {
+   "scene_id": "s11",
+   "condition": "c2_template",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c2_template@rrv_v1/dev/s11_c2_template_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, crowned young warrior in warrior attire, young woman in a red saree with gold jewelry, the young warrior and the young bride slipping away together through the palace garden, she holding his arm and looking back nervously, pillared royal hall, carved stone columns, long bow, oil painting, canvas texture, classical indian art",
+   "checklist": 0.6622875791508704,
+   "checklist_detail": {
+    "c1": 0.7747349143028259,
+    "c2": 0.7282061576843262,
+    "c3": 0.6435633897781372,
+    "c4": 0.9757106304168701,
+    "c5": 0.02958107925951481
+   },
+   "clip_raw": 0.28804218769073486,
+   "style_margin": 0.10577809810638428,
+   "max_train_dino": 0.6878545880317688
+  },
+  {
+   "scene_id": "s11",
+   "condition": "c2_template",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c2_template@rrv_v1/dev/s11_c2_template_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, crowned young warrior in warrior attire, young woman in a red saree with gold jewelry, the young warrior and the young bride slipping away together through the palace garden, she holding his arm and looking back nervously, pillared royal hall, carved stone columns, long bow, oil painting, canvas texture, classical indian art",
+   "checklist": 0.4854528568685055,
+   "checklist_detail": {
+    "c1": 0.41885706782341003,
+    "c2": 0.168953076004982,
+    "c3": 0.4915379285812378,
+    "c4": 0.9944527745246887,
+    "c5": 0.7304739356040955
+   },
+   "clip_raw": 0.2651735544204712,
+   "style_margin": 0.11598706245422363,
+   "max_train_dino": 0.7192056775093079
+  },
+  {
+   "scene_id": "s12",
+   "condition": "c2_template",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c2_template@rrv_v1/dev/s12_c2_template_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, monkey-faced figure, blue-skinned crowned man, the monkey-faced devotee kneeling before the blue-skinned prince and offering him the young princess's ring, the blue-skinned prince reaching out to take it, soft warm glow, serene faces, white beard, oil painting, canvas texture, classical indian art",
+   "checklist": 0.7915707429250082,
+   "checklist_detail": {
+    "c1": 0.7280460596084595,
+    "c2": 0.9504804611206055,
+    "c3": 0.583113431930542,
+    "c4": 0.9604546427726746,
+    "c5": 0.6799474954605103
+   },
+   "clip_raw": 0.2833954393863678,
+   "style_margin": 0.08555132150650024,
+   "max_train_dino": 0.7590682506561279
+  },
+  {
+   "scene_id": "s12",
+   "condition": "c2_template",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c2_template@rrv_v1/dev/s12_c2_template_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, monkey-faced figure, blue-skinned crowned man, the monkey-faced devotee kneeling before the blue-skinned prince and offering him the young princess's ring, the blue-skinned prince reaching out to take it, soft warm glow, serene faces, white beard, oil painting, canvas texture, classical indian art",
+   "checklist": 0.7534006966484917,
+   "checklist_detail": {
+    "c1": 0.6585582494735718,
+    "c2": 0.8937646746635437,
+    "c3": 0.8261380195617676,
+    "c4": 0.7672541737556458,
+    "c5": 0.48917603492736816
+   },
+   "clip_raw": 0.2926548421382904,
+   "style_margin": 0.019458472728729248,
+   "max_train_dino": 0.7253639698028564
+  },
+  {
+   "scene_id": "s13",
+   "condition": "c2_template",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c2_template@rrv_v1/dev/s13_c2_template_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, blue-skinned man, proud king in a jeweled crown and rich robes, the blue-skinned figure as the peace envoy standing in the proud crowned king's royal court, speaking to the king on his throne while ministers and courtiers watch, pillared royal hall, oil painting, canvas texture, classical indian art",
+   "checklist": 0.8410857915878296,
+   "checklist_detail": {
+    "c1": 0.8616546392440796,
+    "c2": 0.9312555193901062,
+    "c3": 0.770628035068512,
+    "c4": 0.9801028370857239,
+    "c5": 0.48249006271362305
+   },
+   "clip_raw": 0.27324846386909485,
+   "style_margin": 0.028948426246643066,
+   "max_train_dino": 0.5759758353233337
+  },
+  {
+   "scene_id": "s13",
+   "condition": "c2_template",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c2_template@rrv_v1/dev/s13_c2_template_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, blue-skinned man, proud king in a jeweled crown and rich robes, the blue-skinned figure as the peace envoy standing in the proud crowned king's royal court, speaking to the king on his throne while ministers and courtiers watch, pillared royal hall, oil painting, canvas texture, classical indian art",
+   "checklist": 0.8503809836175706,
+   "checklist_detail": {
+    "c1": 0.8130453824996948,
+    "c2": 0.9633125066757202,
+    "c3": 0.7416700124740601,
+    "c4": 0.9876319766044617,
+    "c5": 0.6421090960502625
+   },
+   "clip_raw": 0.2985939085483551,
+   "style_margin": -1.4424324035644531e-05,
+   "max_train_dino": 0.5628962516784668
+  },
+  {
+   "scene_id": "s14",
+   "condition": "c2_template",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c2_template@rrv_v1/dev/s14_c2_template_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, blue-skinned crowned man, young woman in a red saree with a gold border, young crowned man in white, the blue-skinned prince, the young princess and the young prince leaving for exile on foot through the forest, the people of the royal city weeping behind them, oil painting, canvas texture, classical indian art",
+   "checklist": 0.8165999170806673,
+   "checklist_detail": {
+    "c1": 0.9324851036071777,
+    "c2": 0.8061888813972473,
+    "c3": 0.9049027562141418,
+    "c4": 0.9535143971443176,
+    "c5": 0.1552169770002365
+   },
+   "clip_raw": 0.29562798142433167,
+   "style_margin": 0.09496420621871948,
+   "max_train_dino": 0.7073103189468384
+  },
+  {
+   "scene_id": "s14",
+   "condition": "c2_template",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c2_template@rrv_v1/dev/s14_c2_template_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, blue-skinned crowned man, young woman in a red saree with a gold border, young crowned man in white, the blue-skinned prince, the young princess and the young prince leaving for exile on foot through the forest, the people of the royal city weeping behind them, oil painting, canvas texture, classical indian art",
+   "checklist": 0.8285922010739645,
+   "checklist_detail": {
+    "c1": 0.8962907195091248,
+    "c2": 0.8035913109779358,
+    "c3": 0.8422802090644836,
+    "c4": 0.8451935052871704,
+    "c5": 0.6826183199882507
+   },
+   "clip_raw": 0.263425350189209,
+   "style_margin": 0.09210944175720215,
+   "max_train_dino": 0.695379376411438
+  },
+  {
+   "scene_id": "s15",
+   "condition": "c2_template",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c2_template@rrv_v1/dev/s15_c2_template_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, woman in a red saree kneeling, pale translucent standing figure holding a staff, young man lying lifeless on the ground, the devoted wife pleading with the pale figure of death for her husband's life, forest clearing, thatched hut, tall trees, one hand raised, oil painting, canvas texture, classical indian art",
+   "checklist": 0.5381233403459191,
+   "checklist_detail": {
+    "c1": 0.9070873856544495,
+    "c2": 0.044038478285074234,
+    "c3": 0.4583193361759186,
+    "c4": 0.9869956374168396,
+    "c5": 0.4991006851196289
+   },
+   "clip_raw": 0.28209131956100464,
+   "style_margin": 0.15176576375961304,
+   "max_train_dino": 0.7348310947418213
+  },
+  {
+   "scene_id": "s15",
+   "condition": "c2_template",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c2_template@rrv_v1/dev/s15_c2_template_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, woman in a red saree kneeling, pale translucent standing figure holding a staff, young man lying lifeless on the ground, the devoted wife pleading with the pale figure of death for her husband's life, forest clearing, thatched hut, tall trees, one hand raised, oil painting, canvas texture, classical indian art",
+   "checklist": 0.5754760652780533,
+   "checklist_detail": {
+    "c1": 0.7559278011322021,
+    "c2": 0.42323869466781616,
+    "c3": 0.35066890716552734,
+    "c4": 0.9869944453239441,
+    "c5": 0.5571432709693909
+   },
+   "clip_raw": 0.2691548764705658,
+   "style_margin": 0.13972562551498413,
+   "max_train_dino": 0.7590484023094177
+  },
+  {
+   "scene_id": "s16",
+   "condition": "c2_template",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c2_template@rrv_v1/dev/s16_c2_template_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, crowned young warrior in warrior attire, blue-skinned man, in the middle of the great battel at the battlefield the young warrior drops his bow and sits down in his chariot, he cant bring himself to fight his own family, armies with banners and elephants everywhere, open battlefield, oil painting, canvas texture, classical indian art",
+   "checklist": 0.21771725018819174,
+   "checklist_detail": {
+    "c1": 0.06780977547168732,
+    "c2": 0.14876481890678406,
+    "c3": 0.2577095925807953,
+    "c4": 0.16959141194820404,
+    "c5": 0.6717040538787842
+   },
+   "clip_raw": 0.23644965887069702,
+   "style_margin": 0.036351680755615234,
+   "max_train_dino": 0.7768673300743103
+  },
+  {
+   "scene_id": "s16",
+   "condition": "c2_template",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c2_template@rrv_v1/dev/s16_c2_template_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, crowned young warrior in warrior attire, blue-skinned man, in the middle of the great battel at the battlefield the young warrior drops his bow and sits down in his chariot, he cant bring himself to fight his own family, armies with banners and elephants everywhere, open battlefield, oil painting, canvas texture, classical indian art",
+   "checklist": 0.1499541728860802,
+   "checklist_detail": {
+    "c1": 0.03164289519190788,
+    "c2": 0.04449958726763725,
+    "c3": 0.19539549946784973,
+    "c4": 0.02009565196931362,
+    "c5": 0.7663202881813049
+   },
+   "clip_raw": 0.20214998722076416,
+   "style_margin": 0.040079712867736816,
+   "max_train_dino": 0.6687723398208618
+  },
+  {
+   "scene_id": "s25",
+   "condition": "c2_template",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c2_template@rrv_v1/dev/s25_c2_template_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, monkey-faced figure, the monkey-faced devotee flying through the sky carrying a mountain of healing herbs, white beard, gold crown, red garment, mace over shoulder, oil painting, canvas texture, classical indian art",
+   "checklist": 0.4801953930873424,
+   "checklist_detail": {
+    "c1": 0.7032625675201416,
+    "c2": 0.011499342508614063,
+    "c3": 0.978450357913971,
+    "c4": 0.27290815114974976,
+    "c5": 0.18223045766353607
+   },
+   "clip_raw": 0.2754634618759155,
+   "style_margin": 0.014537394046783447,
+   "max_train_dino": 0.5655782222747803
+  },
+  {
+   "scene_id": "s25",
+   "condition": "c2_template",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c2_template@rrv_v1/dev/s25_c2_template_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, monkey-faced figure, the monkey-faced devotee flying through the sky carrying a mountain of healing herbs, white beard, gold crown, red garment, mace over shoulder, oil painting, canvas texture, classical indian art",
+   "checklist": 0.5357176591642201,
+   "checklist_detail": {
+    "c1": 0.8107693195343018,
+    "c2": 0.021343054249882698,
+    "c3": 0.9669691324234009,
+    "c4": 0.40440359711647034,
+    "c5": 0.28317466378211975
+   },
+   "clip_raw": 0.2390189915895462,
+   "style_margin": -0.016357004642486572,
+   "max_train_dino": 0.465944766998291
+  },
+  {
+   "scene_id": "s26",
+   "condition": "c2_template",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c2_template@rrv_v1/dev/s26_c2_template_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, blue-skinned man, crowned young warrior in warrior attire, the blue-skinned figure as the charioteer, turning to counsel a hesitant young warrior who has lowered his bow, in their chariot just before the battle begins, open battlefield, chariots and banners, oil painting, canvas texture, classical indian art",
+   "checklist": 0.41770273968577387,
+   "checklist_detail": {
+    "c1": 0.4341805875301361,
+    "c2": 0.06727449595928192,
+    "c3": 0.34274208545684814,
+    "c4": 0.7098420262336731,
+    "c5": 0.09138210862874985,
+    "c6": 0.9775668978691101
+   },
+   "clip_raw": 0.2786535322666168,
+   "style_margin": 0.007351040840148926,
+   "max_train_dino": 0.6759547591209412
+  },
+  {
+   "scene_id": "s26",
+   "condition": "c2_template",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c2_template@rrv_v1/dev/s26_c2_template_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, blue-skinned man, crowned young warrior in warrior attire, the blue-skinned figure as the charioteer, turning to counsel a hesitant young warrior who has lowered his bow, in their chariot just before the battle begins, open battlefield, chariots and banners, oil painting, canvas texture, classical indian art",
+   "checklist": 0.5936280727386475,
+   "checklist_detail": {
+    "c1": 0.4845100939273834,
+    "c2": 0.4515579342842102,
+    "c3": 0.32194361090660095,
+    "c4": 0.9763402342796326,
+    "c5": 0.5778205990791321,
+    "c6": 0.8897563815116882
+   },
+   "clip_raw": 0.26674753427505493,
+   "style_margin": 0.03593790531158447,
+   "max_train_dino": 0.658617377281189
+  },
+  {
+   "scene_id": "s27",
+   "condition": "c2_template",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c2_template@rrv_v1/dev/s27_c2_template_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, young mother in a maroon saree, blue-skinned man, the young mother scolding little blue-skinned figure, his face smeared with butter and a broken pot lying on the floor beside them, gold necklaces, tall jeweled crown with a peacock feather, oil painting, canvas texture, classical indian art",
+   "checklist": 0.6517446264624596,
+   "checklist_detail": {
+    "c1": 0.6371750235557556,
+    "c2": 0.7047121524810791,
+    "c3": 0.49203988909721375,
+    "c4": 0.9921969175338745,
+    "c5": 0.5539059638977051
+   },
+   "clip_raw": 0.2537347078323364,
+   "style_margin": 0.1131700873374939,
+   "max_train_dino": 0.7571601867675781
+  },
+  {
+   "scene_id": "s27",
+   "condition": "c2_template",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c2_template@rrv_v1/dev/s27_c2_template_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, young mother in a maroon saree, blue-skinned man, the young mother scolding little blue-skinned figure, his face smeared with butter and a broken pot lying on the floor beside them, gold necklaces, tall jeweled crown with a peacock feather, oil painting, canvas texture, classical indian art",
+   "checklist": 0.49357281252741814,
+   "checklist_detail": {
+    "c1": 0.15620918571949005,
+    "c2": 0.4645751118659973,
+    "c3": 0.5172575116157532,
+    "c4": 0.9937171936035156,
+    "c5": 0.6787816882133484
+   },
+   "clip_raw": 0.21474845707416534,
+   "style_margin": 0.06863963603973389,
+   "max_train_dino": 0.8301864862442017
+  },
+  {
+   "scene_id": "s28",
+   "condition": "c2_template",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c2_template@rrv_v1/dev/s28_c2_template_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, blue-skinned crowned man, young woman in a red saree with a gold border, young crowned man in white, crowned man in royal dress, monkey-faced figure, The coronation of the blue-skinned prince and the young princess in the royal city, young prince, standing, oil painting, canvas texture, classical indian art",
+   "checklist": 0.4843849927186966,
+   "checklist_detail": {
+    "c1": 0.848024308681488,
+    "c2": 0.06286276876926422,
+    "c3": 0.14261044561862946,
+    "c4": 0.7529958486557007,
+    "c5": 0.3907945454120636,
+    "c6": 0.8400686383247375
+   },
+   "clip_raw": 0.25304222106933594,
+   "style_margin": 0.08741015195846558,
+   "max_train_dino": 0.6991795301437378
+  },
+  {
+   "scene_id": "s28",
+   "condition": "c2_template",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c2_template@rrv_v1/dev/s28_c2_template_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, blue-skinned crowned man, young woman in a red saree with a gold border, young crowned man in white, crowned man in royal dress, monkey-faced figure, The coronation of the blue-skinned prince and the young princess in the royal city, young prince, standing, oil painting, canvas texture, classical indian art",
+   "checklist": 0.4995003014802933,
+   "checklist_detail": {
+    "c1": 0.6372054219245911,
+    "c2": 0.23724961280822754,
+    "c3": 0.10547082126140594,
+    "c4": 0.834296703338623,
+    "c5": 0.514194905757904,
+    "c6": 0.8523629903793335
+   },
+   "clip_raw": 0.24770477414131165,
+   "style_margin": 0.10549622774124146,
+   "max_train_dino": 0.7190627455711365
+  },
+  {
+   "scene_id": "s29",
+   "condition": "c2_template",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c2_template@rrv_v1/dev/s29_c2_template_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, old warrior with a long white beard, five crowned princes in royal attire, blue-skinned man, the old warrior lying on a bed of arrows on the field of the battlefield while the five crowned princes and the blue-skinned figure gather around him at dusk, open battlefield, oil painting, canvas texture, classical indian art",
+   "checklist": 0.4281796105206013,
+   "checklist_detail": {
+    "c1": 0.3121050000190735,
+    "c2": 0.22207345068454742,
+    "c3": 0.48402565717697144,
+    "c4": 0.8693112134933472,
+    "c5": 0.5197174549102783
+   },
+   "clip_raw": 0.27751535177230835,
+   "style_margin": 0.04357022047042847,
+   "max_train_dino": 0.7264772057533264
+  },
+  {
+   "scene_id": "s29",
+   "condition": "c2_template",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c2_template@rrv_v1/dev/s29_c2_template_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, old warrior with a long white beard, five crowned princes in royal attire, blue-skinned man, the old warrior lying on a bed of arrows on the field of the battlefield while the five crowned princes and the blue-skinned figure gather around him at dusk, open battlefield, oil painting, canvas texture, classical indian art",
+   "checklist": 0.634776160120964,
+   "checklist_detail": {
+    "c1": 0.895159125328064,
+    "c2": 0.5160929560661316,
+    "c3": 0.5762853622436523,
+    "c4": 0.5254510641098022,
+    "c5": 0.5776833295822144
+   },
+   "clip_raw": 0.3053099811077118,
+   "style_margin": 0.033044278621673584,
+   "max_train_dino": 0.6835834980010986
+  },
+  {
+   "scene_id": "s30",
+   "condition": "c2_template",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c2_template@rrv_v1/dev/s30_c2_template_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, woman in a dark blue saree, crowned young warrior in warrior attire, At the dark-haired princess's swayamvara, the young warrior, dressed as a poor brahmin, while the dark-haired princess waits holding a garland, pillared royal hall, gold jewelry, oil painting, canvas texture, classical indian art",
+   "checklist": 0.36113887859715355,
+   "checklist_detail": {
+    "c1": 0.43914926052093506,
+    "c2": 0.11820625513792038,
+    "c3": 0.310118705034256,
+    "c4": 0.2950981855392456,
+    "c5": 0.25579363107681274,
+    "c6": 0.9644096493721008
+   },
+   "clip_raw": 0.268322229385376,
+   "style_margin": 0.1065835952758789,
+   "max_train_dino": 0.7232959270477295
+  },
+  {
+   "scene_id": "s30",
+   "condition": "c2_template",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c2_template@rrv_v1/dev/s30_c2_template_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, woman in a dark blue saree, crowned young warrior in warrior attire, At the dark-haired princess's swayamvara, the young warrior, dressed as a poor brahmin, while the dark-haired princess waits holding a garland, pillared royal hall, gold jewelry, oil painting, canvas texture, classical indian art",
+   "checklist": 0.33030757639143205,
+   "checklist_detail": {
+    "c1": 0.24948079884052277,
+    "c2": 0.09719758480787277,
+    "c3": 0.42045921087265015,
+    "c4": 0.24598459899425507,
+    "c5": 0.28237587213516235,
+    "c6": 0.9101325273513794
+   },
+   "clip_raw": 0.2726098597049713,
+   "style_margin": 0.09317559003829956,
+   "max_train_dino": 0.6859955787658691
+  },
+  {
+   "scene_id": "s31",
+   "condition": "c2_template",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c2_template@rrv_v1/dev/s31_c2_template_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, old woman in a plain white saree, blue-skinned crowned man, young crowned man in white, old hermit woman offerring berries to the blue-skinned prince and the young prince outside her little hut in the forrest, forest clearing, thatched hut, tall trees, oil painting, canvas texture, classical indian art",
+   "checklist": 0.5010183248668909,
+   "checklist_detail": {
+    "c1": 0.8642897009849548,
+    "c2": 0.5744413733482361,
+    "c3": 0.14245612919330597,
+    "c4": 0.1283169835805893,
+    "c5": 0.7174552083015442
+   },
+   "clip_raw": 0.28092101216316223,
+   "style_margin": 0.13213670253753662,
+   "max_train_dino": 0.7249771356582642
+  },
+  {
+   "scene_id": "s31",
+   "condition": "c2_template",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c2_template@rrv_v1/dev/s31_c2_template_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, old woman in a plain white saree, blue-skinned crowned man, young crowned man in white, old hermit woman offerring berries to the blue-skinned prince and the young prince outside her little hut in the forrest, forest clearing, thatched hut, tall trees, oil painting, canvas texture, classical indian art",
+   "checklist": 0.3624310363084078,
+   "checklist_detail": {
+    "c1": 0.41210493445396423,
+    "c2": 0.17924697697162628,
+    "c3": 0.4044991731643677,
+    "c4": 0.24680094420909882,
+    "c5": 0.6609451770782471
+   },
+   "clip_raw": 0.2862357199192047,
+   "style_margin": 0.14003700017929077,
+   "max_train_dino": 0.7390189170837402
+  },
+  {
+   "scene_id": "s32",
+   "condition": "c2_template",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c2_template@rrv_v1/dev/s32_c2_template_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, ok so i dont really remember the story, its from an old picture my grandmother kept in her pooja room, there is an old king, very tired and sad, lying on the floor of a dark room in his pallace, his crown fallen off and lying next to him, oil painting, canvas texture, classical indian art",
+   "checklist": 0.39178861015372807,
+   "checklist_detail": {
+    "c1": 0.6336910128593445,
+    "c2": 0.13230179250240326,
+    "c3": 0.199571430683136,
+    "c4": 0.18492470681667328,
+    "c5": 0.43836909532546997,
+    "c6": 0.9716752171516418
+   },
+   "clip_raw": 0.25820061564445496,
+   "style_margin": 0.09490591287612915,
+   "max_train_dino": 0.6772637963294983
+  },
+  {
+   "scene_id": "s32",
+   "condition": "c2_template",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c2_template@rrv_v1/dev/s32_c2_template_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, ok so i dont really remember the story, its from an old picture my grandmother kept in her pooja room, there is an old king, very tired and sad, lying on the floor of a dark room in his pallace, his crown fallen off and lying next to him, oil painting, canvas texture, classical indian art",
+   "checklist": 0.623895655075709,
+   "checklist_detail": {
+    "c1": 0.6657722592353821,
+    "c2": 0.5070458054542542,
+    "c3": 0.4812362492084503,
+    "c4": 0.4616040289402008,
+    "c5": 0.8635645508766174,
+    "c6": 0.9817836880683899
+   },
+   "clip_raw": 0.2697502374649048,
+   "style_margin": 0.0887036919593811,
+   "max_train_dino": 0.6098953485488892
+  }
+ ]
+}
