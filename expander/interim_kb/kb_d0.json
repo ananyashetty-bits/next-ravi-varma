@@ -1,0 +1,257 @@
+{
+  "version": "d-kb0",
+  "_note": "INTERIM KB written by D because C's KB (kb/kb.json) was not available. Covers the 18 characters of the 16 dev scenes on main. Not C's KB: every result made with it carries kb_version d-kb0 and is reported as a deviation. Visual phrases reuse train_v1 caption wording (what the LoRA learned); source.ref = training image stems from m2_training/dataset/train_v1 with their M1 scene_metadata. role = short name-free noun phrase the parser puts in place of the name in the action text. status: verified = backed by at least one training painting of that character; unverified = no training painting, wording from a text reference only, needs C's review.",
+  "characters": {
+    "rama": {
+      "canonical": "Rama",
+      "aliases": ["Ram", "Sri Rama", "Ramachandra", "Raghava"],
+      "epic": "Ramayana",
+      "role": "blue-skinned prince",
+      "visual": "blue-skinned crowned man, bare-chested with a topknot, long bow and arrows",
+      "coverage_n": 7,
+      "coverage": "high",
+      "source": {"type": "images", "ref": ["varma_ramapanchayan_a13", "varma_rama_a36", "varma_ram_a16", "varma_rama_pattabhishekham_c07", "varma_ram_laxman_b19", "varma_rama_sita_lakshmana_sarayu_d54", "varma_ramas_archery_training_d39"]},
+      "status": "verified"
+    },
+    "sita": {
+      "canonical": "Sita",
+      "aliases": ["Seeta", "Seetha", "Janaki", "Vaidehi"],
+      "epic": "Ramayana",
+      "role": "young princess",
+      "visual": "young woman in a red saree with a gold border, layered pearl necklaces, gold bangles",
+      "coverage_n": 10,
+      "coverage": "high",
+      "source": {"type": "images", "ref": ["varma_sita_golden_deer_b30", "varma_sita_abandoned_lamenting_d51", "varma_ramapanchayan_a13", "varma_rama_sita_lakshmana_sarayu_d54", "varma_sita_a14"]},
+      "status": "verified"
+    },
+    "lakshmana": {
+      "canonical": "Lakshmana",
+      "aliases": ["Laxman", "Lakshman", "Laxmana", "Saumitri"],
+      "epic": "Ramayana",
+      "role": "young prince",
+      "visual": "young crowned man in white, bow and quiver",
+      "coverage_n": 5,
+      "coverage": "high",
+      "source": {"type": "images", "ref": ["varma_ram_laxman_b19", "varma_rama_sita_lakshmana_sarayu_d54", "varma_ramas_archery_training_d39", "varma_ramapanchayan_a13", "varma_bharata_bhet_d26"]},
+      "status": "verified"
+    },
+    "bharata": {
+      "canonical": "Bharata",
+      "aliases": ["Bharat"],
+      "epic": "Ramayana",
+      "role": "crowned younger brother",
+      "visual": "crowned man in royal dress, folded hands",
+      "coverage_n": 2,
+      "coverage": "low",
+      "source": {"type": "images", "ref": ["varma_ramapanchayan_a13", "varma_bharata_bhet_d26"]},
+      "status": "verified"
+    },
+    "shatrughna": {
+      "canonical": "Shatrughna",
+      "aliases": ["Shatrughan", "Satrughna"],
+      "epic": "Ramayana",
+      "role": "youngest crowned brother",
+      "visual": "crowned man in royal dress, standing",
+      "coverage_n": 1,
+      "coverage": "low",
+      "source": {"type": "images", "ref": ["varma_ramapanchayan_a13"]},
+      "status": "verified"
+    },
+    "hanuman": {
+      "canonical": "Hanuman",
+      "aliases": ["Maruti", "Anjaneya", "Bajrangbali", "Hanumaan"],
+      "epic": "Ramayana",
+      "role": "monkey-faced devotee",
+      "visual": "monkey-faced figure, white beard, gold crown, red garment, mace over shoulder",
+      "coverage_n": 4,
+      "coverage": "high",
+      "source": {"type": "images", "ref": ["varma_maruti_hanuman_b32", "varma_ramapanchayan_a13", "varma_rama_pattabhishekham_c07", "varma_bharata_bhet_d26"]},
+      "status": "verified"
+    },
+    "shabari": {
+      "canonical": "Shabari",
+      "aliases": ["Shabri", "Sabari", "Sabri"],
+      "epic": "Ramayana",
+      "role": "hermit woman",
+      "visual": "old woman in a plain white saree, grey hair, basket of berries",
+      "coverage_n": 0,
+      "coverage": "none",
+      "source": {"type": "text", "ref": ["Valmiki Ramayana, Aranya Kanda (Shabari's hermitage): an aged ascetic woman who offers fruits"]},
+      "status": "unverified"
+    },
+    "krishna": {
+      "canonical": "Krishna",
+      "aliases": ["Krishn", "Krsna", "Govinda", "Gopala", "Kanha", "Kanhaiya"],
+      "epic": "Mahabharata",
+      "role": "blue-skinned figure",
+      "visual": "blue-skinned man, tall jeweled crown with a peacock feather, yellow dhoti, flower garlands",
+      "coverage_n": 9,
+      "coverage": "high",
+      "source": {"type": "images", "ref": ["varma_muralidhara_c12", "varma_yashoda_krishna_b17", "varma_radha_krishna_banyan_d32", "varma_krishna_phugdi_d35", "varma_krishna_envoy_a46", "varma_krishna_kaliya_c05", "varma_yashoda_krishna_c16", "varma_killing_of_kamsa_d40", "varma_krishna_freeing_parents_c20"]},
+      "status": "verified",
+      "notes": "As a child (e.g. with his mother): small blue-skinned child in a crown with a peacock feather (varma_yashoda_krishna_b17, varma_krishna_kaliya_c05)."
+    },
+    "yashoda": {
+      "canonical": "Yashoda",
+      "aliases": ["Yashodha", "Jashoda", "Yasoda"],
+      "epic": "Puranic",
+      "role": "young mother",
+      "visual": "young mother in a maroon saree, gold necklaces",
+      "coverage_n": 2,
+      "coverage": "low",
+      "source": {"type": "images", "ref": ["varma_yashoda_krishna_b17", "varma_yashoda_krishna_c16"]},
+      "status": "verified"
+    },
+    "arjuna": {
+      "canonical": "Arjuna",
+      "aliases": ["Arjun", "Partha", "Dhananjaya"],
+      "epic": "Mahabharata",
+      "role": "young warrior",
+      "visual": "crowned young warrior in warrior attire, long bow, quiver of arrows",
+      "coverage_n": 2,
+      "coverage": "low",
+      "source": {"type": "images", "ref": ["varma_arjuna_subhadra_b03", "varma_draupadi_pandavas_b07"]},
+      "status": "verified"
+    },
+    "subhadra": {
+      "canonical": "Subhadra",
+      "aliases": ["Subadra"],
+      "epic": "Mahabharata",
+      "role": "young bride",
+      "visual": "young woman in a red saree with gold jewelry",
+      "coverage_n": 1,
+      "coverage": "low",
+      "source": {"type": "images", "ref": ["varma_arjuna_subhadra_b03"]},
+      "status": "verified"
+    },
+    "draupadi": {
+      "canonical": "Draupadi",
+      "aliases": ["Panchali", "Sairandhri", "Drupadi", "Draupati"],
+      "epic": "Mahabharata",
+      "role": "dark-haired princess",
+      "visual": "woman in a dark blue saree, gold jewelry, long black hair",
+      "coverage_n": 6,
+      "coverage": "high",
+      "source": {"type": "images", "ref": ["varma_sairandhri_b10", "varma_keechaka_sairandhri_b05", "varma_draupadi_pandavas_b07", "varma_draupadi_simhika_a61", "varma_draupadi_humiliated_a39", "varma_draupadi_sudeshna_c14"]},
+      "status": "verified"
+    },
+    "duryodhana": {
+      "canonical": "Duryodhana",
+      "aliases": ["Duryodhan", "Suyodhana"],
+      "epic": "Mahabharata",
+      "role": "proud crowned king",
+      "visual": "proud king in a jeweled crown and rich robes, seated on a throne",
+      "coverage_n": 1,
+      "coverage": "low",
+      "source": {"type": "images", "ref": ["varma_krishna_envoy_a46"]},
+      "status": "verified",
+      "notes": "In varma_krishna_envoy_a46 the caption does not say which figure is this character; the wording is generic royal attire. C to review."
+    },
+    "bhishma": {
+      "canonical": "Bhishma",
+      "aliases": ["Bheeshma", "Bhisma", "Bhishm", "Devavrata", "Gangeya"],
+      "epic": "Mahabharata",
+      "role": "old warrior",
+      "visual": "old warrior with a long white beard, white garments",
+      "coverage_n": 1,
+      "coverage": "low",
+      "source": {"type": "images", "ref": ["varma_bheeshma_oath_a50"]},
+      "status": "verified",
+      "notes": "The training painting shows him young (long-haired man in a white tunic, his vow); the white beard of old age comes from the Mahabharata text, not from a painting."
+    },
+    "karna": {
+      "canonical": "Karna",
+      "aliases": ["Radheya", "Vasusena", "Angaraja"],
+      "epic": "Mahabharata",
+      "role": "warrior in golden armour",
+      "visual": "tall warrior in shining golden armour, large gold earrings, holding a bow",
+      "coverage_n": 0,
+      "coverage": "none",
+      "source": {"type": "text", "ref": ["Mahabharata, Adi Parva: born with natural golden armour (kavacha) and earrings (kundala)"]},
+      "status": "unverified"
+    },
+    "savitri": {
+      "canonical": "Savitri",
+      "aliases": ["Savithri", "Saavitri"],
+      "epic": "Mahabharata",
+      "role": "devoted wife",
+      "visual": "woman in a red saree kneeling, one hand raised",
+      "coverage_n": 1,
+      "coverage": "low",
+      "source": {"type": "images", "ref": ["varma_savitri_c24"]},
+      "status": "verified"
+    },
+    "satyavan": {
+      "canonical": "Satyavan",
+      "aliases": ["Satyavaan", "Sathyavan"],
+      "epic": "Mahabharata",
+      "role": "young husband",
+      "visual": "young man lying lifeless on the ground",
+      "coverage_n": 1,
+      "coverage": "low",
+      "source": {"type": "images", "ref": ["varma_savitri_c24"]},
+      "status": "verified"
+    },
+    "yama": {
+      "canonical": "Yama",
+      "aliases": ["Yamaraja", "Yamraj", "Dharmaraja"],
+      "epic": "Mahabharata",
+      "role": "pale figure of death",
+      "visual": "pale translucent standing figure holding a staff",
+      "coverage_n": 1,
+      "coverage": "low",
+      "source": {"type": "images", "ref": ["varma_savitri_c24"]},
+      "status": "verified"
+    }
+  },
+  "groups": {
+    "pandavas": {
+      "canonical": "Pandavas",
+      "aliases": ["Pandava brothers", "Pandava", "five Pandavas"],
+      "epic": "Mahabharata",
+      "role": "five crowned princes",
+      "visual": "five crowned princes in royal attire",
+      "coverage": "low",
+      "source": {"type": "images", "ref": ["varma_draupadi_pandavas_b07"]},
+      "status": "verified"
+    }
+  },
+  "settings": {
+    "kurukshetra": {
+      "names": ["Kurukshetra", "Kurukshetr"],
+      "aliases": ["battlefield", "battle", "battel", "armies"],
+      "role": "battlefield",
+      "visual": "open battlefield, chariots and banners, dusty sky"
+    },
+    "ayodhya": {
+      "names": ["Ayodhya"],
+      "aliases": [],
+      "role": "royal city",
+      "visual": "grand royal palace, crowds of courtiers"
+    },
+    "palace": {
+      "names": [],
+      "aliases": ["palace", "pallace", "court", "royal court", "royal hall", "throne room", "throne", "hall", "sabha"],
+      "role": "palace",
+      "visual": "pillared royal hall, carved stone columns"
+    },
+    "garden": {
+      "names": ["Ashoka grove", "Ashoka Vatika"],
+      "aliases": ["garden", "grove"],
+      "role": "garden grove",
+      "visual": "quiet garden grove, flowering trees"
+    },
+    "forest": {
+      "names": [],
+      "aliases": ["forest", "forrest", "hermitage", "ashram", "jungle", "hut"],
+      "role": "forest",
+      "visual": "forest clearing, thatched hut, tall trees"
+    }
+  },
+  "moods": {
+    "grief": "dim dramatic lighting, shadowed faces",
+    "devotion": "soft warm glow, serene faces",
+    "anger": "harsh dramatic light, tense faces",
+    "joy": "bright warm daylight, smiling faces"
+  }
+}
