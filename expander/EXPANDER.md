@@ -2,7 +2,7 @@
 
 `expand(text, scene=None, mode="llm_kb") -> ExpandedPrompt` turns a user's epic-scene sentence into a prompt the M2 model (`rrv_v1`) can render: name-free visual phrases, the trigger first, the style tail last, under the token limit. It runs a **local** instruct LLM (no paid API) with a deterministic template as the fallback.
 
-> **Status (2026-11-04):** the design and all modes are built and tested (`tests/test_expander_*.py`). Measured so far: the T4 smoke test and the **c4** dev expansions on the 16 dev scenes on `main` (`outputs/expansions/c4_llm_nokb_dev.json`). **c2 and c3 run on D's interim KB `d-kb0`** (`expander/interim_kb/`), because C's KB and parser were not available (#21); see the Section D deviations. Everything still marked `TODO(results)` waits for numbers from `outputs/expansions/`, `results/` or B's tables; no number goes in by hand. Contracts referred to: Overview v2 §6 (`config/m3.json`, SceneSpec, ExpandedPrompt, signatures, CLI).
+> **Status (2026-11-04):** the design and all modes are built and tested (`tests/test_expander_*.py`). c2, c3 and c4 are expanded, generated and scored on the 16 dev scenes on `main` (§9); human ratings for c2/c3 are pending. **c2 and c3 run on D's interim KB `d-kb0`** (`expander/interim_kb/`), because C's KB and parser were not available (#21); see the Section D deviations. Everything still marked `TODO(results)` waits for numbers from `outputs/expansions/`, `results/` or B's tables; no number goes in by hand. Contracts referred to: Overview v2 §6 (`config/m3.json`, SceneSpec, ExpandedPrompt, signatures, CLI).
 
 ## 1. Design principle
 
@@ -122,7 +122,36 @@ Settled since Day 1: scene IDs `s25`-`s32` (B, #22); B's scene check uses `expan
 
 ## 9. Ladder results (c2 → c4 → c3)
 
-`TODO(results)`: B's dev table for `c2_template`, `c4_llm_nokb`, `c3_llm_kb` @ `rrv_v1`: human faithfulness, style, quality; checklist judge; `clip_raw`; `style_margin`; paired diffs with 95% CI and win/tie/loss, per tier and seen/unseen. Sources: `results/c{2,3,4}_*@rrv_v1_dev.json`, `eval/EVAL_REPORT.md`. State H-D1/H-D2 outcomes with the pre-registered rule. Held-out rows are added after B's Day-5 run.
+**Judge results, dev (supporting evidence; 16 scenes × seeds 1-2; `rrv_v1` at scale 1.0).** Means from `results/<condition>@rrv_v1_dev.json` (c2/c3 on `main`, #38; c0/c1/c4 on B's `b/score-dev-c0-c1-c4-v2`, pending B's PR):
+
+| Condition | checklist (judge), 95% CI | `style_margin` | `clip_raw` | `max_train_dino` p95 |
+|---|---|---|---|---|
+| `c0_base_raw` | 0.569 | 0.025 | 0.268 | 0.800 |
+| `c1_lora_raw` | 0.576 | 0.093 | 0.264 | 0.805 |
+| `c2_template` (d-kb0) | 0.570 [0.481, 0.659] | 0.078 | 0.268 | 0.767 |
+| `c3_llm_kb` (d-kb0) | 0.520 [0.426, 0.612] | 0.104 | 0.249 | 0.796 |
+| `c4_llm_nokb` | 0.535 [0.453, 0.619] | 0.099 | 0.255 | 0.797 |
+
+Paired over scenes (`eval/stats.paired`, b − a, 95% bootstrap CI, tie band 0.0295 for win/tie/loss):
+
+| a → b | checklist (judge) | `style_margin` |
+|---|---|---|
+| c0 → c1 | +0.007 [−0.060, +0.064], W/T/L 8/4/4 | **+0.069 [+0.046, +0.095]**, 13/3/0 |
+| c2 → c3 (H-D1) | −0.050 [−0.116, +0.011], 5/3/8 | **+0.025 [+0.014, +0.039]**, 4/12/0 |
+| c4 → c3 (H-D2, all scenes) | −0.015 [−0.079, +0.054], 6/3/7 | +0.005 [−0.014, +0.022], 5/9/2 |
+| c4 → c3 (H-D2, tier 4: s15, s31) | −0.119, n = 2 (not resolvable) | — |
+| c1 → c3 | **−0.055 [−0.113, −0.003]**, 4/4/8 | +0.010 [−0.003, +0.026], 2/13/1 |
+| c1 → c2 | −0.006 [−0.045, +0.033], 5/5/6 | −0.015 [−0.033, +0.004], 1/10/5 |
+| c1 → c4 | −0.041 [−0.095, +0.018], 4/2/10 | +0.005 [−0.013, +0.024], 4/10/2 |
+
+All five conditions pass the memorisation guardrail (`max_train_dino` p95 ≤ M2's `mem_flag_dino_p95` 0.85).
+
+**Status of the hypotheses:**
+- **H-D1, H-D2: not decided.** Their primary measure is human faithfulness, and c2/c3 are not rated yet (requested in #17).
+- **On the judge:** no clear difference for H-D1 or H-D2. The H-D2 tier-4 split has 2 scenes.
+- **First reading:** on the judge, expansion did **not** improve faithfulness over raw text with the LoRA (c1 → c3 is slightly negative), while c3 is the most Varma-like condition on `style_margin`.
+
+`TODO(results)`: human faithfulness, style and quality per condition from B's ratings; H-D1/H-D2 decided by the D.0 rule; per-tier and seen/unseen splits; held-out rows after B's run.
 
 Process table per file from `check_expansions.py --strict` (real CLIP counter):
 
@@ -130,17 +159,17 @@ Process table per file from `check_expansions.py --strict` (real CLIP counter):
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 | `c4_llm_nokb_dev.json` (16 scenes, 2026-11-02) | 16 | 100.0% | 100.0% | 100.0% | 75.0% | 0 | 0.0% | 21.03 / 13.57 | 62.4 / 70 | 0.75 |
 | `c2_template_dev.json` (16 scenes, interim KB `d-kb0`, 2026-11-04) | 16 | 100.0% | 100.0% | 100.0% | 0.0% | 0 | 0.0% | 0.004 / 0.003 | 66.3 / 70 | 5.69 |
-| `c3_llm_kb_dev.json` (interim KB `d-kb0`) | `TODO(results)`: run on Colab 2026-11-04; the row goes in with the committed file |
+| `c3_llm_kb_dev.json` (16 scenes, interim KB `d-kb0`, 2026-11-04) | 16 | 100.0% | 100.0% | 100.0% | 12.5% | 0 | 0.0% | 16.14 / 9.85 | 64.2 / 70 | 1.81 |
 
-The c4 mean latency includes the model load in the first scene's `latency_s` (`model_load_s` 124 s on a fresh runtime, with the download). Without it: mean 13.3 s, median 12.9 s per scene. `json_retry` was false for all 16 records; the 12 second calls were all name re-asks.
+The LLM rows' mean latency includes the model load in the first scene's `latency_s` (`model_load_s`: c4 124 s, c3 103 s, fresh runtimes). Without it, per scene: c4 mean 13.3 s, median 13.3 s; c3 mean 9.7 s, median 9.4 s. `json_retry` was false in every record. The second calls (c4: 12, c3: 2) were all name re-asks; no phrase had to be scrubbed in any file. With the KB block, the LLM used names in 2 of 16 records (c3), against 12 of 16 without it (c4).
 
 ## 10. Optional experiments
 
 | Condition | Built | Run | Note |
 |---|---|---|---|
-| `c5_llm_kb_layout` (H-D3) | yes (`--mode llm_kb_layout`) | not yet | needs c3 first |
-| `c3_7b` (H-D4) | yes (`--llm large`) | not yet | needs c3 first |
-| `c3_neg` (H-D5) | yes (`--scene_negatives`, prompt `v1_neg`) | not yet | needs c3 first |
+| `c5_llm_kb_layout` (H-D3) | yes (`--mode llm_kb_layout`) | not yet | c3 is done (#38); runnable on Colab |
+| `c3_7b` (H-D4) | yes (`--llm large`) | not yet | c3 is done (#38); runnable on Colab |
+| `c3_neg` (H-D5) | yes (`--scene_negatives`, prompt `v1_neg`) | not yet | c3 is done (#38); runnable on Colab |
 | `c3_v2` (H-D6) | no | not yet | needs A's SHAP table and B's failure notes |
 
 `TODO(results)`: each with the result, or "not run" and the reason (Overview §14 cut order: negatives → LLM size → c5).
@@ -151,6 +180,8 @@ Seen so far at the **expansion** stage (from records, not from scored images):
 - **The LLM reaches for names** (c4: 75% of records before repair). One re-ask fixed all of them; nothing was scrubbed.
 - **The stand-in parser breaks the action text** (c2 preview on the 16 dev scenes, with the stand-in parser and KB; not committed, not scored). It cuts known names out of the sentence and leaves fragments: s12 "kneeling before and offering him 's ring"; s29 "lying on a bed of arrows on the field of while the and gather around him". The fix is C's parser returning the action already name-free (#21); the scrub can delete words but cannot rewrite them.
 - **Characters missing from the KB get no description or the wrong one** (same preview): s10 has no description for its warrior; s29's old warrior picked up another character's description. KB coverage for the dev characters is requested in #21.
+- **Both are fixed for the dev runs** by the interim KB `d-kb0` and the role-replacing stand-in parser (#37): the c2 file has 0 names before repair, and every action reads as a sentence ("the old warrior lying on a bed of arrows … while the five crowned princes and the blue-skinned figure gather around him").
+- **Template c2 loses phrases on crowded or long scenes:** 5.7 phrases dropped per record on average. For example, s28 keeps the coronation but drops the brothers standing and the devotee kneeling; s16 and s32 (tier 5, 100+ words) keep only their first clauses. This is the template working as designed under the 70-token budget.
 
 `TODO(results)`: from B's Day-4 failure notes (`needs:D`) and `phrases_dropped`, for 3-5 bad images: the scene, the expansion, the image code and the diagnosed cause (figure phrase dropped by budget, KB description too vague, tail pushed out, name scrub removed a setting phrase, layout ignored). Include failures, not only successes.
 
@@ -163,11 +194,12 @@ Colab T4, `Qwen/Qwen3-4B-Instruct-2507` @ `cdbee75f`, 4-bit NF4 (requirements as
 | Load, first run on a fresh runtime (includes the 8 GB download) | 114-194 s | smoke test 2026-11-01; c4 run 2026-11-02 |
 | Load, weights already cached | 23-33 s | Day-2 preview runs |
 | Seconds per LLM call (warm) | 7.1-8.0 s | smoke test; Day-2 preview; c4 run (28 calls) |
-| Seconds per scene, c4 (one call, or two with a name re-ask) | mean 13.3 s, median 12.9 s (excluding the load) | `c4_llm_nokb_dev.json` |
+| Seconds per scene, c4 (one call, or two with a name re-ask) | mean 13.3 s, median 13.3 s (`latency_s` − `model_load_s`) | `c4_llm_nokb_dev.json` |
 | Peak VRAM | 2.77-2.81 GiB; `close()` frees it to 0.01 GiB | smoke test; batch logs |
-| Template mode (c2) | about 0.01 s per scene, CPU | c2 preview |
+| Seconds per scene, c3 (longer user message with the KB block) | mean 9.7 s, median 9.4 s (`latency_s` − `model_load_s`) | `c3_llm_kb_dev.json` |
+| Template mode (c2) | 0.004 s per scene, CPU | `c2_template_dev.json` |
 
-`TODO(results)`: c3 (longer user message) and `c3_7b`. Expansion runs alone in the `llm` session: expand everything, `close()`, then generate in a new `gen` session.
+`TODO(results)`: `c3_7b`. Expansion runs alone in the `llm` session: expand everything, `close()`, then generate in a new `gen` session.
 
 ## 13. Commands
 

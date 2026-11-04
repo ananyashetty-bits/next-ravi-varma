@@ -113,7 +113,30 @@ Deviations: none recorded so far (`experiments/HYPOTHESES.md`, *Section D deviat
 `TODO(B, held-out)`: the same tables on 12 scenes × 4 seeds. Arrives Day 5 evening (see timing risk above).
 
 ### 4.3 Expansion ladder and expander hypotheses
-`TODO(D)`: H-D1 to H-D6 outcomes with the pre-registered rule (supported / no clear difference / contradicted / not run), plus the process table (% valid, leaks before and after repair, fallback rate, latency) from `EXPANDER.md`.
+**Status 2026-11-04: provisional, judge only.** Section D decides H-D1/H-D2 on human faithfulness. Those ratings for c2/c3 are pending, so every outcome below is on the supporting measure (the checklist judge), with 16 dev scenes × seeds 1-2. Sources: `results/c2_template@rrv_v1_dev.json`, `results/c3_llm_kb@rrv_v1_dev.json` (#38); c0/c1/c4 from B's `b/score-dev-c0-c1-c4-v2` (`TODO(B)`: merge). Paired over scenes with `eval/stats.paired`; the full tables are in `expander/EXPANDER.md` §9.
+
+| Hypothesis | Comparison | Judge checklist, b − a [95% CI] | Outcome on the judge | Pre-registered outcome |
+|---|---|---|---|---|
+| H-D1: c3 > c2 | c2 → c3 | −0.050 [−0.116, +0.011] | no clear difference | `TODO(B)`: human faithfulness |
+| H-D2: c3 > c4, mostly tier 4 | c4 → c3 | −0.015 [−0.079, +0.054]; tier 4 n = 2 | no clear difference; tier 4 not resolvable | `TODO(B)`: human faithfulness |
+| H-D3: c5 > c3 on tier 2-3 count/pose | — | — | not run yet | — |
+| H-D4: 7B not needed | — | — | not run yet | — |
+| H-D5: scene negatives | — | — | not run yet | — |
+| H-D6: prompt v2 (SHAP order) | — | — | not run yet | — |
+
+Also on the judge: c1 → c3 −0.055 [−0.113, −0.003], so expansion did not improve faithfulness over raw text with the LoRA. On `style_margin`, c3 is the highest condition (c2 → c3 +0.025 [+0.014, +0.039]).
+
+**Caveat on the KB:** c2 and c3 use D's interim KB `d-kb0` (`expander/interim_kb/`), because C's KB was not available. This is a dated deviation in Section D.
+
+**Expander validity (D.7), from `check_expansions.py --strict` on the committed files:**
+
+| file | n | valid | leaks before repair | leaks after | fallback | s/scene (excl. load) |
+|---|---:|---:|---:|---:|---:|---|
+| `c2_template_dev.json` | 16 | 100% | 0% | 0 | 0% | 0.004 (CPU) |
+| `c3_llm_kb_dev.json` | 16 | 100% | 12.5% | 0 | 0% | mean 9.7 |
+| `c4_llm_nokb_dev.json` | 16 | 100% | 75.0% | 0 | 0% | mean 13.3 |
+
+Both D.7 targets are met (≥ 95% valid, zero names after repair).
 
 ### 4.4 SHAP attribution
 `TODO(A)`: the one chart (players × {faithfulness, style}, CI whiskers), the interaction table, and H-A outcomes, from `SHAP_ANALYSIS.md`.
@@ -134,11 +157,21 @@ Deviations: none recorded so far (`experiments/HYPOTHESES.md`, *Section D deviat
 
 **Feeds from `results/`:** per-tier and seen/unseen splits of the dev and held-out results; `latency_s` from the expansion files; seconds per image from the manifests.
 
-- **What helped:** `TODO(D)`, written from §4 only. If c1 or c2 is as good as c3, that is said first (B's rule).
-- **What did not help:** `TODO(D)`.
+- **What helped (provisional, judge and automated metrics only):**
+  - The LoRA adds Varma style: c0 → c1 `style_margin` +0.069 [+0.046, +0.095].
+  - KB descriptions keep names out of the LLM's phrases: 2 of 16 c3 records needed a names re-ask, against 12 of 16 in c4.
+  - c3 is the most Varma-like condition on `style_margin`.
+- **What did not help (provisional):**
+  - On the judge, **raw text with the LoRA (c1) is as good as or better than every expanded condition**: c1 → c2 −0.006, c1 → c4 −0.041 and c1 → c3 −0.055, the last with a CI just below 0. Per B's rule, this is said first.
+  - The template drops many phrases under the 70-token budget (5.7 per record), so crowded and long scenes lose their figures and actions.
+- `TODO(D)`: rewrite both bullets from human faithfulness once B's ratings for c2/c3 exist.
 - **Failure taxonomy:** `TODO(B)`: counts per condition, with 2-3 example images (codes decoded).
 - **Coverage, seen vs unseen:** `TODO(B)`: do scenes with `low`/`none`-coverage characters, or unseen scenes, score lower?
-- **Cost:** `TODO(A, D)`: LLM seconds per scene, seconds per image, GPU sessions needed for one scene end to end.
+- **Cost:** `TODO(A)`: seconds per image. Expander on a Colab T4 (`EXPANDER.md` §12):
+  - LLM load: 23-33 s with cached weights, about 2-3 min on a fresh runtime;
+  - about 7-8 s per LLM call; 9.7 s per scene for c3 and 13.3 s for c4, including name re-asks;
+  - peak VRAM 2.8 GiB, freed before diffusion;
+  - template c2 is instant on CPU.
 
 ## 6. Limitations
 
@@ -151,7 +184,9 @@ These are known now and hold whatever the results show; owners add their own.
 - **77 tokens.** CLIP reads at most 77 tokens. Expansions are fitted to 70 (excluding start/end), so long scenes lose detail. The raw text in c0/c1 and in `clip_raw` is truncated, which matters most for tier-5 texts with 100+ words.
 - **One model.** One base model (SD1.5), one LoRA (`rrv_v1`, trained with one seed), one sampler setting and one small local LLM family. Nothing here is shown to transfer to other models.
 - **Style tail.** The model was **not trained with the style tail** we append: the winner's train_v1 captions have no fixed tail. `TODO(A)`: what the token-budget and SHAP results say about it.
-- **Name scrub.** It removes every listed name, including rivers and mounts that double as setting words (Ganga, Nandi), so a setting phrase can be lost. `TODO(D)`: measured frequency.
+- **Name scrub.** It removes every listed name, including rivers and mounts that double as setting words (Ganga, Nandi), so a setting phrase can be lost. Measured on dev: **0 phrases scrubbed** in c2, c3 and c4. The one re-ask removed every leaked name first.
+- **Interim KB.** c2 and c3 dev results use D's interim KB `d-kb0` (18 characters, written from train_v1 captions; 2 entries without a training painting), not C's KB. If C's KB lands, both are re-run and reported.
+- **Smaller dev set.** 16 of the planned 32 dev scenes (A's and C's were not added), so tier subsets have 2-4 scenes. The H-D2 tier-4 test has n = 2.
 - **Self-made benchmark.** Checklists were written by the team, and the dev set was also used to tune prompts and the KB (allowed by our protocol). Only the held-out set is untouched.
 - `TODO(A, B, C)`: owner-specific limits (SHAP position effects; the judge's failure cases; KB description sources and gaps; name-aware LoRA memorisation).
 
