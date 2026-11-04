@@ -165,7 +165,8 @@ A file that misses a threshold is fixed **before** its images are scored. If tha
 
 Rule: after results exist, the text above is **never edited**. Each change gets one dated line here, in the form `YYYY-MM-DD: <what changed>, <why>, <which results it affects>`. Lines are appended and never removed.
 
-<!-- no deviations yet -->
+- 2026-11-04: c2_template and c3_llm_kb dev runs use D's interim KB (`kb_version` d-kb0, `expander/interim_kb/`) and the role-replacing stand-in parser, because C's KB and parser were not on `main` (#21). The dev set has 16 scenes (s09-s16, s25-s32), so paired comparisons use n=16. Affects H-D1 and H-D2 (and H-D3/H-D5 if run). If C's KB lands, c2/c3 are re-run with it and both sets are reported.
+- 2026-11-04: c2/c3 dev images are generated with `pipeline/generate_api.py` as of e9b5a5d (the version that made the c0/c1/c4 images: LoRA `rrv_v1` at `scale` 1.0 from `config/m3.json`, DPM++ 30 steps, CFG 7), because the version on `main` since #30 no longer provides `generate()`. Keeps all conditions on the same generator.
 
 
 ## Section C (Member C: KB, parser, names)
