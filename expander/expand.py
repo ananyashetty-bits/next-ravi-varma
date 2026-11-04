@@ -89,15 +89,29 @@ def close() -> None:
 
 
 def _resolve_llm(llm: LLMClient | None, cfg: dict) -> LLMClient | None:
-    """The client to use; ``None`` means "backend none: use the template fallback"."""
+    """The client to use; ``None`` means "backend none: use the template fallback".
+
+    With no ``llm=`` and no default set, the configured client (``cfg["llm"]``, e.g. the 4-bit local model)
+    is built once, lazily (it loads on its first call), and kept as the default, so the contract call
+    ``expand(text, scene, mode)`` works as is (Overview §6.5). Free it with ``expander.close()``.
+    """
+    global _DEFAULT_LLM
     client = llm if llm is not None else _DEFAULT_LLM
     if client is not None:
         return client
     if str(cfg.get("llm", {}).get("backend", "")).lower() == "none":
         return None
-    raise LLMUnavailableError(
-        "this mode needs an LLM: pass expand(..., llm=<LLMClient>) or call set_default_llm(client); "
-        "set config llm.backend to \"none\" to use the template fallback instead")
+    # imported here so this module stays importable without torch
+    from expander.llm import make_client
+
+    try:
+        client = make_client(cfg, lazy=True)
+    except Exception as e:
+        raise LLMUnavailableError(f"could not build the configured LLM client: {type(e).__name__}: {e}") from e
+    if client is None:
+        return None
+    _DEFAULT_LLM = client
+    return client
 
 
 # --------------------------------------------------------------------------- helpers
@@ -363,8 +377,9 @@ def expand(text: str, scene: dict | None = None, mode: str = "llm_kb", *, llm: L
     """Expand one scene into an ``ExpandedPrompt`` dict (the 16 contract fields of §6.4 plus extras).
 
     - ``scene``: C's SceneSpec; parsed from ``text`` with the resolved parser when ``None`` (not for raw).
-    - ``llm``: an ``LLMClient`` (else the default set by ``set_default_llm``); required by LLM modes
-      unless config ``llm.backend == "none"``, which falls back to the template.
+    - ``llm``: an ``LLMClient``; else the default set by ``set_default_llm``; else the configured client,
+      built once and kept (free it with ``expander.close()``). Config ``llm.backend == "none"`` uses the
+      template fallback instead.
     - ``cache``: an ``expander.cache.Cache``; ``None`` disables caching.
     - ``kb_path``: KB file for the parser and the mood lookup (default: ``_cfg.default_kb_path()``).
     - ``condition``: condition ID (default from ``mode``, see ``resolve_condition``); ``split``: "dev"/"heldout".

@@ -173,6 +173,8 @@ Colab T4, `Qwen/Qwen3-4B-Instruct-2507` @ `cdbee75f`, 4-bit NF4 (requirements as
 
 Step-by-step Colab cells, smoke test, hand-off to generation and troubleshooting: `expander/RUNBOOK_COLAB.md`. Library pins: `expander/requirements_llm.txt`.
 
+**From Python (Tier 1, `text_to_image`):** `from expander.expand import expand; rec = expand(text, scene, "llm_kb")` works with the contract signature alone: with no `llm=`, the configured client (`config/m3.json` `llm`) is built once and loads on its first call. Call `import expander; expander.close()` before loading Stable Diffusion, so the LLM and SD never share the T4 (Overview §2.4). With `llm.backend` set to `"none"`, LLM modes use the template instead.
+
 Dev (D, `llm` session):
 ```
 python expander/batch_expand.py --scenes eval/test_scenes_dev.json --mode template --out outputs/expansions/c2_template_dev.json
