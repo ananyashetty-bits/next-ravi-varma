@@ -4,6 +4,11 @@ Mirrors C's interface exactly: ``parse_scene(text, scene_id="", kb_path=None) ->
 (Overview v2 §6.3). Deliberately minimal and stdlib-only (no rapidfuzz): exact, word-bounded,
 case-insensitive alias lookup over the KB, longest alias first, consuming matched text so that
 "Rama" never matches inside "Ramayana". Mood comes from a small keyword lexicon.
+
+With a KB whose entries carry a ``role`` (D's interim KB, ``expander/interim_kb/kb_d0.json``), the
+``action`` is returned name-free: each character, group (``groups``) or place name (``settings.*.names``)
+is replaced by ``the <role>`` (possessives kept: "Sita's ring" -> "the young princess's ring"), as in the
+Overview §6.3 example. Entries without a role are cut out of the action, as before.
 """
 
 from __future__ import annotations
@@ -27,6 +32,16 @@ MOOD_LEXICON: dict[str, tuple[str, ...]] = {
 
 _STOP = {"The", "A", "An", "And", "In", "On", "At", "Of", "With", "His", "Her", "Their", "One", "Then", "So",
          "This", "That", "He", "She", "They", "It", "I", "My", "Lord", "King", "Queen", "Prince", "Princess"}
+
+# a role replacing a name gets "the " unless the previous word already determines or describes it
+_NO_ARTICLE = {"the", "a", "an", "his", "her", "their", "its", "my", "your", "our", "this", "that",
+               "little", "young", "old", "great", "poor", "dear", "lord", "sri", "shri"}
+_ARTICLES = {"a", "an", "the", "his", "her", "their"}
+# "X's <word>" means X is in the scene only if <word> (or the word after it) is a place or an event
+_PRESENT_POSSESSIVE = {"court", "palace", "hall", "sabha", "swayamvara", "wedding", "coronation", "kingdom",
+                       "army", "camp", "chariot", "hermitage", "hut", "house", "home", "room", "throne", "garden"}
+_IMPERATIVE = re.compile(r"^(?:please\s+)?(?:show|draw|paint|depict|make|create|generate)\s+(?:me\s+)?",
+                         re.IGNORECASE)
 
 
 def _ascii(s: str) -> str:
@@ -62,37 +77,58 @@ def parse_scene(text: str, scene_id: str = "", kb_path: str | None = None) -> di
     norm = _ascii(text)
     work = norm  # matched spans are blanked out here so they cannot match twice
 
-    aliases: list[tuple[str, str]] = []  # (alias, character key)
-    for key, ch in kb.get("characters", {}).items():
-        for a in [ch.get("canonical", key), *ch.get("aliases", [])]:
-            aliases.append((a, key))
+    # entities: characters and groups become SceneSpec characters; place names are only replaced in the action
+    entities: dict[str, dict] = {}
+    for kind in ("characters", "groups"):
+        for key, ch in kb.get(kind, {}).items():
+            entities[f"{kind}:{key}"] = ch
+    aliases: list[tuple[str, str]] = []  # (alias, entity id)
+    for eid, ch in entities.items():
+        for a in [ch.get("canonical", eid.split(":", 1)[1]), *ch.get("aliases", [])]:
+            aliases.append((a, eid))
+    for key, st in kb.get("settings", {}).items():
+        for a in st.get("names", []):
+            aliases.append((a, f"settings:{key}"))
     aliases.sort(key=lambda t: len(t[0]), reverse=True)
 
-    hits: list[tuple[int, int, str, str]] = []  # (start, end, mention, key)
-    for alias, key in aliases:
+    hits: list[tuple[int, int, str, str]] = []  # (start, end, mention, entity id)
+    for alias, eid in aliases:
         for m in _pattern(alias).finditer(work):
-            hits.append((m.start(), m.end(), norm[m.start():m.end()], key))
+            hits.append((m.start(), m.end(), norm[m.start():m.end()], eid))
             work = work[: m.start()] + " " * (m.end() - m.start()) + work[m.end():]
     hits.sort()
+    person_hits = [h for h in hits if not h[3].startswith("settings:")]
+
+    def _only_possessive_object(eid: str) -> bool:
+        """True if every mention of ``eid`` is "X's <object>" (e.g. "Sita's ring"): mentioned, not depicted."""
+        for start, end, _, e in person_hits:
+            if e != eid:
+                continue
+            m = re.match(r"\s*['\u2019]s\s+([A-Za-z]+)(?:\s+([A-Za-z]+))?", norm[end:])
+            if not m or {w.lower() for w in m.groups() if w} & _PRESENT_POSSESSIVE:
+                return False
+        return True
 
     characters, seen = [], set()
-    for _, _, mention, key in hits:
-        if key in seen:
+    for _, _, mention, eid in person_hits:
+        if eid in seen:
             continue
-        seen.add(key)
-        ch = kb["characters"][key]
-        characters.append({"mention": mention, "canonical": ch.get("canonical", key),
+        seen.add(eid)
+        if _only_possessive_object(eid):
+            continue
+        ch = entities[eid]
+        characters.append({"mention": mention, "canonical": ch.get("canonical", eid.split(":", 1)[1]),
                            "visual": ch.get("visual", ""), "coverage": ch.get("coverage", "none")})
 
     # epic = majority of matched characters; ties go to the first-mentioned; none -> "Unknown"
-    order = [kb["characters"][key].get("epic", "Unknown") for key in dict.fromkeys(h[3] for h in hits)]
+    order = [entities[eid].get("epic", "Unknown") for eid in dict.fromkeys(h[3] for h in person_hits)]
     counts = Counter(order)
     epic = max(order, key=lambda e: counts[e]) if order else "Unknown"
 
     setting = None
     best: tuple[int, str] | None = None  # (position of the earliest alias hit, setting key)
     for key, st in kb.get("settings", {}).items():
-        for a in [key, *st.get("aliases", [])]:
+        for a in [key, *st.get("names", []), *st.get("aliases", [])]:
             m = _pattern(a).search(norm)
             if m and (best is None or m.start() < best[0]):
                 best = (m.start(), key)
@@ -107,9 +143,17 @@ def parse_scene(text: str, scene_id: str = "", kb_path: str | None = None) -> di
             break
 
     action = norm
-    for start, end, _, _ in sorted(hits, reverse=True):
-        action = action[:start] + action[end:]
-    action = _tidy(action)
+    for start, end, _, eid in sorted(hits, reverse=True):
+        kind, key = eid.split(":", 1)
+        role = (kb.get(kind, {}).get(key) or {}).get("role", "")
+        if not role:
+            action = action[:start] + action[end:]
+            continue
+        prev = [w.lower() for w in re.findall(r"[A-Za-z]+", action[:start])]
+        determined = bool(prev) and (prev[-1] in _NO_ARTICLE or (len(prev) > 1 and prev[-2] in _ARTICLES))
+        phrase = role if determined else f"the {role}"
+        action = action[:start] + phrase + action[end:]
+    action = _tidy(_IMPERATIVE.sub("", action))
 
     matched_spans = [(s, e) for s, e, _, _ in hits]
     unknown = []

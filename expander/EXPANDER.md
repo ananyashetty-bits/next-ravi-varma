@@ -2,7 +2,7 @@
 
 `expand(text, scene=None, mode="llm_kb") -> ExpandedPrompt` turns a user's epic-scene sentence into a prompt the M2 model (`rrv_v1`) can render: name-free visual phrases, the trigger first, the style tail last, under the token limit. It runs a **local** instruct LLM (no paid API) with a deterministic template as the fallback.
 
-> **Status (2026-11-03):** the design and all modes are built and tested (`tests/test_expander_*.py`). Measured so far: the T4 smoke test and the **c4** dev expansions on the 16 dev scenes on `main` (`outputs/expansions/c4_llm_nokb_dev.json`). **c2 and c3 wait for C's parser and KB** (#21). Everything still marked `TODO(results)` waits for numbers from `outputs/expansions/`, `results/` or B's tables; no number goes in by hand. Contracts referred to: Overview v2 §6 (`config/m3.json`, SceneSpec, ExpandedPrompt, signatures, CLI).
+> **Status (2026-11-04):** the design and all modes are built and tested (`tests/test_expander_*.py`). Measured so far: the T4 smoke test and the **c4** dev expansions on the 16 dev scenes on `main` (`outputs/expansions/c4_llm_nokb_dev.json`). **c2 and c3 run on D's interim KB `d-kb0`** (`expander/interim_kb/`), because C's KB and parser were not available (#21); see the Section D deviations. Everything still marked `TODO(results)` waits for numbers from `outputs/expansions/`, `results/` or B's tables; no number goes in by hand. Contracts referred to: Overview v2 §6 (`config/m3.json`, SceneSpec, ExpandedPrompt, signatures, CLI).
 
 ## 1. Design principle
 
@@ -129,8 +129,8 @@ Process table per file from `check_expansions.py --strict` (real CLIP counter):
 | file | n | valid | trigger-first | within budget | leaks before | leaks after | fallback | latency mean / median (s) | tokens mean / max | dropped / rec |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 | `c4_llm_nokb_dev.json` (16 scenes, 2026-11-02) | 16 | 100.0% | 100.0% | 100.0% | 75.0% | 0 | 0.0% | 21.03 / 13.57 | 62.4 / 70 | 0.75 |
-| `c2_template_dev.json` | `TODO(results)`: waits for C's KB and parser |
-| `c3_llm_kb_dev.json` | `TODO(results)`: waits for C's KB and parser |
+| `c2_template_dev.json` (16 scenes, interim KB `d-kb0`, 2026-11-04) | 16 | 100.0% | 100.0% | 100.0% | 0.0% | 0 | 0.0% | 0.004 / 0.003 | 66.3 / 70 | 5.69 |
+| `c3_llm_kb_dev.json` (interim KB `d-kb0`) | `TODO(results)`: run on Colab 2026-11-04; the row goes in with the committed file |
 
 The c4 mean latency includes the model load in the first scene's `latency_s` (`model_load_s` 124 s on a fresh runtime, with the download). Without it: mean 13.3 s, median 12.9 s per scene. `json_retry` was false for all 16 records; the 12 second calls were all name re-asks.
 
