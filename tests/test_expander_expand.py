@@ -200,9 +200,44 @@ def test_scene_none_is_parsed():
     assert rec["kb_version"] != "none" and rec["names_after_repair"] == []
 
 
-def test_missing_llm_raises_unless_backend_none():
+def test_contract_call_builds_the_configured_client(monkeypatch):
+    """Overview §6.5: expand(text, scene, mode) with no llm= works (A's text_to_image calls it this way)."""
+    import expander
+    from expander import llm as llm_mod
+
+    built = []
+
+    def fake_make_client(cfg, size="default", backend=None, **kw):
+        built.append(kw)
+        return FakeLLM([GOOD], model_id="configured-model")
+
+    monkeypatch.setattr(llm_mod, "make_client", fake_make_client)
+    monkeypatch.setattr(expand_mod, "_DEFAULT_LLM", None)
+    try:
+        rec = expand(TEXT, SCENE, "llm_kb", cfg=CFG, count_fn=fake_count, matcher=SEED)
+        check_record(rec)
+        assert rec["source"] == "llm" and rec["llm_model"] == "configured-model"
+        assert built == [{"lazy": True}] and expand_mod._DEFAULT_LLM is not None
+        expand(TEXT, SCENE, "llm_nokb", cfg=CFG, count_fn=fake_count, matcher=SEED)
+        assert len(built) == 1  # built once, then reused
+    finally:
+        expander.close()
+    assert expand_mod._DEFAULT_LLM is None
+
+
+def test_client_build_failure_raises_documented_error(monkeypatch):
+    from expander import llm as llm_mod
+
+    def boom(*a, **kw):
+        raise ValueError("unknown llm backend")
+
+    monkeypatch.setattr(llm_mod, "make_client", boom)
+    monkeypatch.setattr(expand_mod, "_DEFAULT_LLM", None)
     with pytest.raises(LLMUnavailableError):
         expand(TEXT, SCENE, "llm_kb", cfg=CFG, count_fn=fake_count, matcher=SEED)
+
+
+def test_backend_none_uses_template_fallback():
     cfg_none = {**CFG, "llm": {**CFG["llm"], "backend": "none"}}
     rec = expand(TEXT, SCENE, "llm_kb", cfg=cfg_none, count_fn=fake_count, matcher=SEED, kb_path=KB_PATH)
     check_record(rec)
