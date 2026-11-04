@@ -1,0 +1,1014 @@
+{
+ "n_images": 147,
+ "n_filled": 99,
+ "characters": {
+  "arjuna": {
+   "count": 2,
+   "files": [
+    "varma_arjuna_subhadra_b03",
+    "varma_draupadi_pandavas_b07"
+   ],
+   "raw_variants": [
+    "Arjuna"
+   ]
+  },
+  "subhadra": {
+   "count": 1,
+   "files": [
+    "varma_arjuna_subhadra_b03"
+   ],
+   "raw_variants": [
+    "Subhadra"
+   ]
+  },
+  "lakshmi": {
+   "count": 2,
+   "files": [
+    "varma_harihara_c09",
+    "varma_lakshmi_gajalakshmi_baroda_b02"
+   ],
+   "raw_variants": [
+    "Lakshmi"
+   ]
+  },
+  "keechaka": {
+   "count": 1,
+   "files": [
+    "varma_keechaka_sairandhri_b05"
+   ],
+   "raw_variants": [
+    "Keechaka"
+   ]
+  },
+  "draupadi": {
+   "count": 6,
+   "files": [
+    "varma_draupadi_humiliated_a39",
+    "varma_draupadi_pandavas_b07",
+    "varma_draupadi_simhika_a61",
+    "varma_draupadi_sudeshna_c14",
+    "varma_keechaka_sairandhri_b05",
+    "varma_sairandhri_b10"
+   ],
+   "raw_variants": [
+    "Draupadi",
+    "Sairandhri(Draupadi)"
+   ]
+  },
+  "radha": {
+   "count": 5,
+   "files": [
+    "varma_krishna_phugdi_d35",
+    "varma_muralidhara_c12",
+    "varma_radha_c06",
+    "varma_radha_krishna_banyan_d32",
+    "varma_radha_moonlight_b01"
+   ],
+   "raw_variants": [
+    "Radha"
+   ]
+  },
+  "virata": {
+   "count": 1,
+   "files": [
+    "varma_draupadi_humiliated_b08"
+   ],
+   "raw_variants": [
+    "Virata"
+   ]
+  },
+  "nayar lady": {
+   "count": 1,
+   "files": [
+    "varma_reclining_woman_b11"
+   ],
+   "raw_variants": [
+    "Nayar lady"
+   ]
+  },
+  "mahaprabha thampuratti of mavelikkara": {
+   "count": 1,
+   "files": [
+    "varma_there_comes_papa_b14"
+   ],
+   "raw_variants": [
+    "Mahaprabha Thampuratti of Mavelikkara"
+   ]
+  },
+  "marthanda varma": {
+   "count": 2,
+   "files": [
+    "varma_prince_on_tricycle_d46",
+    "varma_there_comes_papa_b14"
+   ],
+   "raw_variants": [
+    "Martanda Varma",
+    "Marthanda Varma"
+   ]
+  },
+  "rani bharani thirunal lakshmi bayi": {
+   "count": 1,
+   "files": [
+    "varma_rani_lakshmi_bayi_travancore_b13"
+   ],
+   "raw_variants": [
+    "Rani Bharani Thirunal Lakshmi Bayi"
+   ]
+  },
+  "bhima": {
+   "count": 1,
+   "files": [
+    "varma_draupadi_pandavas_b07"
+   ],
+   "raw_variants": [
+    "Bhima"
+   ]
+  },
+  "yudhishthira": {
+   "count": 1,
+   "files": [
+    "varma_draupadi_pandavas_b07"
+   ],
+   "raw_variants": [
+    "Yudhishthira"
+   ]
+  },
+  "nakula": {
+   "count": 1,
+   "files": [
+    "varma_draupadi_pandavas_b07"
+   ],
+   "raw_variants": [
+    "Nakula"
+   ]
+  },
+  "sahadeva": {
+   "count": 1,
+   "files": [
+    "varma_draupadi_pandavas_b07"
+   ],
+   "raw_variants": [
+    "Sahadeva"
+   ]
+  },
+  "yashoda": {
+   "count": 2,
+   "files": [
+    "varma_yashoda_krishna_b17",
+    "varma_yashoda_krishna_c16"
+   ],
+   "raw_variants": [
+    "Yashoda"
+   ]
+  },
+  "krishna": {
+   "count": 9,
+   "files": [
+    "varma_killing_of_kamsa_d40",
+    "varma_krishna_envoy_a46",
+    "varma_krishna_freeing_parents_c20",
+    "varma_krishna_kaliya_c05",
+    "varma_krishna_phugdi_d35",
+    "varma_muralidhara_c12",
+    "varma_radha_krishna_banyan_d32",
+    "varma_yashoda_krishna_b17",
+    "varma_yashoda_krishna_c16"
+   ],
+   "raw_variants": [
+    "Krishna"
+   ]
+  },
+  "rama": {
+   "count": 9,
+   "files": [
+    "varma_bharata_bhet_d26",
+    "varma_ram_a16",
+    "varma_ram_laxman_b19",
+    "varma_rama_a36",
+    "varma_rama_pattabhishekham_c07",
+    "varma_rama_sita_lakshmana_sarayu_d54",
+    "varma_ramapanchayan_a13",
+    "varma_ramas_archery_training_d39",
+    "varma_sita_bhumipravesh_a15"
+   ],
+   "raw_variants": [
+    "Rama"
+   ]
+  },
+  "lakshmana": {
+   "count": 5,
+   "files": [
+    "varma_bharata_bhet_d26",
+    "varma_ram_laxman_b19",
+    "varma_rama_sita_lakshmana_sarayu_d54",
+    "varma_ramapanchayan_a13",
+    "varma_ramas_archery_training_d39"
+   ],
+   "raw_variants": [
+    "Lakshmana"
+   ]
+  },
+  "shivaji maharaj": {
+   "count": 1,
+   "files": [
+    "varma_shivaji_maharaj_b23"
+   ],
+   "raw_variants": [
+    "Shivaji Maharaj"
+   ]
+  },
+  "rai pannalal mehta": {
+   "count": 1,
+   "files": [
+    "varma_rai_pannalal_mehta_b20"
+   ],
+   "raw_variants": [
+    "Rai Pannalal Mehta"
+   ]
+  },
+  "bharani thirunal rani parvathi bayi": {
+   "count": 1,
+   "files": [
+    "varma_bharani_parvathi_bayi_b18"
+   ],
+   "raw_variants": [
+    "Bharani Thirunal Rani Parvathi Bayi"
+   ]
+  },
+  "shanmukha subramanya": {
+   "count": 1,
+   "files": [
+    "varma_shanmukha_subramanyaswami_b25"
+   ],
+   "raw_variants": [
+    "Shanmukha Subramanya"
+   ]
+  },
+  "valli": {
+   "count": 1,
+   "files": [
+    "varma_shanmukha_subramanyaswami_b25"
+   ],
+   "raw_variants": [
+    "Valli"
+   ]
+  },
+  "devasena": {
+   "count": 1,
+   "files": [
+    "varma_shanmukha_subramanyaswami_b25"
+   ],
+   "raw_variants": [
+    "Devasena"
+   ]
+  },
+  "vishnu": {
+   "count": 3,
+   "files": [
+    "varma_harihara_c09",
+    "varma_kurma_avatar_b27",
+    "varma_sesha_narayana_d22"
+   ],
+   "raw_variants": [
+    "Vishnu",
+    "Vishnu (Kurma)"
+   ]
+  },
+  "adi shankaracharya": {
+   "count": 1,
+   "files": [
+    "varma_sankaracharya_b28"
+   ],
+   "raw_variants": [
+    "Adi Shankaracharya"
+   ]
+  },
+  "kalki": {
+   "count": 1,
+   "files": [
+    "varma_kalki_a45"
+   ],
+   "raw_variants": [
+    "Kalki"
+   ]
+  },
+  "vishwamitra": {
+   "count": 4,
+   "files": [
+    "varma_ram_a16",
+    "varma_ramas_archery_training_d39",
+    "varma_shakuntala_janm_d65",
+    "varma_vishwamitra_a47"
+   ],
+   "raw_variants": [
+    "Vishwamitra"
+   ]
+  },
+  "dattatreya": {
+   "count": 1,
+   "files": [
+    "varma_dattatreya_a53"
+   ],
+   "raw_variants": [
+    "Dattatreya"
+   ]
+  },
+  "kadambari": {
+   "count": 1,
+   "files": [
+    "varma_kadambari_sitar_a51"
+   ],
+   "raw_variants": [
+    "Kadambari"
+   ]
+  },
+  "bhishma": {
+   "count": 1,
+   "files": [
+    "varma_bheeshma_oath_a50"
+   ],
+   "raw_variants": [
+    "Bhishma"
+   ]
+  },
+  "dushyanta": {
+   "count": 1,
+   "files": [
+    "varma_court_of_dushyant_a29"
+   ],
+   "raw_variants": [
+    "Dushyanta"
+   ]
+  },
+  "shakuntala": {
+   "count": 8,
+   "files": [
+    "varma_court_of_dushyant_a29",
+    "varma_menaka_shakuntala_c15",
+    "varma_shakuntala_a04",
+    "varma_shakuntala_a05",
+    "varma_shakuntala_a10",
+    "varma_shakuntala_a11",
+    "varma_shakuntala_janm_d65",
+    "varma_shakuntala_sakhis_a18"
+   ],
+   "raw_variants": [
+    "Shakuntala"
+   ]
+  },
+  "damayanti": {
+   "count": 2,
+   "files": [
+    "varma_damayanti_a19",
+    "varma_damayanti_a20"
+   ],
+   "raw_variants": [
+    "Damayanti"
+   ]
+  },
+  "hamsa": {
+   "count": 1,
+   "files": [
+    "varma_damayanti_a20"
+   ],
+   "raw_variants": [
+    "Hamsa"
+   ]
+  },
+  "duryodhana": {
+   "count": 1,
+   "files": [
+    "varma_krishna_envoy_a46"
+   ],
+   "raw_variants": [
+    "Duryodhana"
+   ]
+  },
+  "meghanada": {
+   "count": 1,
+   "files": [
+    "varma_victory_meghanada_a26"
+   ],
+   "raw_variants": [
+    "Meghanada"
+   ]
+  },
+  "varuna": {
+   "count": 1,
+   "files": [
+    "varma_rama_a36"
+   ],
+   "raw_variants": [
+    "Varuna"
+   ]
+  },
+  "janaka": {
+   "count": 1,
+   "files": [
+    "varma_ram_a16"
+   ],
+   "raw_variants": [
+    "Janaka"
+   ]
+  },
+  "sita": {
+   "count": 10,
+   "files": [
+    "varma_bharata_bhet_d26",
+    "varma_rama_pattabhishekham_c07",
+    "varma_rama_sita_lakshmana_sarayu_d54",
+    "varma_ramapanchayan_a13",
+    "varma_ravan_sita_d29",
+    "varma_ravan_sita_jatayu_a12",
+    "varma_sita_a14",
+    "varma_sita_abandoned_lamenting_d51",
+    "varma_sita_bhumipravesh_a15",
+    "varma_sita_golden_deer_b30"
+   ],
+   "raw_variants": [
+    "Sita"
+   ]
+  },
+  "bharata": {
+   "count": 2,
+   "files": [
+    "varma_bharata_bhet_d26",
+    "varma_ramapanchayan_a13"
+   ],
+   "raw_variants": [
+    "Bharata"
+   ]
+  },
+  "shatrughna": {
+   "count": 1,
+   "files": [
+    "varma_ramapanchayan_a13"
+   ],
+   "raw_variants": [
+    "Shatrughna"
+   ]
+  },
+  "hanuman": {
+   "count": 4,
+   "files": [
+    "varma_bharata_bhet_d26",
+    "varma_maruti_hanuman_b32",
+    "varma_rama_pattabhishekham_c07",
+    "varma_ramapanchayan_a13"
+   ],
+   "raw_variants": [
+    "Hanuman"
+   ]
+  },
+  "ravana": {
+   "count": 2,
+   "files": [
+    "varma_ravan_sita_d29",
+    "varma_ravan_sita_jatayu_a12"
+   ],
+   "raw_variants": [
+    "Ravana"
+   ]
+  },
+  "jatayu": {
+   "count": 1,
+   "files": [
+    "varma_ravan_sita_jatayu_a12"
+   ],
+   "raw_variants": [
+    "Jatayu"
+   ]
+  },
+  "saraswati": {
+   "count": 1,
+   "files": [
+    "varma_saraswati_a07"
+   ],
+   "raw_variants": [
+    "Saraswati"
+   ]
+  },
+  "bhoomi devi": {
+   "count": 2,
+   "files": [
+    "varma_sesha_narayana_d22",
+    "varma_sita_bhumipravesh_a15"
+   ],
+   "raw_variants": [
+    "Bhoomi Devi",
+    "Bhudevi"
+   ]
+  },
+  "luv": {
+   "count": 1,
+   "files": [
+    "varma_sita_bhumipravesh_a15"
+   ],
+   "raw_variants": [
+    "Luv"
+   ]
+  },
+  "kush": {
+   "count": 1,
+   "files": [
+    "varma_sita_bhumipravesh_a15"
+   ],
+   "raw_variants": [
+    "Kush"
+   ]
+  },
+  "tilottama": {
+   "count": 1,
+   "files": [
+    "varma_tilottama_a23"
+   ],
+   "raw_variants": [
+    "Tilottama"
+   ]
+  },
+  "vasantika": {
+   "count": 1,
+   "files": [
+    "varma_vasantika_a24"
+   ],
+   "raw_variants": [
+    "Vasantika"
+   ]
+  },
+  "varini": {
+   "count": 1,
+   "files": [
+    "varma_varini_a22"
+   ],
+   "raw_variants": [
+    "Varini"
+   ]
+  },
+  "judith": {
+   "count": 1,
+   "files": [
+    "varma_judith_a56"
+   ],
+   "raw_variants": [
+    "Judith"
+   ]
+  },
+  "kerala varma valiya koil tampuran": {
+   "count": 2,
+   "files": [
+    "varma_kerala_varma_valiya_koil_tampuran_b31",
+    "varma_kerala_varma_valiya_koil_tampuran_fulllength_d49"
+   ],
+   "raw_variants": [
+    "Kerala Varma Valiya Koil Tampuran"
+   ]
+  },
+  "adisesha": {
+   "count": 1,
+   "files": [
+    "varma_sesha_narayana_d22"
+   ],
+   "raw_variants": [
+    "Adisesha"
+   ]
+  },
+  "sridevi": {
+   "count": 1,
+   "files": [
+    "varma_sesha_narayana_d22"
+   ],
+   "raw_variants": [
+    "Sridevi"
+   ]
+  },
+  "ganesha": {
+   "count": 3,
+   "files": [
+    "varma_ganapathi_d30",
+    "varma_ganapathi_riddhi_siddhi_d23",
+    "varma_shankar_version1_d57"
+   ],
+   "raw_variants": [
+    "Ganesha"
+   ]
+  },
+  "riddhi": {
+   "count": 1,
+   "files": [
+    "varma_ganapathi_riddhi_siddhi_d23"
+   ],
+   "raw_variants": [
+    "Riddhi"
+   ]
+  },
+  "siddhi": {
+   "count": 1,
+   "files": [
+    "varma_ganapathi_riddhi_siddhi_d23"
+   ],
+   "raw_variants": [
+    "Siddhi"
+   ]
+  },
+  "ambika": {
+   "count": 1,
+   "files": [
+    "varma_ambika_d24"
+   ],
+   "raw_variants": [
+    "Ambika"
+   ]
+  },
+  "indira": {
+   "count": 1,
+   "files": [
+    "varma_indira_d27"
+   ],
+   "raw_variants": [
+    "Indira"
+   ]
+  },
+  "malati": {
+   "count": 1,
+   "files": [
+    "varma_malati_d28"
+   ],
+   "raw_variants": [
+    "Malati"
+   ]
+  },
+  "raja raja varma": {
+   "count": 1,
+   "files": [
+    "varma_bharani_nal_raja_raja_varma_d31"
+   ],
+   "raw_variants": [
+    "Raja Raja Varma"
+   ]
+  },
+  "ahalya": {
+   "count": 1,
+   "files": [
+    "varma_ahalya_indravalokan_d36"
+   ],
+   "raw_variants": [
+    "Ahalya"
+   ]
+  },
+  "rukmangada": {
+   "count": 1,
+   "files": [
+    "varma_rukmangada_mohini_d37"
+   ],
+   "raw_variants": [
+    "Rukmangada"
+   ]
+  },
+  "mohini": {
+   "count": 2,
+   "files": [
+    "varma_mohini_ball_c03",
+    "varma_rukmangada_mohini_d37"
+   ],
+   "raw_variants": [
+    "Mohini"
+   ]
+  },
+  "kamsa": {
+   "count": 1,
+   "files": [
+    "varma_killing_of_kamsa_d40"
+   ],
+   "raw_variants": [
+    "Kamsa"
+   ]
+  },
+  "balarama": {
+   "count": 1,
+   "files": [
+    "varma_killing_of_kamsa_d40"
+   ],
+   "raw_variants": [
+    "Balarama"
+   ]
+  },
+  "ayilyam thirunal rama varma": {
+   "count": 1,
+   "files": [
+    "varma_ayilyam_thirunal_rama_varma_d44"
+   ],
+   "raw_variants": [
+    "Ayilyam Thirunal Rama Varma"
+   ]
+  },
+  "yuvaraj kanterava narasimharaja wadiyar": {
+   "count": 1,
+   "files": [
+    "varma_yuvaraj_kanterava_wadiyar_d45"
+   ],
+   "raw_variants": [
+    "Yuvaraj Kanterava Narasimharaja Wadiyar"
+   ]
+  },
+  "moolam thirunal rama varma": {
+   "count": 1,
+   "files": [
+    "varma_moolam_thirunal_rama_varma_d48"
+   ],
+   "raw_variants": [
+    "Moolam Thirunal Rama Varma"
+   ]
+  },
+  "justice t. muthuswamy iyer": {
+   "count": 1,
+   "files": [
+    "varma_justice_muthuswamy_iyer_d53"
+   ],
+   "raw_variants": [
+    "Justice T. Muthuswamy Iyer"
+   ]
+  },
+  "senior rani lakshmi bayi": {
+   "count": 1,
+   "files": [
+    "varma_senior_rani_lakshmi_bayi_d56"
+   ],
+   "raw_variants": [
+    "Senior Rani Lakshmi Bayi"
+   ]
+  },
+  "shiva": {
+   "count": 2,
+   "files": [
+    "varma_harihara_c09",
+    "varma_shankar_version1_d57"
+   ],
+   "raw_variants": [
+    "Shiva"
+   ]
+  },
+  "parvati": {
+   "count": 2,
+   "files": [
+    "varma_harihara_c09",
+    "varma_shankar_version1_d57"
+   ],
+   "raw_variants": [
+    "Parvati"
+   ]
+  },
+  "gopichandra": {
+   "count": 1,
+   "files": [
+    "varma_yogi_gopichandra_d58"
+   ],
+   "raw_variants": [
+    "Gopichandra"
+   ]
+  },
+  "narasimha": {
+   "count": 1,
+   "files": [
+    "varma_narasimha_avatar_d60"
+   ],
+   "raw_variants": [
+    "Narasimha"
+   ]
+  },
+  "hiranyakashipu": {
+   "count": 1,
+   "files": [
+    "varma_narasimha_avatar_d60"
+   ],
+   "raw_variants": [
+    "Hiranyakashipu"
+   ]
+  },
+  "krishnaraja wadiyar iv": {
+   "count": 1,
+   "files": [
+    "varma_krishnaraja_wadiyar_iv_sisters_d64"
+   ],
+   "raw_variants": [
+    "Krishnaraja Wadiyar IV"
+   ]
+  },
+  "jayalakshmanni": {
+   "count": 1,
+   "files": [
+    "varma_krishnaraja_wadiyar_iv_sisters_d64"
+   ],
+   "raw_variants": [
+    "Jayalakshmanni"
+   ]
+  },
+  "krishnarajammanni": {
+   "count": 1,
+   "files": [
+    "varma_krishnaraja_wadiyar_iv_sisters_d64"
+   ],
+   "raw_variants": [
+    "Krishnarajammanni"
+   ]
+  },
+  "menaka": {
+   "count": 2,
+   "files": [
+    "varma_menaka_shakuntala_c15",
+    "varma_shakuntala_janm_d65"
+   ],
+   "raw_variants": [
+    "Menaka"
+   ]
+  },
+  "mir mehboob ali khan, asaf jah vi": {
+   "count": 1,
+   "files": [
+    "varma_nizam_of_hyderabad_d67"
+   ],
+   "raw_variants": [
+    "Mir Mehboob Ali Khan, Asaf Jah VI"
+   ]
+  },
+  "maharana fateh singh of mewar": {
+   "count": 1,
+   "files": [
+    "varma_maharana_fateh_singh_mewar_d68"
+   ],
+   "raw_variants": [
+    "Maharana Fateh Singh of Mewar"
+   ]
+  },
+  "tara devi": {
+   "count": 1,
+   "files": [
+    "varma_taradevi_c01"
+   ],
+   "raw_variants": [
+    "Tara Devi"
+   ]
+  },
+  "urvashi": {
+   "count": 1,
+   "files": [
+    "varma_urvashi_a17"
+   ],
+   "raw_variants": [
+    "Urvashi"
+   ]
+  },
+  "pururavas": {
+   "count": 1,
+   "files": [
+    "varma_urvashi_a17"
+   ],
+   "raw_variants": [
+    "Pururavas"
+   ]
+  },
+  "kaliya": {
+   "count": 1,
+   "files": [
+    "varma_krishna_kaliya_c05"
+   ],
+   "raw_variants": [
+    "Kaliya"
+   ]
+  },
+  "vashishta": {
+   "count": 1,
+   "files": [
+    "varma_rama_pattabhishekham_c07"
+   ],
+   "raw_variants": [
+    "Vashishta"
+   ]
+  },
+  "vamana": {
+   "count": 1,
+   "files": [
+    "varma_vamana_c10"
+   ],
+   "raw_variants": [
+    "Vamana"
+   ]
+  },
+  "bali": {
+   "count": 1,
+   "files": [
+    "varma_vamana_c10"
+   ],
+   "raw_variants": [
+    "Bali"
+   ]
+  },
+  "usha": {
+   "count": 1,
+   "files": [
+    "varma_usha_dream_c13"
+   ],
+   "raw_variants": [
+    "Usha"
+   ]
+  },
+  "sudeshna": {
+   "count": 1,
+   "files": [
+    "varma_draupadi_sudeshna_c14"
+   ],
+   "raw_variants": [
+    "Sudeshna"
+   ]
+  },
+  "durga": {
+   "count": 1,
+   "files": [
+    "varma_ashtabujadevi_c18"
+   ],
+   "raw_variants": [
+    "Durga"
+   ]
+  },
+  "mahishasura": {
+   "count": 1,
+   "files": [
+    "varma_ashtabujadevi_c18"
+   ],
+   "raw_variants": [
+    "Mahishasura"
+   ]
+  },
+  "shungrasoobyer avergal": {
+   "count": 1,
+   "files": [
+    "varma_shungrasoobyer_c25"
+   ],
+   "raw_variants": [
+    "Shungrasoobyer Avergal"
+   ]
+  },
+  "vasudeva": {
+   "count": 1,
+   "files": [
+    "varma_krishna_freeing_parents_c20"
+   ],
+   "raw_variants": [
+    "Vasudeva"
+   ]
+  },
+  "devaki": {
+   "count": 1,
+   "files": [
+    "varma_krishna_freeing_parents_c20"
+   ],
+   "raw_variants": [
+    "Devaki"
+   ]
+  },
+  "princess tarabai": {
+   "count": 1,
+   "files": [
+    "varma_tarabai_c21"
+   ],
+   "raw_variants": [
+    "Princess Tarabai"
+   ]
+  },
+  "seth lachman das": {
+   "count": 1,
+   "files": [
+    "varma_seth_lachman_das_c23"
+   ],
+   "raw_variants": [
+    "Seth Lachman Das"
+   ]
+  },
+  "savitri": {
+   "count": 1,
+   "files": [
+    "varma_savitri_c24"
+   ],
+   "raw_variants": [
+    "Savitri"
+   ]
+  },
+  "satyavan": {
+   "count": 1,
+   "files": [
+    "varma_savitri_c24"
+   ],
+   "raw_variants": [
+    "Satyavan"
+   ]
+  },
+  "yama": {
+   "count": 1,
+   "files": [
+    "varma_savitri_c24"
+   ],
+   "raw_variants": [
+    "Yama"
+   ]
+  }
+ }
+}
