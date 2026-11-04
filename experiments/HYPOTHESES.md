@@ -166,3 +166,26 @@ A file that misses a threshold is fixed **before** its images are scored. If tha
 Rule: after results exist, the text above is **never edited**. Each change gets one dated line here, in the form `YYYY-MM-DD: <what changed>, <why>, <which results it affects>`. Lines are appended and never removed.
 
 <!-- no deviations yet -->
+
+
+## Section C (Member C: KB, parser, names)
+
+Pre-registered by the merge of this section, before C's first scored run. After results exist, nothing below is edited; changes go under *Section C deviations* as dated lines.
+
+### C.1 Parser (core)
+- **H-C1 (parser accuracy):** On the gold dev scenes (`expected_characters`, `expected_epic` in `eval/test_scenes_dev.json`), `kb/parser.py` reaches character precision >= 0.90, character recall >= 0.90 and epic accuracy >= 0.85. Misspelled names (e.g. "Arjun", "Yudhisthira") are matched through aliases and fuzzy matching. "Rama" is never matched inside "Ramayana".
+- **Null result:** below these thresholds, the misses are listed in `kb/KB.md` with the cause (missing alias, fuzzy cutoff, ambiguous name). No claim is made beyond the dev scenes.
+
+### C.2 KB grounding, c6 (core if time allows)
+- **H-C2:** `c3_llm_kb` (KB descriptions written by looking at the training paintings) is more faithful than `c6_llm_kbllm` (descriptions written by the LLM without images), mainly for characters with `coverage` medium or high.
+- **Conditions:** `c3_llm_kb@rrv_v1` (a) vs `c6_llm_kbllm@rrv_v1` (b), same LLM, same prompt version, same model; only the KB file differs (`kb/kb.json` vs `kb/kb_llm.json`).
+- **Decision:** as in D.0: supported if the paired bootstrap 95% CI of (c3 - c6) excludes 0 in the predicted direction; "no clear difference" if it includes 0.
+- **Will NOT claim:** that grounding matters for characters with no training images (both KBs are text-only there).
+
+### C.3 Names LoRA (Overview 9.3)
+- Not run. See the deviation line below.
+
+### Section C deviations
+Rule: after results exist, the text above is never edited. Each change gets one dated line: `YYYY-MM-DD: <what changed>, <why>, <which results it affects>`.
+
+- 2026-11-04: Names LoRA (`rrv_names`) not run. The Day 3 noon training cutoff passed before the KB existed. The coverage audit is still run and its table goes into `kb/KB.md`. Affects: no `@rrv_names` results and no 2x2 table.
