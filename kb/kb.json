@@ -168,6 +168,29 @@
      "varma_sairandhri_b10"
     ]
    }
+  },
+  "hanuman": {
+   "canonical": "Hanuman",
+   "aliases": [
+    "Maruti",
+    "Anjaneya",
+    "Bajrangbali",
+    "Pavanputra",
+    "Mahavira"
+   ],
+   "epic": "Ramayana",
+   "visual": "grey-bearded old monkey-faced figure, small gold crown, knee-length red dhoti, beaded jewellery, mace",
+   "vocab_status": "untested",
+   "coverage_n": 4,
+   "coverage": "medium",
+   "source": {
+    "type": "images",
+    "ref": [
+     "varma_maruti_hanuman_b32",
+     "varma_rama_pattabhishekham_c07",
+     "varma_bharata_bhet_d26"
+    ]
+   }
   }
  },
  "settings": {},
