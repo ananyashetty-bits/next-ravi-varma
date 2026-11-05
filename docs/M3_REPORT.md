@@ -30,7 +30,7 @@ user text ──► [C] parse_scene ──► SceneSpec ──► [D] expand ─
 - **Generator (A):** SD1.5 + `rrv_v1`, DPM++ 30 steps, CFG 7.0, 512×512, settings from `config/m3.json` (`pipeline/PIPELINE.md`). One call: `text_to_image(text, seed)`.
 - **Constraint:** everything runs on a free Colab T4. The LLM, the diffusion model and the judge run in separate sessions and communicate through files.
 
-`TODO(A)`: one sentence on the measured seconds per image and the load time, from `PIPELINE.md`. `TODO(D)`: an example input → expansion → image triple, chosen after results (seed 1, dev scene).
+Generation takes about 5 s per 512×512 image on a T4 once the model is loaded (mean `gen_seconds` in A's run records: c1 5.3 s, c4 5.0 s; `outputs/eval/c{1,4}_*_metrics.json`). `TODO(A)`: load time. `TODO(D)`: an example input → expansion → image triple, chosen after results (seed 1, dev scene).
 
 ## 2. Research question and what is new since the halfway version
 
@@ -186,6 +186,7 @@ These are known now and hold whatever the results show; owners add their own.
 - **Style tail.** The model was **not trained with the style tail** we append: the winner's train_v1 captions have no fixed tail. `TODO(A)`: what the token-budget and SHAP results say about it.
 - **Name scrub.** It removes every listed name, including rivers and mounts that double as setting words (Ganga, Nandi), so a setting phrase can be lost. Measured on dev: **0 phrases scrubbed** in c2, c3 and c4. The one re-ask removed every leaked name first.
 - **Interim KB.** c2 and c3 dev results use D's interim KB `d-kb0` (18 characters, written from train_v1 captions; 2 entries without a training painting), not C's KB. If C's KB lands, both are re-run and reported.
+- **Interim KB coverage on held-out.** `d-kb0` covers only the dev-scene characters, so held-out scenes with other characters get no description for them in c2/c3 (the parser writes "the figure"). `TODO(B, held-out)`: share of held-out scenes affected.
 - **Smaller dev set.** 16 of the planned 32 dev scenes (A's and C's were not added), so tier subsets have 2-4 scenes. The H-D2 tier-4 test has n = 2.
 - **Self-made benchmark.** Checklists were written by the team, and the dev set was also used to tune prompts and the KB (allowed by our protocol). Only the held-out set is untouched.
 - `TODO(A, B, C)`: owner-specific limits (SHAP position effects; the judge's failure cases; KB description sources and gaps; name-aware LoRA memorisation).

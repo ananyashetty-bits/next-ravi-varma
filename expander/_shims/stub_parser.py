@@ -153,6 +153,16 @@ def parse_scene(text: str, scene_id: str = "", kb_path: str | None = None) -> di
         determined = bool(prev) and (prev[-1] in _NO_ARTICLE or (len(prev) > 1 and prev[-2] in _ARTICLES))
         phrase = role if determined else f"the {role}"
         action = action[:start] + phrase + action[end:]
+    if any(e.get("role") for e in entities.values()):
+        # names the KB does not cover (e.g. held-out characters) become "the figure", so the action keeps its
+        # subject instead of being cut by the expander's name scrub (only with a role KB; normalize() == _ascii)
+        from expander.names import default_matcher
+
+        for start, end, _ in reversed(default_matcher().spans(action)):
+            prev = [w.lower() for w in re.findall(r"[A-Za-z]+", action[:start])]
+            determined = bool(prev) and (prev[-1] in _NO_ARTICLE or (len(prev) > 1 and prev[-2] in _ARTICLES))
+            tail = re.sub(r"^['\u2019]s\b", "'s", action[end:])
+            action = action[:start] + ("figure" if determined else "the figure") + tail
     action = _tidy(_IMPERATIVE.sub("", action))
 
     matched_spans = [(s, e) for s, e, _, _ in hits]
