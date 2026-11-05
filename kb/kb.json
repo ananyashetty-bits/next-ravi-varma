@@ -124,6 +124,27 @@
      "varma_shakuntala_a10"
     ]
    }
+  },
+  "radha": {
+   "canonical": "Radha",
+   "aliases": [
+    "Radhika",
+    "Radhe",
+    "Radharani"
+   ],
+   "epic": "Puranic",
+   "visual": "woman in gold-bordered sari over both shoulders, flowers in bun, gold jewellery, nose ring",
+   "vocab_status": "untested",
+   "coverage_n": 5,
+   "coverage": "high",
+   "source": {
+    "type": "images",
+    "ref": [
+     "varma_radha_moonlight_b01",
+     "varma_radha_c06",
+     "varma_radha_krishna_banyan_d32"
+    ]
+   }
   }
  },
  "settings": {},
