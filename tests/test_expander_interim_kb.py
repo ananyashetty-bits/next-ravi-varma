@@ -102,3 +102,12 @@ def test_legacy_kb_without_roles_still_cuts_names():
     a = parse_scene("Hanuman kneeling before Rama", "t", legacy)["action"]
     assert a == "kneeling before"
     assert not re.search(r"\b(the|a)\b", a)
+
+
+def test_names_outside_the_kb_become_the_figure():
+    """Held-out characters not in d-kb0 keep the sentence's subject instead of being cut by the scrub."""
+    spec = parse("Ravana carrying Sita away through the sky in his flying chariot")
+    assert spec["action"] == "the figure carrying the young princess away through the sky in his flying chariot"
+    assert [c["canonical"] for c in spec["characters"]] == ["Sita"]
+    assert default_matcher().find(spec["action"]) == []
+    assert parse("Vibhishana's palace at night")["action"] == "the figure's palace at night"

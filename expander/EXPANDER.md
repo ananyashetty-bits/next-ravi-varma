@@ -221,10 +221,29 @@ Images (A's `gen` profile) and scores (B's `eval/score.py`, `eval` profile): `RU
 
 `batch_expand.py` flags: `--scenes --mode --out [--kb] [--cache] [--condition] [--split] [--llm default|large|fake] [--llm_model] [--llm_revision] [--no_4bit] [--prompt_version] [--limit N] [--config] [--overwrite] [--counter auto|clip|approx] [--scene_negatives]`. It resumes an existing `--out` and loads the LLM only on a cache miss. `check_expansions.py FILE... [--max_tokens N] [--json OUT] [--strict] [--names PATH] [--no_recount] [--config]`.
 
-Held-out (B, Day 5, frozen S3 sha, private cache): `TODO(results)`: confirm the frozen sha, the final `prompt_version` and the exact flags at S3. Draft:
+### Freeze (S3) and held-out run
+
+**D's frozen expander:**
+
+| Item | Frozen value |
+|---|---|
+| prompt | `v1` (`expander/prompts/system_v1.txt`) |
+| template | `tpl2` |
+| KB | `d-kb0` (`expander/interim_kb/kb_d0.json`), unless C's KB replaces it before the freeze |
+| LLM | `Qwen/Qwen3-4B-Instruct-2507` @ `cdbee75f17c01a7cc42f958dc650907174af0554`, 4-bit NF4, temperature 0 |
+| parser | the stand-in (`expander/_shims/stub_parser.py`, via `kb/stub_parser.py`) |
+
+The frozen commit is the `main` merge of the freeze PR; D posts its sha in the Status issue. No changes after it except announced bug fixes.
+
+**Held-out (B, after S3, private scenes and cache; never commit the cache):**
 ```
-git checkout <S3 sha>
-python expander/batch_expand.py --scenes <private>/test_scenes_heldout.json --mode llm_kb --split heldout \
-    --cache <private>/heldout_cache.json --out outputs/expansions/c3_llm_kb_heldout.json
-# same for --mode template (c2) and --mode llm_nokb (c4), plus any optional condition that ran on dev
+git checkout <D's frozen sha>
+PRIV=<B's private folder>   # outside the repo and the shared Drive
+python expander/batch_expand.py --scenes $PRIV/test_scenes_heldout.json --mode template --split heldout --kb expander/interim_kb/kb_d0.json --out outputs/expansions/c2_template_heldout.json
+python expander/batch_expand.py --scenes $PRIV/test_scenes_heldout.json --mode llm_kb   --split heldout --kb expander/interim_kb/kb_d0.json --cache $PRIV/heldout_cache.json --out outputs/expansions/c3_llm_kb_heldout.json
+python expander/batch_expand.py --scenes $PRIV/test_scenes_heldout.json --mode llm_nokb --split heldout --cache $PRIV/heldout_cache.json --out outputs/expansions/c4_llm_nokb_heldout.json
+python expander/check_expansions.py outputs/expansions/c2_template_heldout.json outputs/expansions/c3_llm_kb_heldout.json outputs/expansions/c4_llm_nokb_heldout.json --strict
 ```
+- **What can be committed:** the expansion files hold only prompts, but they reveal the held-out texts' content. Commit them only when B reveals the held-out set (Day 5).
+- **Images:** seeds 1-4 (`config/m3.json` `heldout_seeds`), same generator as dev.
+- **Known limit:** `d-kb0` covers the 18 dev-scene characters only. A held-out character outside it gets no description, and the stand-in parser writes "the figure" in its place in the action (never its name). c2/c3 are therefore weaker on held-out scenes with uncovered characters. Report the share of such scenes (`characters` vs `unknown_entities` in the records).
