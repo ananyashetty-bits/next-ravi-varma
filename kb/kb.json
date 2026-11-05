@@ -73,6 +73,36 @@
     "when": "exile / forest scenes",
     "visual": "fair-skinned man in white dhoti, matted hair in a bun, holding bow and arrow"
    }
+  },
+  "krishna": {
+   "canonical": "Krishna",
+   "aliases": [
+    "Kanha",
+    "Kanhaiya",
+    "Govinda",
+    "Madhava",
+    "Keshava",
+    "Gopala",
+    "Muralidhara",
+    "Giridhari"
+   ],
+   "epic": "Mahabharata",
+   "visual": "dark blue-skinned man, curly black hair, peacock-feather crown, flower garland, yellow dhoti, necklace, armband",
+   "vocab_status": "untested",
+   "coverage_n": 9,
+   "coverage": "high",
+   "source": {
+    "type": "images",
+    "ref": [
+     "varma_muralidhara_c12",
+     "varma_krishna_kaliya_c05",
+     "varma_krishna_envoy_a46"
+    ]
+   },
+   "visual_alt": {
+    "when": "infant or child Krishna (Yashoda scenes)",
+    "visual": "dark blue-skinned baby boy with curly black hair"
+   }
   }
  },
  "settings": {},
