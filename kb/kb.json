@@ -1,0 +1,110 @@
+{
+ "version": "kb0.1",
+ "characters": {
+  "sita": {
+   "canonical": "Sita",
+   "aliases": [
+    "Janaki",
+    "Vaidehi",
+    "Maithili"
+   ],
+   "epic": "Ramayana",
+   "visual": "woman in red sari with yellow border, gold bangles, earrings and necklace",
+   "vocab_status": "untested",
+   "coverage_n": 10,
+   "coverage": "high",
+   "source": {
+    "type": "images",
+    "ref": [
+     "varma_sita_a14",
+     "varma_sita_abandoned_lamenting_d51",
+     "varma_sita_golden_deer_b30"
+    ]
+   }
+  },
+  "rama": {
+   "canonical": "Rama",
+   "aliases": [
+    "Ram",
+    "Raghava",
+    "Raghuvara",
+    "Dasharathi"
+   ],
+   "epic": "Ramayana",
+   "visual": "man in yellow dhoti, red shawl, pearl jewellery, tilak, crown, holding bow and arrow",
+   "vocab_status": "untested",
+   "coverage_n": 9,
+   "coverage": "high",
+   "source": {
+    "type": "images",
+    "ref": [
+     "varma_rama_a36",
+     "varma_ram_a16",
+     "varma_ram_laxman_b19"
+    ]
+   },
+   "visual_alt": {
+    "when": "exile / forest scenes",
+    "visual": "man in white dhoti, matted hair in a bun, holding bow and arrow"
+   }
+  },
+  "lakshmana": {
+   "canonical": "Lakshmana",
+   "aliases": [
+    "Laxman",
+    "Lakshman",
+    "Laxmana",
+    "Saumitri"
+   ],
+   "epic": "Ramayana",
+   "visual": "fair-skinned man, yellow dhoti, red shawl, pearl jewellery, tilak, small crown, bow and arrow",
+   "vocab_status": "untested",
+   "coverage_n": 5,
+   "coverage": "high",
+   "source": {
+    "type": "images",
+    "ref": [
+     "varma_ram_laxman_b19",
+     "varma_rama_sita_lakshmana_sarayu_d54",
+     "varma_ramas_archery_training_d39"
+    ]
+   },
+   "visual_alt": {
+    "when": "exile / forest scenes",
+    "visual": "fair-skinned man in white dhoti, matted hair in a bun, holding bow and arrow"
+   }
+  },
+  "krishna": {
+   "canonical": "Krishna",
+   "aliases": [
+    "Kanha",
+    "Kanhaiya",
+    "Govinda",
+    "Madhava",
+    "Keshava",
+    "Gopala",
+    "Muralidhara",
+    "Giridhari"
+   ],
+   "epic": "Mahabharata",
+   "visual": "dark blue-skinned man, curly black hair, peacock-feather crown, flower garland, yellow dhoti, necklace, armband",
+   "vocab_status": "untested",
+   "coverage_n": 9,
+   "coverage": "high",
+   "source": {
+    "type": "images",
+    "ref": [
+     "varma_muralidhara_c12",
+     "varma_krishna_kaliya_c05",
+     "varma_krishna_envoy_a46"
+    ]
+   },
+   "visual_alt": {
+    "when": "infant or child Krishna (Yashoda scenes)",
+    "visual": "dark blue-skinned baby boy with curly black hair"
+   }
+  }
+ },
+ "settings": {},
+ "moods": {}
+}
