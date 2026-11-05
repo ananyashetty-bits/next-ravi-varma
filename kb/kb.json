@@ -103,6 +103,27 @@
     "when": "infant or child Krishna (Yashoda scenes)",
     "visual": "dark blue-skinned baby boy with curly black hair"
    }
+  },
+  "shakuntala": {
+   "canonical": "Shakuntala",
+   "aliases": [
+    "Sakuntala",
+    "Shakuntal",
+    "Sakoontala"
+   ],
+   "epic": "Mahabharata",
+   "visual": "woman in pink sari draped like a dhoti, flower garland and flower jewellery",
+   "vocab_status": "untested",
+   "coverage_n": 8,
+   "coverage": "high",
+   "source": {
+    "type": "images",
+    "ref": [
+     "varma_shakuntala_a04",
+     "varma_shakuntala_a05",
+     "varma_shakuntala_a10"
+    ]
+   }
   }
  },
  "settings": {},
