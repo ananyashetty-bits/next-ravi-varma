@@ -145,6 +145,115 @@
      "varma_radha_krishna_banyan_d32"
     ]
    }
+  },
+  "draupadi": {
+   "canonical": "Draupadi",
+   "aliases": [
+    "Panchali",
+    "Sairandhri",
+    "Drupadi",
+    "Krishnaa",
+    "Yajnaseni"
+   ],
+   "epic": "Mahabharata",
+   "visual": "woman with loose long black hair, thin-bordered sari, thin necklace, bangles, small jhumkas",
+   "vocab_status": "untested",
+   "coverage_n": 6,
+   "coverage": "high",
+   "source": {
+    "type": "images",
+    "ref": [
+     "varma_draupadi_humiliated_a39",
+     "varma_draupadi_simhika_a61",
+     "varma_sairandhri_b10"
+    ]
+   }
+  },
+  "hanuman": {
+   "canonical": "Hanuman",
+   "aliases": [
+    "Maruti",
+    "Anjaneya",
+    "Bajrangbali",
+    "Pavanputra",
+    "Mahavira"
+   ],
+   "epic": "Ramayana",
+   "visual": "grey-bearded old monkey-faced figure, small gold crown, knee-length red dhoti, beaded jewellery, mace",
+   "vocab_status": "untested",
+   "coverage_n": 4,
+   "coverage": "medium",
+   "source": {
+    "type": "images",
+    "ref": [
+     "varma_maruti_hanuman_b32",
+     "varma_rama_pattabhishekham_c07",
+     "varma_bharata_bhet_d26"
+    ]
+   }
+  },
+  "arjuna": {
+   "canonical": "Arjuna",
+   "aliases": [
+    "Arjun",
+    "Partha",
+    "Dhananjaya",
+    "Phalguna",
+    "Savyasachi"
+   ],
+   "epic": "Mahabharata",
+   "visual": "man with jewelled crown, moustache, rich kurta, gold shoulder pads, jewelled earrings, necklaces, tilak",
+   "vocab_status": "untested",
+   "coverage_n": 2,
+   "coverage": "medium",
+   "source": {
+    "type": "images",
+    "ref": [
+     "varma_arjuna_subhadra_b03",
+     "varma_draupadi_pandavas_b07"
+    ]
+   },
+   "visual_alt": {
+    "when": "ascetic / sage scenes",
+    "visual": "man in orange dhoti and shawl, long curly black hair, beard, rudraksha necklace"
+   }
+  },
+  "bharata": {
+   "canonical": "Bharata",
+   "aliases": [
+    "Bharat"
+   ],
+   "epic": "Ramayana",
+   "visual": "man in long robe, white shawl, long black hair, tilak, beaded earrings, necklace, bracelet",
+   "vocab_status": "untested",
+   "coverage_n": 2,
+   "coverage": "medium",
+   "source": {
+    "type": "images",
+    "ref": [
+     "varma_bharata_bhet_d26"
+    ]
+   },
+   "note": "Nandigrama (ascetic regent) look as painted in bharata_bhet; no royal-life painting seen."
+  },
+  "yashoda": {
+   "canonical": "Yashoda",
+   "aliases": [
+    "Yasoda",
+    "Jashoda"
+   ],
+   "epic": "Puranic",
+   "visual": "woman in shoulder-draped sari, centre-parted hair, flowered bun, septum nose ring, earrings, bangles, necklace",
+   "vocab_status": "untested",
+   "coverage_n": 2,
+   "coverage": "medium",
+   "source": {
+    "type": "images",
+    "ref": [
+     "varma_yashoda_krishna_b17",
+     "varma_yashoda_krishna_c16"
+    ]
+   }
   }
  },
  "settings": {},
