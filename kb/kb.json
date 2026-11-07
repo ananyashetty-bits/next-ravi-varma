@@ -254,6 +254,132 @@
      "varma_yashoda_krishna_c16"
     ]
    }
+  },
+  "subhadra": {
+   "canonical": "Subhadra",
+   "aliases": [
+    "Subhadhra"
+   ],
+   "epic": "Mahabharata",
+   "visual": "woman in purple sari, gold waistband, green and white bangles, gold necklace, flowered bun",
+   "vocab_status": "untested",
+   "coverage_n": 1,
+   "coverage": "low",
+   "source": {
+    "type": "images",
+    "ref": [
+     "varma_arjuna_subhadra_b03"
+    ]
+   }
+  },
+  "duryodhana": {
+   "canonical": "Duryodhana",
+   "aliases": [
+    "Suyodhana",
+    "Duryodhan"
+   ],
+   "epic": "Mahabharata",
+   "visual": "man in blue kurta, white churidar, red turban with white feathers, pearl necklaces, moustache",
+   "vocab_status": "untested",
+   "coverage_n": 1,
+   "coverage": "low",
+   "source": {
+    "type": "images",
+    "ref": [
+     "varma_krishna_envoy_a46"
+    ]
+   }
+  },
+  "bhishma": {
+   "canonical": "Bhishma",
+   "aliases": [
+    "Bheeshma",
+    "Bhisma",
+    "Devavrata",
+    "Gangaputra"
+   ],
+   "epic": "Mahabharata",
+   "visual": "man with long curly hair, moustache, white robe, churidar, yellow waist cloth, white earrings",
+   "vocab_status": "untested",
+   "coverage_n": 1,
+   "coverage": "low",
+   "source": {
+    "type": "images",
+    "ref": [
+     "varma_bheeshma_oath_a50"
+    ]
+   }
+  },
+  "savitri": {
+   "canonical": "Savitri",
+   "aliases": [
+    "Savithri"
+   ],
+   "epic": "Mahabharata",
+   "visual": "woman with long open curly black hair, draped red sari, kumkum, simple gold jewellery",
+   "vocab_status": "untested",
+   "coverage_n": 1,
+   "coverage": "low",
+   "source": {
+    "type": "images",
+    "ref": [
+     "varma_savitri_c24"
+    ]
+   }
+  },
+  "satyavan": {
+   "canonical": "Satyavan",
+   "aliases": [
+    "Satyavaan"
+   ],
+   "epic": "Mahabharata",
+   "visual": "bare-chested man in white dhoti, short curly black hair, moustache, tilak, simple necklace",
+   "vocab_status": "untested",
+   "coverage_n": 1,
+   "coverage": "low",
+   "source": {
+    "type": "images",
+    "ref": [
+     "varma_savitri_c24"
+    ]
+   }
+  },
+  "yama": {
+   "canonical": "Yama",
+   "aliases": [
+    "Yamaraja",
+    "Yamraj"
+   ],
+   "epic": "Mahabharata",
+   "visual": "translucent grey-black figure holding a stick with a noose",
+   "vocab_status": "untested",
+   "coverage_n": 1,
+   "coverage": "low",
+   "source": {
+    "type": "images",
+    "ref": [
+     "varma_savitri_c24"
+    ]
+   }
+  },
+  "shatrughna": {
+   "canonical": "Shatrughna",
+   "aliases": [
+    "Shatrugna",
+    "Satrughna"
+   ],
+   "epic": "Ramayana",
+   "visual": "man in gold peacock-feather crown, tilak, pearl earrings, necklace, kurta and dhoti, holding bow",
+   "vocab_status": "untested",
+   "coverage_n": 1,
+   "coverage": "low",
+   "source": {
+    "type": "images",
+    "ref": [
+     "varma_ramapanchayan_a13"
+    ]
+   },
+   "note": "Could not be told apart from the other brothers in a13; generic brothers' look."
   }
  },
  "settings": {},
