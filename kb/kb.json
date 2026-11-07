@@ -191,6 +191,69 @@
      "varma_bharata_bhet_d26"
     ]
    }
+  },
+  "arjuna": {
+   "canonical": "Arjuna",
+   "aliases": [
+    "Arjun",
+    "Partha",
+    "Dhananjaya",
+    "Phalguna",
+    "Savyasachi"
+   ],
+   "epic": "Mahabharata",
+   "visual": "man with jewelled crown, moustache, rich kurta, gold shoulder pads, jewelled earrings, necklaces, tilak",
+   "vocab_status": "untested",
+   "coverage_n": 2,
+   "coverage": "medium",
+   "source": {
+    "type": "images",
+    "ref": [
+     "varma_arjuna_subhadra_b03",
+     "varma_draupadi_pandavas_b07"
+    ]
+   },
+   "visual_alt": {
+    "when": "ascetic / sage scenes",
+    "visual": "man in orange dhoti and shawl, long curly black hair, beard, rudraksha necklace"
+   }
+  },
+  "bharata": {
+   "canonical": "Bharata",
+   "aliases": [
+    "Bharat"
+   ],
+   "epic": "Ramayana",
+   "visual": "man in long robe, white shawl, long black hair, tilak, beaded earrings, necklace, bracelet",
+   "vocab_status": "untested",
+   "coverage_n": 2,
+   "coverage": "medium",
+   "source": {
+    "type": "images",
+    "ref": [
+     "varma_bharata_bhet_d26"
+    ]
+   },
+   "note": "Nandigrama (ascetic regent) look as painted in bharata_bhet; no royal-life painting seen."
+  },
+  "yashoda": {
+   "canonical": "Yashoda",
+   "aliases": [
+    "Yasoda",
+    "Jashoda"
+   ],
+   "epic": "Puranic",
+   "visual": "woman in shoulder-draped sari, centre-parted hair, flowered bun, septum nose ring, earrings, bangles, necklace",
+   "vocab_status": "untested",
+   "coverage_n": 2,
+   "coverage": "medium",
+   "source": {
+    "type": "images",
+    "ref": [
+     "varma_yashoda_krishna_b17",
+     "varma_yashoda_krishna_c16"
+    ]
+   }
   }
  },
  "settings": {},
