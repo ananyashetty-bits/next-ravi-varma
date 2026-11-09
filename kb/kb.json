@@ -520,5 +520,15 @@
    }
   }
  },
- "moods": {}
+ "moods": {
+  "grief": "dim dramatic lighting, shadowed faces, cloudy sky",
+  "devotion": "soft warm glow, lit by an oil lamp",
+  "anger": "harsh dramatic light, dark cloudy sky",
+  "joy": "bright warm daylight, golden tones",
+  "fear": "dim flickering light, deep shadows",
+  "longing": "soft moonlight, gentle glow",
+  "calm": "soft dusk light, peaceful atmosphere",
+  "valour": "dramatic golden light, cloudy sky"
+ },
+ "mood_notes": "Tested in M2 VISUAL_VOCAB.md: 'dusk' (works), 'oil lamp' and 'dramatic cloudy sky' (partly). All other mood wording is untested."
 }
