@@ -382,6 +382,143 @@
    "note": "Could not be told apart from the other brothers in a13; generic brothers' look."
   }
  },
- "settings": {},
+ "settings": {
+  "court": {
+   "aliases": [
+    "court",
+    "sabha",
+    "durbar",
+    "throne room",
+    "royal hall",
+    "assembly hall",
+    "kaurava court"
+   ],
+   "visual": "large pillared hall, white-pink carpets, raised throne with steps and umbrella, curtained windows",
+   "coverage": "grounded",
+   "source": {
+    "type": "images",
+    "ref": [
+     "varma_draupadi_humiliated_a39",
+     "varma_court_of_dushyant_a29"
+    ]
+   }
+  },
+  "forest": {
+   "aliases": [
+    "forest",
+    "woods",
+    "jungle",
+    "hermitage",
+    "ashram",
+    "vana"
+   ],
+   "visual": "rocky forest edge, heavy green vegetation, mountains in the background",
+   "coverage": "grounded",
+   "source": {
+    "type": "images",
+    "ref": [
+     "varma_ram_laxman_b19"
+    ]
+   }
+  },
+  "palace": {
+   "aliases": [
+    "palace",
+    "courtyard",
+    "terrace",
+    "balcony"
+   ],
+   "visual": "sandstone-pillared courtyard, stone steps with raised planters of potted plants, forest beyond",
+   "coverage": "grounded",
+   "source": {
+    "type": "images",
+    "ref": [
+     "varma_kadambari_sitar_a51"
+    ]
+   }
+  },
+  "river": {
+   "aliases": [
+    "river",
+    "riverbank",
+    "river bank",
+    "yamuna",
+    "ganga",
+    "sarayu"
+   ],
+   "visual": "dull-coloured river through forest, tree-lined banks, straw-roofed mud huts",
+   "coverage": "grounded",
+   "source": {
+    "type": "images",
+    "ref": [
+     "varma_rama_sita_lakshmana_sarayu_d54",
+     "varma_bheeshma_oath_a50"
+    ]
+   }
+  },
+  "garden": {
+   "aliases": [
+    "garden",
+    "grove",
+    "orchard",
+    "ashoka grove",
+    "ashoka vatika"
+   ],
+   "visual": "grove of fruiting and flowering trees, straw mats spread beneath them",
+   "coverage": "grounded",
+   "source": {
+    "type": "images",
+    "ref": [
+     "varma_sita_a14"
+    ]
+   }
+  },
+  "lake": {
+   "aliases": [
+    "lake",
+    "pond",
+    "moonlit lake"
+   ],
+   "visual": "calm forest lake under full moon behind clouds, rocks and grass at the edge",
+   "coverage": "grounded",
+   "source": {
+    "type": "images",
+    "ref": [
+     "varma_radha_moonlight_b01"
+    ]
+   }
+  },
+  "ocean": {
+   "aliases": [
+    "ocean",
+    "sea",
+    "seashore",
+    "shore",
+    "coast"
+   ],
+   "visual": "rocky sandless shore, high crashing waves, black cloudy sky with lightning",
+   "coverage": "grounded",
+   "source": {
+    "type": "images",
+    "ref": [
+     "varma_rama_a36"
+    ]
+   }
+  },
+  "kurukshetra": {
+   "aliases": [
+    "battlefield",
+    "battleground",
+    "battle",
+    "kurukshetra"
+   ],
+   "visual": "open dusty plain, chariots, banners, scattered weapons, hazy sky",
+   "coverage": "none",
+   "source": {
+    "type": "text",
+    "ref": "none: no training painting shows a battlefield; generic description, not taken from a named source"
+   }
+  }
+ },
  "moods": {}
 }
