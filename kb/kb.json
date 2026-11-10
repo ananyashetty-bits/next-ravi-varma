@@ -1,12 +1,15 @@
 {
- "version": "kb0.1",
+ "version": "kb0.2",
  "characters": {
   "sita": {
    "canonical": "Sita",
    "aliases": [
     "Janaki",
     "Vaidehi",
-    "Maithili"
+    "Maithili",
+    "Seetha",
+    "Seeta",
+    "Sitha"
    ],
    "epic": "Ramayana",
    "visual": "woman in red sari with yellow border, gold bangles, earrings and necklace",
@@ -28,7 +31,12 @@
     "Ram",
     "Raghava",
     "Raghuvara",
-    "Dasharathi"
+    "Dasharathi",
+    "Sri Rama",
+    "Shri Ram",
+    "Ramachandra",
+    "Raghunatha",
+    "Raghupati"
    ],
    "epic": "Ramayana",
    "visual": "man in yellow dhoti, red shawl, pearl jewellery, tilak, crown, holding bow and arrow",
@@ -54,7 +62,9 @@
     "Laxman",
     "Lakshman",
     "Laxmana",
-    "Saumitri"
+    "Saumitri",
+    "Lakshmanan",
+    "Lakhan"
    ],
    "epic": "Ramayana",
    "visual": "fair-skinned man, yellow dhoti, red shawl, pearl jewellery, tilak, small crown, bow and arrow",
@@ -84,7 +94,15 @@
     "Keshava",
     "Gopala",
     "Muralidhara",
-    "Giridhari"
+    "Giridhari",
+    "Krishn",
+    "Krsna",
+    "Kannan",
+    "Murari",
+    "Murlidhar",
+    "Shyam",
+    "Mukunda",
+    "Vasudeva Krishna"
    ],
    "epic": "Mahabharata",
    "visual": "dark blue-skinned man, curly black hair, peacock-feather crown, flower garland, yellow dhoti, necklace, armband",
@@ -109,7 +127,10 @@
    "aliases": [
     "Sakuntala",
     "Shakuntal",
-    "Sakoontala"
+    "Sakoontala",
+    "Shakunthala",
+    "Sakunthala",
+    "Shakuntla"
    ],
    "epic": "Mahabharata",
    "visual": "woman in pink sari draped like a dhoti, flower garland and flower jewellery",
@@ -153,7 +174,9 @@
     "Sairandhri",
     "Drupadi",
     "Krishnaa",
-    "Yajnaseni"
+    "Yajnaseni",
+    "Draupathi",
+    "Sairandri"
    ],
    "epic": "Mahabharata",
    "visual": "woman with loose long black hair, thin-bordered sari, thin necklace, bangles, small jhumkas",
@@ -176,7 +199,10 @@
     "Anjaneya",
     "Bajrangbali",
     "Pavanputra",
-    "Mahavira"
+    "Mahavira",
+    "Maruthi",
+    "Hanumanta",
+    "Hanumantha"
    ],
    "epic": "Ramayana",
    "visual": "grey-bearded old monkey-faced figure, small gold crown, knee-length red dhoti, beaded jewellery, mace",
@@ -199,7 +225,8 @@
     "Partha",
     "Dhananjaya",
     "Phalguna",
-    "Savyasachi"
+    "Savyasachi",
+    "Kiriti"
    ],
    "epic": "Mahabharata",
    "visual": "man with jewelled crown, moustache, rich kurta, gold shoulder pads, jewelled earrings, necklaces, tilak",
@@ -296,7 +323,8 @@
     "Bheeshma",
     "Bhisma",
     "Devavrata",
-    "Gangaputra"
+    "Gangaputra",
+    "Bhishm"
    ],
    "epic": "Mahabharata",
    "visual": "man with long curly hair, moustache, white robe, churidar, yellow waist cloth, white earrings",
@@ -348,7 +376,8 @@
    "canonical": "Yama",
    "aliases": [
     "Yamaraja",
-    "Yamraj"
+    "Yamraj",
+    "Yamadharma"
    ],
    "epic": "Mahabharata",
    "visual": "translucent grey-black figure holding a stick with a noose",
@@ -366,7 +395,9 @@
    "canonical": "Shatrughna",
    "aliases": [
     "Shatrugna",
-    "Satrughna"
+    "Satrughna",
+    "Shatrughan",
+    "Shatrughana"
    ],
    "epic": "Ramayana",
    "visual": "man in gold peacock-feather crown, tilak, pearl earrings, necklace, kurta and dhoti, holding bow",
@@ -388,7 +419,8 @@
     "Angaraja",
     "Vasusena",
     "Suryaputra",
-    "Kaunteya"
+    "Kaunteya",
+    "Karn"
    ],
    "epic": "Mahabharata",
    "visual": "bare-chested warrior, golden armour, large gold earrings",
