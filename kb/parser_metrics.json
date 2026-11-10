@@ -1,0 +1,121 @@
+{
+ "n_scenes": 16,
+ "precision": 1.0,
+ "recall": 1.0,
+ "epic_accuracy": 1.0,
+ "kb_version": "kb0.2",
+ "per_scene": [
+  {
+   "id": "s09",
+   "missed": [],
+   "extra": [],
+   "epic_expected": "Ramayana",
+   "epic_got": "Ramayana"
+  },
+  {
+   "id": "s10",
+   "missed": [],
+   "extra": [],
+   "epic_expected": "Mahabharata",
+   "epic_got": "Mahabharata"
+  },
+  {
+   "id": "s11",
+   "missed": [],
+   "extra": [],
+   "epic_expected": "Mahabharata",
+   "epic_got": "Mahabharata"
+  },
+  {
+   "id": "s12",
+   "missed": [],
+   "extra": [],
+   "epic_expected": "Ramayana",
+   "epic_got": "Ramayana"
+  },
+  {
+   "id": "s13",
+   "missed": [],
+   "extra": [],
+   "epic_expected": "Mahabharata",
+   "epic_got": "Mahabharata"
+  },
+  {
+   "id": "s14",
+   "missed": [],
+   "extra": [],
+   "epic_expected": "Ramayana",
+   "epic_got": "Ramayana"
+  },
+  {
+   "id": "s15",
+   "missed": [],
+   "extra": [],
+   "epic_expected": "Mahabharata",
+   "epic_got": "Mahabharata"
+  },
+  {
+   "id": "s16",
+   "missed": [],
+   "extra": [],
+   "epic_expected": "Mahabharata",
+   "epic_got": "Mahabharata"
+  },
+  {
+   "id": "s25",
+   "missed": [],
+   "extra": [],
+   "epic_expected": "Ramayana",
+   "epic_got": "Ramayana"
+  },
+  {
+   "id": "s26",
+   "missed": [],
+   "extra": [],
+   "epic_expected": "Mahabharata",
+   "epic_got": "Mahabharata"
+  },
+  {
+   "id": "s27",
+   "missed": [],
+   "extra": [],
+   "epic_expected": "Puranic",
+   "epic_got": "Puranic"
+  },
+  {
+   "id": "s28",
+   "missed": [],
+   "extra": [],
+   "epic_expected": "Ramayana",
+   "epic_got": "Ramayana"
+  },
+  {
+   "id": "s29",
+   "missed": [],
+   "extra": [],
+   "epic_expected": "Mahabharata",
+   "epic_got": "Mahabharata"
+  },
+  {
+   "id": "s30",
+   "missed": [],
+   "extra": [],
+   "epic_expected": "Mahabharata",
+   "epic_got": "Mahabharata"
+  },
+  {
+   "id": "s31",
+   "missed": [],
+   "extra": [],
+   "epic_expected": "Ramayana",
+   "epic_got": "Ramayana"
+  },
+  {
+   "id": "s32",
+   "missed": [],
+   "extra": [],
+   "epic_expected": "Unknown",
+   "epic_got": "Unknown"
+  }
+ ]
+}
