@@ -1,7 +1,7 @@
 {
  "n_scenes": 24,
  "precision": 1.0,
- "recall": 0.98,
+ "recall": 1.0,
  "epic_accuracy": 1.0,
  "kb_version": "kb0.2",
  "per_scene": [
@@ -121,8 +121,8 @@
    "id": "s17",
    "missed": [],
    "extra": [],
-   "epic_expected": "Puranic",
-   "epic_got": "Puranic"
+   "epic_expected": "Ramayana",
+   "epic_got": "Ramayana"
   },
   {
    "id": "s18",
@@ -161,9 +161,7 @@
   },
   {
    "id": "s23",
-   "missed": [
-    "ahalya"
-   ],
+   "missed": [],
    "extra": [],
    "epic_expected": "Ramayana",
    "epic_got": "Ramayana"

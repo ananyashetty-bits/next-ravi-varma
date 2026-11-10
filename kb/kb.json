@@ -447,6 +447,26 @@
     "type": "text",
     "ref": "generic description; no painting and no named reference checked (unverified, needs review)"
    }
+  },
+  "ahalya": {
+   "canonical": "Ahalya",
+   "aliases": [
+    "Ahilya",
+    "Ahalyaa",
+    "Gautami"
+   ],
+   "epic": "Ramayana",
+   "visual": "woman in sari, red blouse, loose black bun, green bangles, gold hoop earrings, bindi",
+   "vocab_status": "untested",
+   "coverage_n": 1,
+   "coverage": "low",
+   "source": {
+    "type": "images",
+    "ref": [
+     "varma_ahalya_indravalokan_d36",
+     "varma_ram_laxman_b19"
+    ]
+   }
   }
  },
  "settings": {
