@@ -380,6 +380,41 @@
     ]
    },
    "note": "Could not be told apart from the other brothers in a13; generic brothers' look."
+  },
+  "karna": {
+   "canonical": "Karna",
+   "aliases": [
+    "Radheya",
+    "Angaraja",
+    "Vasusena",
+    "Suryaputra",
+    "Kaunteya"
+   ],
+   "epic": "Mahabharata",
+   "visual": "bare-chested warrior, golden armour, large gold earrings",
+   "vocab_status": "untested",
+   "coverage_n": 0,
+   "coverage": "none",
+   "source": {
+    "type": "text",
+    "ref": "generic description; no painting and no named reference checked (unverified, needs review)"
+   }
+  },
+  "shabari": {
+   "canonical": "Shabari",
+   "aliases": [
+    "Shabri",
+    "Sabari"
+   ],
+   "epic": "Ramayana",
+   "visual": "elderly forest woman in simple cloth, grey hair, holding fruit",
+   "vocab_status": "untested",
+   "coverage_n": 0,
+   "coverage": "none",
+   "source": {
+    "type": "text",
+    "ref": "generic description; no painting and no named reference checked (unverified, needs review)"
+   }
   }
  },
  "settings": {
