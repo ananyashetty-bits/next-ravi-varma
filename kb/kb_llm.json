@@ -1,0 +1,536 @@
+{
+ "version": "kb0.2-llm",
+ "characters": {
+  "sita": {
+   "canonical": "Sita",
+   "aliases": [
+    "Janaki",
+    "Vaidehi",
+    "Maithili",
+    "Seetha",
+    "Seeta",
+    "Sitha"
+   ],
+   "epic": "Ramayana",
+   "visual": "White saree, golden necklet, red borders, simple ornaments, serene expression",
+   "vocab_status": "untested",
+   "coverage_n": 10,
+   "coverage": "high",
+   "source": {
+    "type": "llm",
+    "ref": "Qwen/Qwen3-4B-Instruct-2507"
+   }
+  },
+  "rama": {
+   "canonical": "Rama",
+   "aliases": [
+    "Ram",
+    "Raghava",
+    "Raghuvara",
+    "Dasharathi",
+    "Sri Rama",
+    "Shri Ram",
+    "Ramachandra",
+    "Raghunatha",
+    "Raghupati"
+   ],
+   "epic": "Ramayana",
+   "visual": "White robe, golden crown, blue turban, red border, simple ornaments",
+   "vocab_status": "untested",
+   "coverage_n": 9,
+   "coverage": "high",
+   "source": {
+    "type": "llm",
+    "ref": "Qwen/Qwen3-4B-Instruct-2507"
+   }
+  },
+  "lakshmana": {
+   "canonical": "Lakshmana",
+   "aliases": [
+    "Laxman",
+    "Lakshman",
+    "Laxmana",
+    "Saumitri",
+    "Lakshmanan",
+    "Lakhan"
+   ],
+   "epic": "Ramayana",
+   "visual": "White dhoti, golden necklace, blue turban, simple ornaments, earthy tones, calm expression",
+   "vocab_status": "untested",
+   "coverage_n": 5,
+   "coverage": "high",
+   "source": {
+    "type": "llm",
+    "ref": "Qwen/Qwen3-4B-Instruct-2507"
+   }
+  },
+  "krishna": {
+   "canonical": "Krishna",
+   "aliases": [
+    "Kanha",
+    "Kanhaiya",
+    "Govinda",
+    "Madhava",
+    "Keshava",
+    "Gopala",
+    "Muralidhara",
+    "Giridhari",
+    "Krishn",
+    "Krsna",
+    "Kannan",
+    "Murari",
+    "Murlidhar",
+    "Shyam",
+    "Mukunda",
+    "Vasudeva Krishna"
+   ],
+   "epic": "Mahabharata",
+   "visual": "Blue, white, golden, crown, lotus, flute, red, simple attire, serene expression",
+   "vocab_status": "untested",
+   "coverage_n": 9,
+   "coverage": "high",
+   "source": {
+    "type": "llm",
+    "ref": "Qwen/Qwen3-4B-Instruct-2507"
+   }
+  },
+  "shakuntala": {
+   "canonical": "Shakuntala",
+   "aliases": [
+    "Sakuntala",
+    "Shakuntal",
+    "Sakoontala",
+    "Shakunthala",
+    "Sakunthala",
+    "Shakuntla"
+   ],
+   "epic": "Mahabharata",
+   "visual": "White silk saree, golden necklet, simple, natural colours, no heavy ornaments",
+   "vocab_status": "untested",
+   "coverage_n": 8,
+   "coverage": "high",
+   "source": {
+    "type": "llm",
+    "ref": "Qwen/Qwen3-4B-Instruct-2507"
+   }
+  },
+  "radha": {
+   "canonical": "Radha",
+   "aliases": [
+    "Radhika",
+    "Radhe",
+    "Radharani"
+   ],
+   "epic": "Puranic",
+   "visual": "White sari, golden necklet, red borders, floral motifs, soft hues",
+   "vocab_status": "untested",
+   "coverage_n": 5,
+   "coverage": "high",
+   "source": {
+    "type": "llm",
+    "ref": "Qwen/Qwen3-4B-Instruct-2507"
+   }
+  },
+  "draupadi": {
+   "canonical": "Draupadi",
+   "aliases": [
+    "Panchali",
+    "Sairandhri",
+    "Drupadi",
+    "Krishnaa",
+    "Yajnaseni",
+    "Draupathi",
+    "Sairandri"
+   ],
+   "epic": "Mahabharata",
+   "visual": "Yellow saree, golden bangles, red borders, diadem, floral motifs",
+   "vocab_status": "untested",
+   "coverage_n": 6,
+   "coverage": "high",
+   "source": {
+    "type": "llm",
+    "ref": "Qwen/Qwen3-4B-Instruct-2507"
+   }
+  },
+  "hanuman": {
+   "canonical": "Hanuman",
+   "aliases": [
+    "Maruti",
+    "Anjaneya",
+    "Bajrangbali",
+    "Pavanputra",
+    "Mahavira",
+    "Maruthi",
+    "Hanumanta",
+    "Hanumantha"
+   ],
+   "epic": "Ramayana",
+   "visual": "Yellow, lion-skin, golden ornaments, simple robes, red and yellow hues",
+   "vocab_status": "untested",
+   "coverage_n": 4,
+   "coverage": "medium",
+   "source": {
+    "type": "llm",
+    "ref": "Qwen/Qwen3-4B-Instruct-2507"
+   }
+  },
+  "arjuna": {
+   "canonical": "Arjuna",
+   "aliases": [
+    "Arjun",
+    "Partha",
+    "Dhananjaya",
+    "Phalguna",
+    "Savyasachi",
+    "Kiriti"
+   ],
+   "epic": "Mahabharata",
+   "visual": "Golden armor, blue cloak, bronze weapons, floral necklet, red and white hues",
+   "vocab_status": "untested",
+   "coverage_n": 2,
+   "coverage": "medium",
+   "source": {
+    "type": "llm",
+    "ref": "Qwen/Qwen3-4B-Instruct-2507"
+   }
+  },
+  "bharata": {
+   "canonical": "Bharata",
+   "aliases": [
+    "Bharat"
+   ],
+   "epic": "Ramayana",
+   "visual": "White robe, golden crown, red border, simple ornaments, serene expression",
+   "vocab_status": "untested",
+   "coverage_n": 2,
+   "coverage": "medium",
+   "source": {
+    "type": "llm",
+    "ref": "Qwen/Qwen3-4B-Instruct-2507"
+   }
+  },
+  "yashoda": {
+   "canonical": "Yashoda",
+   "aliases": [
+    "Yasoda",
+    "Jashoda"
+   ],
+   "epic": "Puranic",
+   "visual": "Yellow saree, blue border, golden bangles, simple jewelry, natural hues",
+   "vocab_status": "untested",
+   "coverage_n": 2,
+   "coverage": "medium",
+   "source": {
+    "type": "llm",
+    "ref": "Qwen/Qwen3-4B-Instruct-2507"
+   }
+  },
+  "subhadra": {
+   "canonical": "Subhadra",
+   "aliases": [
+    "Subhadhra"
+   ],
+   "epic": "Mahabharata",
+   "visual": "Yellow saree, gold bangles, blue lotus, red border, diadem, floral crown",
+   "vocab_status": "untested",
+   "coverage_n": 1,
+   "coverage": "low",
+   "source": {
+    "type": "llm",
+    "ref": "Qwen/Qwen3-4B-Instruct-2507"
+   }
+  },
+  "duryodhana": {
+   "canonical": "Duryodhana",
+   "aliases": [
+    "Suyodhana",
+    "Duryodhan"
+   ],
+   "epic": "Mahabharata",
+   "visual": "Red cloak, gold ornaments, dark hair, war-like attire, crimson hues, heavy jewelry",
+   "vocab_status": "untested",
+   "coverage_n": 1,
+   "coverage": "low",
+   "source": {
+    "type": "llm",
+    "ref": "Qwen/Qwen3-4B-Instruct-2507"
+   }
+  },
+  "bhishma": {
+   "canonical": "Bhishma",
+   "aliases": [
+    "Bheeshma",
+    "Bhisma",
+    "Devavrata",
+    "Gangaputra",
+    "Bhishm"
+   ],
+   "epic": "Mahabharata",
+   "visual": "White robe, golden armor, blue turban, sacred thread, red scarf, lotus ornaments",
+   "vocab_status": "untested",
+   "coverage_n": 1,
+   "coverage": "low",
+   "source": {
+    "type": "llm",
+    "ref": "Qwen/Qwen3-4B-Instruct-2507"
+   }
+  },
+  "savitri": {
+   "canonical": "Savitri",
+   "aliases": [
+    "Savithri"
+   ],
+   "epic": "Mahabharata",
+   "visual": "White saree, golden necklet, red borders, simple jewelry, serene expression",
+   "vocab_status": "untested",
+   "coverage_n": 1,
+   "coverage": "low",
+   "source": {
+    "type": "llm",
+    "ref": "Qwen/Qwen3-4B-Instruct-2507"
+   }
+  },
+  "satyavan": {
+   "canonical": "Satyavan",
+   "aliases": [
+    "Satyavaan"
+   ],
+   "epic": "Mahabharata",
+   "visual": "White loincloth, simple necklace, earth tones, bare feet, no ornaments",
+   "vocab_status": "untested",
+   "coverage_n": 1,
+   "coverage": "low",
+   "source": {
+    "type": "llm",
+    "ref": "Qwen/Qwen3-4B-Instruct-2507"
+   }
+  },
+  "yama": {
+   "canonical": "Yama",
+   "aliases": [
+    "Yamaraja",
+    "Yamraj",
+    "Yamadharma"
+   ],
+   "epic": "Mahabharata",
+   "visual": "Blue cloak, golden crown, red borders, dark skin, sword, lotus, celestial ornaments",
+   "vocab_status": "untested",
+   "coverage_n": 1,
+   "coverage": "low",
+   "source": {
+    "type": "llm",
+    "ref": "Qwen/Qwen3-4B-Instruct-2507"
+   }
+  },
+  "shatrughna": {
+   "canonical": "Shatrughna",
+   "aliases": [
+    "Shatrugna",
+    "Satrughna",
+    "Shatrughan",
+    "Shatrughana"
+   ],
+   "epic": "Ramayana",
+   "visual": "Blue dhoti, golden necklace, red turban, bronze armor, white face, red border",
+   "vocab_status": "untested",
+   "coverage_n": 1,
+   "coverage": "low",
+   "source": {
+    "type": "llm",
+    "ref": "Qwen/Qwen3-4B-Instruct-2507"
+   }
+  },
+  "karna": {
+   "canonical": "Karna",
+   "aliases": [
+    "Radheya",
+    "Angaraja",
+    "Vasusena",
+    "Suryaputra",
+    "Kaunteya",
+    "Karn"
+   ],
+   "epic": "Mahabharata",
+   "visual": "Gold armor, red cloak, copper ornaments, dark hues, flowing hair, battle-scarred",
+   "vocab_status": "untested",
+   "coverage_n": 0,
+   "coverage": "none",
+   "source": {
+    "type": "llm",
+    "ref": "Qwen/Qwen3-4B-Instruct-2507"
+   }
+  },
+  "shabari": {
+   "canonical": "Shabari",
+   "aliases": [
+    "Shabri",
+    "Sabari"
+   ],
+   "epic": "Ramayana",
+   "visual": "Yellow saree, golden necklace, floral crown, red borders, simple ornaments",
+   "vocab_status": "untested",
+   "coverage_n": 0,
+   "coverage": "none",
+   "source": {
+    "type": "llm",
+    "ref": "Qwen/Qwen3-4B-Instruct-2507"
+   }
+  },
+  "ahalya": {
+   "canonical": "Ahalya",
+   "aliases": [
+    "Ahilya",
+    "Ahalyaa",
+    "Gautami"
+   ],
+   "epic": "Ramayana",
+   "visual": "White saree, golden necklace, simple, earthy colours, bare feet, no jewellery",
+   "vocab_status": "untested",
+   "coverage_n": 1,
+   "coverage": "low",
+   "source": {
+    "type": "llm",
+    "ref": "Qwen/Qwen3-4B-Instruct-2507"
+   }
+  }
+ },
+ "settings": {
+  "court": {
+   "aliases": [
+    "court",
+    "sabha",
+    "durbar",
+    "throne room",
+    "royal hall",
+    "assembly hall",
+    "kaurava court"
+   ],
+   "visual": "Tiled halls, flowering plants, rich reds, deep greens, gold accents",
+   "coverage": "llm",
+   "source": {
+    "type": "llm",
+    "ref": "Qwen/Qwen3-4B-Instruct-2507"
+   }
+  },
+  "forest": {
+   "aliases": [
+    "forest",
+    "woods",
+    "jungle",
+    "hermitage",
+    "ashram",
+    "vana"
+   ],
+   "visual": "Banyan roots, green canopies, earthy browns, soft greens, golden sunlight, mossy trunks",
+   "coverage": "llm",
+   "source": {
+    "type": "llm",
+    "ref": "Qwen/Qwen3-4B-Instruct-2507"
+   }
+  },
+  "palace": {
+   "aliases": [
+    "palace",
+    "courtyard",
+    "terrace",
+    "balcony"
+   ],
+   "visual": "Tiled roofs, jharokhas, courtyards, flowering plants, gold, red, green, blue",
+   "coverage": "llm",
+   "source": {
+    "type": "llm",
+    "ref": "Qwen/Qwen3-4B-Instruct-2507"
+   }
+  },
+  "river": {
+   "aliases": [
+    "river",
+    "riverbank",
+    "river bank",
+    "yamuna",
+    "ganga",
+    "sarayu"
+   ],
+   "visual": "Waves, lotus flowers, green banks, golden sunlight, stone bridges, palm trees",
+   "coverage": "llm",
+   "source": {
+    "type": "llm",
+    "ref": "Qwen/Qwen3-4B-Instruct-2507"
+   }
+  },
+  "garden": {
+   "aliases": [
+    "garden",
+    "grove",
+    "orchard",
+    "ashoka grove",
+    "ashoka vatika"
+   ],
+   "visual": "Arched gates, blooming flowers, green trees, golden hues, water features, stone paths",
+   "coverage": "llm",
+   "source": {
+    "type": "llm",
+    "ref": "Qwen/Qwen3-4B-Instruct-2507"
+   }
+  },
+  "lake": {
+   "aliases": [
+    "lake",
+    "pond",
+    "moonlit lake"
+   ],
+   "visual": "Blue waters, lotus blooms, stone banks, green reeds, golden hues, subtle shadows",
+   "coverage": "llm",
+   "source": {
+    "type": "llm",
+    "ref": "Qwen/Qwen3-4B-Instruct-2507"
+   }
+  },
+  "ocean": {
+   "aliases": [
+    "ocean",
+    "sea",
+    "seashore",
+    "shore",
+    "coast"
+   ],
+   "visual": "Blue waves, white foam, green shores, golden sand, palm trees",
+   "coverage": "llm",
+   "source": {
+    "type": "llm",
+    "ref": "Qwen/Qwen3-4B-Instruct-2507"
+   }
+  },
+  "kurukshetra": {
+   "aliases": [
+    "battlefield",
+    "battleground",
+    "battle",
+    "kurukshetra"
+   ],
+   "visual": "Banners, dust, war drums, red, ochre, broken trees, crumbling walls",
+   "coverage": "llm",
+   "source": {
+    "type": "llm",
+    "ref": "Qwen/Qwen3-4B-Instruct-2507"
+   }
+  }
+ },
+ "moods": {
+  "grief": "dim dramatic lighting, shadowed faces, cloudy sky",
+  "devotion": "soft warm glow, lit by an oil lamp",
+  "anger": "harsh dramatic light, dark cloudy sky",
+  "joy": "bright warm daylight, golden tones",
+  "fear": "dim flickering light, deep shadows",
+  "longing": "soft moonlight, gentle glow",
+  "calm": "soft dusk light, peaceful atmosphere",
+  "valour": "dramatic golden light, cloudy sky"
+ },
+ "mood_notes": "Tested in M2 VISUAL_VOCAB.md: 'dusk' (works), 'oil lamp' and 'dramatic cloudy sky' (partly). All other mood wording is untested.",
+ "_note": "c6 KB: every character/setting visual written by the local LLM without images, temperature 0. Aliases, coverage numbers and moods copied unchanged from kb.json; visual_alt removed.",
+ "llm_flags": {
+  "setting:ocean": [
+   "too long"
+  ]
+ }
+}

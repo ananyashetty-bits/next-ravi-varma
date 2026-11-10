@@ -1,0 +1,506 @@
+{
+ "05d4e92cba89a1ad33cc804b0427c1b929495c1301b9d4ba204b57963c7c045d": {
+  "created": "2026-11-10T10:05:39+00:00",
+  "kb_version": "kb0.2-llm",
+  "mode": "llm_kb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"white dhoti worn\",\n  \"golden necklace visible\",\n  \"blue turban tied\",\n  \"standing guard posture\",\n  \"bow held loosely\",\n  \"banyan roots surrounding\",\n  \"green canopies above\",\n  \"earth tones dominant\",\n  \"soft green glow\",\n  \"mossy trunks nearby\",\n  \"nighttime stillness\"\n]}"
+ },
+ "07e05c7b7905a057512d65ec5cdb462646a6c95377459341ed131c6ea9579e0f": {
+  "created": "2026-11-10T10:06:40+00:00",
+  "kb_version": "kb0.2-llm",
+  "mode": "llm_kb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"Ram in white robe with golden crown\",\n  \"woman bowing at his feet\",\n  \"Lakshman standing beside with dhoti\",\n  \"sage in simple robes and staff\",\n  \"blue turbans on both figures\",\n  \"red border on Ram's robe\",\n  \"calm expression of Lakshman\",\n  \"soft golden light in courtyard\",\n  \"kneeling woman with flowing hair\",\n  \"earth tones around Lakshman\"\n]}"
+ },
+ "09e57ecb0ece8cde90f650fa8c019eb8211601b9d8efc5db3136c764f579af32": {
+  "created": "2026-11-10T10:04:53+00:00",
+  "kb_version": "kb0.2-llm",
+  "mode": "llm_kb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"Bending great bow upward\",\n  \"Wearing golden armor and blue cloak\",\n  \"Holding bronze weapons at side\",\n  \"Floral necklet visible\",\n  \"In yellow saree with red border\",\n  \"Wearing golden bangles\",\n  \"Diadem on head\",\n  \"Floral motifs on saree\",\n  \"Crowded hall with seated kings\",\n  \"High fish target above\",\n  \"Flowing blue cloak behind\"\n]}"
+ },
+ "0ee542003f3ce17ad6864405dea3ed8711cdca36ed673d46624ec5c07a718d2f": {
+  "created": "2026-11-10T10:04:09+00:00",
+  "kb_version": "kb0.2-llm",
+  "mode": "llm_kb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"couple seated on throne\",\n  \"white robe with golden crown\",\n  \"white saree with golden necklet\",\n  \"blue turban with red border\",\n  \"Lakshmana in white dhoti and golden necklace\",\n  \"Bharata in white robe and golden crown\",\n  \"Shatrughna in blue dhoti and bronze armor\",\n  \"Hanuman kneeling with lion skin and red yellow hues\",\n  \"serene expressions of all figures\",\n  \"pillared hall with golden pillars\",\n  \"soft golden light, calm atmosphere\"\n]}"
+ },
+ "11a7e2f0caf7962ea5a26971812f8b2c02cdb4246b6b0a5bcbf944e06927d47b": {
+  "created": "2026-11-10T09:59:37+00:00",
+  "kb_version": "kb0.2",
+  "mode": "llm_kb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"woman with loose long black hair\",\n  \"thin-bordered sari\",\n  \"thin necklace\",\n  \"bangles on wrists\",\n  \"small jhumkas on feet\",\n  \"dark blue-skinned man\",\n  \"curly black hair\",\n  \"peacock-feather crown\",\n  \"flower garland around neck\",\n  \"yellow dhoti\",\n  \"armband on upper arm\",\n  \"kneeling in appeal\" \n]}"
+ },
+ "15c6c05fee050d824f18d54434d2f4044cf3c61b2830087b82aa275ff9515604": {
+  "created": "2026-11-10T09:56:26+00:00",
+  "kb_version": "kb0.2",
+  "mode": "llm_kb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"Hanuman kneeling with beaded jewellery\",\n  \"offering ring to Rama's outstretched hand\",\n  \"Rama in yellow dhoti with red shawl\",\n  \"Rama holding bow and arrow\",\n  \"grey-bearded monkey-faced figure\",\n  \"small gold crown on Hanuman's head\",\n  \"kneeling before Rama in golden light\",\n  \"gilded armour-like background\",\n  \"pearl jewellery on Rama's neck\",\n  \"red tilak on Rama's forehead\",\n  \"dhoti flowing at the hem\"\n]}"
+ },
+ "19b6549975e1878765d51607bde35033bdbaf21600e9cd0cb9cb27bf7d8003ac": {
+  "created": "2026-11-10T09:58:18+00:00",
+  "kb_version": "kb0.2",
+  "mode": "llm_kb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"man in yellow dhoti with red shawl\",\n  \"woman in red sari with yellow border\",\n  \"fair-skinned man with small crown\",\n  \"man in long white robe with black hair\",\n  \"man in gold peacock-feather crown\",\n  \"grey-bearded monkey-faced figure kneeling\",\n  \"seated on imperial throne together\",\n  \"holding bow and arrow\",\n  \"gold bangles and necklace\",\n  \"gilded palace hall with pillars\",\n  \"soft golden light\",\n  \"serene expressions, solemn mood\"\n]}"
+ },
+ "1d06fff457978a5f74cde7732ef19b00003a2504b385ee46d35e72927277552b": {
+  "created": "2026-11-10T10:04:44+00:00",
+  "kb_version": "kb0.2-llm",
+  "mode": "llm_kb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"Arjuna in golden armor\",\n  \"Arjuna aiming upward\",\n  \"Draupadi in yellow saree\",\n  \"Crowded hall of seated kings\",\n  \"Red border saree with floral motifs\",\n  \"Golden bangles on Draupadi\",\n  \"Diadem on Draupadi's head\",\n  \"Blue cloak flowing behind\",\n  \"Bronze weapons at Arjuna's side\",\n  \"Floral necklet on Arjuna\",\n  \"High fish target above\"\n]}"
+ },
+ "1e3be038bd5724e01c809e5414adcc76f4229565e18dafd568d6ca6c4245bf38": {
+  "created": "2026-11-10T09:58:06+00:00",
+  "kb_version": "kb0.2",
+  "mode": "llm_kb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"dark blue-skinned boy\",\n  \"curly black hair\",\n  \"peacock-feather crown\",\n  \"flower garland\",\n  \"face smeared with butter\",\n  \"kneeling with hands up\",\n  \"broken pot on floor\",\n  \"yellow dhoti\",\n  \"neatly folded cloth\",\n  \"dim indoor light\",\n  \"mildly stern expression\"\n]}"
+ },
+ "1f19f602ac9faeaa6fc313e14b57ec54a687632ff824fa2f34b2a895b75fabf5": {
+  "created": "2026-11-10T09:58:41+00:00",
+  "kb_version": "kb0.2",
+  "mode": "llm_kb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"Arjuna in kurta with gold shoulder pads\",\n  \"bending great bow aiming upward\",\n  \"Draupadi with loose black hair and sari\",\n  \"holding garland in both hands\",\n  \"crowded hall of seated kings\",\n  \"fish target high above\",\n  \"gilded archway behind\",\n  \"soft golden lighting\",\n  \"dramatic tension in air\"\n]}"
+ },
+ "1fa39efdccd3f05472b38cc8777a33d4e87981fd571f47bc471fc40bc7da9ba4": {
+  "created": "2026-11-10T10:06:59+00:00",
+  "kb_version": "kb0.2-llm",
+  "mode": "llm_kb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"lady with red sari playing instrument\",\n  \"sitting on terrace with jharokhas\",\n  \"nightlight glowing on tiled roofs\",\n  \"flowing silk draping over legs\",\n  \"gilded ornaments on neck and arms\",\n  \"flowering plants around courtyard\",\n  \"soft blue and green ambient glow\",\n  \"faint golden reflections on tiles\"\n]}"
+ },
+ "21874439af441b080010dc40e93d6d1c07a3932e3bc5a4df97fe23e9a71af016": {
+  "created": "2026-11-10T09:56:13+00:00",
+  "kb_version": "kb0.2",
+  "mode": "llm_kb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"man with jewelled crown\",\n  \"woman in purple sari\",\n  \"gold shoulder pads\",\n  \"green and white bangles\",\n  \"holding his arm\",\n  \"looking back nervously\",\n  \"sandstone-pillared courtyard\",\n  \"stone steps with potted plants\",\n  \"forest beyond\",\n  \"gilded necklaces\",\n  \"soft golden light\"\n]}"
+ },
+ "2344114ef84e735466318c0fb173eda7e600f0280f768755be903cda33a4d47c": {
+  "created": "2026-11-10T09:59:58+00:00",
+  "kb_version": "kb0.2",
+  "mode": "llm_kb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"man in yellow dhoti with red shawl\",\n  \"holding bow and arrow, calm expression\",\n  \"fair-skinned man in yellow dhoti, red shawl\",\n  \"kneeling on rocky shore\",\n  \"grey-bearded monkey-faced figure with red dhoti\",\n  \"crashing waves against black rock\",\n  \"black cloudy sky with lightning\",\n  \"pearl jewellery on both figures\",\n  \"small gold crown on monkey figure\",\n  \"gilded mace in hand\",\n  \"distant thunderous waves\"\n]}"
+ },
+ "259fe475143aea590436781987ee467b7e780ef0cd2759f296c9b20a166daf48": {
+  "created": "2026-11-10T10:03:33+00:00",
+  "kb_version": "kb0.2-llm",
+  "mode": "llm_kb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"Golden armor, blue cloak, floral necklet\",\n  \"Blue attire, white and gold, crown gleaming\",\n  \"Bow dropped, sitting in chariot, still\",\n  \"Turning from horses, serene gaze\",\n  \"Dust swirling in golden evening light\",\n  \"Banners flapping, elephants advancing\",\n  \"War drums booming, conch shells blowing\",\n  \"Red ochre hues, broken trees, crumbling walls\",\n  \"Flute held, lotus in hand\",\n  \"Battlefield chaos, wind in banners\"\n]}"
+ },
+ "2a498c95f46c59a8dee532954f6d28f95e014c195820fd78ce684f17bcf420d2": {
+  "created": "2026-11-10T09:59:46+00:00",
+  "kb_version": "kb0.2",
+  "mode": "llm_kb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"woman in red sari with yellow border\",\n  \"man in yellow dhoti with red shawl\",\n  \"holding bow and arrow\",\n  \"kneeling to offer water\",\n  \"gold bangles and necklace\",\n  \"rocky forest edge\",\n  \"heavy green vegetation\",\n  \"mountains in background\",\n  \"pearl jewellery and tilak\",\n  \"gilded crown on head\"\n]}"
+ },
+ "2aee0e7d9ecfef85bb71eda25215bc329372a9c2337c6764e5bc2a1eee60e5c0": {
+  "created": "2026-11-10T09:59:00+00:00",
+  "kb_version": "kb0.2",
+  "mode": "llm_kb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"elderly woman with grey hair\",\n  \"holding ripe berries in both hands\",\n  \"offering fruit to two men\",\n  \"men in yellow dhoti with red shawls\",\n  \"wearing pearl jewellery and tilak\",\n  \"standing in forest clearing\",\n  \"soft morning light filtering through trees\",\n  \"kneeling slightly in front of figures\",\n  \"bow and arrow resting on ground\",\n  \"gilded crown on one man's forehead\",\n  \"faint forest mist in background\"\n]}"
+ },
+ "2c2545c9d25f4f3eacb0b48f2551dbd7c8ae3b8edff560a7e850ba8e1b20a7e9": {
+  "created": "2026-11-10T10:06:04+00:00",
+  "kb_version": "kb0.2-llm",
+  "mode": "llm_kb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"Woman in white saree with red borders\",\n  \"Man in white robe with golden crown\",\n  \"Blue turban with red border\",\n  \"Standing beside banyan roots\",\n  \"Gentle sunlight filtering through green canopies\",\n  \"Serene expression, hands offering water\",\n  \"Mossy trunks, earthy browns, soft greens\"\n]}"
+ },
+ "34332c53ab6483d1bc9d3ea720d826a05eb1617fc09fcd8043b0f81c791c09b3": {
+  "created": "2026-11-10T10:05:14+00:00",
+  "kb_version": "kb0.2-llm",
+  "mode": "llm_kb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"woman in yellow saree\",\n  \"offering berries to two figures\",\n  \"first figure in white robe\",\n  \"second figure in white dhoti\",\n  \"golden necklaces on both\",\n  \"floral crown on woman\",\n  \"blue turbans on both\",\n  \"red borders on garments\",\n  \"outside small forest hut\",\n  \"soft forest light\",\n  \"calm expressions\",\n  \"kneeling posture\"\n]}"
+ },
+ "3c1f052184b2839f3e7c3a6fe3d70ce91fafde9d460aa42b3b4d0194588887c2": {
+  "created": "2026-11-10T10:01:33+00:00",
+  "kb_version": "kb0.2-llm",
+  "mode": "llm_kb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"woman in white saree\",\n  \"golden necklet shining\",\n  \"red border trim\",\n  \"sitting alone beneath tree\",\n  \"arced gates in background\",\n  \"blooming flowers nearby\",\n  \"green trees swaying\",\n  \"golden hour lighting\",\n  \"quiet garden setting\",\n  \"stone paths leading\",\n  \"water features reflecting\"\n]}"
+ },
+ "3c55a52c94595165ae7a03fb3a17ae42e90597ef2a1bafc7ce2ed2896cc230fc": {
+  "created": "2026-11-10T10:06:13+00:00",
+  "kb_version": "kb0.2-llm",
+  "mode": "llm_kb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"Rama in white robe with golden crown\",\n  \"Lakshmana in white dhoti with golden necklace\",\n  \"Hanuman in yellow lion-skin robes\",\n  \"Sitting on smooth white rocks by sea\",\n  \"Blue waves crashing against green shore\",\n  \"Golden sand under palm trees\",\n  \"Calm expressions, quiet conversation\"\n]}"
+ },
+ "3cf5e5e9207551e9c116c3e7e20064d41bc68708e045c26dc82549f214a2383e": {
+  "created": "2026-11-10T09:59:18+00:00",
+  "kb_version": "kb0.2",
+  "mode": "llm_kb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"woman in red sari with yellow border\",\n  \"gazing anxiously toward the lake shore\",\n  \"moonlit forest lake under full moon\",\n  \"rocks and grass at the water's edge\",\n  \"gold bangles and necklace gleaming\",\n  \"soft ambient light with shadows\",\n  \"calm stillness broken by tension\"\n]}"
+ },
+ "3d04461c01d510f9bf3c49dd0693def7a160a2080e816c98a860dc56ea1dfa26": {
+  "created": "2026-11-10T10:02:19+00:00",
+  "kb_version": "kb0.2-llm",
+  "mode": "llm_kb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"lion-skin figure kneeling\",\n  \"offering ring to other figure\",\n  \"reaching out to accept\",\n  \"white robe with red border\",\n  \"golden crown on head\",\n  \"blue turban with golden trim\",\n  \"red and yellow hues on attire\",\n  \"simple robes flowing behind\",\n  \"soft golden light in hall\",\n  \"pillared temple setting\",\n  \"serene expression on both\"\n]}"
+ },
+ "3f5992dc4254f0a4894c974fbb3eca2d397e1578b5dded9589f0c109a13b5393": {
+  "created": "2026-11-10T10:04:22+00:00",
+  "kb_version": "kb0.2-llm",
+  "mode": "llm_kb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"couple seated on throne\",\n  \"white robe with golden crown\",\n  \"white saree with golden necklet\",\n  \"blue turban with red border\",\n  \"white dhoti with golden necklace\",\n  \"white robe with golden crown and red border\",\n  \"blue dhoti with bronze armor and red turban\",\n  \"yellow robes with lion skin and red yellow hues\",\n  \"kneeling figure with simple robes\",\n  \"pillared hall with golden pillars\",\n  \"soft golden light, calm atmosphere\",\n  \"serene expressions, calm posture\"\n]}"
+ },
+ "440940d19f85a008ce97497abdaa57e9c5895afb81daf83ce1d7626780f6f25a": {
+  "created": "2026-11-10T10:03:57+00:00",
+  "kb_version": "kb0.2-llm",
+  "mode": "llm_kb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"blue and white simple attire\",\n  \"golden crown with lotus\",\n  \"serene expression\",\n  \"face smeared with butter\",\n  \"kneeling with hands folded\",\n  \"broken pot on floor\",\n  \"dim indoor lighting\",\n  \"dusty courtyard setting\"\n]}"
+ },
+ "4737d60ca197b0c439ca0df426c5bfe322379c245b685ab3ab4614cb4e5ee3fe": {
+  "created": "2026-11-10T09:57:44+00:00",
+  "kb_version": "kb0.2",
+  "mode": "llm_kb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"dark blue-skinned man with peacock-feather crown\",\n  \"curly black hair with flower garland\",\n  \"yellow dhoti with necklace and armband\",\n  \"man with jewelled crown and moustache\",\n  \"rich kurta with gold shoulder pads\",\n  \"kneeling beside chariot, bow lowered\",\n  \"open dusty plain with scattered weapons\",\n  \"chariot with banners in the distance\",\n  \"hazy sky above the battlefield\",\n  \"gently turning toward Arjuna\",\n  \"intense yet calm expression\"\n]}"
+ },
+ "4bf6ba0f331a3580a57e9b45ed1e26d0c81dc85a823f743d5debe7545f6b73db": {
+  "created": "2026-11-10T10:02:28+00:00",
+  "kb_version": "kb0.2-llm",
+  "mode": "llm_kb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"blue and white attire\",\n  \"serene expression\",\n  \"standing before throne\",\n  \"red cloak with gold trim\",\n  \"crimson hues and heavy jewelry\",\n  \"kneeling ministers in court\",\n  \"tiled halls with flowering plants\",\n  \"deep greens and gold accents\",\n  \"flute resting on side\",\n  \"gilded throne with red cushions\"\n]}"
+ },
+ "5e076b81ab665f11a2fffc8324a9ad19d8efdccec82834c5589e3afd7d1968e8": {
+  "created": "2026-11-10T09:57:23+00:00",
+  "kb_version": "kb0.2",
+  "mode": "llm_kb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"man with jewelled crown sits in chariot\",\n  \"dark blue-skinned figure turns from horse\",\n  \"golden evening light across dusty plain\",\n  \"armies with banners and elephants\",\n  \"dust swirling in hazy sky\",\n  \"conch shells blowing in distance\",\n  \"gold shoulder pads and necklaces gleam\",\n  \"peacock-feather crown and flower garland\",\n  \"kneeling posture, face turned downward\",\n  \"chariot wheels embedded in sand\",\n  \"faint sound of war drums fading\"\n]}"
+ },
+ "5f9546c639ce5741c021033fb327032b693a3b3ae52a7f0a0dded566e70bb9d8": {
+  "created": "2026-11-10T10:03:51+00:00",
+  "kb_version": "kb0.2-llm",
+  "mode": "llm_kb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"blue and white attire\",\n  \"golden crown with lotus\",\n  \"serene expression\",\n  \"kneeling beside chariot\",\n  \"golden armor with blue cloak\",\n  \"floral necklet and red hues\",\n  \"chariot with broken wheels\",\n  \"dust swirling in red light\",\n  \"war drums in background\",\n  \"crumbling walls and trees\",\n  \"red ochre banners fluttering\"\n]}"
+ },
+ "626c6287ce16dd1838fe9f25415bc761db9cf7bc77b060c21658f5efca6e7d54": {
+  "created": "2026-11-10T10:02:58+00:00",
+  "kb_version": "kb0.2-llm",
+  "mode": "llm_kb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"Savithri in white saree\",\n  \"Yama in blue cloak\",\n  \"Satyavan lying lifeless\",\n  \"Head resting in her lap\",\n  \"Banyan roots beneath\",\n  \"Golden sunlight filtering\",\n  \"Serene expression\",\n  \"Golden necklet on Savithri\",\n  \"Red borders on saree\",\n  \"Dark skin on Yama\",\n  \"Sword and lotus at side\",\n  \"Earth tones on Satyavan\"\n]}"
+ },
+ "643ac8487806213f6358e20833080d7870c1c97372dc10295d41a16ef7945b72": {
+  "created": "2026-11-10T10:02:10+00:00",
+  "kb_version": "kb0.2-llm",
+  "mode": "llm_kb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"Hanuman kneeling with lion skin\",\n  \"offering ring to Rama\",\n  \"Rama reaching out to receive\",\n  \"white robe with red border\",\n  \"golden crown on Rama's head\",\n  \"blue turban with golden trim\",\n  \"red and yellow hues on Hanuman\",\n  \"simple robes flowing behind\",\n  \"soft golden light in hall\",\n  \"pillared temple setting\",\n  \"serene expression on both\"\n]}"
+ },
+ "65de201de7d01ffc88e25ac94b332d4e64aeb38ac5a512b95979e72a906fca35": {
+  "created": "2026-11-10T10:05:56+00:00",
+  "kb_version": "kb0.2-llm",
+  "mode": "llm_kb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"Sita in white saree with red borders\",\n  \"Rama in white robe with golden crown\",\n  \"Blue turban with red border\",\n  \"Standing beside banyan roots\",\n  \"Gentle sunlight filtering through green canopies\",\n  \"Serene expression, hands offering water\",\n  \"Mossy trunks, earthy browns, soft greens\"\n]}"
+ },
+ "69c440803c21c22b620b4b4a04d2bb22b80b098e4a8f5c8b53f4b2e6cc9cf22e": {
+  "created": "2026-11-10T10:00:20+00:00",
+  "kb_version": "kb0.2",
+  "mode": "llm_kb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"man in yellow dhoti with red shawl\",\n  \"holding bow and arrow\",\n  \"woman bowing at his feet\",\n  \"fair-skinned man in yellow dhoti\",\n  \"with red shawl and pearl jewellery\",\n  \"standing beside with sage\",\n  \"gilded temple courtyard\",\n  \"soft golden light\",\n  \"calm serene expression\",\n  \"sage in white robe and turban\",\n  \"kneeling in front of central figure\"\n]}"
+ },
+ "69f8f1bb7921126fd53a5011f3aa615c017e9f795e7ddd231fa5c5ba5de4a2c4": {
+  "created": "2026-11-10T09:57:01+00:00",
+  "kb_version": "kb0.2",
+  "mode": "llm_kb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"man in yellow dhoti with red shawl\",\n  \"woman in red sari with yellow border\",\n  \"fair-skinned man in yellow dhoti with red shawl\",\n  \"holding bow and arrow\",\n  \"kneeling in forest edge\",\n  \"heavy green vegetation\",\n  \"mountains in background\",\n  \"people weeping behind\",\n  \"gold bangles and necklace\",\n  \"pearl jewellery and tilak\",\n  \"small crown on side\",\n  \"gilded bow and arrow\"\n]}"
+ },
+ "7b2c04ecbf7830693145ae023fa469de4d50ecf1364dcf74abd5d85b738399c1": {
+  "created": "2026-11-10T09:57:32+00:00",
+  "kb_version": "kb0.2",
+  "mode": "llm_kb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"grey-bearded monkey-faced figure\",\n  \"carrying mountain of green herbs\",\n  \"flying through stormy sky\",\n  \"knee-length red dhoti\",\n  \"small gold crown\",\n  \"beaded jewellery\",\n  \"dramatic golden sunset lighting\",\n  \"intense focused expression\",\n  \"wind-blown hair and fur\"\n]}"
+ },
+ "7edf150766c0819a6a4f0c62099374ad77a1cdec8019075b795eac5a675cb50b": {
+  "created": "2026-11-10T10:06:20+00:00",
+  "kb_version": "kb0.2-llm",
+  "mode": "llm_kb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"White robe with golden crown\",\n  \"White dhoti with golden necklace\",\n  \"Yellow lion-skin robes with golden ornaments\",\n  \"Sitting on smooth white rocks by sea\",\n  \"Blue waves crashing against green shore\",\n  \"Golden sand under palm trees\",\n  \"Calm expressions, quiet conversation\"\n]}"
+ },
+ "7f02477e348347c752bffe24e5246103c95f70b235e6c0c91a52744fd3ac369b": {
+  "created": "2026-11-10T10:00:09+00:00",
+  "kb_version": "kb0.2",
+  "mode": "llm_kb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"woman with loose black hair\",\n  \"kneeling in court\",\n  \"thin-bordered sari\",\n  \"white robe with yellow waist cloth\",\n  \"blue kurta with red turban\",\n  \"large pillared hall\",\n  \"white-pink carpets\",\n  \"raised throne with steps\",\n  \"curtained windows\",\n  \"white earrings\",\n  \"thin necklace\",\n  \"bangles and jhumkas\"\n]}"
+ },
+ "860132585ed9815f853f0f3565f2f4a768ced6521a9ab99db0dd65317744923c": {
+  "created": "2026-11-10T09:56:00+00:00",
+  "kb_version": "kb0.2",
+  "mode": "llm_kb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"woman in red sari with yellow border\",\n  \"wearing gold bangles and necklace\",\n  \"sitting alone on straw mat\",\n  \"gazing at ground with sorrowful expression\",\n  \"grove of flowering and fruiting trees\",\n  \"dusk lighting softening shadows\",\n  \"quiet stillness in the garden\"\n]}"
+ },
+ "8859105d092e22986f5f72a9836463f795292d67b5c7f748cc8e40d2254fa7c3": {
+  "created": "2026-11-10T09:56:05+00:00",
+  "kb_version": "kb0.2",
+  "mode": "llm_kb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"bare-chested warrior\",\n  \"golden armour shining\",\n  \"standing proudly\",\n  \"bow held in hand\",\n  \"sunrise light\",\n  \"gold earrings\",\n  \"dawn atmosphere\"\n]}"
+ },
+ "9041727fbbaa048dd2cf925d23e3b01d84ffedfdb296412014261adbe603ad77": {
+  "created": "2026-11-10T09:58:31+00:00",
+  "kb_version": "kb0.2",
+  "mode": "llm_kb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"man with long curly hair lying on bed of arrows\",\n  \"white robe with yellow waist cloth\",\n  \"white earrings, calm expression\",\n  \"dark blue-skinned man gathering around\",\n  \"curly black hair, peacock-feather crown\",\n  \"flower garland, yellow dhoti\",\n  \"open dusty plain at dusk\",\n  \"scattered chariots and banners\",\n  \"hazy sky, golden hour lighting\",\n  \"gathering around with respectful posture\",\n  \"weapons scattered in background\",\n  \"kneeling figures in dhoti and turbans\"\n]}"
+ },
+ "918409c802356fc7ea0eb8d3d2c7c09a0805406e35ec5d831b8aa41451e11453": {
+  "created": "2026-11-10T10:01:49+00:00",
+  "kb_version": "kb0.2-llm",
+  "mode": "llm_kb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"Arjuna in golden armor\",\n  \"Subhadra in yellow saree\",\n  \"Holding his arm nervously\",\n  \"Looking back with fear\",\n  \"Floral necklet and crown\",\n  \"Tiled roofs and jharokhas\",\n  \"Courtyards with flowering plants\",\n  \"Red and blue border\",\n  \"Gilded walls and green vines\",\n  \"Soft golden light\",\n  \"Evasive movement through garden\"\n]}"
+ },
+ "953e8c8a0a85ff3cfec5bcec4a1eec943680965cefc6be6543884037352f2ea0": {
+  "created": "2026-11-10T10:05:04+00:00",
+  "kb_version": "kb0.2-llm",
+  "mode": "llm_kb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"Shabri in yellow saree\",\n  \"offering berries to Ram\",\n  \"Ram in white robe\",\n  \"Laxman in white dhoti\",\n  \"golden necklace on both\",\n  \"floral crown on Shabri\",\n  \"blue turbans on both\",\n  \"red borders on garments\",\n  \"outside forest hut\",\n  \"soft forest light\",\n  \"calm expressions\",\n  \"kneeling posture\"\n]}"
+ },
+ "975b953f83d5f1a1d757b8829adbb2722e10b02235c0296e64e77792382c4cb5": {
+  "created": "2026-11-10T10:02:39+00:00",
+  "kb_version": "kb0.2-llm",
+  "mode": "llm_kb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"Rama in white robe with golden crown\",\n  \"Sita in white saree with golden necklet\",\n  \"Lakshmana in white dhoti with golden necklace\",\n  \"All walking through banyan forest roots\",\n  \"Golden sunlight filtering through green canopies\",\n  \"People weeping behind with hands raised\",\n  \"Earth tones of mossy trunks and bark\",\n  \"Serene expressions, calm and steady\"\n]}"
+ },
+ "a2f76c8393e6b5d063e0bfbb75b760661c11a0b6a929a0ba11aca3b97890ab32": {
+  "created": "2026-11-10T09:56:49+00:00",
+  "kb_version": "kb0.2",
+  "mode": "llm_kb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"dark blue-skinned man with curly hair\",\n  \"peacock-feather crown and flower garland\",\n  \"yellow dhoti with necklace and armband\",\n  \"standing before blue kurta and white churidar\",\n  \"red turban with white feathers and pearl necklaces\",\n  \"king on raised throne with steps and umbrella\",\n  \"large pillared hall with white-pink carpets\",\n  \"curtained windows in the background\",\n  \"peace envoy speaking to king with serious expression\",\n  \"ministers and courtiers watching attentively\"\n]}"
+ },
+ "a72a8d979a5cf3a11fcc1d1faad97a2ca13ee8061681c49cce427037ba716d00": {
+  "created": "2026-11-10T09:56:36+00:00",
+  "kb_version": "kb0.2",
+  "mode": "llm_kb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"grey-bearded monkey-faced figure kneeling\",\n  \"offering ring to outstretched hand\",\n  \"man in yellow dhoti with red shawl\",\n  \"holding bow and arrow with calm expression\",\n  \"small gold crown on head\",\n  \"beaded jewellery on neck and arms\",\n  \"red tilak on forehead\",\n  \"kneeling in golden light\",\n  \"gilded architectural background\",\n  \"dhoti flowing at hem\"\n]}"
+ },
+ "ac00c50361932064107c980241bf93c419eeea3021d40cb51b64ddf7415edf82": {
+  "created": "2026-11-10T09:57:12+00:00",
+  "kb_version": "kb0.2",
+  "mode": "llm_kb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"woman with long black hair\",\n  \"draped red sari with kumkum\",\n  \"kneeling beside bare-chested man\",\n  \"white dhoti lying lifeless\",\n  \"head resting in her lap\",\n  \"translucent grey-black figure\",\n  \"holding stick with noose\",\n  \"rocky forest edge\",\n  \"heavy green vegetation\",\n  \"mountains in background\",\n  \"simple gold jewellery\",\n  \"short curly black hair\"\n]}"
+ },
+ "adb71cd4ba555d6220d814375157502f5964507a9fef4cf42ef223dbdd6dec85": {
+  "created": "2026-11-10T10:02:00+00:00",
+  "kb_version": "kb0.2-llm",
+  "mode": "llm_kb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"Golden armor with blue cloak\",\n  \"Yellow saree with gold bangles\",\n  \"Holding arm with nervous glance\",\n  \"Looking back with anxious eyes\",\n  \"Floral necklet and crown\",\n  \"Tiled roofs with jharokhas\",\n  \"Courtyards filled with flowering plants\",\n  \"Red and blue border on attire\",\n  \"Gilded walls adorned with green vines\",\n  \"Soft golden light filtering through trees\",\n  \"Evasive movement through garden path\"\n]}"
+ },
+ "b1ffa3a953101a5e915065f3e6216bdefff108a02da171309df4b29b656f5a60": {
+  "created": "2026-11-10T10:06:29+00:00",
+  "kb_version": "kb0.2-llm",
+  "mode": "llm_kb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"Yellow saree with red borders\",\n  \"Kneeling in tiled hall\",\n  \"Golden bangles and diadem\",\n  \"White robe with blue turban\",\n  \"Red cloak with gold ornaments\",\n  \"Floral motifs and green plants\",\n  \"Sacred thread and lotus ornaments\",\n  \"Crimson hues and heavy jewelry\",\n  \"Deep greens and gold accents\",\n  \"Courtiers watching silently\"\n]}"
+ },
+ "b6c16b5bca6a28b9ede44ff8f5b6b7553655a5a93c0c21e0b1fbaeeed0b9173a": {
+  "created": "2026-11-10T10:03:21+00:00",
+  "kb_version": "kb0.2-llm",
+  "mode": "llm_kb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"Arjun in golden armor, blue cloak\",\n  \"Krishn turning from horses, serene expression\",\n  \"Dust swirling in golden evening light\",\n  \"Banners flapping, elephants marching\",\n  \"War drums echoing, conch shells blowing\",\n  \"Red and ochre hues, broken trees\",\n  \"Arjun sitting in chariot, bow dropped\",\n  \"Flute in Krishna's hand, lotus in hand\",\n  \"Crumbling walls, battlefield chaos\",\n  \"Blue and white attire, crown gleaming\",\n  \"Red floral necklet, bronze weapons\"\n]}"
+ },
+ "b94e414a905bd3eb443c3343e53943aa606752c884910361443b214cc70fd769": {
+  "created": "2026-11-10T10:01:24+00:00",
+  "kb_version": "kb0.2-llm",
+  "mode": "llm_kb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"Sita in white saree\",\n  \"golden necklet gleaming\",\n  \"red border edges\",\n  \"sitting alone under tree\",\n  \"arced gates in distance\",\n  \"blooming flowers around\",\n  \"green trees swaying\",\n  \"golden sunset light\",\n  \"quiet garden atmosphere\",\n  \"stone paths winding\",\n  \"water features reflecting\"\n]}"
+ },
+ "b998f9f40eadc34d81591463e534e2b87c11862171ba1bde933c83b73e4bd51e": {
+  "created": "2026-11-10T10:06:51+00:00",
+  "kb_version": "kb0.2-llm",
+  "mode": "llm_kb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"figure in white robe with golden crown\",\n  \"woman bowing at feet of central figure\",\n  \"brother in white dhoti with golden necklace\",\n  \"sage in simple robes holding staff\",\n  \"blue turbans on two male figures\",\n  \"red border on robe of central figure\",\n  \"calm expression on brother's face\",\n  \"soft golden light in courtyard setting\",\n  \"kneeling woman with flowing hair\",\n  \"earth tones around brother's position\"\n]}"
+ },
+ "bc38bd23bb7e99404c93e246a0a4a9a17b93f4422c3bfdd9b8b02952599db66f": {
+  "created": "2026-11-10T10:05:23+00:00",
+  "kb_version": "kb0.2-llm",
+  "mode": "llm_kb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"king lying on floor\",\n  \"crown fallen beside him\",\n  \"young wife back half turned\",\n  \"jewelry scattered around\",\n  \"dark room with shadows\",\n  \"small lamp burning weakly\",\n  \"both figures in silence\",\n  \"tired expression on king\",\n  \"angry posture of wife\",\n  \"pillared palace interior\",\n  \"soft dim lighting\",\n  \"gloomy atmosphere\"\n]}"
+ },
+ "bdb51860b262f51338a73aebaec426758dc54bd298193e2cb53cff8a3331dabc": {
+  "created": "2026-11-10T10:03:41+00:00",
+  "kb_version": "kb0.2-llm",
+  "mode": "llm_kb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"yellow lion-skin figure\",\n  \"golden neck ornaments\",\n  \"carrying mountain of herbs\",\n  \"flying through stormy sky\",\n  \"red and yellow robes\",\n  \"dynamic forward pose\",\n  \"dappled sunlight above\",\n  \"wind-blown hair and beard\",\n  \"healing herbs glowing\",\n  \"clouds parting beneath\"\n]}"
+ },
+ "c876c20ecdd74cda0dade63dd5234e57b912d3e883b7687b5bae5be70243cbba": {
+  "created": "2026-11-10T10:01:39+00:00",
+  "kb_version": "kb0.2-llm",
+  "mode": "llm_kb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"gold armor gleaming\",\n  \"red cloak flowing\",\n  \"copper ornaments shining\",\n  \"standing proudly\",\n  \"bow held high\",\n  \"sunrise light casting\",\n  \"dark hues of hair\",\n  \"battle-scarred face\"\n]}"
+ },
+ "ccf269bc7398ddcb92b12cce3081c5e670a0384d93f66012fd11514309a48b37": {
+  "created": "2026-11-10T10:05:30+00:00",
+  "kb_version": "kb0.2-llm",
+  "mode": "llm_kb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"white saree with red borders\",\n  \"golden necklet gleaming\",\n  \"gazing toward the shore\",\n  \"moonlit blue waters\",\n  \"lotus blooms in reflection\",\n  \"stone banks covered in reeds\",\n  \"serene expression\",\n  \"golden hues in shadows\"\n]}"
+ },
+ "cdd711e09d32e1cd770ef0cb7a31330c1bd86acfd85322ca178aff3650249c7c": {
+  "created": "2026-11-10T09:58:49+00:00",
+  "kb_version": "kb0.2",
+  "mode": "llm_kb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"man in kurta with gold shoulder pads\",\n  \"bending great bow aiming upward\",\n  \"woman with loose black hair and sari\",\n  \"holding garland in both hands\",\n  \"crowded hall of seated kings\",\n  \"fish target high above\",\n  \"gilded archway behind\",\n  \"soft golden lighting\",\n  \"dramatic tension in air\"\n]}"
+ },
+ "ceeeab492294315d8a0e5dff8366a1d54d57e1072ace517afdfe0c7355f9b088": {
+  "created": "2026-11-10T09:59:10+00:00",
+  "kb_version": "kb0.2",
+  "mode": "llm_kb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"king lying on floor\",\n  \"crown fallen beside him\",\n  \"young wife back half turned\",\n  \"jewelry scattered around\",\n  \"dark room with shadows\",\n  \"small lamp burning weakly\",\n  \"both figures in silence\",\n  \"tired expression on king\",\n  \"angry posture of wife\",\n  \"pillared palace interior\",\n  \"soft dim lighting\",\n  \"gloomy atmosphere\"\n]}"
+ },
+ "d0ede67b3f48f7f675c676904c1a915f78878dfa1d7147abe90d8846e6e84068": {
+  "created": "2026-11-10T09:59:27+00:00",
+  "kb_version": "kb0.2",
+  "mode": "llm_kb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"fair-skinned man in yellow dhoti\",\n  \"wearing red shawl and pearl jewellery\",\n  \"with tilak and small crown\",\n  \"holding bow and arrow\",\n  \"standing guard at forest edge\",\n  \"rocky terrain with heavy green vegetation\",\n  \"mountains in background\",\n  \"nighttime forest setting\",\n  \"glimmering under moonlight\"\n]}"
+ },
+ "d14b43979898c8d05e4644aad7dc230fc554b267fe3492608b4f8bc3c8272b1c": {
+  "created": "2026-11-10T10:02:47+00:00",
+  "kb_version": "kb0.2-llm",
+  "mode": "llm_kb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"White robe with golden crown\",\n  \"White saree with golden necklet\",\n  \"White dhoti with golden necklace\",\n  \"Walking through banyan forest roots\",\n  \"Golden sunlight through green canopies\",\n  \"People weeping with hands raised\",\n  \"Earth tones of mossy trunks and bark\",\n  \"Serene expressions, calm and steady\"\n]}"
+ },
+ "d15088d0bfb93b417925e0e362b1cd9708fc39753425270f9b6f0d3701b2cd29": {
+  "created": "2026-11-10T10:05:47+00:00",
+  "kb_version": "kb0.2-llm",
+  "mode": "llm_kb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"yellow saree with red borders\",\n  \"golden bangles and diadem\",\n  \"loose long hair flowing\",\n  \"folding hands in appeal\",\n  \"serene expression\",\n  \"blue and white simple attire\",\n  \"gilded crown and lotus\",\n  \"soft golden light\",\n  \"pillared temple courtyard\",\n  \"stillness in atmosphere\"\n]}"
+ },
+ "db26bd6c391a7192ed25d8fcafed34f973041bdd281f1bef2f23ea0beb0ed6e5": {
+  "created": "2026-11-10T10:00:29+00:00",
+  "kb_version": "kb0.2",
+  "mode": "llm_kb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"lady seated on terrace\",\n  \"playing stringed instrument\",\n  \"nighttime glow on sandstone\",\n  \"stone steps with potted plants\",\n  \"forest visible beyond\",\n  \"draped in silk and gold\",\n  \"soft moonlight illumination\",\n  \"calm serene expression\",\n  \"gently bowing her head\",\n  \"faint wind rustling leaves\"\n]}"
+ },
+ "ea06e920c13e77f8b2b600cf89bbfc26c4aead1fd9b3b2d9cd03e3e672fa8382": {
+  "created": "2026-11-10T09:57:57+00:00",
+  "kb_version": "kb0.2",
+  "mode": "llm_kb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"dark blue-skinned man with peacock-feather crown\",\n  \"curly black hair with flower garland\",\n  \"yellow dhoti with necklace and armband\",\n  \"man with jewelled crown and moustache\",\n  \"rich kurta with gold shoulder pads\",\n  \"kneeling beside chariot, bow lowered\",\n  \"open dusty plain with scattered weapons\",\n  \"chariot with banners in the distance\",\n  \"hazy sky above the battlefield\",\n  \"gently turning toward the other figure\",\n  \"intense yet calm expression\"\n]}"
+ },
+ "ed37eea40595200f16267f3f4fb70eaefb84dc1445559445834d4e9bd450657f": {
+  "created": "2026-11-10T10:03:08+00:00",
+  "kb_version": "kb0.2-llm",
+  "mode": "llm_kb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"Woman in white saree\",\n  \"Man in blue cloak\",\n  \"Man lying lifeless\",\n  \"Head resting in lap\",\n  \"Banyan roots beneath\",\n  \"Golden sunlight filtering\",\n  \"Serene expression\",\n  \"Golden necklet on woman\",\n  \"Red borders on saree\",\n  \"Dark skin on man\",\n  \"Sword and lotus at side\",\n  \"Earth tones on man\"\n]}"
+ },
+ "f51a9ddb29c588aed18d9a8b22878bb142022655abea36e42a8863fcbaad08e7": {
+  "created": "2026-11-10T10:04:33+00:00",
+  "kb_version": "kb0.2-llm",
+  "mode": "llm_kb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"White robe with golden armor\",\n  \"Blue turban and sacred thread\",\n  \"Red scarf and lotus ornaments\",\n  \"Kneeling around in quiet stillness\",\n  \"Dusk light filtering through dust\",\n  \"Banners fluttering in wind\",\n  \"War drums half-broken on ground\",\n  \"Red ochre walls crumbling\",\n  \"Flute resting beside his hand\",\n  \"Serene expression, calm gaze\",\n  \"Pillars of old hall fading\"\n]}"
+ }
+}
