@@ -1,0 +1,1077 @@
+{
+ "manifest": "/content/drive/MyDrive/m3/images/c6_llm_kbllm@rrv_v1/dev/manifest.json",
+ "scenes_file": "eval/test_scenes_dev.json",
+ "scored_at": "2026-11-11T04:27:19.376324",
+ "judge": "Qwen/Qwen2-VL-2B-Instruct",
+ "n_images": 48,
+ "summary": {
+  "c6_llm_kbllm": {
+   "checklist": {
+    "mean": 0.5086348088733049,
+    "ci95": [
+     0.4502497942927208,
+     0.5675859082410385
+    ],
+    "n_scenes": 24
+   },
+   "clip_raw": {
+    "mean": 0.24136448620508114,
+    "ci95": [
+     0.23063685635570438,
+     0.2510213851928711
+    ],
+    "n_scenes": 24
+   },
+   "style_margin": {
+    "mean": 0.11060243596633275,
+    "ci95": [
+     0.0973670134631296,
+     0.12345873393739262
+    ],
+    "n_scenes": 24
+   },
+   "max_train_dino": {
+    "mean": 0.6997421942651272,
+    "ci95": [
+     0.6713769327538709,
+     0.725713988021016
+    ],
+    "n_scenes": 24
+   }
+  }
+ },
+ "per_scene": {
+  "c6_llm_kbllm": {
+   "checklist": {
+    "s09": 0.5648943798409568,
+    "s10": 0.6054895364989836,
+    "s11": 0.49038019869476557,
+    "s12": 0.7672431932555305,
+    "s13": 0.738365050819185,
+    "s14": 0.7066074357781973,
+    "s15": 0.3027003521565348,
+    "s16": 0.6581611095203294,
+    "s17": 0.7403259426355362,
+    "s18": 0.446714839587609,
+    "s19": 0.4147118801871935,
+    "s20": 0.4439666550606489,
+    "s21": 0.3818185661919415,
+    "s22": 0.481667032931,
+    "s23": 0.4444895399113496,
+    "s24": 0.625842621549964,
+    "s25": 0.46680114371702075,
+    "s26": 0.5453466065227985,
+    "s27": 0.45591649040579796,
+    "s28": 0.5576666792854668,
+    "s29": 0.2947515402920544,
+    "s30": 0.29438257589936256,
+    "s31": 0.2436498828465119,
+    "s32": 0.5353421593705814
+   },
+   "clip_raw": {
+    "s09": 0.2772052735090256,
+    "s10": 0.1859603300690651,
+    "s11": 0.2315787672996521,
+    "s12": 0.23444683849811554,
+    "s13": 0.27349697053432465,
+    "s14": 0.2733255475759506,
+    "s15": 0.26038093864917755,
+    "s16": 0.23155741393566132,
+    "s17": 0.24829000234603882,
+    "s18": 0.23867180943489075,
+    "s19": 0.22780033200979233,
+    "s20": 0.25333743542432785,
+    "s21": 0.26324672996997833,
+    "s22": 0.2411007136106491,
+    "s23": 0.2329336330294609,
+    "s24": 0.22044002264738083,
+    "s25": 0.2454599291086197,
+    "s26": 0.26192036271095276,
+    "s27": 0.2330879420042038,
+    "s28": 0.22218415886163712,
+    "s29": 0.169210784137249,
+    "s30": 0.2769596129655838,
+    "s31": 0.2478267028927803,
+    "s32": 0.24232541769742966
+   },
+   "style_margin": {
+    "s09": 0.09808951616287231,
+    "s10": 0.09718719124794006,
+    "s11": 0.16001969575881958,
+    "s12": 0.10310664772987366,
+    "s13": 0.08468931913375854,
+    "s14": 0.15139400959014893,
+    "s15": 0.14259305596351624,
+    "s16": 0.04304087162017822,
+    "s17": 0.1612240970134735,
+    "s18": 0.10693231225013733,
+    "s19": 0.1436963975429535,
+    "s20": 0.14576661586761475,
+    "s21": 0.08988785743713379,
+    "s22": 0.15084436535835266,
+    "s23": 0.10040569305419922,
+    "s24": 0.11007985472679138,
+    "s25": 0.06068158149719238,
+    "s26": 0.052418649196624756,
+    "s27": 0.08720684051513672,
+    "s28": 0.11276364326477051,
+    "s29": 0.08757567405700684,
+    "s30": 0.13364118337631226,
+    "s31": 0.12466219067573547,
+    "s32": 0.10655120015144348
+   },
+   "max_train_dino": {
+    "s09": 0.6663811504840851,
+    "s10": 0.6816661357879639,
+    "s11": 0.7572341859340668,
+    "s12": 0.7430777847766876,
+    "s13": 0.6710245013237,
+    "s14": 0.6929977834224701,
+    "s15": 0.7253476679325104,
+    "s16": 0.5226454734802246,
+    "s17": 0.7133935391902924,
+    "s18": 0.6140418648719788,
+    "s19": 0.7308096289634705,
+    "s20": 0.7889191806316376,
+    "s21": 0.7102376222610474,
+    "s22": 0.746161699295044,
+    "s23": 0.736856997013092,
+    "s24": 0.6377097070217133,
+    "s25": 0.680622011423111,
+    "s26": 0.5254943072795868,
+    "s27": 0.6937309205532074,
+    "s28": 0.7571201622486115,
+    "s29": 0.752360612154007,
+    "s30": 0.7346746921539307,
+    "s31": 0.8135982155799866,
+    "s32": 0.6977068185806274
+   }
+  }
+ },
+ "items": [
+  {
+   "scene_id": "s09",
+   "condition": "c6_llm_kbllm",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c6_llm_kbllm@rrv_v1/dev/s09_c6_llm_kbllm_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, woman in white saree, golden necklet shining, red border trim, sitting alone beneath tree, arced gates in background, blooming flowers nearby, green trees swaying, golden hour lighting, quiet garden setting, stone paths leading, water features reflecting, oil painting, canvas texture, classical indian art",
+   "checklist": 0.6449993782573276,
+   "checklist_detail": {
+    "c1": 0.4381718933582306,
+    "c2": 0.9615806937217712,
+    "c3": 0.9090513586997986,
+    "c4": 0.3912019729614258,
+    "c5": 0.4049825668334961
+   },
+   "clip_raw": 0.27570369839668274,
+   "style_margin": 0.10751241445541382,
+   "max_train_dino": 0.765106737613678
+  },
+  {
+   "scene_id": "s09",
+   "condition": "c6_llm_kbllm",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c6_llm_kbllm@rrv_v1/dev/s09_c6_llm_kbllm_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, woman in white saree, golden necklet shining, red border trim, sitting alone beneath tree, arced gates in background, blooming flowers nearby, green trees swaying, golden hour lighting, quiet garden setting, stone paths leading, water features reflecting, oil painting, canvas texture, classical indian art",
+   "checklist": 0.484789381424586,
+   "checklist_detail": {
+    "c1": 0.8809760212898254,
+    "c2": 0.16285066306591034,
+    "c3": 0.09460726380348206,
+    "c4": 0.779252290725708,
+    "c5": 0.5277319550514221
+   },
+   "clip_raw": 0.2787068486213684,
+   "style_margin": 0.08866661787033081,
+   "max_train_dino": 0.5676555633544922
+  },
+  {
+   "scene_id": "s10",
+   "condition": "c6_llm_kbllm",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c6_llm_kbllm@rrv_v1/dev/s10_c6_llm_kbllm_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, gold armor gleaming, red cloak flowing, copper ornaments shining, standing proudly, bow held high, sunrise light casting, dark hues of hair, battle-scarred face, oil painting, canvas texture, classical indian art",
+   "checklist": 0.668711618002918,
+   "checklist_detail": {
+    "c1": 0.8759624361991882,
+    "c2": 0.8861307501792908,
+    "c3": 0.028401115909218788,
+    "c4": 0.8095434308052063,
+    "c5": 0.8183290958404541
+   },
+   "clip_raw": 0.17519907653331757,
+   "style_margin": 0.11908358335494995,
+   "max_train_dino": 0.6994036436080933
+  },
+  {
+   "scene_id": "s10",
+   "condition": "c6_llm_kbllm",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c6_llm_kbllm@rrv_v1/dev/s10_c6_llm_kbllm_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, gold armor gleaming, red cloak flowing, copper ornaments shining, standing proudly, bow held high, sunrise light casting, dark hues of hair, battle-scarred face, oil painting, canvas texture, classical indian art",
+   "checklist": 0.5422674549950494,
+   "checklist_detail": {
+    "c1": 0.4113094210624695,
+    "c2": 0.7530302405357361,
+    "c3": 0.38898563385009766,
+    "c4": 0.7276607155799866,
+    "c5": 0.31843507289886475
+   },
+   "clip_raw": 0.19672158360481262,
+   "style_margin": 0.07529079914093018,
+   "max_train_dino": 0.6639286279678345
+  },
+  {
+   "scene_id": "s11",
+   "condition": "c6_llm_kbllm",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c6_llm_kbllm@rrv_v1/dev/s11_c6_llm_kbllm_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Golden armor with blue cloak, Yellow saree with gold bangles, Holding arm with nervous glance, Looking back with anxious eyes, Floral necklet and crown, Tiled roofs with jharokhas, Courtyards filled with flowering plants, Red and blue border on attire, oil painting, canvas texture, classical indian art",
+   "checklist": 0.5823003326077014,
+   "checklist_detail": {
+    "c1": 0.7550941705703735,
+    "c2": 0.457377165555954,
+    "c3": 0.6086444854736328,
+    "c4": 0.9943699240684509,
+    "c5": 0.021801093593239784
+   },
+   "clip_raw": 0.2623727023601532,
+   "style_margin": 0.12842273712158203,
+   "max_train_dino": 0.7355455160140991
+  },
+  {
+   "scene_id": "s11",
+   "condition": "c6_llm_kbllm",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c6_llm_kbllm@rrv_v1/dev/s11_c6_llm_kbllm_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Golden armor with blue cloak, Yellow saree with gold bangles, Holding arm with nervous glance, Looking back with anxious eyes, Floral necklet and crown, Tiled roofs with jharokhas, Courtyards filled with flowering plants, Red and blue border on attire, oil painting, canvas texture, classical indian art",
+   "checklist": 0.3984600647818297,
+   "checklist_detail": {
+    "c1": 0.43034374713897705,
+    "c2": 0.5623947978019714,
+    "c3": 0.09338320046663284,
+    "c4": 0.9936230778694153,
+    "c5": 0.021813949570059776
+   },
+   "clip_raw": 0.200784832239151,
+   "style_margin": 0.19161665439605713,
+   "max_train_dino": 0.7789228558540344
+  },
+  {
+   "scene_id": "s12",
+   "condition": "c6_llm_kbllm",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c6_llm_kbllm@rrv_v1/dev/s12_c6_llm_kbllm_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, lion-skin figure kneeling, offering ring to other figure, reaching out to accept, white robe with red border, golden crown on head, blue turban with golden trim, red and yellow hues on attire, simple robes flowing behind, soft golden light in hall, oil painting, canvas texture, classical indian art",
+   "checklist": 0.7463535732693143,
+   "checklist_detail": {
+    "c1": 0.9532841444015503,
+    "c2": 0.9434476494789124,
+    "c3": 0.10834768414497375,
+    "c4": 0.965950071811676,
+    "c5": 0.7751230597496033
+   },
+   "clip_raw": 0.26192402839660645,
+   "style_margin": 0.09439516067504883,
+   "max_train_dino": 0.7442119717597961
+  },
+  {
+   "scene_id": "s12",
+   "condition": "c6_llm_kbllm",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c6_llm_kbllm@rrv_v1/dev/s12_c6_llm_kbllm_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, lion-skin figure kneeling, offering ring to other figure, reaching out to accept, white robe with red border, golden crown on head, blue turban with golden trim, red and yellow hues on attire, simple robes flowing behind, soft golden light in hall, oil painting, canvas texture, classical indian art",
+   "checklist": 0.7881328132417467,
+   "checklist_detail": {
+    "c1": 0.8333722949028015,
+    "c2": 0.8317383527755737,
+    "c3": 0.631208598613739,
+    "c4": 0.8710351586341858,
+    "c5": 0.7584865093231201
+   },
+   "clip_raw": 0.20696964859962463,
+   "style_margin": 0.11181813478469849,
+   "max_train_dino": 0.7419435977935791
+  },
+  {
+   "scene_id": "s13",
+   "condition": "c6_llm_kbllm",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c6_llm_kbllm@rrv_v1/dev/s13_c6_llm_kbllm_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, blue and white attire, serene expression, standing before throne, red cloak with gold trim, crimson hues and heavy jewelry, kneeling ministers in court, tiled halls with flowering plants, deep greens and gold accents, flute resting on side, gilded throne with red cushions, oil painting, canvas texture, classical indian art",
+   "checklist": 0.7658065623707242,
+   "checklist_detail": {
+    "c1": 0.8653234243392944,
+    "c2": 0.7371647953987122,
+    "c3": 0.6730141639709473,
+    "c4": 0.9742265343666077,
+    "c5": 0.3928012251853943
+   },
+   "clip_raw": 0.2846682071685791,
+   "style_margin": 0.09082132577896118,
+   "max_train_dino": 0.6882212162017822
+  },
+  {
+   "scene_id": "s13",
+   "condition": "c6_llm_kbllm",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c6_llm_kbllm@rrv_v1/dev/s13_c6_llm_kbllm_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, blue and white attire, serene expression, standing before throne, red cloak with gold trim, crimson hues and heavy jewelry, kneeling ministers in court, tiled halls with flowering plants, deep greens and gold accents, flute resting on side, gilded throne with red cushions, oil painting, canvas texture, classical indian art",
+   "checklist": 0.710923539267646,
+   "checklist_detail": {
+    "c1": 0.3213135600090027,
+    "c2": 0.9664614200592041,
+    "c3": 0.8009292483329773,
+    "c4": 0.9742563366889954,
+    "c5": 0.2723907232284546
+   },
+   "clip_raw": 0.2623257339000702,
+   "style_margin": 0.07855731248855591,
+   "max_train_dino": 0.6538277864456177
+  },
+  {
+   "scene_id": "s14",
+   "condition": "c6_llm_kbllm",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c6_llm_kbllm@rrv_v1/dev/s14_c6_llm_kbllm_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, White robe with golden crown, White saree with golden necklet, White dhoti with golden necklace, Walking through banyan forest roots, Golden sunlight through green canopies, People weeping with hands raised, Earth tones of mossy trunks and bark, oil painting, canvas texture, classical indian art",
+   "checklist": 0.6717348619260721,
+   "checklist_detail": {
+    "c1": 0.5119796991348267,
+    "c2": 0.9327684044837952,
+    "c3": 0.6160776615142822,
+    "c4": 0.9573087096214294,
+    "c5": 0.00934480782598257
+   },
+   "clip_raw": 0.23305442929267883,
+   "style_margin": 0.18011510372161865,
+   "max_train_dino": 0.7059577107429504
+  },
+  {
+   "scene_id": "s14",
+   "condition": "c6_llm_kbllm",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c6_llm_kbllm@rrv_v1/dev/s14_c6_llm_kbllm_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, White robe with golden crown, White saree with golden necklet, White dhoti with golden necklace, Walking through banyan forest roots, Golden sunlight through green canopies, People weeping with hands raised, Earth tones of mossy trunks and bark, oil painting, canvas texture, classical indian art",
+   "checklist": 0.7414800096303225,
+   "checklist_detail": {
+    "c1": 0.9442096948623657,
+    "c2": 0.4822057783603668,
+    "c3": 0.9393590688705444,
+    "c4": 0.961279034614563,
+    "c5": 0.019212933257222176
+   },
+   "clip_raw": 0.3135966658592224,
+   "style_margin": 0.1226729154586792,
+   "max_train_dino": 0.6800378561019897
+  },
+  {
+   "scene_id": "s15",
+   "condition": "c6_llm_kbllm",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c6_llm_kbllm@rrv_v1/dev/s15_c6_llm_kbllm_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Woman in white saree, Man in blue cloak, Man lying lifeless, Head resting in lap, Banyan roots beneath, Golden sunlight filtering, Serene expression, Golden necklet on woman, Red borders on saree, Dark skin on man, Sword and lotus at side, oil painting, canvas texture, classical indian art",
+   "checklist": 0.35435999743640423,
+   "checklist_detail": {
+    "c1": 0.4705503284931183,
+    "c2": 0.015910841524600983,
+    "c3": 0.23803088068962097,
+    "c4": 0.9872009754180908,
+    "c5": 0.3986949026584625
+   },
+   "clip_raw": 0.26958250999450684,
+   "style_margin": 0.11794614791870117,
+   "max_train_dino": 0.6716372966766357
+  },
+  {
+   "scene_id": "s15",
+   "condition": "c6_llm_kbllm",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c6_llm_kbllm@rrv_v1/dev/s15_c6_llm_kbllm_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Woman in white saree, Man in blue cloak, Man lying lifeless, Head resting in lap, Banyan roots beneath, Golden sunlight filtering, Serene expression, Golden necklet on woman, Red borders on saree, Dark skin on man, Sword and lotus at side, oil painting, canvas texture, classical indian art",
+   "checklist": 0.25104070687666535,
+   "checklist_detail": {
+    "c1": 0.16715307533740997,
+    "c2": 0.029774582013487816,
+    "c3": 0.06034569814801216,
+    "c4": 0.9800165891647339,
+    "c5": 0.513762354850769
+   },
+   "clip_raw": 0.25117936730384827,
+   "style_margin": 0.1672399640083313,
+   "max_train_dino": 0.779058039188385
+  },
+  {
+   "scene_id": "s16",
+   "condition": "c6_llm_kbllm",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c6_llm_kbllm@rrv_v1/dev/s16_c6_llm_kbllm_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Golden armor, blue cloak, floral necklet, Blue attire, white and gold, crown gleaming, Bow dropped, sitting in chariot, still, Turning from horses, serene gaze, Dust swirling in golden evening light, Banners flapping, elephants advancing, oil painting, canvas texture, classical indian art",
+   "checklist": 0.5768245872524049,
+   "checklist_detail": {
+    "c1": 0.9490880966186523,
+    "c2": 0.3642328083515167,
+    "c3": 0.26359570026397705,
+    "c4": 0.96230149269104,
+    "c5": 0.11298508942127228
+   },
+   "clip_raw": 0.22578167915344238,
+   "style_margin": 0.0676773190498352,
+   "max_train_dino": 0.6023424863815308
+  },
+  {
+   "scene_id": "s16",
+   "condition": "c6_llm_kbllm",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c6_llm_kbllm@rrv_v1/dev/s16_c6_llm_kbllm_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Golden armor, blue cloak, floral necklet, Blue attire, white and gold, crown gleaming, Bow dropped, sitting in chariot, still, Turning from horses, serene gaze, Dust swirling in golden evening light, Banners flapping, elephants advancing, oil painting, canvas texture, classical indian art",
+   "checklist": 0.7394976317882538,
+   "checklist_detail": {
+    "c1": 0.9817657470703125,
+    "c2": 0.7756954431533813,
+    "c3": 0.544342041015625,
+    "c4": 0.8664495944976807,
+    "c5": 0.31897303462028503
+   },
+   "clip_raw": 0.23733314871788025,
+   "style_margin": 0.01840442419052124,
+   "max_train_dino": 0.44294846057891846
+  },
+  {
+   "scene_id": "s17",
+   "condition": "c6_llm_kbllm",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c6_llm_kbllm@rrv_v1/dev/s17_c6_llm_kbllm_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, white saree with red borders, golden necklet gleaming, gazing toward the shore, moonlit blue waters, lotus blooms in reflection, stone banks covered in reeds, serene expression, golden hues in shadows, oil painting, canvas texture, classical indian art",
+   "checklist": 0.6966223465278745,
+   "checklist_detail": {
+    "c1": 0.3596772849559784,
+    "c2": 0.9711952805519104,
+    "c3": 0.96810382604599,
+    "c4": 0.07392523437738419,
+    "c5": 0.901100754737854
+   },
+   "clip_raw": 0.2337987720966339,
+   "style_margin": 0.13406729698181152,
+   "max_train_dino": 0.771986186504364
+  },
+  {
+   "scene_id": "s17",
+   "condition": "c6_llm_kbllm",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c6_llm_kbllm@rrv_v1/dev/s17_c6_llm_kbllm_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, white saree with red borders, golden necklet gleaming, gazing toward the shore, moonlit blue waters, lotus blooms in reflection, stone banks covered in reeds, serene expression, golden hues in shadows, oil painting, canvas texture, classical indian art",
+   "checklist": 0.7840295387431979,
+   "checklist_detail": {
+    "c1": 0.8598707318305969,
+    "c2": 0.966977059841156,
+    "c3": 0.9155425429344177,
+    "c4": 0.0805726870894432,
+    "c5": 0.7068829536437988
+   },
+   "clip_raw": 0.2627812325954437,
+   "style_margin": 0.1883808970451355,
+   "max_train_dino": 0.6548008918762207
+  },
+  {
+   "scene_id": "s18",
+   "condition": "c6_llm_kbllm",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c6_llm_kbllm@rrv_v1/dev/s18_c6_llm_kbllm_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, white dhoti worn, golden necklace visible, blue turban tied, standing guard posture, bow held loosely, banyan roots surrounding, green canopies above, earth tones dominant, soft green glow, mossy trunks nearby, nighttime stillness, oil painting, canvas texture, classical indian art",
+   "checklist": 0.4574145782325003,
+   "checklist_detail": {
+    "c1": 0.8501284718513489,
+    "c2": 0.1764669418334961,
+    "c3": 0.05047185346484184,
+    "c4": 0.8957090377807617,
+    "c5": 0.17117859423160553
+   },
+   "clip_raw": 0.24322322010993958,
+   "style_margin": 0.09501981735229492,
+   "max_train_dino": 0.6231590509414673
+  },
+  {
+   "scene_id": "s18",
+   "condition": "c6_llm_kbllm",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c6_llm_kbllm@rrv_v1/dev/s18_c6_llm_kbllm_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, white dhoti worn, golden necklace visible, blue turban tied, standing guard posture, bow held loosely, banyan roots surrounding, green canopies above, earth tones dominant, soft green glow, mossy trunks nearby, nighttime stillness, oil painting, canvas texture, classical indian art",
+   "checklist": 0.43601510094271767,
+   "checklist_detail": {
+    "c1": 0.8742880821228027,
+    "c2": 0.0537700355052948,
+    "c3": 0.06400427222251892,
+    "c4": 0.911474883556366,
+    "c5": 0.11706136167049408
+   },
+   "clip_raw": 0.23412039875984192,
+   "style_margin": 0.11884480714797974,
+   "max_train_dino": 0.6049246788024902
+  },
+  {
+   "scene_id": "s19",
+   "condition": "c6_llm_kbllm",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c6_llm_kbllm@rrv_v1/dev/s19_c6_llm_kbllm_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, yellow saree with red borders, golden bangles and diadem, loose long hair flowing, folding hands in appeal, serene expression, blue and white simple attire, gilded crown and lotus, soft golden light, pillared temple courtyard, stillness in atmosphere, oil painting, canvas texture, classical indian art",
+   "checklist": 0.46859393848313224,
+   "checklist_detail": {
+    "c1": 0.7463307976722717,
+    "c2": 0.349502831697464,
+    "c3": 0.3463370203971863,
+    "c4": 0.5167750716209412,
+    "c5": 0.299454003572464
+   },
+   "clip_raw": 0.2468102127313614,
+   "style_margin": 0.10319465398788452,
+   "max_train_dino": 0.6819281578063965
+  },
+  {
+   "scene_id": "s19",
+   "condition": "c6_llm_kbllm",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c6_llm_kbllm@rrv_v1/dev/s19_c6_llm_kbllm_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, yellow saree with red borders, golden bangles and diadem, loose long hair flowing, folding hands in appeal, serene expression, blue and white simple attire, gilded crown and lotus, soft golden light, pillared temple courtyard, stillness in atmosphere, oil painting, canvas texture, classical indian art",
+   "checklist": 0.36082982189125484,
+   "checklist_detail": {
+    "c1": 0.42657583951950073,
+    "c2": 0.11782348901033401,
+    "c3": 0.2666208744049072,
+    "c4": 0.6711785197257996,
+    "c5": 0.28307095170021057
+   },
+   "clip_raw": 0.20879045128822327,
+   "style_margin": 0.18419814109802246,
+   "max_train_dino": 0.7796911001205444
+  },
+  {
+   "scene_id": "s20",
+   "condition": "c6_llm_kbllm",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c6_llm_kbllm@rrv_v1/dev/s20_c6_llm_kbllm_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Woman in white saree with red borders, Man in white robe with golden crown, Blue turban with red border, Standing beside banyan roots, Gentle sunlight filtering through green canopies, Serene expression, hands offering water, Mossy trunks, earthy browns, soft greens, oil painting, canvas texture, classical indian art",
+   "checklist": 0.46227342262864113,
+   "checklist_detail": {
+    "c1": 0.7342765927314758,
+    "c2": 0.8057987689971924,
+    "c3": 0.03882190212607384,
+    "c4": 0.05362340062856674,
+    "c5": 0.5250853300094604,
+    "c6": 0.8326075673103333
+   },
+   "clip_raw": 0.26848796010017395,
+   "style_margin": 0.17324477434158325,
+   "max_train_dino": 0.7824467420578003
+  },
+  {
+   "scene_id": "s20",
+   "condition": "c6_llm_kbllm",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c6_llm_kbllm@rrv_v1/dev/s20_c6_llm_kbllm_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Woman in white saree with red borders, Man in white robe with golden crown, Blue turban with red border, Standing beside banyan roots, Gentle sunlight filtering through green canopies, Serene expression, hands offering water, Mossy trunks, earthy browns, soft greens, oil painting, canvas texture, classical indian art",
+   "checklist": 0.4256598874926567,
+   "checklist_detail": {
+    "c1": 0.5661843419075012,
+    "c2": 0.763755738735199,
+    "c3": 0.0833083763718605,
+    "c4": 0.06708265841007233,
+    "c5": 0.5340937972068787,
+    "c6": 0.7618428468704224
+   },
+   "clip_raw": 0.23818691074848175,
+   "style_margin": 0.11828845739364624,
+   "max_train_dino": 0.7953916192054749
+  },
+  {
+   "scene_id": "s21",
+   "condition": "c6_llm_kbllm",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c6_llm_kbllm@rrv_v1/dev/s21_c6_llm_kbllm_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, White robe with golden crown, White dhoti with golden necklace, Yellow lion-skin robes with golden ornaments, Sitting on smooth white rocks by sea, Blue waves crashing against green shore, Golden sand under palm trees, Calm expressions, quiet conversation, oil painting, canvas texture, classical indian art",
+   "checklist": 0.39779049456119536,
+   "checklist_detail": {
+    "c1": 0.5274791121482849,
+    "c2": 0.24818167090415955,
+    "c3": 0.03261362761259079,
+    "c4": 0.8984535336494446,
+    "c5": 0.3963848352432251,
+    "c6": 0.16806422173976898
+   },
+   "clip_raw": 0.25467127561569214,
+   "style_margin": 0.09005874395370483,
+   "max_train_dino": 0.71755051612854
+  },
+  {
+   "scene_id": "s21",
+   "condition": "c6_llm_kbllm",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c6_llm_kbllm@rrv_v1/dev/s21_c6_llm_kbllm_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, White robe with golden crown, White dhoti with golden necklace, Yellow lion-skin robes with golden ornaments, Sitting on smooth white rocks by sea, Blue waves crashing against green shore, Golden sand under palm trees, Calm expressions, quiet conversation, oil painting, canvas texture, classical indian art",
+   "checklist": 0.3658466378226876,
+   "checklist_detail": {
+    "c1": 0.5197046399116516,
+    "c2": 0.24236810207366943,
+    "c3": 0.05759682506322861,
+    "c4": 0.9067596197128296,
+    "c5": 0.016607562080025673,
+    "c6": 0.1890004426240921
+   },
+   "clip_raw": 0.2718221843242645,
+   "style_margin": 0.08971697092056274,
+   "max_train_dino": 0.7029247283935547
+  },
+  {
+   "scene_id": "s22",
+   "condition": "c6_llm_kbllm",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c6_llm_kbllm@rrv_v1/dev/s22_c6_llm_kbllm_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Yellow saree with red borders, Kneeling in tiled hall, Golden bangles and diadem, White robe with blue turban, Red cloak with gold ornaments, Floral motifs and green plants, Sacred thread and lotus ornaments, Crimson hues and heavy jewelry, oil painting, canvas texture, classical indian art",
+   "checklist": 0.6277441903948784,
+   "checklist_detail": {
+    "c1": 0.6793511509895325,
+    "c2": 0.5450790524482727,
+    "c3": 0.9859446287155151,
+    "c4": 0.2303369641304016,
+    "c5": 0.37086689472198486
+   },
+   "clip_raw": 0.27295663952827454,
+   "style_margin": 0.10317164659500122,
+   "max_train_dino": 0.6794039607048035
+  },
+  {
+   "scene_id": "s22",
+   "condition": "c6_llm_kbllm",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c6_llm_kbllm@rrv_v1/dev/s22_c6_llm_kbllm_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Yellow saree with red borders, Kneeling in tiled hall, Golden bangles and diadem, White robe with blue turban, Red cloak with gold ornaments, Floral motifs and green plants, Sacred thread and lotus ornaments, Crimson hues and heavy jewelry, oil painting, canvas texture, classical indian art",
+   "checklist": 0.3355898754671216,
+   "checklist_detail": {
+    "c1": 0.06663013249635696,
+    "c2": 0.07616857439279556,
+    "c3": 0.9969272017478943,
+    "c4": 0.37167099118232727,
+    "c5": 0.03359619528055191
+   },
+   "clip_raw": 0.20924478769302368,
+   "style_margin": 0.1985170841217041,
+   "max_train_dino": 0.8129194378852844
+  },
+  {
+   "scene_id": "s23",
+   "condition": "c6_llm_kbllm",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c6_llm_kbllm@rrv_v1/dev/s23_c6_llm_kbllm_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, figure in white robe with golden crown, woman bowing at feet of central figure, brother in white dhoti with golden necklace, sage in simple robes holding staff, blue turbans on two male figures, red border on robe of central figure, calm expression on brother's face, oil painting, canvas texture, classical indian art",
+   "checklist": 0.43176316118074787,
+   "checklist_detail": {
+    "c1": 0.6514856815338135,
+    "c2": 0.4355277717113495,
+    "c3": 0.3673735558986664,
+    "c4": 0.4734518229961395,
+    "c5": 0.030190786346793175
+   },
+   "clip_raw": 0.2512902319431305,
+   "style_margin": 0.09674715995788574,
+   "max_train_dino": 0.7200790643692017
+  },
+  {
+   "scene_id": "s23",
+   "condition": "c6_llm_kbllm",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c6_llm_kbllm@rrv_v1/dev/s23_c6_llm_kbllm_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, figure in white robe with golden crown, woman bowing at feet of central figure, brother in white dhoti with golden necklace, sage in simple robes holding staff, blue turbans on two male figures, red border on robe of central figure, calm expression on brother's face, oil painting, canvas texture, classical indian art",
+   "checklist": 0.4572159186419513,
+   "checklist_detail": {
+    "c1": 0.9344220757484436,
+    "c2": 0.5627350807189941,
+    "c3": 0.32164764404296875,
+    "c4": 0.22312401235103607,
+    "c5": 0.03108564205467701
+   },
+   "clip_raw": 0.21457703411579132,
+   "style_margin": 0.1040642261505127,
+   "max_train_dino": 0.7536349296569824
+  },
+  {
+   "scene_id": "s24",
+   "condition": "c6_llm_kbllm",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c6_llm_kbllm@rrv_v1/dev/s24_c6_llm_kbllm_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, lady with red sari playing instrument, sitting on terrace with jharokhas, nightlight glowing on tiled roofs, flowing silk draping over legs, gilded ornaments on neck and arms, flowering plants around courtyard, soft blue and green ambient glow, faint golden reflections on tiles, oil painting, canvas texture, classical indian art",
+   "checklist": 0.6175941862165928,
+   "checklist_detail": {
+    "c1": 0.48870182037353516,
+    "c2": 0.6311588287353516,
+    "c3": 0.7833740711212158,
+    "c4": 0.1496221125125885,
+    "c5": 0.9846619367599487
+   },
+   "clip_raw": 0.21298666298389435,
+   "style_margin": 0.07218456268310547,
+   "max_train_dino": 0.6113917231559753
+  },
+  {
+   "scene_id": "s24",
+   "condition": "c6_llm_kbllm",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c6_llm_kbllm@rrv_v1/dev/s24_c6_llm_kbllm_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, lady with red sari playing instrument, sitting on terrace with jharokhas, nightlight glowing on tiled roofs, flowing silk draping over legs, gilded ornaments on neck and arms, flowering plants around courtyard, soft blue and green ambient glow, faint golden reflections on tiles, oil painting, canvas texture, classical indian art",
+   "checklist": 0.6340910568833351,
+   "checklist_detail": {
+    "c1": 0.8742740750312805,
+    "c2": 0.28132691979408264,
+    "c3": 0.7867028713226318,
+    "c4": 0.19458264112472534,
+    "c5": 0.9935380816459656
+   },
+   "clip_raw": 0.2278933823108673,
+   "style_margin": 0.1479751467704773,
+   "max_train_dino": 0.6640276908874512
+  },
+  {
+   "scene_id": "s25",
+   "condition": "c6_llm_kbllm",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c6_llm_kbllm@rrv_v1/dev/s25_c6_llm_kbllm_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, yellow lion-skin figure, golden neck ornaments, carrying mountain of herbs, flying through stormy sky, red and yellow robes, dynamic forward pose, dappled sunlight above, wind-blown hair and beard, healing herbs glowing, clouds parting beneath, oil painting, canvas texture, classical indian art",
+   "checklist": 0.44001050805673003,
+   "checklist_detail": {
+    "c1": 0.8082059025764465,
+    "c2": 0.015674887225031853,
+    "c3": 0.1146807000041008,
+    "c4": 0.7988030910491943,
+    "c5": 0.8441579937934875
+   },
+   "clip_raw": 0.25651872158050537,
+   "style_margin": 0.05067521333694458,
+   "max_train_dino": 0.6405577063560486
+  },
+  {
+   "scene_id": "s25",
+   "condition": "c6_llm_kbllm",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c6_llm_kbllm@rrv_v1/dev/s25_c6_llm_kbllm_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, yellow lion-skin figure, golden neck ornaments, carrying mountain of herbs, flying through stormy sky, red and yellow robes, dynamic forward pose, dappled sunlight above, wind-blown hair and beard, healing herbs glowing, clouds parting beneath, oil painting, canvas texture, classical indian art",
+   "checklist": 0.49359177937731147,
+   "checklist_detail": {
+    "c1": 0.9399591684341431,
+    "c2": 0.015943964943289757,
+    "c3": 0.20499949157238007,
+    "c4": 0.8544391989707947,
+    "c5": 0.7724897861480713
+   },
+   "clip_raw": 0.234401136636734,
+   "style_margin": 0.07068794965744019,
+   "max_train_dino": 0.7206863164901733
+  },
+  {
+   "scene_id": "s26",
+   "condition": "c6_llm_kbllm",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c6_llm_kbllm@rrv_v1/dev/s26_c6_llm_kbllm_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, blue and white attire, golden crown with lotus, serene expression, kneeling beside chariot, golden armor with blue cloak, floral necklet and red hues, chariot with broken wheels, dust swirling in red light, war drums in background, crumbling walls and trees, oil painting, canvas texture, classical indian art",
+   "checklist": 0.5918754324316978,
+   "checklist_detail": {
+    "c1": 0.434088796377182,
+    "c2": 0.837988018989563,
+    "c3": 0.777799665927887,
+    "c4": 0.5663197636604309,
+    "c5": 0.4865188002586365,
+    "c6": 0.19984303414821625
+   },
+   "clip_raw": 0.26972103118896484,
+   "style_margin": 0.08172577619552612,
+   "max_train_dino": 0.5965545177459717
+  },
+  {
+   "scene_id": "s26",
+   "condition": "c6_llm_kbllm",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c6_llm_kbllm@rrv_v1/dev/s26_c6_llm_kbllm_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, blue and white attire, golden crown with lotus, serene expression, kneeling beside chariot, golden armor with blue cloak, floral necklet and red hues, chariot with broken wheels, dust swirling in red light, war drums in background, crumbling walls and trees, oil painting, canvas texture, classical indian art",
+   "checklist": 0.49881778061389925,
+   "checklist_detail": {
+    "c1": 0.35596901178359985,
+    "c2": 0.8183259963989258,
+    "c3": 0.24595949053764343,
+    "c4": 0.5857029557228088,
+    "c5": 0.38858088850975037,
+    "c6": 0.5876820087432861
+   },
+   "clip_raw": 0.2541196942329407,
+   "style_margin": 0.02311152219772339,
+   "max_train_dino": 0.4544340968132019
+  },
+  {
+   "scene_id": "s27",
+   "condition": "c6_llm_kbllm",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c6_llm_kbllm@rrv_v1/dev/s27_c6_llm_kbllm_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, blue and white simple attire, golden crown with lotus, serene expression, face smeared with butter, kneeling with hands folded, broken pot on floor, dim indoor lighting, dusty courtyard setting, oil painting, canvas texture, classical indian art",
+   "checklist": 0.4827757403254509,
+   "checklist_detail": {
+    "c1": 0.23109188675880432,
+    "c2": 0.4492713510990143,
+    "c3": 0.4019780158996582,
+    "c4": 0.8910747766494751,
+    "c5": 0.8064486384391785
+   },
+   "clip_raw": 0.24627022445201874,
+   "style_margin": 0.10282963514328003,
+   "max_train_dino": 0.6766828298568726
+  },
+  {
+   "scene_id": "s27",
+   "condition": "c6_llm_kbllm",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c6_llm_kbllm@rrv_v1/dev/s27_c6_llm_kbllm_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, blue and white simple attire, golden crown with lotus, serene expression, face smeared with butter, kneeling with hands folded, broken pot on floor, dim indoor lighting, dusty courtyard setting, oil painting, canvas texture, classical indian art",
+   "checklist": 0.429057240486145,
+   "checklist_detail": {
+    "c1": 0.1277533322572708,
+    "c2": 0.15583322942256927,
+    "c3": 0.8546101450920105,
+    "c4": 0.6193057894706726,
+    "c5": 0.5367587208747864
+   },
+   "clip_raw": 0.21990565955638885,
+   "style_margin": 0.07158404588699341,
+   "max_train_dino": 0.7107790112495422
+  },
+  {
+   "scene_id": "s28",
+   "condition": "c6_llm_kbllm",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c6_llm_kbllm@rrv_v1/dev/s28_c6_llm_kbllm_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, couple seated on throne, white robe with golden crown, white saree with golden necklet, blue turban with red border, white dhoti with golden necklace, white robe with golden crown and red border, blue dhoti with bronze armor and red turban, serene expressions, calm posture, oil painting, canvas texture, classical indian art",
+   "checklist": 0.5221203785389662,
+   "checklist_detail": {
+    "c1": 0.4766696095466614,
+    "c2": 0.8379688858985901,
+    "c3": 0.06974875181913376,
+    "c4": 0.7385280728340149,
+    "c5": 0.04174655303359032,
+    "c6": 0.9336265921592712
+   },
+   "clip_raw": 0.19461621344089508,
+   "style_margin": 0.12163680791854858,
+   "max_train_dino": 0.751422107219696
+  },
+  {
+   "scene_id": "s28",
+   "condition": "c6_llm_kbllm",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c6_llm_kbllm@rrv_v1/dev/s28_c6_llm_kbllm_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, couple seated on throne, white robe with golden crown, white saree with golden necklet, blue turban with red border, white dhoti with golden necklace, white robe with golden crown and red border, blue dhoti with bronze armor and red turban, serene expressions, calm posture, oil painting, canvas texture, classical indian art",
+   "checklist": 0.5932129800319672,
+   "checklist_detail": {
+    "c1": 0.5699643492698669,
+    "c2": 0.6998925805091858,
+    "c3": 0.07827967405319214,
+    "c4": 0.9580264687538147,
+    "c5": 0.40966951847076416,
+    "c6": 0.9101341366767883
+   },
+   "clip_raw": 0.24975210428237915,
+   "style_margin": 0.10389047861099243,
+   "max_train_dino": 0.7628182172775269
+  },
+  {
+   "scene_id": "s29",
+   "condition": "c6_llm_kbllm",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c6_llm_kbllm@rrv_v1/dev/s29_c6_llm_kbllm_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, White robe with golden armor, Blue turban and sacred thread, Red scarf and lotus ornaments, Kneeling around in quiet stillness, Dusk light filtering through dust, Banners fluttering in wind, War drums half-broken on ground, Red ochre walls crumbling, oil painting, canvas texture, classical indian art",
+   "checklist": 0.2610341887921095,
+   "checklist_detail": {
+    "c1": 0.022299781441688538,
+    "c2": 0.037391435354948044,
+    "c3": 0.7450485229492188,
+    "c4": 0.07123779505491257,
+    "c5": 0.4075562357902527
+   },
+   "clip_raw": 0.19848564267158508,
+   "style_margin": 0.06810599565505981,
+   "max_train_dino": 0.7102305889129639
+  },
+  {
+   "scene_id": "s29",
+   "condition": "c6_llm_kbllm",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c6_llm_kbllm@rrv_v1/dev/s29_c6_llm_kbllm_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, White robe with golden armor, Blue turban and sacred thread, Red scarf and lotus ornaments, Kneeling around in quiet stillness, Dusk light filtering through dust, Banners fluttering in wind, War drums half-broken on ground, Red ochre walls crumbling, oil painting, canvas texture, classical indian art",
+   "checklist": 0.32846889179199934,
+   "checklist_detail": {
+    "c1": 0.016663197427988052,
+    "c2": 0.11197251081466675,
+    "c3": 0.7290343642234802,
+    "c4": 0.08333970606327057,
+    "c5": 0.8290712833404541
+   },
+   "clip_raw": 0.1399359256029129,
+   "style_margin": 0.10704535245895386,
+   "max_train_dino": 0.79449063539505
+  },
+  {
+   "scene_id": "s30",
+   "condition": "c6_llm_kbllm",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c6_llm_kbllm@rrv_v1/dev/s30_c6_llm_kbllm_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Bending great bow upward, Wearing golden armor and blue cloak, Holding bronze weapons at side, Floral necklet visible, In yellow saree with red border, Wearing golden bangles, Diadem on head, Floral motifs on saree, Crowded hall with seated kings, oil painting, canvas texture, classical indian art",
+   "checklist": 0.25890397363238865,
+   "checklist_detail": {
+    "c1": 0.15051250159740448,
+    "c2": 0.18336959183216095,
+    "c3": 0.09574653953313828,
+    "c4": 0.3464225232601166,
+    "c5": 0.1361265629529953,
+    "c6": 0.9883294105529785
+   },
+   "clip_raw": 0.2763376533985138,
+   "style_margin": 0.14184165000915527,
+   "max_train_dino": 0.7373496294021606
+  },
+  {
+   "scene_id": "s30",
+   "condition": "c6_llm_kbllm",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c6_llm_kbllm@rrv_v1/dev/s30_c6_llm_kbllm_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Bending great bow upward, Wearing golden armor and blue cloak, Holding bronze weapons at side, Floral necklet visible, In yellow saree with red border, Wearing golden bangles, Diadem on head, Floral motifs on saree, Crowded hall with seated kings, oil painting, canvas texture, classical indian art",
+   "checklist": 0.3298611781663365,
+   "checklist_detail": {
+    "c1": 0.5691891312599182,
+    "c2": 0.172367125749588,
+    "c3": 0.06212222948670387,
+    "c4": 0.2465379685163498,
+    "c5": 0.13047529757022858,
+    "c6": 0.9843803644180298
+   },
+   "clip_raw": 0.2775815725326538,
+   "style_margin": 0.12544071674346924,
+   "max_train_dino": 0.7319997549057007
+  },
+  {
+   "scene_id": "s31",
+   "condition": "c6_llm_kbllm",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c6_llm_kbllm@rrv_v1/dev/s31_c6_llm_kbllm_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, woman in yellow saree, offering berries to two figures, first figure in white robe, second figure in white dhoti, golden necklaces on both, floral crown on woman, blue turbans on both, red borders on garments, outside small forest hut, soft forest light, oil painting, canvas texture, classical indian art",
+   "checklist": 0.3324947024229914,
+   "checklist_detail": {
+    "c1": 0.22313626110553741,
+    "c2": 0.7036119699478149,
+    "c3": 0.011053775437176228,
+    "c4": 0.057666949927806854,
+    "c5": 0.7266866564750671
+   },
+   "clip_raw": 0.23993690311908722,
+   "style_margin": 0.12101924419403076,
+   "max_train_dino": 0.8218833208084106
+  },
+  {
+   "scene_id": "s31",
+   "condition": "c6_llm_kbllm",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c6_llm_kbllm@rrv_v1/dev/s31_c6_llm_kbllm_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, woman in yellow saree, offering berries to two figures, first figure in white robe, second figure in white dhoti, golden necklaces on both, floral crown on woman, blue turbans on both, red borders on garments, outside small forest hut, soft forest light, oil painting, canvas texture, classical indian art",
+   "checklist": 0.1548050632700324,
+   "checklist_detail": {
+    "c1": 0.1261267364025116,
+    "c2": 0.10585040599107742,
+    "c3": 0.010379495099186897,
+    "c4": 0.04827145114541054,
+    "c5": 0.7054557800292969
+   },
+   "clip_raw": 0.2557165026664734,
+   "style_margin": 0.12830513715744019,
+   "max_train_dino": 0.8053131103515625
+  },
+  {
+   "scene_id": "s32",
+   "condition": "c6_llm_kbllm",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c6_llm_kbllm@rrv_v1/dev/s32_c6_llm_kbllm_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, king lying on floor, crown fallen beside him, young wife back half turned, jewelry scattered around, dark room with shadows, small lamp burning weakly, both figures in silence, tired expression on king, angry posture of wife, pillared palace interior, soft dim lighting, oil painting, canvas texture, classical indian art",
+   "checklist": 0.5093928906652663,
+   "checklist_detail": {
+    "c1": 0.6585586667060852,
+    "c2": 0.47571709752082825,
+    "c3": 0.2072335183620453,
+    "c4": 0.32457607984542847,
+    "c5": 0.5969040393829346,
+    "c6": 0.9800373315811157
+   },
+   "clip_raw": 0.2394472360610962,
+   "style_margin": 0.09860634803771973,
+   "max_train_dino": 0.7075182199478149
+  },
+  {
+   "scene_id": "s32",
+   "condition": "c6_llm_kbllm",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c6_llm_kbllm@rrv_v1/dev/s32_c6_llm_kbllm_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, king lying on floor, crown fallen beside him, young wife back half turned, jewelry scattered around, dark room with shadows, small lamp burning weakly, both figures in silence, tired expression on king, angry posture of wife, pillared palace interior, soft dim lighting, oil painting, canvas texture, classical indian art",
+   "checklist": 0.5612914280758964,
+   "checklist_detail": {
+    "c1": 0.800771176815033,
+    "c2": 0.6463769674301147,
+    "c3": 0.10676605254411697,
+    "c4": 0.3668404519557953,
+    "c5": 0.6302219033241272,
+    "c6": 0.9467321038246155
+   },
+   "clip_raw": 0.24520359933376312,
+   "style_margin": 0.11449605226516724,
+   "max_train_dino": 0.6878954172134399
+  }
+ ]
+}

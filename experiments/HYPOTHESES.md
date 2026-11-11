@@ -190,3 +190,5 @@ Pre-registered by the merge of this section, before C's first scored run. After 
 Rule: after results exist, the text above is never edited. Each change gets one dated line: `YYYY-MM-DD: <what changed>, <why>, <which results it affects>`.
 
 - 2026-11-04: Names LoRA (`rrv_names`) not run. The Day 3 noon training cutoff passed before the KB existed. The coverage audit is still run and its table goes into `kb/KB.md`. Affects: no `@rrv_names` results and no 2x2 table.
+- 2026-11-11: c6 was compared with a fresh c3 on kb.json (`c3_llm_kb_ckb`, 24 dev scenes), not D's `c3_llm_kb` (interim KB d-kb0, 16 scenes), because H-C2 needs only the KB file to differ. Affects: `results/c3_llm_kb_ckb@rrv_v1_dev.json`, `results/c6_llm_kbllm@rrv_v1_dev.json`.
+- 2026-11-11: H-C2 was assessed on the checklist judge and automated metrics only (no human ratings), on the 24 dev scenes that exist, with tie band 0.0295 for automated scores. Images were made by `kb/gen_c6.py` since `pipeline/generate_api.py` has no `generate()`. Affects: `kb/KB.md` section 7.
