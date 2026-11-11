@@ -18,7 +18,7 @@ EXCLUDE = {  # historical portraits / not epic. keys as in train/coverage_table.
  "justice t. muthuswamy iyer", "senior rani lakshmi bayi", "krishnaraja wadiyar iv", "jayalakshmanni",
  "krishnarajammanni", "mir mehboob ali khan, asaf jah vi", "maharana fateh singh of mewar",
  "shungrasoobyer avergal", "princess tarabai", "seth lachman das", "nayar lady", "judith",
- "kadambari", "malati", "vasantika", "varini", "tara devi"}
+ "kadambari", "malati", "vasantika", "varini", "tara devi", "gopichandra"}
 
 table = json.load(open("train/coverage_table.json"))["characters"]
 cap = json.load(open(f"{MD}/m1/final_captions.json"))
