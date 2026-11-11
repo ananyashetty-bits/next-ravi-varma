@@ -57,8 +57,19 @@ Pre-registered thresholds (HYPOTHESES.md C.1): character precision >= 0.90, reca
 On the 24 dev scenes: **precision 1.00, recall 1.00, epic accuracy 1.00** (`kb/eval_parser.py`, `kb/parser_metrics.json`). 14 unit tests in `kb/test_parser.py` cover misspellings, Rama vs Ramayana, unknown characters, Bhima vs Bhishma, empty input, the contract fields, and that no KB description contains a name.
 **Caveat:** the KB was built mainly from the characters in the team's dev scenes, so these scores show the parser works when the KB has the character, not that it generalises. The held-out set is the real test. Dev scenes s17 and s23 were originally written with Radha and Ahalya (both in the KB) but were changed to characters present in D's interim KB so D's test passes; this means the dev set does not test the rare-character case.
 
-## 7. Grounding experiment (c6)
-**Not run.** `kb_llm.json` (descriptions written by an LLM without looking at the paintings) was not built because of time, so H-C2 is untested and no claim is made about whether grounding matters.
+## 7. Grounding experiment (c6, H-C2)
+`kb/kb_llm.json` has the same characters, aliases and settings as `kb.json`, but every `visual` was written by the local LLM (Qwen3-4B, temperature 0) without seeing the paintings, using the prompt from the C guide; moods are copied unchanged. Both KBs were expanded with the same LLM and prompt on the 24 dev scenes (`c3_llm_kb_ckb`, `c6_llm_kbllm`; 24/24 valid, 0 names after repair), rendered with `rrv_v1` at scale 1.0, seeds 1-2, and scored with B's `eval/score.py`. Comparison: B's `paired()` from `eval/stats.py`, scene as unit, bootstrap 95% CI (`kb/compare_c6.py`, `results/c6_comparison.json`). Difference = c3 - c6.
+
+| Metric | c3 (kb.json) | c6 (kb_llm.json) | Diff c3-c6 [95% CI] | W/T/L | Diff, 14 strong-coverage scenes [CI] |
+|---|---|---|---|---|---|
+| Checklist judge | 0.522 | 0.509 | +0.013 [-0.045, +0.068] | 13/1/10 | +0.002 [-0.064, +0.068] |
+| clip_raw | 0.249 | 0.241 | +0.008 [-0.004, +0.020] | 6/14/4 | -0.005 [-0.017, +0.007] |
+| style_margin | 0.110 | 0.111 | -0.001 [-0.012, +0.011] | 4/16/4 | +0.004 [-0.008, +0.017] |
+| max_train_dino | 0.714 | 0.700 | +0.015 [-0.009, +0.041] | 4/16/4 | +0.025 [-0.013, +0.067] |
+
+**Result: no clear difference.** Every CI includes 0, including on the scenes where all characters have medium or high coverage, where the gain was predicted. H-C2 is not supported at this sample size; this does not show that grounding is irrelevant.
+**Limits:** the checklist judge is a 2B-model proxy and no human ratings exist for c6; 24 scenes and 2 seeds give wide CIs; the LLM-written descriptions are also shorter and worded differently, so c6 differs from c3 in more than grounding; the expander rewrites the KB text before generation. Observations only: the c6 descriptions are generic and overlap (several women are 'white saree, golden necklet') and miss defining features (Hanuman has no monkey face), and colours in the images follow the KB wording (red sari vs white saree).
+Images were generated with `kb/gen_c6.py` (M2 generator) because `pipeline/generate_api.py` defines no `generate()`.
 
 ## 8. Names LoRA
 The coverage audit passed the pre-registered gate (67% of the 147 training images have characters filled, and 10 characters appear in 3 or more images; bar: 60% and 6). The LoRA was **not trained**: the Day 3 cutoff for launching training passed before the KB existed (deviation line in HYPOTHESES.md). There is no `rrv_names` model and no 2x2 result.
