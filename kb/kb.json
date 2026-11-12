@@ -1,5 +1,5 @@
 {
- "version": "kb0.2",
+ "version": "kb0.3",
  "characters": {
   "sita": {
    "canonical": "Sita",
@@ -466,6 +466,103 @@
      "varma_ahalya_indravalokan_d36",
      "varma_ram_laxman_b19"
     ]
+   }
+  },
+  "vishwamitra": {
+   "canonical": "Vishwamitra",
+   "aliases": [
+    "Vishvamitra",
+    "Viswamitra",
+    "Kaushika",
+    "Vishwamitr"
+   ],
+   "epic": "Ramayana",
+   "visual": "lean bony sage, long beard, matted hair in bun, pink-red knee-length dhoti, sacred thread",
+   "vocab_status": "untested",
+   "coverage_n": 4,
+   "coverage": "medium",
+   "source": {
+    "type": "images",
+    "ref": [
+     "varma_vishwamitra_a47",
+     "varma_ramas_archery_training_d39"
+    ]
+   }
+  },
+  "ganesha": {
+   "canonical": "Ganesha",
+   "aliases": [
+    "Ganapati",
+    "Ganapathi",
+    "Vinayaka",
+    "Pillaiyar",
+    "Ganesh",
+    "Ganapathy",
+    "Vighneshwara",
+    "Gajanana",
+    "Ekadanta"
+   ],
+   "epic": "Puranic",
+   "visual": "elephant-faced four-armed figure, broken tusk, jewelled crown, pot belly, pink dhoti, noose and goad",
+   "vocab_status": "untested",
+   "coverage_n": 3,
+   "coverage": "medium",
+   "source": {
+    "type": "images",
+    "ref": [
+     "varma_ganapathi_d30",
+     "varma_ganapathi_riddhi_siddhi_d23"
+    ]
+   }
+  },
+  "vishnu": {
+   "canonical": "Vishnu",
+   "aliases": [
+    "Narayana",
+    "Hari",
+    "Vishnoo",
+    "Narayan",
+    "Sheshashayi",
+    "Padmanabha"
+   ],
+   "epic": "Puranic",
+   "visual": "four-armed man, jewelled crown, yellow dhoti, green shawl, chakra, conch, mace, lotus, gold jewellery",
+   "vocab_status": "untested",
+   "coverage_n": 3,
+   "coverage": "medium",
+   "source": {
+    "type": "images",
+    "ref": [
+     "varma_sesha_narayana_d22",
+     "varma_kurma_avatar_b27"
+    ]
+   }
+  },
+  "ravana": {
+   "canonical": "Ravana",
+   "aliases": [
+    "Ravan",
+    "Raavana",
+    "Dashanana",
+    "Lankesh",
+    "Raavan",
+    "Dasagriva",
+    "Lankeshwar"
+   ],
+   "epic": "Ramayana",
+   "visual": "dark-skinned man, long curly hair, big moustache, crown, purple and green dhoti, gold jewellery",
+   "vocab_status": "untested",
+   "coverage_n": 2,
+   "coverage": "medium",
+   "source": {
+    "type": "images",
+    "ref": [
+     "varma_ravan_sita_jatayu_a12"
+    ]
+   },
+   "visual_alt": {
+    "when": "disguised as a hermit (abduction scene)",
+    "visual": "orange-robed ascetic, black beard, ash on forehead, rudraksha beads, carrying water pot"
    }
   }
  },
