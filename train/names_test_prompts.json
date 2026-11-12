@@ -1,0 +1,146 @@
+[
+ {
+  "scene_id": "n01",
+  "condition": "nt_name",
+  "positive": "rrvarma style, Sita standing",
+  "negative": "ugly, blurry, bad anatomy"
+ },
+ {
+  "scene_id": "n01",
+  "condition": "nt_desc",
+  "positive": "rrvarma style, woman in red sari with yellow border, gold bangles, earrings and necklace, standing",
+  "negative": "ugly, blurry, bad anatomy"
+ },
+ {
+  "scene_id": "n02",
+  "condition": "nt_name",
+  "positive": "rrvarma style, Krishna standing",
+  "negative": "ugly, blurry, bad anatomy"
+ },
+ {
+  "scene_id": "n02",
+  "condition": "nt_desc",
+  "positive": "rrvarma style, dark blue-skinned man, curly black hair, peacock-feather crown, flower garland, yellow dhoti, necklace, armband, standing",
+  "negative": "ugly, blurry, bad anatomy"
+ },
+ {
+  "scene_id": "n03",
+  "condition": "nt_name",
+  "positive": "rrvarma style, Shakuntala standing",
+  "negative": "ugly, blurry, bad anatomy"
+ },
+ {
+  "scene_id": "n03",
+  "condition": "nt_desc",
+  "positive": "rrvarma style, woman in pink sari draped like a dhoti, flower garland and flower jewellery, standing",
+  "negative": "ugly, blurry, bad anatomy"
+ },
+ {
+  "scene_id": "n04",
+  "condition": "nt_name",
+  "positive": "rrvarma style, Radha standing",
+  "negative": "ugly, blurry, bad anatomy"
+ },
+ {
+  "scene_id": "n04",
+  "condition": "nt_desc",
+  "positive": "rrvarma style, woman in gold-bordered sari over both shoulders, flowers in bun, gold jewellery, nose ring, standing",
+  "negative": "ugly, blurry, bad anatomy"
+ },
+ {
+  "scene_id": "n05",
+  "condition": "nt_name",
+  "positive": "rrvarma style, Draupadi standing",
+  "negative": "ugly, blurry, bad anatomy"
+ },
+ {
+  "scene_id": "n05",
+  "condition": "nt_desc",
+  "positive": "rrvarma style, woman with loose long black hair, thin-bordered sari, thin necklace, bangles, small jhumkas, standing",
+  "negative": "ugly, blurry, bad anatomy"
+ },
+ {
+  "scene_id": "n06",
+  "condition": "nt_name",
+  "positive": "rrvarma style, Hanuman standing",
+  "negative": "ugly, blurry, bad anatomy"
+ },
+ {
+  "scene_id": "n06",
+  "condition": "nt_desc",
+  "positive": "rrvarma style, grey-bearded old monkey-faced figure, small gold crown, knee-length red dhoti, beaded jewellery, mace, standing",
+  "negative": "ugly, blurry, bad anatomy"
+ },
+ {
+  "scene_id": "n07",
+  "condition": "nt_name",
+  "positive": "rrvarma style, Bhishma standing",
+  "negative": "ugly, blurry, bad anatomy"
+ },
+ {
+  "scene_id": "n07",
+  "condition": "nt_desc",
+  "positive": "rrvarma style, man with long curly hair, moustache, white robe, churidar, yellow waist cloth, white earrings, standing",
+  "negative": "ugly, blurry, bad anatomy"
+ },
+ {
+  "scene_id": "n08",
+  "condition": "nt_name",
+  "positive": "rrvarma style, Subhadra standing",
+  "negative": "ugly, blurry, bad anatomy"
+ },
+ {
+  "scene_id": "n08",
+  "condition": "nt_desc",
+  "positive": "rrvarma style, woman in purple sari, gold waistband, green and white bangles, gold necklace, flowered bun, standing",
+  "negative": "ugly, blurry, bad anatomy"
+ },
+ {
+  "scene_id": "n09",
+  "condition": "nt_name",
+  "positive": "rrvarma style, Duryodhana standing",
+  "negative": "ugly, blurry, bad anatomy"
+ },
+ {
+  "scene_id": "n09",
+  "condition": "nt_desc",
+  "positive": "rrvarma style, man in blue kurta, white churidar, red turban with white feathers, pearl necklaces, moustache, standing",
+  "negative": "ugly, blurry, bad anatomy"
+ },
+ {
+  "scene_id": "n10",
+  "condition": "nt_name",
+  "positive": "rrvarma style, Savitri standing",
+  "negative": "ugly, blurry, bad anatomy"
+ },
+ {
+  "scene_id": "n10",
+  "condition": "nt_desc",
+  "positive": "rrvarma style, woman with long open curly black hair, draped red sari, kumkum, simple gold jewellery, standing",
+  "negative": "ugly, blurry, bad anatomy"
+ },
+ {
+  "scene_id": "n11",
+  "condition": "nt_name",
+  "positive": "rrvarma style, Karna standing",
+  "negative": "ugly, blurry, bad anatomy"
+ },
+ {
+  "scene_id": "n11",
+  "condition": "nt_desc",
+  "positive": "rrvarma style, bare-chested warrior, golden armour, large gold earrings, standing",
+  "negative": "ugly, blurry, bad anatomy"
+ },
+ {
+  "scene_id": "n12",
+  "condition": "nt_name",
+  "positive": "rrvarma style, Shabari standing",
+  "negative": "ugly, blurry, bad anatomy"
+ },
+ {
+  "scene_id": "n12",
+  "condition": "nt_desc",
+  "positive": "rrvarma style, elderly forest woman in simple cloth, grey hair, holding fruit, standing",
+  "negative": "ugly, blurry, bad anatomy"
+ }
+]

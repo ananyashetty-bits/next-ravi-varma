@@ -1,0 +1,548 @@
+[
+ {
+  "id": "n01",
+  "split": "names_test",
+  "tier": 1,
+  "expected_epic": "Ramayana",
+  "expected_characters": [
+   "Sita"
+  ],
+  "text": "Sita standing",
+  "seen_in_training": true,
+  "contributed_by": "C",
+  "group": "3plus",
+  "n_train_images": 10,
+  "checklist": [
+   {
+    "id": "c1",
+    "q": "Is there exactly one figure in the image?",
+    "type": "count",
+    "weight": 1.0
+   },
+   {
+    "id": "c2",
+    "q": "Is the figure a woman?",
+    "type": "figure",
+    "weight": 1.0
+   },
+   {
+    "id": "c3",
+    "q": "Is she wearing a red sari?",
+    "type": "attire",
+    "weight": 1.0
+   },
+   {
+    "id": "c4",
+    "q": "Does her sari have a yellow or gold border?",
+    "type": "attire",
+    "weight": 0.5
+   },
+   {
+    "id": "c5",
+    "q": "Is she wearing gold bangles or other gold jewellery?",
+    "type": "attire",
+    "weight": 0.5
+   }
+  ]
+ },
+ {
+  "id": "n02",
+  "split": "names_test",
+  "tier": 1,
+  "expected_epic": "Mahabharata",
+  "expected_characters": [
+   "Krishna"
+  ],
+  "text": "Krishna standing",
+  "seen_in_training": true,
+  "contributed_by": "C",
+  "group": "3plus",
+  "n_train_images": 9,
+  "checklist": [
+   {
+    "id": "c1",
+    "q": "Is there exactly one figure in the image?",
+    "type": "count",
+    "weight": 1.0
+   },
+   {
+    "id": "c2",
+    "q": "Does the figure have blue or dark blue skin?",
+    "type": "figure",
+    "weight": 1.0
+   },
+   {
+    "id": "c3",
+    "q": "Is the figure wearing a crown with a feather in it?",
+    "type": "attire",
+    "weight": 1.0
+   },
+   {
+    "id": "c4",
+    "q": "Is the figure wearing a yellow lower garment?",
+    "type": "attire",
+    "weight": 0.5
+   },
+   {
+    "id": "c5",
+    "q": "Is the figure wearing a garland of flowers?",
+    "type": "attire",
+    "weight": 0.5
+   }
+  ]
+ },
+ {
+  "id": "n03",
+  "split": "names_test",
+  "tier": 1,
+  "expected_epic": "Mahabharata",
+  "expected_characters": [
+   "Shakuntala"
+  ],
+  "text": "Shakuntala standing",
+  "seen_in_training": true,
+  "contributed_by": "C",
+  "group": "3plus",
+  "n_train_images": 8,
+  "checklist": [
+   {
+    "id": "c1",
+    "q": "Is there exactly one figure in the image?",
+    "type": "count",
+    "weight": 1.0
+   },
+   {
+    "id": "c2",
+    "q": "Is the figure a woman?",
+    "type": "figure",
+    "weight": 1.0
+   },
+   {
+    "id": "c3",
+    "q": "Is she wearing a pink sari?",
+    "type": "attire",
+    "weight": 1.0
+   },
+   {
+    "id": "c4",
+    "q": "Is she wearing flowers as a garland or jewellery?",
+    "type": "attire",
+    "weight": 1.0
+   }
+  ]
+ },
+ {
+  "id": "n04",
+  "split": "names_test",
+  "tier": 1,
+  "expected_epic": "Puranic",
+  "expected_characters": [
+   "Radha"
+  ],
+  "text": "Radha standing",
+  "seen_in_training": true,
+  "contributed_by": "C",
+  "group": "3plus",
+  "n_train_images": 5,
+  "checklist": [
+   {
+    "id": "c1",
+    "q": "Is there exactly one figure in the image?",
+    "type": "count",
+    "weight": 1.0
+   },
+   {
+    "id": "c2",
+    "q": "Is the figure a woman?",
+    "type": "figure",
+    "weight": 1.0
+   },
+   {
+    "id": "c3",
+    "q": "Does her sari have a gold border?",
+    "type": "attire",
+    "weight": 1.0
+   },
+   {
+    "id": "c4",
+    "q": "Does she have flowers in her hair bun?",
+    "type": "attire",
+    "weight": 1.0
+   },
+   {
+    "id": "c5",
+    "q": "Is she wearing a nose ring?",
+    "type": "attire",
+    "weight": 0.5
+   }
+  ]
+ },
+ {
+  "id": "n05",
+  "split": "names_test",
+  "tier": 1,
+  "expected_epic": "Mahabharata",
+  "expected_characters": [
+   "Draupadi"
+  ],
+  "text": "Draupadi standing",
+  "seen_in_training": true,
+  "contributed_by": "C",
+  "group": "3plus",
+  "n_train_images": 6,
+  "checklist": [
+   {
+    "id": "c1",
+    "q": "Is there exactly one figure in the image?",
+    "type": "count",
+    "weight": 1.0
+   },
+   {
+    "id": "c2",
+    "q": "Is the figure a woman?",
+    "type": "figure",
+    "weight": 1.0
+   },
+   {
+    "id": "c3",
+    "q": "Is her long black hair worn loose and open?",
+    "type": "figure",
+    "weight": 1.0
+   },
+   {
+    "id": "c4",
+    "q": "Is she wearing a sari with a thin border?",
+    "type": "attire",
+    "weight": 0.5
+   },
+   {
+    "id": "c5",
+    "q": "Is she wearing light, thin jewellery?",
+    "type": "attire",
+    "weight": 0.5
+   }
+  ]
+ },
+ {
+  "id": "n06",
+  "split": "names_test",
+  "tier": 1,
+  "expected_epic": "Ramayana",
+  "expected_characters": [
+   "Hanuman"
+  ],
+  "text": "Hanuman standing",
+  "seen_in_training": true,
+  "contributed_by": "C",
+  "group": "3plus",
+  "n_train_images": 4,
+  "checklist": [
+   {
+    "id": "c1",
+    "q": "Is there exactly one figure in the image?",
+    "type": "count",
+    "weight": 1.0
+   },
+   {
+    "id": "c2",
+    "q": "Does the figure have a monkey face?",
+    "type": "figure",
+    "weight": 1.0
+   },
+   {
+    "id": "c3",
+    "q": "Does the figure have a grey or white beard?",
+    "type": "figure",
+    "weight": 1.0
+   },
+   {
+    "id": "c4",
+    "q": "Is the figure wearing a red lower garment?",
+    "type": "attire",
+    "weight": 1.0
+   },
+   {
+    "id": "c5",
+    "q": "Is the figure holding a mace?",
+    "type": "object",
+    "weight": 0.5
+   }
+  ]
+ },
+ {
+  "id": "n07",
+  "split": "names_test",
+  "tier": 1,
+  "expected_epic": "Mahabharata",
+  "expected_characters": [
+   "Bhishma"
+  ],
+  "text": "Bhishma standing",
+  "seen_in_training": true,
+  "contributed_by": "C",
+  "group": "one",
+  "n_train_images": 1,
+  "checklist": [
+   {
+    "id": "c1",
+    "q": "Is there exactly one figure in the image?",
+    "type": "count",
+    "weight": 1.0
+   },
+   {
+    "id": "c2",
+    "q": "Does the figure have a moustache?",
+    "type": "figure",
+    "weight": 1.0
+   },
+   {
+    "id": "c3",
+    "q": "Does the figure have long curly hair?",
+    "type": "figure",
+    "weight": 1.0
+   },
+   {
+    "id": "c4",
+    "q": "Is the figure wearing a white robe?",
+    "type": "attire",
+    "weight": 1.0
+   },
+   {
+    "id": "c5",
+    "q": "Is there a yellow cloth tied around the waist?",
+    "type": "attire",
+    "weight": 0.5
+   }
+  ]
+ },
+ {
+  "id": "n08",
+  "split": "names_test",
+  "tier": 1,
+  "expected_epic": "Mahabharata",
+  "expected_characters": [
+   "Subhadra"
+  ],
+  "text": "Subhadra standing",
+  "seen_in_training": true,
+  "contributed_by": "C",
+  "group": "one",
+  "n_train_images": 1,
+  "checklist": [
+   {
+    "id": "c1",
+    "q": "Is there exactly one figure in the image?",
+    "type": "count",
+    "weight": 1.0
+   },
+   {
+    "id": "c2",
+    "q": "Is the figure a woman?",
+    "type": "figure",
+    "weight": 1.0
+   },
+   {
+    "id": "c3",
+    "q": "Is she wearing a purple sari?",
+    "type": "attire",
+    "weight": 1.0
+   },
+   {
+    "id": "c4",
+    "q": "Does she have flowers in her hair bun?",
+    "type": "attire",
+    "weight": 0.5
+   },
+   {
+    "id": "c5",
+    "q": "Is she wearing green and white bangles?",
+    "type": "attire",
+    "weight": 0.5
+   }
+  ]
+ },
+ {
+  "id": "n09",
+  "split": "names_test",
+  "tier": 1,
+  "expected_epic": "Mahabharata",
+  "expected_characters": [
+   "Duryodhana"
+  ],
+  "text": "Duryodhana standing",
+  "seen_in_training": true,
+  "contributed_by": "C",
+  "group": "one",
+  "n_train_images": 1,
+  "checklist": [
+   {
+    "id": "c1",
+    "q": "Is there exactly one figure in the image?",
+    "type": "count",
+    "weight": 1.0
+   },
+   {
+    "id": "c2",
+    "q": "Is the figure a man?",
+    "type": "figure",
+    "weight": 1.0
+   },
+   {
+    "id": "c3",
+    "q": "Is the figure wearing a blue tunic?",
+    "type": "attire",
+    "weight": 1.0
+   },
+   {
+    "id": "c4",
+    "q": "Is the figure wearing a red turban with white feathers?",
+    "type": "attire",
+    "weight": 1.0
+   },
+   {
+    "id": "c5",
+    "q": "Is the figure wearing pearl necklaces?",
+    "type": "attire",
+    "weight": 0.5
+   }
+  ]
+ },
+ {
+  "id": "n10",
+  "split": "names_test",
+  "tier": 1,
+  "expected_epic": "Mahabharata",
+  "expected_characters": [
+   "Savitri"
+  ],
+  "text": "Savitri standing",
+  "seen_in_training": true,
+  "contributed_by": "C",
+  "group": "one",
+  "n_train_images": 1,
+  "checklist": [
+   {
+    "id": "c1",
+    "q": "Is there exactly one figure in the image?",
+    "type": "count",
+    "weight": 1.0
+   },
+   {
+    "id": "c2",
+    "q": "Is the figure a woman?",
+    "type": "figure",
+    "weight": 1.0
+   },
+   {
+    "id": "c3",
+    "q": "Is her long dark curly hair worn open?",
+    "type": "figure",
+    "weight": 1.0
+   },
+   {
+    "id": "c4",
+    "q": "Is she wearing a red sari?",
+    "type": "attire",
+    "weight": 1.0
+   },
+   {
+    "id": "c5",
+    "q": "Does she have a red mark on her forehead?",
+    "type": "attire",
+    "weight": 0.5
+   }
+  ]
+ },
+ {
+  "id": "n11",
+  "split": "names_test",
+  "tier": 1,
+  "expected_epic": "Mahabharata",
+  "expected_characters": [
+   "Karna"
+  ],
+  "text": "Karna standing",
+  "seen_in_training": false,
+  "contributed_by": "C",
+  "group": "none",
+  "n_train_images": 0,
+  "checklist": [
+   {
+    "id": "c1",
+    "q": "Is there exactly one figure in the image?",
+    "type": "count",
+    "weight": 1.0
+   },
+   {
+    "id": "c2",
+    "q": "Is the figure a man?",
+    "type": "figure",
+    "weight": 1.0
+   },
+   {
+    "id": "c3",
+    "q": "Is the figure wearing golden armour?",
+    "type": "attire",
+    "weight": 1.0
+   },
+   {
+    "id": "c4",
+    "q": "Is the figure wearing large gold earrings?",
+    "type": "attire",
+    "weight": 1.0
+   }
+  ]
+ },
+ {
+  "id": "n12",
+  "split": "names_test",
+  "tier": 1,
+  "expected_epic": "Ramayana",
+  "expected_characters": [
+   "Shabari"
+  ],
+  "text": "Shabari standing",
+  "seen_in_training": false,
+  "contributed_by": "C",
+  "group": "none",
+  "n_train_images": 0,
+  "checklist": [
+   {
+    "id": "c1",
+    "q": "Is there exactly one figure in the image?",
+    "type": "count",
+    "weight": 1.0
+   },
+   {
+    "id": "c2",
+    "q": "Is the figure a woman?",
+    "type": "figure",
+    "weight": 1.0
+   },
+   {
+    "id": "c3",
+    "q": "Does the woman look elderly?",
+    "type": "figure",
+    "weight": 1.0
+   },
+   {
+    "id": "c4",
+    "q": "Does she have grey hair?",
+    "type": "figure",
+    "weight": 0.5
+   },
+   {
+    "id": "c5",
+    "q": "Is she holding fruit?",
+    "type": "object",
+    "weight": 1.0
+   },
+   {
+    "id": "c6",
+    "q": "Is she wearing simple, plain cloth?",
+    "type": "attire",
+    "weight": 0.5
+   }
+  ]
+ }
+]
