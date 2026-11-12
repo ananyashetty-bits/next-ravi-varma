@@ -1,5 +1,5 @@
 {
- "version": "kb0.3",
+ "version": "kb0.4",
  "characters": {
   "sita": {
    "canonical": "Sita",
@@ -687,6 +687,89 @@
      "varma_harihara_c09"
     ]
    }
+  },
+  "yudhishthira": {
+   "canonical": "Yudhishthira",
+   "aliases": [
+    "Yudhisthira",
+    "Dharmaraja",
+    "Dharmaputra",
+    "Ajatashatru",
+    "Yudhishtira",
+    "Yudhishthir",
+    "Yudhister",
+    "Yudhistir",
+    "Dharmaraj"
+   ],
+   "epic": "Mahabharata",
+   "visual": "man in orange-red gold tunic, tall gold crown, white plume, pearl necklaces, moustache, tilak",
+   "vocab_status": "untested",
+   "coverage_n": 1,
+   "coverage": "low",
+   "source": {
+    "type": "images",
+    "ref": [
+     "varma_draupadi_pandavas_b07"
+    ]
+   }
+  },
+  "bhima": {
+   "canonical": "Bhima",
+   "aliases": [
+    "Bheema",
+    "Bhimasena",
+    "Vrikodara",
+    "Bheem",
+    "Bhim",
+    "Bhimsen"
+   ],
+   "epic": "Mahabharata",
+   "visual": "broad heavy-built man, red gold tunic, white trousers, jewelled crown, curved moustache, pearl necklaces",
+   "vocab_status": "untested",
+   "coverage_n": 1,
+   "coverage": "low",
+   "source": {
+    "type": "images",
+    "ref": [
+     "varma_draupadi_pandavas_b07"
+    ]
+   }
+  },
+  "nakula": {
+   "canonical": "Nakula",
+   "aliases": [
+    "Nakul"
+   ],
+   "epic": "Mahabharata",
+   "visual": "youthful clean-shaven man, purple tunic, green cloth, pink sash, flat red-gold cap, tall staff",
+   "vocab_status": "untested",
+   "coverage_n": 1,
+   "coverage": "low",
+   "source": {
+    "type": "images",
+    "ref": [
+     "varma_draupadi_pandavas_b07"
+    ]
+   },
+   "note": "Twins are visually identical in pandavas_b07; same generic twins' look for both."
+  },
+  "sahadeva": {
+   "canonical": "Sahadeva",
+   "aliases": [
+    "Sahadev"
+   ],
+   "epic": "Mahabharata",
+   "visual": "youthful clean-shaven man, purple tunic, green cloth, pink sash, flat red-gold cap, tall staff",
+   "vocab_status": "untested",
+   "coverage_n": 1,
+   "coverage": "low",
+   "source": {
+    "type": "images",
+    "ref": [
+     "varma_draupadi_pandavas_b07"
+    ]
+   },
+   "note": "Twins are visually identical in pandavas_b07; same generic twins' look for both."
   }
  },
  "settings": {
