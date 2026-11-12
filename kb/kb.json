@@ -1,5 +1,5 @@
 {
- "version": "kb0.2",
+ "version": "kb0.3",
  "characters": {
   "sita": {
    "canonical": "Sita",
@@ -465,6 +465,226 @@
     "ref": [
      "varma_ahalya_indravalokan_d36",
      "varma_ram_laxman_b19"
+    ]
+   }
+  },
+  "vishwamitra": {
+   "canonical": "Vishwamitra",
+   "aliases": [
+    "Vishvamitra",
+    "Viswamitra",
+    "Kaushika",
+    "Vishwamitr"
+   ],
+   "epic": "Ramayana",
+   "visual": "lean bony sage, long beard, matted hair in bun, pink-red knee-length dhoti, sacred thread",
+   "vocab_status": "untested",
+   "coverage_n": 4,
+   "coverage": "medium",
+   "source": {
+    "type": "images",
+    "ref": [
+     "varma_vishwamitra_a47",
+     "varma_ramas_archery_training_d39"
+    ]
+   }
+  },
+  "ganesha": {
+   "canonical": "Ganesha",
+   "aliases": [
+    "Ganapati",
+    "Ganapathi",
+    "Vinayaka",
+    "Pillaiyar",
+    "Ganesh",
+    "Ganapathy",
+    "Vighneshwara",
+    "Gajanana",
+    "Ekadanta"
+   ],
+   "epic": "Puranic",
+   "visual": "elephant-faced four-armed figure, broken tusk, jewelled crown, pot belly, pink dhoti, noose and goad",
+   "vocab_status": "untested",
+   "coverage_n": 3,
+   "coverage": "medium",
+   "source": {
+    "type": "images",
+    "ref": [
+     "varma_ganapathi_d30",
+     "varma_ganapathi_riddhi_siddhi_d23"
+    ]
+   }
+  },
+  "vishnu": {
+   "canonical": "Vishnu",
+   "aliases": [
+    "Narayana",
+    "Hari",
+    "Vishnoo",
+    "Narayan",
+    "Sheshashayi",
+    "Padmanabha"
+   ],
+   "epic": "Puranic",
+   "visual": "four-armed man, jewelled crown, yellow dhoti, green shawl, chakra, conch, mace, lotus, gold jewellery",
+   "vocab_status": "untested",
+   "coverage_n": 3,
+   "coverage": "medium",
+   "source": {
+    "type": "images",
+    "ref": [
+     "varma_sesha_narayana_d22",
+     "varma_kurma_avatar_b27"
+    ]
+   }
+  },
+  "ravana": {
+   "canonical": "Ravana",
+   "aliases": [
+    "Ravan",
+    "Raavana",
+    "Dashanana",
+    "Lankesh",
+    "Raavan",
+    "Dasagriva",
+    "Lankeshwar"
+   ],
+   "epic": "Ramayana",
+   "visual": "dark-skinned man, long curly hair, big moustache, crown, purple and green dhoti, gold jewellery",
+   "vocab_status": "untested",
+   "coverage_n": 2,
+   "coverage": "medium",
+   "source": {
+    "type": "images",
+    "ref": [
+     "varma_ravan_sita_jatayu_a12"
+    ]
+   },
+   "visual_alt": {
+    "when": "disguised as a hermit (abduction scene)",
+    "visual": "orange-robed ascetic, black beard, ash on forehead, rudraksha beads, carrying water pot"
+   }
+  },
+  "damayanti": {
+   "canonical": "Damayanti",
+   "aliases": [
+    "Damayanthi",
+    "Damyanti"
+   ],
+   "epic": "Mahabharata",
+   "visual": "woman in yellow sari, red blouse, loose long black hair, black chain, bracelets",
+   "vocab_status": "untested",
+   "coverage_n": 2,
+   "coverage": "medium",
+   "source": {
+    "type": "images",
+    "ref": [
+     "varma_damayanti_a19"
+    ]
+   },
+   "note": "Exile look as painted in damayanti_a19; the swan painting (a20) was not described."
+  },
+  "lakshmi": {
+   "canonical": "Lakshmi",
+   "aliases": [
+    "Laxmi",
+    "Gajalakshmi",
+    "Mahalakshmi",
+    "Lakshmi Devi"
+   ],
+   "epic": "Puranic",
+   "visual": "four-armed woman, gold-embroidered red sari, long loose hair, lotuses, bangles, pearl necklaces",
+   "vocab_status": "untested",
+   "coverage_n": 2,
+   "coverage": "medium",
+   "source": {
+    "type": "images",
+    "ref": [
+     "varma_lakshmi_gajalakshmi_baroda_b02"
+    ]
+   }
+  },
+  "menaka": {
+   "canonical": "Menaka",
+   "aliases": [
+    "Menka"
+   ],
+   "epic": "Mahabharata",
+   "visual": "woman in yellow-gold sari with red border, centre-parted long hair, pearl necklace, anklet, bindi",
+   "vocab_status": "untested",
+   "coverage_n": 2,
+   "coverage": "medium",
+   "source": {
+    "type": "images",
+    "ref": [
+     "varma_menaka_shakuntala_c15"
+    ]
+   }
+  },
+  "mohini": {
+   "canonical": "Mohini",
+   "aliases": [
+    "Mohinee"
+   ],
+   "epic": "Puranic",
+   "visual": "woman in purple sari with gold border, wavy black hair, pearl necklaces, nose ring",
+   "vocab_status": "untested",
+   "coverage_n": 2,
+   "coverage": "medium",
+   "source": {
+    "type": "images",
+    "ref": [
+     "varma_mohini_ball_c03"
+    ]
+   }
+  },
+  "shiva": {
+   "canonical": "Shiva",
+   "aliases": [
+    "Siva",
+    "Shankar",
+    "Shankara",
+    "Mahadeva",
+    "Shambhu",
+    "Shiv",
+    "Mahadev",
+    "Nataraja",
+    "Rudra",
+    "Bholenath",
+    "Neelakantha",
+    "Harihara"
+   ],
+   "epic": "Puranic",
+   "visual": "four-armed man, crescent moon on crown, flower garland, trident, conch, tiger skin, yellow dhoti",
+   "vocab_status": "untested",
+   "coverage_n": 2,
+   "coverage": "medium",
+   "source": {
+    "type": "images",
+    "ref": [
+     "varma_shankar_version1_d57",
+     "varma_harihara_c09"
+    ]
+   }
+  },
+  "parvati": {
+   "canonical": "Parvati",
+   "aliases": [
+    "Parvathi",
+    "Gauri",
+    "Girija",
+    "Uma"
+   ],
+   "epic": "Puranic",
+   "visual": "woman in red sari, large gold crown, flowers by ears, gold jewellery, red bindi",
+   "vocab_status": "untested",
+   "coverage_n": 2,
+   "coverage": "medium",
+   "source": {
+    "type": "images",
+    "ref": [
+     "varma_shankar_version1_d57",
+     "varma_harihara_c09"
     ]
    }
   }
