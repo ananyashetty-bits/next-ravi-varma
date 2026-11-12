@@ -3,7 +3,7 @@
  "precision": 1.0,
  "recall": 1.0,
  "epic_accuracy": 1.0,
- "kb_version": "kb0.3",
+ "kb_version": "kb0.4",
  "per_scene": [
   {
    "id": "s09",

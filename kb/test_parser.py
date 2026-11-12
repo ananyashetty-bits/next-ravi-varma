@@ -28,9 +28,9 @@ def test_ramayana_is_not_an_unknown_entity():
     assert "Ramayana" not in parse_scene("Rama in the Ramayana")["unknown_entities"]
 
 def test_unknown_character_is_reported_not_matched():
-    spec = parse_scene("Yudhisthira and Bhima in the forest")
+    spec = parse_scene("The sage Agastya and Gandhari in the forest")
     assert spec["characters"] == []
-    assert "Bhima" in spec["unknown_entities"]
+    assert "Agastya" in spec["unknown_entities"]
 
 def test_bhima_is_not_bhishma():
     assert "Bhishma" not in chars("Bhima fighting in the forest")
