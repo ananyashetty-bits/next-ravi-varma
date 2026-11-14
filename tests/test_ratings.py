@@ -135,3 +135,21 @@ def test_judge_robustness_sample_is_balanced_and_fixed():
     for x in a:
         counts[x["condition"]] = counts.get(x["condition"], 0) + 1
     assert max(counts.values()) - min(counts.values()) <= 1
+
+
+def test_auto_tables_p95_and_run():
+    from eval import auto_tables as T
+    assert T.p95([1, 2, 3, 4, 5]) == pytest.approx(4.8)        # numpy.quantile(.., .95, linear)
+    np = pytest.importorskip("numpy")
+    x = [0.1, 0.7, 0.3, 0.9, 0.55, 0.2]
+    assert T.p95(x) == pytest.approx(float(np.quantile(x, 0.95)))
+    import glob
+    import os
+    root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    conds = T.load(glob.glob(os.path.join(root, "results", "*_dev.json")))
+    if "c1_lora_raw" not in conds:
+        pytest.skip("results not present")
+    scenes = {s["id"]: s for s in json.load(open(os.path.join(root, "eval", "test_scenes_dev.json")))}
+    md, data = T.tables(conds, scenes)
+    assert "c1_lora_raw" in data["conditions"] and data["paired"]
+    assert all(v["dino_p95"] <= T.MEM_P95 for v in data["conditions"].values())
