@@ -1,6 +1,6 @@
 # M3 evaluation report (owner: B)
 
-> **Status 2026-11-14: §1 (setup) drafted from the repo as of `b31485c`; §2-§6 are placeholders.**
+> **Status 2026-11-14: §1 (setup) drafted from the repo; §3.3 (judge robustness) done; §2, §3.1-3.2, §4-§6 are placeholders.**
 > Rules: every number names its source file. Human-rating numbers come only from `eval/ratings.py` run on the
 > final sheet after every rater has submitted. Nothing here is typed from memory or from a chat.
 > Markers: `TODO(B)` = B to fill; `TODO(x)` = needs input from member x.
@@ -88,7 +88,7 @@ agrees with humans is H-B1 (§3).
 - **Blind key**: code → condition, kept privately by B until every rater has submitted. The round-1 key was
   not saved to Drive on 4 Nov. It is rebuilt with `eval/recover_key.py`, which matches each tile on the
   sheets to its source image, so no ratings or results are involved (section B deviation, 2026-11-14).
-  `TODO(B)`: confirm the rebuild matched all 48 codes.
+  On 14 Nov it matched all 48 codes across 16 scenes, each with a pixel difference of 0.00.
 - **Scales and failure tags**: `eval/RATING_GUIDE.md`. One main failure per picture from a fixed list:
   wrong figure count · wrong/missing figure identity · wrong setting · wrong action · generic figure (name
   ignored) · weak style · anatomy/face artifacts · other.
@@ -128,12 +128,34 @@ sessions and exchange files. Generation takes ≈ 5 s per image (`outputs/eval/c
 - default-pipeline choice by the B.3 rule (recorded by A in `docs/TEAM_DECISIONS_M3.md`).
 
 ## 3. Judge validation and rater agreement
-`TODO(B)`:
-- H-B1: judge vs human faithfulness, compared with CLIP;
-- H-B2: `style_margin` vs human style;
-- H-B5: inter-rater agreement;
-- judge robustness: `eval/judge_robustness.py`, 20 images, question order shuffled. The judge asks each
-  question in a separate pass, so this mainly tests re-run determinism.
+
+### 3.1 Judge vs humans (H-B1, H-B2)
+`TODO(B)`, from the final `eval/ratings.py` run: judge vs human faithfulness compared with CLIP (H-B1), and
+`style_margin` vs human style (H-B2).
+
+### 3.2 Inter-rater agreement (H-B5)
+`TODO(B)`, from the final `eval/ratings.py` run.
+
+### 3.3 Judge robustness
+Source: `outputs/eval/judge_robustness_dev.json`, made with `eval/judge_robustness.py` on 14 Nov on a Colab T4
+(`transformers` 5.21.0, `torch` 2.14.1). It used 20 dev images (7 c0, 7 c1, 6 c4; seeds 1 and 2; fixed sample, seed 0).
+For each image, every question was asked again with the cache off and the question order shuffled. The new
+score was compared with the score stored in `results/` on 4 Nov (`torch` 2.11.0).
+
+| Check | Mean abs. change in `checklist` | Max | Outcome |
+|---|---|---|---|
+| Question order shuffled (pre-registered, threshold < 0.05) | 0.0005 | 0.0011 | **passed** |
+| Answer instruction reworded, "Answer with only Yes or No." → "Reply Yes or No." (extra, not pre-registered) | 0.033 | 0.066 | lower on 19 of 20 images (mean shift −0.033); rank order kept (Spearman ρ = 0.98 vs stored) |
+
+The judge asks each question in its own forward pass, so question order cannot matter by design. The first
+check is therefore mainly a re-run determinism test. It also shows the scores did not change with the newer
+`torch`; the largest per-question change was 0.004.
+
+The second check shows that the judge's **absolute** scale depends on the wording of the answer instruction,
+while its **ranking** of images barely changes. Comparisons between conditions are unaffected, because every
+results file uses the pinned wording in `eval/judge.py`. A checklist value on its own (for example 0.55)
+should not be read as an absolute proportion of the scene that is correct, and scores made with different
+wordings must not be mixed.
 
 ## 4. Results, held-out
 `TODO(B, held-out)`: the same tables on 12 scenes × 4 seeds, run once with the frozen code.
@@ -148,7 +170,8 @@ Known so far:
 - two raters per image;
 - contact sheets show 320 px images;
 - CLIP truncates at 77 tokens and shares an encoder family with the generator;
-- the judge is a 2B model checked on 3 paintings before validation;
+- the judge is a 2B model checked on 3 paintings before validation, and its absolute scale shifts by
+  ≈ 0.03 when the answer instruction is reworded (§3.3), so only relative scores are meaningful;
 - round 2 and round 1 were rated on separate sheets;
 - the round-1 key was rebuilt rather than saved.
 

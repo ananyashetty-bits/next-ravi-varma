@@ -53,6 +53,7 @@ Rule: after results exist, the text above is never edited. Each change gets one 
 - 2026-11-14: The dev set on `main` now has 24 scenes (C's s17-s24 added 10 Nov; A's s01-s08 never added). c0, c1, c2, c3 (interim KB) and c4 are scored on the original 16; c3_llm_kb_ckb and c6 on all 24. Every paired comparison uses the scenes both conditions share and reports its n.
 - 2026-11-14: The c0 results file is named `c0_base_raw@base_dev.json` (it was `c0_base_raw_dev.json` on the unmerged branch), to follow `<condition>@<model>_<split>.json`. Scores are unchanged.
 - 2026-11-14: The round-1 blind key (code -> condition) was not saved to Drive on 4 Nov. It is rebuilt with `eval/recover_key.py`, which matches each contact-sheet tile to its source image (pixel difference; no ratings or results used) and refuses to write unless every tile has a clear match. Affects: how round-1 ratings are decoded; no scores change.
+- 2026-11-14: Judge robustness check run as pre-registered (question order shuffled, 20 images; `outputs/eval/judge_robustness_dev.json`). Added one descriptive extra that was not pre-registered: the same questions with the answer instruction reworded (`--paraphrase`). It is reported as descriptive and does not change any decision rule.
 
 ## Section D (Member D: Expander)
 
