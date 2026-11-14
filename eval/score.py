@@ -35,6 +35,8 @@ def load_items(manifest_path):
         if not os.path.isabs(p):
             cand = os.path.join(base, p)
             p = cand if os.path.exists(cand) else os.path.join(ROOT, p)
+        elif not os.path.exists(p) and os.path.exists(os.path.join(base, os.path.basename(p))):
+            p = os.path.join(base, os.path.basename(p))   # manifest written on another Drive: image sits next to it
         if it.get("selected", True) is False:
             continue
         it = dict(it)
