@@ -55,3 +55,13 @@ def test_refuses_when_an_image_is_missing(tmp_path):
     from eval.recover_key import recover
     _, _, failures = recover(str(out), str(out / "rating_template.csv"), manifests[:2])   # c4 not offered
     assert failures and all("no clear match" in f for f in failures)
+
+
+def test_load_items_finds_images_next_to_a_moved_manifest(tmp_path):
+    from eval.score import load_items
+    (tmp_path / "s01_s1.png").write_bytes(b"x")
+    m = tmp_path / "manifest.json"
+    m.write_text(json.dumps({"items": [{"scene_id": "s01", "seed": 1, "condition": "c2_template",
+                                        "path": "/content/drive/MyDrive/elsewhere/s01_s1.png"}]}))
+    _, items = load_items(str(m))
+    assert items[0]["path"] == str(tmp_path / "s01_s1.png")

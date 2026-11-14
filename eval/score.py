@@ -19,7 +19,6 @@ from datetime import datetime
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, ROOT)
-from eval.stats import boot_ci, scene_means  # noqa: E402
 
 MD = "/content/drive/MyDrive/m2"
 IMG_EXT = (".png", ".jpg", ".jpeg")
@@ -35,6 +34,8 @@ def load_items(manifest_path):
         if not os.path.isabs(p):
             cand = os.path.join(base, p)
             p = cand if os.path.exists(cand) else os.path.join(ROOT, p)
+        elif not os.path.exists(p) and os.path.exists(os.path.join(base, os.path.basename(p))):
+            p = os.path.join(base, os.path.basename(p))   # manifest written on another Drive: image sits next to it
         if it.get("selected", True) is False:
             continue
         it = dict(it)
@@ -97,6 +98,7 @@ def main():
             for k, v in m2.items():
                 r[k] = float(v[i])
 
+    from eval.stats import boot_ci, scene_means   # numpy; imported here so load_items works without it
     metrics = [k for k in ("checklist", "clip_raw", "style_margin", "max_train_dino") if any(k in r for r in rows)]
     summary = {}
     for cond in sorted({r["condition"] for r in rows}):
