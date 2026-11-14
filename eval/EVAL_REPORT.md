@@ -96,7 +96,8 @@ agrees with humans is H-B1 (§3).
   submit before any discussion. All four raters are project members who know the system.
 - **Rounds**:
   - Round 1 (sheets 4 Nov): c0, c1, c4 on the first 16 scenes, 48 images, 96 rating rows.
-  - Round 2: c2, `c3_llm_kb_ckb`, c6 on the first 16 scenes, plus `c3_llm_kb_ckb` and c6 on s17-s24. `TODO(B)`: dates and counts.
+  - Round 2 (sheets 14 Nov): c2, `c3_llm_kb_ckb`, c6 on the first 16 scenes, plus `c3_llm_kb_ckb` and c6 on s17-s24. That is 64
+    images and 128 rating rows, with the same two raters per scene as in round 1. `c3_llm_kb` (D's interim KB) is not rated.
 
   Images rated in different rounds were never side by side on one sheet. Comparisons across rounds (such as
   c1 → c3) therefore rest on absolute 1-5 judgements, not on a direct side-by-side comparison.

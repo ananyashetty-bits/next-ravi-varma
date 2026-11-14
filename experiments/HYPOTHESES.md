@@ -54,6 +54,7 @@ Rule: after results exist, the text above is never edited. Each change gets one 
 - 2026-11-14: The c0 results file is named `c0_base_raw@base_dev.json` (it was `c0_base_raw_dev.json` on the unmerged branch), to follow `<condition>@<model>_<split>.json`. Scores are unchanged.
 - 2026-11-14: The round-1 blind key (code -> condition) was not saved to Drive on 4 Nov. It is rebuilt with `eval/recover_key.py`, which matches each contact-sheet tile to its source image (pixel difference; no ratings or results used) and refuses to write unless every tile has a clear match. Affects: how round-1 ratings are decoded; no scores change.
 - 2026-11-14: Judge robustness check run as pre-registered (question order shuffled, 20 images; `outputs/eval/judge_robustness_dev.json`). Added one descriptive extra that was not pre-registered: the same questions with the answer instruction reworded (`--paraphrase`). It is reported as descriptive and does not change any decision rule.
+- 2026-11-14: Human ratings come in two rounds on separate contact sheets. Round 1 (4 Nov): c0, c1, c4 on the 16 original scenes. Round 2 (14 Nov, `--rng 2`, key `blind_key_dev_r2.json`): `c2_template`, `c3_llm_kb_ckb`, `c6_llm_kbllm` on the same 16 scenes, plus `c3_llm_kb_ckb` and `c6_llm_kbllm` on C's s17-s24 (24 sheets, 128 rows, the same two raters per scene as round 1). For human ratings "c3" is `c3_llm_kb_ckb`; `c3_llm_kb` (D's interim KB) is not rated. Comparisons across rounds (e.g. c1 -> c3) rest on absolute 1-5 ratings, not side-by-side judgement.
 
 ## Section D (Member D: Expander)
 
