@@ -1,0 +1,1013 @@
+{
+ "manifest": "/content/drive/MyDrive/m3/images/names_test/nt_desc@C_names/manifest.json",
+ "scenes_file": "train/names_test_scenes.json",
+ "scored_at": "2026-11-14T13:21:34.749446",
+ "judge": "Qwen/Qwen2-VL-2B-Instruct",
+ "n_images": 48,
+ "summary": {
+  "nt_desc@C_names": {
+   "checklist": {
+    "mean": 0.7300931626577275,
+    "ci95": [
+     0.6647731887393296,
+     0.7986728825838698
+    ],
+    "n_scenes": 12
+   },
+   "clip_raw": {
+    "mean": 0.2296738587319851,
+    "ci95": [
+     0.21897567664273082,
+     0.24152320112722614
+    ],
+    "n_scenes": 12
+   },
+   "style_margin": {
+    "mean": 0.12982693314552307,
+    "ci95": [
+     0.11538766402130327,
+     0.1434467480517924
+    ],
+    "n_scenes": 12
+   },
+   "max_train_dino": {
+    "mean": 0.7266019098460674,
+    "ci95": [
+     0.6738103414264819,
+     0.7791082106530667
+    ],
+    "n_scenes": 12
+   }
+  }
+ },
+ "per_scene": {
+  "nt_desc@C_names": {
+   "checklist": {
+    "n01": 0.9443837627768517,
+    "n02": 0.6294063786044717,
+    "n03": 0.844777625054121,
+    "n04": 0.6915722601115704,
+    "n05": 0.6833134561311454,
+    "n06": 0.5320264780893922,
+    "n07": 0.8799074408080843,
+    "n08": 0.7586523417849094,
+    "n09": 0.5697721727192402,
+    "n10": 0.8096969500184059,
+    "n11": 0.7037429139018059,
+    "n12": 0.7138661718927324
+   },
+   "clip_raw": {
+    "n01": 0.22506234422326088,
+    "n02": 0.241522666066885,
+    "n03": 0.2776753678917885,
+    "n04": 0.22734500840306282,
+    "n05": 0.24804402142763138,
+    "n06": 0.22741609811782837,
+    "n07": 0.21668680384755135,
+    "n08": 0.20383740961551666,
+    "n09": 0.19888926669955254,
+    "n10": 0.24015570431947708,
+    "n11": 0.22304626926779747,
+    "n12": 0.22640534490346909
+   },
+   "style_margin": {
+    "n01": 0.1478797048330307,
+    "n02": 0.11765387654304504,
+    "n03": 0.16393950581550598,
+    "n04": 0.1542852520942688,
+    "n05": 0.1448477953672409,
+    "n06": 0.0944831520318985,
+    "n07": 0.10188168287277222,
+    "n08": 0.1471882462501526,
+    "n09": 0.11677658557891846,
+    "n10": 0.1436014473438263,
+    "n11": 0.08592833578586578,
+    "n12": 0.1394576132297516
+   },
+   "max_train_dino": {
+    "n01": 0.8219167590141296,
+    "n02": 0.7076188772916794,
+    "n03": 0.8297490626573563,
+    "n04": 0.8363909423351288,
+    "n05": 0.781583234667778,
+    "n06": 0.6693065911531448,
+    "n07": 0.5622873902320862,
+    "n08": 0.8141896277666092,
+    "n09": 0.6610491275787354,
+    "n10": 0.7953783571720123,
+    "n11": 0.6453302055597305,
+    "n12": 0.5944227427244186
+   }
+  }
+ },
+ "items": [
+  {
+   "scene_id": "n01",
+   "condition": "nt_desc@C_names",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_desc@C_names/n01_nt_desc@C_names_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, woman in red sari with yellow border, gold bangles, earrings and necklace, standing",
+   "checklist": 0.9424924999475479,
+   "checklist_detail": {
+    "c1": 0.835633397102356,
+    "c2": 0.9693536162376404,
+    "c3": 0.9939149022102356,
+    "c4": 0.9653224945068359,
+    "c5": 0.9768136739730835
+   },
+   "clip_raw": 0.21664133667945862,
+   "style_margin": 0.12468910217285156,
+   "max_train_dino": 0.8224864602088928
+  },
+  {
+   "scene_id": "n01",
+   "condition": "nt_desc@C_names",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_desc@C_names/n01_nt_desc@C_names_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, woman in red sari with yellow border, gold bangles, earrings and necklace, standing",
+   "checklist": 0.9406057074666023,
+   "checklist_detail": {
+    "c1": 0.8398404717445374,
+    "c2": 0.951913058757782,
+    "c3": 0.9924386143684387,
+    "c4": 0.9704651832580566,
+    "c5": 0.9859961867332458
+   },
+   "clip_raw": 0.23044928908348083,
+   "style_margin": 0.1613626480102539,
+   "max_train_dino": 0.836952269077301
+  },
+  {
+   "scene_id": "n01",
+   "condition": "nt_desc@C_names",
+   "seed": 3,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_desc@C_names/n01_nt_desc@C_names_s3.png",
+   "coalition": null,
+   "prompt": "rrvarma style, woman in red sari with yellow border, gold bangles, earrings and necklace, standing",
+   "checklist": 0.9490345343947411,
+   "checklist_detail": {
+    "c1": 0.8480542898178101,
+    "c2": 0.9867855906486511,
+    "c3": 0.9886897206306458,
+    "c4": 0.968478262424469,
+    "c5": 0.9767388105392456
+   },
+   "clip_raw": 0.215275838971138,
+   "style_margin": 0.1273370385169983,
+   "max_train_dino": 0.8240402936935425
+  },
+  {
+   "scene_id": "n01",
+   "condition": "nt_desc@C_names",
+   "seed": 4,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_desc@C_names/n01_nt_desc@C_names_s4.png",
+   "coalition": null,
+   "prompt": "rrvarma style, woman in red sari with yellow border, gold bangles, earrings and necklace, standing",
+   "checklist": 0.9454023092985153,
+   "checklist_detail": {
+    "c1": 0.8355857133865356,
+    "c2": 0.9805983304977417,
+    "c3": 0.9917033910751343,
+    "c4": 0.9616842269897461,
+    "c5": 0.9857593774795532
+   },
+   "clip_raw": 0.23788291215896606,
+   "style_margin": 0.17813003063201904,
+   "max_train_dino": 0.8041880130767822
+  },
+  {
+   "scene_id": "n02",
+   "condition": "nt_desc@C_names",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_desc@C_names/n02_nt_desc@C_names_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, dark blue-skinned man, curly black hair, peacock-feather crown, flower garland, yellow dhoti, necklace, armband, standing",
+   "checklist": 0.6223038844764233,
+   "checklist_detail": {
+    "c1": 0.8269330263137817,
+    "c2": 0.6142841577529907,
+    "c3": 0.17407383024692535,
+    "c4": 0.9065037369728088,
+    "c5": 0.8413453102111816
+   },
+   "clip_raw": 0.24612998962402344,
+   "style_margin": 0.15717852115631104,
+   "max_train_dino": 0.7491457462310791
+  },
+  {
+   "scene_id": "n02",
+   "condition": "nt_desc@C_names",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_desc@C_names/n02_nt_desc@C_names_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, dark blue-skinned man, curly black hair, peacock-feather crown, flower garland, yellow dhoti, necklace, armband, standing",
+   "checklist": 0.5033913180232048,
+   "checklist_detail": {
+    "c1": 0.7720285058021545,
+    "c2": 0.547827422618866,
+    "c3": 0.18323254585266113,
+    "c4": 0.9568203091621399,
+    "c5": 0.06413328647613525
+   },
+   "clip_raw": 0.2424105554819107,
+   "style_margin": 0.09846150875091553,
+   "max_train_dino": 0.7000625729560852
+  },
+  {
+   "scene_id": "n02",
+   "condition": "nt_desc@C_names",
+   "seed": 3,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_desc@C_names/n02_nt_desc@C_names_s3.png",
+   "coalition": null,
+   "prompt": "rrvarma style, dark blue-skinned man, curly black hair, peacock-feather crown, flower garland, yellow dhoti, necklace, armband, standing",
+   "checklist": 0.6386464387178421,
+   "checklist_detail": {
+    "c1": 0.7608270049095154,
+    "c2": 0.5987622737884521,
+    "c3": 0.36731019616127014,
+    "c4": 0.8065581321716309,
+    "c5": 0.8488144278526306
+   },
+   "clip_raw": 0.23124627768993378,
+   "style_margin": 0.10389387607574463,
+   "max_train_dino": 0.6788425445556641
+  },
+  {
+   "scene_id": "n02",
+   "condition": "nt_desc@C_names",
+   "seed": 4,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_desc@C_names/n02_nt_desc@C_names_s4.png",
+   "coalition": null,
+   "prompt": "rrvarma style, dark blue-skinned man, curly black hair, peacock-feather crown, flower garland, yellow dhoti, necklace, armband, standing",
+   "checklist": 0.7532838732004166,
+   "checklist_detail": {
+    "c1": 0.7462809085845947,
+    "c2": 0.5904185771942139,
+    "c3": 0.9910352826118469,
+    "c4": 0.9838751554489136,
+    "c5": 0.3869262933731079
+   },
+   "clip_raw": 0.24630384147167206,
+   "style_margin": 0.11108160018920898,
+   "max_train_dino": 0.7024246454238892
+  },
+  {
+   "scene_id": "n03",
+   "condition": "nt_desc@C_names",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_desc@C_names/n03_nt_desc@C_names_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, woman in pink sari draped like a dhoti, flower garland and flower jewellery, standing",
+   "checklist": 0.8106090277433395,
+   "checklist_detail": {
+    "c1": 0.8440423011779785,
+    "c2": 0.8088381290435791,
+    "c3": 0.9942877888679504,
+    "c4": 0.5952678918838501
+   },
+   "clip_raw": 0.27631324529647827,
+   "style_margin": 0.17529171705245972,
+   "max_train_dino": 0.8395520448684692
+  },
+  {
+   "scene_id": "n03",
+   "condition": "nt_desc@C_names",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_desc@C_names/n03_nt_desc@C_names_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, woman in pink sari draped like a dhoti, flower garland and flower jewellery, standing",
+   "checklist": 0.7681575119495392,
+   "checklist_detail": {
+    "c1": 0.8741498589515686,
+    "c2": 0.6997074484825134,
+    "c3": 0.9942781925201416,
+    "c4": 0.5044945478439331
+   },
+   "clip_raw": 0.2674276828765869,
+   "style_margin": 0.1650218367576599,
+   "max_train_dino": 0.824181079864502
+  },
+  {
+   "scene_id": "n03",
+   "condition": "nt_desc@C_names",
+   "seed": 3,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_desc@C_names/n03_nt_desc@C_names_s3.png",
+   "coalition": null,
+   "prompt": "rrvarma style, woman in pink sari draped like a dhoti, flower garland and flower jewellery, standing",
+   "checklist": 0.9074727892875671,
+   "checklist_detail": {
+    "c1": 0.7774537205696106,
+    "c2": 0.9519338607788086,
+    "c3": 0.9934269189834595,
+    "c4": 0.9070766568183899
+   },
+   "clip_raw": 0.29413989186286926,
+   "style_margin": 0.15441292524337769,
+   "max_train_dino": 0.8315727710723877
+  },
+  {
+   "scene_id": "n03",
+   "condition": "nt_desc@C_names",
+   "seed": 4,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_desc@C_names/n03_nt_desc@C_names_s4.png",
+   "coalition": null,
+   "prompt": "rrvarma style, woman in pink sari draped like a dhoti, flower garland and flower jewellery, standing",
+   "checklist": 0.8928711712360382,
+   "checklist_detail": {
+    "c1": 0.8130381107330322,
+    "c2": 0.9852944612503052,
+    "c3": 0.9904915690422058,
+    "c4": 0.7826605439186096
+   },
+   "clip_raw": 0.2728206515312195,
+   "style_margin": 0.1610315442085266,
+   "max_train_dino": 0.8236903548240662
+  },
+  {
+   "scene_id": "n04",
+   "condition": "nt_desc@C_names",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_desc@C_names/n04_nt_desc@C_names_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, woman in gold-bordered sari over both shoulders, flowers in bun, gold jewellery, nose ring, standing",
+   "checklist": 0.6898483137289683,
+   "checklist_detail": {
+    "c1": 0.8724418878555298,
+    "c2": 0.9890224933624268,
+    "c3": 0.7365638613700867,
+    "c4": 0.04071991145610809,
+    "c5": 0.9311385154724121
+   },
+   "clip_raw": 0.21898242831230164,
+   "style_margin": 0.18539553880691528,
+   "max_train_dino": 0.8114354610443115
+  },
+  {
+   "scene_id": "n04",
+   "condition": "nt_desc@C_names",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_desc@C_names/n04_nt_desc@C_names_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, woman in gold-bordered sari over both shoulders, flowers in bun, gold jewellery, nose ring, standing",
+   "checklist": 0.7152339733309216,
+   "checklist_detail": {
+    "c1": 0.8312374949455261,
+    "c2": 0.9793652296066284,
+    "c3": 0.9491347074508667,
+    "c4": 0.06190910190343857,
+    "c5": 0.7938126921653748
+   },
+   "clip_raw": 0.21884964406490326,
+   "style_margin": 0.15736937522888184,
+   "max_train_dino": 0.8634910583496094
+  },
+  {
+   "scene_id": "n04",
+   "condition": "nt_desc@C_names",
+   "seed": 3,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_desc@C_names/n04_nt_desc@C_names_s3.png",
+   "coalition": null,
+   "prompt": "rrvarma style, woman in gold-bordered sari over both shoulders, flowers in bun, gold jewellery, nose ring, standing",
+   "checklist": 0.669846859243181,
+   "checklist_detail": {
+    "c1": 0.8500900864601135,
+    "c2": 0.9830991625785828,
+    "c3": 0.8649137020111084,
+    "c4": 0.07462331652641296,
+    "c5": 0.48316919803619385
+   },
+   "clip_raw": 0.24825823307037354,
+   "style_margin": 0.15142196416854858,
+   "max_train_dino": 0.8290156126022339
+  },
+  {
+   "scene_id": "n04",
+   "condition": "nt_desc@C_names",
+   "seed": 4,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_desc@C_names/n04_nt_desc@C_names_s4.png",
+   "coalition": null,
+   "prompt": "rrvarma style, woman in gold-bordered sari over both shoulders, flowers in bun, gold jewellery, nose ring, standing",
+   "checklist": 0.6913598941432105,
+   "checklist_detail": {
+    "c1": 0.8312492966651917,
+    "c2": 0.9811815619468689,
+    "c3": 0.733587920665741,
+    "c4": 0.09168408811092377,
+    "c5": 0.9468333125114441
+   },
+   "clip_raw": 0.22328972816467285,
+   "style_margin": 0.12295413017272949,
+   "max_train_dino": 0.8416216373443604
+  },
+  {
+   "scene_id": "n05",
+   "condition": "nt_desc@C_names",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_desc@C_names/n05_nt_desc@C_names_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, woman with loose long black hair, thin-bordered sari, thin necklace, bangles, small jhumkas, standing",
+   "checklist": 0.6518946494907141,
+   "checklist_detail": {
+    "c1": 0.8398661017417908,
+    "c2": 0.9777451157569885,
+    "c3": 0.4051908254623413,
+    "c4": 0.5668433904647827,
+    "c5": 0.20270971953868866
+   },
+   "clip_raw": 0.2700912356376648,
+   "style_margin": 0.12954384088516235,
+   "max_train_dino": 0.7679760456085205
+  },
+  {
+   "scene_id": "n05",
+   "condition": "nt_desc@C_names",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_desc@C_names/n05_nt_desc@C_names_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, woman with loose long black hair, thin-bordered sari, thin necklace, bangles, small jhumkas, standing",
+   "checklist": 0.6605207864195108,
+   "checklist_detail": {
+    "c1": 0.8398255705833435,
+    "c2": 0.9822997450828552,
+    "c3": 0.43149060010910034,
+    "c4": 0.6557464599609375,
+    "c5": 0.12118799984455109
+   },
+   "clip_raw": 0.22030910849571228,
+   "style_margin": 0.16167211532592773,
+   "max_train_dino": 0.7602845430374146
+  },
+  {
+   "scene_id": "n05",
+   "condition": "nt_desc@C_names",
+   "seed": 3,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_desc@C_names/n05_nt_desc@C_names_s3.png",
+   "coalition": null,
+   "prompt": "rrvarma style, woman with loose long black hair, thin-bordered sari, thin necklace, bangles, small jhumkas, standing",
+   "checklist": 0.7269413946196437,
+   "checklist_detail": {
+    "c1": 0.852054238319397,
+    "c2": 0.9784165620803833,
+    "c3": 0.7138553261756897,
+    "c4": 0.6270671486854553,
+    "c5": 0.09981175512075424
+   },
+   "clip_raw": 0.2628268599510193,
+   "style_margin": 0.1533614993095398,
+   "max_train_dino": 0.7594701051712036
+  },
+  {
+   "scene_id": "n05",
+   "condition": "nt_desc@C_names",
+   "seed": 4,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_desc@C_names/n05_nt_desc@C_names_s4.png",
+   "coalition": null,
+   "prompt": "rrvarma style, woman with loose long black hair, thin-bordered sari, thin necklace, bangles, small jhumkas, standing",
+   "checklist": 0.6938969939947128,
+   "checklist_detail": {
+    "c1": 0.8007811903953552,
+    "c2": 0.9836059808731079,
+    "c3": 0.4814167022705078,
+    "c4": 0.6483550071716309,
+    "c5": 0.3712131977081299
+   },
+   "clip_raw": 0.23894888162612915,
+   "style_margin": 0.13481372594833374,
+   "max_train_dino": 0.8386022448539734
+  },
+  {
+   "scene_id": "n06",
+   "condition": "nt_desc@C_names",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_desc@C_names/n06_nt_desc@C_names_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, grey-bearded old monkey-faced figure, small gold crown, knee-length red dhoti, beaded jewellery, mace, standing",
+   "checklist": 0.6865033838484023,
+   "checklist_detail": {
+    "c1": 0.7774563431739807,
+    "c2": 0.7670459747314453,
+    "c3": 0.9259070754051208,
+    "c4": 0.4127747118473053,
+    "c5": 0.41216224431991577
+   },
+   "clip_raw": 0.1921883076429367,
+   "style_margin": 0.11499965190887451,
+   "max_train_dino": 0.6133064031600952
+  },
+  {
+   "scene_id": "n06",
+   "condition": "nt_desc@C_names",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_desc@C_names/n06_nt_desc@C_names_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, grey-bearded old monkey-faced figure, small gold crown, knee-length red dhoti, beaded jewellery, mace, standing",
+   "checklist": 0.38510359533958965,
+   "checklist_detail": {
+    "c1": 0.8032964468002319,
+    "c2": 0.08788928389549255,
+    "c3": 0.6365742087364197,
+    "c4": 0.025669047608971596,
+    "c5": 0.3590743839740753
+   },
+   "clip_raw": 0.2247224897146225,
+   "style_margin": 0.11045640707015991,
+   "max_train_dino": 0.6312454342842102
+  },
+  {
+   "scene_id": "n06",
+   "condition": "nt_desc@C_names",
+   "seed": 3,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_desc@C_names/n06_nt_desc@C_names_s3.png",
+   "coalition": null,
+   "prompt": "rrvarma style, grey-bearded old monkey-faced figure, small gold crown, knee-length red dhoti, beaded jewellery, mace, standing",
+   "checklist": 0.5689899010790719,
+   "checklist_detail": {
+    "c1": 0.7880258560180664,
+    "c2": 0.08054343611001968,
+    "c3": 0.40060415863990784,
+    "c4": 0.9787493348121643,
+    "c5": 0.6250635385513306
+   },
+   "clip_raw": 0.25831764936447144,
+   "style_margin": 0.07228356599807739,
+   "max_train_dino": 0.7318646907806396
+  },
+  {
+   "scene_id": "n06",
+   "condition": "nt_desc@C_names",
+   "seed": 4,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_desc@C_names/n06_nt_desc@C_names_s4.png",
+   "coalition": null,
+   "prompt": "rrvarma style, grey-bearded old monkey-faced figure, small gold crown, knee-length red dhoti, beaded jewellery, mace, standing",
+   "checklist": 0.48750903209050495,
+   "checklist_detail": {
+    "c1": 0.8290417790412903,
+    "c2": 0.10988381505012512,
+    "c3": 0.12459112703800201,
+    "c4": 0.9784481525421143,
+    "c5": 0.3036515414714813
+   },
+   "clip_raw": 0.23443594574928284,
+   "style_margin": 0.08019298315048218,
+   "max_train_dino": 0.7008098363876343
+  },
+  {
+   "scene_id": "n07",
+   "condition": "nt_desc@C_names",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_desc@C_names/n07_nt_desc@C_names_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, man with long curly hair, moustache, white robe, churidar, yellow waist cloth, white earrings, standing",
+   "checklist": 0.8945896459950341,
+   "checklist_detail": {
+    "c1": 0.8268066048622131,
+    "c2": 0.9750977754592896,
+    "c3": 0.9971145391464233,
+    "c4": 0.9896953105926514,
+    "c5": 0.4738783538341522
+   },
+   "clip_raw": 0.21426939964294434,
+   "style_margin": 0.13195466995239258,
+   "max_train_dino": 0.6612484455108643
+  },
+  {
+   "scene_id": "n07",
+   "condition": "nt_desc@C_names",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_desc@C_names/n07_nt_desc@C_names_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, man with long curly hair, moustache, white robe, churidar, yellow waist cloth, white earrings, standing",
+   "checklist": 0.8895956145392524,
+   "checklist_detail": {
+    "c1": 0.8398453593254089,
+    "c2": 0.9968940019607544,
+    "c3": 0.8981819748878479,
+    "c4": 0.9460934996604919,
+    "c5": 0.6443308591842651
+   },
+   "clip_raw": 0.23280838131904602,
+   "style_margin": 0.11738592386245728,
+   "max_train_dino": 0.5426579713821411
+  },
+  {
+   "scene_id": "n07",
+   "condition": "nt_desc@C_names",
+   "seed": 3,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_desc@C_names/n07_nt_desc@C_names_s3.png",
+   "coalition": null,
+   "prompt": "rrvarma style, man with long curly hair, moustache, white robe, churidar, yellow waist cloth, white earrings, standing",
+   "checklist": 0.893714490864012,
+   "checklist_detail": {
+    "c1": 0.8176697492599487,
+    "c2": 0.9949091076850891,
+    "c3": 0.9969372749328613,
+    "c4": 0.9898799657821655,
+    "c5": 0.4446382224559784
+   },
+   "clip_raw": 0.19652512669563293,
+   "style_margin": 0.06713688373565674,
+   "max_train_dino": 0.4840993285179138
+  },
+  {
+   "scene_id": "n07",
+   "condition": "nt_desc@C_names",
+   "seed": 4,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_desc@C_names/n07_nt_desc@C_names_s4.png",
+   "coalition": null,
+   "prompt": "rrvarma style, man with long curly hair, moustache, white robe, churidar, yellow waist cloth, white earrings, standing",
+   "checklist": 0.8417300118340386,
+   "checklist_detail": {
+    "c1": 0.5002551078796387,
+    "c2": 0.9925214648246765,
+    "c3": 0.921432614326477,
+    "c4": 0.9667385816574097,
+    "c5": 0.8136745691299438
+   },
+   "clip_raw": 0.2231443077325821,
+   "style_margin": 0.09104925394058228,
+   "max_train_dino": 0.5611438155174255
+  },
+  {
+   "scene_id": "n08",
+   "condition": "nt_desc@C_names",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_desc@C_names/n08_nt_desc@C_names_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, woman in purple sari, gold waistband, green and white bangles, gold necklace, flowered bun, standing",
+   "checklist": 0.7715092385187745,
+   "checklist_detail": {
+    "c1": 0.8616564273834229,
+    "c2": 0.9890243411064148,
+    "c3": 0.9712539911270142,
+    "c4": 0.07423529773950577,
+    "c5": 0.4539690911769867
+   },
+   "clip_raw": 0.21464665234088898,
+   "style_margin": 0.14389556646347046,
+   "max_train_dino": 0.7988777756690979
+  },
+  {
+   "scene_id": "n08",
+   "condition": "nt_desc@C_names",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_desc@C_names/n08_nt_desc@C_names_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, woman in purple sari, gold waistband, green and white bangles, gold necklace, flowered bun, standing",
+   "checklist": 0.7405308615416288,
+   "checklist_detail": {
+    "c1": 0.8578636646270752,
+    "c2": 0.9857273697853088,
+    "c3": 0.9598727226257324,
+    "c4": 0.1099250465631485,
+    "c5": 0.2073943316936493
+   },
+   "clip_raw": 0.210685595870018,
+   "style_margin": 0.16391140222549438,
+   "max_train_dino": 0.8337504863739014
+  },
+  {
+   "scene_id": "n08",
+   "condition": "nt_desc@C_names",
+   "seed": 3,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_desc@C_names/n08_nt_desc@C_names_s3.png",
+   "coalition": null,
+   "prompt": "rrvarma style, woman in purple sari, gold waistband, green and white bangles, gold necklace, flowered bun, standing",
+   "checklist": 0.7478584330528975,
+   "checklist_detail": {
+    "c1": 0.8267953991889954,
+    "c2": 0.9780640602111816,
+    "c3": 0.9315617084503174,
+    "c4": 0.08644042909145355,
+    "c5": 0.4235846996307373
+   },
+   "clip_raw": 0.19472619891166687,
+   "style_margin": 0.1535782814025879,
+   "max_train_dino": 0.8443681001663208
+  },
+  {
+   "scene_id": "n08",
+   "condition": "nt_desc@C_names",
+   "seed": 4,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_desc@C_names/n08_nt_desc@C_names_s4.png",
+   "coalition": null,
+   "prompt": "rrvarma style, woman in purple sari, gold waistband, green and white bangles, gold necklace, flowered bun, standing",
+   "checklist": 0.7747108340263367,
+   "checklist_detail": {
+    "c1": 0.8058173060417175,
+    "c2": 0.9890301823616028,
+    "c3": 0.9853248000144958,
+    "c4": 0.04226726293563843,
+    "c5": 0.5950748324394226
+   },
+   "clip_raw": 0.1952911913394928,
+   "style_margin": 0.12736773490905762,
+   "max_train_dino": 0.7797621488571167
+  },
+  {
+   "scene_id": "n09",
+   "condition": "nt_desc@C_names",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_desc@C_names/n09_nt_desc@C_names_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, man in blue kurta, white churidar, red turban with white feathers, pearl necklaces, moustache, standing",
+   "checklist": 0.7233553801973661,
+   "checklist_detail": {
+    "c1": 0.8398838043212891,
+    "c2": 0.9674699902534485,
+    "c3": 0.049780938774347305,
+    "c4": 0.9257053732872009,
+    "c5": 0.9445182085037231
+   },
+   "clip_raw": 0.1601026952266693,
+   "style_margin": 0.0895606279373169,
+   "max_train_dino": 0.730266273021698
+  },
+  {
+   "scene_id": "n09",
+   "condition": "nt_desc@C_names",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_desc@C_names/n09_nt_desc@C_names_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, man in blue kurta, white churidar, red turban with white feathers, pearl necklaces, moustache, standing",
+   "checklist": 0.5186127757446634,
+   "checklist_detail": {
+    "c1": 0.8725165724754333,
+    "c2": 0.94766765832901,
+    "c3": 0.008946076966822147,
+    "c4": 0.10380326211452484,
+    "c5": 0.8016478419303894
+   },
+   "clip_raw": 0.2103988379240036,
+   "style_margin": 0.14638102054595947,
+   "max_train_dino": 0.5691033005714417
+  },
+  {
+   "scene_id": "n09",
+   "condition": "nt_desc@C_names",
+   "seed": 3,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_desc@C_names/n09_nt_desc@C_names_s3.png",
+   "coalition": null,
+   "prompt": "rrvarma style, man in blue kurta, white churidar, red turban with white feathers, pearl necklaces, moustache, standing",
+   "checklist": 0.5339592401352193,
+   "checklist_detail": {
+    "c1": 0.8033356666564941,
+    "c2": 0.9627680778503418,
+    "c3": 0.19046860933303833,
+    "c4": 0.028439300134778023,
+    "c5": 0.8356098532676697
+   },
+   "clip_raw": 0.20810796320438385,
+   "style_margin": 0.14369744062423706,
+   "max_train_dino": 0.6920504570007324
+  },
+  {
+   "scene_id": "n09",
+   "condition": "nt_desc@C_names",
+   "seed": 4,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_desc@C_names/n09_nt_desc@C_names_s4.png",
+   "coalition": null,
+   "prompt": "rrvarma style, man in blue kurta, white churidar, red turban with white feathers, pearl necklaces, moustache, standing",
+   "checklist": 0.503161294799712,
+   "checklist_detail": {
+    "c1": 0.8223165273666382,
+    "c2": 0.9540367126464844,
+    "c3": 0.00941524002701044,
+    "c4": 0.1425817757844925,
+    "c5": 0.6717511415481567
+   },
+   "clip_raw": 0.21694757044315338,
+   "style_margin": 0.0874672532081604,
+   "max_train_dino": 0.6527764797210693
+  },
+  {
+   "scene_id": "n10",
+   "condition": "nt_desc@C_names",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_desc@C_names/n10_nt_desc@C_names_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, woman with long open curly black hair, draped red sari, kumkum, simple gold jewellery, standing",
+   "checklist": 0.7423831522464752,
+   "checklist_detail": {
+    "c1": 0.8759068250656128,
+    "c2": 0.9720228910446167,
+    "c3": 0.4856816530227661,
+    "c4": 0.971738338470459,
+    "c5": 0.0707489550113678
+   },
+   "clip_raw": 0.22923390567302704,
+   "style_margin": 0.140461266040802,
+   "max_train_dino": 0.8027747869491577
+  },
+  {
+   "scene_id": "n10",
+   "condition": "nt_desc@C_names",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_desc@C_names/n10_nt_desc@C_names_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, woman with long open curly black hair, draped red sari, kumkum, simple gold jewellery, standing",
+   "checklist": 0.7992464105288187,
+   "checklist_detail": {
+    "c1": 0.839845597743988,
+    "c2": 0.9715930223464966,
+    "c3": 0.35303691029548645,
+    "c4": 0.990170419216156,
+    "c5": 0.8839257955551147
+   },
+   "clip_raw": 0.2646567225456238,
+   "style_margin": 0.16231900453567505,
+   "max_train_dino": 0.8268777132034302
+  },
+  {
+   "scene_id": "n10",
+   "condition": "nt_desc@C_names",
+   "seed": 3,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_desc@C_names/n10_nt_desc@C_names_s3.png",
+   "coalition": null,
+   "prompt": "rrvarma style, woman with long open curly black hair, draped red sari, kumkum, simple gold jewellery, standing",
+   "checklist": 0.839917434586419,
+   "checklist_detail": {
+    "c1": 0.8480724692344666,
+    "c2": 0.9674436450004578,
+    "c3": 0.7290027141571045,
+    "c4": 0.9853172898292542,
+    "c5": 0.4995846748352051
+   },
+   "clip_raw": 0.2343270182609558,
+   "style_margin": 0.13442492485046387,
+   "max_train_dino": 0.7239882946014404
+  },
+  {
+   "scene_id": "n10",
+   "condition": "nt_desc@C_names",
+   "seed": 4,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_desc@C_names/n10_nt_desc@C_names_s4.png",
+   "coalition": null,
+   "prompt": "rrvarma style, woman with long open curly black hair, draped red sari, kumkum, simple gold jewellery, standing",
+   "checklist": 0.8572408027119107,
+   "checklist_detail": {
+    "c1": 0.8312434554100037,
+    "c2": 0.9823007583618164,
+    "c3": 0.5748614072799683,
+    "c4": 0.9890350103378296,
+    "c5": 0.9602859616279602
+   },
+   "clip_raw": 0.2324051707983017,
+   "style_margin": 0.13720059394836426,
+   "max_train_dino": 0.827872633934021
+  },
+  {
+   "scene_id": "n11",
+   "condition": "nt_desc@C_names",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_desc@C_names/n11_nt_desc@C_names_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, bare-chested warrior, golden armour, large gold earrings, standing",
+   "checklist": 0.6431200504302979,
+   "checklist_detail": {
+    "c1": 0.3108970522880554,
+    "c2": 0.8826625943183899,
+    "c3": 0.501950740814209,
+    "c4": 0.8769698143005371
+   },
+   "clip_raw": 0.2369886338710785,
+   "style_margin": 0.10826164484024048,
+   "max_train_dino": 0.6921396851539612
+  },
+  {
+   "scene_id": "n11",
+   "condition": "nt_desc@C_names",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_desc@C_names/n11_nt_desc@C_names_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, bare-chested warrior, golden armour, large gold earrings, standing",
+   "checklist": 0.5974491164088249,
+   "checklist_detail": {
+    "c1": 0.5041197538375854,
+    "c2": 0.8598798513412476,
+    "c3": 0.9893707036972046,
+    "c4": 0.036426156759262085
+   },
+   "clip_raw": 0.21590453386306763,
+   "style_margin": 0.08309656381607056,
+   "max_train_dino": 0.6429490447044373
+  },
+  {
+   "scene_id": "n11",
+   "condition": "nt_desc@C_names",
+   "seed": 3,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_desc@C_names/n11_nt_desc@C_names_s3.png",
+   "coalition": null,
+   "prompt": "rrvarma style, bare-chested warrior, golden armour, large gold earrings, standing",
+   "checklist": 0.8144708275794983,
+   "checklist_detail": {
+    "c1": 0.8377084732055664,
+    "c2": 0.9305264949798584,
+    "c3": 0.989840567111969,
+    "c4": 0.49980777502059937
+   },
+   "clip_raw": 0.2241399735212326,
+   "style_margin": 0.09481692314147949,
+   "max_train_dino": 0.6335842609405518
+  },
+  {
+   "scene_id": "n11",
+   "condition": "nt_desc@C_names",
+   "seed": 4,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_desc@C_names/n11_nt_desc@C_names_s4.png",
+   "coalition": null,
+   "prompt": "rrvarma style, bare-chested warrior, golden armour, large gold earrings, standing",
+   "checklist": 0.7599316611886024,
+   "checklist_detail": {
+    "c1": 0.3814639151096344,
+    "c2": 0.8653560876846313,
+    "c3": 0.9924293160438538,
+    "c4": 0.8004773259162903
+   },
+   "clip_raw": 0.21515193581581116,
+   "style_margin": 0.05753821134567261,
+   "max_train_dino": 0.6126478314399719
+  },
+  {
+   "scene_id": "n12",
+   "condition": "nt_desc@C_names",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_desc@C_names/n12_nt_desc@C_names_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, elderly forest woman in simple cloth, grey hair, holding fruit, standing",
+   "checklist": 0.6260825961828231,
+   "checklist_detail": {
+    "c1": 0.7801450490951538,
+    "c2": 0.4388114809989929,
+    "c3": 0.9049285650253296,
+    "c4": 0.40553930401802063,
+    "c5": 0.3993064761161804,
+    "c6": 0.8089035153388977
+   },
+   "clip_raw": 0.25582218170166016,
+   "style_margin": 0.1744387149810791,
+   "max_train_dino": 0.7199234366416931
+  },
+  {
+   "scene_id": "n12",
+   "condition": "nt_desc@C_names",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_desc@C_names/n12_nt_desc@C_names_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, elderly forest woman in simple cloth, grey hair, holding fruit, standing",
+   "checklist": 0.6950895305722952,
+   "checklist_detail": {
+    "c1": 0.8153958916664124,
+    "c2": 0.02838212065398693,
+    "c3": 0.9500249028205872,
+    "c4": 0.9579493403434753,
+    "c5": 0.943855345249176,
+    "c6": 0.5176294445991516
+   },
+   "clip_raw": 0.20708288252353668,
+   "style_margin": 0.1829160451889038,
+   "max_train_dino": 0.5169857740402222
+  },
+  {
+   "scene_id": "n12",
+   "condition": "nt_desc@C_names",
+   "seed": 3,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_desc@C_names/n12_nt_desc@C_names_s3.png",
+   "coalition": null,
+   "prompt": "rrvarma style, elderly forest woman in simple cloth, grey hair, holding fruit, standing",
+   "checklist": 0.6956907331943512,
+   "checklist_detail": {
+    "c1": 0.7692339420318604,
+    "c2": 0.28569531440734863,
+    "c3": 0.6664607524871826,
+    "c4": 0.955311119556427,
+    "c5": 0.8688676953315735,
+    "c6": 0.8210808038711548
+   },
+   "clip_raw": 0.21269498765468597,
+   "style_margin": 0.11113065481185913,
+   "max_train_dino": 0.607384204864502
+  },
+  {
+   "scene_id": "n12",
+   "condition": "nt_desc@C_names",
+   "seed": 4,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_desc@C_names/n12_nt_desc@C_names_s4.png",
+   "coalition": null,
+   "prompt": "rrvarma style, elderly forest woman in simple cloth, grey hair, holding fruit, standing",
+   "checklist": 0.83860182762146,
+   "checklist_detail": {
+    "c1": 0.7551312446594238,
+    "c2": 0.5417355895042419,
+    "c3": 0.9918505549430847,
+    "c4": 0.9744237065315247,
+    "c5": 0.9761689305305481,
+    "c6": 0.8818219304084778
+   },
+   "clip_raw": 0.23002132773399353,
+   "style_margin": 0.0893450379371643,
+   "max_train_dino": 0.5333975553512573
+  }
+ ]
+}

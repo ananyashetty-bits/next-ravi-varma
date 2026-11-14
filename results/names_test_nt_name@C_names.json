@@ -1,0 +1,1013 @@
+{
+ "manifest": "/content/drive/MyDrive/m3/images/names_test/nt_name@C_names/manifest.json",
+ "scenes_file": "train/names_test_scenes.json",
+ "scored_at": "2026-11-14T13:20:14.297653",
+ "judge": "Qwen/Qwen2-VL-2B-Instruct",
+ "n_images": 48,
+ "summary": {
+  "nt_name@C_names": {
+   "checklist": {
+    "mean": 0.5276286444018263,
+    "ci95": [
+     0.44704811922675236,
+     0.6167461492730784
+    ],
+    "n_scenes": 12
+   },
+   "clip_raw": {
+    "mean": 0.24025228340178728,
+    "ci95": [
+     0.2250197582412511,
+     0.2536269526230171
+    ],
+    "n_scenes": 12
+   },
+   "style_margin": {
+    "mean": 0.1391396534939607,
+    "ci95": [
+     0.1261904471864303,
+     0.15232233519976335
+    ],
+    "n_scenes": 12
+   },
+   "max_train_dino": {
+    "mean": 0.7500193603336811,
+    "ci95": [
+     0.7361628211413821,
+     0.7654390137642623
+    ],
+    "n_scenes": 12
+   }
+  }
+ },
+ "per_scene": {
+  "nt_name@C_names": {
+   "checklist": {
+    "n01": 0.8357760459184647,
+    "n02": 0.45027613802812994,
+    "n03": 0.551743597490713,
+    "n04": 0.6429421458807257,
+    "n05": 0.5240726666525006,
+    "n06": 0.565240069395966,
+    "n07": 0.4199853220747577,
+    "n08": 0.5334379826672375,
+    "n09": 0.33550634319221395,
+    "n10": 0.745544784805841,
+    "n11": 0.4283838574483525,
+    "n12": 0.2986347792670131
+   },
+   "clip_raw": {
+    "n01": 0.23947393149137497,
+    "n02": 0.24722788482904434,
+    "n03": 0.2780033126473427,
+    "n04": 0.25944382324814796,
+    "n05": 0.2669873535633087,
+    "n06": 0.23124583810567856,
+    "n07": 0.2564135193824768,
+    "n08": 0.2399391196668148,
+    "n09": 0.2341042011976242,
+    "n10": 0.24572012946009636,
+    "n11": 0.18899954110383987,
+    "n12": 0.1954687461256981
+   },
+   "style_margin": {
+    "n01": 0.15985378623008728,
+    "n02": 0.15117011964321136,
+    "n03": 0.1357526332139969,
+    "n04": 0.17772753536701202,
+    "n05": 0.14150260388851166,
+    "n06": 0.09687107801437378,
+    "n07": 0.11751395463943481,
+    "n08": 0.17330659925937653,
+    "n09": 0.13743191957473755,
+    "n10": 0.14135175943374634,
+    "n11": 0.12504279613494873,
+    "n12": 0.11215105652809143
+   },
+   "max_train_dino": {
+    "n01": 0.7533716559410095,
+    "n02": 0.7191466093063354,
+    "n03": 0.758421391248703,
+    "n04": 0.8107948452234268,
+    "n05": 0.7488967776298523,
+    "n06": 0.7581577748060226,
+    "n07": 0.7231834828853607,
+    "n08": 0.7363363802433014,
+    "n09": 0.7674823105335236,
+    "n10": 0.7761370837688446,
+    "n11": 0.718829333782196,
+    "n12": 0.7294746786355972
+   }
+  }
+ },
+ "items": [
+  {
+   "scene_id": "n01",
+   "condition": "nt_name@C_names",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_name@C_names/n01_nt_name@C_names_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Sita standing",
+   "checklist": 0.7552322447299957,
+   "checklist_detail": {
+    "c1": 0.3741263151168823,
+    "c2": 0.9728585481643677,
+    "c3": 0.9022483229637146,
+    "c4": 0.6350310444831848,
+    "c5": 0.9083605408668518
+   },
+   "clip_raw": 0.22912432253360748,
+   "style_margin": 0.1353762149810791,
+   "max_train_dino": 0.7674252986907959
+  },
+  {
+   "scene_id": "n01",
+   "condition": "nt_name@C_names",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_name@C_names/n01_nt_name@C_names_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Sita standing",
+   "checklist": 0.8684393838047981,
+   "checklist_detail": {
+    "c1": 0.8689243793487549,
+    "c2": 0.9748502969741821,
+    "c3": 0.8447237610816956,
+    "c4": 0.5975798964500427,
+    "c5": 0.9729382991790771
+   },
+   "clip_raw": 0.23124699294567108,
+   "style_margin": 0.16815882921218872,
+   "max_train_dino": 0.7617707252502441
+  },
+  {
+   "scene_id": "n01",
+   "condition": "nt_name@C_names",
+   "seed": 3,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_name@C_names/n01_nt_name@C_names_s3.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Sita standing",
+   "checklist": 0.8526426926255226,
+   "checklist_detail": {
+    "c1": 0.8153430223464966,
+    "c2": 0.9799918532371521,
+    "c3": 0.84452223777771,
+    "c4": 0.6349992156028748,
+    "c5": 0.9064280986785889
+   },
+   "clip_raw": 0.24910111725330353,
+   "style_margin": 0.17727667093276978,
+   "max_train_dino": 0.7935112714767456
+  },
+  {
+   "scene_id": "n01",
+   "condition": "nt_name@C_names",
+   "seed": 4,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_name@C_names/n01_nt_name@C_names_s4.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Sita standing",
+   "checklist": 0.8667898625135422,
+   "checklist_detail": {
+    "c1": 0.782855749130249,
+    "c2": 0.9823236465454102,
+    "c3": 0.9508224129676819,
+    "c4": 0.5685168504714966,
+    "c5": 0.9337984323501587
+   },
+   "clip_raw": 0.24842329323291779,
+   "style_margin": 0.15860342979431152,
+   "max_train_dino": 0.6907793283462524
+  },
+  {
+   "scene_id": "n02",
+   "condition": "nt_name@C_names",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_name@C_names/n02_nt_name@C_names_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Krishna standing",
+   "checklist": 0.5158116556704044,
+   "checklist_detail": {
+    "c1": 0.46896496415138245,
+    "c2": 0.20681925117969513,
+    "c3": 0.8109983801841736,
+    "c4": 0.8858870267868042,
+    "c5": 0.26704102754592896
+   },
+   "clip_raw": 0.22770096361637115,
+   "style_margin": 0.11969256401062012,
+   "max_train_dino": 0.6695685386657715
+  },
+  {
+   "scene_id": "n02",
+   "condition": "nt_name@C_names",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_name@C_names/n02_nt_name@C_names_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Krishna standing",
+   "checklist": 0.5766937416046858,
+   "checklist_detail": {
+    "c1": 0.7027145624160767,
+    "c2": 0.2952045202255249,
+    "c3": 0.8567416071891785,
+    "c4": 0.6633095741271973,
+    "c5": 0.24091897904872894
+   },
+   "clip_raw": 0.2346220463514328,
+   "style_margin": 0.13164329528808594,
+   "max_train_dino": 0.7807208299636841
+  },
+  {
+   "scene_id": "n02",
+   "condition": "nt_name@C_names",
+   "seed": 3,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_name@C_names/n02_nt_name@C_names_s3.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Krishna standing",
+   "checklist": 0.33332424610853195,
+   "checklist_detail": {
+    "c1": 0.8245648145675659,
+    "c2": 0.14935341477394104,
+    "c3": 0.20339801907539368,
+    "c4": 0.1626780778169632,
+    "c5": 0.14928339421749115
+   },
+   "clip_raw": 0.26898491382598877,
+   "style_margin": 0.15591919422149658,
+   "max_train_dino": 0.7640995979309082
+  },
+  {
+   "scene_id": "n02",
+   "condition": "nt_name@C_names",
+   "seed": 4,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_name@C_names/n02_nt_name@C_names_s4.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Krishna standing",
+   "checklist": 0.37527490872889757,
+   "checklist_detail": {
+    "c1": 0.7828295230865479,
+    "c2": 0.10741005092859268,
+    "c3": 0.060121890157461166,
+    "c4": 0.9745331406593323,
+    "c5": 0.1269432008266449
+   },
+   "clip_raw": 0.25760361552238464,
+   "style_margin": 0.19742542505264282,
+   "max_train_dino": 0.662197470664978
+  },
+  {
+   "scene_id": "n03",
+   "condition": "nt_name@C_names",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_name@C_names/n03_nt_name@C_names_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Shakuntala standing",
+   "checklist": 0.4512984976172447,
+   "checklist_detail": {
+    "c1": 0.304310142993927,
+    "c2": 0.9793732166290283,
+    "c3": 0.06764370203018188,
+    "c4": 0.4538669288158417
+   },
+   "clip_raw": 0.2583017945289612,
+   "style_margin": 0.0801880955696106,
+   "max_train_dino": 0.7056151628494263
+  },
+  {
+   "scene_id": "n03",
+   "condition": "nt_name@C_names",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_name@C_names/n03_nt_name@C_names_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Shakuntala standing",
+   "checklist": 0.48766414169222116,
+   "checklist_detail": {
+    "c1": 0.434329092502594,
+    "c2": 0.9176691174507141,
+    "c3": 0.02874496951699257,
+    "c4": 0.569913387298584
+   },
+   "clip_raw": 0.282677561044693,
+   "style_margin": 0.13835370540618896,
+   "max_train_dino": 0.7355031967163086
+  },
+  {
+   "scene_id": "n03",
+   "condition": "nt_name@C_names",
+   "seed": 3,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_name@C_names/n03_nt_name@C_names_s3.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Shakuntala standing",
+   "checklist": 0.6230185758322477,
+   "checklist_detail": {
+    "c1": 0.8200051188468933,
+    "c2": 0.9817553758621216,
+    "c3": 0.05508654564619064,
+    "c4": 0.6352272629737854
+   },
+   "clip_raw": 0.26902660727500916,
+   "style_margin": 0.16036617755889893,
+   "max_train_dino": 0.827776312828064
+  },
+  {
+   "scene_id": "n03",
+   "condition": "nt_name@C_names",
+   "seed": 4,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_name@C_names/n03_nt_name@C_names_s4.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Shakuntala standing",
+   "checklist": 0.6449931748211384,
+   "checklist_detail": {
+    "c1": 0.7907326817512512,
+    "c2": 0.9877888560295105,
+    "c3": 0.22953654825687408,
+    "c4": 0.5719146132469177
+   },
+   "clip_raw": 0.3020072877407074,
+   "style_margin": 0.16410255432128906,
+   "max_train_dino": 0.7647908926010132
+  },
+  {
+   "scene_id": "n04",
+   "condition": "nt_name@C_names",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_name@C_names/n04_nt_name@C_names_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Radha standing",
+   "checklist": 0.5500672062238058,
+   "checklist_detail": {
+    "c1": 0.4001210629940033,
+    "c2": 0.9707182049751282,
+    "c3": 0.6921983361244202,
+    "c4": 0.18800027668476105,
+    "c5": 0.44852909445762634
+   },
+   "clip_raw": 0.24726442992687225,
+   "style_margin": 0.15434342622756958,
+   "max_train_dino": 0.8271358013153076
+  },
+  {
+   "scene_id": "n04",
+   "condition": "nt_name@C_names",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_name@C_names/n04_nt_name@C_names_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Radha standing",
+   "checklist": 0.6820913917488522,
+   "checklist_detail": {
+    "c1": 0.8792640566825867,
+    "c2": 0.975632905960083,
+    "c3": 0.7246747016906738,
+    "c4": 0.22193409502506256,
+    "c5": 0.5358110070228577
+   },
+   "clip_raw": 0.2561991810798645,
+   "style_margin": 0.17607253789901733,
+   "max_train_dino": 0.7635270953178406
+  },
+  {
+   "scene_id": "n04",
+   "condition": "nt_name@C_names",
+   "seed": 3,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_name@C_names/n04_nt_name@C_names_s3.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Radha standing",
+   "checklist": 0.6828146013948653,
+   "checklist_detail": {
+    "c1": 0.8176794052124023,
+    "c2": 0.9865836501121521,
+    "c3": 0.920708954334259,
+    "c4": 0.1351281702518463,
+    "c5": 0.42513105273246765
+   },
+   "clip_raw": 0.26791754364967346,
+   "style_margin": 0.16668766736984253,
+   "max_train_dino": 0.8380612134933472
+  },
+  {
+   "scene_id": "n04",
+   "condition": "nt_name@C_names",
+   "seed": 4,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_name@C_names/n04_nt_name@C_names_s4.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Radha standing",
+   "checklist": 0.6567953841553794,
+   "checklist_detail": {
+    "c1": 0.5777806043624878,
+    "c2": 0.9852958917617798,
+    "c3": 0.9769002199172974,
+    "c4": 0.12085322290658951,
+    "c5": 0.5894985795021057
+   },
+   "clip_raw": 0.26639413833618164,
+   "style_margin": 0.21380650997161865,
+   "max_train_dino": 0.8144552707672119
+  },
+  {
+   "scene_id": "n05",
+   "condition": "nt_name@C_names",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_name@C_names/n05_nt_name@C_names_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Draupadi standing",
+   "checklist": 0.5228470787405968,
+   "checklist_detail": {
+    "c1": 0.3926124572753906,
+    "c2": 0.798819899559021,
+    "c3": 0.43565860390663147,
+    "c4": 0.5593911409378052,
+    "c5": 0.3692035675048828
+   },
+   "clip_raw": 0.2514726519584656,
+   "style_margin": 0.10540074110031128,
+   "max_train_dino": 0.6721907258033752
+  },
+  {
+   "scene_id": "n05",
+   "condition": "nt_name@C_names",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_name@C_names/n05_nt_name@C_names_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Draupadi standing",
+   "checklist": 0.487863264977932,
+   "checklist_detail": {
+    "c1": 0.2978084683418274,
+    "c2": 0.9741052985191345,
+    "c3": 0.1586720198392868,
+    "c4": 0.7358307242393494,
+    "c5": 0.305903822183609
+   },
+   "clip_raw": 0.27951711416244507,
+   "style_margin": 0.1623813509941101,
+   "max_train_dino": 0.7684849500656128
+  },
+  {
+   "scene_id": "n05",
+   "condition": "nt_name@C_names",
+   "seed": 3,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_name@C_names/n05_nt_name@C_names_s3.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Draupadi standing",
+   "checklist": 0.6278361640870571,
+   "checklist_detail": {
+    "c1": 0.8398327231407166,
+    "c2": 0.977044403553009,
+    "c3": 0.2950688302516937,
+    "c4": 0.49344003200531006,
+    "c5": 0.3053573668003082
+   },
+   "clip_raw": 0.2861294150352478,
+   "style_margin": 0.18140673637390137,
+   "max_train_dino": 0.7571761012077332
+  },
+  {
+   "scene_id": "n05",
+   "condition": "nt_name@C_names",
+   "seed": 4,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_name@C_names/n05_nt_name@C_names_s4.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Draupadi standing",
+   "checklist": 0.45774415880441666,
+   "checklist_detail": {
+    "c1": 0.22558651864528656,
+    "c2": 0.8380467891693115,
+    "c3": 0.27293500304222107,
+    "c4": 0.6593486666679382,
+    "c5": 0.3294679820537567
+   },
+   "clip_raw": 0.2508302330970764,
+   "style_margin": 0.11682158708572388,
+   "max_train_dino": 0.797735333442688
+  },
+  {
+   "scene_id": "n06",
+   "condition": "nt_name@C_names",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_name@C_names/n06_nt_name@C_names_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Hanuman standing",
+   "checklist": 0.5513301326168908,
+   "checklist_detail": {
+    "c1": 0.7854323983192444,
+    "c2": 0.15048788487911224,
+    "c3": 0.438034325838089,
+    "c4": 0.8692383170127869,
+    "c5": 0.47558534145355225
+   },
+   "clip_raw": 0.23989740014076233,
+   "style_margin": 0.09166675806045532,
+   "max_train_dino": 0.781680166721344
+  },
+  {
+   "scene_id": "n06",
+   "condition": "nt_name@C_names",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_name@C_names/n06_nt_name@C_names_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Hanuman standing",
+   "checklist": 0.6135033369064331,
+   "checklist_detail": {
+    "c1": 0.8334744572639465,
+    "c2": 0.39864739775657654,
+    "c3": 0.15459474921226501,
+    "c4": 0.9879732131958008,
+    "c5": 0.7721503973007202
+   },
+   "clip_raw": 0.213354229927063,
+   "style_margin": 0.10422712564468384,
+   "max_train_dino": 0.7621582746505737
+  },
+  {
+   "scene_id": "n06",
+   "condition": "nt_name@C_names",
+   "seed": 3,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_name@C_names/n06_nt_name@C_names_s3.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Hanuman standing",
+   "checklist": 0.5692668391598595,
+   "checklist_detail": {
+    "c1": 0.8032853007316589,
+    "c2": 0.41576310992240906,
+    "c3": 0.23986086249351501,
+    "c4": 0.9861721396446228,
+    "c5": 0.23323872685432434
+   },
+   "clip_raw": 0.2523188591003418,
+   "style_margin": 0.07507389783859253,
+   "max_train_dino": 0.7715427875518799
+  },
+  {
+   "scene_id": "n06",
+   "condition": "nt_name@C_names",
+   "seed": 4,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_name@C_names/n06_nt_name@C_names_s4.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Hanuman standing",
+   "checklist": 0.5268599689006805,
+   "checklist_detail": {
+    "c1": 0.8081887364387512,
+    "c2": 0.282284677028656,
+    "c3": 0.15065498650074005,
+    "c4": 0.7615370750427246,
+    "c5": 0.7364087700843811
+   },
+   "clip_raw": 0.21941286325454712,
+   "style_margin": 0.11651653051376343,
+   "max_train_dino": 0.717249870300293
+  },
+  {
+   "scene_id": "n07",
+   "condition": "nt_name@C_names",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_name@C_names/n07_nt_name@C_names_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Bhishma standing",
+   "checklist": 0.35122649123271305,
+   "checklist_detail": {
+    "c1": 0.385082870721817,
+    "c2": 0.8117873668670654,
+    "c3": 0.05831902101635933,
+    "c4": 0.09685034304857254,
+    "c5": 0.45695921778678894
+   },
+   "clip_raw": 0.2644396126270294,
+   "style_margin": 0.09904533624649048,
+   "max_train_dino": 0.7003077268600464
+  },
+  {
+   "scene_id": "n07",
+   "condition": "nt_name@C_names",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_name@C_names/n07_nt_name@C_names_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Bhishma standing",
+   "checklist": 0.49532874218291706,
+   "checklist_detail": {
+    "c1": 0.29462507367134094,
+    "c2": 0.706495463848114,
+    "c3": 0.025571202859282494,
+    "c4": 0.9558579325675964,
+    "c5": 0.4928593337535858
+   },
+   "clip_raw": 0.25823092460632324,
+   "style_margin": 0.1198386549949646,
+   "max_train_dino": 0.7205342054367065
+  },
+  {
+   "scene_id": "n07",
+   "condition": "nt_name@C_names",
+   "seed": 3,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_name@C_names/n07_nt_name@C_names_s3.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Bhishma standing",
+   "checklist": 0.32412418433361584,
+   "checklist_detail": {
+    "c1": 0.689455509185791,
+    "c2": 0.38923633098602295,
+    "c3": 0.18497158586978912,
+    "c4": 0.020656423643231392,
+    "c5": 0.34847795963287354
+   },
+   "clip_raw": 0.25327450037002563,
+   "style_margin": 0.13489121198654175,
+   "max_train_dino": 0.7103047370910645
+  },
+  {
+   "scene_id": "n07",
+   "condition": "nt_name@C_names",
+   "seed": 4,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_name@C_names/n07_nt_name@C_names_s4.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Bhishma standing",
+   "checklist": 0.5092618705497848,
+   "checklist_detail": {
+    "c1": 0.2878968417644501,
+    "c2": 0.9234520792961121,
+    "c3": 0.0534009225666523,
+    "c4": 0.7911943197250366,
+    "c5": 0.4714685082435608
+   },
+   "clip_raw": 0.24970903992652893,
+   "style_margin": 0.11628061532974243,
+   "max_train_dino": 0.7615872621536255
+  },
+  {
+   "scene_id": "n08",
+   "condition": "nt_name@C_names",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_name@C_names/n08_nt_name@C_names_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Subhadra standing",
+   "checklist": 0.5987539179623127,
+   "checklist_detail": {
+    "c1": 0.8356669545173645,
+    "c2": 0.9745115637779236,
+    "c3": 0.14666709303855896,
+    "c4": 0.13236114382743835,
+    "c5": 0.7439789772033691
+   },
+   "clip_raw": 0.2645122706890106,
+   "style_margin": 0.15147817134857178,
+   "max_train_dino": 0.695059061050415
+  },
+  {
+   "scene_id": "n08",
+   "condition": "nt_name@C_names",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_name@C_names/n08_nt_name@C_names_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Subhadra standing",
+   "checklist": 0.32435654290020466,
+   "checklist_detail": {
+    "c1": 0.8334178328514099,
+    "c2": 0.2883467376232147,
+    "c3": 0.053403329104185104,
+    "c4": 0.16513006389141083,
+    "c5": 0.07938648015260696
+   },
+   "clip_raw": 0.19952739775180817,
+   "style_margin": 0.18152111768722534,
+   "max_train_dino": 0.7055598497390747
+  },
+  {
+   "scene_id": "n08",
+   "condition": "nt_name@C_names",
+   "seed": 3,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_name@C_names/n08_nt_name@C_names_s3.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Subhadra standing",
+   "checklist": 0.7031410671770573,
+   "checklist_detail": {
+    "c1": 0.831264317035675,
+    "c2": 0.9716002345085144,
+    "c3": 0.9011154174804688,
+    "c4": 0.12817326188087463,
+    "c5": 0.08899533748626709
+   },
+   "clip_raw": 0.2545815706253052,
+   "style_margin": 0.14925414323806763,
+   "max_train_dino": 0.8005183935165405
+  },
+  {
+   "scene_id": "n08",
+   "condition": "nt_name@C_names",
+   "seed": 4,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_name@C_names/n08_nt_name@C_names_s4.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Subhadra standing",
+   "checklist": 0.5075004026293755,
+   "checklist_detail": {
+    "c1": 0.8792486190795898,
+    "c2": 0.985291600227356,
+    "c3": 0.013606902211904526,
+    "c4": 0.10110651701688766,
+    "c5": 0.20260246098041534
+   },
+   "clip_raw": 0.24113523960113525,
+   "style_margin": 0.21097296476364136,
+   "max_train_dino": 0.7442082166671753
+  },
+  {
+   "scene_id": "n09",
+   "condition": "nt_name@C_names",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_name@C_names/n09_nt_name@C_names_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Duryodhana standing",
+   "checklist": 0.2433146782633331,
+   "checklist_detail": {
+    "c1": 0.3453217148780823,
+    "c2": 0.4848650097846985,
+    "c3": 0.005384662188589573,
+    "c4": 0.028056679293513298,
+    "c5": 0.4625759720802307
+   },
+   "clip_raw": 0.21991923451423645,
+   "style_margin": 0.11330342292785645,
+   "max_train_dino": 0.7117124795913696
+  },
+  {
+   "scene_id": "n09",
+   "condition": "nt_name@C_names",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_name@C_names/n09_nt_name@C_names_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Duryodhana standing",
+   "checklist": 0.4196368745631642,
+   "checklist_detail": {
+    "c1": 0.8439812064170837,
+    "c2": 0.7829358577728271,
+    "c3": 0.015931908041238785,
+    "c4": 0.08403091877698898,
+    "c5": 0.3229720890522003
+   },
+   "clip_raw": 0.24369782209396362,
+   "style_margin": 0.12672895193099976,
+   "max_train_dino": 0.7735516428947449
+  },
+  {
+   "scene_id": "n09",
+   "condition": "nt_name@C_names",
+   "seed": 3,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_name@C_names/n09_nt_name@C_names_s3.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Duryodhana standing",
+   "checklist": 0.3071591715949277,
+   "checklist_detail": {
+    "c1": 0.8200209140777588,
+    "c2": 0.15461444854736328,
+    "c3": 0.0027579788584262133,
+    "c4": 0.11475817859172821,
+    "c5": 0.5801295042037964
+   },
+   "clip_raw": 0.2321188896894455,
+   "style_margin": 0.17345422506332397,
+   "max_train_dino": 0.8120843768119812
+  },
+  {
+   "scene_id": "n09",
+   "condition": "nt_name@C_names",
+   "seed": 4,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_name@C_names/n09_nt_name@C_names_s4.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Duryodhana standing",
+   "checklist": 0.37191464834743077,
+   "checklist_detail": {
+    "c1": 0.20199516415596008,
+    "c2": 0.5869293808937073,
+    "c3": 0.1299128383398056,
+    "c4": 0.4620510935783386,
+    "c5": 0.5854548811912537
+   },
+   "clip_raw": 0.24068085849285126,
+   "style_margin": 0.13624107837677002,
+   "max_train_dino": 0.7725807428359985
+  },
+  {
+   "scene_id": "n10",
+   "condition": "nt_name@C_names",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_name@C_names/n10_nt_name@C_names_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Savitri standing",
+   "checklist": 0.6311899605724547,
+   "checklist_detail": {
+    "c1": 0.3851185441017151,
+    "c2": 0.8224452137947083,
+    "c3": 0.586138904094696,
+    "c4": 0.9387014508247375,
+    "c5": 0.2159014195203781
+   },
+   "clip_raw": 0.22221015393733978,
+   "style_margin": 0.1116076111793518,
+   "max_train_dino": 0.7287191152572632
+  },
+  {
+   "scene_id": "n10",
+   "condition": "nt_name@C_names",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_name@C_names/n10_nt_name@C_names_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Savitri standing",
+   "checklist": 0.6315171279840999,
+   "checklist_detail": {
+    "c1": 0.8742015957832336,
+    "c2": 0.9895350337028503,
+    "c3": 0.5729309320449829,
+    "c4": 0.04608653113245964,
+    "c5": 0.7181459665298462
+   },
+   "clip_raw": 0.265219122171402,
+   "style_margin": 0.1889665722846985,
+   "max_train_dino": 0.7884964346885681
+  },
+  {
+   "scene_id": "n10",
+   "condition": "nt_name@C_names",
+   "seed": 3,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_name@C_names/n10_nt_name@C_names_s3.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Savitri standing",
+   "checklist": 0.8528224494722154,
+   "checklist_detail": {
+    "c1": 0.7801202535629272,
+    "c2": 0.980297327041626,
+    "c3": 0.7383342385292053,
+    "c4": 0.9863973259925842,
+    "c5": 0.7051037549972534
+   },
+   "clip_raw": 0.2315894067287445,
+   "style_margin": 0.14313453435897827,
+   "max_train_dino": 0.7751346230506897
+  },
+  {
+   "scene_id": "n10",
+   "condition": "nt_name@C_names",
+   "seed": 4,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_name@C_names/n10_nt_name@C_names_s4.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Savitri standing",
+   "checklist": 0.8666496011945937,
+   "checklist_detail": {
+    "c1": 0.7880650162696838,
+    "c2": 0.9863752722740173,
+    "c3": 0.6973397135734558,
+    "c4": 0.9879818558692932,
+    "c5": 0.8803226947784424
+   },
+   "clip_raw": 0.26386183500289917,
+   "style_margin": 0.12169831991195679,
+   "max_train_dino": 0.8121981620788574
+  },
+  {
+   "scene_id": "n11",
+   "condition": "nt_name@C_names",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_name@C_names/n11_nt_name@C_names_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Karna standing",
+   "checklist": 0.2785181686049327,
+   "checklist_detail": {
+    "c1": 0.4419495761394501,
+    "c2": 0.6021748781204224,
+    "c3": 0.004748867359012365,
+    "c4": 0.0651993528008461
+   },
+   "clip_raw": 0.20703580975532532,
+   "style_margin": 0.11945188045501709,
+   "max_train_dino": 0.7237347364425659
+  },
+  {
+   "scene_id": "n11",
+   "condition": "nt_name@C_names",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_name@C_names/n11_nt_name@C_names_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Karna standing",
+   "checklist": 0.6354090869426727,
+   "checklist_detail": {
+    "c1": 0.824590265750885,
+    "c2": 0.9442726969718933,
+    "c3": 0.13694077730178833,
+    "c4": 0.6358326077461243
+   },
+   "clip_raw": 0.19530564546585083,
+   "style_margin": 0.11685758829116821,
+   "max_train_dino": 0.6239875555038452
+  },
+  {
+   "scene_id": "n11",
+   "condition": "nt_name@C_names",
+   "seed": 3,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_name@C_names/n11_nt_name@C_names_s3.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Karna standing",
+   "checklist": 0.3618371195625514,
+   "checklist_detail": {
+    "c1": 0.7774692177772522,
+    "c2": 0.04822336509823799,
+    "c3": 0.010163380764424801,
+    "c4": 0.6114925146102905
+   },
+   "clip_raw": 0.16852474212646484,
+   "style_margin": 0.1658427119255066,
+   "max_train_dino": 0.8034052848815918
+  },
+  {
+   "scene_id": "n11",
+   "condition": "nt_name@C_names",
+   "seed": 4,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_name@C_names/n11_nt_name@C_names_s4.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Karna standing",
+   "checklist": 0.43777105468325317,
+   "checklist_detail": {
+    "c1": 0.5274909734725952,
+    "c2": 0.35642915964126587,
+    "c3": 0.008179317228496075,
+    "c4": 0.8589847683906555
+   },
+   "clip_raw": 0.1851319670677185,
+   "style_margin": 0.09801900386810303,
+   "max_train_dino": 0.7241897583007812
+  },
+  {
+   "scene_id": "n12",
+   "condition": "nt_name@C_names",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_name@C_names/n12_nt_name@C_names_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Shabari standing",
+   "checklist": 0.20861975401639937,
+   "checklist_detail": {
+    "c1": 0.31764906644821167,
+    "c2": 0.20762832462787628,
+    "c3": 0.27228447794914246,
+    "c4": 0.124570332467556,
+    "c5": 0.03223859891295433,
+    "c6": 0.30202627182006836
+   },
+   "clip_raw": 0.2116677612066269,
+   "style_margin": 0.08496350049972534,
+   "max_train_dino": 0.7514287233352661
+  },
+  {
+   "scene_id": "n12",
+   "condition": "nt_name@C_names",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_name@C_names/n12_nt_name@C_names_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Shabari standing",
+   "checklist": 0.2385222338140011,
+   "checklist_detail": {
+    "c1": 0.8245850205421448,
+    "c2": 0.02298739366233349,
+    "c3": 0.2256421446800232,
+    "c4": 0.04533383622765541,
+    "c5": 0.06529241055250168,
+    "c6": 0.06287456303834915
+   },
+   "clip_raw": 0.20889800786972046,
+   "style_margin": 0.13544142246246338,
+   "max_train_dino": 0.651504397392273
+  },
+  {
+   "scene_id": "n12",
+   "condition": "nt_name@C_names",
+   "seed": 3,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_name@C_names/n12_nt_name@C_names_s3.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Shabari standing",
+   "checklist": 0.4188014067709446,
+   "checklist_detail": {
+    "c1": 0.8616521954536438,
+    "c2": 0.9787344932556152,
+    "c3": 0.06857208162546158,
+    "c4": 0.15067864954471588,
+    "c5": 0.07485083490610123,
+    "c6": 0.0697162076830864
+   },
+   "clip_raw": 0.2116626352071762,
+   "style_margin": 0.13042819499969482,
+   "max_train_dino": 0.7779083847999573
+  },
+  {
+   "scene_id": "n12",
+   "condition": "nt_name@C_names",
+   "seed": 4,
+   "image": "/content/drive/MyDrive/m3/images/names_test/nt_name@C_names/n12_nt_name@C_names_s4.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Shabari standing",
+   "checklist": 0.3285957224667072,
+   "checklist_detail": {
+    "c1": 0.41133761405944824,
+    "c2": 0.8443989753723145,
+    "c3": 0.05183899775147438,
+    "c4": 0.04400019347667694,
+    "c5": 0.25535380840301514,
+    "c6": 0.11609824001789093
+   },
+   "clip_raw": 0.1496465802192688,
+   "style_margin": 0.09777110815048218,
+   "max_train_dino": 0.7370572090148926
+  }
+ ]
+}
