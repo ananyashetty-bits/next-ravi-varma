@@ -1,0 +1,96 @@
+{
+ "C_names": {
+  "screen": {
+   "step": 800,
+   "stage": "screen",
+   "style_margin": 0.11073707789182663,
+   "style_margin_std": 0.05312539264559746,
+   "clip_text": 0.3166704475879669,
+   "max_train_dino_p95": 0.8159270286560059,
+   "style_bleed": -0.0012354978825896978,
+   "drift": 0.10373254865407944,
+   "controls_clip_text_change": 0.011950148269534111,
+   "holdout_loss": 0.20080938878513518,
+   "train_probe_loss": 0.1881641664258023
+  },
+  "deep": {
+   "step": 800,
+   "stage": "deep",
+   "style_margin": 0.11454441398382187,
+   "style_margin_std": 0.0476495586335659,
+   "clip_text": 0.3135029971599579,
+   "max_train_dino_p95": 0.8264420628547668,
+   "style_bleed": 0.01999545283615589,
+   "drift": 0.1423862725496292,
+   "controls_clip_text_change": 0.007350796367973089,
+   "per_prompt_style_margin": [
+    0.1613650768995285,
+    0.06804610788822174,
+    0.1923649162054062,
+    0.09292708337306976,
+    0.08184745907783508,
+    0.08772066235542297,
+    0.10427571833133698,
+    0.12780828773975372
+   ],
+   "style_margin_no_trigger": -0.0023971684277057648,
+   "style_margin_suffix_only": 0.1065211147069931,
+   "holdout_loss": 0.20080938878513518,
+   "train_probe_loss": 0.1881641664258023
+  }
+ },
+ "winner": {
+  "screen": {
+   "step": 800,
+   "stage": "screen",
+   "style_margin": 0.12799209356307983,
+   "style_margin_std": 0.049724727869033813,
+   "clip_text": 0.3010880947113037,
+   "max_train_dino_p95": 0.8194383978843689,
+   "style_bleed": -0.005156623665243387,
+   "drift": 0.1532822549343109,
+   "controls_clip_text_change": 0.00406133895739913,
+   "holdout_loss": 0.20075890152005568,
+   "train_probe_loss": 0.18803209976849522
+  },
+  "deep": {
+   "step": 800,
+   "stage": "deep",
+   "style_margin": 0.12277869880199432,
+   "style_margin_std": 0.04273921251296997,
+   "clip_text": 0.29956042766571045,
+   "max_train_dino_p95": 0.8461109399795532,
+   "style_bleed": 0.011119616217911243,
+   "drift": 0.16513852775096893,
+   "controls_clip_text_change": 0.0069188629277050495,
+   "per_prompt_style_margin": [
+    0.15747767686843872,
+    0.10859999060630798,
+    0.18890848755836487,
+    0.11337481439113617,
+    0.08902740478515625,
+    0.10029655694961548,
+    0.10586625337600708,
+    0.11867845058441162
+   ],
+   "style_margin_no_trigger": 0.015843670815229416,
+   "style_margin_suffix_only": 0.10536991059780121,
+   "holdout_loss": 0.20075890152005568,
+   "train_probe_loss": 0.18803209976849522
+  }
+ },
+ "holdout_rise": 5.048726507950185e-05,
+ "checks": {
+  "style_bleed <= 0.059": true,
+  "holdout rise <= 0.01": true,
+  "max_train_dino p95 <= 0.85": true
+ },
+ "pass": true,
+ "thresholds": {
+  "tie_band": 0.0295,
+  "mem_flag_dino_p95": 0.85,
+  "max_style_bleed": 0.059,
+  "max_holdout_loss_rise": 0.01
+ },
+ "rule": "formal check on the step-800 screen rows (comparable to the winner's); deep rows reported alongside"
+}
