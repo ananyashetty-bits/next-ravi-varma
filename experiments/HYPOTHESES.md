@@ -47,7 +47,11 @@ Chosen at S3 on **dev only**:
 ### Section B deviations
 Rule: after results exist, the text above is never edited. Each change gets one dated line here: `YYYY-MM-DD: <what changed>, <why>, <which results it affects>`.
 
-<!-- no deviations yet -->
+- 2026-11-04: The dev set has 16 scenes (s09-s16, s25-s32), not 32; A's and C's scenes were not merged. All paired dev comparisons use n=16.
+- 2026-11-04: The c0/c1 manifests do not record the LoRA scale; the config value (1.0) is assumed pending A's confirmation.
+- 2026-11-04: The c4 manifest labelled conditions per image (c4_llm_nokb_0 ...); load_items now strips the trailing _<idx>.
+- 2026-11-14: The dev set on `main` now has 24 scenes (C's s17-s24 added 10 Nov; A's s01-s08 never added). c0, c1, c2, c3 (interim KB) and c4 are scored on the original 16; c3_llm_kb_ckb and c6 on all 24. Every paired comparison uses the scenes both conditions share and reports its n.
+- 2026-11-14: The c0 results file is named `c0_base_raw@base_dev.json` (it was `c0_base_raw_dev.json` on the unmerged branch), to follow `<condition>@<model>_<split>.json`. Scores are unchanged.
 
 ## Section D (Member D: Expander)
 

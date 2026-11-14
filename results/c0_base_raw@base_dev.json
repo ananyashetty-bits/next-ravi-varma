@@ -1,0 +1,737 @@
+{
+ "manifest": "/content/drive/MyDrive/m3/images/c0_base_raw/dev/manifest.json",
+ "scenes_file": "/content/m3/eval/test_scenes_dev.json",
+ "scored_at": "2026-11-04T08:09:38.676823",
+ "judge": "Qwen/Qwen2-VL-2B-Instruct",
+ "n_images": 32,
+ "summary": {
+  "c0_base_raw": {
+   "checklist": {
+    "mean": 0.568697353074741,
+    "ci95": [
+     0.4956805552845779,
+     0.6431045660425458
+    ],
+    "n_scenes": 16
+   },
+   "clip_raw": {
+    "mean": 0.267967632971704,
+    "ci95": [
+     0.25546972333686424,
+     0.2807578944484703
+    ],
+    "n_scenes": 16
+   },
+   "style_margin": {
+    "mean": 0.024568662978708744,
+    "ci95": [
+     0.006091112410649658,
+     0.04144565723836422
+    ],
+    "n_scenes": 16
+   },
+   "max_train_dino": {
+    "mean": 0.6480714855715632,
+    "ci95": [
+     0.5855279884301126,
+     0.7046666489215567
+    ],
+    "n_scenes": 16
+   }
+  }
+ },
+ "per_scene": {
+  "c0_base_raw": {
+   "checklist": {
+    "s09": 0.7810744990905126,
+    "s10": 0.675775982439518,
+    "s11": 0.7391647771000862,
+    "s12": 0.7159629745615853,
+    "s13": 0.6704307198524475,
+    "s14": 0.8281507125745218,
+    "s15": 0.2557266312651336,
+    "s16": 0.5977265006966062,
+    "s25": 0.44583098217844963,
+    "s26": 0.4352831480558962,
+    "s27": 0.5198273789137602,
+    "s28": 0.45026478860527275,
+    "s29": 0.47380321472883224,
+    "s30": 0.4955015778541565,
+    "s31": 0.44606238580308855,
+    "s32": 0.5685713754759893
+   },
+   "clip_raw": {
+    "s09": 0.2894734591245651,
+    "s10": 0.28507302701473236,
+    "s11": 0.27839113771915436,
+    "s12": 0.23795641213655472,
+    "s13": 0.2813597023487091,
+    "s14": 0.31064239144325256,
+    "s15": 0.2454347088932991,
+    "s16": 0.24338577687740326,
+    "s25": 0.26244090497493744,
+    "s26": 0.22743920236825943,
+    "s27": 0.23679443448781967,
+    "s28": 0.25447890162467957,
+    "s29": 0.2915906012058258,
+    "s30": 0.28227752447128296,
+    "s31": 0.3079102486371994,
+    "s32": 0.25283369421958923
+   },
+   "style_margin": {
+    "s09": -0.031036287546157837,
+    "s10": -0.0497145801782608,
+    "s11": 0.05312374234199524,
+    "s12": 0.03783637285232544,
+    "s13": 0.029250770807266235,
+    "s14": 0.07472765445709229,
+    "s15": 0.06018853187561035,
+    "s16": -0.02834761142730713,
+    "s25": 0.03131669759750366,
+    "s26": 0.028468310832977295,
+    "s27": 0.06098940968513489,
+    "s28": 0.06417208909988403,
+    "s29": -0.01681840419769287,
+    "s30": 0.02706378698348999,
+    "s31": 0.02694597840309143,
+    "s32": 0.024932146072387695
+   },
+   "max_train_dino": {
+    "s09": 0.34154999256134033,
+    "s10": 0.5267995893955231,
+    "s11": 0.6113202571868896,
+    "s12": 0.7590327262878418,
+    "s13": 0.6995031237602234,
+    "s14": 0.7110413908958435,
+    "s15": 0.7744482457637787,
+    "s16": 0.6159124374389648,
+    "s25": 0.774516373872757,
+    "s26": 0.6528332233428955,
+    "s27": 0.7996808588504791,
+    "s28": 0.7477678656578064,
+    "s29": 0.604793131351471,
+    "s30": 0.7112774550914764,
+    "s31": 0.5337072610855103,
+    "s32": 0.504959836602211
+   }
+  }
+ },
+ "items": [
+  {
+   "scene_id": "s09",
+   "condition": "c0_base_raw",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c0_base_raw/dev/s09_c0_base_raw_s1.png",
+   "coalition": null,
+   "prompt": "Sita sitting alone under a tree in the Ashoka grove, sorrowful, the garden quiet at dusk",
+   "checklist": 0.8680318792661031,
+   "checklist_detail": {
+    "c1": 0.8541598320007324,
+    "c2": 0.9131966233253479,
+    "c3": 0.9488113522529602,
+    "c4": 0.9886655807495117,
+    "c5": 0.4026201367378235
+   },
+   "clip_raw": 0.29862311482429504,
+   "style_margin": -0.033215224742889404,
+   "max_train_dino": 0.34286588430404663
+  },
+  {
+   "scene_id": "s09",
+   "condition": "c0_base_raw",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c0_base_raw/dev/s09_c0_base_raw_s2.png",
+   "coalition": null,
+   "prompt": "Sita sitting alone under a tree in the Ashoka grove, sorrowful, the garden quiet at dusk",
+   "checklist": 0.6941171189149221,
+   "checklist_detail": {
+    "c1": 0.6626664400100708,
+    "c2": 0.5024556517601013,
+    "c3": 0.7839199900627136,
+    "c4": 0.9483823776245117,
+    "c5": 0.4522051513195038
+   },
+   "clip_raw": 0.2803238034248352,
+   "style_margin": -0.02885735034942627,
+   "max_train_dino": 0.34023410081863403
+  },
+  {
+   "scene_id": "s10",
+   "condition": "c0_base_raw",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c0_base_raw/dev/s10_c0_base_raw_s1.png",
+   "coalition": null,
+   "prompt": "Karna standing proudly with his bow at sunrise, golden armour shining",
+   "checklist": 0.5856461127599081,
+   "checklist_detail": {
+    "c1": 0.6408413648605347,
+    "c2": 0.6938608288764954,
+    "c3": 0.13031458854675293,
+    "c4": 0.7472281455993652,
+    "c5": 0.846325159072876
+   },
+   "clip_raw": 0.23066100478172302,
+   "style_margin": -0.09644153714179993,
+   "max_train_dino": 0.5510913729667664
+  },
+  {
+   "scene_id": "s10",
+   "condition": "c0_base_raw",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c0_base_raw/dev/s10_c0_base_raw_s2.png",
+   "coalition": null,
+   "prompt": "Karna standing proudly with his bow at sunrise, golden armour shining",
+   "checklist": 0.7659058521191279,
+   "checklist_detail": {
+    "c1": 0.8521230816841125,
+    "c2": 0.7496918439865112,
+    "c3": 0.9366611242294312,
+    "c4": 0.8018845915794373,
+    "c5": 0.2124313861131668
+   },
+   "clip_raw": 0.3394850492477417,
+   "style_margin": -0.0029876232147216797,
+   "max_train_dino": 0.5025078058242798
+  },
+  {
+   "scene_id": "s11",
+   "condition": "c0_base_raw",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c0_base_raw/dev/s11_c0_base_raw_s1.png",
+   "coalition": null,
+   "prompt": "Arjuna and Subhadra slipping away together through the palace garden, she holding his arm and looking back nervously",
+   "checklist": 0.870354488492012,
+   "checklist_detail": {
+    "c1": 0.7801790833473206,
+    "c2": 0.8560056686401367,
+    "c3": 0.8725897073745728,
+    "c4": 0.9846855401992798,
+    "c5": 0.9606014490127563
+   },
+   "clip_raw": 0.276545912027359,
+   "style_margin": 0.04967993497848511,
+   "max_train_dino": 0.49675482511520386
+  },
+  {
+   "scene_id": "s11",
+   "condition": "c0_base_raw",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c0_base_raw/dev/s11_c0_base_raw_s2.png",
+   "coalition": null,
+   "prompt": "Arjuna and Subhadra slipping away together through the palace garden, she holding his arm and looking back nervously",
+   "checklist": 0.6079750657081604,
+   "checklist_detail": {
+    "c1": 0.7343893647193909,
+    "c2": 0.48074764013290405,
+    "c3": 0.5777238607406616,
+    "c4": 0.9366146922111511,
+    "c5": 0.341464102268219
+   },
+   "clip_raw": 0.2802363634109497,
+   "style_margin": 0.05656754970550537,
+   "max_train_dino": 0.7258856892585754
+  },
+  {
+   "scene_id": "s12",
+   "condition": "c0_base_raw",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c0_base_raw/dev/s12_c0_base_raw_s1.png",
+   "coalition": null,
+   "prompt": "Hanuman kneeling before Rama and offering him Sita's ring, Rama reaching out to take it",
+   "checklist": 0.7216723991764916,
+   "checklist_detail": {
+    "c1": 0.9859445095062256,
+    "c2": 0.9741441011428833,
+    "c3": 0.20126964151859283,
+    "c4": 0.8057799935340881,
+    "c5": 0.560775101184845
+   },
+   "clip_raw": 0.2332308292388916,
+   "style_margin": 0.0477258563041687,
+   "max_train_dino": 0.7387841939926147
+  },
+  {
+   "scene_id": "s12",
+   "condition": "c0_base_raw",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c0_base_raw/dev/s12_c0_base_raw_s2.png",
+   "coalition": null,
+   "prompt": "Hanuman kneeling before Rama and offering him Sita's ring, Rama reaching out to take it",
+   "checklist": 0.710253549946679,
+   "checklist_detail": {
+    "c1": 0.8616717457771301,
+    "c2": 0.9667876958847046,
+    "c3": 0.35884132981300354,
+    "c4": 0.7516776919364929,
+    "c5": 0.5143250226974487
+   },
+   "clip_raw": 0.24268199503421783,
+   "style_margin": 0.027946889400482178,
+   "max_train_dino": 0.7792812585830688
+  },
+  {
+   "scene_id": "s13",
+   "condition": "c0_base_raw",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c0_base_raw/dev/s13_c0_base_raw_s1.png",
+   "coalition": null,
+   "prompt": "Krishna as the peace envoy standing in Duryodhana's royal court, speaking to the king on his throne while ministers and courtiers watch",
+   "checklist": 0.6037365860409207,
+   "checklist_detail": {
+    "c1": 0.8841331005096436,
+    "c2": 0.24503879249095917,
+    "c3": 0.6523534655570984,
+    "c4": 0.6885895133018494,
+    "c5": 0.4933995306491852
+   },
+   "clip_raw": 0.30187201499938965,
+   "style_margin": 0.038647592067718506,
+   "max_train_dino": 0.7583456039428711
+  },
+  {
+   "scene_id": "s13",
+   "condition": "c0_base_raw",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c0_base_raw/dev/s13_c0_base_raw_s2.png",
+   "coalition": null,
+   "prompt": "Krishna as the peace envoy standing in Duryodhana's royal court, speaking to the king on his throne while ministers and courtiers watch",
+   "checklist": 0.7371248536639743,
+   "checklist_detail": {
+    "c1": 0.6939058303833008,
+    "c2": 0.9218557476997375,
+    "c3": 0.5038394331932068,
+    "c4": 0.9299650192260742,
+    "c5": 0.5349916219711304
+   },
+   "clip_raw": 0.26084738969802856,
+   "style_margin": 0.019853949546813965,
+   "max_train_dino": 0.6406606435775757
+  },
+  {
+   "scene_id": "s14",
+   "condition": "c0_base_raw",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c0_base_raw/dev/s14_c0_base_raw_s1.png",
+   "coalition": null,
+   "prompt": "Rama, Sita and Lakshmana leaving for exile on foot through the forest, the people of Ayodhya weeping behind them",
+   "checklist": 0.8050943608913157,
+   "checklist_detail": {
+    "c1": 0.8616294264793396,
+    "c2": 0.9585803151130676,
+    "c3": 0.8163849115371704,
+    "c4": 0.9651638865470886,
+    "c5": 0.04233216866850853
+   },
+   "clip_raw": 0.2883012294769287,
+   "style_margin": 0.09295445680618286,
+   "max_train_dino": 0.7565643787384033
+  },
+  {
+   "scene_id": "s14",
+   "condition": "c0_base_raw",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c0_base_raw/dev/s14_c0_base_raw_s2.png",
+   "coalition": null,
+   "prompt": "Rama, Sita and Lakshmana leaving for exile on foot through the forest, the people of Ayodhya weeping behind them",
+   "checklist": 0.8512070642577277,
+   "checklist_detail": {
+    "c1": 0.9390498995780945,
+    "c2": 0.9579683542251587,
+    "c3": 0.8640576601028442,
+    "c4": 0.9806376695632935,
+    "c5": 0.17743641138076782
+   },
+   "clip_raw": 0.3329835534095764,
+   "style_margin": 0.05650085210800171,
+   "max_train_dino": 0.6655184030532837
+  },
+  {
+   "scene_id": "s15",
+   "condition": "c0_base_raw",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c0_base_raw/dev/s15_c0_base_raw_s1.png",
+   "coalition": null,
+   "prompt": "Savithri pleading with Yama for her husband's life, Satyavan lying lifeless with his head in her lap in the forest",
+   "checklist": 0.3742694603279233,
+   "checklist_detail": {
+    "c1": 0.6762880682945251,
+    "c2": 0.05345745012164116,
+    "c3": 0.06441260129213333,
+    "c4": 0.9828670620918274,
+    "c5": 0.4229723811149597
+   },
+   "clip_raw": 0.26897385716438293,
+   "style_margin": 0.0534130334854126,
+   "max_train_dino": 0.8063657283782959
+  },
+  {
+   "scene_id": "s15",
+   "condition": "c0_base_raw",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c0_base_raw/dev/s15_c0_base_raw_s2.png",
+   "coalition": null,
+   "prompt": "Savithri pleading with Yama for her husband's life, Satyavan lying lifeless with his head in her lap in the forest",
+   "checklist": 0.13718380220234394,
+   "checklist_detail": {
+    "c1": 0.37705716490745544,
+    "c2": 0.02518797293305397,
+    "c3": 0.03210070729255676,
+    "c4": 0.06691168993711472,
+    "c5": 0.16186703741550446
+   },
+   "clip_raw": 0.22189556062221527,
+   "style_margin": 0.0669640302658081,
+   "max_train_dino": 0.7425307631492615
+  },
+  {
+   "scene_id": "s16",
+   "condition": "c0_base_raw",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c0_base_raw/dev/s16_c0_base_raw_s1.png",
+   "coalition": null,
+   "prompt": "in the middle of the great battel at kurukshetra arjun drops his bow and sits down in his chariot, he cant bring himself to fight his own family. krishn turns around from the horses to talk to him. armies with banners and elephants everywhere, dust in the air, conch shells blowing, like the whole world is waiting. make it epic and sad at the same time, golden evening light",
+   "checklist": 0.49730965826246476,
+   "checklist_detail": {
+    "c1": 0.4634266793727875,
+    "c2": 0.3236055076122284,
+    "c3": 0.3806779980659485,
+    "c4": 0.7096208333969116,
+    "c5": 0.7211248874664307
+   },
+   "clip_raw": 0.2523823380470276,
+   "style_margin": -0.04819244146347046,
+   "max_train_dino": 0.6339401006698608
+  },
+  {
+   "scene_id": "s16",
+   "condition": "c0_base_raw",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c0_base_raw/dev/s16_c0_base_raw_s2.png",
+   "coalition": null,
+   "prompt": "in the middle of the great battel at kurukshetra arjun drops his bow and sits down in his chariot, he cant bring himself to fight his own family. krishn turns around from the horses to talk to him. armies with banners and elephants everywhere, dust in the air, conch shells blowing, like the whole world is waiting. make it epic and sad at the same time, golden evening light",
+   "checklist": 0.6981433431307474,
+   "checklist_detail": {
+    "c1": 0.9463057518005371,
+    "c2": 0.7894427180290222,
+    "c3": 0.31857210397720337,
+    "c4": 0.7046851515769958,
+    "c5": 0.7652786374092102
+   },
+   "clip_raw": 0.23438921570777893,
+   "style_margin": -0.008502781391143799,
+   "max_train_dino": 0.5978847742080688
+  },
+  {
+   "scene_id": "s25",
+   "condition": "c0_base_raw",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c0_base_raw/dev/s25_c0_base_raw_s1.png",
+   "coalition": null,
+   "prompt": "Hanuman flying through the sky carrying a mountain of healing herbs",
+   "checklist": 0.3927427548915148,
+   "checklist_detail": {
+    "c1": 0.7222191095352173,
+    "c2": 0.04260612279176712,
+    "c3": 0.3202044665813446,
+    "c4": 0.5407055020332336,
+    "c5": 0.43117713928222656
+   },
+   "clip_raw": 0.26451486349105835,
+   "style_margin": 0.02910369634628296,
+   "max_train_dino": 0.7858180403709412
+  },
+  {
+   "scene_id": "s25",
+   "condition": "c0_base_raw",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c0_base_raw/dev/s25_c0_base_raw_s2.png",
+   "coalition": null,
+   "prompt": "Hanuman flying through the sky carrying a mountain of healing herbs",
+   "checklist": 0.4989192094653845,
+   "checklist_detail": {
+    "c1": 0.8038228154182434,
+    "c2": 0.06025999039411545,
+    "c3": 0.5034884810447693,
+    "c4": 0.6768297553062439,
+    "c5": 0.5793813467025757
+   },
+   "clip_raw": 0.26036694645881653,
+   "style_margin": 0.033529698848724365,
+   "max_train_dino": 0.7632147073745728
+  },
+  {
+   "scene_id": "s26",
+   "condition": "c0_base_raw",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c0_base_raw/dev/s26_c0_base_raw_s1.png",
+   "coalition": null,
+   "prompt": "Show Krishna as the charioteer, turning to counsel a hesitant Arjuna who has lowered his bow, in their chariot just before the battle begins",
+   "checklist": 0.3813697426579893,
+   "checklist_detail": {
+    "c1": 0.6994581818580627,
+    "c2": 0.008005659095942974,
+    "c3": 0.6424499750137329,
+    "c4": 0.18737070262432098,
+    "c5": 0.7259105443954468,
+    "c6": 0.013217845000326633
+   },
+   "clip_raw": 0.23111583292484283,
+   "style_margin": 0.029744505882263184,
+   "max_train_dino": 0.6667131185531616
+  },
+  {
+   "scene_id": "s26",
+   "condition": "c0_base_raw",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c0_base_raw/dev/s26_c0_base_raw_s2.png",
+   "coalition": null,
+   "prompt": "Show Krishna as the charioteer, turning to counsel a hesitant Arjuna who has lowered his bow, in their chariot just before the battle begins",
+   "checklist": 0.4891965534538031,
+   "checklist_detail": {
+    "c1": 0.48550254106521606,
+    "c2": 0.5166550278663635,
+    "c3": 0.6615001559257507,
+    "c4": 0.3869507610797882,
+    "c5": 0.7523787617683411,
+    "c6": 0.0383698008954525
+   },
+   "clip_raw": 0.22376257181167603,
+   "style_margin": 0.027192115783691406,
+   "max_train_dino": 0.6389533281326294
+  },
+  {
+   "scene_id": "s27",
+   "condition": "c0_base_raw",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c0_base_raw/dev/s27_c0_base_raw_s1.png",
+   "coalition": null,
+   "prompt": "yashodha scolding little krishn, his face smeared with butter and a broken pot lying on the floor beside them",
+   "checklist": 0.5249526016414165,
+   "checklist_detail": {
+    "c1": 0.4885316789150238,
+    "c2": 0.7199819684028625,
+    "c3": 0.14387305080890656,
+    "c4": 0.984157383441925,
+    "c5": 0.5106900334358215
+   },
+   "clip_raw": 0.23614370822906494,
+   "style_margin": 0.07159215211868286,
+   "max_train_dino": 0.8007093071937561
+  },
+  {
+   "scene_id": "s27",
+   "condition": "c0_base_raw",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c0_base_raw/dev/s27_c0_base_raw_s2.png",
+   "coalition": null,
+   "prompt": "yashodha scolding little krishn, his face smeared with butter and a broken pot lying on the floor beside them",
+   "checklist": 0.5147021561861038,
+   "checklist_detail": {
+    "c1": 0.1404849737882614,
+    "c2": 0.5901976227760315,
+    "c3": 0.629935622215271,
+    "c4": 0.9774550199508667,
+    "c5": 0.41892579197883606
+   },
+   "clip_raw": 0.2374451607465744,
+   "style_margin": 0.050386667251586914,
+   "max_train_dino": 0.7986524105072021
+  },
+  {
+   "scene_id": "s28",
+   "condition": "c0_base_raw",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c0_base_raw/dev/s28_c0_base_raw_s1.png",
+   "coalition": null,
+   "prompt": "The coronation of Rama and Sita in Ayodhya: the couple seated on the throne, Lakshmana, Bharata and Shatrughna standing beside them, and Hanuman kneeling at their feet",
+   "checklist": 0.35237569361925125,
+   "checklist_detail": {
+    "c1": 0.492289662361145,
+    "c2": 0.06680126488208771,
+    "c3": 0.07714340835809708,
+    "c4": 0.8284167051315308,
+    "c5": 0.26845043897628784,
+    "c6": 0.32600441575050354
+   },
+   "clip_raw": 0.2538188099861145,
+   "style_margin": 0.060913801193237305,
+   "max_train_dino": 0.7557741403579712
+  },
+  {
+   "scene_id": "s28",
+   "condition": "c0_base_raw",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c0_base_raw/dev/s28_c0_base_raw_s2.png",
+   "coalition": null,
+   "prompt": "The coronation of Rama and Sita in Ayodhya: the couple seated on the throne, Lakshmana, Bharata and Shatrughna standing beside them, and Hanuman kneeling at their feet",
+   "checklist": 0.5481538835912942,
+   "checklist_detail": {
+    "c1": 0.5966511964797974,
+    "c2": 0.5708127021789551,
+    "c3": 0.02629096992313862,
+    "c4": 0.8929378390312195,
+    "c5": 0.8621262311935425,
+    "c6": 0.4460271894931793
+   },
+   "clip_raw": 0.25513899326324463,
+   "style_margin": 0.06743037700653076,
+   "max_train_dino": 0.7397615909576416
+  },
+  {
+   "scene_id": "s29",
+   "condition": "c0_base_raw",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c0_base_raw/dev/s29_c0_base_raw_s1.png",
+   "coalition": null,
+   "prompt": "Bhishma lying on a bed of arrows on the field of Kurukshetra while the Pandavas and Krishna gather around him at dusk",
+   "checklist": 0.4615923836827278,
+   "checklist_detail": {
+    "c1": 0.3231476843357086,
+    "c2": 0.2118680775165558,
+    "c3": 0.7798275351524353,
+    "c4": 0.601787805557251,
+    "c5": 0.4612646698951721
+   },
+   "clip_raw": 0.31224116683006287,
+   "style_margin": 0.007460474967956543,
+   "max_train_dino": 0.6428442001342773
+  },
+  {
+   "scene_id": "s29",
+   "condition": "c0_base_raw",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c0_base_raw/dev/s29_c0_base_raw_s2.png",
+   "coalition": null,
+   "prompt": "Bhishma lying on a bed of arrows on the field of Kurukshetra while the Pandavas and Krishna gather around him at dusk",
+   "checklist": 0.4860140457749367,
+   "checklist_detail": {
+    "c1": 0.2162855714559555,
+    "c2": 0.5693565607070923,
+    "c3": 0.6599639654159546,
+    "c4": 0.5161901116371155,
+    "c5": 0.48071005940437317
+   },
+   "clip_raw": 0.27094003558158875,
+   "style_margin": -0.041097283363342285,
+   "max_train_dino": 0.5667420625686646
+  },
+  {
+   "scene_id": "s30",
+   "condition": "c0_base_raw",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c0_base_raw/dev/s30_c0_base_raw_s1.png",
+   "coalition": null,
+   "prompt": "At Draupadi's swayamvara, Arjuna, dressed as a poor brahmin, bends the great bow and aims upward at the fish target turning high above a crowded hall of seated kings, while Draupadi waits holding a garland",
+   "checklist": 0.39189988705847,
+   "checklist_detail": {
+    "c1": 0.2905179262161255,
+    "c2": 0.233711838722229,
+    "c3": 0.5885945558547974,
+    "c4": 0.24939796328544617,
+    "c5": 0.2302227020263672,
+    "c6": 0.8218296766281128
+   },
+   "clip_raw": 0.2790641784667969,
+   "style_margin": 0.05499380826950073,
+   "max_train_dino": 0.6933118104934692
+  },
+  {
+   "scene_id": "s30",
+   "condition": "c0_base_raw",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c0_base_raw/dev/s30_c0_base_raw_s2.png",
+   "coalition": null,
+   "prompt": "At Draupadi's swayamvara, Arjuna, dressed as a poor brahmin, bends the great bow and aims upward at the fish target turning high above a crowded hall of seated kings, while Draupadi waits holding a garland",
+   "checklist": 0.599103268649843,
+   "checklist_detail": {
+    "c1": 0.4997263252735138,
+    "c2": 0.8222219944000244,
+    "c3": 0.5461477041244507,
+    "c4": 0.3287372887134552,
+    "c5": 0.49262720346450806,
+    "c6": 0.834372878074646
+   },
+   "clip_raw": 0.28549087047576904,
+   "style_margin": -0.000866234302520752,
+   "max_train_dino": 0.7292430996894836
+  },
+  {
+   "scene_id": "s31",
+   "condition": "c0_base_raw",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c0_base_raw/dev/s31_c0_base_raw_s1.png",
+   "coalition": null,
+   "prompt": "old Shabri offerring berries to Ram and Laxman outside her little hut in the forrest",
+   "checklist": 0.47600088454782963,
+   "checklist_detail": {
+    "c1": 0.8674830794334412,
+    "c2": 0.6472719311714172,
+    "c3": 0.02218533679842949,
+    "c4": 0.07708721607923508,
+    "c5": 0.6570391654968262
+   },
+   "clip_raw": 0.31486302614212036,
+   "style_margin": 0.03232085704803467,
+   "max_train_dino": 0.6617674231529236
+  },
+  {
+   "scene_id": "s31",
+   "condition": "c0_base_raw",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c0_base_raw/dev/s31_c0_base_raw_s2.png",
+   "coalition": null,
+   "prompt": "old Shabri offerring berries to Ram and Laxman outside her little hut in the forrest",
+   "checklist": 0.41612388705834746,
+   "checklist_detail": {
+    "c1": 0.6016968488693237,
+    "c2": 0.5630617141723633,
+    "c3": 0.030425773933529854,
+    "c4": 0.0728926733136177,
+    "c5": 0.8657297492027283
+   },
+   "clip_raw": 0.30095747113227844,
+   "style_margin": 0.021571099758148193,
+   "max_train_dino": 0.4056470990180969
+  },
+  {
+   "scene_id": "s32",
+   "condition": "c0_base_raw",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c0_base_raw/dev/s32_c0_base_raw_s1.png",
+   "coalition": null,
+   "prompt": "ok so i dont really remember the story, its from an old picture my grandmother kept in her pooja room. there is an old king, very tired and sad, lying on the floor of a dark room in his pallace, his crown fallen off and lying next to him. his young wife is sitting on a low bed a little way off with her back half turned to him, still angry, and her jewelery is thrown all over the floor around her. there is only one small lamp burning so most of the room is in shadow. i think he was begging her to change her mind about something and she wouldnt listen. can you make it look like that, quiet and sad",
+   "checklist": 0.5362695852915446,
+   "checklist_detail": {
+    "c1": 0.5509414672851562,
+    "c2": 0.19103451073169708,
+    "c3": 0.6868969798088074,
+    "c4": 0.27532604336738586,
+    "c5": 0.7061227560043335,
+    "c6": 0.9872315526008606
+   },
+   "clip_raw": 0.2518389821052551,
+   "style_margin": 0.03530538082122803,
+   "max_train_dino": 0.5389416217803955
+  },
+  {
+   "scene_id": "s32",
+   "condition": "c0_base_raw",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c0_base_raw/dev/s32_c0_base_raw_s2.png",
+   "coalition": null,
+   "prompt": "ok so i dont really remember the story, its from an old picture my grandmother kept in her pooja room. there is an old king, very tired and sad, lying on the floor of a dark room in his pallace, his crown fallen off and lying next to him. his young wife is sitting on a low bed a little way off with her back half turned to him, still angry, and her jewelery is thrown all over the floor around her. there is only one small lamp burning so most of the room is in shadow. i think he was begging her to change her mind about something and she wouldnt listen. can you make it look like that, quiet and sad",
+   "checklist": 0.6008731656604342,
+   "checklist_detail": {
+    "c1": 0.570050835609436,
+    "c2": 0.6943662166595459,
+    "c3": 0.32786205410957336,
+    "c4": 0.5469697117805481,
+    "c5": 0.686310887336731,
+    "c6": 0.990019679069519
+   },
+   "clip_raw": 0.25382840633392334,
+   "style_margin": 0.014558911323547363,
+   "max_train_dino": 0.4709780514240265
+  }
+ ]
+}
