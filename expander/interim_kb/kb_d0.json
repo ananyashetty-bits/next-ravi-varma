@@ -1,6 +1,6 @@
 {
   "version": "d-kb0",
-  "_note": "INTERIM KB written by D because C's KB (kb/kb.json) was not available. Covers the 18 characters of the 16 dev scenes on main. Not C's KB: every result made with it carries kb_version d-kb0 and is reported as a deviation. Visual phrases reuse train_v1 caption wording (what the LoRA learned); source.ref = training image stems from m2_training/dataset/train_v1 with their M1 scene_metadata. role = short name-free noun phrase the parser puts in place of the name in the action text. status: verified = backed by at least one training painting of that character; unverified = no training painting, wording from a text reference only, needs C's review.",
+  "_note": "INTERIM KB written by D because C's KB (kb/kb.json) was not available. Covers the 18 characters of the 16 dev scenes on main. Not C's KB: every result made with it carries kb_version d-kb0 and is reported as a deviation. Visual phrases reuse train_v1 caption wording (what the LoRA learned); source.ref = training image stems from m2_training/dataset/train_v1 with their M1 scene_metadata. role = short name-free noun phrase the parser puts in place of the name in the action text. status: verified = backed by at least one training painting of that character; unverified = no training painting, wording from a text reference only, needs C's review. 2026-11-14: Radha and Ahalya added from C's kb.json (#52); no existing output changes.",
   "characters": {
     "rama": {
       "canonical": "Rama",
@@ -202,6 +202,30 @@
       "coverage": "low",
       "source": {"type": "images", "ref": ["varma_savitri_c24"]},
       "status": "verified"
+    },
+    "radha": {
+      "canonical": "Radha",
+      "aliases": ["Radhika", "Radhe", "Radharani"],
+      "epic": "Puranic",
+      "role": "young cowherd woman",
+      "visual": "woman in gold-bordered sari over both shoulders, flowers in bun, gold jewellery, nose ring",
+      "coverage_n": 5,
+      "coverage": "high",
+      "source": {"type": "images", "ref": ["varma_radha_moonlight_b01", "varma_radha_c06", "varma_radha_krishna_banyan_d32"]},
+      "status": "verified",
+      "notes": "Entry from C's kb/kb.json, supplied by C in #52 (2026-11-10)."
+    },
+    "ahalya": {
+      "canonical": "Ahalya",
+      "aliases": ["Ahilya", "Ahalyaa", "Gautami"],
+      "epic": "Ramayana",
+      "role": "sage's wife",
+      "visual": "woman in sari, red blouse, loose black bun, green bangles, gold hoop earrings, bindi",
+      "coverage_n": 1,
+      "coverage": "low",
+      "source": {"type": "images", "ref": ["varma_ahalya_indravalokan_d36", "varma_ram_laxman_b19"]},
+      "status": "verified",
+      "notes": "Entry from C's kb/kb.json, supplied by C in #52 (2026-11-10)."
     }
   },
   "groups": {

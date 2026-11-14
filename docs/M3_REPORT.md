@@ -113,7 +113,7 @@ Deviations: none recorded so far (`experiments/HYPOTHESES.md`, *Section D deviat
 `TODO(B, held-out)`: the same tables on 12 scenes × 4 seeds. Arrives Day 5 evening (see timing risk above).
 
 ### 4.3 Expansion ladder and expander hypotheses
-**Status 2026-11-04: provisional, judge only.** Section D decides H-D1/H-D2 on human faithfulness. Those ratings for c2/c3 are pending, so every outcome below is on the supporting measure (the checklist judge), with 16 dev scenes × seeds 1-2. Sources: `results/c2_template@rrv_v1_dev.json`, `results/c3_llm_kb@rrv_v1_dev.json` (#38); c0/c1/c4 from B's `b/score-dev-c0-c1-c4-v2` (`TODO(B)`: merge). Paired over scenes with `eval/stats.paired`; the full tables are in `expander/EXPANDER.md` §9.
+**Status 2026-11-14: provisional, judge only.** Section D decides H-D1/H-D2 on human faithfulness. Those ratings for c2/c3 are pending, so every outcome below is on the supporting measure (the checklist judge), with 16 dev scenes × seeds 1-2. Sources: `results/c2_template@rrv_v1_dev.json`, `results/c3_llm_kb@rrv_v1_dev.json` (#38); `results/c0_base_raw@base_dev.json`, `results/c1_lora_raw@rrv_v1_dev.json`, `results/c4_llm_nokb@rrv_v1_dev.json` (#62). Paired over scenes with `eval/stats.paired`; the full tables are in `expander/EXPANDER.md` §9.
 
 | Hypothesis | Comparison | Judge checklist, b − a [95% CI] | Outcome on the judge | Pre-registered outcome |
 |---|---|---|---|---|

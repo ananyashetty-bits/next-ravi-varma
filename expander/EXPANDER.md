@@ -2,7 +2,7 @@
 
 `expand(text, scene=None, mode="llm_kb") -> ExpandedPrompt` turns a user's epic-scene sentence into a prompt the M2 model (`rrv_v1`) can render: name-free visual phrases, the trigger first, the style tail last, under the token limit. It runs a **local** instruct LLM (no paid API) with a deterministic template as the fallback.
 
-> **Status (2026-11-04):** the design and all modes are built and tested (`tests/test_expander_*.py`). c2, c3 and c4 are expanded, generated and scored on the 16 dev scenes on `main` (§9); human ratings for c2/c3 are pending. **c2 and c3 run on D's interim KB `d-kb0`** (`expander/interim_kb/`), because C's KB and parser were not available (#21); see the Section D deviations. Everything still marked `TODO(results)` waits for numbers from `outputs/expansions/`, `results/` or B's tables; no number goes in by hand. Contracts referred to: Overview v2 §6 (`config/m3.json`, SceneSpec, ExpandedPrompt, signatures, CLI).
+> **Status (2026-11-14):** the design and all modes are built and tested (`tests/test_expander_*.py`). c2, c3 and c4 are expanded, generated and scored on the first 16 dev scenes (§9); c2 is expanded on all 24; c3/c4 on s17-s24 and human ratings for c2/c3 are pending. **c2 and c3 run on D's interim KB `d-kb0`** (`expander/interim_kb/`), because C's KB and parser were not available (#21); see the Section D deviations. Everything still marked `TODO(results)` waits for numbers from `outputs/expansions/`, `results/` or B's tables; no number goes in by hand. Contracts referred to: Overview v2 §6 (`config/m3.json`, SceneSpec, ExpandedPrompt, signatures, CLI).
 
 ## 1. Design principle
 
@@ -122,7 +122,7 @@ Settled since Day 1: scene IDs `s25`-`s32` (B, #22); B's scene check uses `expan
 
 ## 9. Ladder results (c2 → c4 → c3)
 
-**Judge results, dev (supporting evidence; 16 scenes × seeds 1-2; `rrv_v1` at scale 1.0).** Means from `results/<condition>@rrv_v1_dev.json` (c2/c3 on `main`, #38; c0/c1/c4 on B's `b/score-dev-c0-c1-c4-v2`, pending B's PR):
+**Judge results, dev (supporting evidence; 16 scenes × seeds 1-2; `rrv_v1` at scale 1.0).** Means from `results/` on `main`: `c0_base_raw@base_dev.json`, `c1_lora_raw@rrv_v1_dev.json`, `c4_llm_nokb@rrv_v1_dev.json` (B, #62) and `c2_template@rrv_v1_dev.json`, `c3_llm_kb@rrv_v1_dev.json` (D, #38). The 8 scenes C added (s17-s24) are not scored for c2/c3/c4 yet:
 
 | Condition | checklist (judge), 95% CI | `style_margin` | `clip_raw` | `max_train_dino` p95 |
 |---|---|---|---|---|
@@ -158,7 +158,7 @@ Process table per file from `check_expansions.py --strict` (real CLIP counter):
 | file | n | valid | trigger-first | within budget | leaks before | leaks after | fallback | latency mean / median (s) | tokens mean / max | dropped / rec |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 | `c4_llm_nokb_dev.json` (16 scenes, 2026-11-02) | 16 | 100.0% | 100.0% | 100.0% | 75.0% | 0 | 0.0% | 21.03 / 13.57 | 62.4 / 70 | 0.75 |
-| `c2_template_dev.json` (16 scenes, interim KB `d-kb0`, 2026-11-04) | 16 | 100.0% | 100.0% | 100.0% | 0.0% | 0 | 0.0% | 0.004 / 0.003 | 66.3 / 70 | 5.69 |
+| `c2_template_dev.json` (24 scenes, interim KB `d-kb0`; s17-s24 added 2026-11-14) | 24 | 100.0% | 100.0% | 100.0% | 0.0% | 0 | 0.0% | 0.003 / 0.003 | 64.3 / 70 | 4.46 |
 | `c3_llm_kb_dev.json` (16 scenes, interim KB `d-kb0`, 2026-11-04) | 16 | 100.0% | 100.0% | 100.0% | 12.5% | 0 | 0.0% | 16.14 / 9.85 | 64.2 / 70 | 1.81 |
 
 The LLM rows' mean latency includes the model load in the first scene's `latency_s` (`model_load_s`: c4 124 s, c3 103 s, fresh runtimes). Without it, per scene: c4 mean 13.3 s, median 13.3 s; c3 mean 9.7 s, median 9.4 s. `json_retry` was false in every record. The second calls (c4: 12, c3: 2) were all name re-asks; no phrase had to be scrubbed in any file. With the KB block, the LLM used names in 2 of 16 records (c3), against 12 of 16 without it (c4).
@@ -180,6 +180,7 @@ Seen so far at the **expansion** stage (from records, not from scored images):
 - **The LLM reaches for names** (c4: 75% of records before repair). One re-ask fixed all of them; nothing was scrubbed.
 - **The stand-in parser breaks the action text** (c2 preview on the 16 dev scenes, with the stand-in parser and KB; not committed, not scored). It cuts known names out of the sentence and leaves fragments: s12 "kneeling before and offering him 's ring"; s29 "lying on a bed of arrows on the field of while the and gather around him". The fix is C's parser returning the action already name-free (#21); the scrub can delete words but cannot rewrite them.
 - **Characters missing from the KB get no description or the wrong one** (same preview): s10 has no description for its warrior; s29's old warrior picked up another character's description. KB coverage for the dev characters is requested in #21.
+- **Reproducibility note (2026-11-14):** a later stand-in parser fix (an article after a comma: "…, the young prince") changes one existing dev prompt if c2 is re-run from scratch: s28's "young prince" becomes "the young prince". The committed s28 record, and the images scored from it, are kept unchanged.
 - **Both are fixed for the dev runs** by the interim KB `d-kb0` and the role-replacing stand-in parser (#37): the c2 file has 0 names before repair, and every action reads as a sentence ("the old warrior lying on a bed of arrows … while the five crowned princes and the blue-skinned figure gather around him").
 - **Template c2 loses phrases on crowded or long scenes:** 5.7 phrases dropped per record on average. For example, s28 keeps the coronation but drops the brothers standing and the devotee kneeling; s16 and s32 (tier 5, 100+ words) keep only their first clauses. This is the template working as designed under the 70-token budget.
 
@@ -231,7 +232,7 @@ Images (A's `gen` profile) and scores (B's `eval/score.py`, `eval` profile): `RU
 | template | `tpl2` |
 | KB | `d-kb0` (`expander/interim_kb/kb_d0.json`), unless C's KB replaces it before the freeze |
 | LLM | `Qwen/Qwen3-4B-Instruct-2507` @ `cdbee75f17c01a7cc42f958dc650907174af0554`, 4-bit NF4, temperature 0 |
-| parser | the stand-in (`expander/_shims/stub_parser.py`, via `kb/stub_parser.py`) |
+| parser | the stand-in (`expander/_shims/stub_parser.py`). Since C's `kb/parser.py` landed (#49), `batch_expand.py` picks C's parser by default, so D's runs pass `--parser shim` to stay on the parser behind the scored dev records (each new record has a `parser` field) |
 
 The frozen commit is the `main` merge of the freeze PR; D posts its sha in the Status issue. No changes after it except announced bug fixes.
 
@@ -239,9 +240,9 @@ The frozen commit is the `main` merge of the freeze PR; D posts its sha in the S
 ```
 git checkout <D's frozen sha>
 PRIV=<B's private folder>   # outside the repo and the shared Drive
-python expander/batch_expand.py --scenes $PRIV/test_scenes_heldout.json --mode template --split heldout --kb expander/interim_kb/kb_d0.json --out outputs/expansions/c2_template_heldout.json
-python expander/batch_expand.py --scenes $PRIV/test_scenes_heldout.json --mode llm_kb   --split heldout --kb expander/interim_kb/kb_d0.json --cache $PRIV/heldout_cache.json --out outputs/expansions/c3_llm_kb_heldout.json
-python expander/batch_expand.py --scenes $PRIV/test_scenes_heldout.json --mode llm_nokb --split heldout --cache $PRIV/heldout_cache.json --out outputs/expansions/c4_llm_nokb_heldout.json
+python expander/batch_expand.py --scenes $PRIV/test_scenes_heldout.json --mode template --split heldout --kb expander/interim_kb/kb_d0.json --parser shim --out outputs/expansions/c2_template_heldout.json
+python expander/batch_expand.py --scenes $PRIV/test_scenes_heldout.json --mode llm_kb   --split heldout --kb expander/interim_kb/kb_d0.json --parser shim --cache $PRIV/heldout_cache.json --out outputs/expansions/c3_llm_kb_heldout.json
+python expander/batch_expand.py --scenes $PRIV/test_scenes_heldout.json --mode llm_nokb --split heldout --parser shim --cache $PRIV/heldout_cache.json --out outputs/expansions/c4_llm_nokb_heldout.json
 python expander/check_expansions.py outputs/expansions/c2_template_heldout.json outputs/expansions/c3_llm_kb_heldout.json outputs/expansions/c4_llm_nokb_heldout.json --strict
 ```
 - **What can be committed:** the expansion files hold only prompts, but they reveal the held-out texts' content. Commit them only when B reveals the held-out set (Day 5).

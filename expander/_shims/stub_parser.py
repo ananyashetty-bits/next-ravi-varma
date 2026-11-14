@@ -58,6 +58,14 @@ def _pattern(alias: str) -> re.Pattern:
     return re.compile(r"\b" + r"\s+".join(map(re.escape, words)) + r"\b", re.IGNORECASE)
 
 
+def _determined(before: str) -> bool:
+    """True if the words just before a name already determine it ("the", "his", "a hesitant", "old")."""
+    if before.rstrip().endswith((",", ";", ":", ".", "!", "?")):
+        return False  # a new clause starts: "…from a curse, Lakshman…" -> "…, the young prince…"
+    prev = [w.lower() for w in re.findall(r"[A-Za-z]+", before)]
+    return bool(prev) and (prev[-1] in _NO_ARTICLE or (len(prev) > 1 and prev[-2] in _ARTICLES))
+
+
 def _load_kb(kb_path: str | None) -> dict:
     with open(kb_path or DEFAULT_KB, encoding="utf-8") as f:
         return json.load(f)
@@ -149,9 +157,7 @@ def parse_scene(text: str, scene_id: str = "", kb_path: str | None = None) -> di
         if not role:
             action = action[:start] + action[end:]
             continue
-        prev = [w.lower() for w in re.findall(r"[A-Za-z]+", action[:start])]
-        determined = bool(prev) and (prev[-1] in _NO_ARTICLE or (len(prev) > 1 and prev[-2] in _ARTICLES))
-        phrase = role if determined else f"the {role}"
+        phrase = role if _determined(action[:start]) else f"the {role}"
         action = action[:start] + phrase + action[end:]
     if any(e.get("role") for e in entities.values()):
         # names the KB does not cover (e.g. held-out characters) become "the figure", so the action keeps its
@@ -159,8 +165,7 @@ def parse_scene(text: str, scene_id: str = "", kb_path: str | None = None) -> di
         from expander.names import default_matcher
 
         for start, end, _ in reversed(default_matcher().spans(action)):
-            prev = [w.lower() for w in re.findall(r"[A-Za-z]+", action[:start])]
-            determined = bool(prev) and (prev[-1] in _NO_ARTICLE or (len(prev) > 1 and prev[-2] in _ARTICLES))
+            determined = _determined(action[:start])
             tail = re.sub(r"^['\u2019]s\b", "'s", action[end:])
             action = action[:start] + ("figure" if determined else "the figure") + tail
     action = _tidy(_IMPERATIVE.sub("", action))
