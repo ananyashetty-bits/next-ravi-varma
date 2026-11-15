@@ -174,6 +174,9 @@ def build_parser() -> argparse.ArgumentParser:
     ap.add_argument("--overwrite", action="store_true", help="ignore an existing --out instead of resuming")
     ap.add_argument("--counter", choices=("auto", "clip", "approx"), default="auto",
                     help="token counter: clip = common.tokens.n_tokens; approx = CPU stand-in for dry runs")
+    ap.add_argument("--parser", choices=("auto", "shim"), default="auto",
+                    help="auto: kb.parser > kb.stub_parser > D's stand-in (default); shim: always D's stand-in "
+                         "(expander/_shims/stub_parser.py), e.g. to extend runs made before kb/parser.py existed")
     ap.add_argument("--scene_negatives", action="store_true",
                     help="c3_neg: add 3-6 LLM anachronism negatives to the config negative (LLM modes only; "
                          "use --out outputs/expansions/c3_neg_<split>.json)")
@@ -217,7 +220,13 @@ def run(argv: list[str] | None = None) -> dict:
         client = make_client(cfg, size, backend, model=a.llm_model, revision=a.llm_revision, lazy=True)
         cache_path = a.cache if a.cache is not None else (None if a.llm == "fake" else str(DEFAULT_CACHE))
         cache = Cache(None if cache_path in (None, "", "none") else cache_path)
-    parse = get_parser() if a.mode != "raw" and pending else None
+    if a.parser == "shim":
+        from expander._shims.stub_parser import parse_scene as parse
+    else:
+        parse = get_parser()
+    parser_name = f"{parse.__module__}.parse_scene"
+    if a.mode == "raw" or not pending:
+        parse = None
 
     records = dict(done)
     new: list[dict] = []
@@ -236,6 +245,8 @@ def run(argv: list[str] | None = None) -> dict:
                                  "and re-run the same command to resume.")
             rec["scene_id"] = sid
             rec["token_counter"] = counter_name
+            if parse is not None:
+                rec["parser"] = parser_name
             if needs_llm and client is not None:
                 rec["llm_revision"] = getattr(client, "revision", None)
                 if getattr(client, "loads", 0) > loads_before:  # this scene's latency_s includes the model load

@@ -7,6 +7,14 @@
   "prompt_version": "v1",
   "reply": "{\"phrases\": [\n  \"Savithri kneeling in forest\",\n  \"Yama standing sternly\",\n  \"Satyavan lying still\",\n  \"head resting in her lap\",\n  \"dew-covered grass floor\",\n  \"soft morning light\",\n  \"worn silk saree\",\n  \"gilded crown on Yama\",\n  \"faint golden glow\",\n  \"tears on her cheeks\",\n  \"distant temple spire\"\n]}"
  },
+ "02da191d095e2343a461d07ccaeb206f0ebd30ee116db7b5a81a79215ecc7310": {
+  "created": "2026-11-15T10:26:54+00:00",
+  "kb_version": "d-kb0",
+  "mode": "llm_kb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"woman in dark blue saree\",\n  \"long black hair flowing\",\n  \"folding hands in appeal\",\n  \"blue-skinned man with crown\",\n  \"yellow dhoti adorned\",\n  \"flower garlands around neck\",\n  \"pillared temple hall\",\n  \"soft golden light\",\n  \"serene expression\",\n  \"gilded jewelry on wrists\"\n]}"
+ },
  "0c48885c1741e56d4a67ec003833ca827744de3183190141c631fb47bcd7e557": {
   "created": "2026-11-04T21:32:01+00:00",
   "kb_version": "d-kb0",
@@ -39,6 +47,14 @@
   "prompt_version": "v1",
   "reply": "{\"phrases\": [\n  \"Hanuman kneeling with hands folded\",\n  \"offering ring to Rama's outstretched hand\",\n  \"Rama reaching forward with calm expression\",\n  \"Sita's ring on a red cloth\",\n  \"golden armor gleaming in soft light\",\n  \"pillared courtyard under open sky\",\n  \"warm afternoon sunlight filtering through trees\"\n]}"
  },
+ "1716fca671a1a0783674cbcdd4acbfb87cba6e570b000a42d34f1cfc16bd2cd6": {
+  "created": "2026-11-15T10:29:41+00:00",
+  "kb_version": "stub0",
+  "mode": "llm_nokb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"loose hair flowing\",\n  \"kneeling before rulers\",\n  \"pleading with hands outstretched\",\n  \"courtiers standing in background\",\n  \"marble courtyard floor\",\n  \"golden throne in distance\",\n  \"dusk lighting softening shadows\"\n]}"
+ },
  "18edc22ca246e430e20f4cf196f0dbfa41bba36538391f522baa8b7d9397ffe8": {
   "created": "2026-11-04T21:33:30+00:00",
   "kb_version": "d-kb0",
@@ -62,6 +78,14 @@
   "model": "Qwen/Qwen3-4B-Instruct-2507",
   "prompt_version": "v1",
   "reply": "{\"phrases\": [\n  \"peace envoy in dhoti and scarf\",\n  \"standing before king on throne\",\n  \"ministers watching with bowed heads\",\n  \"gilded palace hall with pillars\",\n  \"soft golden light filtering in\",\n  \"calm expression, hands open\",\n  \"draped in white and blue cloth\",\n  \"kneeling courtiers in red and gold\"\n]}"
+ },
+ "28499e933a5724d33bf0f88bf5fa5c96fd3483ce7ae518153b5f9cd8cf13d909": {
+  "created": "2026-11-15T10:29:49+00:00",
+  "kb_version": "stub0",
+  "mode": "llm_nokb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"man in red dhoti kneeling\",\n  \"woman in white sari bowing\",\n  \"sage in grey robe standing\",\n  \"lakshman with blue turban watching\",\n  \"golden lotus at feet of woman\",\n  \"sunlight through temple arches\",\n  \"curse broken by gentle touch\",\n  \"man offering hand to woman\"\n]}"
  },
  "2be9b35ef51d304ae3d3f8205d927d1c454ab4e66d4e069fee9b1128d0760876": {
   "created": "2026-11-02T12:18:59+00:00",
@@ -95,6 +119,22 @@
   "prompt_version": "v1",
   "reply": "{\"phrases\": [\n  \"elderly figure lying on arrow bed\",\n  \"Pandavas kneeling in quiet reverence\",\n  \"Krishna standing with hands folded\",\n  \"dusk sky with deep orange and purple hues\",\n  \"military field with scattered banners\",\n  \"gilded armor and royal garments\",\n  \"soft golden light filtering through trees\"\n]}"
  },
+ "30e9a6914371fbf86f819b15140a5cb55c959ffb1f9ef0828d6deb45b0bb92ad": {
+  "created": "2026-11-15T10:29:20+00:00",
+  "kb_version": "stub0",
+  "mode": "llm_nokb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\"woman kneeling with hands folded\", \"offering water from a brass pot\", \"man standing calmly beside her\", \"leaf hut in the forest clearing\", \"soft morning sunlight\", \"dew-covered grass around\", \"simple cotton saree\", \"gilded copper vessel\", \"gentle breeze in the air\"]}"
+ },
+ "32756e9db6fdb3bae611350596e4f293f9ca50ac4b6789dca4bfff73f7ef85eb": {
+  "created": "2026-11-15T10:28:40+00:00",
+  "kb_version": "stub0",
+  "mode": "llm_nokb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"Sita standing alone by lake\",\n  \"gazing toward distant shore\",\n  \"moonlight reflecting on water\",\n  \"dressed in simple white saree\",\n  \"hands clasped tightly in lap\",\n  \"anxious expression in eyes\",\n  \"still night air with silence\"\n]}"
+ },
  "3e1c574d53065067dba29735539ae8939fef5ab2d2b66d38a82571beeb48cc8c": {
   "created": "2026-11-04T21:33:48+00:00",
   "kb_version": "d-kb0",
@@ -102,6 +142,14 @@
   "model": "Qwen/Qwen3-4B-Instruct-2507",
   "prompt_version": "v1",
   "reply": "{\"phrases\": [\n  \"warrior in warrior attire\",\n  \"bending the long bow\",\n  \"aiming upward at fish target\",\n  \"woman in dark blue saree\",\n  \"holding a garland\",\n  \"crowded hall with seated kings\",\n  \"pillared royal hall with carved stone columns\",\n  \"gold jewelry on woman\",\n  \"long black hair flowing\",\n  \"dusk lighting with soft glow\"\n]}"
+ },
+ "3f247dbf76a697695c5d761570bdd976eb42b6d51f2e4cf57ef83c852f9239f9": {
+  "created": "2026-11-15T10:26:39+00:00",
+  "kb_version": "d-kb0",
+  "mode": "llm_kb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"young woman in red saree\",\n  \"gold border and bangles\",\n  \"layered pearl necklaces\",\n  \"standing beside moonlit lake\",\n  \"gazing anxiously along shore\",\n  \"silvery moonlight reflecting\"\n]}"
  },
  "40c0217361c4397819fce33655f5341030bde10895b74fea389633eb3b52e90c": {
   "created": "2026-11-02T12:18:53+00:00",
@@ -119,6 +167,14 @@
   "prompt_version": "v1",
   "reply": "{\"phrases\": [\n  \"old woman in white saree\",\n  \"grey hair with silver strands\",\n  \"basket of fresh berries\",\n  \"blue-skinned man with crown\",\n  \"bare-chested with topknot\",\n  \"carrying long bow and arrows\",\n  \"young man in white attire\",\n  \"wearing bow and quiver\",\n  \"standing outside thatched hut\",\n  \"forest clearing with tall trees\",\n  \"soft morning light\",\n  \"gentle offering gesture\"\n]}"
  },
+ "475dd264369426b94428c548463fdb7eece2d1d81bfe4049d932307de5b5077e": {
+  "created": "2026-11-15T10:29:28+00:00",
+  "kb_version": "stub0",
+  "mode": "llm_nokb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"brothers sitting on sea rocks\",\n  \"Hanuman in lion skin cloak\",\n  \"Lakshmana in simple dhoti\",\n  \"Rama in royal silk robe\",\n  \"gazing at waves with calm expression\",\n  \"golden sun setting behind shore\",\n  \"distant view of island horizon\"\n]}"
+ },
  "49cdd88ae4b178944239af00eb8ce8df3257bddb0295976878b1a3fcaf518c05": {
   "created": "2026-11-02T12:19:56+00:00",
   "kb_version": "stub0",
@@ -134,6 +190,14 @@
   "model": "Qwen/Qwen3-4B-Instruct-2507",
   "prompt_version": "v1",
   "reply": "{\"phrases\": [\n  \"young mother in maroon saree\",\n  \"blue-skinned man with jeweled crown\",\n  \"face smeared with butter\",\n  \"holding broken pot on floor\",\n  \"kneeling with stern expression\",\n  \"yellow dhoti with flower garlands\",\n  \"pillared courtyard at dusk\",\n  \"soft golden lighting\",\n  \"faint dust motes in air\"\n]}"
+ },
+ "4fb1cfed19be7ace62433ffa209baf67f11f94742a0a051615de607d583b3b57": {
+  "created": "2026-11-15T10:30:05+00:00",
+  "kb_version": "stub0",
+  "mode": "llm_nokb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"lady seated on terrace\",\n  \"playing stringed instrument\",\n  \"night sky backdrop\",\n  \"flowing silk dress\",\n  \"gilded jewelry\",\n  \"soft moonlight\",\n  \"faint firelight glow\",\n  \"distant wind chimes\",\n  \"elegant posture\",\n  \"subtle smile\",\n  \"pillared courtyard setting\"\n]}"
  },
  "5401335bb3a1567a2ace195e2aa572be9218584607342061bf297b5d4fec3c24": {
   "created": "2026-11-02T12:16:49+00:00",
@@ -175,6 +239,22 @@
   "prompt_version": "v1",
   "reply": "{\"phrases\": [\"figure in brown cloth kneeling\", \"offering object to outstretched hand\", \"person reaching forward with calm expression\", \"ring on red cloth in center\", \"golden armor reflecting soft light\", \"open courtyard with tall pillars\", \"warm sunlight filtering through trees\"]}"
  },
+ "651708ada39b8ac7cc13e0573bc4dd0b4145eae5b1a30a25c38c101845081e7b": {
+  "created": "2026-11-15T10:27:12+00:00",
+  "kb_version": "d-kb0",
+  "mode": "llm_kb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"blue-skinned man with crown\",\n  \"young white-clothed man with bow\",\n  \"monkey-faced figure with gold crown\",\n  \"sitting on smooth sea rocks\",\n  \"gazing at waves beyond shore\",\n  \"soft golden afternoon light\",\n  \"red garment flowing in wind\",\n  \"mace resting on shoulder\",\n  \"long bow held in hand\",\n  \"quiver at side\",\n  \"pillared coastal setting\"\n]}"
+ },
+ "67e95d25ddbb3b21d08c8b2aaddd20213b3c8ff035189fb144e19da442583d71": {
+  "created": "2026-11-15T10:27:32+00:00",
+  "kb_version": "d-kb0",
+  "mode": "llm_kb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"blue-skinned man with crown\",\n  \"bare-chested with topknot\",\n  \"holding long bow and arrows\",\n  \"young white-clothed man standing beside\",\n  \"sage in grey robe with staff\",\n  \"woman kneeling with hands folded\",\n  \"curse broken by gesture\",\n  \"golden light from sky\",\n  \"stone temple courtyard\",\n  \"dew-covered lotus flowers\",\n  \"soft morning glow\"\n]}"
+ },
  "6a66286064b900fcf666e323ff860aea8ee4a611a9c69bf35efeb29f2a328ba8": {
   "created": "2026-11-04T21:32:08+00:00",
   "kb_version": "d-kb0",
@@ -190,6 +270,22 @@
   "model": "Qwen/Qwen3-4B-Instruct-2507",
   "prompt_version": "v1",
   "reply": "{\"phrases\": [\n  \"couple walking through garden\",\n  \"she holds his arm tightly\",\n  \"looking back with nervous gaze\",\n  \"palace courtyard in twilight\",\n  \"soft golden light filtering\",\n  \"draped in saffron and blue\",\n  \"garden path with flowering plants\",\n  \"subhadra in traditional saree\",\n  \"arjuna in warrior attire\",\n  \"faint rustling of leaves\"\n]}"
+ },
+ "75c235d246eef960f0a5e1ac662a54a0ba3bf59598221471cd4a96311b8f78c7": {
+  "created": "2026-11-15T10:29:05+00:00",
+  "kb_version": "stub0",
+  "mode": "llm_nokb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"long hair flowing loosely\",\n  \"folding hands in appeal\",\n  \"gazing upward with devotion\",\n  \"soft golden light\",\n  \"pillared temple hall\",\n  \"draped in saffron silk\",\n  \"subtle emotional intensity\"\n]}"
+ },
+ "782e95ff8e1d6fdc4e575ff9cc75d9d61b1d0e1e8beb1447eaf9d0203e8ea5e9": {
+  "created": "2026-11-15T10:28:53+00:00",
+  "kb_version": "stub0",
+  "mode": "llm_nokb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"Lakshmana with bow in hand\",\n  \"standing guard at forest edge\",\n  \"nighttime forest clearing\",\n  \"thatched hut in background\",\n  \"dusk lighting with shadows\",\n  \"dressed in simple forest clothes\",\n  \"firm stance with alert expression\"\n]}"
  },
  "7cf2ab98dd75a5d6dc7a6f23843c7328df95de170556c1419b3abcf70cb94f99": {
   "created": "2026-11-02T12:18:23+00:00",
@@ -231,6 +327,14 @@
   "prompt_version": "v1",
   "reply": "{\"phrases\": [\n  \"elderly figure lying on arrow bed\",\n  \"men in royal tunics kneeling in quiet reverence\",\n  \"young man in simple dhoti standing with hands folded\",\n  \"dusk sky with deep orange and purple hues\",\n  \"military field with scattered banners and flags\",\n  \"dark blue robes with golden embroidery\",\n  \"soft golden light filtering through tall trees\"\n]}"
  },
+ "88a43b19dbb7afcae1b831657686cc45fb306208341aedb546f0a76e11e90a00": {
+  "created": "2026-11-15T10:26:45+00:00",
+  "kb_version": "d-kb0",
+  "mode": "llm_kb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"young man in white\",\n  \"holding bow and quiver\",\n  \"standing guard at night\",\n  \"forest clearing\",\n  \"thatched hut\",\n  \"tall trees\",\n  \"moonlight glow\",\n  \"serious expression\",\n  \"dusk shadows\"\n]}"
+ },
  "89ebf9d3dbfeb0d052f925e2b6ff12d026703a8fdbb5b73a1b10c55208f70279": {
   "created": "2026-11-04T21:32:16+00:00",
   "kb_version": "d-kb0",
@@ -238,6 +342,14 @@
   "model": "Qwen/Qwen3-4B-Instruct-2507",
   "prompt_version": "v1",
   "reply": "{\"phrases\": [\n  \"blue-skinned man with peacock feather crown\",\n  \"yellow dhoti adorned with flower garlands\",\n  \"standing before throne in royal hall\",\n  \"proud king seated on jeweled throne\",\n  \"rich robes flowing with gold embroidery\",\n  \"pillared hall with carved stone columns\",\n  \"ministers watching with solemn expressions\",\n  \"soft golden light casting warm glow\"\n]}"
+ },
+ "96ef4b8e97df5ac8e6174e1441df467d43a287fc7bfab65717e6411ac644a1d0": {
+  "created": "2026-11-15T10:28:59+00:00",
+  "kb_version": "stub0",
+  "mode": "llm_nokb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\"man with bow in hand\", \"standing guard at forest edge\", \"nighttime forest clearing\", \"thatched hut in background\", \"dusk lighting with shadows\", \"dressed in simple forest clothes\", \"firm stance with alert expression\"]}"
  },
  "9b88a08f4d7f0a1f4d6b67f465300f1d4b3df2a28711caf06a1cc5777f1dfbb0": {
   "created": "2026-11-02T12:18:13+00:00",
@@ -255,6 +367,14 @@
   "prompt_version": "v1",
   "reply": "{\"phrases\": [\n  \"old woman offering berries\",\n  \"kneeling beside two warriors\",\n  \"forest clearing with mossy ground\",\n  \"soft morning light filtering\",\n  \"simple thatch hut in background\",\n  \"worn cotton saree with border\",\n  \"berries placed on woven mat\",\n  \"distant tree shadows\",\n  \"warriors in forest garb\",\n  \"gentle smile with eyes down\"\n]}"
  },
+ "a8aabdda039a93cacb189ce35a5e002671762199b0952270769bbca31dd66758": {
+  "created": "2026-11-15T10:27:22+00:00",
+  "kb_version": "d-kb0",
+  "mode": "llm_kb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"woman in dark blue saree\",\n  \"long black hair flowing\",\n  \"kneeling on marble floor\",\n  \"old warrior with white beard\",\n  \"white garments draped\",\n  \"proud king in jeweled crown\",\n  \"rich robes flowing\",\n  \"pillared royal hall\",\n  \"carved stone columns\",\n  \"courtiers watching silently\",\n  \"soft golden light\",\n  \"intense solemn mood\"\n]}"
+ },
  "adb2e782df67553ed7cdd33be630090bb1b72592e8b44e78e7deb6f8458b0a69": {
   "created": "2026-11-04T21:33:21+00:00",
   "kb_version": "d-kb0",
@@ -262,6 +382,22 @@
   "model": "Qwen/Qwen3-4B-Instruct-2507",
   "prompt_version": "v1",
   "reply": "{\"phrases\": [\n  \"blue-skinned man with crown\",\n  \"young woman in red saree with gold border\",\n  \"white-crowned man with bow and quiver\",\n  \"crowned man in royal dress, folded hands\",\n  \"crowned man in royal dress, standing\",\n  \"monkey-faced figure kneeling, white beard, gold crown\",\n  \"grand royal palace with pillars\",\n  \"crowds of courtiers in silk and brocade\",\n  \"gilded throne under canopy\",\n  \"soft golden light, solemn mood\"\n]}"
+ },
+ "b1594c420ddff5387da62b7098df77e8e893743d1ed5ddecaae833ad67c9efe4": {
+  "created": "2026-11-15T10:29:57+00:00",
+  "kb_version": "stub0",
+  "mode": "llm_nokb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\"man in red dhoti kneeling\", \"woman in white sari bowing\", \"sage in grey robe standing\", \"brother in blue turban watching\", \"golden lotus at feet of woman\", \"sunlight through temple arches\", \"curse broken by gentle touch\", \"man offering hand to woman\"]}"
+ },
+ "bc6951c6c3159e7193bfb5a38f63131de44ebb3c0832a4f4e06c6ec1054d53ef": {
+  "created": "2026-11-15T10:29:34+00:00",
+  "kb_version": "stub0",
+  "mode": "llm_nokb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\"brothers sitting on sea rocks\", \"figure in lion skin cloak\", \"figure in simple dhoti\", \"figure in royal silk robe\", \"gazing at waves with calm expression\", \"golden sun setting behind shore\", \"distant view of island horizon\"]}"
  },
  "bdc4551077c41bfdb3f5354c4093d81ad2f1c98383a7e90189cc0600438f3e42": {
   "created": "2026-11-02T12:16:59+00:00",
@@ -294,6 +430,14 @@
   "model": "Qwen/Qwen3-4B-Instruct-2507",
   "prompt_version": "v1",
   "reply": "{\"phrases\": [\n  \"crowned young warrior with long bow\",\n  \"young woman in red saree with gold jewelry\",\n  \"holding his arm nervously\",\n  \"slipping through palace garden\",\n  \"carved stone columns in background\",\n  \"garden path under open sky\",\n  \"looking back with cautious expression\"\n]}"
+ },
+ "d083bf3e3c0257947779473f7996915ea96cdd52e83eab88fca9274d2eacc57e": {
+  "created": "2026-11-15T10:27:02+00:00",
+  "kb_version": "d-kb0",
+  "mode": "llm_kb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"young woman in red saree with gold border\",\n  \"wearing layered pearl necklaces and gold bangles\",\n  \"offering water to blue-skinned crowned man\",\n  \"bare-chested with topknot and long bow\",\n  \"standing in forest clearing near thatched hut\",\n  \"tall trees surrounding the scene\",\n  \"soft morning light filtering through leaves\"\n]}"
  },
  "d123afd20f35aa91e7a1bbd93a234eb18cb56876cd121048e55963456b572f53": {
   "created": "2026-11-02T12:18:40+00:00",
@@ -334,6 +478,30 @@
   "model": "Qwen/Qwen3-4B-Instruct-2507",
   "prompt_version": "v1",
   "reply": "{\"phrases\": [\"woman seated beneath tree\", \"wearing simple cotton saree\", \"gazing sorrowfully toward ground\", \"dusk lighting softening shadows\", \"quiet garden with winding paths\", \"leaves rustling in still air\", \"distant pillars of stone arches\"]}"
+ },
+ "eacd10c1264a5234b26866137c6a0e9da886c0151326367859f57cea34035af3": {
+  "created": "2026-11-15T10:29:13+00:00",
+  "kb_version": "stub0",
+  "mode": "llm_nokb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"Sita kneeling with hands folded\",\n  \"offering water from a brass pot\",\n  \"Rama standing calmly beside her\",\n  \"leaf hut in the forest clearing\",\n  \"soft morning sunlight\",\n  \"dew-covered grass around\",\n  \"simple cotton saree\",\n  \"gilded copper vessel\",\n  \"gentle breeze in the air\"\n]}"
+ },
+ "eca6fb92bc26445c0e8fa68faee9246d25c86b80f7b8067898deda8a85de74e9": {
+  "created": "2026-11-15T10:28:46+00:00",
+  "kb_version": "stub0",
+  "mode": "llm_nokb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\"woman standing alone by lake\", \"gazing toward distant shore\", \"moonlight reflecting on water\", \"dressed in simple white saree\", \"hands clasped tightly in lap\", \"anxious expression in eyes\", \"still night air with silence\"]}"
+ },
+ "f381fbcbb78a925db6ee91a89d1e4d8646e5f5226ac61262b01f83485b085b71": {
+  "created": "2026-11-15T10:27:41+00:00",
+  "kb_version": "d-kb0",
+  "mode": "llm_kb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "prompt_version": "v1",
+  "reply": "{\"phrases\": [\n  \"lady seated on terrace\",\n  \"playing stringed instrument\",\n  \"night sky backdrop\",\n  \"flowing silk dress\",\n  \"gilded jewelry\",\n  \"soft moonlight\",\n  \"faint firelight glow\",\n  \"distant wind chimes\",\n  \"elegant posture\",\n  \"subtle smile\",\n  \"pillared courtyard setting\"\n]}"
  },
  "f42d005ce3b2f2dbea2fe4fadb716ed8ef53faad8f26aed77f24043523d7662a": {
   "created": "2026-11-04T21:31:41+00:00",

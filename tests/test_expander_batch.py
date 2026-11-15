@@ -258,3 +258,10 @@ def test_check_expansions_raw_and_errors(tmp_path):
     nope.write_text('{"not": "a list"}')
     assert ce.main([str(nope)]) == 2
     assert ce.main([str(tmp_path / "missing.json")]) == 2
+
+
+def test_parser_flag_pins_the_stand_in(tmp_path):
+    out = tmp_path / "c2_template_dev.json"
+    be.run(["--scenes", str(FIXTURES), "--mode", "template", "--parser", "shim", "--counter", "approx", "--out", str(out)])
+    recs = json.loads(out.read_text())
+    assert recs and all(r["parser"] == "expander._shims.stub_parser.parse_scene" for r in recs)

@@ -111,3 +111,9 @@ def test_names_outside_the_kb_become_the_figure():
     assert [c["canonical"] for c in spec["characters"]] == ["Sita"]
     assert default_matcher().find(spec["action"]) == []
     assert parse("Vibhishana's palace at night")["action"] == "the figure's palace at night"
+
+
+def test_article_after_a_comma_starts_a_new_clause():
+    a = parse("Ram freeing Ahalya from a curse, Lakshman and a sage standing beside him")["action"]
+    assert a == ("the blue-skinned prince freeing the sage's wife from a curse, the young prince and a sage "
+                 "standing beside him")
