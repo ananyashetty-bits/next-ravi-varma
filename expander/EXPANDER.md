@@ -2,7 +2,7 @@
 
 `expand(text, scene=None, mode="llm_kb") -> ExpandedPrompt` turns a user's epic-scene sentence into a prompt the M2 model (`rrv_v1`) can render: name-free visual phrases, the trigger first, the style tail last, under the token limit. It runs a **local** instruct LLM (no paid API) with a deterministic template as the fallback.
 
-> **Status (2026-11-14):** the design and all modes are built and tested (`tests/test_expander_*.py`). c2, c3 and c4 are expanded, generated and scored on the first 16 dev scenes (§9); c2 is expanded on all 24; c3/c4 on s17-s24 and human ratings for c2/c3 are pending. **c2 and c3 run on D's interim KB `d-kb0`** (`expander/interim_kb/`), because C's KB and parser were not available (#21); see the Section D deviations. Everything still marked `TODO(results)` waits for numbers from `outputs/expansions/`, `results/` or B's tables; no number goes in by hand. Contracts referred to: Overview v2 §6 (`config/m3.json`, SceneSpec, ExpandedPrompt, signatures, CLI).
+> **Status (2026-11-14):** the design and all modes are built and tested (`tests/test_expander_*.py`). c2, c3 and c4 are expanded, generated and scored on all 24 dev scenes (§9); human ratings for c2/c3 (round 2) are pending. **c2 and c3 run on D's interim KB `d-kb0`** (`expander/interim_kb/`), because C's KB and parser were not available (#21); see the Section D deviations. Everything still marked `TODO(results)` waits for numbers from `outputs/expansions/`, `results/` or B's tables; no number goes in by hand. Contracts referred to: Overview v2 §6 (`config/m3.json`, SceneSpec, ExpandedPrompt, signatures, CLI).
 
 ## 1. Design principle
 
@@ -122,34 +122,42 @@ Settled since Day 1: scene IDs `s25`-`s32` (B, #22); B's scene check uses `expan
 
 ## 9. Ladder results (c2 → c4 → c3)
 
-**Judge results, dev (supporting evidence; 16 scenes × seeds 1-2; `rrv_v1` at scale 1.0).** Means from `results/` on `main`: `c0_base_raw@base_dev.json`, `c1_lora_raw@rrv_v1_dev.json`, `c4_llm_nokb@rrv_v1_dev.json` (B, #62) and `c2_template@rrv_v1_dev.json`, `c3_llm_kb@rrv_v1_dev.json` (D, #38). The 8 scenes C added (s17-s24) are not scored for c2/c3/c4 yet:
+**Judge results, dev (supporting evidence; seeds 1-2; `rrv_v1` at scale 1.0).** All from `results/` on `main`:
+- c2/c3/c4: D, 24 scenes; c4 from D's own images;
+- c0/c1: B (#62), first 16 scenes only;
+- `c3_llm_kb_ckb` and `c6_llm_kbllm`: C, 24 scenes, C's KB `kb0.2`.
 
-| Condition | checklist (judge), 95% CI | `style_margin` | `clip_raw` | `max_train_dino` p95 |
-|---|---|---|---|---|
-| `c0_base_raw` | 0.569 | 0.025 | 0.268 | 0.800 |
-| `c1_lora_raw` | 0.576 | 0.093 | 0.264 | 0.805 |
-| `c2_template` (d-kb0) | 0.570 [0.481, 0.659] | 0.078 | 0.268 | 0.767 |
-| `c3_llm_kb` (d-kb0) | 0.520 [0.426, 0.612] | 0.104 | 0.249 | 0.796 |
-| `c4_llm_nokb` | 0.535 [0.453, 0.619] | 0.099 | 0.255 | 0.797 |
+| Condition | n scenes | checklist (judge), 95% CI | `style_margin` | `clip_raw` | `max_train_dino` p95 |
+|---|---|---|---|---|---|
+| `c0_base_raw` | 16 | 0.569 [0.496, 0.643] | 0.025 | 0.268 | 0.800 |
+| `c1_lora_raw` | 16 | 0.576 [0.504, 0.649] | 0.093 | 0.264 | 0.805 |
+| `c2_template` (d-kb0) | 24 | 0.564 [0.491, 0.634] | 0.089 | 0.268 | 0.789 |
+| `c3_llm_kb` (d-kb0) | 24 | 0.540 [0.468, 0.609] | 0.108 | 0.254 | 0.807 |
+| `c4_llm_nokb` | 24 | 0.545 [0.478, 0.613] | 0.104 | 0.255 | 0.797 |
+| `c3_llm_kb_ckb` (C's KB, C) | 24 | 0.522 [0.472, 0.578] | 0.110 | 0.249 | 0.799 |
+| `c6_llm_kbllm` (C) | 24 | 0.509 [0.450, 0.568] | 0.111 | 0.241 | 0.802 |
 
-Paired over scenes (`eval/stats.paired`, b − a, 95% bootstrap CI, tie band 0.0295 for win/tie/loss):
+Paired over shared scenes (`eval/stats.paired`, b − a, 95% bootstrap CI, tie band 0.0295 for win/tie/loss):
 
-| a → b | checklist (judge) | `style_margin` |
-|---|---|---|
-| c0 → c1 | +0.007 [−0.060, +0.064], W/T/L 8/4/4 | **+0.069 [+0.046, +0.095]**, 13/3/0 |
-| c2 → c3 (H-D1) | −0.050 [−0.116, +0.011], 5/3/8 | **+0.025 [+0.014, +0.039]**, 4/12/0 |
-| c4 → c3 (H-D2, all scenes) | −0.015 [−0.079, +0.054], 6/3/7 | +0.005 [−0.014, +0.022], 5/9/2 |
-| c4 → c3 (H-D2, tier 4: s15, s31) | −0.119, n = 2 (not resolvable) | — |
-| c1 → c3 | **−0.055 [−0.113, −0.003]**, 4/4/8 | +0.010 [−0.003, +0.026], 2/13/1 |
-| c1 → c2 | −0.006 [−0.045, +0.033], 5/5/6 | −0.015 [−0.033, +0.004], 1/10/5 |
-| c1 → c4 | −0.041 [−0.095, +0.018], 4/2/10 | +0.005 [−0.013, +0.024], 4/10/2 |
+| a → b | n | checklist (judge) | `style_margin` |
+|---|---|---|---|
+| c0 → c1 | 16 | +0.007 [−0.060, +0.064], W/T/L 8/4/4 | **+0.069 [+0.046, +0.095]**, 13/3/0 |
+| c2 → c3 (H-D1) | 24 | −0.023 [−0.074, +0.025], 10/3/11 | **+0.019 [+0.009, +0.030]**, 6/18/0 |
+| c4 → c3 (H-D2, all scenes) | 24 | −0.005 [−0.052, +0.048], 6/9/9 | +0.005 [−0.008, +0.016], 5/16/3 |
+| c4 → c3 (H-D2, tier 4: s15, s23, s31) | 3 | −0.104, 0/0/3 (not resolvable at n = 3) | — |
+| c4 → c3 (tiers 1-3) | 18 | +0.003 [−0.058, +0.066], 4/8/6 | — |
+| c1 → c3 | 16 | **−0.055 [−0.113, −0.003]**, 4/4/8 | +0.010 [−0.003, +0.026], 2/13/1 |
+| c1 → c2 | 16 | −0.006 [−0.045, +0.033], 5/5/6 | −0.015 [−0.033, +0.004], 1/10/5 |
+| c1 → c4 | 16 | −0.042 [−0.095, +0.015], 4/2/10 | +0.005 [−0.013, +0.024], 4/10/2 |
+| c3 (d-kb0) → c3_ckb (C's KB) | 24 | −0.019 [−0.076, +0.040], 8/2/14 | +0.002 [−0.007, +0.009], 2/20/2 |
+| c2 → c3_ckb | 24 | −0.042 [−0.110, +0.030], 9/1/14 | **+0.021 [+0.010, +0.033]**, 8/16/0 |
 
-All five conditions pass the memorisation guardrail (`max_train_dino` p95 ≤ M2's `mem_flag_dino_p95` 0.85).
+All conditions pass the memorisation guardrail (`max_train_dino` p95 ≤ M2's `mem_flag_dino_p95` 0.85). Seen/unseen (c2 → c3): seen −0.074 (n = 5), unseen −0.010 (n = 19); both CIs include 0.
 
 **Status of the hypotheses:**
-- **H-D1, H-D2: not decided.** Their primary measure is human faithfulness, and c2/c3 are not rated yet (requested in #17).
-- **On the judge:** no clear difference for H-D1 or H-D2. The H-D2 tier-4 split has 2 scenes.
-- **First reading:** on the judge, expansion did **not** improve faithfulness over raw text with the LoRA (c1 → c3 is slightly negative), while c3 is the most Varma-like condition on `style_margin`.
+- **H-D1, H-D2: not decided.** Their primary measure is human faithfulness, pending round 2.
+- **On the judge:** no clear difference for H-D1 or H-D2. The H-D2 tier-4 split has 3 scenes.
+- **First reading (judge only):** prompt expansion did **not** improve faithfulness over raw text with the LoRA (c1 → c3 is slightly negative on 16 scenes). c3 is clearly more Varma-like than the template (c2 → c3 `style_margin`). Which KB c3 uses (D's interim vs C's) makes no clear difference.
 
 `TODO(results)`: human faithfulness, style and quality per condition from B's ratings; H-D1/H-D2 decided by the D.0 rule; per-tier and seen/unseen splits; held-out rows after B's run.
 
@@ -157,9 +165,9 @@ Process table per file from `check_expansions.py --strict` (real CLIP counter):
 
 | file | n | valid | trigger-first | within budget | leaks before | leaks after | fallback | latency mean / median (s) | tokens mean / max | dropped / rec |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| `c4_llm_nokb_dev.json` (16 scenes, 2026-11-02) | 16 | 100.0% | 100.0% | 100.0% | 75.0% | 0 | 0.0% | 21.03 / 13.57 | 62.4 / 70 | 0.75 |
+| `c4_llm_nokb_dev.json` (24 scenes; s17-s24 added 2026-11-15) | 24 | 100.0% | 100.0% | 100.0% | 70.8% | 0 | 0.0% | 19.56 / 13.39 | 60.5 / 70 | 0.50 |
 | `c2_template_dev.json` (24 scenes, interim KB `d-kb0`; s17-s24 added 2026-11-14) | 24 | 100.0% | 100.0% | 100.0% | 0.0% | 0 | 0.0% | 0.003 / 0.003 | 64.3 / 70 | 4.46 |
-| `c3_llm_kb_dev.json` (16 scenes, interim KB `d-kb0`, 2026-11-04) | 16 | 100.0% | 100.0% | 100.0% | 12.5% | 0 | 0.0% | 16.14 / 9.85 | 64.2 / 70 | 1.81 |
+| `c3_llm_kb_dev.json` (24 scenes, interim KB `d-kb0`; s17-s24 added 2026-11-15) | 24 | 100.0% | 100.0% | 100.0% | 8.3% | 0 | 0.0% | 20.85 / 9.63 | 63.3 / 70 | 1.58 |
 
 The LLM rows' mean latency includes the model load in the first scene's `latency_s` (`model_load_s`: c4 124 s, c3 103 s, fresh runtimes). Without it, per scene: c4 mean 13.3 s, median 13.3 s; c3 mean 9.7 s, median 9.4 s. `json_retry` was false in every record. The second calls (c4: 12, c3: 2) were all name re-asks; no phrase had to be scrubbed in any file. With the KB block, the LLM used names in 2 of 16 records (c3), against 12 of 16 without it (c4).
 

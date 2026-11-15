@@ -113,18 +113,23 @@ Deviations: none recorded so far (`experiments/HYPOTHESES.md`, *Section D deviat
 `TODO(B, held-out)`: the same tables on 12 scenes × 4 seeds. Arrives Day 5 evening (see timing risk above).
 
 ### 4.3 Expansion ladder and expander hypotheses
-**Status 2026-11-14: provisional, judge only.** Section D decides H-D1/H-D2 on human faithfulness. Those ratings for c2/c3 are pending, so every outcome below is on the supporting measure (the checklist judge), with 16 dev scenes × seeds 1-2. Sources: `results/c2_template@rrv_v1_dev.json`, `results/c3_llm_kb@rrv_v1_dev.json` (#38); `results/c0_base_raw@base_dev.json`, `results/c1_lora_raw@rrv_v1_dev.json`, `results/c4_llm_nokb@rrv_v1_dev.json` (#62). Paired over scenes with `eval/stats.paired`; the full tables are in `expander/EXPANDER.md` §9.
+**Status 2026-11-15: provisional, judge only.** Section D decides H-D1/H-D2 on human faithfulness, which is pending (round 2), so every outcome below is on the supporting measure (the checklist judge). Data: 24 dev scenes × seeds 1-2 (c0/c1: first 16 scenes).
+- **Sources:** `results/c2_template@rrv_v1_dev.json`, `c3_llm_kb@rrv_v1_dev.json`, `c4_llm_nokb@rrv_v1_dev.json` (D); `c0_base_raw@base_dev.json`, `c1_lora_raw@rrv_v1_dev.json` (B, #62); `c3_llm_kb_ckb@rrv_v1_dev.json` (C).
+- **Method:** paired over scenes with `eval/stats.paired`; the full tables are in `expander/EXPANDER.md` §9.
 
 | Hypothesis | Comparison | Judge checklist, b − a [95% CI] | Outcome on the judge | Pre-registered outcome |
 |---|---|---|---|---|
-| H-D1: c3 > c2 | c2 → c3 | −0.050 [−0.116, +0.011] | no clear difference | `TODO(B)`: human faithfulness |
-| H-D2: c3 > c4, mostly tier 4 | c4 → c3 | −0.015 [−0.079, +0.054]; tier 4 n = 2 | no clear difference; tier 4 not resolvable | `TODO(B)`: human faithfulness |
+| H-D1: c3 > c2 | c2 → c3 (n = 24) | −0.023 [−0.074, +0.025] | no clear difference | `TODO(B)`: human faithfulness |
+| H-D2: c3 > c4, mostly tier 4 | c4 → c3 (n = 24) | −0.005 [−0.052, +0.048]; tier 4 (n = 3): −0.104 | no clear difference; tier 4 not resolvable | `TODO(B)`: human faithfulness |
 | H-D3: c5 > c3 on tier 2-3 count/pose | — | — | not run yet | — |
 | H-D4: 7B not needed | — | — | not run yet | — |
 | H-D5: scene negatives | — | — | not run yet | — |
-| H-D6: prompt v2 (SHAP order) | — | — | not run yet | — |
+| H-D6: prompt v2 (SHAP order) | — | — | not run: no SHAP values with a source file yet | — |
 
-Also on the judge: c1 → c3 −0.055 [−0.113, −0.003], so expansion did not improve faithfulness over raw text with the LoRA. On `style_margin`, c3 is the highest condition (c2 → c3 +0.025 [+0.014, +0.039]).
+Also on the judge:
+- c1 → c3 is −0.055 [−0.113, −0.003] (16 scenes), so expansion did not improve faithfulness over raw text with the LoRA.
+- On `style_margin`, c3 is clearly above c2 (+0.019 [+0.009, +0.030]).
+- D's interim KB vs C's KB under c3 makes no clear difference (−0.019 [−0.076, +0.040]).
 
 **Caveat on the KB:** c2 and c3 use D's interim KB `d-kb0` (`expander/interim_kb/`), because C's KB was not available. This is a dated deviation in Section D.
 
@@ -132,9 +137,9 @@ Also on the judge: c1 → c3 −0.055 [−0.113, −0.003], so expansion did not
 
 | file | n | valid | leaks before repair | leaks after | fallback | s/scene (excl. load) |
 |---|---:|---:|---:|---:|---:|---|
-| `c2_template_dev.json` | 16 | 100% | 0% | 0 | 0% | 0.004 (CPU) |
-| `c3_llm_kb_dev.json` | 16 | 100% | 12.5% | 0 | 0% | mean 9.7 |
-| `c4_llm_nokb_dev.json` | 16 | 100% | 75.0% | 0 | 0% | mean 13.3 |
+| `c2_template_dev.json` | 24 | 100% | 0% | 0 | 0% | 0.003 (CPU) |
+| `c3_llm_kb_dev.json` | 24 | 100% | 8.3% | 0 | 0% | mean 9.7 (first 16 scenes) |
+| `c4_llm_nokb_dev.json` | 24 | 100% | 70.8% | 0 | 0% | mean 13.3 (first 16 scenes) |
 
 Both D.7 targets are met (≥ 95% valid, zero names after repair).
 
@@ -159,10 +164,10 @@ Both D.7 targets are met (≥ 95% valid, zero names after repair).
 
 - **What helped (provisional, judge and automated metrics only):**
   - The LoRA adds Varma style: c0 → c1 `style_margin` +0.069 [+0.046, +0.095].
-  - KB descriptions keep names out of the LLM's phrases: 2 of 16 c3 records needed a names re-ask, against 12 of 16 in c4.
+  - KB descriptions keep names out of the LLM's phrases: 2 of 24 c3 records needed a names re-ask, against 17 of 24 in c4.
   - c3 is the most Varma-like condition on `style_margin`.
 - **What did not help (provisional):**
-  - On the judge, **raw text with the LoRA (c1) is as good as or better than every expanded condition**: c1 → c2 −0.006, c1 → c4 −0.041 and c1 → c3 −0.055, the last with a CI just below 0. Per B's rule, this is said first.
+  - On the judge, **raw text with the LoRA (c1) is as good as or better than every expanded condition**: c1 → c2 −0.006, c1 → c4 −0.042 and c1 → c3 −0.055 (16 scenes), the last with a CI just below 0. Per B's rule, this is said first.
   - The template drops many phrases under the 70-token budget (5.7 per record), so crowded and long scenes lose their figures and actions.
 - `TODO(D)`: rewrite both bullets from human faithfulness once B's ratings for c2/c3 exist.
 - **Failure taxonomy:** `TODO(B)`: counts per condition, with 2-3 example images (codes decoded).
@@ -187,7 +192,7 @@ These are known now and hold whatever the results show; owners add their own.
 - **Name scrub.** It removes every listed name, including rivers and mounts that double as setting words (Ganga, Nandi), so a setting phrase can be lost. Measured on dev: **0 phrases scrubbed** in c2, c3 and c4. The one re-ask removed every leaked name first.
 - **Interim KB.** c2 and c3 dev results use D's interim KB `d-kb0` (18 characters, written from train_v1 captions; 2 entries without a training painting), not C's KB. If C's KB lands, both are re-run and reported.
 - **Interim KB coverage on held-out.** `d-kb0` covers only the dev-scene characters, so held-out scenes with other characters get no description for them in c2/c3 (the parser writes "the figure"). `TODO(B, held-out)`: share of held-out scenes affected.
-- **Smaller dev set.** 16 of the planned 32 dev scenes (A's and C's were not added), so tier subsets have 2-4 scenes. The H-D2 tier-4 test has n = 2.
+- **Smaller dev set.** 24 of the planned 32 dev scenes (A's 8 were not added; c0/c1 cover only the first 16), so tier subsets have 3-6 scenes. The H-D2 tier-4 test has n = 3.
 - **Self-made benchmark.** Checklists were written by the team, and the dev set was also used to tune prompts and the KB (allowed by our protocol). Only the held-out set is untouched.
 - `TODO(A, B, C)`: owner-specific limits (SHAP position effects; the judge's failure cases; KB description sources and gaps; name-aware LoRA memorisation).
 
