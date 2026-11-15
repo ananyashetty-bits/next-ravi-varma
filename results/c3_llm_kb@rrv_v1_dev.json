@@ -1,42 +1,42 @@
 {
  "manifest": "/content/drive/MyDrive/m3/images/c3_llm_kb@rrv_v1/dev/manifest.json",
  "scenes_file": "/content/m3/eval/test_scenes_dev.json",
- "scored_at": "2026-11-04T21:57:43.272036",
+ "scored_at": "2026-11-15T12:30:06.237539",
  "judge": "Qwen/Qwen2-VL-2B-Instruct",
- "n_images": 32,
+ "n_images": 48,
  "summary": {
   "c3_llm_kb": {
    "checklist": {
-    "mean": 0.5200539443244149,
+    "mean": 0.5403314310766291,
     "ci95": [
-     0.42638966155535146,
-     0.6121783312017942
+     0.4680247301199739,
+     0.6086704462343349
     ],
-    "n_scenes": 16
+    "n_scenes": 24
    },
    "clip_raw": {
-    "mean": 0.24865018343552947,
+    "mean": 0.2538139407212536,
     "ci95": [
-     0.22850367756327614,
-     0.26570783894276245
+     0.2393776264972985,
+     0.26586651428757857
     ],
-    "n_scenes": 16
+    "n_scenes": 24
    },
    "style_margin": {
-    "mean": 0.10366181004792452,
+    "mean": 0.10840438865125179,
     "ci95": [
-     0.08722596750594676,
-     0.12043532656971365
+     0.0944403928394119,
+     0.12269369919473926
     ],
-    "n_scenes": 16
+    "n_scenes": 24
    },
    "max_train_dino": {
-    "mean": 0.7127387542277575,
+    "mean": 0.714159220457077,
     "ci95": [
-     0.68929955647327,
-     0.7371631577145308
+     0.6900287372370562,
+     0.7368591725515823
     ],
-    "n_scenes": 16
+    "n_scenes": 24
    }
   }
  },
@@ -58,7 +58,15 @@
     "s29": 0.6039497833698988,
     "s30": 0.251066438232859,
     "s31": 0.10415506339631975,
-    "s32": 0.5711662057373259
+    "s32": 0.5711662057373259,
+    "s17": 0.8261120181996375,
+    "s18": 0.5321615005118979,
+    "s19": 0.556407033569283,
+    "s20": 0.5649797551333904,
+    "s21": 0.4308078732341528,
+    "s22": 0.5929282829165459,
+    "s23": 0.4256938137114048,
+    "s24": 0.7180009593721479
    },
    "clip_raw": {
     "s09": 0.30078110098838806,
@@ -76,7 +84,15 @@
     "s29": 0.27645276486873627,
     "s30": 0.2847251743078232,
     "s31": 0.1364874318242073,
-    "s32": 0.257089763879776
+    "s32": 0.257089763879776,
+    "s17": 0.26590926945209503,
+    "s18": 0.2805287390947342,
+    "s19": 0.2683463841676712,
+    "s20": 0.2732856571674347,
+    "s21": 0.27545449137687683,
+    "s22": 0.26775218546390533,
+    "s23": 0.22591865807771683,
+    "s24": 0.25593625754117966
    },
    "style_margin": {
     "s09": 0.15130719542503357,
@@ -94,7 +110,15 @@
     "s29": 0.06413623690605164,
     "s30": 0.08622059226036072,
     "s31": 0.15622080862522125,
-    "s32": 0.1117669939994812
+    "s32": 0.1117669939994812,
+    "s17": 0.14672580361366272,
+    "s18": 0.15634536743164062,
+    "s19": 0.1154017448425293,
+    "s20": 0.13140913844108582,
+    "s21": 0.04962635040283203,
+    "s22": 0.11729812622070312,
+    "s23": 0.0719279944896698,
+    "s24": 0.15438184142112732
    },
    "max_train_dino": {
     "s09": 0.6893012523651123,
@@ -112,7 +136,15 @@
     "s29": 0.6992243826389313,
     "s30": 0.6499929130077362,
     "s31": 0.7380235195159912,
-    "s32": 0.7003159523010254
+    "s32": 0.7003159523010254,
+    "s17": 0.750342607498169,
+    "s18": 0.5590500831604004,
+    "s19": 0.7757318317890167,
+    "s20": 0.8008268475532532,
+    "s21": 0.7810810804367065,
+    "s22": 0.7107063829898834,
+    "s23": 0.7126181721687317,
+    "s24": 0.6456442177295685
    }
   }
  },
@@ -732,6 +764,314 @@
    "clip_raw": 0.26829954981803894,
    "style_margin": 0.10659348964691162,
    "max_train_dino": 0.7099172472953796
+  },
+  {
+   "scene_id": "s17",
+   "condition": "c3_llm_kb",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c3_llm_kb@rrv_v1/dev/s17_c3_llm_kb_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, young woman in red saree, gold border and bangles, layered pearl necklaces, standing beside moonlit lake, gazing anxiously along shore, silvery moonlight reflecting, oil painting, canvas texture, classical indian art",
+   "checklist": 0.8181386389769614,
+   "checklist_detail": {
+    "c1": 0.8378421664237976,
+    "c2": 0.9434583187103271,
+    "c3": 0.9699352383613586,
+    "c4": 0.061123985797166824,
+    "c5": 0.9815136790275574
+   },
+   "clip_raw": 0.2343544065952301,
+   "style_margin": 0.12436288595199585,
+   "max_train_dino": 0.8172057867050171
+  },
+  {
+   "scene_id": "s17",
+   "condition": "c3_llm_kb",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c3_llm_kb@rrv_v1/dev/s17_c3_llm_kb_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, young woman in red saree, gold border and bangles, layered pearl necklaces, standing beside moonlit lake, gazing anxiously along shore, silvery moonlight reflecting, oil painting, canvas texture, classical indian art",
+   "checklist": 0.8340853974223137,
+   "checklist_detail": {
+    "c1": 0.863551914691925,
+    "c2": 0.9740741848945618,
+    "c3": 0.9685034155845642,
+    "c4": 0.0929219126701355,
+    "c5": 0.967502236366272
+   },
+   "clip_raw": 0.29746413230895996,
+   "style_margin": 0.1690887212753296,
+   "max_train_dino": 0.6834794282913208
+  },
+  {
+   "scene_id": "s18",
+   "condition": "c3_llm_kb",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c3_llm_kb@rrv_v1/dev/s18_c3_llm_kb_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, young man in white, holding bow and quiver, standing guard at night, forest clearing, thatched hut, tall trees, moonlight glow, serious expression, dusk shadows, oil painting, canvas texture, classical indian art",
+   "checklist": 0.5667160848776499,
+   "checklist_detail": {
+    "c1": 0.8950361609458923,
+    "c2": 0.4930281639099121,
+    "c3": 0.03472883999347687,
+    "c4": 0.9616058468818665,
+    "c5": 0.33164674043655396
+   },
+   "clip_raw": 0.3003663122653961,
+   "style_margin": 0.15080028772354126,
+   "max_train_dino": 0.5798364877700806
+  },
+  {
+   "scene_id": "s18",
+   "condition": "c3_llm_kb",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c3_llm_kb@rrv_v1/dev/s18_c3_llm_kb_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, young man in white, holding bow and quiver, standing guard at night, forest clearing, thatched hut, tall trees, moonlight glow, serious expression, dusk shadows, oil painting, canvas texture, classical indian art",
+   "checklist": 0.49760691614614594,
+   "checklist_detail": {
+    "c1": 0.8671665191650391,
+    "c2": 0.02036273293197155,
+    "c3": 0.14723949134349823,
+    "c4": 0.9169015884399414,
+    "c5": 0.5751215815544128
+   },
+   "clip_raw": 0.26069116592407227,
+   "style_margin": 0.16189044713974,
+   "max_train_dino": 0.5382636785507202
+  },
+  {
+   "scene_id": "s19",
+   "condition": "c3_llm_kb",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c3_llm_kb@rrv_v1/dev/s19_c3_llm_kb_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, woman in dark blue saree, long black hair flowing, folding hands in appeal, blue-skinned man with crown, yellow dhoti adorned, flower garlands around neck, pillared temple hall, soft golden light, serene expression, gilded jewelry on wrists, oil painting, canvas texture, classical indian art",
+   "checklist": 0.5473672184679244,
+   "checklist_detail": {
+    "c1": 0.43035072088241577,
+    "c2": 0.5856812000274658,
+    "c3": 0.24581624567508698,
+    "c4": 0.7645415663719177,
+    "c5": 0.8735255002975464
+   },
+   "clip_raw": 0.26453450322151184,
+   "style_margin": 0.111153244972229,
+   "max_train_dino": 0.7874878644943237
+  },
+  {
+   "scene_id": "s19",
+   "condition": "c3_llm_kb",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c3_llm_kb@rrv_v1/dev/s19_c3_llm_kb_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, woman in dark blue saree, long black hair flowing, folding hands in appeal, blue-skinned man with crown, yellow dhoti adorned, flower garlands around neck, pillared temple hall, soft golden light, serene expression, gilded jewelry on wrists, oil painting, canvas texture, classical indian art",
+   "checklist": 0.5654468486706415,
+   "checklist_detail": {
+    "c1": 0.7093629240989685,
+    "c2": 0.5474125742912292,
+    "c3": 0.31856465339660645,
+    "c4": 0.877476155757904,
+    "c5": 0.18338902294635773
+   },
+   "clip_raw": 0.27215826511383057,
+   "style_margin": 0.11965024471282959,
+   "max_train_dino": 0.7639757990837097
+  },
+  {
+   "scene_id": "s20",
+   "condition": "c3_llm_kb",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c3_llm_kb@rrv_v1/dev/s20_c3_llm_kb_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, young woman in red saree with gold border, wearing layered pearl necklaces and gold bangles, offering water to blue-skinned crowned man, bare-chested with topknot and long bow, standing in forest clearing near thatched hut, tall trees surrounding the scene, oil painting, canvas texture, classical indian art",
+   "checklist": 0.6623057931661606,
+   "checklist_detail": {
+    "c1": 0.7607614398002625,
+    "c2": 0.8634660243988037,
+    "c3": 0.9361063241958618,
+    "c4": 0.10281962156295776,
+    "c5": 0.4271983206272125,
+    "c6": 0.8695527911186218
+   },
+   "clip_raw": 0.2761612832546234,
+   "style_margin": 0.1262214183807373,
+   "max_train_dino": 0.8090461492538452
+  },
+  {
+   "scene_id": "s20",
+   "condition": "c3_llm_kb",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c3_llm_kb@rrv_v1/dev/s20_c3_llm_kb_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, young woman in red saree with gold border, wearing layered pearl necklaces and gold bangles, offering water to blue-skinned crowned man, bare-chested with topknot and long bow, standing in forest clearing near thatched hut, tall trees surrounding the scene, oil painting, canvas texture, classical indian art",
+   "checklist": 0.46765371710062026,
+   "checklist_detail": {
+    "c1": 0.7026743292808533,
+    "c2": 0.8291129469871521,
+    "c3": 0.1417149305343628,
+    "c4": 0.07083704322576523,
+    "c5": 0.28524789214134216,
+    "c6": 0.9026107788085938
+   },
+   "clip_raw": 0.27041003108024597,
+   "style_margin": 0.13659685850143433,
+   "max_train_dino": 0.7926075458526611
+  },
+  {
+   "scene_id": "s21",
+   "condition": "c3_llm_kb",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c3_llm_kb@rrv_v1/dev/s21_c3_llm_kb_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, blue-skinned man with crown, young white-clothed man with bow, monkey-faced figure with gold crown, sitting on smooth sea rocks, gazing at waves beyond shore, soft golden afternoon light, red garment flowing in wind, mace resting on shoulder, oil painting, canvas texture, classical indian art",
+   "checklist": 0.4391768202185631,
+   "checklist_detail": {
+    "c1": 0.5157828330993652,
+    "c2": 0.36317962408065796,
+    "c3": 0.12463586777448654,
+    "c4": 0.518353283405304,
+    "c5": 0.9287176728248596,
+    "c6": 0.4191473126411438
+   },
+   "clip_raw": 0.2969013452529907,
+   "style_margin": 0.06433117389678955,
+   "max_train_dino": 0.8034560680389404
+  },
+  {
+   "scene_id": "s21",
+   "condition": "c3_llm_kb",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c3_llm_kb@rrv_v1/dev/s21_c3_llm_kb_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, blue-skinned man with crown, young white-clothed man with bow, monkey-faced figure with gold crown, sitting on smooth sea rocks, gazing at waves beyond shore, soft golden afternoon light, red garment flowing in wind, mace resting on shoulder, oil painting, canvas texture, classical indian art",
+   "checklist": 0.4224389262497425,
+   "checklist_detail": {
+    "c1": 0.5430227518081665,
+    "c2": 0.28791481256484985,
+    "c3": 0.04891347140073776,
+    "c4": 0.6972668170928955,
+    "c5": 0.9568275809288025,
+    "c6": 0.11332597583532333
+   },
+   "clip_raw": 0.25400763750076294,
+   "style_margin": 0.03492152690887451,
+   "max_train_dino": 0.7587060928344727
+  },
+  {
+   "scene_id": "s22",
+   "condition": "c3_llm_kb",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c3_llm_kb@rrv_v1/dev/s22_c3_llm_kb_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, woman in dark blue saree, long black hair flowing, kneeling on marble floor, old warrior with white beard, white garments draped, proud king in jeweled crown, rich robes flowing, pillared royal hall, carved stone columns, courtiers watching silently, oil painting, canvas texture, classical indian art",
+   "checklist": 0.6470648385584354,
+   "checklist_detail": {
+    "c1": 0.8671190738677979,
+    "c2": 0.47799915075302124,
+    "c3": 0.995096743106842,
+    "c4": 0.29150766134262085,
+    "c5": 0.2045811116695404
+   },
+   "clip_raw": 0.29948586225509644,
+   "style_margin": 0.07152491807937622,
+   "max_train_dino": 0.6970589756965637
+  },
+  {
+   "scene_id": "s22",
+   "condition": "c3_llm_kb",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c3_llm_kb@rrv_v1/dev/s22_c3_llm_kb_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, woman in dark blue saree, long black hair flowing, kneeling on marble floor, old warrior with white beard, white garments draped, proud king in jeweled crown, rich robes flowing, pillared royal hall, carved stone columns, courtiers watching silently, oil painting, canvas texture, classical indian art",
+   "checklist": 0.5387917272746563,
+   "checklist_detail": {
+    "c1": 0.7281604409217834,
+    "c2": 0.18092747032642365,
+    "c3": 0.9944474697113037,
+    "c4": 0.15374809503555298,
+    "c5": 0.3495149612426758
+   },
+   "clip_raw": 0.23601850867271423,
+   "style_margin": 0.16307133436203003,
+   "max_train_dino": 0.7243537902832031
+  },
+  {
+   "scene_id": "s23",
+   "condition": "c3_llm_kb",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c3_llm_kb@rrv_v1/dev/s23_c3_llm_kb_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, blue-skinned man with crown, bare-chested with topknot, holding long bow and arrows, young white-clothed man standing beside, sage in grey robe with staff, woman kneeling with hands folded, curse broken by gesture, golden light from sky, oil painting, canvas texture, classical indian art",
+   "checklist": 0.41725319375594455,
+   "checklist_detail": {
+    "c1": 0.5196908116340637,
+    "c2": 0.11909882724285126,
+    "c3": 0.9127680659294128,
+    "c4": 0.3016894459724426,
+    "c5": 0.048784442245960236
+   },
+   "clip_raw": 0.2360546886920929,
+   "style_margin": 0.07381153106689453,
+   "max_train_dino": 0.734062910079956
+  },
+  {
+   "scene_id": "s23",
+   "condition": "c3_llm_kb",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c3_llm_kb@rrv_v1/dev/s23_c3_llm_kb_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, blue-skinned man with crown, bare-chested with topknot, holding long bow and arrows, young white-clothed man standing beside, sage in grey robe with staff, woman kneeling with hands folded, curse broken by gesture, golden light from sky, oil painting, canvas texture, classical indian art",
+   "checklist": 0.43413443366686505,
+   "checklist_detail": {
+    "c1": 0.9728418588638306,
+    "c2": 0.08048144727945328,
+    "c3": 0.7395241856575012,
+    "c4": 0.13330741226673126,
+    "c5": 0.054900094866752625
+   },
+   "clip_raw": 0.21578262746334076,
+   "style_margin": 0.07004445791244507,
+   "max_train_dino": 0.6911734342575073
+  },
+  {
+   "scene_id": "s24",
+   "condition": "c3_llm_kb",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c3_llm_kb@rrv_v1/dev/s24_c3_llm_kb_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, lady seated on terrace, playing stringed instrument, night sky backdrop, flowing silk dress, gilded jewelry, soft moonlight, faint firelight glow, distant wind chimes, elegant posture, subtle smile, pillared courtyard setting, oil painting, canvas texture, classical indian art",
+   "checklist": 0.5919220964424312,
+   "checklist_detail": {
+    "c1": 0.9048676490783691,
+    "c2": 0.022961018607020378,
+    "c3": 0.805362343788147,
+    "c4": 0.2753404974937439,
+    "c5": 0.9936542510986328
+   },
+   "clip_raw": 0.2331341952085495,
+   "style_margin": 0.15953636169433594,
+   "max_train_dino": 0.6493226885795593
+  },
+  {
+   "scene_id": "s24",
+   "condition": "c3_llm_kb",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c3_llm_kb@rrv_v1/dev/s24_c3_llm_kb_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, lady seated on terrace, playing stringed instrument, night sky backdrop, flowing silk dress, gilded jewelry, soft moonlight, faint firelight glow, distant wind chimes, elegant posture, subtle smile, pillared courtyard setting, oil painting, canvas texture, classical indian art",
+   "checklist": 0.8440798223018646,
+   "checklist_detail": {
+    "c1": 0.8742308020591736,
+    "c2": 0.9859980344772339,
+    "c3": 0.7371134161949158,
+    "c4": 0.5655199289321899,
+    "c5": 0.9924341440200806
+   },
+   "clip_raw": 0.2787383198738098,
+   "style_margin": 0.1492273211479187,
+   "max_train_dino": 0.6419657468795776
   }
  ]
 }
