@@ -68,8 +68,10 @@ The battlefield (`kurukshetra`) is **not grounded**: the training set has no bat
 
 ## 6. Results (H-C1)
 Pre-registered thresholds (HYPOTHESES.md C.1): character precision >= 0.90, recall >= 0.90, epic accuracy >= 0.85.
-On the 24 dev scenes: **precision 1.00, recall 1.00, epic accuracy 1.00** (`kb/eval_parser.py`, `kb/parser_metrics.json`). 14 unit tests in `kb/test_parser.py` cover misspellings, Rama vs Ramayana, unknown characters, Bhima vs Bhishma, empty input, the contract fields, and that no KB description contains a name.
+On the 24 dev scenes: **precision 1.00, recall 1.00, epic accuracy 1.00** (`kb/eval_parser.py`, `kb/parser_metrics.json`). 15 unit tests in `kb/test_parser.py` cover misspellings, Rama vs Ramayana, unknown characters, Bhima vs Bhishma, empty input, the contract fields, and that no KB description contains a name.
 **Caveat:** the KB was built mainly from the characters in the team's dev scenes, so these scores show the parser works when the KB has the character, not that it generalises. The held-out set is the real test. Dev scenes s17 and s23 were originally written with Radha and Ahalya (both in the KB) but were changed to characters present in D's interim KB so D's test passes; this means the dev set does not test the rare-character case.
+
+**Cold-start test:** in a fresh runtime with a clean clone of `main` (no Drive, no GPU), `parse_scene` on five invented sentences (misspelled names, a character not in the KB, an unlisted place, a deity pair) matched all expectations written beforehand; the 'Raam' case behaved as predicted (reported as unknown).
 
 ## 7. Grounding experiment (c6, H-C2)
 `kb/kb_llm.json` has the same characters, aliases and settings as `kb.json`, but every `visual` was written by the local LLM (Qwen3-4B, temperature 0) without seeing the paintings, using the prompt from the C guide; moods are copied unchanged. Both KBs were expanded with the same LLM and prompt on the 24 dev scenes (`c3_llm_kb_ckb`, `c6_llm_kbllm`; 24/24 valid, 0 names after repair), rendered with `rrv_v1` at scale 1.0, seeds 1-2, and scored with B's `eval/score.py`. Comparison: B's `paired()` from `eval/stats.py`, scene as unit, bootstrap 95% CI (`kb/compare_c6.py`, `results/c6_comparison.json`). Difference = c3 - c6.
@@ -101,6 +103,7 @@ The coverage audit passed the pre-registered gate (67% of the 147 training image
 - Several characters have one or two images, so their lines come from one painting.
 - Similar looks remain: Radha and Yashoda (bun with flowers, nose ring), Draupadi and Savitri (loose hair).
 - Mood phrases are untested except "dusk" (works) and "oil lamp" / "dramatic cloudy sky" (partly), from M2's VISUAL_VOCAB.md.
+- Misspellings of names shorter than five letters (e.g. 'Raam' for Rama) are not repaired by the fuzzy matcher (kept strict to avoid false matches such as Sita/Sitar); they appear under `unknown_entities`.
 - The parser has not been tested on held-out scenes.
 
 ## 10. KB versions
