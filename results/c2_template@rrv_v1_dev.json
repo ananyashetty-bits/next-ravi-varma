@@ -1,42 +1,42 @@
 {
  "manifest": "/content/drive/MyDrive/m3/images/c2_template@rrv_v1/dev/manifest.json",
  "scenes_file": "/content/m3/eval/test_scenes_dev.json",
- "scored_at": "2026-11-04T21:56:47.107824",
+ "scored_at": "2026-11-15T12:28:17.940342",
  "judge": "Qwen/Qwen2-VL-2B-Instruct",
- "n_images": 32,
+ "n_images": 48,
  "summary": {
   "c2_template": {
    "checklist": {
-    "mean": 0.5695620269152439,
+    "mean": 0.5637203836541933,
     "ci95": [
-     0.48133884782478875,
-     0.6589135750785904
+     0.4909931756624132,
+     0.6338774544106638
     ],
-    "n_scenes": 16
+    "n_scenes": 24
    },
    "clip_raw": {
-    "mean": 0.26761819422245026,
+    "mean": 0.2678418116023143,
     "ci95": [
-     0.2551868697046302,
-     0.2786315901204944
+     0.2581058183607335,
+     0.2770458203041926
     ],
-    "n_scenes": 16
+    "n_scenes": 24
    },
    "style_margin": {
-    "mean": 0.07826734147965908,
+    "mean": 0.08908891677856445,
     "ci95": [
-     0.05575789641588926,
-     0.09986314377747474
+     0.07193112845222155,
+     0.10506914276629685
     ],
-    "n_scenes": 16
+    "n_scenes": 24
    },
    "max_train_dino": {
-    "mean": 0.6852115523070097,
+    "mean": 0.6978183016180992,
     "ci95": [
-     0.6523581560701132,
-     0.7150189110543579
+     0.6709392793787022,
+     0.7225016914618513
     ],
-    "n_scenes": 16
+    "n_scenes": 24
    }
   }
  },
@@ -58,7 +58,15 @@
     "s29": 0.5314778853207827,
     "s30": 0.3457232274942928,
     "s31": 0.43172468058764935,
-    "s32": 0.5078421326147186
+    "s32": 0.5078421326147186,
+    "s17": 0.7788915713317692,
+    "s18": 0.40725165978074074,
+    "s19": 0.6593075808551576,
+    "s20": 0.6242630869150161,
+    "s21": 0.3950373068451881,
+    "s22": 0.4398753894492984,
+    "s23": 0.33836680630015004,
+    "s24": 0.7733033755794168
    },
    "clip_raw": {
     "s09": 0.30717937648296356,
@@ -76,7 +84,15 @@
     "s29": 0.29141266644001007,
     "s30": 0.27046604454517365,
     "s31": 0.28357836604118347,
-    "s32": 0.26397542655467987
+    "s32": 0.26397542655467987,
+    "s17": 0.2697027027606964,
+    "s18": 0.25983890146017075,
+    "s19": 0.28211748600006104,
+    "s20": 0.3138044774532318,
+    "s21": 0.27583005279302597,
+    "s22": 0.2649409621953964,
+    "s23": 0.22635360062122345,
+    "s24": 0.25372418761253357
    },
    "style_margin": {
     "s09": 0.1388128697872162,
@@ -94,7 +110,15 @@
     "s29": 0.038307249546051025,
     "s30": 0.09987959265708923,
     "s31": 0.1360868513584137,
-    "s32": 0.09180480241775513
+    "s32": 0.09180480241775513,
+    "s17": 0.1335398554801941,
+    "s18": 0.11342611908912659,
+    "s19": 0.1397724151611328,
+    "s20": 0.139397531747818,
+    "s21": 0.06682905554771423,
+    "s22": 0.11542299389839172,
+    "s23": 0.0729595422744751,
+    "s24": 0.10450902581214905
    },
    "max_train_dino": {
     "s09": 0.6474601328372955,
@@ -112,7 +136,15 @@
     "s29": 0.7050303518772125,
     "s30": 0.7046457529067993,
     "s31": 0.7319980263710022,
-    "s32": 0.6435795724391937
+    "s32": 0.6435795724391937,
+    "s17": 0.7526645064353943,
+    "s18": 0.6590850353240967,
+    "s19": 0.7268714308738708,
+    "s20": 0.7882546186447144,
+    "s21": 0.777999997138977,
+    "s22": 0.7524232268333435,
+    "s23": 0.6756313741207123,
+    "s24": 0.6513242125511169
    }
   }
  },
@@ -732,6 +764,314 @@
    "clip_raw": 0.2697502374649048,
    "style_margin": 0.0887036919593811,
    "max_train_dino": 0.6098953485488892
+  },
+  {
+   "scene_id": "s17",
+   "condition": "c2_template",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c2_template@rrv_v1/dev/s17_c2_template_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, young woman in a red saree with a gold border, the young princess waiting alone beside a moonlit lake, gazing anxiously along the shore, layered pearl necklaces, gold bangles, oil painting, canvas texture, classical indian art",
+   "checklist": 0.7069671163335443,
+   "checklist_detail": {
+    "c1": 0.3778889775276184,
+    "c2": 0.9873862862586975,
+    "c3": 0.9348093271255493,
+    "c4": 0.08178133517503738,
+    "c5": 0.9737864136695862
+   },
+   "clip_raw": 0.2774772047996521,
+   "style_margin": 0.11809676885604858,
+   "max_train_dino": 0.7464532256126404
+  },
+  {
+   "scene_id": "s17",
+   "condition": "c2_template",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c2_template@rrv_v1/dev/s17_c2_template_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, young woman in a red saree with a gold border, the young princess waiting alone beside a moonlit lake, gazing anxiously along the shore, layered pearl necklaces, gold bangles, oil painting, canvas texture, classical indian art",
+   "checklist": 0.8508160263299942,
+   "checklist_detail": {
+    "c1": 0.867243230342865,
+    "c2": 0.9796944260597229,
+    "c3": 0.9639400243759155,
+    "c4": 0.19775807857513428,
+    "c5": 0.9870147705078125
+   },
+   "clip_raw": 0.2619282007217407,
+   "style_margin": 0.1489829421043396,
+   "max_train_dino": 0.7588757872581482
+  },
+  {
+   "scene_id": "s18",
+   "condition": "c2_template",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c2_template@rrv_v1/dev/s18_c2_template_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, young crowned man in white, the young prince standing guard with his bow outside a thatched hut in the forest at night, forest clearing, thatched hut, tall trees, bow and quiver, oil painting, canvas texture, classical indian art",
+   "checklist": 0.3578912450207604,
+   "checklist_detail": {
+    "c1": 0.3143065869808197,
+    "c2": 0.2673797607421875,
+    "c3": 0.06311684846878052,
+    "c4": 0.9085681438446045,
+    "c5": 0.11427852511405945
+   },
+   "clip_raw": 0.240508571267128,
+   "style_margin": 0.10809129476547241,
+   "max_train_dino": 0.6021037101745605
+  },
+  {
+   "scene_id": "s18",
+   "condition": "c2_template",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c2_template@rrv_v1/dev/s18_c2_template_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, young crowned man in white, the young prince standing guard with his bow outside a thatched hut in the forest at night, forest clearing, thatched hut, tall trees, bow and quiver, oil painting, canvas texture, classical indian art",
+   "checklist": 0.45661207454072106,
+   "checklist_detail": {
+    "c1": 0.8904303312301636,
+    "c2": 0.02371736615896225,
+    "c3": 0.04482821747660637,
+    "c4": 0.9262557029724121,
+    "c5": 0.3390454351902008
+   },
+   "clip_raw": 0.2791692316532135,
+   "style_margin": 0.11876094341278076,
+   "max_train_dino": 0.7160663604736328
+  },
+  {
+   "scene_id": "s19",
+   "condition": "c2_template",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c2_template@rrv_v1/dev/s19_c2_template_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, woman in a dark blue saree, blue-skinned man, the dark-haired princess folding her hands in appeal before the blue-skinned figure, her long hair loose, gold jewelry, tall jeweled crown with a peacock feather, long black hair, oil painting, canvas texture, classical indian art",
+   "checklist": 0.6542824241850111,
+   "checklist_detail": {
+    "c1": 0.7312238812446594,
+    "c2": 0.6448884010314941,
+    "c3": 0.30501076579093933,
+    "c4": 0.7916509509086609,
+    "c5": 0.9429938197135925
+   },
+   "clip_raw": 0.3011370897293091,
+   "style_margin": 0.14735889434814453,
+   "max_train_dino": 0.7544275522232056
+  },
+  {
+   "scene_id": "s19",
+   "condition": "c2_template",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c2_template@rrv_v1/dev/s19_c2_template_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, woman in a dark blue saree, blue-skinned man, the dark-haired princess folding her hands in appeal before the blue-skinned figure, her long hair loose, gold jewelry, tall jeweled crown with a peacock feather, long black hair, oil painting, canvas texture, classical indian art",
+   "checklist": 0.6643327375253042,
+   "checklist_detail": {
+    "c1": 0.7027934789657593,
+    "c2": 0.7638348937034607,
+    "c3": 0.4274667203426361,
+    "c4": 0.9523553848266602,
+    "c5": 0.28609368205070496
+   },
+   "clip_raw": 0.263097882270813,
+   "style_margin": 0.1321859359741211,
+   "max_train_dino": 0.6993153095245361
+  },
+  {
+   "scene_id": "s20",
+   "condition": "c2_template",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c2_template@rrv_v1/dev/s20_c2_template_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, young woman in a red saree with a gold border, blue-skinned crowned man, the young princess offering water to the blue-skinned prince outside their leaf hut in the forest, forest clearing, thatched hut, tall trees, soft warm glow, serene faces, oil painting, canvas texture, classical indian art",
+   "checklist": 0.6915119856595993,
+   "checklist_detail": {
+    "c1": 0.7827759981155396,
+    "c2": 0.8520547747612,
+    "c3": 0.9579734206199646,
+    "c4": 0.1816626638174057,
+    "c5": 0.42007118463516235,
+    "c6": 0.9461149573326111
+   },
+   "clip_raw": 0.31304726004600525,
+   "style_margin": 0.1685887575149536,
+   "max_train_dino": 0.7897884845733643
+  },
+  {
+   "scene_id": "s20",
+   "condition": "c2_template",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c2_template@rrv_v1/dev/s20_c2_template_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, young woman in a red saree with a gold border, blue-skinned crowned man, the young princess offering water to the blue-skinned prince outside their leaf hut in the forest, forest clearing, thatched hut, tall trees, soft warm glow, serene faces, oil painting, canvas texture, classical indian art",
+   "checklist": 0.557014188170433,
+   "checklist_detail": {
+    "c1": 0.37400755286216736,
+    "c2": 0.7373794913291931,
+    "c3": 0.8785244226455688,
+    "c4": 0.06497465074062347,
+    "c5": 0.6214695572853088,
+    "c6": 0.838900089263916
+   },
+   "clip_raw": 0.3145616948604584,
+   "style_margin": 0.11020630598068237,
+   "max_train_dino": 0.7867207527160645
+  },
+  {
+   "scene_id": "s21",
+   "condition": "c2_template",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c2_template@rrv_v1/dev/s21_c2_template_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, blue-skinned crowned man, young crowned man in white, monkey-faced figure, the blue-skinned prince, the young prince and the monkey-faced devotee sitting on rocks by the sea shore, planning the crossing to the figure, bow and quiver, white beard, oil painting, canvas texture, classical indian art",
+   "checklist": 0.3556935891509056,
+   "checklist_detail": {
+    "c1": 0.4418197572231293,
+    "c2": 0.4767928123474121,
+    "c3": 0.19734503328800201,
+    "c4": 0.03172405809164047,
+    "c5": 0.9872166514396667,
+    "c6": 0.2743559181690216
+   },
+   "clip_raw": 0.24744726717472076,
+   "style_margin": 0.08050233125686646,
+   "max_train_dino": 0.7989640235900879
+  },
+  {
+   "scene_id": "s21",
+   "condition": "c2_template",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c2_template@rrv_v1/dev/s21_c2_template_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, blue-skinned crowned man, young crowned man in white, monkey-faced figure, the blue-skinned prince, the young prince and the monkey-faced devotee sitting on rocks by the sea shore, planning the crossing to the figure, bow and quiver, white beard, oil painting, canvas texture, classical indian art",
+   "checklist": 0.4343810245394707,
+   "checklist_detail": {
+    "c1": 0.5623384714126587,
+    "c2": 0.3312827944755554,
+    "c3": 0.08281084150075912,
+    "c4": 0.4555188715457916,
+    "c5": 0.9451628923416138,
+    "c6": 0.5347453951835632
+   },
+   "clip_raw": 0.3042128384113312,
+   "style_margin": 0.05315577983856201,
+   "max_train_dino": 0.7570359706878662
+  },
+  {
+   "scene_id": "s22",
+   "condition": "c2_template",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c2_template@rrv_v1/dev/s22_c2_template_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, woman in a dark blue saree, old warrior with a long white beard, proud king in a jeweled crown and rich robes, the dark-haired princess, her hair loose, pillared royal hall, carved stone columns, gold jewelry, white garments, oil painting, canvas texture, classical indian art",
+   "checklist": 0.536867493763566,
+   "checklist_detail": {
+    "c1": 0.884116530418396,
+    "c2": 0.07834616303443909,
+    "c3": 0.9934129118919373,
+    "c4": 0.1434832662343979,
+    "c5": 0.23970547318458557
+   },
+   "clip_raw": 0.2881649136543274,
+   "style_margin": 0.09667503833770752,
+   "max_train_dino": 0.7479221820831299
+  },
+  {
+   "scene_id": "s22",
+   "condition": "c2_template",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c2_template@rrv_v1/dev/s22_c2_template_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, woman in a dark blue saree, old warrior with a long white beard, proud king in a jeweled crown and rich robes, the dark-haired princess, her hair loose, pillared royal hall, carved stone columns, gold jewelry, white garments, oil painting, canvas texture, classical indian art",
+   "checklist": 0.34288328513503075,
+   "checklist_detail": {
+    "c1": 0.07060213387012482,
+    "c2": 0.08297716081142426,
+    "c3": 0.9952467083930969,
+    "c4": 0.33855578303337097,
+    "c5": 0.10685849189758301
+   },
+   "clip_raw": 0.24171701073646545,
+   "style_margin": 0.13417094945907593,
+   "max_train_dino": 0.7569242715835571
+  },
+  {
+   "scene_id": "s23",
+   "condition": "c2_template",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c2_template@rrv_v1/dev/s23_c2_template_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, blue-skinned crowned man, young crowned man in white, the blue-skinned prince freeing a woman from a curse, the young prince and a sage standing beside him, the woman bowing at his feet, soft warm glow, serene faces, bow and quiver, oil painting, canvas texture, classical indian art",
+   "checklist": 0.38708997455736,
+   "checklist_detail": {
+    "c1": 0.6299058198928833,
+    "c2": 0.19411644339561462,
+    "c3": 0.5437028408050537,
+    "c4": 0.3644704520702362,
+    "c5": 0.019418658688664436
+   },
+   "clip_raw": 0.24523580074310303,
+   "style_margin": 0.09139424562454224,
+   "max_train_dino": 0.7614970803260803
+  },
+  {
+   "scene_id": "s23",
+   "condition": "c2_template",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c2_template@rrv_v1/dev/s23_c2_template_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, blue-skinned crowned man, young crowned man in white, the blue-skinned prince freeing a woman from a curse, the young prince and a sage standing beside him, the woman bowing at his feet, soft warm glow, serene faces, bow and quiver, oil painting, canvas texture, classical indian art",
+   "checklist": 0.28964363804294,
+   "checklist_detail": {
+    "c1": 0.7250463366508484,
+    "c2": 0.13529588282108307,
+    "c3": 0.2524423599243164,
+    "c4": 0.18291962146759033,
+    "c5": 0.015384340658783913
+   },
+   "clip_raw": 0.20747140049934387,
+   "style_margin": 0.05452483892440796,
+   "max_train_dino": 0.5897656679153442
+  },
+  {
+   "scene_id": "s24",
+   "condition": "c2_template",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c2_template@rrv_v1/dev/s24_c2_template_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, lady playing a stringed instrument on a terrace at night, no idea who she is, probably a princess from some story, oil painting, canvas texture, classical indian art",
+   "checklist": 0.7686222176998854,
+   "checklist_detail": {
+    "c1": 0.8809822201728821,
+    "c2": 0.9734139442443848,
+    "c3": 0.6441652178764343,
+    "c4": 0.16001872718334198,
+    "c5": 0.9918362498283386
+   },
+   "clip_raw": 0.271795392036438,
+   "style_margin": 0.08700811862945557,
+   "max_train_dino": 0.6452972888946533
+  },
+  {
+   "scene_id": "s24",
+   "condition": "c2_template",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c2_template@rrv_v1/dev/s24_c2_template_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, lady playing a stringed instrument on a terrace at night, no idea who she is, probably a princess from some story, oil painting, canvas texture, classical indian art",
+   "checklist": 0.7779845334589481,
+   "checklist_detail": {
+    "c1": 0.8690715432167053,
+    "c2": 0.9853677153587341,
+    "c3": 0.6186904311180115,
+    "c4": 0.2851634919643402,
+    "c5": 0.992453396320343
+   },
+   "clip_raw": 0.23565298318862915,
+   "style_margin": 0.12200993299484253,
+   "max_train_dino": 0.6573511362075806
   }
  ]
 }
