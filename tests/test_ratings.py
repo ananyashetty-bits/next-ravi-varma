@@ -95,11 +95,16 @@ def test_analyse_end_to_end(tmp_path):
     got, problems, _, _ = R.load_round(c, k, 1)
     assert not problems
     scenes = {s: {"id": s, "tier": 1 + j % 2, "seen_in_training": j == 0} for j, s in enumerate(KEY)}
-    # judge tracks faithfulness perfectly; clip is noise
-    results = {}
-    for i, s in enumerate(KEY):
-        results[("c1_lora_raw", s, 1)] = {"checklist": 0.1 * (1 + i % 3) + 0.01 * i, "clip_raw": 0.3, "style_margin": 0.1}
-        results[("c4_llm_nokb", s, 1)] = {"checklist": 0.1 * (2 + i % 3) + 0.01 * i, "clip_raw": 0.3, "style_margin": 0.2}
+    # judge tracks faithfulness perfectly; clip is noise. Written as results files and loaded like the real ones.
+    def items(cond, base, i, s):
+        return {"condition": cond, "scene_id": s, "seed": 1, "image": f"/img/{base}/{s}_s1.png",
+                "checklist": 0.1 * (int(cond == "c4_llm_nokb") + 1 + i % 3) + 0.01 * i, "clip_raw": 0.3,
+                "style_margin": 0.1, "max_train_dino": 0.7}
+    (tmp_path / "res").mkdir()
+    for cond, base in (("c1_lora_raw", "c1"), ("c4_llm_nokb", "c4")):
+        (tmp_path / "res" / f"{cond}.json").write_text(json.dumps(
+            {"items": [items(cond, base, i, s) for i, s in enumerate(KEY)]}))
+    results = R.load_results([str(p) for p in (tmp_path / "res").glob("*.json")])
     rep = R.analyse(got, scenes, results, n_boot=200)
 
     assert rep["conditions"] == ["c1_lora_raw", "c4_llm_nokb"]
@@ -153,3 +158,42 @@ def test_auto_tables_p95_and_run():
     md, data = T.tables(conds, scenes)
     assert "c1_lora_raw" in data["conditions"] and data["paired"]
     assert all(v["dino_p95"] <= T.MEM_P95 for v in data["conditions"].values())
+
+
+def test_results_matched_by_exact_image_and_rated_folder_wins(tmp_path):
+    """A re-generated image with the same scene and seed must not be paired with a rating of the old image."""
+    regen = {"items": [{"condition": "c4_llm_nokb", "scene_id": "s01", "seed": 1,
+                        "image": "/new/s01_c4_llm_nokb_s1.png", "checklist": 0.9, "max_train_dino": 0.99}]}
+    rated = {"items": [{"condition": "c4_llm_nokb_0", "scene_id": "s01", "seed": 1,
+                        "image": "/old/s01_c4_llm_nokb_0_s1.png", "checklist": 0.2, "max_train_dino": 0.5}]}
+    (tmp_path / "rated").mkdir()
+    a, b = tmp_path / "c4.json", tmp_path / "rated" / "c4.json"
+    a.write_text(json.dumps(regen))
+    b.write_text(json.dumps(rated))
+    res = R.load_results([str(a), str(b)])
+    assert res["images"] == {("c4_llm_nokb", "s01_c4_llm_nokb_0_s1.png"): {"checklist": 0.2, "max_train_dino": 0.5}}
+    assert res["dino"] == {"c4_llm_nokb": [0.5]}
+    only_new = R.load_results([str(a)])
+    assert ("c4_llm_nokb", "s01_c4_llm_nokb_0_s1.png") not in only_new["images"]   # no silent pairing
+
+
+def test_default_pipeline_rule():
+    pytest.importorskip("numpy")
+    from eval.stats import paired
+    sc = [f"s{i}" for i in range(8)]
+    sm = {"c1_lora_raw": {"faithfulness": {s: 2.0 for s in sc}, "style": {s: 3.0 for s in sc}},
+          "c2_template": {"faithfulness": {s: 2.1 for s in sc}, "style": {s: 3.0 for s in sc}},
+          "c3_llm_kb_ckb": {"faithfulness": {s: 2.15 for s in sc}, "style": {s: 3.0 for s in sc}},
+          "c4_llm_nokb": {"faithfulness": {s: 3.5 for s in sc}, "style": {s: 2.0 for s in sc}}}   # style too low
+    dino = {c: [0.8] for c in sm}
+    out = R.default_pipeline(sm, sorted(sm), {"c3": "c3_llm_kb_ckb"}, dino, paired, n_boot=200)
+    assert out["table"]["c4_llm_nokb"]["eligible"] is False          # best faithfulness, but fails style
+    assert out["top"] == "c3_llm_kb_ckb"
+    assert out["vs_next_simpler"]["a"] == "c2_template"
+    assert out["choice"] == "c3_llm_kb_ckb"                          # constant +0.05 diff: CI excludes 0
+    sm["c3_llm_kb_ckb"]["faithfulness"] = {s: 2.1 + (0.5 if i % 2 else -0.4) for i, s in enumerate(sc)}
+    out = R.default_pipeline(sm, sorted(sm), {"c3": "c3_llm_kb_ckb"}, dino, paired, n_boot=200)
+    assert out["choice"] == "c2_template"                             # noisy, CI includes 0 -> simpler one
+    dino["c2_template"] = [0.9]
+    out = R.default_pipeline(sm, sorted(sm), {"c3": "c3_llm_kb_ckb"}, dino, paired, n_boot=200)
+    assert out["table"]["c2_template"]["mem_ok"] is False

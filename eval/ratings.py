@@ -113,14 +113,41 @@ def load_round(csv_path, key_path, rnd, seed_img=1):
 
 
 def load_results(paths):
-    """(condition, scene_id, seed) -> automated metrics of that image, from results/*.json items."""
-    out = {}
-    for p in paths:
+    """Automated metrics per image, keyed by (condition, image file name), plus per-condition max_train_dino.
+
+    Ratings are matched to the exact image that was rated (same condition and same file name), never just by
+    scene and seed: a re-generated image with the same seed is a different image. If a file under a `rated/`
+    folder exists for a condition (the images that were actually put on the contact sheets), it replaces the
+    other files for that condition.
+    """
+    per_file = []
+    for p in sorted(paths):
         d = json.load(open(p))
+        conds = {norm_condition(it.get("condition")) for it in d.get("items", [])}
+        per_file.append((p, d, conds))
+    rated = {c for p, _, conds in per_file if os.sep + "rated" + os.sep in p or "/rated/" in p for c in conds}
+    out = {"images": {}, "dino": {}, "files": {}}
+    for p, d, conds in per_file:
+        is_rated = os.sep + "rated" + os.sep in p or "/rated/" in p
         for it in d.get("items", []):
-            k = (norm_condition(it.get("condition")), it.get("scene_id"), it.get("seed"))
-            out[k] = {m: it[m] for m in ("checklist", "clip_raw", "style_margin", "max_train_dino") if m in it}
+            c = norm_condition(it.get("condition"))
+            if c in rated and not is_rated:
+                continue
+            out["files"].setdefault(c, set()).add(os.path.relpath(p, ROOT) if p.startswith(ROOT) else p)
+            m = {k: it[k] for k in ("checklist", "clip_raw", "style_margin", "max_train_dino") if k in it}
+            out["images"][(c, os.path.basename(it.get("image") or it.get("path") or ""))] = m
+            if "max_train_dino" in it:
+                out["dino"].setdefault(c, []).append(it["max_train_dino"])
     return out
+
+
+def p95(x):
+    x = sorted(x)
+    if not x:
+        return float("nan")
+    k = (len(x) - 1) * 0.95
+    f_ = math.floor(k)
+    return x[f_] + (x[min(f_ + 1, len(x) - 1)] - x[f_]) * (k - f_)
 
 
 def scene_coverage(scenes, kb_path):
@@ -220,6 +247,7 @@ def per_image(ratings):
     out = {}
     for k, rs in img.items():
         out[k] = {"condition": k[0], "scene_id": k[1], "seed": rs[0]["seed"], "n_raters": len(rs),
+                  "image": os.path.basename(rs[0].get("image") or ""),
                   "raters": sorted(r["rater"] for r in rs), **{d: mean(r[d] for r in rs) for d in DIMS}}
     return out
 
@@ -304,7 +332,7 @@ def analyse(ratings, scenes, results=None, coverage=None, pairs=None, aliases=No
     if results:
         rows = []
         for (c, s), v in imgs.items():
-            m = results.get((c, s, v["seed"]))
+            m = results["images"].get((c, v["image"]))
             if m:
                 rows.append({**v, **m})
         val = {"n_images": len(rows), "unmatched": len(imgs) - len(rows)}
@@ -319,7 +347,69 @@ def analyse(ratings, scenes, results=None, coverage=None, pairs=None, aliases=No
         rs = val["stylemargin_vs_style"]["spearman"]
         val["H-B2_pass"] = None if math.isnan(rs) else rs > 0
         rep["judge_validation"] = val
+
+    # default pipeline (B.3), on human ratings; ranking on the scenes every candidate was rated on
+    rep["default_pipeline"] = default_pipeline(sm, conds, aliases, (results or {}).get("dino", {}), paired, n_boot)
     return rep
+
+
+SIMPLEST_FIRST = ["c1", "c2", "c4", "c3", "c5", "c6"]   # B.3: c1 < c2 < c4 < c3 < c5/c6 (c0 is not a candidate)
+STYLE_MARGIN_PTS = 0.3
+MEM_P95 = 0.85
+
+
+def default_pipeline(sm, conds, aliases, dino, paired, n_boot=5000):
+    """Apply the pre-registered B.3 rule literally and record every step."""
+    cands = []
+    for short in SIMPLEST_FIRST:
+        full = resolve(short, conds, aliases)
+        if full and full not in cands:
+            cands.append(full)
+    out = {"candidates": cands, "steps": []}
+    c1 = resolve("c1", conds, aliases)
+    if not c1 or len(cands) < 2:
+        out["choice"] = None
+        out["steps"].append("not enough rated conditions (c1 and at least one other are needed)")
+        return out
+    common = set.intersection(*(set(sm[c]["faithfulness"]) for c in cands))
+    out["common_scenes"] = sorted(common)
+    c1_style = mean(sm[c1]["style"][x] for x in common)
+    rows = {}
+    for c in cands:
+        st = mean(sm[c]["style"][x] for x in common)
+        fa = mean(sm[c]["faithfulness"][x] for x in common)
+        dp = p95(dino.get(c, []))
+        ok_style = st >= c1_style - STYLE_MARGIN_PTS
+        ok_mem = (not math.isnan(dp)) and dp <= MEM_P95
+        rows[c] = {"faithfulness": fa, "style": st, "dino_p95": dp, "eligible": ok_style and ok_mem,
+                   "style_ok": ok_style, "mem_ok": ok_mem}
+    out["table"] = rows
+    elig = [c for c in cands if rows[c]["eligible"]]
+    out["steps"].append(f"eligible (style >= c1's {c1_style:.2f} - {STYLE_MARGIN_PTS}, dino p95 <= {MEM_P95}): "
+                        + (", ".join(elig) or "none"))
+    if not elig:
+        out["choice"] = None
+        return out
+    top = max(elig, key=lambda c: (rows[c]["faithfulness"], -cands.index(c)))
+    out["top"] = top
+    out["steps"].append(f"highest mean human faithfulness on the {len(common)} common scenes: {top} "
+                        f"({rows[top]['faithfulness']:.2f})")
+    simpler = [c for c in elig if cands.index(c) < cands.index(top)]
+    choice = top
+    if simpler:
+        nxt = simpler[-1]
+        pr = paired({x: sm[nxt]["faithfulness"][x] for x in common}, {x: sm[top]["faithfulness"][x] for x in common},
+                    n=n_boot, tie=TIE_RATING)
+        out["vs_next_simpler"] = {"a": nxt, "b": top, **pr}
+        incl0 = pr["ci95"][0] <= 0 <= pr["ci95"][1]
+        out["steps"].append(f"{nxt} -> {top}: diff {pr['diff']:+.2f}, CI [{pr['ci95'][0]:+.2f}, {pr['ci95'][1]:+.2f}]"
+                            + (" includes 0, so the simpler one is chosen" if incl0 else " excludes 0, so the top one stays"))
+        if incl0:
+            choice = nxt
+    else:
+        out["steps"].append(f"{top} is the simplest eligible condition")
+    out["choice"] = choice
+    return out
 
 
 # ---------------------------------------------------------------------------------------------- report
@@ -380,6 +470,16 @@ def to_markdown(rep, header=""):
             L.append(f"| {label} | {jv[name]['n']} | {f(jv[name]['spearman'])} {ci(jv[name]['ci95'])} |")
         L.append(f"\nH-B1 (judge ρ ≥ {JUDGE_MIN_RHO} and ≥ CLIP's): **{verdict(jv['H-B1_pass'])}**. "
                  f"H-B2 (style_margin ρ > 0): **{verdict(jv['H-B2_pass'])}**.")
+    dp = rep.get("default_pipeline")
+    if dp and dp.get("table"):
+        L += ["", f"### Default pipeline (B.3 rule; human ratings on the {len(dp['common_scenes'])} scenes every candidate was rated on)", "",
+              "| Condition | Faithfulness | Style | `max_train_dino` p95 | Eligible |", "|---|---|---|---|---|"]
+        for c in dp["candidates"]:
+            r = dp["table"][c]
+            why = "" if r["eligible"] else " (" + ", ".join(x for x, ok in (("style", r["style_ok"]), ("memorisation", r["mem_ok"])) if not ok) + ")"
+            L.append(f"| `{c}` | {f(r['faithfulness'])} | {f(r['style'])} | {f(r['dino_p95'], 3)} | {'yes' if r['eligible'] else 'no' + why} |")
+        L += [""] + [f"{i}. {t}" for i, t in enumerate(dp["steps"], 1)]
+        L.append(f"\n**Default pipeline by the rule: `{dp['choice']}`**")
     return "\n".join(L) + "\n"
 
 
