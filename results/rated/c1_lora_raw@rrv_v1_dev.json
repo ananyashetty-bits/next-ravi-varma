@@ -1,0 +1,737 @@
+{
+ "manifest": "/content/drive/MyDrive/m3/images/c1_lora_raw/dev/manifest.json",
+ "scenes_file": "/content/m3/eval/test_scenes_dev.json",
+ "scored_at": "2026-11-04T08:11:57.157504",
+ "judge": "Qwen/Qwen2-VL-2B-Instruct",
+ "n_images": 32,
+ "summary": {
+  "c1_lora_raw": {
+   "checklist": {
+    "mean": 0.5755463432497991,
+    "ci95": [
+     0.5037242044190094,
+     0.6491393809959844
+    ],
+    "n_scenes": 16
+   },
+   "clip_raw": {
+    "mean": 0.26379552064463496,
+    "ci95": [
+     0.25168025444727393,
+     0.2763092708657496
+    ],
+    "n_scenes": 16
+   },
+   "style_margin": {
+    "mean": 0.09327375888824463,
+    "ci95": [
+     0.07671596249565482,
+     0.10938360644504427
+    ],
+    "n_scenes": 16
+   },
+   "max_train_dino": {
+    "mean": 0.7306689899414778,
+    "ci95": [
+     0.7062048281542956,
+     0.7533318474423141
+    ],
+    "n_scenes": 16
+   }
+  }
+ },
+ "per_scene": {
+  "c1_lora_raw": {
+   "checklist": {
+    "s09": 0.8706441455417209,
+    "s10": 0.6033976918293371,
+    "s11": 0.6049536783248186,
+    "s12": 0.6943864151835442,
+    "s13": 0.7302442097829448,
+    "s14": 0.7407246074742742,
+    "s15": 0.4456171402707696,
+    "s16": 0.2557207985470692,
+    "s25": 0.5218114308081567,
+    "s26": 0.41653559445403515,
+    "s27": 0.7100485675036907,
+    "s28": 0.5471525497734546,
+    "s29": 0.5479601658880711,
+    "s30": 0.47448736594782936,
+    "s31": 0.4272077111527324,
+    "s32": 0.6178494195143381
+   },
+   "clip_raw": {
+    "s09": 0.3083149492740631,
+    "s10": 0.21428420394659042,
+    "s11": 0.2756280452013016,
+    "s12": 0.25176413357257843,
+    "s13": 0.24943959712982178,
+    "s14": 0.26085834205150604,
+    "s15": 0.28320275247097015,
+    "s16": 0.25088945776224136,
+    "s25": 0.26028405129909515,
+    "s26": 0.2499644160270691,
+    "s27": 0.25917278230190277,
+    "s28": 0.23849838972091675,
+    "s29": 0.29065775871276855,
+    "s30": 0.27839551866054535,
+    "s31": 0.31127433478832245,
+    "s32": 0.2380995973944664
+   },
+   "style_margin": {
+    "s09": 0.15161925554275513,
+    "s10": 0.12292799353599548,
+    "s11": 0.1251218616962433,
+    "s12": 0.08721053600311279,
+    "s13": 0.08995935320854187,
+    "s14": 0.07359576225280762,
+    "s15": 0.13192018866539001,
+    "s16": 0.04732593894004822,
+    "s25": 0.0742148756980896,
+    "s26": 0.08427447080612183,
+    "s27": 0.11423555016517639,
+    "s28": 0.07987868785858154,
+    "s29": 0.06756618618965149,
+    "s30": 0.09430590271949768,
+    "s31": 0.1285017430782318,
+    "s32": 0.01972183585166931
+   },
+   "max_train_dino": {
+    "s09": 0.7259728610515594,
+    "s10": 0.6483427286148071,
+    "s11": 0.7630310654640198,
+    "s12": 0.7495254278182983,
+    "s13": 0.7084317207336426,
+    "s14": 0.7048395574092865,
+    "s15": 0.8158418536186218,
+    "s16": 0.7495510280132294,
+    "s25": 0.7520304322242737,
+    "s26": 0.7242619097232819,
+    "s27": 0.7592889070510864,
+    "s28": 0.773294061422348,
+    "s29": 0.7897562086582184,
+    "s30": 0.720161646604538,
+    "s31": 0.6804280579090118,
+    "s32": 0.6259463727474213
+   }
+  }
+ },
+ "items": [
+  {
+   "scene_id": "s09",
+   "condition": "c1_lora_raw",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c1_lora_raw/dev/s09_c1_lora_raw_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Sita sitting alone under a tree in the Ashoka grove, sorrowful, the garden quiet at dusk, oil painting, canvas texture, classical indian art",
+   "checklist": 0.8650057514508566,
+   "checklist_detail": {
+    "c1": 0.870775043964386,
+    "c2": 0.9809016585350037,
+    "c3": 0.9617223739624023,
+    "c4": 0.984483540058136,
+    "c5": 0.18928653001785278
+   },
+   "clip_raw": 0.30095264315605164,
+   "style_margin": 0.13869178295135498,
+   "max_train_dino": 0.7028599977493286
+  },
+  {
+   "scene_id": "s09",
+   "condition": "c1_lora_raw",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c1_lora_raw/dev/s09_c1_lora_raw_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Sita sitting alone under a tree in the Ashoka grove, sorrowful, the garden quiet at dusk, oil painting, canvas texture, classical indian art",
+   "checklist": 0.8762825396325853,
+   "checklist_detail": {
+    "c1": 0.8291585445404053,
+    "c2": 0.9598183631896973,
+    "c3": 0.9645450711250305,
+    "c4": 0.9824192523956299,
+    "c5": 0.41466039419174194
+   },
+   "clip_raw": 0.3156772553920746,
+   "style_margin": 0.16454672813415527,
+   "max_train_dino": 0.7490857243537903
+  },
+  {
+   "scene_id": "s10",
+   "condition": "c1_lora_raw",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c1_lora_raw/dev/s10_c1_lora_raw_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Karna standing proudly with his bow at sunrise, golden armour shining, oil painting, canvas texture, classical indian art",
+   "checklist": 0.5133847122391065,
+   "checklist_detail": {
+    "c1": 0.87592613697052,
+    "c2": 0.9232614040374756,
+    "c3": 0.049492474645376205,
+    "c4": 0.0467962920665741,
+    "c5": 0.8295097947120667
+   },
+   "clip_raw": 0.21087081730365753,
+   "style_margin": 0.14130491018295288,
+   "max_train_dino": 0.6692155599594116
+  },
+  {
+   "scene_id": "s10",
+   "condition": "c1_lora_raw",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c1_lora_raw/dev/s10_c1_lora_raw_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Karna standing proudly with his bow at sunrise, golden armour shining, oil painting, canvas texture, classical indian art",
+   "checklist": 0.6934106714195676,
+   "checklist_detail": {
+    "c1": 0.8106924295425415,
+    "c2": 0.8112099766731262,
+    "c3": 0.9717229008674622,
+    "c4": 0.29593443870544434,
+    "c5": 0.46157655119895935
+   },
+   "clip_raw": 0.21769759058952332,
+   "style_margin": 0.10455107688903809,
+   "max_train_dino": 0.6274698972702026
+  },
+  {
+   "scene_id": "s11",
+   "condition": "c1_lora_raw",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c1_lora_raw/dev/s11_c1_lora_raw_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Arjuna and Subhadra slipping away together through the palace garden, she holding his arm and looking back nervously, oil painting, canvas texture, classical indian art",
+   "checklist": 0.6169651448726654,
+   "checklist_detail": {
+    "c1": 0.763664186000824,
+    "c2": 0.22830602526664734,
+    "c3": 0.5080154538154602,
+    "c4": 0.9934230446815491,
+    "c5": 0.9423267841339111
+   },
+   "clip_raw": 0.29027998447418213,
+   "style_margin": 0.13328027725219727,
+   "max_train_dino": 0.7841552495956421
+  },
+  {
+   "scene_id": "s11",
+   "condition": "c1_lora_raw",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c1_lora_raw/dev/s11_c1_lora_raw_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Arjuna and Subhadra slipping away together through the palace garden, she holding his arm and looking back nervously, oil painting, canvas texture, classical indian art",
+   "checklist": 0.5929422117769718,
+   "checklist_detail": {
+    "c1": 0.7343160510063171,
+    "c2": 0.4613087475299835,
+    "c3": 0.2385837882757187,
+    "c4": 0.9906062483787537,
+    "c5": 0.8845142722129822
+   },
+   "clip_raw": 0.260976105928421,
+   "style_margin": 0.1169634461402893,
+   "max_train_dino": 0.7419068813323975
+  },
+  {
+   "scene_id": "s12",
+   "condition": "c1_lora_raw",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c1_lora_raw/dev/s12_c1_lora_raw_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Hanuman kneeling before Rama and offering him Sita's ring, Rama reaching out to take it, oil painting, canvas texture, classical indian art",
+   "checklist": 0.733980076180564,
+   "checklist_detail": {
+    "c1": 0.8419099450111389,
+    "c2": 0.9600692391395569,
+    "c3": 0.22198976576328278,
+    "c4": 0.9648149609565735,
+    "c5": 0.6282528638839722
+   },
+   "clip_raw": 0.28093722462654114,
+   "style_margin": 0.08853626251220703,
+   "max_train_dino": 0.7358949184417725
+  },
+  {
+   "scene_id": "s12",
+   "condition": "c1_lora_raw",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c1_lora_raw/dev/s12_c1_lora_raw_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Hanuman kneeling before Rama and offering him Sita's ring, Rama reaching out to take it, oil painting, canvas texture, classical indian art",
+   "checklist": 0.6547927541865243,
+   "checklist_detail": {
+    "c1": 0.8903433680534363,
+    "c2": 0.5364784598350525,
+    "c3": 0.7451369762420654,
+    "c4": 0.7132229208946228,
+    "c5": 0.12277133762836456
+   },
+   "clip_raw": 0.22259104251861572,
+   "style_margin": 0.08588480949401855,
+   "max_train_dino": 0.7631559371948242
+  },
+  {
+   "scene_id": "s13",
+   "condition": "c1_lora_raw",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c1_lora_raw/dev/s13_c1_lora_raw_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Krishna as the peace envoy standing in Duryodhana's royal court, speaking to the king on his throne while ministers and courtiers watch, oil painting, canvas texture, classical indian art",
+   "checklist": 0.7487950772047043,
+   "checklist_detail": {
+    "c1": 0.813000500202179,
+    "c2": 0.744995653629303,
+    "c3": 0.7321316003799438,
+    "c4": 0.9892338514328003,
+    "c5": 0.1804324835538864
+   },
+   "clip_raw": 0.24491119384765625,
+   "style_margin": 0.08922809362411499,
+   "max_train_dino": 0.7303557395935059
+  },
+  {
+   "scene_id": "s13",
+   "condition": "c1_lora_raw",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c1_lora_raw/dev/s13_c1_lora_raw_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Krishna as the peace envoy standing in Duryodhana's royal court, speaking to the king on his throne while ministers and courtiers watch, oil painting, canvas texture, classical indian art",
+   "checklist": 0.7116933423611853,
+   "checklist_detail": {
+    "c1": 0.798369824886322,
+    "c2": 0.9312259554862976,
+    "c3": 0.43924933671951294,
+    "c4": 0.9809637069702148,
+    "c5": 0.10562243312597275
+   },
+   "clip_raw": 0.2539680004119873,
+   "style_margin": 0.09069061279296875,
+   "max_train_dino": 0.6865077018737793
+  },
+  {
+   "scene_id": "s14",
+   "condition": "c1_lora_raw",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c1_lora_raw/dev/s14_c1_lora_raw_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Rama, Sita and Lakshmana leaving for exile on foot through the forest, the people of Ayodhya weeping behind them, oil painting, canvas texture, classical indian art",
+   "checklist": 0.8824057976404825,
+   "checklist_detail": {
+    "c1": 0.9124876856803894,
+    "c2": 0.9163107872009277,
+    "c3": 0.9346718788146973,
+    "c4": 0.9358751177787781,
+    "c5": 0.5429612398147583
+   },
+   "clip_raw": 0.2408568263053894,
+   "style_margin": 0.08501553535461426,
+   "max_train_dino": 0.7076682448387146
+  },
+  {
+   "scene_id": "s14",
+   "condition": "c1_lora_raw",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c1_lora_raw/dev/s14_c1_lora_raw_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Rama, Sita and Lakshmana leaving for exile on foot through the forest, the people of Ayodhya weeping behind them, oil painting, canvas texture, classical indian art",
+   "checklist": 0.5990434173080657,
+   "checklist_detail": {
+    "c1": 0.9086494445800781,
+    "c2": 0.06677024066448212,
+    "c3": 0.9408893585205078,
+    "c4": 0.7270917892456055,
+    "c5": 0.10458908975124359
+   },
+   "clip_raw": 0.2808598577976227,
+   "style_margin": 0.06217598915100098,
+   "max_train_dino": 0.7020108699798584
+  },
+  {
+   "scene_id": "s15",
+   "condition": "c1_lora_raw",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c1_lora_raw/dev/s15_c1_lora_raw_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Savithri pleading with Yama for her husband's life, Satyavan lying lifeless with his head in her lap in the forest, oil painting, canvas texture, classical indian art",
+   "checklist": 0.41124903969466686,
+   "checklist_detail": {
+    "c1": 0.7239598035812378,
+    "c2": 0.18025682866573334,
+    "c3": 0.08915738016366959,
+    "c4": 0.9879618287086487,
+    "c5": 0.3152824640274048
+   },
+   "clip_raw": 0.27054548263549805,
+   "style_margin": 0.13829392194747925,
+   "max_train_dino": 0.8036630153656006
+  },
+  {
+   "scene_id": "s15",
+   "condition": "c1_lora_raw",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c1_lora_raw/dev/s15_c1_lora_raw_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Savithri pleading with Yama for her husband's life, Satyavan lying lifeless with his head in her lap in the forest, oil painting, canvas texture, classical indian art",
+   "checklist": 0.47998524084687233,
+   "checklist_detail": {
+    "c1": 0.5994920134544373,
+    "c2": 0.15033797919750214,
+    "c3": 0.49881935119628906,
+    "c4": 0.9913069605827332,
+    "c5": 0.3512762784957886
+   },
+   "clip_raw": 0.29586002230644226,
+   "style_margin": 0.12554645538330078,
+   "max_train_dino": 0.8280206918716431
+  },
+  {
+   "scene_id": "s16",
+   "condition": "c1_lora_raw",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c1_lora_raw/dev/s16_c1_lora_raw_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, in the middle of the great battel at kurukshetra arjun drops his bow and sits down in his chariot, he cant bring himself to fight his own family. krishn turns around from the horses to talk to him. armies with banners and elephants everywhere, dust in the air, conch shells blowing, like the whole world is waiting. make it epic and sad at the same time, golden evening light, oil painting, canvas texture, classical indian art",
+   "checklist": 0.30869912273354,
+   "checklist_detail": {
+    "c1": 0.11628235131502151,
+    "c2": 0.25158700346946716,
+    "c3": 0.34781354665756226,
+    "c4": 0.5416271686553955,
+    "c5": 0.26367196440696716
+   },
+   "clip_raw": 0.25855201482772827,
+   "style_margin": 0.045342981815338135,
+   "max_train_dino": 0.767595112323761
+  },
+  {
+   "scene_id": "s16",
+   "condition": "c1_lora_raw",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c1_lora_raw/dev/s16_c1_lora_raw_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, in the middle of the great battel at kurukshetra arjun drops his bow and sits down in his chariot, he cant bring himself to fight his own family. krishn turns around from the horses to talk to him. armies with banners and elephants everywhere, dust in the air, conch shells blowing, like the whole world is waiting. make it epic and sad at the same time, golden evening light, oil painting, canvas texture, classical indian art",
+   "checklist": 0.20274247436059845,
+   "checklist_detail": {
+    "c1": 0.02877533622086048,
+    "c2": 0.1521938592195511,
+    "c3": 0.27002617716789246,
+    "c4": 0.2829749584197998,
+    "c5": 0.35674160718917847
+   },
+   "clip_raw": 0.24322690069675446,
+   "style_margin": 0.0493088960647583,
+   "max_train_dino": 0.7315069437026978
+  },
+  {
+   "scene_id": "s25",
+   "condition": "c1_lora_raw",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c1_lora_raw/dev/s25_c1_lora_raw_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Hanuman flying through the sky carrying a mountain of healing herbs, oil painting, canvas texture, classical indian art",
+   "checklist": 0.5619743689894676,
+   "checklist_detail": {
+    "c1": 0.9087044596672058,
+    "c2": 0.2606540322303772,
+    "c3": 0.31835395097732544,
+    "c4": 0.8465405106544495,
+    "c5": 0.6738295555114746
+   },
+   "clip_raw": 0.2666422128677368,
+   "style_margin": 0.06702929735183716,
+   "max_train_dino": 0.8065668344497681
+  },
+  {
+   "scene_id": "s25",
+   "condition": "c1_lora_raw",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c1_lora_raw/dev/s25_c1_lora_raw_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Hanuman flying through the sky carrying a mountain of healing herbs, oil painting, canvas texture, classical indian art",
+   "checklist": 0.48164849262684584,
+   "checklist_detail": {
+    "c1": 0.9315148591995239,
+    "c2": 0.04305149242281914,
+    "c3": 0.2790450155735016,
+    "c4": 0.6967653036117554,
+    "c5": 0.649199903011322
+   },
+   "clip_raw": 0.2539258897304535,
+   "style_margin": 0.08140045404434204,
+   "max_train_dino": 0.6974940299987793
+  },
+  {
+   "scene_id": "s26",
+   "condition": "c1_lora_raw",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c1_lora_raw/dev/s26_c1_lora_raw_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Show Krishna as the charioteer, turning to counsel a hesitant Arjuna who has lowered his bow, in their chariot just before the battle begins, oil painting, canvas texture, classical indian art",
+   "checklist": 0.40380567470565437,
+   "checklist_detail": {
+    "c1": 0.5352478623390198,
+    "c2": 0.008178219199180603,
+    "c3": 0.7835294604301453,
+    "c4": 0.5354504585266113,
+    "c5": 0.29873865842819214,
+    "c6": 0.014506087638437748
+   },
+   "clip_raw": 0.24660342931747437,
+   "style_margin": 0.1198277473449707,
+   "max_train_dino": 0.7260112762451172
+  },
+  {
+   "scene_id": "s26",
+   "condition": "c1_lora_raw",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c1_lora_raw/dev/s26_c1_lora_raw_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Show Krishna as the charioteer, turning to counsel a hesitant Arjuna who has lowered his bow, in their chariot just before the battle begins, oil painting, canvas texture, classical indian art",
+   "checklist": 0.42926551420241593,
+   "checklist_detail": {
+    "c1": 0.3999091684818268,
+    "c2": 0.01168001163750887,
+    "c3": 0.6339597105979919,
+    "c4": 0.8616074323654175,
+    "c5": 0.46193447709083557,
+    "c6": 0.01640801876783371
+   },
+   "clip_raw": 0.2533254027366638,
+   "style_margin": 0.04872119426727295,
+   "max_train_dino": 0.7225125432014465
+  },
+  {
+   "scene_id": "s27",
+   "condition": "c1_lora_raw",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c1_lora_raw/dev/s27_c1_lora_raw_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, yashodha scolding little krishn, his face smeared with butter and a broken pot lying on the floor beside them, oil painting, canvas texture, classical indian art",
+   "checklist": 0.6859350651502609,
+   "checklist_detail": {
+    "c1": 0.5469314455986023,
+    "c2": 0.6567872762680054,
+    "c3": 0.7585350275039673,
+    "c4": 0.8124052882194519,
+    "c5": 0.7505677342414856
+   },
+   "clip_raw": 0.27222317457199097,
+   "style_margin": 0.10592544078826904,
+   "max_train_dino": 0.7536360025405884
+  },
+  {
+   "scene_id": "s27",
+   "condition": "c1_lora_raw",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c1_lora_raw/dev/s27_c1_lora_raw_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, yashodha scolding little krishn, his face smeared with butter and a broken pot lying on the floor beside them, oil painting, canvas texture, classical indian art",
+   "checklist": 0.7341620698571205,
+   "checklist_detail": {
+    "c1": 0.7026675343513489,
+    "c2": 0.659506618976593,
+    "c3": 0.6933926939964294,
+    "c4": 0.9864388704299927,
+    "c5": 0.7757239937782288
+   },
+   "clip_raw": 0.24612239003181458,
+   "style_margin": 0.12254565954208374,
+   "max_train_dino": 0.7649418115615845
+  },
+  {
+   "scene_id": "s28",
+   "condition": "c1_lora_raw",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c1_lora_raw/dev/s28_c1_lora_raw_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, The coronation of Rama and Sita in Ayodhya: the couple seated on the throne, Lakshmana, Bharata and Shatrughna standing beside them, and Hanuman kneeling at their feet, oil painting, canvas texture, classical indian art",
+   "checklist": 0.4995441183447838,
+   "checklist_detail": {
+    "c1": 0.7663674354553223,
+    "c2": 0.0996566042304039,
+    "c3": 0.7406337261199951,
+    "c4": 0.3468959629535675,
+    "c5": 0.3982117176055908,
+    "c6": 0.6901220083236694
+   },
+   "clip_raw": 0.26536181569099426,
+   "style_margin": 0.08733361959457397,
+   "max_train_dino": 0.7684569358825684
+  },
+  {
+   "scene_id": "s28",
+   "condition": "c1_lora_raw",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c1_lora_raw/dev/s28_c1_lora_raw_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, The coronation of Rama and Sita in Ayodhya: the couple seated on the throne, Lakshmana, Bharata and Shatrughna standing beside them, and Hanuman kneeling at their feet, oil painting, canvas texture, classical indian art",
+   "checklist": 0.5947609812021255,
+   "checklist_detail": {
+    "c1": 0.655048131942749,
+    "c2": 0.6058436632156372,
+    "c3": 0.26450082659721375,
+    "c4": 0.9684075713157654,
+    "c5": 0.4343952238559723,
+    "c6": 0.5256142020225525
+   },
+   "clip_raw": 0.21163496375083923,
+   "style_margin": 0.07242375612258911,
+   "max_train_dino": 0.7781311869621277
+  },
+  {
+   "scene_id": "s29",
+   "condition": "c1_lora_raw",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c1_lora_raw/dev/s29_c1_lora_raw_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Bhishma lying on a bed of arrows on the field of Kurukshetra while the Pandavas and Krishna gather around him at dusk, oil painting, canvas texture, classical indian art",
+   "checklist": 0.561833705753088,
+   "checklist_detail": {
+    "c1": 0.6870036721229553,
+    "c2": 0.5542645454406738,
+    "c3": 0.5652804374694824,
+    "c4": 0.43968626856803894,
+    "c5": 0.4418860673904419
+   },
+   "clip_raw": 0.2762947976589203,
+   "style_margin": 0.06408119201660156,
+   "max_train_dino": 0.7812873721122742
+  },
+  {
+   "scene_id": "s29",
+   "condition": "c1_lora_raw",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c1_lora_raw/dev/s29_c1_lora_raw_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Bhishma lying on a bed of arrows on the field of Kurukshetra while the Pandavas and Krishna gather around him at dusk, oil painting, canvas texture, classical indian art",
+   "checklist": 0.5340866260230541,
+   "checklist_detail": {
+    "c1": 0.466767281293869,
+    "c2": 0.6228958368301392,
+    "c3": 0.6264696717262268,
+    "c4": 0.2214476764202118,
+    "c5": 0.6189797520637512
+   },
+   "clip_raw": 0.3050207197666168,
+   "style_margin": 0.07105118036270142,
+   "max_train_dino": 0.7982250452041626
+  },
+  {
+   "scene_id": "s30",
+   "condition": "c1_lora_raw",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c1_lora_raw/dev/s30_c1_lora_raw_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, At Draupadi's swayamvara, Arjuna, dressed as a poor brahmin, bends the great bow and aims upward at the fish target turning high above a crowded hall of seated kings, while Draupadi waits holding a garland, oil painting, canvas texture, classical indian art",
+   "checklist": 0.3699037300215827,
+   "checklist_detail": {
+    "c1": 0.5391050577163696,
+    "c2": 0.2498542070388794,
+    "c3": 0.12269105017185211,
+    "c4": 0.38340455293655396,
+    "c5": 0.13753947615623474,
+    "c6": 0.9848889112472534
+   },
+   "clip_raw": 0.2937059700489044,
+   "style_margin": 0.10836106538772583,
+   "max_train_dino": 0.7279143333435059
+  },
+  {
+   "scene_id": "s30",
+   "condition": "c1_lora_raw",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c1_lora_raw/dev/s30_c1_lora_raw_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, At Draupadi's swayamvara, Arjuna, dressed as a poor brahmin, bends the great bow and aims upward at the fish target turning high above a crowded hall of seated kings, while Draupadi waits holding a garland, oil painting, canvas texture, classical indian art",
+   "checklist": 0.579071001874076,
+   "checklist_detail": {
+    "c1": 0.5462834239006042,
+    "c2": 0.8318755626678467,
+    "c3": 0.44288215041160583,
+    "c4": 0.3084290027618408,
+    "c5": 0.2739335000514984,
+    "c6": 0.9871942400932312
+   },
+   "clip_raw": 0.2630850672721863,
+   "style_margin": 0.08025074005126953,
+   "max_train_dino": 0.7124089598655701
+  },
+  {
+   "scene_id": "s31",
+   "condition": "c1_lora_raw",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c1_lora_raw/dev/s31_c1_lora_raw_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, old Shabri offerring berries to Ram and Laxman outside her little hut in the forrest, oil painting, canvas texture, classical indian art",
+   "checklist": 0.3449225313961506,
+   "checklist_detail": {
+    "c1": 0.09409323334693909,
+    "c2": 0.5330414175987244,
+    "c3": 0.0779862254858017,
+    "c4": 0.3984503149986267,
+    "c5": 0.9506881833076477
+   },
+   "clip_raw": 0.2899434268474579,
+   "style_margin": 0.13031435012817383,
+   "max_train_dino": 0.7379403114318848
+  },
+  {
+   "scene_id": "s31",
+   "condition": "c1_lora_raw",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c1_lora_raw/dev/s31_c1_lora_raw_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, old Shabri offerring berries to Ram and Laxman outside her little hut in the forrest, oil painting, canvas texture, classical indian art",
+   "checklist": 0.5094928909093142,
+   "checklist_detail": {
+    "c1": 0.3643220365047455,
+    "c2": 0.7980445027351379,
+    "c3": 0.34293806552886963,
+    "c4": 0.13763363659381866,
+    "c5": 0.9277002811431885
+   },
+   "clip_raw": 0.332605242729187,
+   "style_margin": 0.1266891360282898,
+   "max_train_dino": 0.6229158043861389
+  },
+  {
+   "scene_id": "s32",
+   "condition": "c1_lora_raw",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/images/c1_lora_raw/dev/s32_c1_lora_raw_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, ok so i dont really remember the story, its from an old picture my grandmother kept in her pooja room. there is an old king, very tired and sad, lying on the floor of a dark room in his pallace, his crown fallen off and lying next to him. his young wife is sitting on a low bed a little way off with her back half turned to him, still angry, and her jewelery is thrown all over the floor around her. there is only one small lamp burning so most of the room is in shadow. i think he was begging her to change her mind about something and she wouldnt listen. can you make it look like that, quiet and sad, oil painting, canvas texture, classical indian art",
+   "checklist": 0.6224105026986864,
+   "checklist_detail": {
+    "c1": 0.7636370062828064,
+    "c2": 0.6959264278411865,
+    "c3": 0.4967375695705414,
+    "c4": 0.24531656503677368,
+    "c5": 0.47297585010528564,
+    "c6": 0.9708001017570496
+   },
+   "clip_raw": 0.23892278969287872,
+   "style_margin": 0.11485666036605835,
+   "max_train_dino": 0.7581973075866699
+  },
+  {
+   "scene_id": "s32",
+   "condition": "c1_lora_raw",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/images/c1_lora_raw/dev/s32_c1_lora_raw_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, ok so i dont really remember the story, its from an old picture my grandmother kept in her pooja room. there is an old king, very tired and sad, lying on the floor of a dark room in his pallace, his crown fallen off and lying next to him. his young wife is sitting on a low bed a little way off with her back half turned to him, still angry, and her jewelery is thrown all over the floor around her. there is only one small lamp burning so most of the room is in shadow. i think he was begging her to change her mind about something and she wouldnt listen. can you make it look like that, quiet and sad, oil painting, canvas texture, classical indian art",
+   "checklist": 0.6132883363299899,
+   "checklist_detail": {
+    "c1": 0.29120010137557983,
+    "c2": 0.9147114157676697,
+    "c3": 0.5081417560577393,
+    "c4": 0.3669569492340088,
+    "c5": 0.7524021863937378,
+    "c6": 0.9721293449401855
+   },
+   "clip_raw": 0.23727640509605408,
+   "style_margin": -0.07541298866271973,
+   "max_train_dino": 0.4936954379081726
+  }
+ ]
+}

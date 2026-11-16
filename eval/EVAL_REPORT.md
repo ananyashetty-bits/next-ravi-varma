@@ -8,8 +8,12 @@
 ## 1. Setup
 
 ### 1.1 Test scenes
-**Dev set** (`eval/test_scenes_dev.json`): **24 scenes**, 8 each from B (s09-s16), C (s17-s24) and D (s25-s32).
-The plan was 32; A's s01-s08 were never added (section B deviation, 2026-11-14).
+**Dev set** (`eval/test_scenes_dev.json`): the **analysed dev set is 24 scenes**, 8 each from B (s09-s16), C (s17-s24)
+and D (s25-s32). Every count, rating and comparison in this report refers to these 24 unless it says otherwise.
+A's s01-s08 were added on 16 Nov (#77). That was after the dev ratings, the dev results and the default-pipeline
+decision. The scenes were also rewritten to use characters the interim KB knows: the first version had Yudhishthira,
+Ravana and Damayanti, which it doesn't. Because of the timing and that selection, s01-s08 are **not part of the
+pre-registered dev analysis**. Any scores on them are reported separately as descriptive (section B deviation, 2026-11-16).
 
 | | Count |
 |---|---|
