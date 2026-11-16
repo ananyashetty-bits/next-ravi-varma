@@ -38,6 +38,16 @@ Generation takes about 5 s per 512×512 image on a T4 once the model is loaded (
 
 **Research question.** The M2 model knows the style but not the stories. **Which part of the system actually makes the picture match the story: the knowledge base, the LLM, the prompt structure, or the model itself? And at what cost to style?**
 
+**Short answer on dev (human ratings, `eval/EVAL_REPORT.md` §2.1):**
+- **The model:** the LoRA adds Varma style (c0 → c1: style +1.38 [+1.06, +1.69]).
+- **The prompt side:** none of the prompt-side components helped faithfulness. Raw text with the LoRA (c1) was more faithful than:
+  - the template (c2): −0.66 [−1.19, −0.19];
+  - the LLM without the KB (c4): −0.59 [−1.00, −0.19];
+  - the LLM with the KB (c3): −0.72 [−1.25, −0.25].
+- **Among the expansion conditions,** neither the LLM (H-D1) nor the KB (H-D2) made a clear difference.
+- **The default pipeline** is therefore `c1_lora_raw` (§4.1).
+- The held-out set has not been run yet (§4.2).
+
 **What is new.** The halfway feedback asked for "the simplest thing possible". We kept the pipeline simple (no UI, one base model, one LoRA, local models only) and put the effort into answering the question with evidence:
 1. a controlled **ablation ladder** c0-c6 (§3) that adds one component at a time;
 2. a **Shapley (SHAP) attribution** of the prompt's parts, which measures which phrases buy faithfulness and which buy style (A);
@@ -145,7 +155,44 @@ Deviations (dated lines in `experiments/HYPOTHESES.md`):
 **Feeds from `results/`:** `results/<condition>@<model>_dev.json` and `results/<condition>@<model>_heldout.json` for c0-c6, the optional D conditions and `@rrv_names`; A's SHAP results; `outputs/expansions/*.json` via `check_expansions.py`.
 
 ### 4.1 Ablation, dev
-**Human ratings (primary):** `TODO(B)`. These come from the final `eval/ratings.py` run on rounds 1 and 2: faithfulness, style and quality per condition, plus the paired comparisons.
+**Human ratings (primary).**
+- **Source:** `eval/EVAL_REPORT.md` §2.1 and `results/human_ratings_dev.json`, from B's final `eval/ratings.py` run on rounds 1 and 2.
+- **Ratings:** 224 ratings of 112 images (seed 1), two raters per image.
+- **Rounds:** round 1 (4 Nov) rated c0, c1 and c4; round 2 (14 Nov) rated c2, `c3_llm_kb_ckb` and c6.
+- **c4 images:** the rated ones are A's 2 Nov images (`results/rated/c4_llm_nokb@rrv_v1_dev.json`).
+- **Notation:** means over scenes on a 1-5 scale, with 95% CI.
+
+| Condition | n scenes | Faithfulness | Style | Quality |
+|---|---|---|---|---|
+| `c0_base_raw` | 16 | 2.00 [1.59, 2.44] | 1.59 [1.34, 1.91] | 2.09 [1.88, 2.31] |
+| `c1_lora_raw` | 16 | **2.56 [2.19, 2.97]** | **2.97 [2.75, 3.19]** | 2.47 [2.25, 2.69] |
+| `c2_template` | 16 | 1.91 [1.59, 2.31] | 2.47 [2.22, 2.72] | 2.09 [1.78, 2.41] |
+| `c3_llm_kb_ckb` | 24 | 1.94 [1.67, 2.21] | 2.71 [2.48, 2.92] | 2.56 [2.35, 2.79] |
+| `c4_llm_nokb` | 16 | 1.97 [1.59, 2.41] | 2.84 [2.62, 3.06] | 2.56 [2.41, 2.75] |
+| `c6_llm_kbllm` | 24 | 1.81 [1.56, 2.08] | 2.60 [2.44, 2.79] | 2.42 [2.25, 2.60] |
+
+Paired over scenes (b − a, tie band 0.25 rating points; faithfulness W/T/L):
+
+| a → b | n | Faithfulness | Style | Quality |
+|---|---|---|---|---|
+| c0 → c1 | 16 | +0.56 [0.00, +1.09], 12/2/2 | **+1.38 [+1.06, +1.69]** | **+0.38 [+0.12, +0.62]** |
+| c1 → c2 | 16 | **−0.66 [−1.19, −0.19]**, 3/3/10 | **−0.50 [−0.84, −0.16]** | **−0.38 [−0.72, −0.06]** |
+| c1 → c4 | 16 | **−0.59 [−1.00, −0.19]**, 3/2/11 | −0.12 [−0.38, +0.12] | +0.09 [−0.12, +0.31] |
+| c1 → c3 | 16 | **−0.72 [−1.25, −0.25]**, 3/2/11 | **−0.38 [−0.75, −0.03]** | +0.03 [−0.28, +0.31] |
+| c2 → c3 (H-D1) | 16 | −0.06 [−0.47, +0.34], 5/4/7 | +0.12 [−0.09, +0.34] | **+0.41 [+0.03, +0.78]** |
+| c4 → c3 (H-D2) | 16 | −0.12 [−0.62, +0.34], 5/4/7 | −0.25 [−0.56, +0.03] | −0.06 [−0.41, +0.25] |
+| c6 → c3 (H-C2) | 24 | +0.12 [−0.23, +0.48], 8/11/5 | +0.10 [−0.10, +0.31] | +0.15 [−0.12, +0.42] |
+
+Bold: the CI excludes 0. **Every expansion condition is less faithful than raw text with the LoRA**, and the template and c3 also lose style. Among the expansion conditions, nothing separates on faithfulness.
+
+**Default pipeline (B.3 rule, `eval/EVAL_REPORT.md` §2.1): `c1_lora_raw`.**
+- **Rule:** the highest human faithfulness among the eligible conditions, ranked on the 16 scenes every candidate was rated on.
+- **Eligible conditions:** style at most 0.3 below c1, and `max_train_dino` p95 ≤ 0.85. That leaves c1, c4 and c6.
+- **Not eligible:** c2 and c3 miss on style.
+
+**Two caveats:**
+- **Cross-round comparisons:** c1 → c2/c3 and c4 → c3 compare conditions from different rating rounds, so they rest on absolute 1-5 ratings, not side-by-side judgement. The judge, the same instrument for every condition, points the same way (below).
+- **Rater agreement** missed its bar (H-B5, §4.6), so the human results count as weaker evidence. The large differences survive this; the small ones would not be resolved at this n anyway.
 
 **Automated metrics (supporting).** The full tables are in `eval/EVAL_REPORT.md` §2.2 (16-scene c2/c3/c4) and `expander/EXPANDER.md` §9 (24-scene c2/c3/c4). The headlines on the judge:
 - **The LoRA changes style, not content.** c0 → c1 `style_margin` is +0.069 [+0.046, +0.095], better in 13 of 16 scenes. Checklist and `clip_raw` do not move.
@@ -164,25 +211,56 @@ No c5 or `@rrv_names` dev conditions exist.
 `TODO(B, held-out)`: the same tables on 12 scenes × 4 seeds. Arrives Day 5 evening (see timing risk above).
 
 ### 4.3 Expansion ladder and expander hypotheses
-**Status 2026-11-15: provisional, judge only.** Section D decides H-D1/H-D2 on human faithfulness, which is pending (round 2), so every outcome below is on the supporting measure (the checklist judge). Data: 24 dev scenes × seeds 1-2 (c0/c1: first 16 scenes).
+**Status 2026-11-16: decided on dev.**
+- **H-D1 and H-D2** are decided by the D.0 rule on their primary measure, human faithfulness (`eval/EVAL_REPORT.md` §2.1; n = 16 scenes, seed 1).
+- **The judge columns** are the supporting measure: 24 dev scenes × seeds 1-2 (c0/c1: first 16 scenes).
 - **Sources:** `results/c2_template@rrv_v1_dev.json`, `c3_llm_kb@rrv_v1_dev.json`, `c4_llm_nokb@rrv_v1_dev.json` (D); `c0_base_raw@base_dev.json`, `c1_lora_raw@rrv_v1_dev.json` (B, #62); `c3_llm_kb_ckb@rrv_v1_dev.json` (C).
 - **Method:** paired over scenes with `eval/stats.paired`; the full tables are in `expander/EXPANDER.md` §9.
 
-| Hypothesis | Comparison | Judge checklist, b − a [95% CI] | Outcome on the judge | Pre-registered outcome |
-|---|---|---|---|---|
-| H-D1: c3 > c2 | c2 → c3 (n = 24) | −0.023 [−0.074, +0.025] | no clear difference | `TODO(B)`: human faithfulness |
-| H-D2: c3 > c4, mostly tier 4 | c4 → c3 (n = 24) | −0.005 [−0.052, +0.048]; tier 4 (n = 3): −0.104 | no clear difference; tier 4 not resolvable | `TODO(B)`: human faithfulness |
-| H-D3: c5 > c3 on tier 2-3 count/pose | — | — | not run yet | — |
-| H-D4: 7B not needed | — | — | not run yet | — |
-| H-D5: scene negatives | — | — | not run yet | — |
-| H-D6: prompt v2 (SHAP order) | — | — | not run: no SHAP values with a source file yet | — |
+| Hypothesis | Human faithfulness, b − a [95% CI] (primary) | Judge checklist, b − a [95% CI] (supporting) | Outcome (D.0 rule) |
+|---|---|---|---|
+| H-D1: c3 > c2 | c2 → `c3_llm_kb_ckb`: −0.06 [−0.47, +0.34], W/T/L 5/4/7 (n = 16) | c2 → c3: −0.023 [−0.074, +0.025] (n = 24) | **no clear difference**: no clear benefit of the LLM over a deterministic template at n = 16 |
+| H-D2: c3 > c4, mostly tier 4 | c4 → `c3_llm_kb_ckb`: −0.12 [−0.62, +0.34], 5/4/7 (n = 16); tier 4 (n = 2): s15 3.0 → 1.5, s31 1.5 → 2.5 | c4 → c3: −0.005 [−0.052, +0.048] (n = 24); tier 4 (n = 3): −0.104 | **no clear difference** overall; the tier-4 part is **not resolvable** at n = 2 |
+| H-D3: c5 > c3 on tier 2-3 count/pose | — | — | not run (optional) |
+| H-D4: 7B not needed | — | — | not run (optional) |
+| H-D5: scene negatives | — | — | not run (optional) |
+| H-D6: prompt v2 (SHAP order) | — | — | not run: no SHAP values with a source file |
+
+**Secondary measures, as pre-registered.**
+
+H-D1:
+- **Style rating:** c2 → c3 +0.12 [−0.09, +0.34], no clear difference (as predicted). On the judge's `style_margin`, c3 is clearly above c2 (+0.019 [+0.009, +0.030]).
+- **Quality:** c3 is rated higher than c2 (+0.41 [+0.03, +0.78]).
+- **Failure tags** (share of each condition's ratings with that tag; `eval/EVAL_REPORT.md` §2.1):
+  - "wrong figure count": 28% in c2 vs 21% in `c3_llm_kb_ckb`;
+  - "wrong action": 25% in both.
+  - So the predicted drop in c3 shows only for figure count, and only descriptively.
+  - c3's ratings include s17-s24, which c2's do not.
+
+H-D2:
+- "wrong/missing figure identity" is 16% of c4's ratings against 23% of `c3_llm_kb_ckb`'s.
+- "generic figure (name ignored)" is 3% against 4%.
+- So the KB block shows no sign of fixing identity.
+
+**Interpretation.** Both core expander hypotheses are null, and both nulls sit inside a larger negative result: every expansion is less faithful than raw text with the LoRA (§4.1). The expander does what it was built to do:
+- valid JSON;
+- no names;
+- 70 tokens;
+- more Varma-like phrasing than the template.
+
+But on SD1.5 with this LoRA, that did not translate into pictures that match the story better. Likely reasons are in §5.
 
 Also on the judge:
-- c1 → c3 is −0.055 [−0.113, −0.003] (16 scenes), so expansion did not improve faithfulness over raw text with the LoRA.
-- On `style_margin`, c3 is clearly above c2 (+0.019 [+0.009, +0.030]).
+- c1 → c3 is −0.055 [−0.113, −0.003] (16 scenes), the same direction as the humans.
 - D's interim KB vs C's KB under c3 makes no clear difference (−0.019 [−0.076, +0.040]).
 
-**Caveat on the KB:** c2 and c3 use D's interim KB `d-kb0` (`expander/interim_kb/`), because C's KB was not available. This is a dated deviation in Section D. For human ratings, B rates C's `c3_llm_kb_ckb` as "c3", so H-D1/H-D2 will be decided on c2 (`d-kb0`) vs `c3_llm_kb_ckb` (C's KB) and c4 vs `c3_llm_kb_ckb`. On the judge, the two c3 versions are not clearly different.
+**Caveats:**
+- **Which c3 was rated.** c2 and D's c3 use D's interim KB `d-kb0` (`expander/interim_kb/`), because C's KB was not available (dated deviation, Section D). For human ratings, "c3" is C's `c3_llm_kb_ckb` (Section B deviation, 14 Nov). So:
+  - H-D1 is decided on c2 (`d-kb0` template) vs `c3_llm_kb_ckb` (LLM with C's KB `kb0.2`), i.e. the comparison also changes the KB;
+  - H-D2 is decided on c4 vs `c3_llm_kb_ckb`.
+
+  D's own `c3_llm_kb` was not rated. On the judge, the two c3 versions are not clearly different, and c2 → `c3_llm_kb_ckb` (−0.042 [−0.110, +0.030]) agrees with c2 → c3 in direction.
+- **Smaller n than planned.** H-D1/H-D2 were pre-registered on 32 scenes; the human comparisons have 16, and the H-D2 tier-4 split has 2 (s15, s31). The pre-registered interaction CI (tier 4 minus tiers 1-3) is not computed: with 2 scenes in a stratum, a bootstrap within it cannot give a meaningful interval.
 
 **Expander validity (D.7), from `check_expansions.py --strict` on the committed files:**
 
@@ -226,7 +304,19 @@ Sources: `train/NAMES_MODEL.md`, `kb/KB.md`, `results/names_test_*.json`, `resul
 **H-C3 not supported.** C's answer to "did it learn names or memorise paintings?": neither. No group gained, and no image reached the 0.85 memorisation flag (`C_names` p95 0.823 vs `rrv_v1` 0.840 on the same prompts). `C_names` was **not registered** as `rrv_names`. The 2×2 (`c1`/`c3` × `rrv_v1`/`C_names`) was **not run**, because there was no gain and `pipeline/run_batch.py` could not run.
 
 ### 4.6 Judge validation
-**Judge vs humans (H-B1) and rater agreement (H-B5):** `TODO(B)`, from the final `eval/ratings.py` run.
+**Judge vs humans (H-B1, H-B2) and rater agreement (H-B5)** (`eval/EVAL_REPORT.md` §3.1-§3.2): 112 rated images, each paired with its own automated scores (matched by file name; 0 unmatched).
+
+| Pair | Spearman ρ [95% CI] | Bar | Outcome |
+|---|---|---|---|
+| checklist judge vs human faithfulness | 0.41 [0.24, 0.56] | ≥ 0.4 and ≥ `clip_raw` | **H-B1 met, narrowly** |
+| `clip_raw` vs human faithfulness | 0.24 [0.04, 0.41] | — | — |
+| `style_margin` vs human style | 0.34 [0.16, 0.50] | > 0 | **H-B2 met** |
+| rater vs rater, faithfulness | 0.43 [0.26, 0.58] (weighted κ 0.50; 92% within one point) | ≥ 0.5 | **H-B5 not met** |
+
+**What this means:**
+- **The judge** is usable as a secondary faithfulness measure, condition by condition, not image by image. That includes SHAP's faithfulness chart.
+- **The human ratings** are the primary evidence. Because agreement missed its bar, they are reported as weaker evidence, with their spread.
+- **The judge agrees with the mean human score** about as well as two humans agree with each other (0.41 vs 0.43).
 
 **Robustness** (`eval/EVAL_REPORT.md` §3.3, `outputs/eval/judge_robustness_dev.json`, 20 images):
 - **Question order shuffled** (pre-registered, threshold < 0.05): mean absolute change 0.0005. **Passed.**
@@ -242,19 +332,41 @@ Sources: `train/NAMES_MODEL.md`, `kb/KB.md`, `results/names_test_*.json`, `resul
 
 **Feeds from `results/`:** per-tier and seen/unseen splits of the dev and held-out results; `latency_s` from the expansion files; seconds per image from the manifests.
 
-- **What helped (provisional, judge and automated metrics only):**
-  - The LoRA adds Varma style: c0 → c1 `style_margin` +0.069 [+0.046, +0.095].
-  - KB descriptions keep names out of the LLM's phrases: 2 of 24 c3 records needed a names re-ask, against 17 of 24 in c4.
-  - c3 is the most Varma-like condition on `style_margin`.
-- **What did not help (provisional):**
-  - On the judge, **raw text with the LoRA (c1) is as good as or better than every expanded condition**: c1 → c2 −0.006, c1 → c4 −0.042 and c1 → c3 −0.055 (16 scenes), the last with a CI just below 0. Per B's rule, this is said first.
-  - The template drops many phrases under the 70-token budget (5.7 per record), so crowded and long scenes lose their figures and actions.
-- `TODO(D)`: rewrite both bullets from human faithfulness once B's ratings for c2/c3 exist.
-- **Failure taxonomy:** `TODO(B)`: counts per condition from the rating sheets, with 2-3 example images (codes decoded). Expansion-stage failure modes are in `expander/EXPANDER.md` §11.
+- **What did not help (said first, per B's rule).** **Prompt expansion, in every form we tried, made pictures less faithful to the story than the user's own words with the LoRA:**
+  - c1 → c2 −0.66 [−1.19, −0.19];
+  - c1 → c4 −0.59 [−1.00, −0.19];
+  - c1 → c3 −0.72 [−1.25, −0.25].
+
+  These are human faithfulness on 16 scenes (§4.1), and c3 is worse in 11 of 16 scenes. The judge points the same way (c1 → c3 −0.055 [−0.113, −0.003]). Neither the LLM over the template (H-D1) nor the KB block (H-D2) nor image-grounded descriptions over LLM-written ones (H-C2) made a clear difference. The template and c3 also cost style (−0.50 and −0.38).
+- **What helped:**
+  - **The LoRA.** c0 → c1 style +1.38 [+1.06, +1.69] and quality +0.38 [+0.12, +0.62] on human ratings. Faithfulness +0.56 [0.00, +1.09], better in 12 of 16 scenes, with the CI just reaching 0.
+  - **The KB block** kept names out of the LLM's phrases: 2 of 24 c3 records needed a names re-ask, against 17 of 24 in c4. This made the expander cleaner, not the pictures better.
+  - **The LLM over the template:** better image quality (+0.41 [+0.03, +0.78]) and more Varma-like phrasing on the judge (`style_margin` +0.019 [+0.009, +0.030]), but not better faithfulness.
+- **Why expansion may have hurt.** These are hypotheses for M4, not tested here:
+  - **Specific words get replaced.** SD1.5's CLIP text encoder responds to concrete, frequent words. The user's text ("Hanuman kneeling before Rama") gives it short, specific tokens. Expansion replaces names with descriptions ("the monkey-faced devotee kneeling before the blue-skinned prince"), adds setting and mood phrases, and appends a style tail. Each phrase competes for the encoder's attention within 77 tokens.
+  - **c1's top failure is the gentlest one.** Its most common tag is "generic figure (name ignored)" (8 of 32 ratings). The figure is there, just not recognisably the character.
+  - **The expanded conditions fail harder.** Their top tags are "wrong figure count", "wrong action" and "wrong/missing identity" (c3: 33 of 48; c2: 25 of 32; c4: 22 of 32). The longer prompt seems to lose the scene's structure (who is there, doing what) rather than add to it.
+  - **The template** also drops 4.5 phrases per record to fit 70 tokens (`EXPANDER.md` §9), so crowded scenes lose their figures and actions.
+- **Failure taxonomy** (human tags; one tag per rating, the main failure; `eval/EVAL_REPORT.md` §2.1):
+
+| Condition | ratings | wrong count + wrong action (composition) | identity + generic figure + setting | weak style + anatomy |
+|---|---:|---:|---:|---:|
+| `c0_base_raw` | 32 | 7 (22%) | 11 (34%) | 14 (44%) |
+| `c1_lora_raw` | 32 | 8 (25%) | 16 (50%) | 8 (25%) |
+| `c2_template` | 32 | 17 (53%) | 12 (38%) | 3 (9%) |
+| `c4_llm_nokb` | 32 | 17 (53%) | 12 (38%) | 3 (9%) |
+| `c3_llm_kb_ckb` | 48 | 22 (46%) | 21 (44%) | 5 (10%) |
+| `c6_llm_kbllm` | 48 | 22 (46%) | 25 (52%) | 1 (2%) |
+
+  How the failures shift along the ladder:
+  - **The LoRA** turns style failures (c0) into identity failures (c1).
+  - **Expansion** turns c1's identity failures into composition failures.
+  - Example images with decoded codes: `TODO(B)`. Expansion-stage failure modes are in `expander/EXPANDER.md` §11.
 - **Coverage, seen vs unseen** (judge, descriptive; `eval/EVAL_REPORT.md` §2.2):
   - Every condition scores higher on the 5 seen scenes than on the unseen ones.
   - Tier 4 (rare characters, spelling variants) is the lowest tier for most conditions.
-  - `TODO(B)`: the same from human ratings (H-B3, H-B4).
+  - **Human ratings, seen vs unseen (H-B3, descriptive):** c1 → c3 is −1.10 [−1.30, −1.00] on the 5 seen scenes (worse in all 5) and −0.55 [−1.32, +0.09] on the 11 unseen scenes. The predicted pattern (expansion helping more on unseen scenes) did not appear (`eval/EVAL_REPORT.md` §2.1).
+  - **Coverage (H-B4, descriptive):** not supported. Scenes whose worst-covered character has low or no KB coverage are rated no lower than high/medium ones, and higher in 5 of 6 conditions. The groups have 7-14 scenes and are tangled with who wrote which scenes.
 - **Cost:** generation takes about 5 s per image on a T4 (§1; A's run records); `TODO(A)`: model load time. Expander on a Colab T4 (`EXPANDER.md` §12):
   - LLM load: 23-33 s with cached weights, about 2-3 min on a fresh runtime;
   - about 7-8 s per LLM call; 9.7 s per scene for c3 and 13.3 s for c4, including name re-asks;
@@ -275,7 +387,10 @@ These are known now and hold whatever the results show; owners add their own.
 - **Name scrub.** It removes every listed name, including rivers and mounts that double as setting words (Ganga, Nandi), so a setting phrase can be lost. Measured on dev: **0 phrases scrubbed** in c2, c3 and c4. The one re-ask removed every leaked name first.
 - **Interim KB.** D's c2 and c3 dev results use D's interim KB `d-kb0` (20 characters, written from train_v1 captions; 2 entries without a training painting), not C's KB. C's KB version of c3 exists (`c3_llm_kb_ckb`) and is not clearly different on the judge.
 - **Interim KB coverage on held-out.** `d-kb0` covers only the dev-scene characters, so held-out scenes with other characters get no description for them in c2/c3 (the parser writes "the figure"). `TODO(B, held-out)`: share of held-out scenes affected.
-- **Smaller dev set.** 24 of the planned 32 dev scenes (A's 8 were not added; c0/c1 cover only the first 16), so tier subsets have 3-6 scenes. The H-D2 tier-4 test has n = 3.
+- **Smaller dev set.** 24 of the planned 32 dev scenes. A's 8 were not added, and c0/c1/c2/c4 were rated on only the first 16.
+  - Tier subsets have 2-7 scenes.
+  - The H-D2 tier-4 test has n = 3 on the judge and n = 2 on human ratings.
+- **c3 in the human ratings is C's.** D's `c3_llm_kb` (interim KB) was not rated, so H-D1 on humans compares a `d-kb0` template with an LLM using C's KB. On the judge, the two c3 versions are not clearly different.
 - **Self-made benchmark.** Checklists were written by the team, and the dev set was also used to tune prompts and the KB (allowed by our protocol). Only the held-out set is untouched.
 - **Judge scale (B).** The 2B judge's absolute scores shift by about 0.03 when the answer instruction is reworded. Only relative scores are meaningful.
 - **Rating rounds (B).** Round 1 and round 2 were rated on separate sheets, so cross-round comparisons (e.g. c1 → c3) rest on absolute 1-5 ratings. The round-1 key was rebuilt from the images rather than saved.
@@ -293,7 +408,10 @@ These are known now and hold whatever the results show; owners add their own.
 **Inputs:** A's `docs/HANDOFF_M4.md`; B's failure taxonomy; D's `layout` field (if c5 was built). **Feeds from `results/`:** failure tag counts by type.
 
 - **Interface for M4:** `text_to_image(text, seed, mode)` returns `(image, ExpandedPrompt, SceneSpec)`, and `generate(..., control_image=None)` already has a slot for ControlNet. SD1.5 is compatible with ControlNet 1.x (OpenPose, Canny). Everything is 512×512 only.
-- **Composition failures:** `TODO(B, D)`: which failures are pose or composition problems (wrong figure count, wrong action), i.e. ControlNet territory, and which are identity or setting problems that the KB and prompt can still fix.
+- **Composition failures** (human failure tags, §5; `eval/EVAL_REPORT.md` §2.1):
+  - **Pose or composition problems** (wrong figure count, wrong action) are ControlNet territory: 46-53% of the main failures in every expanded condition, against 25% in c1.
+  - **Identity and setting problems** (wrong/missing identity, generic figure, wrong setting) are 50% of c1's failures. This is what a names-aware model or better descriptions would have to fix. The prompt-side KB did not fix it on dev (H-D2), and neither did `C_names` (H-C3).
+  - **For M4:** start from c1 (raw text + LoRA). Add structure through the image (OpenPose from the `layout` field) rather than through longer prompts.
 - **`layout`:** c5 was not run, so whether layout phrases help is untested (H-D3). The expander already emits a validated `layout` JSON in `llm_kb_layout` mode (`n_figures`; per figure a role, a pose from a fixed vocabulary of 8, and a position from 5). That is the bridge to an OpenPose skeleton in M4.
 - **Default pipeline and known failure modes:** `TODO(A)`: the default chosen by the Overview §10 rule (recorded in `docs/TEAM_DECISIONS_M3.md`, which does not exist yet) and A's known failure modes. Note for M4: `text_to_image` must load the LoRA before it can be the M4 entry point (§6, Generator).
 - **Cold-start test (Day 6, D):** `TODO(D)`: pass or fail from a fresh runtime using only the README (demo on 3 inputs, CLI once, one image reproduced with the same seed), and the issues filed as `needs:A`.
