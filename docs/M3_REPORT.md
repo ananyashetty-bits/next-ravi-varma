@@ -62,7 +62,7 @@ This is a simple, one-figure scene where nothing is dropped. The typical failure
 4. an evaluation we can defend: **blind human ratings** plus a **checklist judge validated against those ratings**, with **hypotheses pre-registered** in `experiments/HYPOTHESES.md` before any scored run (B).
 
 **Model-side fix, outcome:**
-- **Audit:** GO. 99 of 147 training images (67%) have characters filled, and 11 characters appear in 3 or more images (`train/NAMES_MODEL.md` §2; `kb/KB.md` §8 says 10, `TODO(C)`: reconcile).
+- **Audit:** GO. 99 of 147 training images (67%) have characters filled, and 11 characters appear in 3 or more images (`train/NAMES_MODEL.md` §2; C confirmed 11 as the final count on 16 Nov, so the 10 in `kb/KB.md` §8 is superseded).
 - **The LoRA:** `C_names` was trained late, passed the M2 guardrails, and showed **no gain from names** on the pre-registered names test. It was not registered as `rrv_names` (§4.5).
 
 ## 3. Method
@@ -394,7 +394,7 @@ These are known now and hold whatever the results show; owners add their own.
 - **Name scrub.** It removes every listed name, including rivers and mounts that double as setting words (Ganga, Nandi), so a setting phrase can be lost. Measured on dev: **0 phrases scrubbed** in c2, c3 and c4. The one re-ask removed every leaked name first.
 - **Interim KB.** D's c2 and c3 dev results use D's interim KB `d-kb0` (20 characters, written from train_v1 captions; 2 entries without a training painting), not C's KB. C's KB version of c3 exists (`c3_llm_kb_ckb`) and is not clearly different on the judge.
 - **Interim KB coverage on held-out.** `d-kb0` covers only the dev-scene characters, so held-out scenes with other characters get no description for them in c2/c3 (the parser writes "the figure"). `TODO(B, held-out)`: share of held-out scenes affected.
-- **Smaller dev set.** 24 of the planned 32 dev scenes. A's 8 were not added, and c0/c1/c2/c4 were rated on only the first 16.
+- **Smaller dev set.** The dev analysis uses 24 of the planned 32 scenes (s09-s32), and c0/c1/c2/c4 were rated on only 16 of them. A's 8 scenes (s01-s08, #77) arrived on 16 Nov, after the dev results and the B.3 decision, and were rewritten to use characters known to the interim KB. So they are outside the pre-registered analysis and descriptive only (Section B deviation, 16 Nov).
   - Tier subsets have 2-7 scenes.
   - The H-D2 tier-4 test has n = 3 on the judge and n = 2 on human ratings.
 - **c3 in the human ratings is C's.** D's `c3_llm_kb` (interim KB) was not rated, so H-D1 on humans compares a `d-kb0` template with an LLM using C's KB. On the judge, the two c3 versions are not clearly different.
@@ -408,11 +408,12 @@ These are known now and hold whatever the results show; owners add their own.
   - some looks overlap (Radha and Yashoda; Draupadi and Savitri).
 - **Names LoRA (C).** It was trained late with one seed and 800 steps, and judged only by the 2B judge with checklists written from the KB descriptions. No human ratings.
 - **Generator (A).** From 3 Nov to 16 Nov, `pipeline/generate_api.py` on `main` had no `generate()`, and its `text_to_image` did not load the LoRA. All scored dev images were made with the earlier generator: A's runs before 3 Nov, D's runs with the `e9b5a5d` version, C's `kb/gen_c6.py`. #75 (16 Nov) restored `generate()` on top of the unmodified M2 kit. `TODO(A)`: confirm LoRA scale 1.0 for c0/c1.
-- **Config changed after the dev runs (#75, 16 Nov).** `config/m3.json` changed in two ways:
-  - `negative` went from "ugly, blurry, bad anatomy" to "lowres, blurry, deformed, extra limbs, bad anatomy, text, watermark";
-  - `base_model` went from `runwayml/…` to `stable-diffusion-v1-5/stable-diffusion-v1-5`.
+- **Config changes on 16 Nov.** #75 changed three things in `config/m3.json`:
+  - the `negative` prompt;
+  - the `base_model` id (`runwayml/…` → `stable-diffusion-v1-5/stable-diffusion-v1-5`);
+  - a new `safety_checker` flag.
 
-  Every dev image (c0-c6) and every committed expansion record uses the old negative. A held-out run on current `main` would use the new one, so dev and held-out would differ in the negative prompt as well as the scenes. `TODO(B, held-out)`: state which negative the held-out run used.
+  #79 restored the negative to "ugly, blurry, bad anatomy" (CHANGELOG 1.3), the value every dev image and committed expansion record used. The held-out run uses that same negative (Section B deviation, 16 Nov), so dev and held-out share the pipeline. A regenerated c0/c1 on 16 Nov with the other negative. The rated 2 Nov files are kept in `results/rated/`, so human ratings stay paired with the images that were rated.
 - `TODO(A)`: SHAP-specific limits (position effects, 2 scenes so far).
 
 ## 7. Handoff to M4
