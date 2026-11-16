@@ -30,7 +30,14 @@ user text ──► [C] parse_scene ──► SceneSpec ──► [D] expand ─
 - **Generator (A):** SD1.5 + `rrv_v1`, DPM++ 30 steps, CFG 7.0, 512×512, settings from `config/m3.json` (`pipeline/PIPELINE.md`). One call: `text_to_image(text, seed)`.
 - **Constraint:** everything runs on a free Colab T4. The LLM, the diffusion model and the judge run in separate sessions and communicate through files.
 
-Generation takes about 5 s per 512×512 image on a T4 once the model is loaded (mean `gen_seconds` in A's run records: c1 5.3 s, c4 5.0 s; `outputs/eval/c{1,4}_*_metrics.json`). `TODO(A)`: load time. `TODO(D)`: an example input → expansion → image triple, chosen after results (seed 1, dev scene).
+Generation takes about 5 s per 512×512 image on a T4 once the model is loaded (mean `gen_seconds` in A's run records: c1 5.3 s, c4 5.0 s; `outputs/eval/c{1,4}_*_metrics.json`). `TODO(A)`: load time.
+
+**Example (dev scene s09, seed 1; `outputs/expansions/c3_llm_kb_dev.json`, `results/c3_llm_kb@rrv_v1_dev.json`):**
+- **Input:** "Sita sitting alone under a tree in the Ashoka grove, sorrowful, the garden quiet at dusk"
+- **Expansion (c3, 54 tokens):** "rrvarma style, young woman in red saree, gold border and bangles, layered pearl necklaces, sitting alone under tree, flowering trees in grove, dusk lighting, quiet atmosphere, sorrowful expression, still posture, oil painting, canvas texture, classical indian art"
+- **Image:** `s09_c3_llm_kb_s1.png` (D's Drive, `m3/images/c3_llm_kb@rrv_v1/dev/`), judge checklist 0.92. Raw text with the LoRA scores 0.87 on the same scene (`s09_c1_lora_raw_s1.png`).
+
+This is a simple, one-figure scene where nothing is dropped. The typical failures are in §5 and `expander/EXPANDER.md` §11.
 
 ## 2. Research question and what is new since the halfway version
 
@@ -208,7 +215,7 @@ Bold: the CI excludes 0. **Every expansion condition is less faithful than raw t
 No c5 or `@rrv_names` dev conditions exist.
 
 ### 4.2 Ablation, held-out
-`TODO(B, held-out)`: the same tables on 12 scenes × 4 seeds. Arrives Day 5 evening (see timing risk above).
+`TODO(B, held-out)`: the same tables on 12 scenes × seeds 1-2 (seeds cut from 1-4; Section B deviation, 16 Nov).
 
 ### 4.3 Expansion ladder and expander hypotheses
 **Status 2026-11-16: decided on dev.**
@@ -221,9 +228,9 @@ No c5 or `@rrv_names` dev conditions exist.
 |---|---|---|---|
 | H-D1: c3 > c2 | c2 → `c3_llm_kb_ckb`: −0.06 [−0.47, +0.34], W/T/L 5/4/7 (n = 16) | c2 → c3: −0.023 [−0.074, +0.025] (n = 24) | **no clear difference**: no clear benefit of the LLM over a deterministic template at n = 16 |
 | H-D2: c3 > c4, mostly tier 4 | c4 → `c3_llm_kb_ckb`: −0.12 [−0.62, +0.34], 5/4/7 (n = 16); tier 4 (n = 2): s15 3.0 → 1.5, s31 1.5 → 2.5 | c4 → c3: −0.005 [−0.052, +0.048] (n = 24); tier 4 (n = 3): −0.104 | **no clear difference** overall; the tier-4 part is **not resolvable** at n = 2 |
-| H-D3: c5 > c3 on tier 2-3 count/pose | — | — | not run (optional) |
-| H-D4: 7B not needed | — | — | not run (optional) |
-| H-D5: scene negatives | — | — | not run (optional) |
+| H-D3: c5 > c3 on tier 2-3 count/pose | — | — | not tested: cut (Overview §14; `EXPANDER.md` §10) |
+| H-D4: 7B not needed | — | — | not tested: cut |
+| H-D5: scene negatives | — | — | not tested: cut |
 | H-D6: prompt v2 (SHAP order) | — | — | not run: no SHAP values with a source file |
 
 **Secondary measures, as pre-registered.**
@@ -400,7 +407,12 @@ These are known now and hold whatever the results show; owners add their own.
   - several characters' descriptions come from a single painting;
   - some looks overlap (Radha and Yashoda; Draupadi and Savitri).
 - **Names LoRA (C).** It was trained late with one seed and 800 steps, and judged only by the 2B judge with checklists written from the KB descriptions. No human ratings.
-- **Generator (A).** Since 3 Nov, `pipeline/generate_api.py` on `main` has no `generate()`, and its `text_to_image` does not load the LoRA. All scored images were made with the earlier generator (A's runs before 3 Nov, D's runs with the `e9b5a5d` version, C's `kb/gen_c6.py`). `TODO(A)`: fix, and confirm LoRA scale 1.0 for c0/c1.
+- **Generator (A).** From 3 Nov to 16 Nov, `pipeline/generate_api.py` on `main` had no `generate()`, and its `text_to_image` did not load the LoRA. All scored dev images were made with the earlier generator: A's runs before 3 Nov, D's runs with the `e9b5a5d` version, C's `kb/gen_c6.py`. #75 (16 Nov) restored `generate()` on top of the unmodified M2 kit. `TODO(A)`: confirm LoRA scale 1.0 for c0/c1.
+- **Config changed after the dev runs (#75, 16 Nov).** `config/m3.json` changed in two ways:
+  - `negative` went from "ugly, blurry, bad anatomy" to "lowres, blurry, deformed, extra limbs, bad anatomy, text, watermark";
+  - `base_model` went from `runwayml/…` to `stable-diffusion-v1-5/stable-diffusion-v1-5`.
+
+  Every dev image (c0-c6) and every committed expansion record uses the old negative. A held-out run on current `main` would use the new one, so dev and held-out would differ in the negative prompt as well as the scenes. `TODO(B, held-out)`: state which negative the held-out run used.
 - `TODO(A)`: SHAP-specific limits (position effects, 2 scenes so far).
 
 ## 7. Handoff to M4

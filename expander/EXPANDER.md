@@ -2,7 +2,7 @@
 
 `expand(text, scene=None, mode="llm_kb") -> ExpandedPrompt` turns a user's epic-scene sentence into a prompt the M2 model (`rrv_v1`) can render: name-free visual phrases, the trigger first, the style tail last, under the token limit. It runs a **local** instruct LLM (no paid API) with a deterministic template as the fallback.
 
-> **Status (2026-11-16):** the design and all modes are built and tested (`tests/test_expander_*.py`). c2, c3 and c4 are expanded, generated and scored on all 24 dev scenes (§9). Human ratings are in (B, #73). **H-D1 and H-D2: no clear difference**, and raw text with the LoRA (c1) is more faithful than every expanded condition (§9). Held-out rows wait for B's run. **c2 and c3 run on D's interim KB `d-kb0`** (`expander/interim_kb/`), because C's KB and parser were not available (#21); see the Section D deviations. Everything still marked `TODO(results)` waits for numbers from `outputs/expansions/`, `results/` or B's tables; no number goes in by hand. Contracts referred to: Overview v2 §6 (`config/m3.json`, SceneSpec, ExpandedPrompt, signatures, CLI).
+> **Status (2026-11-16):** the design and all modes are built and tested (`tests/test_expander_*.py`). c2, c3 and c4 are expanded, generated and scored on all 24 dev scenes (§9). Human ratings are in (B, #73). **H-D1 and H-D2: no clear difference**, and raw text with the LoRA (c1) is more faithful than every expanded condition (§9). Held-out rows wait for B's run. **c2 and c3 run on D's interim KB `d-kb0`** (`expander/interim_kb/`), because C's KB and parser were not available (#21); see the Section D deviations. The only open item is the held-out rows (`TODO(B, held-out)`, §9); no number goes in by hand. Contracts referred to: Overview v2 §6 (`config/m3.json`, SceneSpec, ExpandedPrompt, signatures, CLI).
 
 ## 1. Design principle
 
@@ -55,7 +55,7 @@ Rules:
 - Use concrete visual words (e.g. "kneeling", "gilded armour", "pillared hall").
 ```
 
-**User message:** the raw text, plus, in `llm_kb` mode only, `Reference descriptions:` followed by one `<mention> -> <visual>` line per character from the SceneSpec. Variants (`v1_layout`, `v1_neg`, `v2`) are separate files with their own `prompt_version`; v1 is never edited (a test pins its sha256 and checks `prompts/system_v1.txt` against the built-in text). **`v1ex`** = v1 + one worked example from dev scene s25 (`prompts/system_v1_example.txt`; `v1ex_layout` uses `system_v1_layout_example.txt`), for small models that answer in prose: `--prompt_version v1ex`. On CPU, Qwen2.5-0.5B-Instruct answered v1 with an invalid `{"phrases": "<the input sentence>"}` and v1ex with 9 valid phrases (a plumbing check only, not a result). With v1ex, s25's own expansion is not independent of the prompt. `TODO(results)`: the variant texts and the change log of v2.
+**User message:** the raw text, plus, in `llm_kb` mode only, `Reference descriptions:` followed by one `<mention> -> <visual>` line per character from the SceneSpec. Variants (`v1_layout`, `v1_neg`, `v2`) are separate files with their own `prompt_version`; v1 is never edited (a test pins its sha256 and checks `prompts/system_v1.txt` against the built-in text). **`v1ex`** = v1 + one worked example from dev scene s25 (`prompts/system_v1_example.txt`; `v1ex_layout` uses `system_v1_layout_example.txt`), for small models that answer in prose: `--prompt_version v1ex`. On CPU, Qwen2.5-0.5B-Instruct answered v1 with an invalid `{"phrases": "<the input sentence>"}` and v1ex with 9 valid phrases (a plumbing check only, not a result). With v1ex, s25's own expansion is not independent of the prompt. `v2` was not written, because H-D6 was not run (§10).
 
 ## 4. Fallback chain (the pipeline never crashes because of the LLM)
 
@@ -204,24 +204,73 @@ The LLM rows' mean latency includes the model load in the first scene's `latency
 
 | Condition | Built | Run | Note |
 |---|---|---|---|
-| `c5_llm_kb_layout` (H-D3) | yes (`--mode llm_kb_layout`) | not yet | c3 is done (#38); runnable on Colab |
-| `c3_7b` (H-D4) | yes (`--llm large`) | not yet | c3 is done (#38); runnable on Colab |
-| `c3_neg` (H-D5) | yes (`--scene_negatives`, prompt `v1_neg`) | not yet | c3 is done (#38); runnable on Colab |
-| `c3_v2` (H-D6) | no | not yet | needs A's SHAP table and B's failure notes |
+| `c5_llm_kb_layout` (H-D3) | yes (`--mode llm_kb_layout`) | **not run** | cut (Overview §14); runnable on Colab |
+| `c3_7b` (H-D4) | yes (`--llm large`) | **not run** | cut (Overview §14); runnable on Colab |
+| `c3_neg` (H-D5) | yes (`--scene_negatives`, prompt `v1_neg`) | **not run** | cut (Overview §14); runnable on Colab |
+| `c3_v2` (H-D6) | no | **not run** | needs A's SHAP values (no scores file); cut |
 
-`TODO(results)`: each with the result, or "not run" and the reason (Overview §14 cut order: negatives → LLM size → c5).
+**Outcome (2026-11-16): none of the optional experiments was run.** Overview §14 allows cutting them in this order: negatives → LLM size → c5. The reasons:
+- **The deadline.** The core ladder (c2/c3/c4 on 24 scenes), both rating rounds and the report came first.
+- **The core result removed their motivation.** Each optional condition is a variant of c3 (layout phrases, a bigger LLM, scene negatives, a reordered prompt). The human ratings show c3 less faithful than raw text with the LoRA (§9). §11 suggests the budget trade-off between appearance and action as the likely cause, which none of these variants addresses directly.
+- **H-D6 also had a missing input:** it needed A's SHAP values, which have no scores file yet.
+
+H-D3, H-D4, H-D5 and H-D6 are therefore reported as **not tested**. The modes for c5, c3_7b and c3_neg are built and unit-tested, so M4 can run them with the commands in §13.
 
 ## 11. Failure modes with examples
 
 Seen so far at the **expansion** stage (from records, not from scored images):
-- **The LLM reaches for names** (c4: 75% of records before repair). One re-ask fixed all of them; nothing was scrubbed.
+- **The LLM reaches for names** (c4: 17 of 24 records, 70.8%, before repair). One re-ask fixed all of them; nothing was scrubbed.
 - **The stand-in parser breaks the action text** (c2 preview on the 16 dev scenes, with the stand-in parser and KB; not committed, not scored). It cuts known names out of the sentence and leaves fragments: s12 "kneeling before and offering him 's ring"; s29 "lying on a bed of arrows on the field of while the and gather around him". The fix is C's parser returning the action already name-free (#21); the scrub can delete words but cannot rewrite them.
 - **Characters missing from the KB get no description or the wrong one** (same preview): s10 has no description for its warrior; s29's old warrior picked up another character's description. KB coverage for the dev characters is requested in #21.
 - **Reproducibility note (2026-11-14):** a later stand-in parser fix (an article after a comma: "…, the young prince") changes one existing dev prompt if c2 is re-run from scratch: s28's "young prince" becomes "the young prince". The committed s28 record, and the images scored from it, are kept unchanged.
 - **Both are fixed for the dev runs** by the interim KB `d-kb0` and the role-replacing stand-in parser (#37): the c2 file has 0 names before repair, and every action reads as a sentence ("the old warrior lying on a bed of arrows … while the five crowned princes and the blue-skinned figure gather around him").
-- **Template c2 loses phrases on crowded or long scenes:** 5.7 phrases dropped per record on average. For example, s28 keeps the coronation but drops the brothers standing and the devotee kneeling; s16 and s32 (tier 5, 100+ words) keep only their first clauses. This is the template working as designed under the 70-token budget.
+- **Template c2 loses phrases on crowded or long scenes:** 4.46 phrases dropped per record on average (24 scenes). For example, s28 keeps the coronation but drops the brothers standing and the devotee kneeling; s16 and s32 (tier 5, 100+ words) keep only their first clauses. This is the template working as designed under the 70-token budget.
 
-`TODO(results)`: from B's Day-4 failure notes (`needs:D`) and `phrases_dropped`, for 3-5 bad images: the scene, the expansion, the image code and the diagnosed cause (figure phrase dropped by budget, KB description too vague, tail pushed out, name scrub removed a setting phrase, layout ignored). Include failures, not only successes.
+**Scored failures, dev (2026-11-16).**
+- **How the scenes were chosen:** the scenes where the expansion lost most to raw text with the LoRA on the judge.
+- **What each entry gives:**
+  - the scene;
+  - the expansion (`outputs/expansions/*_dev.json`) and what the 70-token budget dropped (`phrases_dropped`);
+  - the image file (seed 1, D's Drive, from `results/*_dev.json` `items[].image`);
+  - the judge's P(yes) on the checklist items that failed (`checklist_detail`).
+- **How far these hold:** one image per condition, read through the judge. B's validation says the judge should not be read image by image (`eval/EVAL_REPORT.md` §3.1). The diagnosis comes from the expansion record and the checklist, not from a human look at the image, so these are **illustrations of plausible causes**, not measured effects. The human tags in `eval/EVAL_REPORT.md` §2.1 point the same way: the expanded conditions fail mostly on "wrong figure count", "wrong action" and "identity".
+
+1. **Appearance crowds out the action (c3, s31, tier 4).**
+   - Scene: "old Shabri offerring berries to Ram and Laxman outside her little hut in the forrest".
+   - The LLM spent its phrases on what the figures look like: grey hair, basket of berries, topknot, bow and arrows for both men.
+   - The budget dropped "gentle offering gesture" and "standing outside thatched hut".
+   - Image `s31_c3_llm_kb_s1.png`, checklist 0.18 (c1 0.34, c2 0.50): "an elderly woman" 0.24, "holding out fruit toward someone" 0.03.
+   - **Cause:** the action dropped by the budget behind KB costume details.
+   - The template kept the action sentence and scored higher on "elderly woman" (0.86).
+2. **The template drops the main action clause (c2, s30, tier 3).**
+   - Scene: "At Draupadi's swayamvara, Arjuna … bends the great bow and aims upward at the fish target …".
+   - The action clause "bends the great bow and aims upward at the fish target turning high above a crowded hall of seated kings" is one long phrase. It did not fit after the character descriptions, so c2's prompt has the archer "dressed as a poor brahmin" but no bow and no target.
+   - **Cause:** the action phrase dropped by the budget; it is one clause, so all or nothing (§2.1).
+3. **The action is in the prompt but not in the picture (c3, s30).**
+   - The same scene's c3 prompt kept "bending the long bow, aiming upward at fish target" and "crowded hall with seated kings".
+   - Image `s30_c3_llm_kb_s1.png`, checklist 0.26 (c1 0.37): "a man drawing a bow and aiming upward" 0.23, "a woman holding a garland" 0.03.
+   - **Cause:** prompt length and scene complexity. Nine phrases for two figures plus a crowd seem to be more than SD1.5 composes. Raw text was no better on this item (0.54), so this is partly a model limit (ControlNet territory, report §7).
+4. **The crowd phrase is dropped, so the court is empty (c3, s13, tier 3).**
+   - Scene: "Krishna as the peace envoy standing in Duryodhana's royal court … while ministers and courtiers watch".
+   - c3 dropped "ministers watching with solemn expressions" for the budget, and kept costume details (peacock-feather crown, yellow dhoti with garlands, robes with gold embroidery).
+   - Image `s13_c3_llm_kb_s1.png`, checklist 0.53 (c1 0.75, c2 0.84): "more than three people" 0.08, "a person standing and facing the seated person" 0.10.
+   - c2 kept "while ministers and courtiers watch" and scored 0.86 on the first item.
+   - **Cause:** a figure phrase dropped by the budget.
+5. **The template keeps the figures, not what they do (c2, s28, tier 3).**
+   - Scene: the coronation of Rama and Sita with three brothers standing and Hanuman kneeling.
+   - Five character descriptions fill the budget. 17 phrases were dropped, including "the couple seated on the throne" and "the monkey-faced devotee kneeling at their feet".
+   - Image `s28_c2_template_s1.png`, checklist 0.48 (c1 0.50, c3 0.51): "a man and a woman seated side by side on a raised throne" 0.06.
+   - **Cause:** figure and action phrases dropped by the budget.
+
+**A success, for contrast (c3, s09, tier 1).**
+- Scene: "Sita sitting alone under a tree in the Ashoka grove, sorrowful, the garden quiet at dusk".
+- One figure, one action. Everything fits in 54 tokens, and the image scores 0.92 (c1 0.87).
+- Expansion helps or is neutral when the scene is simple enough that nothing is dropped.
+
+**Pattern.** In every failure above, the 70-token budget (56 for the scene) forces a choice between what the figures look like and what they do. Both the template and the LLM spend most of it on appearance from the KB, and the action, count or crowd phrase is dropped. Raw text keeps the user's own short action words. This is consistent with c1 beating every expanded condition on human faithfulness (§9). Untested fixes for M4:
+- an action-first priority in the template and in the LLM prompt;
+- shorter KB visuals (one phrase per character);
+- structure through ControlNet instead of words.
 
 ## 12. Measured latency
 
@@ -237,7 +286,7 @@ Colab T4, `Qwen/Qwen3-4B-Instruct-2507` @ `cdbee75f`, 4-bit NF4 (requirements as
 | Seconds per scene, c3 (longer user message with the KB block) | mean 9.7 s, median 9.4 s (`latency_s` − `model_load_s`) | `c3_llm_kb_dev.json` |
 | Template mode (c2) | 0.004 s per scene, CPU | `c2_template_dev.json` |
 
-`TODO(results)`: `c3_7b`. Expansion runs alone in the `llm` session: expand everything, `close()`, then generate in a new `gen` session.
+`c3_7b` was not run (§10), so there is no 7B timing. Expansion runs alone in the `llm` session: expand everything, `close()`, then generate in a new `gen` session.
 
 ## 13. Commands
 
