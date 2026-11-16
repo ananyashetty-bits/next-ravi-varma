@@ -2,7 +2,7 @@
 
 `expand(text, scene=None, mode="llm_kb") -> ExpandedPrompt` turns a user's epic-scene sentence into a prompt the M2 model (`rrv_v1`) can render: name-free visual phrases, the trigger first, the style tail last, under the token limit. It runs a **local** instruct LLM (no paid API) with a deterministic template as the fallback.
 
-> **Status (2026-11-14):** the design and all modes are built and tested (`tests/test_expander_*.py`). c2, c3 and c4 are expanded, generated and scored on all 24 dev scenes (§9); human ratings for c2/c3 (round 2) are pending. **c2 and c3 run on D's interim KB `d-kb0`** (`expander/interim_kb/`), because C's KB and parser were not available (#21); see the Section D deviations. Everything still marked `TODO(results)` waits for numbers from `outputs/expansions/`, `results/` or B's tables; no number goes in by hand. Contracts referred to: Overview v2 §6 (`config/m3.json`, SceneSpec, ExpandedPrompt, signatures, CLI).
+> **Status (2026-11-16):** the design and all modes are built and tested (`tests/test_expander_*.py`). c2, c3 and c4 are expanded, generated and scored on all 24 dev scenes (§9). Human ratings are in (B, #73). **H-D1 and H-D2: no clear difference**, and raw text with the LoRA (c1) is more faithful than every expanded condition (§9). Held-out rows wait for B's run. **c2 and c3 run on D's interim KB `d-kb0`** (`expander/interim_kb/`), because C's KB and parser were not available (#21); see the Section D deviations. Everything still marked `TODO(results)` waits for numbers from `outputs/expansions/`, `results/` or B's tables; no number goes in by hand. Contracts referred to: Overview v2 §6 (`config/m3.json`, SceneSpec, ExpandedPrompt, signatures, CLI).
 
 ## 1. Design principle
 
@@ -70,7 +70,15 @@ Rules:
 - **Budget:** `max_prompt_tokens` = **70**, counted **excluding** the start/end tokens with the team's one counter `common/tokens.py` `n_tokens(text)` (CLIP BPE of the base model's tokenizer). It stays 70 until A's `pipeline/TOKEN_BUDGET.md` says otherwise. The M2 helper `generate.py n_tokens` counts **including** start/end tokens and is never used here.
 - **`assemble(trigger, phrases, style_tail, max_tokens, *, counter=None)`:** adds phrases greedily in priority order and skips any phrase that does not fit, so a shorter later phrase can still be kept. Trigger and tail are always kept, and an empty tail adds no trailing comma. `phrases_dropped` lists **budget drops only**; name removals go to `phrases_scrubbed`.
 - **Fixed cost (team config since #18, measured with `common/tokens.py` on 2026-11-03):** trigger `rrvarma style` 4 tokens; `"<trigger>, <tail>"` with the team tail `oil painting, canvas texture, classical indian art` 14 tokens, so **56 tokens** remain for scene phrases. (The tail first proposed here, M2's v2 suffix, would have cost 25.)
-- **Measured, c4 dev (16 scenes):** `token_count` mean 62.4, min 40, max 70; on average 8.2 phrases kept and 0.75 dropped for the budget per record. `TODO(results)`: the same for c2 and c3.
+- **Measured, dev (24 scenes, real CLIP counter; `outputs/expansions/*_dev.json`):**
+
+  | file | `token_count` mean (min-max) | phrases kept / record | dropped for the budget / record |
+  |---|---|---|---|
+  | `c2_template_dev.json` | 64.3 (39-70) | 6.62 | 4.46 |
+  | `c3_llm_kb_dev.json` | 63.3 (43-70) | 7.88 | 1.58 |
+  | `c4_llm_nokb_dev.json` | 60.5 (40-70) | 8.08 | 0.50 |
+
+  The template loses the most to the budget, because it lists every KB visual phrase of every character (§2.1). Phrases low on its priority list (later visual phrases, mood) do not fit in the 56 tokens left for the scene.
 
 ## 6. Name scrub
 
@@ -79,7 +87,7 @@ Rules:
 - **Matcher** (`expander/names.py`, shared with A's CI so the two cannot disagree): text normalised with NFKD to ASCII; whole words (`\b…\b`, multi-word aliases joined by `\s+`, longest first); **case-insensitive by default**.
 - **Case policy for English-word aliases:** aliases that are also ordinary words are matched **only when capitalised**: `Ram`, `Lava`, `Kush`/`Kusha`, `Bali`, `Kali`, `Tara`, `Kama`, `Hamsa`, `Uma`, `Hari`, `Agni`, `Surya`, `Usha`, `Matsya`, `Varaha`, … (full list in `names_seed_meta.json → risk.case_sensitive_only`). This keeps "a ram", "kusha grass" and "flowing lava" in the prompt. The LLM capitalises proper names. Honorifics and class nouns (`Devi`, `Sri`, `Rakshasa`, `Apsara`, `Gopi`) and `ashoka grove` are not names. In prep, the list had 0 false positives on 178 name-free M2 texts.
 - **Record fields:** `names_leaked` = names found **before** repair (B reports how often the LLM leaks). `names_after_repair` = names left in the final phrases, which **must be `[]`**. `phrases_scrubbed` = phrases removed for names.
-- **Known cost:** rivers and mounts that are also names (`Ganga`, `Yamuna`, `Sarayu`, `Nandi`, `Garuda`) are scrubbed, which can remove a setting phrase. Measured in c4 dev: **0 phrases scrubbed** in 16 records, because the one re-ask removed every leaked name. `TODO(results)`: c2/c3.
+- **Known cost:** rivers and mounts that are also names (`Ganga`, `Yamuna`, `Sarayu`, `Nandi`, `Garuda`) are scrubbed, which can remove a setting phrase. Measured on dev: **0 phrases scrubbed** in c2, c3 and c4 (24 records each), because the re-asks removed every leaked name.
 - **Measured leak rate before repair, c4 dev:** 12 of 16 records (75%). Most frequent: Arjuna 4, Krishna 4, Sita 3, Hanuman 3, Rama 2, Lakshmana 2. **After repair: 0.**
 - **Template mode:** there is no LLM to re-ask, so the matched name is deleted from the phrase, dangling connectors are tidied, and the phrase is dropped if fewer than 2 content words remain.
 
@@ -122,6 +130,24 @@ Settled since Day 1: scene IDs `s25`-`s32` (B, #22); B's scene check uses `expan
 
 ## 9. Ladder results (c2 → c4 → c3)
 
+**Human ratings, dev (primary measure; `eval/EVAL_REPORT.md` §2.1, `results/human_ratings_dev.json`).**
+- **Images:** seed 1, two raters per image; c0/c1/c2/c4 on the first 16 scenes, `c3_llm_kb_ckb` and c6 on 24.
+- **c3:** for human ratings this is C's `c3_llm_kb_ckb` (C's KB `kb0.2`). D's `c3_llm_kb` (`d-kb0`) was not rated.
+- **c4:** the rated images are A's 2 Nov set (`results/rated/`).
+
+| a → b | n | Faithfulness, b − a [95% CI], W/T/L | Style | Quality |
+|---|---|---|---|---|
+| c2 → c3 (**H-D1**) | 16 | −0.06 [−0.47, +0.34], 5/4/7 | +0.12 [−0.09, +0.34] | **+0.41 [+0.03, +0.78]** |
+| c4 → c3 (**H-D2**, all scenes) | 16 | −0.12 [−0.62, +0.34], 5/4/7 | −0.25 [−0.56, +0.03] | −0.06 [−0.41, +0.25] |
+| c4 → c3 (H-D2, tier 4: s15, s31) | 2 | s15 3.0 → 1.5, s31 1.5 → 2.5 (not resolvable) | — | — |
+| c1 → c2 | 16 | **−0.66 [−1.19, −0.19]**, 3/3/10 | **−0.50 [−0.84, −0.16]** | **−0.38 [−0.72, −0.06]** |
+| c1 → c4 | 16 | **−0.59 [−1.00, −0.19]**, 3/2/11 | −0.12 [−0.38, +0.12] | +0.09 [−0.12, +0.31] |
+| c1 → c3 | 16 | **−0.72 [−1.25, −0.25]**, 3/2/11 | **−0.38 [−0.75, −0.03]** | +0.03 [−0.28, +0.31] |
+
+Bold: the CI excludes 0. Human faithfulness means: c1 2.56, c4 1.97, c3 1.94, c2 1.91.
+- **Rater agreement** missed its bar (H-B5, ρ 0.43 < 0.5), so these are weaker evidence.
+- **Cross-round comparisons:** c1 and c4 were rated in round 1, c2 and c3 in round 2, so c1 → c2/c3 and c4 → c3 cross rounds.
+
 **Judge results, dev (supporting evidence; seeds 1-2; `rrv_v1` at scale 1.0).** All from `results/` on `main`:
 - c2/c3/c4: D, 24 scenes; c4 from D's own images;
 - c0/c1: B (#62), first 16 scenes only;
@@ -154,12 +180,15 @@ Paired over shared scenes (`eval/stats.paired`, b − a, 95% bootstrap CI, tie b
 
 All conditions pass the memorisation guardrail (`max_train_dino` p95 ≤ M2's `mem_flag_dino_p95` 0.85). Seen/unseen (c2 → c3): seen −0.074 (n = 5), unseen −0.010 (n = 19); both CIs include 0.
 
-**Status of the hypotheses:**
-- **H-D1, H-D2: not decided.** Their primary measure is human faithfulness, pending round 2.
-- **On the judge:** no clear difference for H-D1 or H-D2. The H-D2 tier-4 split has 3 scenes.
-- **First reading (judge only):** prompt expansion did **not** improve faithfulness over raw text with the LoRA (c1 → c3 is slightly negative on 16 scenes). c3 is clearly more Varma-like than the template (c2 → c3 `style_margin`). Which KB c3 uses (D's interim vs C's) makes no clear difference.
+**Status of the hypotheses (D.0 rule on human faithfulness, 2026-11-16):**
+- **H-D1: no clear difference.** c2 → c3 is −0.06 [−0.47, +0.34] at n = 16, i.e. no clear benefit of the LLM over a deterministic template. The judge agrees (−0.023 [−0.074, +0.025], n = 24).
+  - Secondary: the style rating shows no clear difference, as predicted; c3 has better quality (+0.41).
+  - The share of "wrong figure count" tags is 28% in c2 vs 21% in c3, while "wrong action" is 25% in both.
+- **H-D2: no clear difference overall; tier 4 not resolvable.** c4 → c3 is −0.12 [−0.62, +0.34]. The tier-4 split has 2 rated scenes, one each way. The judge agrees (−0.005; tier 4, n = 3: −0.104).
+- **Context:** both nulls sit under a larger result. **Raw text with the LoRA (c1) is more faithful than every expanded condition** on human ratings, and the judge points the same way (c1 → c3 −0.055 [−0.113, −0.003]). The default pipeline by B's B.3 rule is `c1_lora_raw`.
+- **What the expander does achieve:** every record is valid, name-free and within 70 tokens. c3 is more Varma-like than the template on the judge (`style_margin`) and rated higher on quality. Which KB c3 uses (D's interim vs C's) makes no clear difference on the judge.
 
-`TODO(results)`: human faithfulness, style and quality per condition from B's ratings; H-D1/H-D2 decided by the D.0 rule; per-tier and seen/unseen splits; held-out rows after B's run.
+`TODO(B, held-out)`: held-out rows after B's run.
 
 Process table per file from `check_expansions.py --strict` (real CLIP counter):
 
@@ -169,7 +198,7 @@ Process table per file from `check_expansions.py --strict` (real CLIP counter):
 | `c2_template_dev.json` (24 scenes, interim KB `d-kb0`; s17-s24 added 2026-11-14) | 24 | 100.0% | 100.0% | 100.0% | 0.0% | 0 | 0.0% | 0.003 / 0.003 | 64.3 / 70 | 4.46 |
 | `c3_llm_kb_dev.json` (24 scenes, interim KB `d-kb0`; s17-s24 added 2026-11-15) | 24 | 100.0% | 100.0% | 100.0% | 8.3% | 0 | 0.0% | 20.85 / 9.63 | 63.3 / 70 | 1.58 |
 
-The LLM rows' mean latency includes the model load in the first scene's `latency_s` (`model_load_s`: c4 124 s, c3 103 s, fresh runtimes). Without it, per scene: c4 mean 13.3 s, median 13.3 s; c3 mean 9.7 s, median 9.4 s. `json_retry` was false in every record. The second calls (c4: 12, c3: 2) were all name re-asks; no phrase had to be scrubbed in any file. With the KB block, the LLM used names in 2 of 16 records (c3), against 12 of 16 without it (c4).
+The LLM rows' mean latency includes the model load in the first scene's `latency_s` (`model_load_s`: c4 124 s, c3 103 s, fresh runtimes). Without it, per scene: c4 mean 13.3 s, median 13.3 s; c3 mean 9.7 s, median 9.4 s. `json_retry` was false in every record. The second calls (c4: 17, c3: 2) were all name re-asks; no phrase had to be scrubbed in any file. With the KB block, the LLM used names in 2 of 24 records (c3), against 17 of 24 without it (c4).
 
 ## 10. Optional experiments
 
