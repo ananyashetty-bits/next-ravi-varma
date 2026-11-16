@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -euo pipefail
 PROFILE=${1:-gen}
 
 if [ "$PROFILE" = "gen" ]; then
