@@ -1,8 +1,9 @@
 {
-  "base_model": "runwayml/stable-diffusion-v1-5",
+  "base_model": "stable-diffusion-v1-5/stable-diffusion-v1-5",
   "trigger": "rrvarma style",
   "style_tail": "oil painting, canvas texture, classical indian art",
-  "negative": "ugly, blurry, bad anatomy",
+  "negative": "lowres, blurry, deformed, extra limbs, bad anatomy, text, watermark",
+  "safety_checker": false,
   "sampler": "dpmpp_2m", 
   "steps": 30, 
   "cfg": 7.0, 
