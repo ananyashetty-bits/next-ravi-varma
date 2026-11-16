@@ -43,19 +43,19 @@ with open(f"{PRIV}/ratings_r1.csv", "w", newline="") as f: csv.writer(f).writero
 print(len(rows) - 1, "rows")
 ```
 
-## 4. Rating stats (provisional until A and C have rated)
+## 4. Rating stats (final dev run: 16 Nov)
+Download both sheets as CSV (*File → Download → CSV*): the round-1 sheet (tab `rating_template`) and the round-2
+sheet (`AI PROJECT/dev_contact_sheets_r2/rating_template`). Put them in `B_private` as `ratings_r1.csv` and
+`ratings_r2.csv`.
 ```python
 !python eval/ratings.py --round {PRIV}/ratings_r1.csv {PRIV}/blind_key_dev.json \
-    --results "results/*_dev.json" --out {PRIV}/ratings_dev_provisional
+    --round {PRIV}/ratings_r2.csv {PRIV}/blind_key_dev_r2.json \
+    --results "results/*_dev.json" "results/rated/*.json" --alias c3=c3_llm_kb_ckb --out {PRIV}/ratings_dev_final
 ```
-Prints a **PROVISIONAL** banner and the sheet problems (wrong codes, non-standard tags). Keep the output to
-yourself until everyone has rated. When round 2 exists, add `--round <r2 csv> <r2 key>`; if both
-`c3_llm_kb` and `c3_llm_kb_ckb` are rated, say which one is "c3" with `--alias c3=c3_llm_kb_ckb`.
-
-What it computes (section B of `experiments/HYPOTHESES.md`): condition means with CIs and ranges; paired
-comparisons from Overview §8 (tie band 0.25); faithfulness by tier, seen/unseen (H-B3) and KB coverage
-(H-B4); failure-tag counts; inter-rater agreement (H-B5); judge validation against human faithfulness and
-CLIP (H-B1) and `style_margin` against human style (H-B2).
+Every rating is paired with the automated scores of the exact image that was rated (same condition and file
+name). Files under `results/rated/` replace the main file for their condition. That is how c4's rated images
+(A's 2 Nov set) stay paired after D regenerated c4 in #72. The output also applies the B.3 default-pipeline rule.
+The 16 Nov output is committed as `results/human_ratings_dev.json`.
 
 ## 5. Judge robustness check (T4 GPU, ~3 min incl. model load)
 ```python
