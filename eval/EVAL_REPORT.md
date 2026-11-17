@@ -1,6 +1,6 @@
 # M3 evaluation report (owner: B)
 
-> **Status 2026-11-18: dev (§1-§3) and held-out (§4) results complete. Comparison grids (§5) still to do.**
+> **Status 2026-11-18: complete (§1-§6). Claims audit of the other documents: `eval/CLAIMS_AUDIT.md`.**
 > Rules: every number names its source file. Human-rating numbers come only from `eval/ratings.py` run on the
 > final sheet after every rater has submitted. Nothing here is typed from memory or from a chat.
 > Markers: `TODO(B)` = B to fill; `TODO(x)` = needs input from member x.
@@ -508,6 +508,8 @@ the KB c3 actually used (`kb0.2`); one scene names no character.
    both CIs excluding 0. On dev the same comparison was null (−0.12). Most held-out characters are not in the KB
    (7 of 19 mentions are). The pattern fits the KB's descriptions crowding out the scene when a character is
    unknown or poorly covered, but 12 scenes cannot show that on their own (D's analysis, `EXPANDER.md`).
+   Leaving out the two scenes (h08, h11) where c3 and c4 got the **same prompt, and so the same image** (no
+   character in the KB), the KB effect is −0.60 [−1.05, −0.15] on the 10 scenes where it changed the prompt.
 5. **Template vs LLM, and grounded vs LLM-written KB, are still null.** c2 → c3 −0.25 [−0.62, +0.08];
    c6 → c3 +0.04 [−0.25, +0.38].
 6. **Failure tags:** every expansion condition fails mainly on figure identity, count and action. c0 fails mainly
@@ -590,9 +592,37 @@ H-B5 (faithfulness ρ ≥ 0.5): **met**
   ρ = 0.65 [0.46, 0.78], and CLIP only at 0.17.
 - **H-B5 is met on held-out** (ρ 0.65 ≥ 0.5), though it was not on dev (0.43). A plausible reason: all six
   conditions sat on one sheet, which makes relative judgements easier.
+- **Identical images as a consistency check.** In three held-out scenes, two or three conditions produced the same
+  image because their prompts were the same: c1 = c2 in h07, and c3 = c4 = c6 in h08 and h11. Raters scored
+  identical images identically in all 14 within-rater pairs. The duplicates were on the same sheet, so this is
+  an easy check, but it shows the scores were entered carefully.
 
 ## 5. Comparison grids
-`TODO(B)`: 6-8 grids (one scene, all conditions), including failures.
+Seven scenes, chosen **by rule** rather than by eye. For dev and for held-out separately, the rule picks the scene
+where c3 lost most against c1 on human faithfulness, the scene where it gained most, and the median scene. One
+held-out tier-4 scene (rare characters) where the two tie is added.
+
+Each grid shows the seed-1 image the raters saw for every condition, decoded from the blind contact sheets with
+the keys in `eval/ratings/`. Under each image are the mean human faithfulness, style and quality (two raters).
+`= same image` marks conditions whose prompt, and therefore picture, was identical. To rebuild a grid, run
+`python eval/grids.py` (usage in the file).
+
+| # | Scene | Why chosen | What it shows |
+|---|---|---|---|
+| 1 | [dev s27](../docs/figures/grid1_dev_s27.png): Yashoda scolding little Krishna | largest c3 loss (−3.5) | Only c1 keeps the scene: mother, child and the pot on the floor (faithfulness 4.5). c3 and c6 replace it with unrelated single figures (1.0). |
+| 2 | [dev s12](../docs/figures/grid2_dev_s12.png): Hanuman offering Rama the ring | largest c3 gain (+1.0) | Every condition gets the kneeling pose, and none draws Hanuman as a vanara ("generic figure"). The base model (c0) is rated most faithful (4.0). |
+| 3 | [dev s13](../docs/figures/grid3_dev_s13.png): Krishna as envoy in Duryodhana's court | median (−1.0) | All conditions draw a court. None clearly shows one envoy addressing a king on a throne, and faithfulness ranges only 1.5-3.0. |
+| 4 | [held-out h12](../docs/figures/grid4_heldout_h12.png): Hanuman flying to Lanka (tier 5, long and informal) | largest c3 loss (−1.5) | c1 and c2 keep a flying figure over waves under the moon. c3 and c6 lose Hanuman's identity (1.0). |
+| 5 | [held-out h07](../docs/figures/grid5_heldout_h07.png): churning of the ocean | largest c3 gain (+0.5) | c1 and c2 are the same image (the template added nothing). No condition shows the mountain or the gods-versus-demons split. All score 1.5-2.5. |
+| 6 | [held-out h08](../docs/figures/grid6_heldout_h08.png): waking Kumbhakarna | median (−0.5) | Kumbhakarna is in no KB, so c3, c4 and c6 got the same LLM prompt and image. That image **drops the sleeping giant** and shows standing soldiers (2.0). c1 and c2 keep a huge reclining figure surrounded by people (2.5). |
+| 7 | [held-out h09](../docs/figures/grid7_heldout_h09.png): Ekalavya and Dronacharya | tier 4, tie | Every LoRA condition shows a man kneeling before a figure in a forest. In c1-c3, Dronacharya is drawn as a woman in a sari, and no condition shows the thumb (all 2.0). |
+
+**Pattern across the grids:**
+- The LoRA always gives the look: c0 is the odd one out in style every time.
+- Expansion mostly changes **who and what is in the picture**, often for the worse. The LLM rewrites the scene into
+  generic figure descriptions, and the named character or the key object disappears (grids 1, 4, 6).
+- Raw text keeps the scene's core more often.
+- These are the same failure modes the taxonomy counts in §2.1 and §4.1 (identity, count, action).
 
 ## 6. Limitations
 Known so far:
