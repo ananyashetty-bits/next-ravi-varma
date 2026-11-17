@@ -53,7 +53,10 @@ This is a simple, one-figure scene where nothing is dropped. The typical failure
   - the LLM with the KB (c3): −0.72 [−1.25, −0.25].
 - **Among the expansion conditions,** neither the LLM (H-D1) nor the KB (H-D2) made a clear difference.
 - **The default pipeline** is therefore `c1_lora_raw` (§4.1).
-- The held-out set has not been run yet (§4.2).
+- **Held-out (12 unseen scenes, rated blind on one sheet, §4.2):**
+  - **The main finding replicates:** c1 → c3 is −0.50 [−0.83, −0.17], worse in 7 of 12 scenes.
+  - The LLM without the KB (c4) ties c1 (0.00 [−0.42, +0.42]).
+  - Adding the KB to the LLM made pictures **less** faithful (c4 → c3: −0.50 [−0.88, −0.12]). Most held-out characters are not in the KB.
 
 **What is new.** The halfway feedback asked for "the simplest thing possible". We kept the pipeline simple (no UI, one base model, one LoRA, local models only) and put the effort into answering the question with evidence:
 1. a controlled **ablation ladder** c0-c6 (§3) that adds one component at a time;
@@ -69,7 +72,7 @@ This is a simple, one-figure scene where nothing is dropped. The typical failure
 
 **Inputs:** B's `eval/EVAL_REPORT.md` §1 (setup); `experiments/HYPOTHESES.md` (all sections); A's `pipeline/TOKEN_BUDGET.md`; C's `kb/KB.md` (KB schema, coverage thresholds). **Feeds from `results/`:** none (method only).
 
-**Test sets.** The dev set (`eval/test_scenes_dev.json`) was planned as 32 scenes, 8 written by each member, with at least one per tier. It has **24** (B s09-s16, C s17-s24, D s25-s32; A's 8 were never added). The tiers are:
+**Test sets.** The dev set (`eval/test_scenes_dev.json`) was planned as 32 scenes, 8 written by each member, with at least one per tier. The analysed dev set has **24** (B s09-s16, C s17-s24, D s25-s32). A's 8 (s01-s08) were added on 16 Nov, after the dev results and the B.3 decision, so they are outside the analysis and descriptive only (§6). The tiers are:
 1. one well-known character;
 2. two characters interacting;
 3. multi-figure;
@@ -125,7 +128,7 @@ Judge details:
 
 **Choosing the default pipeline.** The default for M4 is chosen at S3 **on dev only**, by the rule fixed in Overview §10: highest mean faithfulness, subject to the style and memorisation guardrails; on a CI including 0, the simpler condition wins. `TODO(A)`: the decision as recorded in `docs/TEAM_DECISIONS_M3.md`.
 
-**Hypotheses.** Pre-registered per owner in `experiments/HYPOTHESES.md` (sections A-D). Each section's merge timestamp must precede that owner's first scored run; `TODO(B)`: confirm this from git history during the Day-6 audit. Section D (expander), merged in #20 before any D condition was scored:
+**Hypotheses.** Pre-registered per owner in `experiments/HYPOTHESES.md` (sections A-D). Each section's merge timestamp must precede that owner's first scored run. B's Day-6 audit confirmed this from git history for all four sections (`eval/CLAIMS_AUDIT.md` §1). Section D (expander), merged in #20 before any D condition was scored:
 - **H-D1 (core):** `c3_llm_kb` is more faithful than `c2_template` (the LLM adds composition the template lacks).
 - **H-D2 (core):** `c3_llm_kb` beats `c4_llm_nokb`, with the gain concentrated on tier 4 (rare characters, spelling variants).
 - **H-D3 (core if c5 runs):** `c5_llm_kb_layout` beats `c3_llm_kb` on count and pose checklist items in tiers 2-3.
@@ -215,7 +218,44 @@ Bold: the CI excludes 0. **Every expansion condition is less faithful than raw t
 No c5 or `@rrv_names` dev conditions exist.
 
 ### 4.2 Ablation, held-out
-`TODO(B, held-out)`: the same tables on 12 scenes × seeds 1-2 (seeds cut from 1-4; Section B deviation, 16 Nov).
+**Run.** Source: `eval/EVAL_REPORT.md` §4, `results/*_heldout.json`, `results/human_ratings_heldout.json`.
+- **Images:** 12 unseen scenes × c0, c1, c2, `c3_llm_kb_ckb`, c4, c6 × seeds 1-2 = 144 images.
+- **Pipeline:** made once on 16 Nov with the frozen pipeline (`main` at `64b7a2f`; seeds cut from 1-4, Section B deviation, 16 Nov). Each condition was made the way its rated dev version was.
+- **Ratings:** rated blind by all four members on 17 Nov, two raters per image (seed 1). All six conditions were on the **same sheet**, so the cross-round caveat of dev does not apply here.
+- **Use:** reported only; the B.3 rule is not re-applied.
+
+| Condition | Faithfulness | Style | Quality | Judge checklist |
+|---|---|---|---|---|
+| `c0_base_raw` | 2.25 [1.88, 2.62] | 1.67 [1.29, 2.12] | 2.29 [1.92, 2.75] | 0.623 |
+| `c1_lora_raw` | **2.54** [2.17, 2.96] | 3.21 [3.04, 3.38] | 2.54 [2.33, 2.75] | **0.667** |
+| `c2_template` | 2.29 [1.96, 2.71] | 3.00 [2.71, 3.25] | 2.50 [2.29, 2.71] | 0.646 |
+| `c3_llm_kb_ckb` | 2.04 [1.62, 2.50] | 2.92 [2.58, 3.21] | 2.46 [2.21, 2.71] | 0.598 |
+| `c4_llm_nokb` | **2.54** [2.21, 2.92] | 3.25 [3.04, 3.46] | 2.62 [2.38, 2.88] | 0.642 |
+| `c6_llm_kbllm` | 2.00 [1.58, 2.46] | 2.88 [2.62, 3.08] | 2.46 [2.21, 2.71] | 0.534 |
+
+| a → b | Faithfulness, b − a [95% CI], W/T/L | Style | Judge checklist |
+|---|---|---|---|
+| c0 → c1 (LoRA) | +0.29 [−0.17, +0.75], 7/2/3 | **+1.54 [+1.08, +1.96]** | +0.044 [−0.017, +0.104] |
+| c1 → c3 (full system vs raw) | **−0.50 [−0.83, −0.17]**, 1/4/7 | −0.29 [−0.62, 0.00] | −0.069 [−0.136, +0.001] |
+| c1 → c2 (template vs raw) | −0.25 [−0.54, 0.00], 0/9/3 | **−0.21 [−0.42, −0.04]** | −0.022 [−0.065, +0.023] |
+| c1 → c4 (LLM, no KB, vs raw) | 0.00 [−0.42, +0.42], 3/5/4 | +0.04 [−0.17, +0.25] | −0.025 [−0.108, +0.056] |
+| c2 → c3 (H-D1) | −0.25 [−0.62, +0.08], 3/4/5 | −0.08 [−0.42, +0.17] | −0.048 [−0.101, +0.003] |
+| c4 → c3 (H-D2) | **−0.50 [−0.88, −0.12]**, 1/5/6 | **−0.33 [−0.58, −0.08]** | −0.044 [−0.105, +0.011] |
+| c6 → c3 (H-C2) | +0.04 [−0.25, +0.38], 3/6/3 | +0.04 [−0.12, +0.21] | **+0.064 [+0.011, +0.122]** |
+
+Bold: the CI excludes 0.
+
+**What held-out shows:**
+- **The dev finding replicates:** raw text with the LoRA is more faithful than the full system (c1 → c3), and this time without the cross-round caveat.
+- **The LoRA's style gain replicates** (+1.54).
+- **What differs from dev:**
+  - The LLM without the KB (c4) ties c1 instead of losing to it (dev: −0.59).
+  - Adding the KB to the LLM **hurts** (c4 → c3 −0.50, CI excludes 0; dev: −0.12, null).
+- **Where the KB effect comes from:**
+  - Only 7 of 19 held-out character mentions are in C's KB `kb0.2`.
+  - In h08 and h11 no character is in any KB, so c3, c4 and c6 got identical prompts and identical images. Without those two scenes the c4 → c3 effect is −0.60 [−1.05, −0.15] (B, #83).
+  - The likely mechanism, as on dev (`EXPANDER.md` §11): KB appearance phrases take the token budget from the action and the scene. That is a plausible reading of 12 scenes, not a tested one.
+- **Guardrail:** every condition passes the memorisation guardrail (`max_train_dino` p95 ≤ 0.801).
 
 ### 4.3 Expansion ladder and expander hypotheses
 **Status 2026-11-16: decided on dev.**
@@ -228,6 +268,7 @@ No c5 or `@rrv_names` dev conditions exist.
 |---|---|---|---|
 | H-D1: c3 > c2 | c2 → `c3_llm_kb_ckb`: −0.06 [−0.47, +0.34], W/T/L 5/4/7 (n = 16) | c2 → c3: −0.023 [−0.074, +0.025] (n = 24) | **no clear difference**: no clear benefit of the LLM over a deterministic template at n = 16 |
 | H-D2: c3 > c4, mostly tier 4 | c4 → `c3_llm_kb_ckb`: −0.12 [−0.62, +0.34], 5/4/7 (n = 16); tier 4 (n = 2): s15 3.0 → 1.5, s31 1.5 → 2.5 | c4 → c3: −0.005 [−0.052, +0.048] (n = 24); tier 4 (n = 3): −0.104 | **no clear difference** overall; the tier-4 part is **not resolvable** at n = 2 |
+| *Held-out (reported, not used to decide)* | H-D1 c2 → c3: −0.25 [−0.62, +0.08]; H-D2 c4 → c3: **−0.50 [−0.88, −0.12]** (n = 12) | c2 → c3: −0.048; c4 → c3: −0.044 | H-D1 no clear difference again; on H-D2, held-out goes **against** the prediction: the KB made pictures less faithful |
 | H-D3: c5 > c3 on tier 2-3 count/pose | — | — | not tested: cut (Overview §14; `EXPANDER.md` §10) |
 | H-D4: 7B not needed | — | — | not tested: cut |
 | H-D5: scene negatives | — | — | not tested: cut |
@@ -290,11 +331,15 @@ Per this report's rule, the values are not quoted until their scores file is in 
 ### 4.5 Model-side fix and KB grounding
 Sources: `train/NAMES_MODEL.md`, `kb/KB.md`, `results/names_test_*.json`, `results/c6_comparison.json`, `kb/parser_metrics.json`.
 
-**Parser (H-C1, supported):** precision 1.00, recall 1.00, epic accuracy 1.00 on the 24 dev scenes (thresholds 0.90 / 0.90 / 0.85). C's caveat: the KB was built mainly from the dev-scene characters, so this shows the parser works when the KB has the character. The held-out set is the real test.
+**Parser (H-C1, supported):** precision 1.00, recall 1.00, epic accuracy 1.00 on the 24 dev scenes (thresholds 0.90 / 0.90 / 0.85). C's caveat: the KB was built mainly from the dev-scene characters, so this shows the parser works when the KB has the character. **On held-out** (B's audit, `eval/CLAIMS_AUDIT.md` §8; `kb0.4`, 12 scenes): precision 1.00, **recall 0.42** (8 of 19), epic accuracy 0.58. 9 of the 11 misses are characters not in the KB, and 2 are implied rather than named. So H-C1 holds on dev and fails on held-out: the parser never invents a character, but the KB covers too few characters for unseen scenes.
 
 **KB grounding (H-C2, not supported at this n):**
 - c6 (LLM-written descriptions) → `c3_llm_kb_ckb` (image-grounded): checklist +0.013 [−0.045, +0.068], `style_margin` −0.001 [−0.012, +0.011], n = 24.
-- No clear difference, including on the 14 strong-coverage scenes. Judge only; c6 has no human ratings.
+- **Human faithfulness** (c6 was rated in round 2 and on held-out; `eval/EVAL_REPORT.md` §2.1, §4.1):
+  - dev +0.12 [−0.23, +0.48] (n = 24);
+  - the 14 strong-coverage scenes +0.07 [−0.18, +0.36];
+  - held-out +0.04 [−0.25, +0.38] (n = 12).
+- No clear difference anywhere on human ratings. The judge prefers the grounded KB on held-out (+0.064 [+0.011, +0.122]), and humans do not.
 
 **Model-side fix:**
 - **Audit:** GO (67% of images with characters filled; 11 characters in 3 or more images).
@@ -345,6 +390,8 @@ Sources: `train/NAMES_MODEL.md`, `kb/KB.md`, `results/names_test_*.json`, `resul
   - c1 → c3 −0.72 [−1.25, −0.25].
 
   These are human faithfulness on 16 scenes (§4.1), and c3 is worse in 11 of 16 scenes. The judge points the same way (c1 → c3 −0.055 [−0.113, −0.003]). Neither the LLM over the template (H-D1) nor the KB block (H-D2) nor image-grounded descriptions over LLM-written ones (H-C2) made a clear difference. The template and c3 also cost style (−0.50 and −0.38).
+
+  **Held-out confirms it** (§4.2): c1 → c3 −0.50 [−0.83, −0.17] on 12 unseen scenes rated on one sheet. The LLM alone (c4) ties raw text there, and adding the KB on top of it makes pictures less faithful (c4 → c3 −0.50 [−0.88, −0.12]). The most consistent single finding of M3 is that **the user's own short text, with the LoRA, is as good as or better than any rewritten prompt we produced**.
 - **What helped:**
   - **The LoRA.** c0 → c1 style +1.38 [+1.06, +1.69] and quality +0.38 [+0.12, +0.62] on human ratings. Faithfulness +0.56 [0.00, +1.09], better in 12 of 16 scenes, with the CI just reaching 0.
   - **The KB block** kept names out of the LLM's phrases: 2 of 24 c3 records needed a names re-ask, against 17 of 24 in c4. This made the expander cleaner, not the pictures better.
@@ -368,7 +415,7 @@ Sources: `train/NAMES_MODEL.md`, `kb/KB.md`, `results/names_test_*.json`, `resul
   How the failures shift along the ladder:
   - **The LoRA** turns style failures (c0) into identity failures (c1).
   - **Expansion** turns c1's identity failures into composition failures.
-  - Example images with decoded codes: `TODO(B)`. Expansion-stage failure modes are in `expander/EXPANDER.md` §11.
+  - Example images with decoded codes: `eval/EVAL_REPORT.md` §5 (7 comparison grids chosen by rule, `docs/figures/grid*.png`, #83). Expansion-stage failure modes are in `expander/EXPANDER.md` §11.
 - **Coverage, seen vs unseen** (judge, descriptive; `eval/EVAL_REPORT.md` §2.2):
   - Every condition scores higher on the 5 seen scenes than on the unseen ones.
   - Tier 4 (rare characters, spelling variants) is the lowest tier for most conditions.
@@ -393,7 +440,8 @@ These are known now and hold whatever the results show; owners add their own.
 - **Style tail.** The model was **not trained with the style tail** we append: the winner's train_v1 captions have no fixed tail. `TODO(A)`: what the token-budget and SHAP results say about it.
 - **Name scrub.** It removes every listed name, including rivers and mounts that double as setting words (Ganga, Nandi), so a setting phrase can be lost. Measured on dev: **0 phrases scrubbed** in c2, c3 and c4. The one re-ask removed every leaked name first.
 - **Interim KB.** D's c2 and c3 dev results use D's interim KB `d-kb0` (20 characters, written from train_v1 captions; 2 entries without a training painting), not C's KB. C's KB version of c3 exists (`c3_llm_kb_ckb`) and is not clearly different on the judge.
-- **Interim KB coverage on held-out.** `d-kb0` covers only the dev-scene characters, so held-out scenes with other characters get no description for them in c2/c3 (the parser writes "the figure"). `TODO(B, held-out)`: share of held-out scenes affected.
+- **Interim KB coverage on held-out.** `d-kb0` covers only the dev-scene characters, so held-out scenes with other characters get no description for them in c2 (the parser writes "the figure"). Of the 11 held-out scenes that name characters, 9 include one missing from `d-kb0`, and 5 have none covered. With C's `kb0.2` (used by c3), 9 of 11 also miss one, and 4 have none covered (`eval/CLAIMS_AUDIT.md`, M8; checked against `eval/test_scenes_heldout.json`).
+- **Parser in the held-out LLM runs.** `rapidfuzz` is not in `expander/requirements_llm.txt`, so the held-out c3/c6 expansions fell back to D's stand-in parser (exact alias match) instead of C's fuzzy parser (`parser` field in `outputs/expansions/*_heldout.json`). Both find the same characters in 11 of 12 held-out scenes. The exception is h12, where C's parser would also have found a misspelled Hanuman, so h12's c3/c6 prompts lack his description.
 - **Smaller dev set.** The dev analysis uses 24 of the planned 32 scenes (s09-s32), and c0/c1/c2/c4 were rated on only 16 of them. A's 8 scenes (s01-s08, #77) arrived on 16 Nov, after the dev results and the B.3 decision, and were rewritten to use characters known to the interim KB. So they are outside the pre-registered analysis and descriptive only (Section B deviation, 16 Nov).
   - Tier subsets have 2-7 scenes.
   - The H-D2 tier-4 test has n = 3 on the judge and n = 2 on human ratings.
