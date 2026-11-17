@@ -1,6 +1,6 @@
 # M3 evaluation report (owner: B)
 
-> **Status 2026-11-16: dev results complete (§1-§3). Held-out (§4), grids (§5) still to do.**
+> **Status 2026-11-18: dev (§1-§3) and held-out (§4) results complete. Comparison grids (§5) still to do.**
 > Rules: every number names its source file. Human-rating numbers come only from `eval/ratings.py` run on the
 > final sheet after every rater has submitted. Nothing here is typed from memory or from a chat.
 > Markers: `TODO(B)` = B to fill; `TODO(x)` = needs input from member x.
@@ -38,10 +38,14 @@ With only 5 seen scenes, seen-versus-unseen results are descriptive (H-B3).
 The **first 16 scenes** (B and D) are the ones every condition up to c4 was run on; C's 8 were added on
 10 Nov. Their profile: tiers 1-5 = 3 / 4 / 5 / 2 / 2; 6 Ramayana, 8 Mahabharata; 5 seen, 11 unseen.
 
-**Held-out set:** 12 scenes written by B, stored privately (outside the repo and the shared Drive) and not
-used for judge development. `TODO(B)`: run with the frozen code, **seeds 1-2** (cut list, section B deviation 2026-11-16), then reveal
-`eval/test_scenes_heldout.json` with its tier, epic and seen counts. Held-out results are reported and
-never used to choose the default pipeline.
+**Held-out set** (`eval/test_scenes_heldout.json`, revealed 18 Nov): **12 scenes** (h01-h12) written by B on
+1 Nov. They were stored privately (outside the repo and the shared Drive) until after held-out scoring and rating,
+and were never used for judge development or any pipeline choice.
+- Tiers 1-5: 2 / 2 / 3 / 3 / 2. Epics: Ramayana 5, Mahabharata 4, Puranic 2, unknown 1.
+- All 12 are unseen in training.
+- 4-5 checklist questions each (49 in total). The scenes pass the same rule tests as the dev scenes.
+- Only 7 of their 19 character mentions are in the KB that c3 used (`kb0.2`), so the held-out set mostly tests
+  characters the system has no description for.
 
 ### 1.2 Conditions
 All conditions use the same generator: Stable Diffusion 1.5, DPM++ 2M, 30 steps, CFG 7.0, 512×512
@@ -63,7 +67,7 @@ The expander LLM is `Qwen/Qwen3-4B-Instruct-2507` (revision pinned in `config/m3
 prompt `v1`. Each dev condition has seeds 1 and 2 (32 or 48 images). Section D treats only real-KB images as
 evidence; for human ratings, "c3" means `c3_llm_kb_ckb` unless stated otherwise.
 `@rrv_names` was not registered: C's names model passed the guardrails, but the names test showed no gain (H-C3 not supported), so no c1/c3 runs were made on it (`train/NAMES_MODEL.md`).
-`TODO(D)`: optional conditions (`c5`, `c3_7b`, `c3_neg`, `c3_v2`) if any were run.
+The optional conditions (`c5`, `c3_7b`, `c3_neg`, `c3_v2`) were not run (cut list; `expander/EXPANDER.md`).
 
 ### 1.3 Metrics
 **Primary: blind human ratings** (§1.4): faithfulness, style fidelity and visual quality, each 1-5.
@@ -102,6 +106,8 @@ agrees with humans is H-B1 (§3).
   - Round 1 (sheets 4 Nov): c0, c1, c4 on the first 16 scenes, 48 images, 96 rating rows.
   - Round 2 (sheets 14 Nov): c2, `c3_llm_kb_ckb`, c6 on the first 16 scenes, plus `c3_llm_kb_ckb` and c6 on s17-s24. That is 64
     images and 128 rating rows, with the same two raters per scene as in round 1. `c3_llm_kb` (D's interim KB) is not rated.
+  - Held-out round (sheets 16 Nov, rated 17 Nov): all six conditions side by side on one sheet per scene. 12 scenes,
+    72 images, 144 rating rows (36 per rater).
 
   Images rated in different rounds were never side by side on one sheet. Comparisons across rounds (such as
   c1 → c3) therefore rest on absolute 1-5 judgements, not on a direct side-by-side comparison.
@@ -415,7 +421,175 @@ should not be read as an absolute proportion of the scene that is correct, and s
 wordings must not be mixed.
 
 ## 4. Results, held-out
-`TODO(B, held-out)`: the same tables on 12 scenes × 2 seeds (seeds 1-2; cut list), run once with the frozen code.
+**Run.** Done once on 16 Nov with the frozen pipeline (`main` at `64b7a2f`, `eval/RUNBOOK_B.md` §7):
+- 12 scenes × c0, c1, c2, `c3_llm_kb_ckb`, c4, c6 × **seeds 1-2** (cut list) = 144 images.
+- Each condition was made exactly as its rated dev version: c2 and c4 with D's frozen commands; c3 with C's KB as
+  of 10 Nov (`kb0.2`); c6 with `kb_llm.json`; c0 and c1 with the dev negative prompt.
+- Expansions: 12 per condition, all valid, trigger first, within budget, **0 names leaked after repair**
+  (`outputs/expansions/*_heldout.json`).
+- Scored once, with no re-runs (`results/*_heldout.json`).
+- Rated blind by all four of us on 17 Nov: 144/144 rows, 72 images × 2 raters
+  (`eval/ratings/ratings_heldout.csv`, key `eval/ratings/blind_key_heldout.json`).
+- Five failure tags had spacing or spelling slips, such as `generic figure(name ignored)`. `eval/ratings.py`
+  mapped them to the intended taxonomy tag and listed them; no scores were changed.
+- Output: `results/human_ratings_heldout.json`. The B.3 rule is **not** applied: held-out is for reporting only.
+
+### 4.1 Human ratings
+All six conditions were rated on the same sheets, so there is no cross-round caveat here. The coverage table uses
+the KB c3 actually used (`kb0.2`); one scene names no character.
+
+##### Human ratings by condition (mean over scenes [95% CI]; range)
+
+| Condition | n scenes | Faithfulness | Style | Quality |
+|---|---|---|---|---|
+| `c0_base_raw` | 12 | 2.25 [1.88, 2.62]; 1.0–3.0 | 1.67 [1.29, 2.12]; 1.0–3.5 | 2.29 [1.92, 2.75]; 1.5–4.0 |
+| `c1_lora_raw` | 12 | 2.54 [2.17, 2.96]; 1.5–4.0 | 3.21 [3.04, 3.38]; 2.5–3.5 | 2.54 [2.33, 2.75]; 2.0–3.0 |
+| `c2_template` | 12 | 2.29 [1.96, 2.71]; 1.5–4.0 | 3.00 [2.71, 3.25]; 2.0–3.5 | 2.50 [2.29, 2.71]; 2.0–3.0 |
+| `c3_llm_kb_ckb` | 12 | 2.04 [1.62, 2.50]; 1.0–4.0 | 2.92 [2.58, 3.21]; 2.0–3.5 | 2.46 [2.21, 2.71]; 1.5–3.0 |
+| `c4_llm_nokb` | 12 | 2.54 [2.21, 2.92]; 2.0–4.0 | 3.25 [3.04, 3.46]; 2.5–4.0 | 2.62 [2.38, 2.88]; 2.0–3.5 |
+| `c6_llm_kbllm` | 12 | 2.00 [1.58, 2.46]; 1.0–4.0 | 2.88 [2.62, 3.08]; 2.0–3.5 | 2.46 [2.21, 2.71]; 1.5–3.0 |
+
+##### Paired comparisons (b − a per scene; tie band 0.25)
+
+| a → b | n | Faithfulness diff [CI] W/T/L | Style diff [CI] | Quality diff [CI] |
+|---|---|---|---|---|
+| `c0_base_raw` → `c1_lora_raw` | 12 | 0.29 [-0.17, 0.75] 7/2/3 | 1.54 [1.08, 1.96] | 0.25 [-0.29, 0.71] |
+| `c1_lora_raw` → `c3_llm_kb_ckb` | 12 | -0.50 [-0.83, -0.17] 1/4/7 | -0.29 [-0.62, 0.00] | -0.08 [-0.42, 0.25] |
+| `c4_llm_nokb` → `c3_llm_kb_ckb` | 12 | -0.50 [-0.88, -0.12] 1/5/6 | -0.33 [-0.58, -0.08] | -0.17 [-0.38, 0.04] |
+| `c2_template` → `c3_llm_kb_ckb` | 12 | -0.25 [-0.62, 0.08] 3/4/5 | -0.08 [-0.42, 0.17] | -0.04 [-0.38, 0.29] |
+| `c6_llm_kbllm` → `c3_llm_kb_ckb` | 12 | 0.04 [-0.25, 0.38] 3/6/3 | 0.04 [-0.12, 0.21] | 0.00 [-0.25, 0.21] |
+| `c1_lora_raw` → `c2_template` | 12 | -0.25 [-0.54, 0.00] 0/9/3 | -0.21 [-0.42, -0.04] | -0.04 [-0.17, 0.08] |
+| `c1_lora_raw` → `c4_llm_nokb` | 12 | 0.00 [-0.42, 0.42] 3/5/4 | 0.04 [-0.17, 0.25] | 0.08 [-0.25, 0.42] |
+
+##### Faithfulness by tier (mean, n scenes)
+
+| Condition | 1 | 2 | 3 | 4 | 5 |
+|---|---|---|---|---|---|
+| `c0_base_raw` | 2.50 (2) | 2.00 (2) | 2.00 (3) | 2.33 (3) | 2.50 (2) |
+| `c2_template` | 2.50 (2) | 1.50 (2) | 2.17 (3) | 2.17 (3) | 3.25 (2) |
+| `c3_llm_kb_ckb` | 2.25 (2) | 1.50 (2) | 2.00 (3) | 2.00 (3) | 2.50 (2) |
+| `c6_llm_kbllm` | 2.00 (2) | 1.75 (2) | 2.17 (3) | 1.67 (3) | 2.50 (2) |
+| `c4_llm_nokb` | 2.50 (2) | 3.00 (2) | 2.50 (3) | 2.00 (3) | 3.00 (2) |
+| `c1_lora_raw` | 3.25 (2) | 1.75 (2) | 2.50 (3) | 2.17 (3) | 3.25 (2) |
+
+##### Faithfulness by KB coverage (worst character in the scene) (mean, n scenes)
+
+| Condition | high/medium | low/none |
+|---|---|---|
+| `c0_base_raw` | 2.50 (2) | 2.11 (9) |
+| `c2_template` | 2.25 (2) | 2.11 (9) |
+| `c3_llm_kb_ckb` | 1.75 (2) | 1.89 (9) |
+| `c6_llm_kbllm` | 1.50 (2) | 1.89 (9) |
+| `c4_llm_nokb` | 2.00 (2) | 2.50 (9) |
+| `c1_lora_raw` | 3.00 (2) | 2.28 (9) |
+
+##### Failure tags (count of ratings)
+
+| Condition | wrong figure count | wrong/missing figure identity | wrong setting | wrong action | generic figure (name ignored) | weak style | anatomy/face artifacts | other | none |
+|---|---|---|---|---|---|---|---|---|---|
+| `c0_base_raw` | 1 | 4 | 2 | 1 | 2 | 14 | 0 | 0 | 0 |
+| `c1_lora_raw` | 6 | 7 | 2 | 5 | 0 | 1 | 3 | 0 | 0 |
+| `c2_template` | 6 | 8 | 1 | 7 | 0 | 0 | 2 | 0 | 0 |
+| `c3_llm_kb_ckb` | 7 | 8 | 0 | 5 | 0 | 1 | 3 | 0 | 0 |
+| `c4_llm_nokb` | 3 | 10 | 0 | 7 | 1 | 1 | 2 | 0 | 0 |
+| `c6_llm_kbllm` | 5 | 8 | 3 | 5 | 1 | 0 | 2 | 0 | 0 |
+
+
+**What held-out shows:**
+1. **The main dev finding replicates.** Raw text with the LoRA (c1) is more faithful than the full system:
+   c1 → c3 is −0.50 [−0.83, −0.17], worse in 7 of 12 scenes and better in 1. On held-out, every condition was rated on
+   the same sheet, so this no longer depends on comparing across rating rounds.
+2. **The LoRA again gives a large style gain.** c0 → c1 style +1.54 [+1.08, +1.96]. Faithfulness +0.29 has a CI that
+   includes 0, as it did on dev, where it just touched 0.
+3. **The LLM without the KB does as well as raw text.** c1 → c4 is 0.00 [−0.42, +0.42]: c4 ties c1 for the highest
+   faithfulness (2.54). On dev, c4 was clearly below c1 (−0.59). Different scene sets give different answers here,
+   and n is small.
+4. **Adding the KB hurts on held-out.** c4 → c3 is −0.50 [−0.88, −0.12] on faithfulness and −0.33 on style, with
+   both CIs excluding 0. On dev the same comparison was null (−0.12). Most held-out characters are not in the KB
+   (7 of 19 mentions are). The pattern fits the KB's descriptions crowding out the scene when a character is
+   unknown or poorly covered, but 12 scenes cannot show that on their own (D's analysis, `EXPANDER.md`).
+5. **Template vs LLM, and grounded vs LLM-written KB, are still null.** c2 → c3 −0.25 [−0.62, +0.08];
+   c6 → c3 +0.04 [−0.25, +0.38].
+6. **Failure tags:** every expansion condition fails mainly on figure identity, count and action. c0 fails mainly
+   on style (14 of 24 ratings).
+7. **The default pipeline holds up.** c1, chosen on dev, has the highest held-out faithfulness (tied with c4) and
+   a style rating within 0.04 of the best.
+
+### 4.2 Automated metrics
+Generated by `python eval/auto_tables.py --results "results/*_heldout.json" --scenes eval/test_scenes_heldout.json`.
+
+Sources: `results/c0_base_raw@base_heldout.json`, `results/c1_lora_raw@rrv_v1_heldout.json`, `results/c2_template@rrv_v1_heldout.json`, `results/c3_llm_kb_ckb@rrv_v1_heldout.json`, `results/c4_llm_nokb@rrv_v1_heldout.json`, `results/c6_llm_kbllm@rrv_v1_heldout.json`. Judge: Qwen/Qwen2-VL-2B-Instruct. Seeds 1-2 averaged per scene.
+
+##### Per condition (mean over scenes [95% CI])
+
+| Condition | n scenes | checklist (judge) | checklist on the 12 common scenes | `clip_raw` | `style_margin` | `max_train_dino` p95 (≤ 0.85) |
+|---|---|---|---|---|---|---|
+| `c0_base_raw` | 12 | 0.623 [0.552, 0.690] | 0.623 | 0.284 | -0.012 | 0.773 |
+| `c1_lora_raw` | 12 | 0.667 [0.584, 0.743] | 0.667 | 0.277 | 0.087 | 0.801 |
+| `c2_template` | 12 | 0.646 [0.589, 0.707] | 0.646 | 0.279 | 0.092 | 0.801 |
+| `c3_llm_kb_ckb` | 12 | 0.598 [0.521, 0.681] | 0.598 | 0.254 | 0.069 | 0.764 |
+| `c4_llm_nokb` | 12 | 0.642 [0.563, 0.720] | 0.642 | 0.265 | 0.089 | 0.752 |
+| `c6_llm_kbllm` | 12 | 0.534 [0.458, 0.622] | 0.534 | 0.250 | 0.080 | 0.726 |
+
+##### Paired comparisons (b − a per scene, shared scenes; [95% CI]; W/T/L with tie band 0.0295)
+
+| a → b | What it tests | n | checklist (judge) | `clip_raw` | `style_margin` |
+|---|---|---|---|---|---|
+| `c0_base_raw` → `c1_lora_raw` | LoRA (Overview §8) | 12 | +0.044 [-0.017, +0.104] 7/1/4 | -0.007 [-0.024, +0.009] 1/9/2 | **+0.098 [+0.067, +0.134] 11/1/0** |
+| `c1_lora_raw` → `c3_llm_kb_ckb` | full system vs raw text (Overview §8) | 12 | -0.069 [-0.136, +0.001] 3/2/7 | -0.023 [-0.048, +0.001] 2/5/5 | -0.018 [-0.045, +0.010] 3/2/7 |
+| `c4_llm_nokb` → `c3_llm_kb_ckb` | adding the KB (Overview §8; H-D2) | 12 | -0.044 [-0.105, +0.011] 2/4/6 | -0.012 [-0.024, +0.000] 0/10/2 | **-0.020 [-0.045, -0.001] 0/10/2** |
+| `c2_template` → `c3_llm_kb_ckb` | LLM vs template (Overview §8) | 12 | -0.048 [-0.101, +0.003] 1/6/5 | **-0.026 [-0.047, -0.004] 0/7/5** | **-0.023 [-0.046, -0.002] 1/6/5** |
+| `c6_llm_kbllm` → `c3_llm_kb_ckb` | grounded vs LLM-written KB (Overview §8; C) | 12 | **+0.064 [+0.011, +0.122] 7/3/2** | +0.003 [-0.009, +0.016] 2/9/1 | -0.011 [-0.032, +0.008] 1/8/3 |
+| `c1_lora_raw` → `c2_template` | template vs raw text | 12 | -0.022 [-0.065, +0.023] 3/4/5 | +0.002 [-0.008, +0.013] 1/10/1 | +0.005 [-0.009, +0.021] 3/9/0 |
+| `c1_lora_raw` → `c4_llm_nokb` | LLM without KB vs raw text | 12 | -0.025 [-0.108, +0.056] 6/2/4 | -0.012 [-0.032, +0.007] 1/7/4 | +0.002 [-0.017, +0.020] 2/7/3 |
+
+Bold: the 95% CI excludes 0.
+
+##### Checklist (judge) by tier (mean, n scenes)
+
+| Condition | 1 | 2 | 3 | 4 | 5 |
+|---|---|---|---|---|---|
+| `c0_base_raw` | 0.661 (2) | 0.579 (2) | 0.519 (3) | 0.630 (3) | 0.773 (2) |
+| `c1_lora_raw` | 0.744 (2) | 0.473 (2) | 0.580 (3) | 0.731 (3) | 0.820 (2) |
+| `c2_template` | 0.696 (2) | 0.515 (2) | 0.564 (3) | 0.684 (3) | 0.792 (2) |
+| `c3_llm_kb_ckb` | 0.689 (2) | 0.443 (2) | 0.558 (3) | 0.549 (3) | 0.796 (2) |
+| `c4_llm_nokb` | 0.633 (2) | 0.610 (2) | 0.636 (3) | 0.564 (3) | 0.812 (2) |
+| `c6_llm_kbllm` | 0.591 (2) | 0.461 (2) | 0.488 (3) | 0.435 (3) | 0.766 (2) |
+
+
+The judge points the same way as the humans, with smaller effects:
+- **c1 → c3:** −0.069, CI just reaching 0.
+- **LoRA:** a clear style gain, `style_margin` +0.098, better in 11 of 12 scenes.
+- **KB grounding:** the image-grounded KB scores higher on the judge than the LLM-written KB (c6 → c3 +0.064, CI
+  excludes 0), while humans see no difference (+0.04).
+- **Memorisation guardrail:** every condition passes (p95 ≤ 0.801).
+
+### 4.3 Judge validation and rater agreement on held-out
+##### Judge validation (72 rated images matched to results/; 0 unmatched)
+
+| Pair | n | Spearman ρ [95% CI] |
+|---|---|---|
+| checklist judge vs human faithfulness | 72 | 0.65 [0.46, 0.78] |
+| clip_raw vs human faithfulness | 72 | 0.17 [-0.06, 0.41] |
+| style_margin vs human style | 72 | 0.38 [0.15, 0.56] |
+
+H-B1 (judge ρ ≥ 0.4 and ≥ CLIP's): **met**. H-B2 (style_margin ρ > 0): **met**.
+
+##### Inter-rater agreement (72 images with two raters)
+
+| Dimension | Spearman ρ [CI] | Weighted κ | Exact | Within 1 |
+|---|---|---|---|---|
+| faithfulness | 0.65 [0.49, 0.78] | 0.53 | 0.62 | 0.90 |
+| style | 0.53 [0.34, 0.68] | 0.60 | 0.51 | 0.99 |
+| quality | 0.27 [0.05, 0.47] | 0.30 | 0.50 | 0.99 |
+
+H-B5 (faithfulness ρ ≥ 0.5): **met**
+
+
+- **H-B1 and H-B2 hold on held-out too**, and more clearly than on dev. The judge agrees with human faithfulness at
+  ρ = 0.65 [0.46, 0.78], and CLIP only at 0.17.
+- **H-B5 is met on held-out** (ρ 0.65 ≥ 0.5), though it was not on dev (0.43). A plausible reason: all six
+  conditions sat on one sheet, which makes relative judgements easier.
 
 ## 5. Comparison grids
 `TODO(B)`: 6-8 grids (one scene, all conditions), including failures.
@@ -433,8 +607,11 @@ Known so far:
 - rater agreement on faithfulness is moderate (ρ 0.43, below the pre-registered 0.5; §3.2);
 - the judge clears its validation bar only narrowly (ρ 0.41, CI down to 0.24; §3.1);
 - c4 was regenerated by #72; human ratings refer to the 2 Nov images, the automated table to the 15 Nov ones;
-- the round-1 key was rebuilt rather than saved.
+- the round-1 key was rebuilt rather than saved;
+- held-out is 12 scenes × 2 seeds (cut from 4 seeds), and every held-out scene is unseen. Held-out results for
+  c4 vs c3 reverse the dev result, a reminder of how much these small sets vary.
 
-**Said first, as required:** raw text with the LoRA (c1) is **more** faithful than every prompt-expansion condition,
-according to the human ratings (§2.1), and at least as good on the judge (§2.2). It is the default pipeline by the
-pre-registered rule.
+**Said first, as required:** raw text with the LoRA (c1) is **more** faithful than every prompt-expansion condition on
+dev, according to the human ratings (§2.1), and at least as good on the judge (§2.2). It is the default pipeline by
+the pre-registered rule. On held-out (§4), c1 is again more faithful than the full system (c1 → c3 −0.50), and
+only the LLM-without-KB condition (c4) matches it.

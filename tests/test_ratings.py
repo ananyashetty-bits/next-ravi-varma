@@ -29,6 +29,10 @@ def test_tags_normalised():
     assert R.norm_tag("Missing figure identity ") == ("wrong/missing figure identity", False)
     assert R.norm_tag("wrong setting") == ("wrong setting", True)
     assert R.norm_tag("blurry") == ("other", False)
+    assert R.norm_tag("generic figure(name ignored)") == ("generic figure (name ignored)", False)
+    assert R.norm_tag("generican figure(name ignored)") == ("generic figure (name ignored)", False)
+    assert R.norm_tag("wrong /missing figure identity") == ("wrong/missing figure identity", False)
+    assert R.norm_tag("wrong setting, wrong action") == ("other", False)       # two tags: not guessed
     assert R.norm_tag("") == ("", False)
 
 

@@ -19,6 +19,7 @@ with the pre-registered tie band of 0.25 rating points (B.2).
 """
 import argparse
 import csv
+import difflib
 import glob
 import json
 import math
@@ -61,7 +62,18 @@ def norm_condition(c):
     return re.sub(r"_\d+$", "", c or "")             # run_batch sometimes appended _<idx> (B deviation, 4 Nov)
 
 
+def _letters(t):
+    return re.sub(r"[^a-z]", "", t.lower())
+
+
+_TAG_KEYS = {_letters(x): x for x in TAXONOMY}
+_TAG_KEYS.update({_letters(k): v for k, v in TAG_ALIASES.items()})
+
+
 def norm_tag(t):
+    """Map a failure tag to the taxonomy. Returns (tag, exact). Spacing/punctuation slips and one-word typos
+    (e.g. 'generic figure(name ignored)', 'generican figure (name ignored)') map to the intended tag but are
+    reported as not exact; anything else becomes 'other'."""
     t = re.sub(r"\s+", " ", (t or "").strip().lower())
     if not t:
         return "", False
@@ -69,6 +81,12 @@ def norm_tag(t):
         return t, True
     if t in TAG_ALIASES:
         return TAG_ALIASES[t], False
+    k = _letters(t)
+    if k in _TAG_KEYS:
+        return _TAG_KEYS[k], False
+    close = difflib.get_close_matches(k, list(_TAG_KEYS), n=1, cutoff=0.9)
+    if close:
+        return _TAG_KEYS[close[0]], False
     return "other", False
 
 
@@ -494,6 +512,7 @@ def main():
     ap.add_argument("--seed_img", type=int, default=1, help="seed of the images on the contact sheets")
     ap.add_argument("--raters", nargs="+", default=["A", "B", "C", "D"])
     ap.add_argument("--out", default=None, help="write <out>.json and <out>.md (private path until everyone has rated)")
+    ap.add_argument("--no_select", action="store_true", help="held-out: report only, do not apply the B.3 selection rule")
     a = ap.parse_args()
 
     scenes = {s["id"]: s for s in json.load(open(a.scenes))}
@@ -512,6 +531,8 @@ def main():
     aliases = dict(x.split("=", 1) for x in a.alias)
     rep = analyse(ratings, scenes, load_results(paths) if paths else None, scene_coverage(scenes, a.kb),
                   aliases=aliases)
+    if a.no_select:
+        rep.pop("default_pipeline", None)
     rep["problems"], rep["pending_rows"] = problems, pending
 
     done = {r: sum(1 for x in ratings if x["rater"] == r) for r in a.raters}

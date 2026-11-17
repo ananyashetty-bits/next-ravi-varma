@@ -1,0 +1,470 @@
+[
+ {
+  "id": "h01",
+  "split": "heldout",
+  "tier": 1,
+  "expected_epic": "Puranic",
+  "expected_characters": [
+   "Saraswati"
+  ],
+  "text": "Saraswati seated on a rock by a river, playing the veena, a white swan beside her",
+  "seen_in_training": false,
+  "contributed_by": "B",
+  "checklist": [
+   {
+    "id": "c1",
+    "q": "Is there exactly one person in the image?",
+    "type": "count",
+    "weight": 1.0
+   },
+   {
+    "id": "c2",
+    "q": "Is the person holding a long stringed instrument?",
+    "type": "object",
+    "weight": 1.0
+   },
+   {
+    "id": "c3",
+    "q": "Is there a white swan or white bird?",
+    "type": "object",
+    "weight": 1.0
+   },
+   {
+    "id": "c4",
+    "q": "Is there water, such as a river, in the scene?",
+    "type": "setting",
+    "weight": 0.5
+   }
+  ]
+ },
+ {
+  "id": "h02",
+  "split": "heldout",
+  "tier": 1,
+  "expected_epic": "Ramayana",
+  "expected_characters": [
+   "Rama"
+  ],
+  "text": "Rama alone in the forest drawing his bow, ready to shoot",
+  "seen_in_training": false,
+  "contributed_by": "B",
+  "checklist": [
+   {
+    "id": "c1",
+    "q": "Is there exactly one person in the image?",
+    "type": "count",
+    "weight": 1.0
+   },
+   {
+    "id": "c2",
+    "q": "Is the person pulling back the string of a bow?",
+    "type": "pose",
+    "weight": 1.0
+   },
+   {
+    "id": "c3",
+    "q": "Are there trees around him?",
+    "type": "setting",
+    "weight": 1.0
+   },
+   {
+    "id": "c4",
+    "q": "Is the man bare-chested or lightly clothed?",
+    "type": "attire",
+    "weight": 0.5
+   }
+  ]
+ },
+ {
+  "id": "h03",
+  "split": "heldout",
+  "tier": 2,
+  "expected_epic": "Mahabharata",
+  "expected_characters": [
+   "Shakuntala",
+   "Dushyanta"
+  ],
+  "text": "Dushyanta meeting Shakuntala for the first time in the hermitage garden, she shyly lowers her eyes",
+  "seen_in_training": false,
+  "contributed_by": "B",
+  "checklist": [
+   {
+    "id": "c1",
+    "q": "Are there exactly two people in the image?",
+    "type": "count",
+    "weight": 1.0
+   },
+   {
+    "id": "c2",
+    "q": "Is one of them a man and the other a woman?",
+    "type": "figure",
+    "weight": 1.0
+   },
+   {
+    "id": "c3",
+    "q": "Is the man dressed like a king, with a crown or jewellery?",
+    "type": "attire",
+    "weight": 1.0
+   },
+   {
+    "id": "c4",
+    "q": "Is the woman looking down?",
+    "type": "pose",
+    "weight": 0.5
+   },
+   {
+    "id": "c5",
+    "q": "Is the scene outdoors among plants and trees?",
+    "type": "setting",
+    "weight": 0.5
+   }
+  ]
+ },
+ {
+  "id": "h04",
+  "split": "heldout",
+  "tier": 2,
+  "expected_epic": "Mahabharata",
+  "expected_characters": [
+   "Bhima",
+   "Duryodhana"
+  ],
+  "text": "Bhima and Duryodhana fighting with maces, both swinging their heavy clubs",
+  "seen_in_training": false,
+  "contributed_by": "B",
+  "checklist": [
+   {
+    "id": "c1",
+    "q": "Are there two main figures?",
+    "type": "count",
+    "weight": 1.0
+   },
+   {
+    "id": "c2",
+    "q": "Is each of them holding a mace or heavy club?",
+    "type": "object",
+    "weight": 1.0
+   },
+   {
+    "id": "c3",
+    "q": "Are they fighting each other?",
+    "type": "pose",
+    "weight": 1.0
+   },
+   {
+    "id": "c4",
+    "q": "Are both men muscular?",
+    "type": "figure",
+    "weight": 0.5
+   }
+  ]
+ },
+ {
+  "id": "h05",
+  "split": "heldout",
+  "tier": 3,
+  "expected_epic": "Ramayana",
+  "expected_characters": [
+   "Nala",
+   "Hanuman"
+  ],
+  "text": "the monkey army building the bridge of floating stones across the sea to Lanka, hundreds of monkeys carrying rocks",
+  "seen_in_training": false,
+  "contributed_by": "B",
+  "checklist": [
+   {
+    "id": "c1",
+    "q": "Are there many figures in the image?",
+    "type": "count",
+    "weight": 1.0
+   },
+   {
+    "id": "c2",
+    "q": "Are there monkeys or monkey-like figures?",
+    "type": "figure",
+    "weight": 1.0
+   },
+   {
+    "id": "c3",
+    "q": "Are figures carrying rocks or stones?",
+    "type": "object",
+    "weight": 1.0
+   },
+   {
+    "id": "c4",
+    "q": "Is there sea or ocean water?",
+    "type": "setting",
+    "weight": 0.5
+   }
+  ]
+ },
+ {
+  "id": "h06",
+  "split": "heldout",
+  "tier": 3,
+  "expected_epic": "Mahabharata",
+  "expected_characters": [
+   "Yudhishthira",
+   "Shakuni",
+   "Duryodhana"
+  ],
+  "text": "the game of dice in the royal hall, Yudhishthira and Shakuni seated across the dice board while the court watches in silence",
+  "seen_in_training": false,
+  "contributed_by": "B",
+  "checklist": [
+   {
+    "id": "c1",
+    "q": "Are there more than four people in the image?",
+    "type": "count",
+    "weight": 1.0
+   },
+   {
+    "id": "c2",
+    "q": "Are two men seated facing each other across a board or low table?",
+    "type": "pose",
+    "weight": 1.0
+   },
+   {
+    "id": "c3",
+    "q": "Are there dice or game pieces visible?",
+    "type": "object",
+    "weight": 0.5
+   },
+   {
+    "id": "c4",
+    "q": "Is the scene inside a large hall with pillars or rich decoration?",
+    "type": "setting",
+    "weight": 1.0
+   }
+  ]
+ },
+ {
+  "id": "h07",
+  "split": "heldout",
+  "tier": 3,
+  "expected_epic": "Puranic",
+  "expected_characters": [
+   "Vasuki"
+  ],
+  "text": "the churning of the ocean of milk, gods on one side and demons on the other pulling a giant serpent wound around a mountain",
+  "seen_in_training": false,
+  "contributed_by": "B",
+  "checklist": [
+   {
+    "id": "c1",
+    "q": "Is there a giant snake or serpent?",
+    "type": "object",
+    "weight": 1.0
+   },
+   {
+    "id": "c2",
+    "q": "Is the serpent wrapped around a mountain or tall rock?",
+    "type": "object",
+    "weight": 1.0
+   },
+   {
+    "id": "c3",
+    "q": "Are there two groups of figures pulling on the serpent?",
+    "type": "pose",
+    "weight": 1.0
+   },
+   {
+    "id": "c4",
+    "q": "Is there water or an ocean?",
+    "type": "setting",
+    "weight": 0.5
+   }
+  ]
+ },
+ {
+  "id": "h08",
+  "split": "heldout",
+  "tier": 4,
+  "expected_epic": "Ramayana",
+  "expected_characters": [
+   "Kumbhakarna"
+  ],
+  "text": "Kumbhakarna, the giant, being woken from his long sleep while soldiers beat drums and blow horns around his enormous body",
+  "seen_in_training": false,
+  "contributed_by": "B",
+  "checklist": [
+   {
+    "id": "c1",
+    "q": "Is there one figure much larger than the others?",
+    "type": "figure",
+    "weight": 1.0
+   },
+   {
+    "id": "c2",
+    "q": "Is the large figure lying down?",
+    "type": "pose",
+    "weight": 1.0
+   },
+   {
+    "id": "c3",
+    "q": "Are smaller figures holding drums or horns?",
+    "type": "object",
+    "weight": 1.0
+   },
+   {
+    "id": "c4",
+    "q": "Are there several small figures around him?",
+    "type": "count",
+    "weight": 0.5
+   }
+  ]
+ },
+ {
+  "id": "h09",
+  "split": "heldout",
+  "tier": 4,
+  "expected_epic": "Mahabharata",
+  "expected_characters": [
+   "Ekalavya",
+   "Drona"
+  ],
+  "text": "Ekalavya kneeling before Dronacharya and offering his thumb as gurudakshina in the forest",
+  "seen_in_training": false,
+  "contributed_by": "B",
+  "checklist": [
+   {
+    "id": "c1",
+    "q": "Are there two main figures?",
+    "type": "count",
+    "weight": 1.0
+   },
+   {
+    "id": "c2",
+    "q": "Is a young man kneeling?",
+    "type": "pose",
+    "weight": 1.0
+   },
+   {
+    "id": "c3",
+    "q": "Is the other figure an older man with a beard?",
+    "type": "figure",
+    "weight": 1.0
+   },
+   {
+    "id": "c4",
+    "q": "Is the scene in a forest?",
+    "type": "setting",
+    "weight": 0.5
+   }
+  ]
+ },
+ {
+  "id": "h10",
+  "split": "heldout",
+  "tier": 4,
+  "expected_epic": "Ramayana",
+  "expected_characters": [
+   "Ravana",
+   "Jatayu",
+   "Sita"
+  ],
+  "text": "Jatayu the great vulture attacking Raavan's flying chariot as he carries Seetha away through the sky",
+  "seen_in_training": false,
+  "contributed_by": "B",
+  "checklist": [
+   {
+    "id": "c1",
+    "q": "Is there a large bird?",
+    "type": "object",
+    "weight": 1.0
+   },
+   {
+    "id": "c2",
+    "q": "Is there a woman in the image?",
+    "type": "figure",
+    "weight": 1.0
+   },
+   {
+    "id": "c3",
+    "q": "Is the scene in the sky, above the ground?",
+    "type": "setting",
+    "weight": 1.0
+   },
+   {
+    "id": "c4",
+    "q": "Is there a man wearing a crown?",
+    "type": "attire",
+    "weight": 0.5
+   }
+  ]
+ },
+ {
+  "id": "h11",
+  "split": "heldout",
+  "tier": 5,
+  "expected_epic": "Unknown",
+  "expected_characters": [],
+  "text": "a sad queen waiting at the window",
+  "seen_in_training": false,
+  "contributed_by": "B",
+  "checklist": [
+   {
+    "id": "c1",
+    "q": "Is there a woman in the image?",
+    "type": "figure",
+    "weight": 1.0
+   },
+   {
+    "id": "c2",
+    "q": "Is there a window?",
+    "type": "setting",
+    "weight": 1.0
+   },
+   {
+    "id": "c3",
+    "q": "Is she wearing jewellery or rich clothing?",
+    "type": "attire",
+    "weight": 0.5
+   },
+   {
+    "id": "c4",
+    "q": "Does she look sad?",
+    "type": "mood",
+    "weight": 0.5
+   }
+  ]
+ },
+ {
+  "id": "h12",
+  "split": "heldout",
+  "tier": 5,
+  "expected_epic": "Ramayana",
+  "expected_characters": [
+   "Hanuman"
+  ],
+  "text": "hanumaan flying across the ocean to lanka carrying nothing but his devotion, huge waves below him, sea monsters, clouds and the island far away glowing, he is flying with one arm stretched forward and his tail behind, its night but the moon is bright, really dramatic and big like a temple mural but make it look like a real oil painting with warm skin",
+  "seen_in_training": false,
+  "contributed_by": "B",
+  "checklist": [
+   {
+    "id": "c1",
+    "q": "Is a figure flying through the air?",
+    "type": "pose",
+    "weight": 1.0
+   },
+   {
+    "id": "c2",
+    "q": "Does the figure have a tail?",
+    "type": "figure",
+    "weight": 1.0
+   },
+   {
+    "id": "c3",
+    "q": "Is there sea or ocean water below?",
+    "type": "setting",
+    "weight": 1.0
+   },
+   {
+    "id": "c4",
+    "q": "Is there a moon or night sky?",
+    "type": "setting",
+    "weight": 0.5
+   }
+  ]
+ }
+]
