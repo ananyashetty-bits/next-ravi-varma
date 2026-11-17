@@ -1,0 +1,539 @@
+{
+ "manifest": "/content/drive/MyDrive/m3/heldout_images/c0_base_raw@base/heldout/manifest.json",
+ "scenes_file": "/content/drive/MyDrive/B_private/test_scenes_heldout.json",
+ "scored_at": "2026-11-16T19:32:39.413972",
+ "judge": "Qwen/Qwen2-VL-2B-Instruct",
+ "n_images": 24,
+ "summary": {
+  "c0_base_raw": {
+   "checklist": {
+    "mean": 0.622795509994917,
+    "ci95": [
+     0.5524825274484187,
+     0.6903578948434664
+    ],
+    "n_scenes": 12
+   },
+   "clip_raw": {
+    "mean": 0.2841859546800454,
+    "ci95": [
+     0.27275187658766903,
+     0.29544649066713946
+    ],
+    "n_scenes": 12
+   },
+   "style_margin": {
+    "mean": -0.011632012824217478,
+    "ci95": [
+     -0.05130755423257748,
+     0.02697563072045643
+    ],
+    "n_scenes": 12
+   },
+   "max_train_dino": {
+    "mean": 0.5294407059748968,
+    "ci95": [
+     0.4301806603247921,
+     0.6230916153018673
+    ],
+    "n_scenes": 12
+   }
+  }
+ },
+ "per_scene": {
+  "c0_base_raw": {
+   "checklist": {
+    "h01": 0.5938780722873551,
+    "h02": 0.7281234988144466,
+    "h03": 0.47490234673023224,
+    "h04": 0.683789598090308,
+    "h05": 0.577752451811518,
+    "h06": 0.4751068037003279,
+    "h07": 0.5044155418872833,
+    "h08": 0.45759001267807825,
+    "h09": 0.7818074481827872,
+    "h10": 0.6506659643990653,
+    "h11": 0.8365944772958755,
+    "h12": 0.7089199040617262
+   },
+   "clip_raw": {
+    "h01": 0.26906490325927734,
+    "h02": 0.31193093955516815,
+    "h03": 0.25144172459840775,
+    "h04": 0.29162299633026123,
+    "h05": 0.28662633895874023,
+    "h06": 0.2809652090072632,
+    "h07": 0.2551659643650055,
+    "h08": 0.28332796692848206,
+    "h09": 0.3164144903421402,
+    "h10": 0.2986932843923569,
+    "h11": 0.2674170508980751,
+    "h12": 0.29756058752536774
+   },
+   "style_margin": {
+    "h01": 0.07790166139602661,
+    "h02": -0.04600057005882263,
+    "h03": 0.08687016367912292,
+    "h04": -0.027912110090255737,
+    "h05": -0.08410851657390594,
+    "h06": 0.03128361701965332,
+    "h07": -0.10854029655456543,
+    "h08": 0.04421833157539368,
+    "h09": 0.02220606803894043,
+    "h10": -0.05469605326652527,
+    "h11": -0.12056808173656464,
+    "h12": 0.039761632680892944
+   },
+   "max_train_dino": {
+    "h01": 0.711462676525116,
+    "h02": 0.5119405686855316,
+    "h03": 0.6459728181362152,
+    "h04": 0.5980638265609741,
+    "h05": 0.3111298829317093,
+    "h06": 0.643762469291687,
+    "h07": 0.5395970642566681,
+    "h08": 0.780389815568924,
+    "h09": 0.620478093624115,
+    "h10": 0.5133783221244812,
+    "h11": 0.1913464218378067,
+    "h12": 0.28576651215553284
+   }
+  }
+ },
+ "items": [
+  {
+   "scene_id": "h01",
+   "condition": "c0_base_raw",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c0_base_raw@base/heldout/h01_s1.png",
+   "coalition": null,
+   "prompt": "Saraswati seated on a rock by a river, playing the veena, a white swan beside her",
+   "checklist": 0.55571192077228,
+   "checklist_detail": {
+    "c1": 0.8202620148658752,
+    "c2": 0.9606015682220459,
+    "c3": 0.08866497129201889,
+    "c4": 0.15092633664608002
+   },
+   "clip_raw": 0.2640872001647949,
+   "style_margin": 0.059516191482543945,
+   "max_train_dino": 0.6954655647277832
+  },
+  {
+   "scene_id": "h01",
+   "condition": "c0_base_raw",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c0_base_raw@base/heldout/h01_s2.png",
+   "coalition": null,
+   "prompt": "Saraswati seated on a rock by a river, playing the veena, a white swan beside her",
+   "checklist": 0.6320442238024303,
+   "checklist_detail": {
+    "c1": 0.8398881554603577,
+    "c2": 0.9618079662322998,
+    "c3": 0.08592236787080765,
+    "c4": 0.6490725874900818
+   },
+   "clip_raw": 0.27404260635375977,
+   "style_margin": 0.09628713130950928,
+   "max_train_dino": 0.7274597883224487
+  },
+  {
+   "scene_id": "h02",
+   "condition": "c0_base_raw",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c0_base_raw@base/heldout/h02_s1.png",
+   "coalition": null,
+   "prompt": "Rama alone in the forest drawing his bow, ready to shoot",
+   "checklist": 0.611819693020412,
+   "checklist_detail": {
+    "c1": 0.8312795162200928,
+    "c2": 0.10390445590019226,
+    "c3": 0.9867390394210815,
+    "c4": 0.43889182806015015
+   },
+   "clip_raw": 0.32391759753227234,
+   "style_margin": -0.0699697732925415,
+   "max_train_dino": 0.5427247285842896
+  },
+  {
+   "scene_id": "h02",
+   "condition": "c0_base_raw",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c0_base_raw@base/heldout/h02_s2.png",
+   "coalition": null,
+   "prompt": "Rama alone in the forest drawing his bow, ready to shoot",
+   "checklist": 0.8444273046084813,
+   "checklist_detail": {
+    "c1": 0.8008596897125244,
+    "c2": 0.865727961063385,
+    "c3": 0.9852666854858398,
+    "c4": 0.6072824597358704
+   },
+   "clip_raw": 0.29994428157806396,
+   "style_margin": -0.02203136682510376,
+   "max_train_dino": 0.4811564087867737
+  },
+  {
+   "scene_id": "h03",
+   "condition": "c0_base_raw",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c0_base_raw@base/heldout/h03_s1.png",
+   "coalition": null,
+   "prompt": "Dushyanta meeting Shakuntala for the first time in the hermitage garden, she shyly lowers her eyes",
+   "checklist": 0.4637751057744026,
+   "checklist_detail": {
+    "c1": 0.6861906051635742,
+    "c2": 0.3279915153980255,
+    "c3": 0.22091083228588104,
+    "c4": 0.34636422991752625,
+    "c5": 0.8936507105827332
+   },
+   "clip_raw": 0.22965215146541595,
+   "style_margin": 0.0786287784576416,
+   "max_train_dino": 0.6150333285331726
+  },
+  {
+   "scene_id": "h03",
+   "condition": "c0_base_raw",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c0_base_raw@base/heldout/h03_s2.png",
+   "coalition": null,
+   "prompt": "Dushyanta meeting Shakuntala for the first time in the hermitage garden, she shyly lowers her eyes",
+   "checklist": 0.48602958768606186,
+   "checklist_detail": {
+    "c1": 0.4037858843803406,
+    "c2": 0.32439088821411133,
+    "c3": 0.4122084677219391,
+    "c4": 0.7630805373191833,
+    "c5": 0.8443856835365295
+   },
+   "clip_raw": 0.27323129773139954,
+   "style_margin": 0.09511154890060425,
+   "max_train_dino": 0.6769123077392578
+  },
+  {
+   "scene_id": "h04",
+   "condition": "c0_base_raw",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c0_base_raw@base/heldout/h04_s1.png",
+   "coalition": null,
+   "prompt": "Bhima and Duryodhana fighting with maces, both swinging their heavy clubs",
+   "checklist": 0.7847940240587506,
+   "checklist_detail": {
+    "c1": 0.9720065593719482,
+    "c2": 0.639944851398468,
+    "c3": 0.8843787312507629,
+    "c4": 0.5008978843688965
+   },
+   "clip_raw": 0.2940273880958557,
+   "style_margin": -0.028239130973815918,
+   "max_train_dino": 0.5762844085693359
+  },
+  {
+   "scene_id": "h04",
+   "condition": "c0_base_raw",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c0_base_raw@base/heldout/h04_s2.png",
+   "coalition": null,
+   "prompt": "Bhima and Duryodhana fighting with maces, both swinging their heavy clubs",
+   "checklist": 0.5827851721218654,
+   "checklist_detail": {
+    "c1": 0.7636542320251465,
+    "c2": 0.295615017414093,
+    "c3": 0.6560835242271423,
+    "c4": 0.6487906575202942
+   },
+   "clip_raw": 0.28921860456466675,
+   "style_margin": -0.027585089206695557,
+   "max_train_dino": 0.6198432445526123
+  },
+  {
+   "scene_id": "h05",
+   "condition": "c0_base_raw",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c0_base_raw@base/heldout/h05_s1.png",
+   "coalition": null,
+   "prompt": "the monkey army building the bridge of floating stones across the sea to Lanka, hundreds of monkeys carrying rocks",
+   "checklist": 0.5862776424203601,
+   "checklist_detail": {
+    "c1": 0.9296964406967163,
+    "c2": 0.04748441278934479,
+    "c3": 0.6514215469360352,
+    "c4": 0.8467386960983276
+   },
+   "clip_raw": 0.26944559812545776,
+   "style_margin": -0.10143041610717773,
+   "max_train_dino": 0.3840106129646301
+  },
+  {
+   "scene_id": "h05",
+   "condition": "c0_base_raw",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c0_base_raw@base/heldout/h05_s2.png",
+   "coalition": null,
+   "prompt": "the monkey army building the bridge of floating stones across the sea to Lanka, hundreds of monkeys carrying rocks",
+   "checklist": 0.569227261202676,
+   "checklist_detail": {
+    "c1": 0.8160593509674072,
+    "c2": 0.3482303321361542,
+    "c3": 0.5616177320480347,
+    "c4": 0.5327759981155396
+   },
+   "clip_raw": 0.3038070797920227,
+   "style_margin": -0.06678661704063416,
+   "max_train_dino": 0.23824915289878845
+  },
+  {
+   "scene_id": "h06",
+   "condition": "c0_base_raw",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c0_base_raw@base/heldout/h06_s1.png",
+   "coalition": null,
+   "prompt": "the game of dice in the royal hall, Yudhishthira and Shakuni seated across the dice board while the court watches in silence",
+   "checklist": 0.5451160238257476,
+   "checklist_detail": {
+    "c1": 0.3454377055168152,
+    "c2": 0.5650686025619507,
+    "c3": 0.058625634759664536,
+    "c4": 0.9680869579315186
+   },
+   "clip_raw": 0.28886789083480835,
+   "style_margin": 0.041818201541900635,
+   "max_train_dino": 0.7003997564315796
+  },
+  {
+   "scene_id": "h06",
+   "condition": "c0_base_raw",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c0_base_raw@base/heldout/h06_s2.png",
+   "coalition": null,
+   "prompt": "the game of dice in the royal hall, Yudhishthira and Shakuni seated across the dice board while the court watches in silence",
+   "checklist": 0.4050975835749081,
+   "checklist_detail": {
+    "c1": 0.13676705956459045,
+    "c2": 0.31573760509490967,
+    "c3": 0.014915384352207184,
+    "c4": 0.9578791856765747
+   },
+   "clip_raw": 0.273062527179718,
+   "style_margin": 0.020749032497406006,
+   "max_train_dino": 0.5871251821517944
+  },
+  {
+   "scene_id": "h07",
+   "condition": "c0_base_raw",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c0_base_raw@base/heldout/h07_s1.png",
+   "coalition": null,
+   "prompt": "the churning of the ocean of milk, gods on one side and demons on the other pulling a giant serpent wound around a mountain",
+   "checklist": 0.37801908595221384,
+   "checklist_detail": {
+    "c1": 0.4394630491733551,
+    "c2": 0.2052237093448639,
+    "c3": 0.3010593354701996,
+    "c4": 0.7546414136886597
+   },
+   "clip_raw": 0.22236019372940063,
+   "style_margin": -0.14817345142364502,
+   "max_train_dino": 0.5635035037994385
+  },
+  {
+   "scene_id": "h07",
+   "condition": "c0_base_raw",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c0_base_raw@base/heldout/h07_s2.png",
+   "coalition": null,
+   "prompt": "the churning of the ocean of milk, gods on one side and demons on the other pulling a giant serpent wound around a mountain",
+   "checklist": 0.6308119978223529,
+   "checklist_detail": {
+    "c1": 0.956811249256134,
+    "c2": 0.38035786151885986,
+    "c3": 0.4422379434108734,
+    "c4": 0.8568698763847351
+   },
+   "clip_raw": 0.28797173500061035,
+   "style_margin": -0.06890714168548584,
+   "max_train_dino": 0.5156906247138977
+  },
+  {
+   "scene_id": "h08",
+   "condition": "c0_base_raw",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c0_base_raw@base/heldout/h08_s1.png",
+   "coalition": null,
+   "prompt": "Kumbhakarna, the giant, being woken from his long sleep while soldiers beat drums and blow horns around his enormous body",
+   "checklist": 0.4798431524208614,
+   "checklist_detail": {
+    "c1": 0.7591738104820251,
+    "c2": 0.19022788107395172,
+    "c3": 0.2641143500804901,
+    "c4": 0.9318699836730957
+   },
+   "clip_raw": 0.29369303584098816,
+   "style_margin": 0.05502521991729736,
+   "max_train_dino": 0.7796552777290344
+  },
+  {
+   "scene_id": "h08",
+   "condition": "c0_base_raw",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c0_base_raw@base/heldout/h08_s2.png",
+   "coalition": null,
+   "prompt": "Kumbhakarna, the giant, being woken from his long sleep while soldiers beat drums and blow horns around his enormous body",
+   "checklist": 0.4353368729352951,
+   "checklist_detail": {
+    "c1": 0.9581000804901123,
+    "c2": 0.03481820970773697,
+    "c3": 0.20928874611854553,
+    "c4": 0.6429440379142761
+   },
+   "clip_raw": 0.27296289801597595,
+   "style_margin": 0.03341144323348999,
+   "max_train_dino": 0.7811243534088135
+  },
+  {
+   "scene_id": "h09",
+   "condition": "c0_base_raw",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c0_base_raw@base/heldout/h09_s1.png",
+   "coalition": null,
+   "prompt": "Ekalavya kneeling before Dronacharya and offering his thumb as gurudakshina in the forest",
+   "checklist": 0.8503473571368626,
+   "checklist_detail": {
+    "c1": 0.9674197435379028,
+    "c2": 0.8407320380210876,
+    "c3": 0.6869794726371765,
+    "c4": 0.9621689915657043
+   },
+   "clip_raw": 0.3099682927131653,
+   "style_margin": 0.039942383766174316,
+   "max_train_dino": 0.7366509437561035
+  },
+  {
+   "scene_id": "h09",
+   "condition": "c0_base_raw",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c0_base_raw@base/heldout/h09_s2.png",
+   "coalition": null,
+   "prompt": "Ekalavya kneeling before Dronacharya and offering his thumb as gurudakshina in the forest",
+   "checklist": 0.7132675392287118,
+   "checklist_detail": {
+    "c1": 0.755057156085968,
+    "c2": 0.846647322177887,
+    "c3": 0.4120143949985504,
+    "c4": 0.9654350280761719
+   },
+   "clip_raw": 0.3228606879711151,
+   "style_margin": 0.004469752311706543,
+   "max_train_dino": 0.5043052434921265
+  },
+  {
+   "scene_id": "h10",
+   "condition": "c0_base_raw",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c0_base_raw@base/heldout/h10_s1.png",
+   "coalition": null,
+   "prompt": "Jatayu the great vulture attacking Raavan's flying chariot as he carries Seetha away through the sky",
+   "checklist": 0.6164629203932626,
+   "checklist_detail": {
+    "c1": 0.9453164935112,
+    "c2": 0.14431694149971008,
+    "c3": 0.6535589098930359,
+    "c4": 0.8288557529449463
+   },
+   "clip_raw": 0.3131086230278015,
+   "style_margin": -0.041519761085510254,
+   "max_train_dino": 0.538618266582489
+  },
+  {
+   "scene_id": "h10",
+   "condition": "c0_base_raw",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c0_base_raw@base/heldout/h10_s2.png",
+   "coalition": null,
+   "prompt": "Jatayu the great vulture attacking Raavan's flying chariot as he carries Seetha away through the sky",
+   "checklist": 0.684869008404868,
+   "checklist_detail": {
+    "c1": 0.8700004816055298,
+    "c2": 0.43884387612342834,
+    "c3": 0.7468706369400024,
+    "c4": 0.6826530694961548
+   },
+   "clip_raw": 0.28427794575691223,
+   "style_margin": -0.06787234544754028,
+   "max_train_dino": 0.4881383776664734
+  },
+  {
+   "scene_id": "h11",
+   "condition": "c0_base_raw",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c0_base_raw@base/heldout/h11_s1.png",
+   "coalition": null,
+   "prompt": "a sad queen waiting at the window",
+   "checklist": 0.8723156154155731,
+   "checklist_detail": {
+    "c1": 0.8562037348747253,
+    "c2": 0.9864063858985901,
+    "c3": 0.9186276197433472,
+    "c4": 0.6300458312034607
+   },
+   "clip_raw": 0.32196658849716187,
+   "style_margin": -0.12661918997764587,
+   "max_train_dino": 0.23803234100341797
+  },
+  {
+   "scene_id": "h11",
+   "condition": "c0_base_raw",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c0_base_raw@base/heldout/h11_s2.png",
+   "coalition": null,
+   "prompt": "a sad queen waiting at the window",
+   "checklist": 0.800873339176178,
+   "checklist_detail": {
+    "c1": 0.8465377688407898,
+    "c2": 0.9838665723800659,
+    "c3": 0.5337724685668945,
+    "c4": 0.6106588840484619
+   },
+   "clip_raw": 0.21286751329898834,
+   "style_margin": -0.1145169734954834,
+   "max_train_dino": 0.14466050267219543
+  },
+  {
+   "scene_id": "h12",
+   "condition": "c0_base_raw",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c0_base_raw@base/heldout/h12_s1.png",
+   "coalition": null,
+   "prompt": "hanumaan flying across the ocean to lanka carrying nothing but his devotion, huge waves below him, sea monsters, clouds and the island far away glowing, he is flying with one arm stretched forward and his tail behind, its night but the moon is bright, really dramatic and big like a temple mural but make it look like a real oil painting with warm skin",
+   "checklist": 0.6543306708335876,
+   "checklist_detail": {
+    "c1": 0.48943817615509033,
+    "c2": 0.6078195571899414,
+    "c3": 0.7720479965209961,
+    "c4": 0.8417032361030579
+   },
+   "clip_raw": 0.28905054926872253,
+   "style_margin": 0.03408557176589966,
+   "max_train_dino": 0.2845506966114044
+  },
+  {
+   "scene_id": "h12",
+   "condition": "c0_base_raw",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c0_base_raw@base/heldout/h12_s2.png",
+   "coalition": null,
+   "prompt": "hanumaan flying across the ocean to lanka carrying nothing but his devotion, huge waves below him, sea monsters, clouds and the island far away glowing, he is flying with one arm stretched forward and his tail behind, its night but the moon is bright, really dramatic and big like a temple mural but make it look like a real oil painting with warm skin",
+   "checklist": 0.7635091372898647,
+   "checklist_detail": {
+    "c1": 0.9100677967071533,
+    "c2": 0.5232052803039551,
+    "c3": 0.8042029738426208,
+    "c4": 0.8696118593215942
+   },
+   "clip_raw": 0.30607062578201294,
+   "style_margin": 0.04543769359588623,
+   "max_train_dino": 0.28698232769966125
+  }
+ ]
+}

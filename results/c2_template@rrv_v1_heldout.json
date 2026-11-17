@@ -1,0 +1,539 @@
+{
+ "manifest": "/content/drive/MyDrive/m3/heldout_images/c2_template@rrv_v1/heldout/manifest.json",
+ "scenes_file": "/content/drive/MyDrive/B_private/test_scenes_heldout.json",
+ "scored_at": "2026-11-16T19:36:02.452079",
+ "judge": "Qwen/Qwen2-VL-2B-Instruct",
+ "n_images": 24,
+ "summary": {
+  "c2_template": {
+   "checklist": {
+    "mean": 0.6456135197908485,
+    "ci95": [
+     0.5893536195413963,
+     0.7071094052954797
+    ],
+    "n_scenes": 12
+   },
+   "clip_raw": {
+    "mean": 0.2792226802557707,
+    "ci95": [
+     0.25836912005518875,
+     0.2975323827161143
+    ],
+    "n_scenes": 12
+   },
+   "style_margin": {
+    "mean": 0.09214017788569133,
+    "ci95": [
+     0.06847568949063619,
+     0.11693545846889415
+    ],
+    "n_scenes": 12
+   },
+   "max_train_dino": {
+    "mean": 0.6464205433924993,
+    "ci95": [
+     0.5702720804139971,
+     0.7148235632106661
+    ],
+    "n_scenes": 12
+   }
+  }
+ },
+ "per_scene": {
+  "c2_template": {
+   "checklist": {
+    "h01": 0.6750086365001542,
+    "h02": 0.7167447251932961,
+    "h03": 0.5056461892090738,
+    "h04": 0.5239603349140712,
+    "h05": 0.524636123329401,
+    "h06": 0.599612845107913,
+    "h07": 0.5670593359640667,
+    "h08": 0.6718458873885018,
+    "h09": 0.6954932106392724,
+    "h10": 0.6839126891323498,
+    "h11": 0.892826497554779,
+    "h12": 0.6906157625573022
+   },
+   "clip_raw": {
+    "h01": 0.30266253650188446,
+    "h02": 0.2987988442182541,
+    "h03": 0.3102848529815674,
+    "h04": 0.26106851547956467,
+    "h05": 0.29538944363594055,
+    "h06": 0.30910296738147736,
+    "h07": 0.21013595908880234,
+    "h08": 0.26711782813072205,
+    "h09": 0.28130214661359787,
+    "h10": 0.2626112997531891,
+    "h11": 0.22267664968967438,
+    "h12": 0.329521119594574
+   },
+   "style_margin": {
+    "h01": 0.15733584761619568,
+    "h02": 0.09136006236076355,
+    "h03": 0.16242504119873047,
+    "h04": 0.07811114192008972,
+    "h05": 0.022827178239822388,
+    "h06": 0.06655561923980713,
+    "h07": 0.035063087940216064,
+    "h08": 0.07054248452186584,
+    "h09": 0.1485327184200287,
+    "h10": 0.09488171339035034,
+    "h11": 0.09807437658309937,
+    "h12": 0.07997286319732666
+   },
+   "max_train_dino": {
+    "h01": 0.5676041543483734,
+    "h02": 0.623274177312851,
+    "h03": 0.8211576342582703,
+    "h04": 0.7400122284889221,
+    "h05": 0.4798233360052109,
+    "h06": 0.6482462584972382,
+    "h07": 0.6627133786678314,
+    "h08": 0.7435870170593262,
+    "h09": 0.8007457852363586,
+    "h10": 0.6962336897850037,
+    "h11": 0.6176582276821136,
+    "h12": 0.3559906333684921
+   }
+  }
+ },
+ "items": [
+  {
+   "scene_id": "h01",
+   "condition": "c2_template",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c2_template@rrv_v1/heldout/h01_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, the figure seated on a rock by a river, playing the veena, a white swan beside her, oil painting, canvas texture, classical indian art",
+   "checklist": 0.6643642825739724,
+   "checklist_detail": {
+    "c1": 0.8671693801879883,
+    "c2": 0.9412006735801697,
+    "c3": 0.08593644201755524,
+    "c4": 0.8619369864463806
+   },
+   "clip_raw": 0.294898122549057,
+   "style_margin": 0.15236008167266846,
+   "max_train_dino": 0.5792607069015503
+  },
+  {
+   "scene_id": "h01",
+   "condition": "c2_template",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c2_template@rrv_v1/heldout/h01_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, the figure seated on a rock by a river, playing the veena, a white swan beside her, oil painting, canvas texture, classical indian art",
+   "checklist": 0.685652990426336,
+   "checklist_detail": {
+    "c1": 0.8522484302520752,
+    "c2": 0.9841951131820679,
+    "c3": 0.0895475521683693,
+    "c4": 0.9475887417793274
+   },
+   "clip_raw": 0.3104269504547119,
+   "style_margin": 0.1623116135597229,
+   "max_train_dino": 0.5559476017951965
+  },
+  {
+   "scene_id": "h02",
+   "condition": "c2_template",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c2_template@rrv_v1/heldout/h02_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, blue-skinned crowned man, the blue-skinned prince alone in the forest drawing his bow, ready to shoot, forest clearing, thatched hut, tall trees, bare-chested with a topknot, long bow and arrows, oil painting, canvas texture, classical indian art",
+   "checklist": 0.5751018694468907,
+   "checklist_detail": {
+    "c1": 0.2816486656665802,
+    "c2": 0.5833855271339417,
+    "c3": 0.9455785155296326,
+    "c4": 0.404487669467926
+   },
+   "clip_raw": 0.28652313351631165,
+   "style_margin": 0.11329543590545654,
+   "max_train_dino": 0.6227136254310608
+  },
+  {
+   "scene_id": "h02",
+   "condition": "c2_template",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c2_template@rrv_v1/heldout/h02_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, blue-skinned crowned man, the blue-skinned prince alone in the forest drawing his bow, ready to shoot, forest clearing, thatched hut, tall trees, bare-chested with a topknot, long bow and arrows, oil painting, canvas texture, classical indian art",
+   "checklist": 0.8583875809397016,
+   "checklist_detail": {
+    "c1": 0.7720848917961121,
+    "c2": 0.8939827084541321,
+    "c3": 0.9791744351387024,
+    "c4": 0.7182289958000183
+   },
+   "clip_raw": 0.31107455492019653,
+   "style_margin": 0.06942468881607056,
+   "max_train_dino": 0.6238347291946411
+  },
+  {
+   "scene_id": "h03",
+   "condition": "c2_template",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c2_template@rrv_v1/heldout/h03_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, the figure meeting the figure for the first time in the hermitage garden, she shyly lowers her eyes, forest clearing, thatched hut, tall trees, oil painting, canvas texture, classical indian art",
+   "checklist": 0.42342514358460903,
+   "checklist_detail": {
+    "c1": 0.7881197333335876,
+    "c2": 0.25407928228378296,
+    "c3": 0.02098170667886734,
+    "c4": 0.292074054479599,
+    "c5": 0.9689656496047974
+   },
+   "clip_raw": 0.3085167407989502,
+   "style_margin": 0.16846513748168945,
+   "max_train_dino": 0.8514399528503418
+  },
+  {
+   "scene_id": "h03",
+   "condition": "c2_template",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c2_template@rrv_v1/heldout/h03_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, the figure meeting the figure for the first time in the hermitage garden, she shyly lowers her eyes, forest clearing, thatched hut, tall trees, oil painting, canvas texture, classical indian art",
+   "checklist": 0.5878672348335385,
+   "checklist_detail": {
+    "c1": 0.769278347492218,
+    "c2": 0.842187762260437,
+    "c3": 0.036939267069101334,
+    "c4": 0.42770156264305115,
+    "c5": 0.9784255623817444
+   },
+   "clip_raw": 0.31205296516418457,
+   "style_margin": 0.15638494491577148,
+   "max_train_dino": 0.7908753156661987
+  },
+  {
+   "scene_id": "h04",
+   "condition": "c2_template",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c2_template@rrv_v1/heldout/h04_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, proud king in a jeweled crown and rich robes, the figure and the proud crowned king fighting with maces, both swinging their heavy clubs, harsh dramatic light, tense faces, seated on a throne, oil painting, canvas texture, classical indian art",
+   "checklist": 0.4902733053479876,
+   "checklist_detail": {
+    "c1": 0.9728379845619202,
+    "c2": 0.38732588291168213,
+    "c3": 0.22853930294513702,
+    "c4": 0.25450679659843445
+   },
+   "clip_raw": 0.2878544330596924,
+   "style_margin": 0.08147609233856201,
+   "max_train_dino": 0.7366806268692017
+  },
+  {
+   "scene_id": "h04",
+   "condition": "c2_template",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c2_template@rrv_v1/heldout/h04_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, proud king in a jeweled crown and rich robes, the figure and the proud crowned king fighting with maces, both swinging their heavy clubs, harsh dramatic light, tense faces, seated on a throne, oil painting, canvas texture, classical indian art",
+   "checklist": 0.5576473644801548,
+   "checklist_detail": {
+    "c1": 0.7746456265449524,
+    "c2": 0.8088894486427307,
+    "c3": 0.21765467524528503,
+    "c4": 0.3011520504951477
+   },
+   "clip_raw": 0.23428259789943695,
+   "style_margin": 0.07474619150161743,
+   "max_train_dino": 0.7433438301086426
+  },
+  {
+   "scene_id": "h05",
+   "condition": "c2_template",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c2_template@rrv_v1/heldout/h05_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, the monkey army building the bridge of floating stones across the sea to the figure, hundreds of monkeys carrying rocks, oil painting, canvas texture, classical indian art",
+   "checklist": 0.6088000791413444,
+   "checklist_detail": {
+    "c1": 0.9221080541610718,
+    "c2": 0.1743578314781189,
+    "c3": 0.8969286680221558,
+    "c4": 0.27481144666671753
+   },
+   "clip_raw": 0.2728659212589264,
+   "style_margin": 0.02687007188796997,
+   "max_train_dino": 0.595038115978241
+  },
+  {
+   "scene_id": "h05",
+   "condition": "c2_template",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c2_template@rrv_v1/heldout/h05_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, the monkey army building the bridge of floating stones across the sea to the figure, hundreds of monkeys carrying rocks, oil painting, canvas texture, classical indian art",
+   "checklist": 0.4404721675174577,
+   "checklist_detail": {
+    "c1": 0.8158683180809021,
+    "c2": 0.039688896387815475,
+    "c3": 0.46206432580947876,
+    "c4": 0.44806209206581116
+   },
+   "clip_raw": 0.3179129660129547,
+   "style_margin": 0.018784284591674805,
+   "max_train_dino": 0.3646085560321808
+  },
+  {
+   "scene_id": "h06",
+   "condition": "c2_template",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c2_template@rrv_v1/heldout/h06_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, the game of dice in the royal hall, the figure and the figure seated across the dice board while the court watches in silence, pillared royal hall, carved stone columns, oil painting, canvas texture, classical indian art",
+   "checklist": 0.6475166039807456,
+   "checklist_detail": {
+    "c1": 0.6301614046096802,
+    "c2": 0.5443519949913025,
+    "c3": 0.21121367812156677,
+    "c4": 0.9861878752708435
+   },
+   "clip_raw": 0.30986127257347107,
+   "style_margin": 0.06579321622848511,
+   "max_train_dino": 0.6512771248817444
+  },
+  {
+   "scene_id": "h06",
+   "condition": "c2_template",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c2_template@rrv_v1/heldout/h06_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, the game of dice in the royal hall, the figure and the figure seated across the dice board while the court watches in silence, pillared royal hall, carved stone columns, oil painting, canvas texture, classical indian art",
+   "checklist": 0.5517090862350804,
+   "checklist_detail": {
+    "c1": 0.8707265853881836,
+    "c2": 0.05760003253817558,
+    "c3": 0.02164621278643608,
+    "c4": 0.9918320775032043
+   },
+   "clip_raw": 0.30834466218948364,
+   "style_margin": 0.06731802225112915,
+   "max_train_dino": 0.6452153921127319
+  },
+  {
+   "scene_id": "h07",
+   "condition": "c2_template",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c2_template@rrv_v1/heldout/h07_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, the churning of the ocean of milk, gods on one side and demons on the other pulling a giant serpent wound around a mountain, oil painting, canvas texture, classical indian art",
+   "checklist": 0.5951814438615527,
+   "checklist_detail": {
+    "c1": 0.9724780321121216,
+    "c2": 0.17016001045703888,
+    "c3": 0.5509310960769653,
+    "c4": 0.7791318297386169
+   },
+   "clip_raw": 0.2102261483669281,
+   "style_margin": 0.037046968936920166,
+   "max_train_dino": 0.6138990521430969
+  },
+  {
+   "scene_id": "h07",
+   "condition": "c2_template",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c2_template@rrv_v1/heldout/h07_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, the churning of the ocean of milk, gods on one side and demons on the other pulling a giant serpent wound around a mountain, oil painting, canvas texture, classical indian art",
+   "checklist": 0.5389372280665806,
+   "checklist_detail": {
+    "c1": 0.3757583796977997,
+    "c2": 0.4919865131378174,
+    "c3": 0.6265330910682678,
+    "c4": 0.7840046286582947
+   },
+   "clip_raw": 0.21004576981067657,
+   "style_margin": 0.03307920694351196,
+   "max_train_dino": 0.7115277051925659
+  },
+  {
+   "scene_id": "h08",
+   "condition": "c2_template",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c2_template@rrv_v1/heldout/h08_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, the figure, the giant, being woken from his long sleep while soldiers beat drums and blow horns around his enormous body, oil painting, canvas texture, classical indian art",
+   "checklist": 0.7211729288101196,
+   "checklist_detail": {
+    "c1": 0.7781749367713928,
+    "c2": 0.9009310603141785,
+    "c3": 0.45593371987342834,
+    "c4": 0.7781310677528381
+   },
+   "clip_raw": 0.2614474594593048,
+   "style_margin": 0.0808759331703186,
+   "max_train_dino": 0.7916499376296997
+  },
+  {
+   "scene_id": "h08",
+   "condition": "c2_template",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c2_template@rrv_v1/heldout/h08_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, the figure, the giant, being woken from his long sleep while soldiers beat drums and blow horns around his enormous body, oil painting, canvas texture, classical indian art",
+   "checklist": 0.6225188459668841,
+   "checklist_detail": {
+    "c1": 0.6916483044624329,
+    "c2": 0.6717305183410645,
+    "c3": 0.3746669292449951,
+    "c4": 0.8815404176712036
+   },
+   "clip_raw": 0.2727881968021393,
+   "style_margin": 0.060209035873413086,
+   "max_train_dino": 0.6955240964889526
+  },
+  {
+   "scene_id": "h09",
+   "condition": "c2_template",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c2_template@rrv_v1/heldout/h09_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Ekalavya kneeling before the figure and offering his thumb as gurudakshina in the forest, forest clearing, thatched hut, tall trees, soft warm glow, serene faces, oil painting, canvas texture, classical indian art",
+   "checklist": 0.7299651886735644,
+   "checklist_detail": {
+    "c1": 0.9688665270805359,
+    "c2": 0.9268671870231628,
+    "c3": 0.17378033697605133,
+    "c4": 0.9707282185554504
+   },
+   "clip_raw": 0.23748378455638885,
+   "style_margin": 0.16689914464950562,
+   "max_train_dino": 0.8016664981842041
+  },
+  {
+   "scene_id": "h09",
+   "condition": "c2_template",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c2_template@rrv_v1/heldout/h09_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Ekalavya kneeling before the figure and offering his thumb as gurudakshina in the forest, forest clearing, thatched hut, tall trees, soft warm glow, serene faces, oil painting, canvas texture, classical indian art",
+   "checklist": 0.6610212326049805,
+   "checklist_detail": {
+    "c1": 0.7492485046386719,
+    "c2": 0.6708394885063171,
+    "c3": 0.4046158790588379,
+    "c4": 0.9777408838272095
+   },
+   "clip_raw": 0.3251205086708069,
+   "style_margin": 0.13016629219055176,
+   "max_train_dino": 0.7998250722885132
+  },
+  {
+   "scene_id": "h10",
+   "condition": "c2_template",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c2_template@rrv_v1/heldout/h10_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, young woman in a red saree with a gold border, the figure the great vulture attacking the figure's flying chariot as he carries the young princess away through the sky, layered pearl necklaces, gold bangles, oil painting, canvas texture, classical indian art",
+   "checklist": 0.7116936040776116,
+   "checklist_detail": {
+    "c1": 0.7841786742210388,
+    "c2": 0.9598828554153442,
+    "c3": 0.729482889175415,
+    "c4": 0.034766390919685364
+   },
+   "clip_raw": 0.25379449129104614,
+   "style_margin": 0.0916019082069397,
+   "max_train_dino": 0.6999064683914185
+  },
+  {
+   "scene_id": "h10",
+   "condition": "c2_template",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c2_template@rrv_v1/heldout/h10_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, young woman in a red saree with a gold border, the figure the great vulture attacking the figure's flying chariot as he carries the young princess away through the sky, layered pearl necklaces, gold bangles, oil painting, canvas texture, classical indian art",
+   "checklist": 0.656131774187088,
+   "checklist_detail": {
+    "c1": 0.554073691368103,
+    "c2": 0.9553734660148621,
+    "c3": 0.6118554472923279,
+    "c4": 0.35031720995903015
+   },
+   "clip_raw": 0.27142810821533203,
+   "style_margin": 0.09816151857376099,
+   "max_train_dino": 0.6925609111785889
+  },
+  {
+   "scene_id": "h11",
+   "condition": "c2_template",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c2_template@rrv_v1/heldout/h11_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, a sad queen waiting at the window, dim dramatic lighting, shadowed faces, oil painting, canvas texture, classical indian art",
+   "checklist": 0.8877709706624349,
+   "checklist_detail": {
+    "c1": 0.9644191861152649,
+    "c2": 0.9370912909507751,
+    "c3": 0.9765755534172058,
+    "c4": 0.5470293164253235
+   },
+   "clip_raw": 0.22100652754306793,
+   "style_margin": 0.1236107349395752,
+   "max_train_dino": 0.6854440569877625
+  },
+  {
+   "scene_id": "h11",
+   "condition": "c2_template",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c2_template@rrv_v1/heldout/h11_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, a sad queen waiting at the window, dim dramatic lighting, shadowed faces, oil painting, canvas texture, classical indian art",
+   "checklist": 0.8978820244471232,
+   "checklist_detail": {
+    "c1": 0.9771062731742859,
+    "c2": 0.9405690431594849,
+    "c3": 0.9207271933555603,
+    "c4": 0.6312143206596375
+   },
+   "clip_raw": 0.22434677183628082,
+   "style_margin": 0.07253801822662354,
+   "max_train_dino": 0.5498723983764648
+  },
+  {
+   "scene_id": "h12",
+   "condition": "c2_template",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c2_template@rrv_v1/heldout/h12_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, monkey-faced figure, the monkey-faced devotee flying across the ocean to the figure carrying nothing but his devotion, huge waves below him, sea monsters, clouds and the island far away glowing, he is flying with one arm stretched forward and his tail behind, serene faces, oil painting, canvas texture, classical indian art",
+   "checklist": 0.81723752617836,
+   "checklist_detail": {
+    "c1": 0.9534261226654053,
+    "c2": 0.9124361872673035,
+    "c3": 0.8870115280151367,
+    "c4": 0.21491500735282898
+   },
+   "clip_raw": 0.3297816812992096,
+   "style_margin": 0.07189357280731201,
+   "max_train_dino": 0.38704314827919006
+  },
+  {
+   "scene_id": "h12",
+   "condition": "c2_template",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c2_template@rrv_v1/heldout/h12_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, monkey-faced figure, the monkey-faced devotee flying across the ocean to the figure carrying nothing but his devotion, huge waves below him, sea monsters, clouds and the island far away glowing, he is flying with one arm stretched forward and his tail behind, serene faces, oil painting, canvas texture, classical indian art",
+   "checklist": 0.5639939989362445,
+   "checklist_detail": {
+    "c1": 0.9355356693267822,
+    "c2": 0.06389466673135757,
+    "c3": 0.8801144957542419,
+    "c4": 0.18886832892894745
+   },
+   "clip_raw": 0.32926055788993835,
+   "style_margin": 0.08805215358734131,
+   "max_train_dino": 0.3249381184577942
+  }
+ ]
+}

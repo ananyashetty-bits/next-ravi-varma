@@ -61,6 +61,7 @@ Rule: after results exist, the text above is never edited. Each change gets one 
 - 2026-11-16: A's dev scenes s01-s08 (#77) arrived after the dev ratings, results and the B.3 decision, and were rewritten to use characters known to the interim KB. They stay in `eval/test_scenes_dev.json`, but the pre-registered dev analysis (human ratings, paired comparisons, B.3) stays on the 24 scenes s09-s32. Scores on s01-s08 are reported separately and descriptively. Affects: nothing already reported; the default pipeline (c1) stands.
 - 2026-11-16: The rated c0 and c1 results files are copied to `results/rated/`, as was done for c4, because A regenerated c0/c1 on 16 Nov with a different negative prompt. Human ratings stay paired with the 2 Nov images that were rated. Affects: H-B1/H-B2 pairing for c0/c1 if the main files are replaced.
 - 2026-11-16: The held-out run uses the dev negative prompt (`ugly, blurry, bad anatomy`); `config/m3.json` is restored to it (CHANGELOG 1.3). Affects: held-out images are made with the same pipeline as dev.
+- 2026-11-18: Held-out run done once (16 Nov), rated 17 Nov, revealed 18 Nov. Five held-out failure tags with spacing or spelling slips (e.g. `generic figure(name ignored)`) are mapped to the intended taxonomy tag by `eval/ratings.py` (listed in its output); before this change, four would have counted as `other`. No scores changed. The held-out coverage table uses `kb0.2`, the KB c3 used. Affects: held-out failure-tag counts only.
 
 ## Section D (Member D: Expander)
 

@@ -1,0 +1,539 @@
+{
+ "manifest": "/content/drive/MyDrive/m3/heldout_images/c1_lora_raw@rrv_v1/heldout/manifest.json",
+ "scenes_file": "/content/drive/MyDrive/B_private/test_scenes_heldout.json",
+ "scored_at": "2026-11-16T19:34:22.583801",
+ "judge": "Qwen/Qwen2-VL-2B-Instruct",
+ "n_images": 24,
+ "summary": {
+  "c1_lora_raw": {
+   "checklist": {
+    "mean": 0.6671705065823589,
+    "ci95": [
+     0.58435534887378,
+     0.7431766135573742
+    ],
+    "n_scenes": 12
+   },
+   "clip_raw": {
+    "mean": 0.2767487360785405,
+    "ci95": [
+     0.25546155686800676,
+     0.29508580537512896
+    ],
+    "n_scenes": 12
+   },
+   "style_margin": {
+    "mean": 0.08668233702580135,
+    "ci95": [
+     0.06625562210877736,
+     0.10602831126501161
+    ],
+    "n_scenes": 12
+   },
+   "max_train_dino": {
+    "mean": 0.6610883710285028,
+    "ci95": [
+     0.5866710593613486,
+     0.7261901062602798
+    ],
+    "n_scenes": 12
+   }
+  }
+ },
+ "per_scene": {
+  "c1_lora_raw": {
+   "checklist": {
+    "h01": 0.6403766785349165,
+    "h02": 0.8484544668878828,
+    "h03": 0.35248279152438045,
+    "h04": 0.5941996893712453,
+    "h05": 0.5063918291458062,
+    "h06": 0.6653313679354531,
+    "h07": 0.5670593359640667,
+    "h08": 0.6551681288651058,
+    "h09": 0.7212564327887125,
+    "h10": 0.8159222560269492,
+    "h11": 0.8530071700612704,
+    "h12": 0.7863959318825177
+   },
+   "clip_raw": {
+    "h01": 0.28924810886383057,
+    "h02": 0.33110570907592773,
+    "h03": 0.29369159042835236,
+    "h04": 0.28099505603313446,
+    "h05": 0.3015587031841278,
+    "h06": 0.2811705023050308,
+    "h07": 0.21013595908880234,
+    "h08": 0.25573690235614777,
+    "h09": 0.2870902419090271,
+    "h10": 0.2848738133907318,
+    "h11": 0.20685960352420807,
+    "h12": 0.298518642783165
+   },
+   "style_margin": {
+    "h01": 0.13703298568725586,
+    "h02": 0.11903315782546997,
+    "h03": 0.11842775344848633,
+    "h04": 0.08652681112289429,
+    "h05": 0.01960676908493042,
+    "h06": 0.09335458278656006,
+    "h07": 0.035063087940216064,
+    "h08": 0.09321862459182739,
+    "h09": 0.10906973481178284,
+    "h10": 0.050770193338394165,
+    "h11": 0.11474737524986267,
+    "h12": 0.06333696842193604
+   },
+   "max_train_dino": {
+    "h01": 0.6106363534927368,
+    "h02": 0.7132852077484131,
+    "h03": 0.8001583814620972,
+    "h04": 0.6402449011802673,
+    "h05": 0.4592559337615967,
+    "h06": 0.7684535384178162,
+    "h07": 0.6627133786678314,
+    "h08": 0.7713373303413391,
+    "h09": 0.7963279485702515,
+    "h10": 0.6579421758651733,
+    "h11": 0.676169216632843,
+    "h12": 0.3765360862016678
+   }
+  }
+ },
+ "items": [
+  {
+   "scene_id": "h01",
+   "condition": "c1_lora_raw",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c1_lora_raw@rrv_v1/heldout/h01_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Saraswati seated on a rock by a river, playing the veena, a white swan beside her, oil painting, canvas texture, classical indian art",
+   "checklist": 0.6309997077499118,
+   "checklist_detail": {
+    "c1": 0.8378279209136963,
+    "c2": 0.9925612807273865,
+    "c3": 0.08239977806806564,
+    "c4": 0.5914199948310852
+   },
+   "clip_raw": 0.2934841513633728,
+   "style_margin": 0.14038562774658203,
+   "max_train_dino": 0.6075489521026611
+  },
+  {
+   "scene_id": "h01",
+   "condition": "c1_lora_raw",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c1_lora_raw@rrv_v1/heldout/h01_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Saraswati seated on a rock by a river, playing the veena, a white swan beside her, oil painting, canvas texture, classical indian art",
+   "checklist": 0.6497536493199212,
+   "checklist_detail": {
+    "c1": 0.8130590319633484,
+    "c2": 0.9876119494438171,
+    "c3": 0.07018426805734634,
+    "c4": 0.8065650463104248
+   },
+   "clip_raw": 0.28501206636428833,
+   "style_margin": 0.1336803436279297,
+   "max_train_dino": 0.6137237548828125
+  },
+  {
+   "scene_id": "h02",
+   "condition": "c1_lora_raw",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c1_lora_raw@rrv_v1/heldout/h02_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Rama alone in the forest drawing his bow, ready to shoot, oil painting, canvas texture, classical indian art",
+   "checklist": 0.8594010642596653,
+   "checklist_detail": {
+    "c1": 0.8521268963813782,
+    "c2": 0.8849086761474609,
+    "c3": 0.9885769486427307,
+    "c4": 0.5645824074745178
+   },
+   "clip_raw": 0.34271395206451416,
+   "style_margin": 0.09546399116516113,
+   "max_train_dino": 0.6959679126739502
+  },
+  {
+   "scene_id": "h02",
+   "condition": "c1_lora_raw",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c1_lora_raw@rrv_v1/heldout/h02_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Rama alone in the forest drawing his bow, ready to shoot, oil painting, canvas texture, classical indian art",
+   "checklist": 0.8375078695161002,
+   "checklist_detail": {
+    "c1": 0.8841856718063354,
+    "c2": 0.7317655682563782,
+    "c3": 0.9739822149276733,
+    "c4": 0.6826881766319275
+   },
+   "clip_raw": 0.3194974660873413,
+   "style_margin": 0.1426023244857788,
+   "max_train_dino": 0.730602502822876
+  },
+  {
+   "scene_id": "h03",
+   "condition": "c1_lora_raw",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c1_lora_raw@rrv_v1/heldout/h03_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Dushyanta meeting Shakuntala for the first time in the hermitage garden, she shyly lowers her eyes, oil painting, canvas texture, classical indian art",
+   "checklist": 0.4157507624477148,
+   "checklist_detail": {
+    "c1": 0.7636510729789734,
+    "c2": 0.2228679358959198,
+    "c3": 0.05844610184431076,
+    "c4": 0.28266310691833496,
+    "c5": 0.9534127712249756
+   },
+   "clip_raw": 0.2856040298938751,
+   "style_margin": 0.12379902601242065,
+   "max_train_dino": 0.7988439798355103
+  },
+  {
+   "scene_id": "h03",
+   "condition": "c1_lora_raw",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c1_lora_raw@rrv_v1/heldout/h03_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Dushyanta meeting Shakuntala for the first time in the hermitage garden, she shyly lowers her eyes, oil painting, canvas texture, classical indian art",
+   "checklist": 0.2892148206010461,
+   "checklist_detail": {
+    "c1": 0.399985134601593,
+    "c2": 0.5392907857894897,
+    "c3": 0.10113512724637985,
+    "c4": 0.12106820940971375,
+    "c5": 0.1118282601237297
+   },
+   "clip_raw": 0.3017791509628296,
+   "style_margin": 0.113056480884552,
+   "max_train_dino": 0.8014727830886841
+  },
+  {
+   "scene_id": "h04",
+   "condition": "c1_lora_raw",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c1_lora_raw@rrv_v1/heldout/h04_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Bhima and Duryodhana fighting with maces, both swinging their heavy clubs, oil painting, canvas texture, classical indian art",
+   "checklist": 0.6026327695165362,
+   "checklist_detail": {
+    "c1": 0.8312244415283203,
+    "c2": 0.5088930130004883,
+    "c3": 0.6165291666984558,
+    "c4": 0.30513614416122437
+   },
+   "clip_raw": 0.28140103816986084,
+   "style_margin": 0.09521836042404175,
+   "max_train_dino": 0.6443473100662231
+  },
+  {
+   "scene_id": "h04",
+   "condition": "c1_lora_raw",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c1_lora_raw@rrv_v1/heldout/h04_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Bhima and Duryodhana fighting with maces, both swinging their heavy clubs, oil painting, canvas texture, classical indian art",
+   "checklist": 0.5857666092259544,
+   "checklist_detail": {
+    "c1": 0.6262937784194946,
+    "c2": 0.707459568977356,
+    "c3": 0.5398357510566711,
+    "c4": 0.35318806767463684
+   },
+   "clip_raw": 0.2805890738964081,
+   "style_margin": 0.07783526182174683,
+   "max_train_dino": 0.6361424922943115
+  },
+  {
+   "scene_id": "h05",
+   "condition": "c1_lora_raw",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c1_lora_raw@rrv_v1/heldout/h05_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, the monkey army building the bridge of floating stones across the sea to Lanka, hundreds of monkeys carrying rocks, oil painting, canvas texture, classical indian art",
+   "checklist": 0.5716647207736969,
+   "checklist_detail": {
+    "c1": 0.890579879283905,
+    "c2": 0.0392119437456131,
+    "c3": 0.8743180632591248,
+    "c4": 0.39343327283859253
+   },
+   "clip_raw": 0.28461703658103943,
+   "style_margin": 0.020363330841064453,
+   "max_train_dino": 0.5634202361106873
+  },
+  {
+   "scene_id": "h05",
+   "condition": "c1_lora_raw",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c1_lora_raw@rrv_v1/heldout/h05_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, the monkey army building the bridge of floating stones across the sea to Lanka, hundreds of monkeys carrying rocks, oil painting, canvas texture, classical indian art",
+   "checklist": 0.4411189375179155,
+   "checklist_detail": {
+    "c1": 0.822725236415863,
+    "c2": 0.038057710975408554,
+    "c3": 0.4226731061935425,
+    "c4": 0.52092045545578
+   },
+   "clip_raw": 0.3185003697872162,
+   "style_margin": 0.018850207328796387,
+   "max_train_dino": 0.3550916314125061
+  },
+  {
+   "scene_id": "h06",
+   "condition": "c1_lora_raw",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c1_lora_raw@rrv_v1/heldout/h06_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, the game of dice in the royal hall, Yudhishthira and Shakuni seated across the dice board while the court watches in silence, oil painting, canvas texture, classical indian art",
+   "checklist": 0.560934671333858,
+   "checklist_detail": {
+    "c1": 0.3109342157840729,
+    "c2": 0.33285781741142273,
+    "c3": 0.6615552306175232,
+    "c4": 0.9887017011642456
+   },
+   "clip_raw": 0.25386619567871094,
+   "style_margin": 0.10871332883834839,
+   "max_train_dino": 0.7496567964553833
+  },
+  {
+   "scene_id": "h06",
+   "condition": "c1_lora_raw",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c1_lora_raw@rrv_v1/heldout/h06_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, the game of dice in the royal hall, Yudhishthira and Shakuni seated across the dice board while the court watches in silence, oil painting, canvas texture, classical indian art",
+   "checklist": 0.7697280645370483,
+   "checklist_detail": {
+    "c1": 0.7719727754592896,
+    "c2": 0.6874116063117981,
+    "c3": 0.500117301940918,
+    "c4": 0.9846051931381226
+   },
+   "clip_raw": 0.3084748089313507,
+   "style_margin": 0.07799583673477173,
+   "max_train_dino": 0.787250280380249
+  },
+  {
+   "scene_id": "h07",
+   "condition": "c1_lora_raw",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c1_lora_raw@rrv_v1/heldout/h07_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, the churning of the ocean of milk, gods on one side and demons on the other pulling a giant serpent wound around a mountain, oil painting, canvas texture, classical indian art",
+   "checklist": 0.5951814438615527,
+   "checklist_detail": {
+    "c1": 0.9724780321121216,
+    "c2": 0.17016001045703888,
+    "c3": 0.5509310960769653,
+    "c4": 0.7791318297386169
+   },
+   "clip_raw": 0.2102261483669281,
+   "style_margin": 0.037046968936920166,
+   "max_train_dino": 0.6138990521430969
+  },
+  {
+   "scene_id": "h07",
+   "condition": "c1_lora_raw",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c1_lora_raw@rrv_v1/heldout/h07_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, the churning of the ocean of milk, gods on one side and demons on the other pulling a giant serpent wound around a mountain, oil painting, canvas texture, classical indian art",
+   "checklist": 0.5389372280665806,
+   "checklist_detail": {
+    "c1": 0.3757583796977997,
+    "c2": 0.4919865131378174,
+    "c3": 0.6265330910682678,
+    "c4": 0.7840046286582947
+   },
+   "clip_raw": 0.21004576981067657,
+   "style_margin": 0.03307920694351196,
+   "max_train_dino": 0.7115277051925659
+  },
+  {
+   "scene_id": "h08",
+   "condition": "c1_lora_raw",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c1_lora_raw@rrv_v1/heldout/h08_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Kumbhakarna, the giant, being woken from his long sleep while soldiers beat drums and blow horns around his enormous body, oil painting, canvas texture, classical indian art",
+   "checklist": 0.6737041473388672,
+   "checklist_detail": {
+    "c1": 0.8382716774940491,
+    "c2": 0.844756007194519,
+    "c3": 0.28049665689468384,
+    "c4": 0.7888803482055664
+   },
+   "clip_raw": 0.25719013810157776,
+   "style_margin": 0.08372002840042114,
+   "max_train_dino": 0.7880525588989258
+  },
+  {
+   "scene_id": "h08",
+   "condition": "c1_lora_raw",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c1_lora_raw@rrv_v1/heldout/h08_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Kumbhakarna, the giant, being woken from his long sleep while soldiers beat drums and blow horns around his enormous body, oil painting, canvas texture, classical indian art",
+   "checklist": 0.6366321103913444,
+   "checklist_detail": {
+    "c1": 0.9140036106109619,
+    "c2": 0.6681020855903625,
+    "c3": 0.39344507455825806,
+    "c4": 0.5053232312202454
+   },
+   "clip_raw": 0.2542836666107178,
+   "style_margin": 0.10271722078323364,
+   "max_train_dino": 0.7546221017837524
+  },
+  {
+   "scene_id": "h09",
+   "condition": "c1_lora_raw",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c1_lora_raw@rrv_v1/heldout/h09_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Ekalavya kneeling before Dronacharya and offering his thumb as gurudakshina in the forest, oil painting, canvas texture, classical indian art",
+   "checklist": 0.7363386367048536,
+   "checklist_detail": {
+    "c1": 0.9626843333244324,
+    "c2": 0.9337744116783142,
+    "c3": 0.19492574036121368,
+    "c4": 0.9716014862060547
+   },
+   "clip_raw": 0.2783242464065552,
+   "style_margin": 0.13345229625701904,
+   "max_train_dino": 0.773119330406189
+  },
+  {
+   "scene_id": "h09",
+   "condition": "c1_lora_raw",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c1_lora_raw@rrv_v1/heldout/h09_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Ekalavya kneeling before Dronacharya and offering his thumb as gurudakshina in the forest, oil painting, canvas texture, classical indian art",
+   "checklist": 0.7061742288725716,
+   "checklist_detail": {
+    "c1": 0.550696611404419,
+    "c2": 0.9162411093711853,
+    "c3": 0.5471762418746948,
+    "c4": 0.9149916768074036
+   },
+   "clip_raw": 0.295856237411499,
+   "style_margin": 0.08468717336654663,
+   "max_train_dino": 0.819536566734314
+  },
+  {
+   "scene_id": "h10",
+   "condition": "c1_lora_raw",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c1_lora_raw@rrv_v1/heldout/h10_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Jatayu the great vulture attacking Raavan's flying chariot as he carries Seetha away through the sky, oil painting, canvas texture, classical indian art",
+   "checklist": 0.7776101572172982,
+   "checklist_detail": {
+    "c1": 0.7062153220176697,
+    "c2": 0.9254797697067261,
+    "c3": 0.7556148171424866,
+    "c4": 0.668651282787323
+   },
+   "clip_raw": 0.2835215926170349,
+   "style_margin": 0.041290879249572754,
+   "max_train_dino": 0.6012866497039795
+  },
+  {
+   "scene_id": "h10",
+   "condition": "c1_lora_raw",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c1_lora_raw@rrv_v1/heldout/h10_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Jatayu the great vulture attacking Raavan's flying chariot as he carries Seetha away through the sky, oil painting, canvas texture, classical indian art",
+   "checklist": 0.8542343548366002,
+   "checklist_detail": {
+    "c1": 0.8944076299667358,
+    "c2": 0.9345769882202148,
+    "c3": 0.76957106590271,
+    "c4": 0.7825291156768799
+   },
+   "clip_raw": 0.2862260341644287,
+   "style_margin": 0.060249507427215576,
+   "max_train_dino": 0.7145977020263672
+  },
+  {
+   "scene_id": "h11",
+   "condition": "c1_lora_raw",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c1_lora_raw@rrv_v1/heldout/h11_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, a sad queen waiting at the window, oil painting, canvas texture, classical indian art",
+   "checklist": 0.885943646232287,
+   "checklist_detail": {
+    "c1": 0.9756283760070801,
+    "c2": 0.9704390168190002,
+    "c3": 0.9641544222831726,
+    "c4": 0.4593726694583893
+   },
+   "clip_raw": 0.2214147448539734,
+   "style_margin": 0.11098766326904297,
+   "max_train_dino": 0.6658614873886108
+  },
+  {
+   "scene_id": "h11",
+   "condition": "c1_lora_raw",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c1_lora_raw@rrv_v1/heldout/h11_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, a sad queen waiting at the window, oil painting, canvas texture, classical indian art",
+   "checklist": 0.8200706938902537,
+   "checklist_detail": {
+    "c1": 0.9598574638366699,
+    "c2": 0.9129654765129089,
+    "c3": 0.9253870844841003,
+    "c4": 0.24939119815826416
+   },
+   "clip_raw": 0.19230446219444275,
+   "style_margin": 0.11850708723068237,
+   "max_train_dino": 0.6864769458770752
+  },
+  {
+   "scene_id": "h12",
+   "condition": "c1_lora_raw",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c1_lora_raw@rrv_v1/heldout/h12_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, hanumaan flying across the ocean to lanka carrying nothing but his devotion, huge waves below him, sea monsters, clouds and the island far away glowing, he is flying with one arm stretched forward and his tail behind, its night but the moon is bright, really dramatic and big like a temple mural but make it look like a real oil painting with warm skin, oil painting, canvas texture, classical indian art",
+   "checklist": 0.8971211739948818,
+   "checklist_detail": {
+    "c1": 0.929559588432312,
+    "c2": 0.9357898235321045,
+    "c3": 0.8406426310539246,
+    "c4": 0.8678641319274902
+   },
+   "clip_raw": 0.30330246686935425,
+   "style_margin": 0.051731765270233154,
+   "max_train_dino": 0.3300730884075165
+  },
+  {
+   "scene_id": "h12",
+   "condition": "c1_lora_raw",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c1_lora_raw@rrv_v1/heldout/h12_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, hanumaan flying across the ocean to lanka carrying nothing but his devotion, huge waves below him, sea monsters, clouds and the island far away glowing, he is flying with one arm stretched forward and his tail behind, its night but the moon is bright, really dramatic and big like a temple mural but make it look like a real oil painting with warm skin, oil painting, canvas texture, classical indian art",
+   "checklist": 0.6756706897701535,
+   "checklist_detail": {
+    "c1": 0.960407555103302,
+    "c2": 0.10156577080488205,
+    "c3": 0.834520697593689,
+    "c4": 0.9367067813873291
+   },
+   "clip_raw": 0.2937348186969757,
+   "style_margin": 0.07494217157363892,
+   "max_train_dino": 0.4229990839958191
+  }
+ ]
+}

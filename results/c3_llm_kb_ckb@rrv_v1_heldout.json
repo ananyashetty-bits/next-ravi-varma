@@ -1,0 +1,539 @@
+{
+ "manifest": "/content/drive/MyDrive/m3/heldout_images/c3_llm_kb_ckb@rrv_v1/heldout/manifest.json",
+ "scenes_file": "/content/drive/MyDrive/B_private/test_scenes_heldout.json",
+ "scored_at": "2026-11-16T19:37:48.441388",
+ "judge": "Qwen/Qwen2-VL-2B-Instruct",
+ "n_images": 24,
+ "summary": {
+  "c3_llm_kb_ckb": {
+   "checklist": {
+    "mean": 0.5980981244328654,
+    "ci95": [
+     0.5213266614178705,
+     0.6813532492600469
+    ],
+    "n_scenes": 12
+   },
+   "clip_raw": {
+    "mean": 0.2535425592213869,
+    "ci95": [
+     0.23480586667234699,
+     0.27431347371699905
+    ],
+    "n_scenes": 12
+   },
+   "style_margin": {
+    "mean": 0.06874093165000279,
+    "ci95": [
+     0.0285951837276419,
+     0.10658192311724016
+    ],
+    "n_scenes": 12
+   },
+   "max_train_dino": {
+    "mean": 0.5699310308943192,
+    "ci95": [
+     0.47000136151909827,
+     0.6572115523119767
+    ],
+    "n_scenes": 12
+   }
+  }
+ },
+ "per_scene": {
+  "c3_llm_kb_ckb": {
+   "checklist": {
+    "h01": 0.7931798377207346,
+    "h02": 0.5852868921522583,
+    "h03": 0.419662999920547,
+    "h04": 0.46549877737249645,
+    "h05": 0.504666761628219,
+    "h06": 0.5979260035923549,
+    "h07": 0.5724238881043026,
+    "h08": 0.39985250655029503,
+    "h09": 0.5779130118233817,
+    "h10": 0.6688477721597467,
+    "h11": 0.8926357999444008,
+    "h12": 0.699283242225647
+   },
+   "clip_raw": {
+    "h01": 0.3229518383741379,
+    "h02": 0.21356289088726044,
+    "h03": 0.23469090461730957,
+    "h04": 0.27565982937812805,
+    "h05": 0.29475702345371246,
+    "h06": 0.2865913063287735,
+    "h07": 0.224533312022686,
+    "h08": 0.20752950757741928,
+    "h09": 0.2205541580915451,
+    "h10": 0.24203458428382874,
+    "h11": 0.24676689505577087,
+    "h12": 0.272878460586071
+   },
+   "style_margin": {
+    "h01": 0.12483012676239014,
+    "h02": 0.13430359959602356,
+    "h03": 0.14829087257385254,
+    "h04": 0.05466768145561218,
+    "h05": -0.08011740446090698,
+    "h06": 0.05417647957801819,
+    "h07": 0.0011616051197052002,
+    "h08": 0.034385472536087036,
+    "h09": 0.15707620978355408,
+    "h10": 0.11910650134086609,
+    "h11": 0.07592964172363281,
+    "h12": 0.0010803937911987305
+   },
+   "max_train_dino": {
+    "h01": 0.5670886039733887,
+    "h02": 0.7051930725574493,
+    "h03": 0.7645827531814575,
+    "h04": 0.7254160642623901,
+    "h05": 0.23671795427799225,
+    "h06": 0.6517057418823242,
+    "h07": 0.402409628033638,
+    "h08": 0.6263867616653442,
+    "h09": 0.6469776928424835,
+    "h10": 0.6101353466510773,
+    "h11": 0.6430990099906921,
+    "h12": 0.2594597414135933
+   }
+  }
+ },
+ "items": [
+  {
+   "scene_id": "h01",
+   "condition": "c3_llm_kb_ckb",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c3_llm_kb_ckb@rrv_v1/heldout/h01_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, seated on river rock, playing veena with hands, white swan beside her, tree-lined river bank, dull-coloured forest stream, straw-roofed mud huts, calm serene expression, soft morning light, oil painting, canvas texture, classical indian art",
+   "checklist": 0.6993901176112038,
+   "checklist_detail": {
+    "c1": 0.8707641363143921,
+    "c2": 0.9403856992721558,
+    "c3": 0.15372823178768158,
+    "c4": 0.9659746885299683
+   },
+   "clip_raw": 0.2992396950721741,
+   "style_margin": 0.14836454391479492,
+   "max_train_dino": 0.6785147190093994
+  },
+  {
+   "scene_id": "h01",
+   "condition": "c3_llm_kb_ckb",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c3_llm_kb_ckb@rrv_v1/heldout/h01_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, seated on river rock, playing veena with hands, white swan beside her, tree-lined river bank, dull-coloured forest stream, straw-roofed mud huts, calm serene expression, soft morning light, oil painting, canvas texture, classical indian art",
+   "checklist": 0.8869695578302655,
+   "checklist_detail": {
+    "c1": 0.6554657220840454,
+    "c2": 0.9705591797828674,
+    "c3": 0.9858357906341553,
+    "c4": 0.9850655198097229
+   },
+   "clip_raw": 0.3466639816761017,
+   "style_margin": 0.10129570960998535,
+   "max_train_dino": 0.45566248893737793
+  },
+  {
+   "scene_id": "h02",
+   "condition": "c3_llm_kb_ckb",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c3_llm_kb_ckb@rrv_v1/heldout/h02_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, man in yellow dhoti, wearing red shawl, pearl jewellery gleaming, tilak on forehead, crown on head, holding bow and arrow, kneeling on rocky ground, green vegetation surrounding, mountains in background, dawn light filtering, oil painting, canvas texture, classical indian art",
+   "checklist": 0.5498685905975955,
+   "checklist_detail": {
+    "c1": 0.8378406167030334,
+    "c2": 0.01337474025785923,
+    "c3": 0.9268835186958313,
+    "c4": 0.29288238286972046
+   },
+   "clip_raw": 0.22476676106452942,
+   "style_margin": 0.1350749135017395,
+   "max_train_dino": 0.7287718057632446
+  },
+  {
+   "scene_id": "h02",
+   "condition": "c3_llm_kb_ckb",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c3_llm_kb_ckb@rrv_v1/heldout/h02_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, man in yellow dhoti, wearing red shawl, pearl jewellery gleaming, tilak on forehead, crown on head, holding bow and arrow, kneeling on rocky ground, green vegetation surrounding, mountains in background, dawn light filtering, oil painting, canvas texture, classical indian art",
+   "checklist": 0.6207051937069211,
+   "checklist_detail": {
+    "c1": 0.839891791343689,
+    "c2": 0.062007538974285126,
+    "c3": 0.9308245182037354,
+    "c4": 0.6794886589050293
+   },
+   "clip_raw": 0.20235902070999146,
+   "style_margin": 0.13353228569030762,
+   "max_train_dino": 0.681614339351654
+  },
+  {
+   "scene_id": "h03",
+   "condition": "c3_llm_kb_ckb",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c3_llm_kb_ckb@rrv_v1/heldout/h03_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, woman in pink sari draped like dhoti, flower garland around neck, flower jewellery on arms, shyly lowering eyes, rocky forest edge, dense green vegetation, mountains in background, soft natural light, gentle breeze in leaves, distant mountain peaks, oil painting, canvas texture, classical indian art",
+   "checklist": 0.4761715717613697,
+   "checklist_detail": {
+    "c1": 0.47286367416381836,
+    "c2": 0.6115124821662903,
+    "c3": 0.1545628309249878,
+    "c4": 0.4977774918079376,
+    "c5": 0.8337171077728271
+   },
+   "clip_raw": 0.2139294445514679,
+   "style_margin": 0.1268259882926941,
+   "max_train_dino": 0.8150410652160645
+  },
+  {
+   "scene_id": "h03",
+   "condition": "c3_llm_kb_ckb",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c3_llm_kb_ckb@rrv_v1/heldout/h03_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, woman in pink sari draped like dhoti, flower garland around neck, flower jewellery on arms, shyly lowering eyes, rocky forest edge, dense green vegetation, mountains in background, soft natural light, gentle breeze in leaves, distant mountain peaks, oil painting, canvas texture, classical indian art",
+   "checklist": 0.3631544280797243,
+   "checklist_detail": {
+    "c1": 0.44579294323921204,
+    "c2": 0.3142058849334717,
+    "c3": 0.05760055035352707,
+    "c4": 0.35373160243034363,
+    "c5": 0.9163050651550293
+   },
+   "clip_raw": 0.25545236468315125,
+   "style_margin": 0.169755756855011,
+   "max_train_dino": 0.7141244411468506
+  },
+  {
+   "scene_id": "h04",
+   "condition": "c3_llm_kb_ckb",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c3_llm_kb_ckb@rrv_v1/heldout/h04_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, blue kurta with red turban, swinging heavy mace fiercely, man with white churidar and moustache, clashing maces in mid-air, intense glare of battle, gilded courtyard under sun, pearl necklaces glinting, dusty ground with splinters, oil painting, canvas texture, classical indian art",
+   "checklist": 0.5399059993880135,
+   "checklist_detail": {
+    "c1": 0.8032386302947998,
+    "c2": 0.46276041865348816,
+    "c3": 0.4578079879283905,
+    "c4": 0.33172792196273804
+   },
+   "clip_raw": 0.2710524797439575,
+   "style_margin": 0.08134227991104126,
+   "max_train_dino": 0.7681020498275757
+  },
+  {
+   "scene_id": "h04",
+   "condition": "c3_llm_kb_ckb",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c3_llm_kb_ckb@rrv_v1/heldout/h04_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, blue kurta with red turban, swinging heavy mace fiercely, man with white churidar and moustache, clashing maces in mid-air, intense glare of battle, gilded courtyard under sun, pearl necklaces glinting, dusty ground with splinters, oil painting, canvas texture, classical indian art",
+   "checklist": 0.39109155535697937,
+   "checklist_detail": {
+    "c1": 0.6114625930786133,
+    "c2": 0.5696450471878052,
+    "c3": 0.04675529897212982,
+    "c4": 0.28191500902175903
+   },
+   "clip_raw": 0.2802671790122986,
+   "style_margin": 0.027993083000183105,
+   "max_train_dino": 0.6827300786972046
+  },
+  {
+   "scene_id": "h05",
+   "condition": "c3_llm_kb_ckb",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c3_llm_kb_ckb@rrv_v1/heldout/h05_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, monkeys carrying heavy stones, building bridge across sea, rocky sandless shore, high crashing waves, black cloudy sky, lightning flashing, monkeys kneeling in formation, glistening wet stones, stormy sea surface, oil painting, canvas texture, classical indian art",
+   "checklist": 0.3912612178495952,
+   "checklist_detail": {
+    "c1": 0.5441064834594727,
+    "c2": 0.09867822378873825,
+    "c3": 0.3256516456604004,
+    "c4": 0.8019558191299438
+   },
+   "clip_raw": 0.29354122281074524,
+   "style_margin": -0.11600959300994873,
+   "max_train_dino": 0.21989890933036804
+  },
+  {
+   "scene_id": "h05",
+   "condition": "c3_llm_kb_ckb",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c3_llm_kb_ckb@rrv_v1/heldout/h05_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, monkeys carrying heavy stones, building bridge across sea, rocky sandless shore, high crashing waves, black cloudy sky, lightning flashing, monkeys kneeling in formation, glistening wet stones, stormy sea surface, oil painting, canvas texture, classical indian art",
+   "checklist": 0.6180723054068429,
+   "checklist_detail": {
+    "c1": 0.7005428075790405,
+    "c2": 0.4596748948097229,
+    "c3": 0.5552256107330322,
+    "c4": 0.8956195116043091
+   },
+   "clip_raw": 0.2959728240966797,
+   "style_margin": -0.044225215911865234,
+   "max_train_dino": 0.25353699922561646
+  },
+  {
+   "scene_id": "h06",
+   "condition": "c3_llm_kb_ckb",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c3_llm_kb_ckb@rrv_v1/heldout/h06_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, seated across a wooden table, kneeling in formal court attire, wearing golden-threaded robes, holding dice in both hands, gilded throne with carved steps, white-pink carpets under feet, curtained windows in the background, silent court members watching, oil painting, canvas texture, classical indian art",
+   "checklist": 0.5700795522757939,
+   "checklist_detail": {
+    "c1": 0.8977559208869934,
+    "c2": 0.1563299149274826,
+    "c3": 0.022659718990325928,
+    "c4": 0.9298627376556396
+   },
+   "clip_raw": 0.28740406036376953,
+   "style_margin": 0.059259891510009766,
+   "max_train_dino": 0.6637047529220581
+  },
+  {
+   "scene_id": "h06",
+   "condition": "c3_llm_kb_ckb",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c3_llm_kb_ckb@rrv_v1/heldout/h06_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, seated across a wooden table, kneeling in formal court attire, wearing golden-threaded robes, holding dice in both hands, gilded throne with carved steps, white-pink carpets under feet, curtained windows in the background, silent court members watching, oil painting, canvas texture, classical indian art",
+   "checklist": 0.625772454908916,
+   "checklist_detail": {
+    "c1": 0.8314210176467896,
+    "c2": 0.16104482114315033,
+    "c3": 0.411285400390625,
+    "c4": 0.9920950531959534
+   },
+   "clip_raw": 0.28577855229377747,
+   "style_margin": 0.04909306764602661,
+   "max_train_dino": 0.6397067308425903
+  },
+  {
+   "scene_id": "h07",
+   "condition": "c3_llm_kb_ckb",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c3_llm_kb_ckb@rrv_v1/heldout/h07_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, gods and demons pulling serpent, serpent coiled around mountain, black clouds with lightning, rocky sandless shore, high crashing waves, gods in golden armor, demons in crimson robes, intense stormy atmosphere, oil painting, canvas texture, classical indian art",
+   "checklist": 0.4473185454096113,
+   "checklist_detail": {
+    "c1": 0.49772360920906067,
+    "c2": 0.21353474259376526,
+    "c3": 0.43069955706596375,
+    "c4": 0.8473140001296997
+   },
+   "clip_raw": 0.22305706143379211,
+   "style_margin": 0.04428505897521973,
+   "max_train_dino": 0.4506603479385376
+  },
+  {
+   "scene_id": "h07",
+   "condition": "c3_llm_kb_ckb",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c3_llm_kb_ckb@rrv_v1/heldout/h07_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, gods and demons pulling serpent, serpent coiled around mountain, black clouds with lightning, rocky sandless shore, high crashing waves, gods in golden armor, demons in crimson robes, intense stormy atmosphere, oil painting, canvas texture, classical indian art",
+   "checklist": 0.6975292307989938,
+   "checklist_detail": {
+    "c1": 0.9286688566207886,
+    "c2": 0.6924214363098145,
+    "c3": 0.3638154864311218,
+    "c4": 0.9128930568695068
+   },
+   "clip_raw": 0.2260095626115799,
+   "style_margin": -0.041961848735809326,
+   "max_train_dino": 0.3541589081287384
+  },
+  {
+   "scene_id": "h08",
+   "condition": "c3_llm_kb_ckb",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c3_llm_kb_ckb@rrv_v1/heldout/h08_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, giant lying on stone, drums beaten around, horns blown loudly, muscular arms spread, golden armor cracked, dawn light filtering, soldiers standing nearby, dust rising from ground, oil painting, canvas texture, classical indian art",
+   "checklist": 0.4938228891364166,
+   "checklist_detail": {
+    "c1": 0.6808375716209412,
+    "c2": 0.023357121273875237,
+    "c3": 0.6565343737602234,
+    "c4": 0.7353020906448364
+   },
+   "clip_raw": 0.20657654106616974,
+   "style_margin": 0.0468025803565979,
+   "max_train_dino": 0.6609766483306885
+  },
+  {
+   "scene_id": "h08",
+   "condition": "c3_llm_kb_ckb",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c3_llm_kb_ckb@rrv_v1/heldout/h08_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, giant lying on stone, drums beaten around, horns blown loudly, muscular arms spread, golden armor cracked, dawn light filtering, soldiers standing nearby, dust rising from ground, oil painting, canvas texture, classical indian art",
+   "checklist": 0.30588212396417347,
+   "checklist_detail": {
+    "c1": 0.47224941849708557,
+    "c2": 0.09166264533996582,
+    "c3": 0.4039144217967987,
+    "c4": 0.20552189648151398
+   },
+   "clip_raw": 0.20848247408866882,
+   "style_margin": 0.021968364715576172,
+   "max_train_dino": 0.591796875
+  },
+  {
+   "scene_id": "h09",
+   "condition": "c3_llm_kb_ckb",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c3_llm_kb_ckb@rrv_v1/heldout/h09_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, kneeling in moss, offering thumb with reverence, seated on stone, green vegetation surrounding, rocky forest edge, mountains in background, dark woolen robe, serious solemn expression, oil painting, canvas texture, classical indian art",
+   "checklist": 0.6873450577259064,
+   "checklist_detail": {
+    "c1": 0.9609648585319519,
+    "c2": 0.899908721446991,
+    "c3": 0.19000937044620514,
+    "c4": 0.7096495032310486
+   },
+   "clip_raw": 0.22812296450138092,
+   "style_margin": 0.19235241413116455,
+   "max_train_dino": 0.743380606174469
+  },
+  {
+   "scene_id": "h09",
+   "condition": "c3_llm_kb_ckb",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c3_llm_kb_ckb@rrv_v1/heldout/h09_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, kneeling in moss, offering thumb with reverence, seated on stone, green vegetation surrounding, rocky forest edge, mountains in background, dark woolen robe, serious solemn expression, oil painting, canvas texture, classical indian art",
+   "checklist": 0.46848096592085703,
+   "checklist_detail": {
+    "c1": 0.2911878824234009,
+    "c2": 0.8043849468231201,
+    "c3": 0.2399687021970749,
+    "c4": 0.6082836985588074
+   },
+   "clip_raw": 0.2129853516817093,
+   "style_margin": 0.1218000054359436,
+   "max_train_dino": 0.550574779510498
+  },
+  {
+   "scene_id": "h10",
+   "condition": "c3_llm_kb_ckb",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c3_llm_kb_ckb@rrv_v1/heldout/h10_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, woman in red sari with yellow border, vulture attacking from above, carrying figure through sky, gold bangles and necklace gleaming, flying chariot with storm clouds, vulture with wings spread wide, stormy sky with lightning, intense battle stance, gilded armor on vulture, oil painting, canvas texture, classical indian art",
+   "checklist": 0.7592062641467366,
+   "checklist_detail": {
+    "c1": 0.8303784728050232,
+    "c2": 0.8993320465087891,
+    "c3": 0.8777285218238831,
+    "c4": 0.0995657667517662
+   },
+   "clip_raw": 0.2629004120826721,
+   "style_margin": 0.10910815000534058,
+   "max_train_dino": 0.5597860217094421
+  },
+  {
+   "scene_id": "h10",
+   "condition": "c3_llm_kb_ckb",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c3_llm_kb_ckb@rrv_v1/heldout/h10_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, woman in red sari with yellow border, vulture attacking from above, carrying figure through sky, gold bangles and necklace gleaming, flying chariot with storm clouds, vulture with wings spread wide, stormy sky with lightning, intense battle stance, gilded armor on vulture, oil painting, canvas texture, classical indian art",
+   "checklist": 0.5784892801727567,
+   "checklist_detail": {
+    "c1": 0.06504201143980026,
+    "c2": 0.9560368657112122,
+    "c3": 0.9048058390617371,
+    "c4": 0.19765552878379822
+   },
+   "clip_raw": 0.22116875648498535,
+   "style_margin": 0.1291048526763916,
+   "max_train_dino": 0.6604846715927124
+  },
+  {
+   "scene_id": "h11",
+   "condition": "c3_llm_kb_ckb",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c3_llm_kb_ckb@rrv_v1/heldout/h11_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, queen in blue silk robe, gazing out at rainy window, hands folded on lap, damp cloth over face, old wooden window frame, dim candlelight indoors, misty garden beyond, oil painting, canvas texture, classical indian art",
+   "checklist": 0.8986870348453522,
+   "checklist_detail": {
+    "c1": 0.9748690724372864,
+    "c2": 0.9800508618354797,
+    "c3": 0.9726333022117615,
+    "c4": 0.5096490383148193
+   },
+   "clip_raw": 0.24841368198394775,
+   "style_margin": 0.07548218965530396,
+   "max_train_dino": 0.7273979187011719
+  },
+  {
+   "scene_id": "h11",
+   "condition": "c3_llm_kb_ckb",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c3_llm_kb_ckb@rrv_v1/heldout/h11_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, queen in blue silk robe, gazing out at rainy window, hands folded on lap, damp cloth over face, old wooden window frame, dim candlelight indoors, misty garden beyond, oil painting, canvas texture, classical indian art",
+   "checklist": 0.8865845650434494,
+   "checklist_detail": {
+    "c1": 0.9756217002868652,
+    "c2": 0.9832355976104736,
+    "c3": 0.9577422738075256,
+    "c4": 0.44405052065849304
+   },
+   "clip_raw": 0.245120108127594,
+   "style_margin": 0.07637709379196167,
+   "max_train_dino": 0.5588001012802124
+  },
+  {
+   "scene_id": "h12",
+   "condition": "c3_llm_kb_ckb",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c3_llm_kb_ckb@rrv_v1/heldout/h12_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, hanumaan flying through night sky, one arm stretched forward toward island, tail flowing behind in motion, huge crashing waves below, black clouds with lightning, glowing island far in distance, warm golden skin under moonlight, dramatic night scene with moon, sea monsters breaking surface, oil painting, canvas texture, classical indian art",
+   "checklist": 0.7049525891031537,
+   "checklist_detail": {
+    "c1": 0.9198160171508789,
+    "c2": 0.3735986053943634,
+    "c3": 0.8191103935241699,
+    "c4": 0.709618091583252
+   },
+   "clip_raw": 0.3067793846130371,
+   "style_margin": 0.07312136888504028,
+   "max_train_dino": 0.3066176772117615
+  },
+  {
+   "scene_id": "h12",
+   "condition": "c3_llm_kb_ckb",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/heldout_images/c3_llm_kb_ckb@rrv_v1/heldout/h12_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, hanumaan flying through night sky, one arm stretched forward toward island, tail flowing behind in motion, huge crashing waves below, black clouds with lightning, glowing island far in distance, warm golden skin under moonlight, dramatic night scene with moon, sea monsters breaking surface, oil painting, canvas texture, classical indian art",
+   "checklist": 0.6936138953481402,
+   "checklist_detail": {
+    "c1": 0.6085172891616821,
+    "c2": 0.5952591300010681,
+    "c3": 0.7815371751785278,
+    "c4": 0.884670078754425
+   },
+   "clip_raw": 0.23897753655910492,
+   "style_margin": -0.07096058130264282,
+   "max_train_dino": 0.2123018056154251
+  }
+ ]
+}
