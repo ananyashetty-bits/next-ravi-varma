@@ -32,3 +32,7 @@ def test_missing_coalition_raises():
     del v[frozenset(["char"])]
     with pytest.raises(ValueError):
         shapley(v, ORDER)
+def test_records_from_score_py_items():
+    from shapley import records_from
+    recs = records_from({"items": [{"scene_id": "s09", "coalition": "char", "seed": 1, "checklist": 0.5}]})
+    assert recs[0]["coalition"] == "char"

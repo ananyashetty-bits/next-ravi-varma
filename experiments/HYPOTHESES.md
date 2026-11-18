@@ -12,6 +12,19 @@
 * **H-A5 (Style vs. Faithfulness):** The `tail` player will have a positive Shapley value for style, but a near-zero or negative value for faithfulness.
 * **H-A6 (Names):** Raw character names will add ~0 to faithfulness once the visual descriptions are already present in the prompt.
 
+### Section A design notes
+Added 18 Nov 2026, before any token-budget or SHAP image was generated or scored. The hypotheses above are unchanged.
+- **Scenes:** 8 dev scenes, 2 per tier from 1 to 4 (s09, s10, s12, s27, s13, s21, s23, s31), as name-free player
+  phrases of ≤ 14 words (`analysis/shap/shap_scenes.json`). The earlier s07/s08 SHAP files were discarded.
+  Seeds 1-2, model `rrv_v1`, negative from config.
+- **Token budget:** the length ladder adds whole phrases, so the measured lengths are about 22/36/46/64 tokens,
+  not exactly 15/30/50/70. H-A1 is judged on that ladder.
+- **H-A6:** tested with an added `with_names` variant (canonical names after the trigger) against `full`.
+- **Metrics:** faithfulness is `checklist` (judge); `clip_raw` is reported alongside it, and style is `style_margin`.
+  Each contrast is a paired bootstrap over scenes. A hypothesis counts as **supported** only if the 95% CI
+  excludes 0 in the predicted direction. "≈ 0" (H-A5 faithfulness, H-A6) counts as supported if the CI includes 0
+  and lies within ±0.0295 on `checklist` (the automated tie band fixed in Section B).
+
 ## Section B (Member B: Evaluation)
 
 Pre-registered by the merge of this section, before B scores any dev images (the first `results/*_dev.json` from A's c0/c1). After results exist, nothing below is edited; changes go under *Section B deviations* as dated lines.

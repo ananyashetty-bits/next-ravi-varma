@@ -1,450 +1,1794 @@
 [
   {
-    "scene_id": "s07",
+    "scene_id": "s09",
     "coalition": "empty",
     "condition": "shap",
     "positive": "rrvarma style",
     "negative": "ugly, blurry, bad anatomy"
   },
   {
-    "scene_id": "s07",
+    "scene_id": "s09",
     "coalition": "char",
     "condition": "shap",
-    "positive": "rrvarma style, a crowned king in a saffron dhoti, a fallen warrior in golden armor",
+    "positive": "rrvarma style, a young woman in a red sari with yellow border, gold bangles and necklace",
     "negative": "ugly, blurry, bad anatomy"
   },
   {
-    "scene_id": "s07",
+    "scene_id": "s09",
     "coalition": "action",
     "condition": "shap",
-    "positive": "rrvarma style, kneeling and weeping over the fallen body",
+    "positive": "rrvarma style, sitting alone on the ground, head bowed, looking sorrowful",
     "negative": "ugly, blurry, bad anatomy"
   },
   {
-    "scene_id": "s07",
+    "scene_id": "s09",
     "coalition": "setting",
     "condition": "shap",
-    "positive": "rrvarma style, open battlefield, broken chariot, dusty sky",
+    "positive": "rrvarma style, beneath a flowering tree in a quiet palace garden grove",
     "negative": "ugly, blurry, bad anatomy"
   },
   {
-    "scene_id": "s07",
+    "scene_id": "s09",
     "coalition": "mood",
     "condition": "shap",
-    "positive": "rrvarma style, dim dramatic light, shadowed faces",
+    "positive": "rrvarma style, dusk, soft fading light, still and melancholy",
     "negative": "ugly, blurry, bad anatomy"
   },
   {
-    "scene_id": "s07",
+    "scene_id": "s09",
     "coalition": "tail",
     "condition": "shap",
     "positive": "rrvarma style, oil painting, canvas texture, classical indian art",
     "negative": "ugly, blurry, bad anatomy"
   },
   {
-    "scene_id": "s07",
+    "scene_id": "s09",
     "coalition": "char+action",
     "condition": "shap",
-    "positive": "rrvarma style, a crowned king in a saffron dhoti, a fallen warrior in golden armor, kneeling and weeping over the fallen body",
+    "positive": "rrvarma style, a young woman in a red sari with yellow border, gold bangles and necklace, sitting alone on the ground, head bowed, looking sorrowful",
     "negative": "ugly, blurry, bad anatomy"
   },
   {
-    "scene_id": "s07",
+    "scene_id": "s09",
     "coalition": "char+setting",
     "condition": "shap",
-    "positive": "rrvarma style, a crowned king in a saffron dhoti, a fallen warrior in golden armor, open battlefield, broken chariot, dusty sky",
+    "positive": "rrvarma style, a young woman in a red sari with yellow border, gold bangles and necklace, beneath a flowering tree in a quiet palace garden grove",
     "negative": "ugly, blurry, bad anatomy"
   },
   {
-    "scene_id": "s07",
+    "scene_id": "s09",
     "coalition": "char+mood",
     "condition": "shap",
-    "positive": "rrvarma style, a crowned king in a saffron dhoti, a fallen warrior in golden armor, dim dramatic light, shadowed faces",
+    "positive": "rrvarma style, a young woman in a red sari with yellow border, gold bangles and necklace, dusk, soft fading light, still and melancholy",
     "negative": "ugly, blurry, bad anatomy"
   },
   {
-    "scene_id": "s07",
+    "scene_id": "s09",
     "coalition": "char+tail",
     "condition": "shap",
-    "positive": "rrvarma style, a crowned king in a saffron dhoti, a fallen warrior in golden armor, oil painting, canvas texture, classical indian art",
+    "positive": "rrvarma style, a young woman in a red sari with yellow border, gold bangles and necklace, oil painting, canvas texture, classical indian art",
     "negative": "ugly, blurry, bad anatomy"
   },
   {
-    "scene_id": "s07",
+    "scene_id": "s09",
     "coalition": "action+setting",
     "condition": "shap",
-    "positive": "rrvarma style, kneeling and weeping over the fallen body, open battlefield, broken chariot, dusty sky",
+    "positive": "rrvarma style, sitting alone on the ground, head bowed, looking sorrowful, beneath a flowering tree in a quiet palace garden grove",
     "negative": "ugly, blurry, bad anatomy"
   },
   {
-    "scene_id": "s07",
+    "scene_id": "s09",
     "coalition": "action+mood",
     "condition": "shap",
-    "positive": "rrvarma style, kneeling and weeping over the fallen body, dim dramatic light, shadowed faces",
+    "positive": "rrvarma style, sitting alone on the ground, head bowed, looking sorrowful, dusk, soft fading light, still and melancholy",
     "negative": "ugly, blurry, bad anatomy"
   },
   {
-    "scene_id": "s07",
+    "scene_id": "s09",
     "coalition": "action+tail",
     "condition": "shap",
-    "positive": "rrvarma style, kneeling and weeping over the fallen body, oil painting, canvas texture, classical indian art",
+    "positive": "rrvarma style, sitting alone on the ground, head bowed, looking sorrowful, oil painting, canvas texture, classical indian art",
     "negative": "ugly, blurry, bad anatomy"
   },
   {
-    "scene_id": "s07",
+    "scene_id": "s09",
     "coalition": "setting+mood",
     "condition": "shap",
-    "positive": "rrvarma style, open battlefield, broken chariot, dusty sky, dim dramatic light, shadowed faces",
+    "positive": "rrvarma style, beneath a flowering tree in a quiet palace garden grove, dusk, soft fading light, still and melancholy",
     "negative": "ugly, blurry, bad anatomy"
   },
   {
-    "scene_id": "s07",
+    "scene_id": "s09",
     "coalition": "setting+tail",
     "condition": "shap",
-    "positive": "rrvarma style, open battlefield, broken chariot, dusty sky, oil painting, canvas texture, classical indian art",
+    "positive": "rrvarma style, beneath a flowering tree in a quiet palace garden grove, oil painting, canvas texture, classical indian art",
     "negative": "ugly, blurry, bad anatomy"
   },
   {
-    "scene_id": "s07",
+    "scene_id": "s09",
     "coalition": "mood+tail",
     "condition": "shap",
-    "positive": "rrvarma style, dim dramatic light, shadowed faces, oil painting, canvas texture, classical indian art",
+    "positive": "rrvarma style, dusk, soft fading light, still and melancholy, oil painting, canvas texture, classical indian art",
     "negative": "ugly, blurry, bad anatomy"
   },
   {
-    "scene_id": "s07",
+    "scene_id": "s09",
     "coalition": "char+action+setting",
     "condition": "shap",
-    "positive": "rrvarma style, a crowned king in a saffron dhoti, a fallen warrior in golden armor, kneeling and weeping over the fallen body, open battlefield, broken chariot, dusty sky",
+    "positive": "rrvarma style, a young woman in a red sari with yellow border, gold bangles and necklace, sitting alone on the ground, head bowed, looking sorrowful, beneath a flowering tree in a quiet palace garden grove",
     "negative": "ugly, blurry, bad anatomy"
   },
   {
-    "scene_id": "s07",
+    "scene_id": "s09",
     "coalition": "char+action+mood",
     "condition": "shap",
-    "positive": "rrvarma style, a crowned king in a saffron dhoti, a fallen warrior in golden armor, kneeling and weeping over the fallen body, dim dramatic light, shadowed faces",
+    "positive": "rrvarma style, a young woman in a red sari with yellow border, gold bangles and necklace, sitting alone on the ground, head bowed, looking sorrowful, dusk, soft fading light, still and melancholy",
     "negative": "ugly, blurry, bad anatomy"
   },
   {
-    "scene_id": "s07",
+    "scene_id": "s09",
     "coalition": "char+action+tail",
     "condition": "shap",
-    "positive": "rrvarma style, a crowned king in a saffron dhoti, a fallen warrior in golden armor, kneeling and weeping over the fallen body, oil painting, canvas texture, classical indian art",
+    "positive": "rrvarma style, a young woman in a red sari with yellow border, gold bangles and necklace, sitting alone on the ground, head bowed, looking sorrowful, oil painting, canvas texture, classical indian art",
     "negative": "ugly, blurry, bad anatomy"
   },
   {
-    "scene_id": "s07",
+    "scene_id": "s09",
     "coalition": "char+setting+mood",
     "condition": "shap",
-    "positive": "rrvarma style, a crowned king in a saffron dhoti, a fallen warrior in golden armor, open battlefield, broken chariot, dusty sky, dim dramatic light, shadowed faces",
+    "positive": "rrvarma style, a young woman in a red sari with yellow border, gold bangles and necklace, beneath a flowering tree in a quiet palace garden grove, dusk, soft fading light, still and melancholy",
     "negative": "ugly, blurry, bad anatomy"
   },
   {
-    "scene_id": "s07",
+    "scene_id": "s09",
     "coalition": "char+setting+tail",
     "condition": "shap",
-    "positive": "rrvarma style, a crowned king in a saffron dhoti, a fallen warrior in golden armor, open battlefield, broken chariot, dusty sky, oil painting, canvas texture, classical indian art",
+    "positive": "rrvarma style, a young woman in a red sari with yellow border, gold bangles and necklace, beneath a flowering tree in a quiet palace garden grove, oil painting, canvas texture, classical indian art",
     "negative": "ugly, blurry, bad anatomy"
   },
   {
-    "scene_id": "s07",
+    "scene_id": "s09",
     "coalition": "char+mood+tail",
     "condition": "shap",
-    "positive": "rrvarma style, a crowned king in a saffron dhoti, a fallen warrior in golden armor, dim dramatic light, shadowed faces, oil painting, canvas texture, classical indian art",
+    "positive": "rrvarma style, a young woman in a red sari with yellow border, gold bangles and necklace, dusk, soft fading light, still and melancholy, oil painting, canvas texture, classical indian art",
     "negative": "ugly, blurry, bad anatomy"
   },
   {
-    "scene_id": "s07",
+    "scene_id": "s09",
     "coalition": "action+setting+mood",
     "condition": "shap",
-    "positive": "rrvarma style, kneeling and weeping over the fallen body, open battlefield, broken chariot, dusty sky, dim dramatic light, shadowed faces",
+    "positive": "rrvarma style, sitting alone on the ground, head bowed, looking sorrowful, beneath a flowering tree in a quiet palace garden grove, dusk, soft fading light, still and melancholy",
     "negative": "ugly, blurry, bad anatomy"
   },
   {
-    "scene_id": "s07",
+    "scene_id": "s09",
     "coalition": "action+setting+tail",
     "condition": "shap",
-    "positive": "rrvarma style, kneeling and weeping over the fallen body, open battlefield, broken chariot, dusty sky, oil painting, canvas texture, classical indian art",
+    "positive": "rrvarma style, sitting alone on the ground, head bowed, looking sorrowful, beneath a flowering tree in a quiet palace garden grove, oil painting, canvas texture, classical indian art",
     "negative": "ugly, blurry, bad anatomy"
   },
   {
-    "scene_id": "s07",
+    "scene_id": "s09",
     "coalition": "action+mood+tail",
     "condition": "shap",
-    "positive": "rrvarma style, kneeling and weeping over the fallen body, dim dramatic light, shadowed faces, oil painting, canvas texture, classical indian art",
+    "positive": "rrvarma style, sitting alone on the ground, head bowed, looking sorrowful, dusk, soft fading light, still and melancholy, oil painting, canvas texture, classical indian art",
     "negative": "ugly, blurry, bad anatomy"
   },
   {
-    "scene_id": "s07",
+    "scene_id": "s09",
     "coalition": "setting+mood+tail",
     "condition": "shap",
-    "positive": "rrvarma style, open battlefield, broken chariot, dusty sky, dim dramatic light, shadowed faces, oil painting, canvas texture, classical indian art",
+    "positive": "rrvarma style, beneath a flowering tree in a quiet palace garden grove, dusk, soft fading light, still and melancholy, oil painting, canvas texture, classical indian art",
     "negative": "ugly, blurry, bad anatomy"
   },
   {
-    "scene_id": "s07",
+    "scene_id": "s09",
     "coalition": "char+action+setting+mood",
     "condition": "shap",
-    "positive": "rrvarma style, a crowned king in a saffron dhoti, a fallen warrior in golden armor, kneeling and weeping over the fallen body, open battlefield, broken chariot, dusty sky, dim dramatic light, shadowed faces",
+    "positive": "rrvarma style, a young woman in a red sari with yellow border, gold bangles and necklace, sitting alone on the ground, head bowed, looking sorrowful, beneath a flowering tree in a quiet palace garden grove, dusk, soft fading light, still and melancholy",
     "negative": "ugly, blurry, bad anatomy"
   },
   {
-    "scene_id": "s07",
+    "scene_id": "s09",
     "coalition": "char+action+setting+tail",
     "condition": "shap",
-    "positive": "rrvarma style, a crowned king in a saffron dhoti, a fallen warrior in golden armor, kneeling and weeping over the fallen body, open battlefield, broken chariot, dusty sky, oil painting, canvas texture, classical indian art",
+    "positive": "rrvarma style, a young woman in a red sari with yellow border, gold bangles and necklace, sitting alone on the ground, head bowed, looking sorrowful, beneath a flowering tree in a quiet palace garden grove, oil painting, canvas texture, classical indian art",
     "negative": "ugly, blurry, bad anatomy"
   },
   {
-    "scene_id": "s07",
+    "scene_id": "s09",
     "coalition": "char+action+mood+tail",
     "condition": "shap",
-    "positive": "rrvarma style, a crowned king in a saffron dhoti, a fallen warrior in golden armor, kneeling and weeping over the fallen body, dim dramatic light, shadowed faces, oil painting, canvas texture, classical indian art",
+    "positive": "rrvarma style, a young woman in a red sari with yellow border, gold bangles and necklace, sitting alone on the ground, head bowed, looking sorrowful, dusk, soft fading light, still and melancholy, oil painting, canvas texture, classical indian art",
     "negative": "ugly, blurry, bad anatomy"
   },
   {
-    "scene_id": "s07",
+    "scene_id": "s09",
     "coalition": "char+setting+mood+tail",
     "condition": "shap",
-    "positive": "rrvarma style, a crowned king in a saffron dhoti, a fallen warrior in golden armor, open battlefield, broken chariot, dusty sky, dim dramatic light, shadowed faces, oil painting, canvas texture, classical indian art",
+    "positive": "rrvarma style, a young woman in a red sari with yellow border, gold bangles and necklace, beneath a flowering tree in a quiet palace garden grove, dusk, soft fading light, still and melancholy, oil painting, canvas texture, classical indian art",
     "negative": "ugly, blurry, bad anatomy"
   },
   {
-    "scene_id": "s07",
+    "scene_id": "s09",
     "coalition": "action+setting+mood+tail",
     "condition": "shap",
-    "positive": "rrvarma style, kneeling and weeping over the fallen body, open battlefield, broken chariot, dusty sky, dim dramatic light, shadowed faces, oil painting, canvas texture, classical indian art",
+    "positive": "rrvarma style, sitting alone on the ground, head bowed, looking sorrowful, beneath a flowering tree in a quiet palace garden grove, dusk, soft fading light, still and melancholy, oil painting, canvas texture, classical indian art",
     "negative": "ugly, blurry, bad anatomy"
   },
   {
-    "scene_id": "s07",
+    "scene_id": "s09",
     "coalition": "char+action+setting+mood+tail",
     "condition": "shap",
-    "positive": "rrvarma style, a crowned king in a saffron dhoti, a fallen warrior in golden armor, kneeling and weeping over the fallen body, open battlefield, broken chariot, dusty sky, dim dramatic light, shadowed faces, oil painting, canvas texture, classical indian art",
+    "positive": "rrvarma style, a young woman in a red sari with yellow border, gold bangles and necklace, sitting alone on the ground, head bowed, looking sorrowful, beneath a flowering tree in a quiet palace garden grove, dusk, soft fading light, still and melancholy, oil painting, canvas texture, classical indian art",
     "negative": "ugly, blurry, bad anatomy"
   },
   {
-    "scene_id": "s08",
+    "scene_id": "s10",
     "coalition": "empty",
     "condition": "shap",
     "positive": "rrvarma style",
     "negative": "ugly, blurry, bad anatomy"
   },
   {
-    "scene_id": "s08",
+    "scene_id": "s10",
     "coalition": "char",
     "condition": "shap",
-    "positive": "rrvarma style, a royal woman in a red sari with gold embroidery",
+    "positive": "rrvarma style, a bare-chested warrior in golden armour with large gold earrings",
     "negative": "ugly, blurry, bad anatomy"
   },
   {
-    "scene_id": "s08",
+    "scene_id": "s10",
     "coalition": "action",
     "condition": "shap",
-    "positive": "rrvarma style, sitting gracefully and looking sorrowful",
+    "positive": "rrvarma style, standing tall and proud, holding a great bow upright",
     "negative": "ugly, blurry, bad anatomy"
   },
   {
-    "scene_id": "s08",
+    "scene_id": "s10",
     "coalition": "setting",
     "condition": "shap",
-    "positive": "rrvarma style, dense forest grove, large ashoka trees",
+    "positive": "rrvarma style, an open plain under a wide sky at sunrise",
     "negative": "ugly, blurry, bad anatomy"
   },
   {
-    "scene_id": "s08",
+    "scene_id": "s10",
     "coalition": "mood",
     "condition": "shap",
-    "positive": "rrvarma style, soft dappled sunlight, melancholic atmosphere",
+    "positive": "rrvarma style, warm golden morning light, heroic and dignified",
     "negative": "ugly, blurry, bad anatomy"
   },
   {
-    "scene_id": "s08",
+    "scene_id": "s10",
     "coalition": "tail",
     "condition": "shap",
     "positive": "rrvarma style, oil painting, canvas texture, classical indian art",
     "negative": "ugly, blurry, bad anatomy"
   },
   {
-    "scene_id": "s08",
+    "scene_id": "s10",
     "coalition": "char+action",
     "condition": "shap",
-    "positive": "rrvarma style, a royal woman in a red sari with gold embroidery, sitting gracefully and looking sorrowful",
+    "positive": "rrvarma style, a bare-chested warrior in golden armour with large gold earrings, standing tall and proud, holding a great bow upright",
     "negative": "ugly, blurry, bad anatomy"
   },
   {
-    "scene_id": "s08",
+    "scene_id": "s10",
     "coalition": "char+setting",
     "condition": "shap",
-    "positive": "rrvarma style, a royal woman in a red sari with gold embroidery, dense forest grove, large ashoka trees",
+    "positive": "rrvarma style, a bare-chested warrior in golden armour with large gold earrings, an open plain under a wide sky at sunrise",
     "negative": "ugly, blurry, bad anatomy"
   },
   {
-    "scene_id": "s08",
+    "scene_id": "s10",
     "coalition": "char+mood",
     "condition": "shap",
-    "positive": "rrvarma style, a royal woman in a red sari with gold embroidery, soft dappled sunlight, melancholic atmosphere",
+    "positive": "rrvarma style, a bare-chested warrior in golden armour with large gold earrings, warm golden morning light, heroic and dignified",
     "negative": "ugly, blurry, bad anatomy"
   },
   {
-    "scene_id": "s08",
+    "scene_id": "s10",
     "coalition": "char+tail",
     "condition": "shap",
-    "positive": "rrvarma style, a royal woman in a red sari with gold embroidery, oil painting, canvas texture, classical indian art",
+    "positive": "rrvarma style, a bare-chested warrior in golden armour with large gold earrings, oil painting, canvas texture, classical indian art",
     "negative": "ugly, blurry, bad anatomy"
   },
   {
-    "scene_id": "s08",
+    "scene_id": "s10",
     "coalition": "action+setting",
     "condition": "shap",
-    "positive": "rrvarma style, sitting gracefully and looking sorrowful, dense forest grove, large ashoka trees",
+    "positive": "rrvarma style, standing tall and proud, holding a great bow upright, an open plain under a wide sky at sunrise",
     "negative": "ugly, blurry, bad anatomy"
   },
   {
-    "scene_id": "s08",
+    "scene_id": "s10",
     "coalition": "action+mood",
     "condition": "shap",
-    "positive": "rrvarma style, sitting gracefully and looking sorrowful, soft dappled sunlight, melancholic atmosphere",
+    "positive": "rrvarma style, standing tall and proud, holding a great bow upright, warm golden morning light, heroic and dignified",
     "negative": "ugly, blurry, bad anatomy"
   },
   {
-    "scene_id": "s08",
+    "scene_id": "s10",
     "coalition": "action+tail",
     "condition": "shap",
-    "positive": "rrvarma style, sitting gracefully and looking sorrowful, oil painting, canvas texture, classical indian art",
+    "positive": "rrvarma style, standing tall and proud, holding a great bow upright, oil painting, canvas texture, classical indian art",
     "negative": "ugly, blurry, bad anatomy"
   },
   {
-    "scene_id": "s08",
+    "scene_id": "s10",
     "coalition": "setting+mood",
     "condition": "shap",
-    "positive": "rrvarma style, dense forest grove, large ashoka trees, soft dappled sunlight, melancholic atmosphere",
+    "positive": "rrvarma style, an open plain under a wide sky at sunrise, warm golden morning light, heroic and dignified",
     "negative": "ugly, blurry, bad anatomy"
   },
   {
-    "scene_id": "s08",
+    "scene_id": "s10",
     "coalition": "setting+tail",
     "condition": "shap",
-    "positive": "rrvarma style, dense forest grove, large ashoka trees, oil painting, canvas texture, classical indian art",
+    "positive": "rrvarma style, an open plain under a wide sky at sunrise, oil painting, canvas texture, classical indian art",
     "negative": "ugly, blurry, bad anatomy"
   },
   {
-    "scene_id": "s08",
+    "scene_id": "s10",
     "coalition": "mood+tail",
     "condition": "shap",
-    "positive": "rrvarma style, soft dappled sunlight, melancholic atmosphere, oil painting, canvas texture, classical indian art",
+    "positive": "rrvarma style, warm golden morning light, heroic and dignified, oil painting, canvas texture, classical indian art",
     "negative": "ugly, blurry, bad anatomy"
   },
   {
-    "scene_id": "s08",
+    "scene_id": "s10",
     "coalition": "char+action+setting",
     "condition": "shap",
-    "positive": "rrvarma style, a royal woman in a red sari with gold embroidery, sitting gracefully and looking sorrowful, dense forest grove, large ashoka trees",
+    "positive": "rrvarma style, a bare-chested warrior in golden armour with large gold earrings, standing tall and proud, holding a great bow upright, an open plain under a wide sky at sunrise",
     "negative": "ugly, blurry, bad anatomy"
   },
   {
-    "scene_id": "s08",
+    "scene_id": "s10",
     "coalition": "char+action+mood",
     "condition": "shap",
-    "positive": "rrvarma style, a royal woman in a red sari with gold embroidery, sitting gracefully and looking sorrowful, soft dappled sunlight, melancholic atmosphere",
+    "positive": "rrvarma style, a bare-chested warrior in golden armour with large gold earrings, standing tall and proud, holding a great bow upright, warm golden morning light, heroic and dignified",
     "negative": "ugly, blurry, bad anatomy"
   },
   {
-    "scene_id": "s08",
+    "scene_id": "s10",
     "coalition": "char+action+tail",
     "condition": "shap",
-    "positive": "rrvarma style, a royal woman in a red sari with gold embroidery, sitting gracefully and looking sorrowful, oil painting, canvas texture, classical indian art",
+    "positive": "rrvarma style, a bare-chested warrior in golden armour with large gold earrings, standing tall and proud, holding a great bow upright, oil painting, canvas texture, classical indian art",
     "negative": "ugly, blurry, bad anatomy"
   },
   {
-    "scene_id": "s08",
+    "scene_id": "s10",
     "coalition": "char+setting+mood",
     "condition": "shap",
-    "positive": "rrvarma style, a royal woman in a red sari with gold embroidery, dense forest grove, large ashoka trees, soft dappled sunlight, melancholic atmosphere",
+    "positive": "rrvarma style, a bare-chested warrior in golden armour with large gold earrings, an open plain under a wide sky at sunrise, warm golden morning light, heroic and dignified",
     "negative": "ugly, blurry, bad anatomy"
   },
   {
-    "scene_id": "s08",
+    "scene_id": "s10",
     "coalition": "char+setting+tail",
     "condition": "shap",
-    "positive": "rrvarma style, a royal woman in a red sari with gold embroidery, dense forest grove, large ashoka trees, oil painting, canvas texture, classical indian art",
+    "positive": "rrvarma style, a bare-chested warrior in golden armour with large gold earrings, an open plain under a wide sky at sunrise, oil painting, canvas texture, classical indian art",
     "negative": "ugly, blurry, bad anatomy"
   },
   {
-    "scene_id": "s08",
+    "scene_id": "s10",
     "coalition": "char+mood+tail",
     "condition": "shap",
-    "positive": "rrvarma style, a royal woman in a red sari with gold embroidery, soft dappled sunlight, melancholic atmosphere, oil painting, canvas texture, classical indian art",
+    "positive": "rrvarma style, a bare-chested warrior in golden armour with large gold earrings, warm golden morning light, heroic and dignified, oil painting, canvas texture, classical indian art",
     "negative": "ugly, blurry, bad anatomy"
   },
   {
-    "scene_id": "s08",
+    "scene_id": "s10",
     "coalition": "action+setting+mood",
     "condition": "shap",
-    "positive": "rrvarma style, sitting gracefully and looking sorrowful, dense forest grove, large ashoka trees, soft dappled sunlight, melancholic atmosphere",
+    "positive": "rrvarma style, standing tall and proud, holding a great bow upright, an open plain under a wide sky at sunrise, warm golden morning light, heroic and dignified",
     "negative": "ugly, blurry, bad anatomy"
   },
   {
-    "scene_id": "s08",
+    "scene_id": "s10",
     "coalition": "action+setting+tail",
     "condition": "shap",
-    "positive": "rrvarma style, sitting gracefully and looking sorrowful, dense forest grove, large ashoka trees, oil painting, canvas texture, classical indian art",
+    "positive": "rrvarma style, standing tall and proud, holding a great bow upright, an open plain under a wide sky at sunrise, oil painting, canvas texture, classical indian art",
     "negative": "ugly, blurry, bad anatomy"
   },
   {
-    "scene_id": "s08",
+    "scene_id": "s10",
     "coalition": "action+mood+tail",
     "condition": "shap",
-    "positive": "rrvarma style, sitting gracefully and looking sorrowful, soft dappled sunlight, melancholic atmosphere, oil painting, canvas texture, classical indian art",
+    "positive": "rrvarma style, standing tall and proud, holding a great bow upright, warm golden morning light, heroic and dignified, oil painting, canvas texture, classical indian art",
     "negative": "ugly, blurry, bad anatomy"
   },
   {
-    "scene_id": "s08",
+    "scene_id": "s10",
     "coalition": "setting+mood+tail",
     "condition": "shap",
-    "positive": "rrvarma style, dense forest grove, large ashoka trees, soft dappled sunlight, melancholic atmosphere, oil painting, canvas texture, classical indian art",
+    "positive": "rrvarma style, an open plain under a wide sky at sunrise, warm golden morning light, heroic and dignified, oil painting, canvas texture, classical indian art",
     "negative": "ugly, blurry, bad anatomy"
   },
   {
-    "scene_id": "s08",
+    "scene_id": "s10",
     "coalition": "char+action+setting+mood",
     "condition": "shap",
-    "positive": "rrvarma style, a royal woman in a red sari with gold embroidery, sitting gracefully and looking sorrowful, dense forest grove, large ashoka trees, soft dappled sunlight, melancholic atmosphere",
+    "positive": "rrvarma style, a bare-chested warrior in golden armour with large gold earrings, standing tall and proud, holding a great bow upright, an open plain under a wide sky at sunrise, warm golden morning light, heroic and dignified",
     "negative": "ugly, blurry, bad anatomy"
   },
   {
-    "scene_id": "s08",
+    "scene_id": "s10",
     "coalition": "char+action+setting+tail",
     "condition": "shap",
-    "positive": "rrvarma style, a royal woman in a red sari with gold embroidery, sitting gracefully and looking sorrowful, dense forest grove, large ashoka trees, oil painting, canvas texture, classical indian art",
+    "positive": "rrvarma style, a bare-chested warrior in golden armour with large gold earrings, standing tall and proud, holding a great bow upright, an open plain under a wide sky at sunrise, oil painting, canvas texture, classical indian art",
     "negative": "ugly, blurry, bad anatomy"
   },
   {
-    "scene_id": "s08",
+    "scene_id": "s10",
     "coalition": "char+action+mood+tail",
     "condition": "shap",
-    "positive": "rrvarma style, a royal woman in a red sari with gold embroidery, sitting gracefully and looking sorrowful, soft dappled sunlight, melancholic atmosphere, oil painting, canvas texture, classical indian art",
+    "positive": "rrvarma style, a bare-chested warrior in golden armour with large gold earrings, standing tall and proud, holding a great bow upright, warm golden morning light, heroic and dignified, oil painting, canvas texture, classical indian art",
     "negative": "ugly, blurry, bad anatomy"
   },
   {
-    "scene_id": "s08",
+    "scene_id": "s10",
     "coalition": "char+setting+mood+tail",
     "condition": "shap",
-    "positive": "rrvarma style, a royal woman in a red sari with gold embroidery, dense forest grove, large ashoka trees, soft dappled sunlight, melancholic atmosphere, oil painting, canvas texture, classical indian art",
+    "positive": "rrvarma style, a bare-chested warrior in golden armour with large gold earrings, an open plain under a wide sky at sunrise, warm golden morning light, heroic and dignified, oil painting, canvas texture, classical indian art",
     "negative": "ugly, blurry, bad anatomy"
   },
   {
-    "scene_id": "s08",
+    "scene_id": "s10",
     "coalition": "action+setting+mood+tail",
     "condition": "shap",
-    "positive": "rrvarma style, sitting gracefully and looking sorrowful, dense forest grove, large ashoka trees, soft dappled sunlight, melancholic atmosphere, oil painting, canvas texture, classical indian art",
+    "positive": "rrvarma style, standing tall and proud, holding a great bow upright, an open plain under a wide sky at sunrise, warm golden morning light, heroic and dignified, oil painting, canvas texture, classical indian art",
     "negative": "ugly, blurry, bad anatomy"
   },
   {
-    "scene_id": "s08",
+    "scene_id": "s10",
     "coalition": "char+action+setting+mood+tail",
     "condition": "shap",
-    "positive": "rrvarma style, a royal woman in a red sari with gold embroidery, sitting gracefully and looking sorrowful, dense forest grove, large ashoka trees, soft dappled sunlight, melancholic atmosphere, oil painting, canvas texture, classical indian art",
+    "positive": "rrvarma style, a bare-chested warrior in golden armour with large gold earrings, standing tall and proud, holding a great bow upright, an open plain under a wide sky at sunrise, warm golden morning light, heroic and dignified, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s12",
+    "coalition": "empty",
+    "condition": "shap",
+    "positive": "rrvarma style",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s12",
+    "coalition": "char",
+    "condition": "shap",
+    "positive": "rrvarma style, a monkey-faced figure in a red dhoti, a crowned man in a yellow dhoti",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s12",
+    "coalition": "action",
+    "condition": "shap",
+    "positive": "rrvarma style, the monkey-faced figure kneels offering a ring, the man reaching out for it",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s12",
+    "coalition": "setting",
+    "condition": "shap",
+    "positive": "rrvarma style, a forest clearing with tall trees and rocks",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s12",
+    "coalition": "mood",
+    "condition": "shap",
+    "positive": "rrvarma style, solemn and reverent, soft daylight",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s12",
+    "coalition": "tail",
+    "condition": "shap",
+    "positive": "rrvarma style, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s12",
+    "coalition": "char+action",
+    "condition": "shap",
+    "positive": "rrvarma style, a monkey-faced figure in a red dhoti, a crowned man in a yellow dhoti, the monkey-faced figure kneels offering a ring, the man reaching out for it",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s12",
+    "coalition": "char+setting",
+    "condition": "shap",
+    "positive": "rrvarma style, a monkey-faced figure in a red dhoti, a crowned man in a yellow dhoti, a forest clearing with tall trees and rocks",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s12",
+    "coalition": "char+mood",
+    "condition": "shap",
+    "positive": "rrvarma style, a monkey-faced figure in a red dhoti, a crowned man in a yellow dhoti, solemn and reverent, soft daylight",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s12",
+    "coalition": "char+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, a monkey-faced figure in a red dhoti, a crowned man in a yellow dhoti, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s12",
+    "coalition": "action+setting",
+    "condition": "shap",
+    "positive": "rrvarma style, the monkey-faced figure kneels offering a ring, the man reaching out for it, a forest clearing with tall trees and rocks",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s12",
+    "coalition": "action+mood",
+    "condition": "shap",
+    "positive": "rrvarma style, the monkey-faced figure kneels offering a ring, the man reaching out for it, solemn and reverent, soft daylight",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s12",
+    "coalition": "action+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, the monkey-faced figure kneels offering a ring, the man reaching out for it, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s12",
+    "coalition": "setting+mood",
+    "condition": "shap",
+    "positive": "rrvarma style, a forest clearing with tall trees and rocks, solemn and reverent, soft daylight",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s12",
+    "coalition": "setting+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, a forest clearing with tall trees and rocks, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s12",
+    "coalition": "mood+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, solemn and reverent, soft daylight, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s12",
+    "coalition": "char+action+setting",
+    "condition": "shap",
+    "positive": "rrvarma style, a monkey-faced figure in a red dhoti, a crowned man in a yellow dhoti, the monkey-faced figure kneels offering a ring, the man reaching out for it, a forest clearing with tall trees and rocks",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s12",
+    "coalition": "char+action+mood",
+    "condition": "shap",
+    "positive": "rrvarma style, a monkey-faced figure in a red dhoti, a crowned man in a yellow dhoti, the monkey-faced figure kneels offering a ring, the man reaching out for it, solemn and reverent, soft daylight",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s12",
+    "coalition": "char+action+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, a monkey-faced figure in a red dhoti, a crowned man in a yellow dhoti, the monkey-faced figure kneels offering a ring, the man reaching out for it, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s12",
+    "coalition": "char+setting+mood",
+    "condition": "shap",
+    "positive": "rrvarma style, a monkey-faced figure in a red dhoti, a crowned man in a yellow dhoti, a forest clearing with tall trees and rocks, solemn and reverent, soft daylight",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s12",
+    "coalition": "char+setting+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, a monkey-faced figure in a red dhoti, a crowned man in a yellow dhoti, a forest clearing with tall trees and rocks, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s12",
+    "coalition": "char+mood+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, a monkey-faced figure in a red dhoti, a crowned man in a yellow dhoti, solemn and reverent, soft daylight, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s12",
+    "coalition": "action+setting+mood",
+    "condition": "shap",
+    "positive": "rrvarma style, the monkey-faced figure kneels offering a ring, the man reaching out for it, a forest clearing with tall trees and rocks, solemn and reverent, soft daylight",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s12",
+    "coalition": "action+setting+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, the monkey-faced figure kneels offering a ring, the man reaching out for it, a forest clearing with tall trees and rocks, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s12",
+    "coalition": "action+mood+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, the monkey-faced figure kneels offering a ring, the man reaching out for it, solemn and reverent, soft daylight, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s12",
+    "coalition": "setting+mood+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, a forest clearing with tall trees and rocks, solemn and reverent, soft daylight, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s12",
+    "coalition": "char+action+setting+mood",
+    "condition": "shap",
+    "positive": "rrvarma style, a monkey-faced figure in a red dhoti, a crowned man in a yellow dhoti, the monkey-faced figure kneels offering a ring, the man reaching out for it, a forest clearing with tall trees and rocks, solemn and reverent, soft daylight",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s12",
+    "coalition": "char+action+setting+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, a monkey-faced figure in a red dhoti, a crowned man in a yellow dhoti, the monkey-faced figure kneels offering a ring, the man reaching out for it, a forest clearing with tall trees and rocks, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s12",
+    "coalition": "char+action+mood+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, a monkey-faced figure in a red dhoti, a crowned man in a yellow dhoti, the monkey-faced figure kneels offering a ring, the man reaching out for it, solemn and reverent, soft daylight, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s12",
+    "coalition": "char+setting+mood+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, a monkey-faced figure in a red dhoti, a crowned man in a yellow dhoti, a forest clearing with tall trees and rocks, solemn and reverent, soft daylight, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s12",
+    "coalition": "action+setting+mood+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, the monkey-faced figure kneels offering a ring, the man reaching out for it, a forest clearing with tall trees and rocks, solemn and reverent, soft daylight, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s12",
+    "coalition": "char+action+setting+mood+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, a monkey-faced figure in a red dhoti, a crowned man in a yellow dhoti, the monkey-faced figure kneels offering a ring, the man reaching out for it, a forest clearing with tall trees and rocks, solemn and reverent, soft daylight, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s27",
+    "coalition": "empty",
+    "condition": "shap",
+    "positive": "rrvarma style",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s27",
+    "coalition": "char",
+    "condition": "shap",
+    "positive": "rrvarma style, a woman in a draped sari with a flowered bun, a small blue-skinned boy",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s27",
+    "coalition": "action",
+    "condition": "shap",
+    "positive": "rrvarma style, she bends over scolding him, his face smeared with butter",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s27",
+    "coalition": "setting",
+    "condition": "shap",
+    "positive": "rrvarma style, inside a village house courtyard, a broken clay pot on the floor",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s27",
+    "coalition": "mood",
+    "condition": "shap",
+    "positive": "rrvarma style, playful, warm domestic light",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s27",
+    "coalition": "tail",
+    "condition": "shap",
+    "positive": "rrvarma style, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s27",
+    "coalition": "char+action",
+    "condition": "shap",
+    "positive": "rrvarma style, a woman in a draped sari with a flowered bun, a small blue-skinned boy, she bends over scolding him, his face smeared with butter",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s27",
+    "coalition": "char+setting",
+    "condition": "shap",
+    "positive": "rrvarma style, a woman in a draped sari with a flowered bun, a small blue-skinned boy, inside a village house courtyard, a broken clay pot on the floor",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s27",
+    "coalition": "char+mood",
+    "condition": "shap",
+    "positive": "rrvarma style, a woman in a draped sari with a flowered bun, a small blue-skinned boy, playful, warm domestic light",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s27",
+    "coalition": "char+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, a woman in a draped sari with a flowered bun, a small blue-skinned boy, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s27",
+    "coalition": "action+setting",
+    "condition": "shap",
+    "positive": "rrvarma style, she bends over scolding him, his face smeared with butter, inside a village house courtyard, a broken clay pot on the floor",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s27",
+    "coalition": "action+mood",
+    "condition": "shap",
+    "positive": "rrvarma style, she bends over scolding him, his face smeared with butter, playful, warm domestic light",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s27",
+    "coalition": "action+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, she bends over scolding him, his face smeared with butter, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s27",
+    "coalition": "setting+mood",
+    "condition": "shap",
+    "positive": "rrvarma style, inside a village house courtyard, a broken clay pot on the floor, playful, warm domestic light",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s27",
+    "coalition": "setting+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, inside a village house courtyard, a broken clay pot on the floor, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s27",
+    "coalition": "mood+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, playful, warm domestic light, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s27",
+    "coalition": "char+action+setting",
+    "condition": "shap",
+    "positive": "rrvarma style, a woman in a draped sari with a flowered bun, a small blue-skinned boy, she bends over scolding him, his face smeared with butter, inside a village house courtyard, a broken clay pot on the floor",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s27",
+    "coalition": "char+action+mood",
+    "condition": "shap",
+    "positive": "rrvarma style, a woman in a draped sari with a flowered bun, a small blue-skinned boy, she bends over scolding him, his face smeared with butter, playful, warm domestic light",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s27",
+    "coalition": "char+action+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, a woman in a draped sari with a flowered bun, a small blue-skinned boy, she bends over scolding him, his face smeared with butter, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s27",
+    "coalition": "char+setting+mood",
+    "condition": "shap",
+    "positive": "rrvarma style, a woman in a draped sari with a flowered bun, a small blue-skinned boy, inside a village house courtyard, a broken clay pot on the floor, playful, warm domestic light",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s27",
+    "coalition": "char+setting+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, a woman in a draped sari with a flowered bun, a small blue-skinned boy, inside a village house courtyard, a broken clay pot on the floor, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s27",
+    "coalition": "char+mood+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, a woman in a draped sari with a flowered bun, a small blue-skinned boy, playful, warm domestic light, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s27",
+    "coalition": "action+setting+mood",
+    "condition": "shap",
+    "positive": "rrvarma style, she bends over scolding him, his face smeared with butter, inside a village house courtyard, a broken clay pot on the floor, playful, warm domestic light",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s27",
+    "coalition": "action+setting+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, she bends over scolding him, his face smeared with butter, inside a village house courtyard, a broken clay pot on the floor, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s27",
+    "coalition": "action+mood+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, she bends over scolding him, his face smeared with butter, playful, warm domestic light, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s27",
+    "coalition": "setting+mood+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, inside a village house courtyard, a broken clay pot on the floor, playful, warm domestic light, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s27",
+    "coalition": "char+action+setting+mood",
+    "condition": "shap",
+    "positive": "rrvarma style, a woman in a draped sari with a flowered bun, a small blue-skinned boy, she bends over scolding him, his face smeared with butter, inside a village house courtyard, a broken clay pot on the floor, playful, warm domestic light",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s27",
+    "coalition": "char+action+setting+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, a woman in a draped sari with a flowered bun, a small blue-skinned boy, she bends over scolding him, his face smeared with butter, inside a village house courtyard, a broken clay pot on the floor, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s27",
+    "coalition": "char+action+mood+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, a woman in a draped sari with a flowered bun, a small blue-skinned boy, she bends over scolding him, his face smeared with butter, playful, warm domestic light, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s27",
+    "coalition": "char+setting+mood+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, a woman in a draped sari with a flowered bun, a small blue-skinned boy, inside a village house courtyard, a broken clay pot on the floor, playful, warm domestic light, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s27",
+    "coalition": "action+setting+mood+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, she bends over scolding him, his face smeared with butter, inside a village house courtyard, a broken clay pot on the floor, playful, warm domestic light, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s27",
+    "coalition": "char+action+setting+mood+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, a woman in a draped sari with a flowered bun, a small blue-skinned boy, she bends over scolding him, his face smeared with butter, inside a village house courtyard, a broken clay pot on the floor, playful, warm domestic light, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s13",
+    "coalition": "empty",
+    "condition": "shap",
+    "positive": "rrvarma style",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s13",
+    "coalition": "char",
+    "condition": "shap",
+    "positive": "rrvarma style, a blue-skinned man in a peacock-feather crown, a king in red turban",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s13",
+    "coalition": "action",
+    "condition": "shap",
+    "positive": "rrvarma style, the blue-skinned man stands speaking to the king seated on his throne",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s13",
+    "coalition": "setting",
+    "condition": "shap",
+    "positive": "rrvarma style, a pillared royal hall with watching courtiers",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s13",
+    "coalition": "mood",
+    "condition": "shap",
+    "positive": "rrvarma style, tense and formal, warm lamplight",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s13",
+    "coalition": "tail",
+    "condition": "shap",
+    "positive": "rrvarma style, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s13",
+    "coalition": "char+action",
+    "condition": "shap",
+    "positive": "rrvarma style, a blue-skinned man in a peacock-feather crown, a king in red turban, the blue-skinned man stands speaking to the king seated on his throne",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s13",
+    "coalition": "char+setting",
+    "condition": "shap",
+    "positive": "rrvarma style, a blue-skinned man in a peacock-feather crown, a king in red turban, a pillared royal hall with watching courtiers",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s13",
+    "coalition": "char+mood",
+    "condition": "shap",
+    "positive": "rrvarma style, a blue-skinned man in a peacock-feather crown, a king in red turban, tense and formal, warm lamplight",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s13",
+    "coalition": "char+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, a blue-skinned man in a peacock-feather crown, a king in red turban, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s13",
+    "coalition": "action+setting",
+    "condition": "shap",
+    "positive": "rrvarma style, the blue-skinned man stands speaking to the king seated on his throne, a pillared royal hall with watching courtiers",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s13",
+    "coalition": "action+mood",
+    "condition": "shap",
+    "positive": "rrvarma style, the blue-skinned man stands speaking to the king seated on his throne, tense and formal, warm lamplight",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s13",
+    "coalition": "action+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, the blue-skinned man stands speaking to the king seated on his throne, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s13",
+    "coalition": "setting+mood",
+    "condition": "shap",
+    "positive": "rrvarma style, a pillared royal hall with watching courtiers, tense and formal, warm lamplight",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s13",
+    "coalition": "setting+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, a pillared royal hall with watching courtiers, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s13",
+    "coalition": "mood+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, tense and formal, warm lamplight, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s13",
+    "coalition": "char+action+setting",
+    "condition": "shap",
+    "positive": "rrvarma style, a blue-skinned man in a peacock-feather crown, a king in red turban, the blue-skinned man stands speaking to the king seated on his throne, a pillared royal hall with watching courtiers",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s13",
+    "coalition": "char+action+mood",
+    "condition": "shap",
+    "positive": "rrvarma style, a blue-skinned man in a peacock-feather crown, a king in red turban, the blue-skinned man stands speaking to the king seated on his throne, tense and formal, warm lamplight",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s13",
+    "coalition": "char+action+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, a blue-skinned man in a peacock-feather crown, a king in red turban, the blue-skinned man stands speaking to the king seated on his throne, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s13",
+    "coalition": "char+setting+mood",
+    "condition": "shap",
+    "positive": "rrvarma style, a blue-skinned man in a peacock-feather crown, a king in red turban, a pillared royal hall with watching courtiers, tense and formal, warm lamplight",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s13",
+    "coalition": "char+setting+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, a blue-skinned man in a peacock-feather crown, a king in red turban, a pillared royal hall with watching courtiers, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s13",
+    "coalition": "char+mood+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, a blue-skinned man in a peacock-feather crown, a king in red turban, tense and formal, warm lamplight, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s13",
+    "coalition": "action+setting+mood",
+    "condition": "shap",
+    "positive": "rrvarma style, the blue-skinned man stands speaking to the king seated on his throne, a pillared royal hall with watching courtiers, tense and formal, warm lamplight",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s13",
+    "coalition": "action+setting+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, the blue-skinned man stands speaking to the king seated on his throne, a pillared royal hall with watching courtiers, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s13",
+    "coalition": "action+mood+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, the blue-skinned man stands speaking to the king seated on his throne, tense and formal, warm lamplight, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s13",
+    "coalition": "setting+mood+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, a pillared royal hall with watching courtiers, tense and formal, warm lamplight, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s13",
+    "coalition": "char+action+setting+mood",
+    "condition": "shap",
+    "positive": "rrvarma style, a blue-skinned man in a peacock-feather crown, a king in red turban, the blue-skinned man stands speaking to the king seated on his throne, a pillared royal hall with watching courtiers, tense and formal, warm lamplight",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s13",
+    "coalition": "char+action+setting+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, a blue-skinned man in a peacock-feather crown, a king in red turban, the blue-skinned man stands speaking to the king seated on his throne, a pillared royal hall with watching courtiers, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s13",
+    "coalition": "char+action+mood+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, a blue-skinned man in a peacock-feather crown, a king in red turban, the blue-skinned man stands speaking to the king seated on his throne, tense and formal, warm lamplight, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s13",
+    "coalition": "char+setting+mood+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, a blue-skinned man in a peacock-feather crown, a king in red turban, a pillared royal hall with watching courtiers, tense and formal, warm lamplight, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s13",
+    "coalition": "action+setting+mood+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, the blue-skinned man stands speaking to the king seated on his throne, a pillared royal hall with watching courtiers, tense and formal, warm lamplight, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s13",
+    "coalition": "char+action+setting+mood+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, a blue-skinned man in a peacock-feather crown, a king in red turban, the blue-skinned man stands speaking to the king seated on his throne, a pillared royal hall with watching courtiers, tense and formal, warm lamplight, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s21",
+    "coalition": "empty",
+    "condition": "shap",
+    "positive": "rrvarma style",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s21",
+    "coalition": "char",
+    "condition": "shap",
+    "positive": "rrvarma style, two princes in yellow dhotis with bows, a monkey-faced figure with a mace",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s21",
+    "coalition": "action",
+    "condition": "shap",
+    "positive": "rrvarma style, sitting together on rocks, talking and planning",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s21",
+    "coalition": "setting",
+    "condition": "shap",
+    "positive": "rrvarma style, a rocky sea shore with crashing waves",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s21",
+    "coalition": "mood",
+    "condition": "shap",
+    "positive": "rrvarma style, dark cloudy sky, serious and determined",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s21",
+    "coalition": "tail",
+    "condition": "shap",
+    "positive": "rrvarma style, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s21",
+    "coalition": "char+action",
+    "condition": "shap",
+    "positive": "rrvarma style, two princes in yellow dhotis with bows, a monkey-faced figure with a mace, sitting together on rocks, talking and planning",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s21",
+    "coalition": "char+setting",
+    "condition": "shap",
+    "positive": "rrvarma style, two princes in yellow dhotis with bows, a monkey-faced figure with a mace, a rocky sea shore with crashing waves",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s21",
+    "coalition": "char+mood",
+    "condition": "shap",
+    "positive": "rrvarma style, two princes in yellow dhotis with bows, a monkey-faced figure with a mace, dark cloudy sky, serious and determined",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s21",
+    "coalition": "char+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, two princes in yellow dhotis with bows, a monkey-faced figure with a mace, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s21",
+    "coalition": "action+setting",
+    "condition": "shap",
+    "positive": "rrvarma style, sitting together on rocks, talking and planning, a rocky sea shore with crashing waves",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s21",
+    "coalition": "action+mood",
+    "condition": "shap",
+    "positive": "rrvarma style, sitting together on rocks, talking and planning, dark cloudy sky, serious and determined",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s21",
+    "coalition": "action+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, sitting together on rocks, talking and planning, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s21",
+    "coalition": "setting+mood",
+    "condition": "shap",
+    "positive": "rrvarma style, a rocky sea shore with crashing waves, dark cloudy sky, serious and determined",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s21",
+    "coalition": "setting+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, a rocky sea shore with crashing waves, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s21",
+    "coalition": "mood+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, dark cloudy sky, serious and determined, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s21",
+    "coalition": "char+action+setting",
+    "condition": "shap",
+    "positive": "rrvarma style, two princes in yellow dhotis with bows, a monkey-faced figure with a mace, sitting together on rocks, talking and planning, a rocky sea shore with crashing waves",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s21",
+    "coalition": "char+action+mood",
+    "condition": "shap",
+    "positive": "rrvarma style, two princes in yellow dhotis with bows, a monkey-faced figure with a mace, sitting together on rocks, talking and planning, dark cloudy sky, serious and determined",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s21",
+    "coalition": "char+action+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, two princes in yellow dhotis with bows, a monkey-faced figure with a mace, sitting together on rocks, talking and planning, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s21",
+    "coalition": "char+setting+mood",
+    "condition": "shap",
+    "positive": "rrvarma style, two princes in yellow dhotis with bows, a monkey-faced figure with a mace, a rocky sea shore with crashing waves, dark cloudy sky, serious and determined",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s21",
+    "coalition": "char+setting+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, two princes in yellow dhotis with bows, a monkey-faced figure with a mace, a rocky sea shore with crashing waves, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s21",
+    "coalition": "char+mood+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, two princes in yellow dhotis with bows, a monkey-faced figure with a mace, dark cloudy sky, serious and determined, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s21",
+    "coalition": "action+setting+mood",
+    "condition": "shap",
+    "positive": "rrvarma style, sitting together on rocks, talking and planning, a rocky sea shore with crashing waves, dark cloudy sky, serious and determined",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s21",
+    "coalition": "action+setting+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, sitting together on rocks, talking and planning, a rocky sea shore with crashing waves, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s21",
+    "coalition": "action+mood+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, sitting together on rocks, talking and planning, dark cloudy sky, serious and determined, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s21",
+    "coalition": "setting+mood+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, a rocky sea shore with crashing waves, dark cloudy sky, serious and determined, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s21",
+    "coalition": "char+action+setting+mood",
+    "condition": "shap",
+    "positive": "rrvarma style, two princes in yellow dhotis with bows, a monkey-faced figure with a mace, sitting together on rocks, talking and planning, a rocky sea shore with crashing waves, dark cloudy sky, serious and determined",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s21",
+    "coalition": "char+action+setting+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, two princes in yellow dhotis with bows, a monkey-faced figure with a mace, sitting together on rocks, talking and planning, a rocky sea shore with crashing waves, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s21",
+    "coalition": "char+action+mood+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, two princes in yellow dhotis with bows, a monkey-faced figure with a mace, sitting together on rocks, talking and planning, dark cloudy sky, serious and determined, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s21",
+    "coalition": "char+setting+mood+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, two princes in yellow dhotis with bows, a monkey-faced figure with a mace, a rocky sea shore with crashing waves, dark cloudy sky, serious and determined, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s21",
+    "coalition": "action+setting+mood+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, sitting together on rocks, talking and planning, a rocky sea shore with crashing waves, dark cloudy sky, serious and determined, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s21",
+    "coalition": "char+action+setting+mood+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, two princes in yellow dhotis with bows, a monkey-faced figure with a mace, sitting together on rocks, talking and planning, a rocky sea shore with crashing waves, dark cloudy sky, serious and determined, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s23",
+    "coalition": "empty",
+    "condition": "shap",
+    "positive": "rrvarma style",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s23",
+    "coalition": "char",
+    "condition": "shap",
+    "positive": "rrvarma style, a prince with a bow, his brother, an old bearded sage, a woman",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s23",
+    "coalition": "action",
+    "condition": "shap",
+    "positive": "rrvarma style, the woman bows at the prince's feet as he blesses her",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s23",
+    "coalition": "setting",
+    "condition": "shap",
+    "positive": "rrvarma style, a quiet forest hermitage among trees",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s23",
+    "coalition": "mood",
+    "condition": "shap",
+    "positive": "rrvarma style, serene, gentle divine glow",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s23",
+    "coalition": "tail",
+    "condition": "shap",
+    "positive": "rrvarma style, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s23",
+    "coalition": "char+action",
+    "condition": "shap",
+    "positive": "rrvarma style, a prince with a bow, his brother, an old bearded sage, a woman, the woman bows at the prince's feet as he blesses her",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s23",
+    "coalition": "char+setting",
+    "condition": "shap",
+    "positive": "rrvarma style, a prince with a bow, his brother, an old bearded sage, a woman, a quiet forest hermitage among trees",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s23",
+    "coalition": "char+mood",
+    "condition": "shap",
+    "positive": "rrvarma style, a prince with a bow, his brother, an old bearded sage, a woman, serene, gentle divine glow",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s23",
+    "coalition": "char+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, a prince with a bow, his brother, an old bearded sage, a woman, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s23",
+    "coalition": "action+setting",
+    "condition": "shap",
+    "positive": "rrvarma style, the woman bows at the prince's feet as he blesses her, a quiet forest hermitage among trees",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s23",
+    "coalition": "action+mood",
+    "condition": "shap",
+    "positive": "rrvarma style, the woman bows at the prince's feet as he blesses her, serene, gentle divine glow",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s23",
+    "coalition": "action+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, the woman bows at the prince's feet as he blesses her, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s23",
+    "coalition": "setting+mood",
+    "condition": "shap",
+    "positive": "rrvarma style, a quiet forest hermitage among trees, serene, gentle divine glow",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s23",
+    "coalition": "setting+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, a quiet forest hermitage among trees, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s23",
+    "coalition": "mood+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, serene, gentle divine glow, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s23",
+    "coalition": "char+action+setting",
+    "condition": "shap",
+    "positive": "rrvarma style, a prince with a bow, his brother, an old bearded sage, a woman, the woman bows at the prince's feet as he blesses her, a quiet forest hermitage among trees",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s23",
+    "coalition": "char+action+mood",
+    "condition": "shap",
+    "positive": "rrvarma style, a prince with a bow, his brother, an old bearded sage, a woman, the woman bows at the prince's feet as he blesses her, serene, gentle divine glow",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s23",
+    "coalition": "char+action+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, a prince with a bow, his brother, an old bearded sage, a woman, the woman bows at the prince's feet as he blesses her, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s23",
+    "coalition": "char+setting+mood",
+    "condition": "shap",
+    "positive": "rrvarma style, a prince with a bow, his brother, an old bearded sage, a woman, a quiet forest hermitage among trees, serene, gentle divine glow",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s23",
+    "coalition": "char+setting+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, a prince with a bow, his brother, an old bearded sage, a woman, a quiet forest hermitage among trees, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s23",
+    "coalition": "char+mood+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, a prince with a bow, his brother, an old bearded sage, a woman, serene, gentle divine glow, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s23",
+    "coalition": "action+setting+mood",
+    "condition": "shap",
+    "positive": "rrvarma style, the woman bows at the prince's feet as he blesses her, a quiet forest hermitage among trees, serene, gentle divine glow",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s23",
+    "coalition": "action+setting+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, the woman bows at the prince's feet as he blesses her, a quiet forest hermitage among trees, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s23",
+    "coalition": "action+mood+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, the woman bows at the prince's feet as he blesses her, serene, gentle divine glow, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s23",
+    "coalition": "setting+mood+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, a quiet forest hermitage among trees, serene, gentle divine glow, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s23",
+    "coalition": "char+action+setting+mood",
+    "condition": "shap",
+    "positive": "rrvarma style, a prince with a bow, his brother, an old bearded sage, a woman, the woman bows at the prince's feet as he blesses her, a quiet forest hermitage among trees, serene, gentle divine glow",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s23",
+    "coalition": "char+action+setting+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, a prince with a bow, his brother, an old bearded sage, a woman, the woman bows at the prince's feet as he blesses her, a quiet forest hermitage among trees, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s23",
+    "coalition": "char+action+mood+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, a prince with a bow, his brother, an old bearded sage, a woman, the woman bows at the prince's feet as he blesses her, serene, gentle divine glow, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s23",
+    "coalition": "char+setting+mood+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, a prince with a bow, his brother, an old bearded sage, a woman, a quiet forest hermitage among trees, serene, gentle divine glow, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s23",
+    "coalition": "action+setting+mood+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, the woman bows at the prince's feet as he blesses her, a quiet forest hermitage among trees, serene, gentle divine glow, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s23",
+    "coalition": "char+action+setting+mood+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, a prince with a bow, his brother, an old bearded sage, a woman, the woman bows at the prince's feet as he blesses her, a quiet forest hermitage among trees, serene, gentle divine glow, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s31",
+    "coalition": "empty",
+    "condition": "shap",
+    "positive": "rrvarma style",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s31",
+    "coalition": "char",
+    "condition": "shap",
+    "positive": "rrvarma style, an elderly grey-haired forest woman in simple cloth, two young princes with bows",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s31",
+    "coalition": "action",
+    "condition": "shap",
+    "positive": "rrvarma style, the old woman offers berries to the princes, who accept humbly",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s31",
+    "coalition": "setting",
+    "condition": "shap",
+    "positive": "rrvarma style, outside a small thatched hut in the forest",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s31",
+    "coalition": "mood",
+    "condition": "shap",
+    "positive": "rrvarma style, warm and devoted, soft dappled daylight",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s31",
+    "coalition": "tail",
+    "condition": "shap",
+    "positive": "rrvarma style, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s31",
+    "coalition": "char+action",
+    "condition": "shap",
+    "positive": "rrvarma style, an elderly grey-haired forest woman in simple cloth, two young princes with bows, the old woman offers berries to the princes, who accept humbly",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s31",
+    "coalition": "char+setting",
+    "condition": "shap",
+    "positive": "rrvarma style, an elderly grey-haired forest woman in simple cloth, two young princes with bows, outside a small thatched hut in the forest",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s31",
+    "coalition": "char+mood",
+    "condition": "shap",
+    "positive": "rrvarma style, an elderly grey-haired forest woman in simple cloth, two young princes with bows, warm and devoted, soft dappled daylight",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s31",
+    "coalition": "char+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, an elderly grey-haired forest woman in simple cloth, two young princes with bows, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s31",
+    "coalition": "action+setting",
+    "condition": "shap",
+    "positive": "rrvarma style, the old woman offers berries to the princes, who accept humbly, outside a small thatched hut in the forest",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s31",
+    "coalition": "action+mood",
+    "condition": "shap",
+    "positive": "rrvarma style, the old woman offers berries to the princes, who accept humbly, warm and devoted, soft dappled daylight",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s31",
+    "coalition": "action+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, the old woman offers berries to the princes, who accept humbly, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s31",
+    "coalition": "setting+mood",
+    "condition": "shap",
+    "positive": "rrvarma style, outside a small thatched hut in the forest, warm and devoted, soft dappled daylight",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s31",
+    "coalition": "setting+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, outside a small thatched hut in the forest, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s31",
+    "coalition": "mood+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, warm and devoted, soft dappled daylight, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s31",
+    "coalition": "char+action+setting",
+    "condition": "shap",
+    "positive": "rrvarma style, an elderly grey-haired forest woman in simple cloth, two young princes with bows, the old woman offers berries to the princes, who accept humbly, outside a small thatched hut in the forest",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s31",
+    "coalition": "char+action+mood",
+    "condition": "shap",
+    "positive": "rrvarma style, an elderly grey-haired forest woman in simple cloth, two young princes with bows, the old woman offers berries to the princes, who accept humbly, warm and devoted, soft dappled daylight",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s31",
+    "coalition": "char+action+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, an elderly grey-haired forest woman in simple cloth, two young princes with bows, the old woman offers berries to the princes, who accept humbly, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s31",
+    "coalition": "char+setting+mood",
+    "condition": "shap",
+    "positive": "rrvarma style, an elderly grey-haired forest woman in simple cloth, two young princes with bows, outside a small thatched hut in the forest, warm and devoted, soft dappled daylight",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s31",
+    "coalition": "char+setting+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, an elderly grey-haired forest woman in simple cloth, two young princes with bows, outside a small thatched hut in the forest, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s31",
+    "coalition": "char+mood+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, an elderly grey-haired forest woman in simple cloth, two young princes with bows, warm and devoted, soft dappled daylight, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s31",
+    "coalition": "action+setting+mood",
+    "condition": "shap",
+    "positive": "rrvarma style, the old woman offers berries to the princes, who accept humbly, outside a small thatched hut in the forest, warm and devoted, soft dappled daylight",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s31",
+    "coalition": "action+setting+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, the old woman offers berries to the princes, who accept humbly, outside a small thatched hut in the forest, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s31",
+    "coalition": "action+mood+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, the old woman offers berries to the princes, who accept humbly, warm and devoted, soft dappled daylight, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s31",
+    "coalition": "setting+mood+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, outside a small thatched hut in the forest, warm and devoted, soft dappled daylight, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s31",
+    "coalition": "char+action+setting+mood",
+    "condition": "shap",
+    "positive": "rrvarma style, an elderly grey-haired forest woman in simple cloth, two young princes with bows, the old woman offers berries to the princes, who accept humbly, outside a small thatched hut in the forest, warm and devoted, soft dappled daylight",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s31",
+    "coalition": "char+action+setting+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, an elderly grey-haired forest woman in simple cloth, two young princes with bows, the old woman offers berries to the princes, who accept humbly, outside a small thatched hut in the forest, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s31",
+    "coalition": "char+action+mood+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, an elderly grey-haired forest woman in simple cloth, two young princes with bows, the old woman offers berries to the princes, who accept humbly, warm and devoted, soft dappled daylight, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s31",
+    "coalition": "char+setting+mood+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, an elderly grey-haired forest woman in simple cloth, two young princes with bows, outside a small thatched hut in the forest, warm and devoted, soft dappled daylight, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s31",
+    "coalition": "action+setting+mood+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, the old woman offers berries to the princes, who accept humbly, outside a small thatched hut in the forest, warm and devoted, soft dappled daylight, oil painting, canvas texture, classical indian art",
+    "negative": "ugly, blurry, bad anatomy"
+  },
+  {
+    "scene_id": "s31",
+    "coalition": "char+action+setting+mood+tail",
+    "condition": "shap",
+    "positive": "rrvarma style, an elderly grey-haired forest woman in simple cloth, two young princes with bows, the old woman offers berries to the princes, who accept humbly, outside a small thatched hut in the forest, warm and devoted, soft dappled daylight, oil painting, canvas texture, classical indian art",
     "negative": "ugly, blurry, bad anatomy"
   }
 ]

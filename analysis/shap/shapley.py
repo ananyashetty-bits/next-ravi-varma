@@ -48,7 +48,7 @@ def parse_coalition(c):
     return frozenset() if c == "empty" else frozenset(c.split("+"))
 
 def records_from(data):
-    recs = data if isinstance(data, list) else next((data[k] for k in ("images", "results", "scores") if k in data), None)
+    recs = data if isinstance(data, list) else next((data[k] for k in ("items", "images", "results", "scores") if k in data), None)
     if recs is None:
         raise ValueError("cannot find per-image records in the scores file")
     out = []
@@ -105,16 +105,19 @@ def by_tier(phi, dev_path):
     return {str(t): {"n_scenes": len(ps), **{pl: fmean(p[pl] for p in ps) for pl in ORDER}}
             for t, ps in sorted(groups.items())}
 
-def value_per_token(mean_phi, scenes_path, scene_ids):
+def _n_tokens(text):
     sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
-    from common.tokens import n_tokens
+    from common.tokens import n_tokens   # CLIP tokenizer (downloads from the Hub)
+    return n_tokens(text)
+
+def value_per_token(mean_phi, scenes_path, scene_ids):
     scenes = json.load(open(scenes_path, encoding="utf-8"))
     scenes = scenes if isinstance(scenes, list) else list(scenes.values())
     toks = defaultdict(list)
     for sc in scenes:
         if sc["scene_id"] in scene_ids:
             for p in ORDER:
-                toks[p].append(n_tokens(sc["players"][p]))
+                toks[p].append(sc["player_tokens"][p] if "player_tokens" in sc else _n_tokens(sc["players"][p]))
     rows = {p: {"mean_tokens": fmean(toks[p]), "faithfulness_per_token": mean_phi[p] / fmean(toks[p])} for p in ORDER}
     return dict(sorted(rows.items(), key=lambda kv: -kv[1]["faithfulness_per_token"]))
 

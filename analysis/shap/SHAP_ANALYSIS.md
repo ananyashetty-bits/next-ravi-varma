@@ -1,54 +1,40 @@
-# SHAP Attribution Analysis
+# SHAP attribution: which parts of a prompt matter
 
-## Results
-Calculates marginal Shapley values across 5 prompt players (char, action, setting, mood, tail) and verifies efficiency axioms.
+Tests hypotheses H-A4 to H-A6 (`experiments/HYPOTHESES.md` Section A).
 
-# SHAP Attribution & Prompt Efficiency Analysis
+**Status, 18 Nov:** pending; the run is set up (`analysis/RUNBOOK_TOKEN_SHAP.md`). This file previously
+contained attribution numbers that no scored images back (`eval/CLAIMS_AUDIT.md` §5). Those numbers were
+removed, and nothing from them may be cited.
 
-## 1. Game Formulation
-To quantify the exact alignment contribution of individual prompt elements, prompt expansion is modeled as a 5-player cooperative game:
+## 1. Game
+- **Players:** five prompt parts, `char`, `action`, `setting`, `mood` and `tail`. Each is a name-free phrase of
+  ≤ 14 words, written per scene in `analysis/shap/shap_scenes.json`.
+- **Coalitions:** a coalition's prompt is the trigger plus its players in fixed order
+  (`analysis/shap/coalitions.py`). The empty coalition is the trigger alone.
+- **Value v(S):** the score of coalition S's images, averaged over seeds 1-2. The same seeds are used for every
+  coalition (common random numbers).
+- **Metrics:** `checklist` for faithfulness, `style_margin` for style, and `clip_raw` as a second faithfulness
+  measure.
+- **Scale:** 8 dev scenes (2 per tier from 1 to 4: s09, s10, s12, s27, s13, s21, s23, s31) × 32 coalitions ×
+  2 seeds = **512 images**.
+- **Computation:** exact Shapley values per scene (`analysis/shap/shapley.py`). The efficiency check
+  (Σφ = v(all) − v(∅)) is asserted for every scene. The mean over scenes gets a 95% bootstrap CI over scenes.
 
-$$\mathcal{N} = \{ \text{char}, \text{action}, \text{setting}, \text{mood}, \text{tail} \}$$
+## 2. Shapley values
+Pending.
 
-- **Total Coalitions ($2^5 = 32$)**: Evaluated across metric JSON outputs in `outputs/eval/shap_metrics.json`.
-- **Characteristic Function $v(S)$**: Measures the CLIP text-image alignment score achieved by coalition $S \subseteq \mathcal{N}$.
+## 3. Interactions
+`char×setting` and `tail×mood`, as Shapley interaction indices. Pending.
 
----
+## 4. Value per token
+Mean φ (faithfulness) divided by each player's mean CLIP token count. Pending.
 
-## 2. Shapley Value Attributions ($\phi_i$)
+## 5. Hypotheses
+| Hypothesis | Test | Result |
+|---|---|---|
+| H-A4: `char` and `action` have the highest φ for faithfulness | Rank of mean φ (`checklist`), with CIs | pending |
+| H-A5: `tail` > 0 for style, ≈ 0 or < 0 for faithfulness | φ_tail CIs on `style_margin` and `checklist` | pending |
+| H-A6: names add ≈ 0 once descriptions are present | `with_names` − `full` (`pipeline/TOKEN_BUDGET.md`) | pending |
 
-Shapley values calculate the weighted marginal contribution of each player across all possible coalition permutations:
-
-$$\phi_i(v) = \sum_{S \subseteq \mathcal{N} \setminus \{i\}} \frac{\vert{}S\vert{}!(\vert{}\mathcal{N}\vert{} - \vert{}S\vert{} - 1)!}{\vert{}\mathcal{N}\vert{}!} \left( v(S \cup \{i\}) - v(S) \right)$$
-
-### Attribution Results
-| Player | Component | Avg. Marginal Contribution ($\phi_i$) | Relative Impact |
-| :--- | :--- | :--- | :--- |
-| `char` | Character Description | +0.382 | **Primary Driver** |
-| `setting` | Environmental Context | +0.264 | **High Synergy** |
-| `mood` | Lighting & Emotion | +0.185 | Moderate |
-| `action` | Subject Action/Pose | +0.112 | Moderate |
-| `tail` | Generic Quality Modifiers | +0.057 | Low Efficiency |
-
----
-
-## 3. Axiomatic Sanity Verification
-
-The computed attributions satisfy all core Shapley game properties:
-
-1. **Efficiency Axiom**: 
-   $$\sum_{i \in \mathcal{N}} \phi_i = v(\mathcal{N}) - v(\emptyset) = 1.000$$
-2. **Symmetry**: Identical players receive equal marginal value attributions.
-3. **Dummy Player**: Players contributing zero marginal gain to all coalitions receive $\phi_i = 0$.
-
----
-
-## 4. Key Interaction & Synergy Insights
-
-- **`(char, setting)` Synergy**: Combining `char` and `setting` yields a super-additive joint score exceeding their sum in isolation ($v(\{\text{char}, \text{setting}\}) > v(\{\text{char}\}) + v(\{\text{setting}\})$).
-- **`tail` Redundancy**: Quality modifiers (`tail`) consume significant CLIP token space while contributing < 6% of overall alignment value.
-
----
-
-## 5. Recommendation for Optimization
-Trimming redundant tokens from `tail` increases token efficiency without diminishing visual alignment, reserving capacity for detailed `char` and `setting` prompts.
+## 6. Limits
+Pending.

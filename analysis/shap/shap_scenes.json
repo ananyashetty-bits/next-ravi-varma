@@ -1,22 +1,186 @@
 [
   {
-    "scene_id": "s07", 
+    "scene_id": "s09",
+    "tier": 1,
+    "text": "Sita sitting alone under a tree in the Ashoka grove, sorrowful, the garden quiet at dusk",
+    "names": [
+      "Sita"
+    ],
     "players": {
-      "char": "a crowned king in a saffron dhoti, a fallen warrior in golden armor",
-      "action": "kneeling and weeping over the fallen body",
-      "setting": "open battlefield, broken chariot, dusty sky",
-      "mood": "dim dramatic light, shadowed faces",
+      "char": "a young woman in a red sari with yellow border, gold bangles and necklace",
+      "action": "sitting alone on the ground, head bowed, looking sorrowful",
+      "setting": "beneath a flowering tree in a quiet palace garden grove",
+      "mood": "dusk, soft fading light, still and melancholy",
       "tail": "oil painting, canvas texture, classical indian art"
+    },
+    "player_tokens": {
+      "char": 16,
+      "action": 13,
+      "setting": 10,
+      "mood": 9,
+      "tail": 9
     }
   },
   {
-    "scene_id": "s08", 
+    "scene_id": "s10",
+    "tier": 1,
+    "text": "Karna standing proudly with his bow at sunrise, golden armour shining",
+    "names": [
+      "Karna"
+    ],
     "players": {
-      "char": "a royal woman in a red sari with gold embroidery",
-      "action": "sitting gracefully and looking sorrowful",
-      "setting": "dense forest grove, large ashoka trees",
-      "mood": "soft dappled sunlight, melancholic atmosphere",
+      "char": "a bare-chested warrior in golden armour with large gold earrings",
+      "action": "standing tall and proud, holding a great bow upright",
+      "setting": "an open plain under a wide sky at sunrise",
+      "mood": "warm golden morning light, heroic and dignified",
       "tail": "oil painting, canvas texture, classical indian art"
+    },
+    "player_tokens": {
+      "char": 13,
+      "action": 10,
+      "setting": 9,
+      "mood": 9,
+      "tail": 9
+    }
+  },
+  {
+    "scene_id": "s12",
+    "tier": 2,
+    "text": "Hanuman kneeling before Rama and offering him Sita's ring, Rama reaching out to take it",
+    "names": [
+      "Hanuman",
+      "Rama"
+    ],
+    "players": {
+      "char": "a monkey-faced figure in a red dhoti, a crowned man in a yellow dhoti",
+      "action": "the monkey-faced figure kneels offering a ring, the man reaching out for it",
+      "setting": "a forest clearing with tall trees and rocks",
+      "mood": "solemn and reverent, soft daylight",
+      "tail": "oil painting, canvas texture, classical indian art"
+    },
+    "player_tokens": {
+      "char": 19,
+      "action": 17,
+      "setting": 8,
+      "mood": 8,
+      "tail": 9
+    }
+  },
+  {
+    "scene_id": "s27",
+    "tier": 2,
+    "text": "yashodha scolding little krishn, his face smeared with butter and a broken pot lying on the floor beside them",
+    "names": [
+      "Yashoda",
+      "Krishna"
+    ],
+    "players": {
+      "char": "a woman in a draped sari with a flowered bun, a small blue-skinned boy",
+      "action": "she bends over scolding him, his face smeared with butter",
+      "setting": "inside a village house courtyard, a broken clay pot on the floor",
+      "mood": "playful, warm domestic light",
+      "tail": "oil painting, canvas texture, classical indian art"
+    },
+    "player_tokens": {
+      "char": 18,
+      "action": 14,
+      "setting": 13,
+      "mood": 5,
+      "tail": 9
+    }
+  },
+  {
+    "scene_id": "s13",
+    "tier": 3,
+    "text": "Krishna as the peace envoy standing in Duryodhana's royal court, speaking to the king on his throne while ministers and courtiers watch",
+    "names": [
+      "Krishna",
+      "Duryodhana"
+    ],
+    "players": {
+      "char": "a blue-skinned man in a peacock-feather crown, a king in red turban",
+      "action": "the blue-skinned man stands speaking to the king seated on his throne",
+      "setting": "a pillared royal hall with watching courtiers",
+      "mood": "tense and formal, warm lamplight",
+      "tail": "oil painting, canvas texture, classical indian art"
+    },
+    "player_tokens": {
+      "char": 19,
+      "action": 14,
+      "setting": 10,
+      "mood": 7,
+      "tail": 9
+    }
+  },
+  {
+    "scene_id": "s21",
+    "tier": 3,
+    "text": "Rama, Lakshmana and Hanuman sitting on rocks by the sea shore, planning the crossing to Lanka",
+    "names": [
+      "Rama",
+      "Lakshmana",
+      "Hanuman"
+    ],
+    "players": {
+      "char": "two princes in yellow dhotis with bows, a monkey-faced figure with a mace",
+      "action": "sitting together on rocks, talking and planning",
+      "setting": "a rocky sea shore with crashing waves",
+      "mood": "dark cloudy sky, serious and determined",
+      "tail": "oil painting, canvas texture, classical indian art"
+    },
+    "player_tokens": {
+      "char": 18,
+      "action": 8,
+      "setting": 7,
+      "mood": 7,
+      "tail": 9
+    }
+  },
+  {
+    "scene_id": "s23",
+    "tier": 4,
+    "text": "Ram freeing a woman from a curse, Lakshman and a sage standing beside him, the woman bowing at his feet",
+    "names": [
+      "Rama",
+      "Lakshmana"
+    ],
+    "players": {
+      "char": "a prince with a bow, his brother, an old bearded sage, a woman",
+      "action": "the woman bows at the prince's feet as he blesses her",
+      "setting": "a quiet forest hermitage among trees",
+      "mood": "serene, gentle divine glow",
+      "tail": "oil painting, canvas texture, classical indian art"
+    },
+    "player_tokens": {
+      "char": 16,
+      "action": 13,
+      "setting": 6,
+      "mood": 5,
+      "tail": 9
+    }
+  },
+  {
+    "scene_id": "s31",
+    "tier": 4,
+    "text": "old Shabri offerring berries to Ram and Laxman outside her little hut in the forrest",
+    "names": [
+      "Shabari",
+      "Rama",
+      "Lakshmana"
+    ],
+    "players": {
+      "char": "an elderly grey-haired forest woman in simple cloth, two young princes with bows",
+      "action": "the old woman offers berries to the princes, who accept humbly",
+      "setting": "outside a small thatched hut in the forest",
+      "mood": "warm and devoted, soft dappled daylight",
+      "tail": "oil painting, canvas texture, classical indian art"
+    },
+    "player_tokens": {
+      "char": 16,
+      "action": 13,
+      "setting": 9,
+      "mood": 8,
+      "tail": 9
     }
   }
 ]
