@@ -60,11 +60,9 @@ Raters tagged one main failure per rated image (`results/human_ratings_dev.json`
   usable for comparing conditions, but not for judging single images.
 
 ## 4. Known issues to fix early in M4
-- **`text_to_image()` still imports the stub parser** (`kb/stub_parser.py`). This does not affect `mode="raw"`. For
-  the KB modes, switch it to `kb.parser.parse_scene`, or use `expander/batch_expand.py` + `pipeline/run_batch.py`,
-  which is how every evaluated image was made.
-- **`pipeline/cli.py`:** `generate` and `batch` work. `expand` calls a `pipeline/expand.py` that does not exist
-  (use `expander/batch_expand.py`), and `evaluate` calls `pipeline/eval.py` (use `eval/score.py` for scored results).
+- **`text_to_image()` defaults to `mode="raw"`** and uses C's real parser for the KB modes (fixed 18 Nov). An LLM
+  mode loads and frees a 4B LLM on each call, so for many scenes use `expander/batch_expand.py` +
+  `pipeline/run_batch.py` (how every evaluated image was made).
 - **Fixed settings:** 512×512 only; one base model; LoRA weights at a Google Drive path set in `config/m3.json`.
 - **Negative prompt:** M3 used `ugly, blurry, bad anatomy` throughout. The M2 kit's longer negative is a reasonable
   M4 experiment, but it is untested here.

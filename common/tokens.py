@@ -1,8 +1,8 @@
 from functools import lru_cache
 from transformers import CLIPTokenizer
-import json
+import json, os
 
-CFG = json.load(open("config/m3.json"))
+CFG = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "config", "m3.json")))   # works from any directory
 
 @lru_cache(1)
 def _tok(): return CLIPTokenizer.from_pretrained(CFG["base_model"], subfolder="tokenizer")

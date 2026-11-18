@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "config/m3.json (Overview \u00a76.1)",
+  "type": "object",
+  "required": [
+    "base_model",
+    "trigger",
+    "style_tail",
+    "negative",
+    "safety_checker",
+    "sampler",
+    "steps",
+    "cfg",
+    "size",
+    "max_prompt_tokens",
+    "dev_seeds",
+    "heldout_seeds",
+    "default_model",
+    "models"
+  ],
+  "properties": {
+    "base_model": {
+      "type": "string"
+    },
+    "trigger": {
+      "type": "string",
+      "minLength": 1
+    },
+    "style_tail": {
+      "type": "string"
+    },
+    "negative": {
+      "type": "string"
+    },
+    "safety_checker": {
+      "type": "boolean"
+    },
+    "sampler": {
+      "type": "string"
+    },
+    "steps": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "cfg": {
+      "type": "number"
+    },
+    "size": {
+      "type": "integer",
+      "multipleOf": 8
+    },
+    "max_prompt_tokens": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 75
+    },
+    "dev_seeds": {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      },
+      "minItems": 1
+    },
+    "heldout_seeds": {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      },
+      "minItems": 1
+    },
+    "default_model": {
+      "type": "string"
+    },
+    "models": {
+      "type": "object",
+      "required": [
+        "base"
+      ],
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "lora_path": {
+            "type": "string"
+          },
+          "scale": {
+            "type": "number"
+          },
+          "sha256": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "additionalProperties": true
+}

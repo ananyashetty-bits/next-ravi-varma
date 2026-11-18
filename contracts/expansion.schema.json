@@ -2,10 +2,48 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "required": [
-    "scene_id", "condition", "split", "positive", "negative", 
-    "phrases_kept", "phrases_dropped", "token_count", 
-    "trigger_first", "names_leaked", "source", "layout", 
-    "llm_model", "prompt_version", "kb_version", "latency_s"
+    "scene_id",
+    "condition",
+    "split",
+    "positive",
+    "negative",
+    "phrases_kept",
+    "phrases_dropped",
+    "token_count",
+    "trigger_first",
+    "names_leaked",
+    "source",
+    "layout",
+    "llm_model",
+    "prompt_version",
+    "kb_version",
+    "latency_s"
   ],
-  "additionalProperties": true
+  "additionalProperties": true,
+  "title": "ExpandedPrompt (Overview \u00a76.4): outputs/expansions/c*.json",
+  "properties": {
+    "scene_id": {
+      "type": "string"
+    },
+    "condition": {
+      "type": "string"
+    },
+    "positive": {
+      "type": "string",
+      "minLength": 1
+    },
+    "negative": {
+      "type": "string"
+    },
+    "token_count": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "trigger_first": {
+      "type": "boolean"
+    },
+    "names_leaked": {
+      "type": "array"
+    }
+  }
 }

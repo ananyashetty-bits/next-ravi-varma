@@ -56,8 +56,11 @@ def generate(positive, negative, seed, model=None, lora_scale=None, control_imag
                 guidance_scale=CFG["cfg"], height=CFG["size"], width=CFG["size"],
                 generator=g).images[0]
 
-def text_to_image(text, seed, mode="llm_kb", model=None):
-    from kb.stub_parser import parse_scene            # -> from kb.parser import parse_scene at S2
+def text_to_image(text, seed, mode="raw", model=None):
+    """text -> (image, ExpandedPrompt, SceneSpec). mode "raw" (c1) is the default pipeline
+    (docs/TEAM_DECISIONS_M3.md D1); template / llm_kb / llm_nokb / llm_kb_layout use D's expander."""
+    sys.path.insert(0, ROOT)
+    from kb.parser import parse_scene                 # C's real parser with kb/kb.json
     from expander.expand import expand                # D's real module
     scene = parse_scene(text)
     exp = expand(text, scene, mode)

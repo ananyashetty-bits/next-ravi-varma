@@ -1,0 +1,97 @@
+[
+  {
+    "id": "f01",
+    "split": "fixture",
+    "tier": 1,
+    "expected_epic": "Ramayana",
+    "expected_characters": [
+      "Sita"
+    ],
+    "text": "Sita sitting alone beside a lotus pond at dusk, lost in thought",
+    "seen_in_training": false,
+    "contributed_by": "fixture",
+    "checklist": [
+      {
+        "id": "c1",
+        "q": "Is there exactly one person in the image?",
+        "type": "count",
+        "weight": 1.0
+      },
+      {
+        "id": "c2",
+        "q": "Is the person a woman?",
+        "type": "figure",
+        "weight": 1.0
+      },
+      {
+        "id": "c3",
+        "q": "Is there water in the scene?",
+        "type": "setting",
+        "weight": 1.0
+      }
+    ]
+  },
+  {
+    "id": "f02",
+    "split": "fixture",
+    "tier": 2,
+    "expected_epic": "Mahabharata",
+    "expected_characters": [
+      "Krishna",
+      "Arjuna"
+    ],
+    "text": "Krishna pointing toward the horizon while Arjuna listens, both standing in a chariot",
+    "seen_in_training": false,
+    "contributed_by": "fixture",
+    "checklist": [
+      {
+        "id": "c1",
+        "q": "Are there two main figures?",
+        "type": "count",
+        "weight": 1.0
+      },
+      {
+        "id": "c2",
+        "q": "Does one figure have blue skin?",
+        "type": "figure",
+        "weight": 1.0
+      },
+      {
+        "id": "c3",
+        "q": "Is there a chariot?",
+        "type": "object",
+        "weight": 1.0
+      }
+    ]
+  },
+  {
+    "id": "f03",
+    "split": "fixture",
+    "tier": 5,
+    "expected_epic": "Unknown",
+    "expected_characters": [],
+    "text": "an old woman lighting an oil lamp in a temple courtyard at night",
+    "seen_in_training": false,
+    "contributed_by": "fixture",
+    "checklist": [
+      {
+        "id": "c1",
+        "q": "Is there an elderly woman?",
+        "type": "figure",
+        "weight": 1.0
+      },
+      {
+        "id": "c2",
+        "q": "Is there a lit lamp?",
+        "type": "object",
+        "weight": 1.0
+      },
+      {
+        "id": "c3",
+        "q": "Is it night?",
+        "type": "setting",
+        "weight": 1.0
+      }
+    ]
+  }
+]

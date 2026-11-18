@@ -40,8 +40,8 @@ release()
   `torch.Generator("cuda").manual_seed(seed)`, so results do not depend on call order. `control_image` is
   reserved for M4.
 - **`text_to_image`:** parse → expand → `close()` the LLM if one was loaded → generate. Modes: `raw` (c1, the
-  default pipeline), `template` (c2), `llm_kb` (c3), `llm_nokb` (c4), `llm_kb_layout` (c5). It currently imports
-  `kb/stub_parser.py`, which only matters for the KB modes (see §6).
+  default pipeline), `template` (c2), `llm_kb` (c3), `llm_nokb` (c4), `llm_kb_layout` (c5). Parsing uses C's `kb/parser.py`
+  with `kb/kb.json`; the default mode is `raw`.
 
 ## 4. Batch runner (`pipeline/run_batch.py`)
 ```bash
@@ -69,10 +69,12 @@ A full condition (24 scenes × 2 seeds) takes about 4-5 minutes, including loadi
 ## 6. CLI (`pipeline/cli.py`)
 | Subcommand | Status |
 |---|---|
-| `generate "<text>" --mode raw --seed 1 --out x.png` | works (wraps `text_to_image`; prints the prompt, token count and seconds) |
-| `batch --raw/--expansions … --model rrv_v1 --seeds 1 2 --out <dir>` | works (wraps `run_batch.py`) |
-| `expand` | broken: calls `pipeline/expand.py`, which does not exist. Use `expander/batch_expand.py`. |
-| `evaluate` | calls `pipeline/eval.py` (CLIP/hash metrics only). Use `eval/score.py` for scored results. |
+| `generate "<text>" --seed 1 --out x.png [--mode raw] [--model rrv_v1]` | `text_to_image` in-process; prints the characters, prompt, token count and seconds |
+| `batch --raw <scenes> [--condition c1_lora_raw] / --expansions <file> --seeds 1 2 --out <dir>` | runs `pipeline/run_batch.py` |
+| `expand --scenes <file> --mode <mode> --out <file> …` | runs `expander/batch_expand.py` with the same options |
+| `evaluate --manifest <dir>/manifest.json --out <results file> …` | runs `eval/score.py` with the same options |
+
+All subcommands work from any directory. `pipeline/eval.py` (CLIP/hash metrics from early runs) is no longer used.
 
 ## 7. Reproducing an evaluated image
 Run the same scene, condition and seed with `run_batch.py`. The manifest records the git sha and config hash of

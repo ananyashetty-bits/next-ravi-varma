@@ -2,8 +2,61 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "required": [
-    "id", "raw", "epic", "characters", "setting", 
-    "action", "mood", "unknown_entities", "kb_version"
+    "id",
+    "raw",
+    "epic",
+    "characters",
+    "setting",
+    "action",
+    "mood",
+    "unknown_entities",
+    "kb_version"
   ],
-  "additionalProperties": true
+  "additionalProperties": true,
+  "title": "SceneSpec (Overview \u00a76.3): output of kb.parser.parse_scene",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "raw": {
+      "type": "string"
+    },
+    "epic": {
+      "type": "string"
+    },
+    "characters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "canonical",
+          "visual"
+        ]
+      }
+    },
+    "setting": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "action": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "mood": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "unknown_entities": {
+      "type": "array"
+    },
+    "kb_version": {
+      "type": "string"
+    }
+  }
 }
