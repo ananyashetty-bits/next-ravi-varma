@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Test scene (Overview \u00a76.2): eval/test_scenes_*.json, fixtures/test_scenes.json",
+  "type": "object",
+  "required": [
+    "id",
+    "split",
+    "tier",
+    "expected_epic",
+    "expected_characters",
+    "text",
+    "seen_in_training",
+    "contributed_by",
+    "checklist"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "split": {
+      "enum": [
+        "dev",
+        "heldout",
+        "fixture"
+      ]
+    },
+    "tier": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5
+    },
+    "expected_epic": {
+      "type": "string"
+    },
+    "expected_characters": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "text": {
+      "type": "string",
+      "minLength": 1
+    },
+    "seen_in_training": {
+      "type": "boolean"
+    },
+    "contributed_by": {
+      "type": "string"
+    },
+    "checklist": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "q",
+          "type",
+          "weight"
+        ],
+        "properties": {
+          "q": {
+            "type": "string"
+          },
+          "type": {
+            "enum": [
+              "attire",
+              "count",
+              "figure",
+              "identity",
+              "mood",
+              "object",
+              "pose",
+              "setting"
+            ]
+          },
+          "weight": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          }
+        }
+      }
+    }
+  },
+  "additionalProperties": true
+}

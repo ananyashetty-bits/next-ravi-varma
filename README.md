@@ -15,8 +15,8 @@ so they run in **separate Colab sessions** and exchange files on Google Drive.
 | Profile | Install | Used for |
 |---|---|---|
 | `gen` | `bash pipeline/setup_session.sh gen` | image generation (`pipeline/`) |
-| `llm` | `pip install -r expander/requirements_llm.txt` | LLM prompt expansion (`expander/`) |
-| `eval` | `pip install -r eval/requirements_eval.txt` | judge + metrics (`eval/`) |
+| `llm` | `bash pipeline/setup_session.sh llm` | LLM prompt expansion (`expander/`) |
+| `eval` | `bash pipeline/setup_session.sh eval` | judge + metrics (`eval/`) |
 | tests | `pip install pytest jsonschema rapidfuzz pyyaml numpy pillow` | `pytest -q tests` (CPU) |
 
 **Drive prerequisites** (paths are set in `config/m3.json`):
@@ -49,7 +49,8 @@ session); after that, each image takes about 5 s on a T4 (`pipeline/PIPELINE.md`
 ```bash
 python pipeline/cli.py generate "Sita sitting alone under a tree in the Ashoka grove, sorrowful" --mode raw --seed 1 --out sita_s1.png
 ```
-**Interactive demo:** `pipeline/demo.ipynb`.
+**Demo notebook:** `pipeline/demo.ipynb` (open it in Colab with a T4): three scenes, a same-seed check, base vs LoRA,
+the CLI, and one KB-based mode. It is also the cold-start test.
 
 ## Other pipelines (the M3 ablation)
 | `mode` | Condition | What the model sees |
@@ -61,9 +62,9 @@ python pipeline/cli.py generate "Sita sitting alone under a tree in the Ashoka g
 | `llm_kb_layout` | c5 | c3 + layout phrases (built, not evaluated) |
 | model `base` + `raw` | c0 | the same, without the LoRA |
 
-**Known limitation:** `text_to_image()` still imports the stub parser (`kb/stub_parser.py`). For the KB modes,
-generate the way the evaluated runs did instead: expand with `expander/batch_expand.py` (C's parser and KB), then
-generate with `pipeline/run_batch.py --expansions …`. That route is shown below and in the runbooks.
+`text_to_image()` uses C's parser (`kb/parser.py`) and KB for every mode. The LLM modes load a 4B LLM first, then
+free it before generating. For many scenes, use the batch route below (expand with `expander/batch_expand.py`, then
+generate with `pipeline/run_batch.py --expansions …`), which is how every evaluated image was made.
 
 ## Batch runs (how all evaluated images were made)
 ```bash
@@ -100,8 +101,9 @@ the LoRA sha256, library versions and per-image seconds.
 | `m2kit/` | M2 code, unchanged |
 
 ## Cold-start check (fresh runtime, README only)
-1. Run the Quick start in a new Colab runtime. You should get an image and the expanded prompt.
-2. Run the CLI line. It should save a PNG and print the timing.
+1. Open `pipeline/demo.ipynb` in a new Colab runtime (T4) and run all cells. It should show three images, print
+   `reproducible`, show base vs LoRA, run the CLI once, and show the template mode.
+2. Or, without the notebook: run the Quick start, then the CLI line. Each should save a PNG.
 3. Reproduce an evaluated image: `python pipeline/run_batch.py --raw eval/test_scenes_heldout.json --condition c1_lora_raw --seeds 1 --out /content/check`,
    then compare `h01_s1.png` with `M3/heldout_images/c1_lora_raw@rrv_v1/heldout/h01_s1.png` on the evaluator's Drive.
    The pixels can differ slightly across torch versions, but the composition should match.

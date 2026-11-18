@@ -1,0 +1,61 @@
+[
+  {
+    "id": "f01",
+    "raw": "Sita sitting alone beside a lotus pond at dusk, lost in thought",
+    "epic": "Ramayana",
+    "characters": [
+      {
+        "mention": "Sita",
+        "canonical": "Sita",
+        "visual": "woman in red sari with yellow border, gold bangles, earrings and necklace",
+        "coverage": "high"
+      }
+    ],
+    "setting": {
+      "name": "lake",
+      "visual": "calm forest lake under full moon behind clouds, rocks and grass at the edge"
+    },
+    "action": "sitting alone beside a lotus pond at dusk, lost in thought",
+    "mood": "",
+    "unknown_entities": [],
+    "kb_version": "kb0.4"
+  },
+  {
+    "id": "f02",
+    "raw": "Krishna pointing toward the horizon while Arjuna listens, both standing in a chariot",
+    "epic": "Mahabharata",
+    "characters": [
+      {
+        "mention": "Krishna",
+        "canonical": "Krishna",
+        "visual": "dark blue-skinned man, curly black hair, peacock-feather crown, flower garland, yellow dhoti, necklace, armband",
+        "coverage": "high"
+      },
+      {
+        "mention": "Arjuna",
+        "canonical": "Arjuna",
+        "visual": "man with jewelled crown, moustache, rich kurta, gold shoulder pads, jewelled earrings, necklaces, tilak",
+        "coverage": "medium"
+      }
+    ],
+    "setting": null,
+    "action": "pointing toward the horizon while listens, both standing in a chariot",
+    "mood": "",
+    "unknown_entities": [],
+    "kb_version": "kb0.4"
+  },
+  {
+    "id": "f03",
+    "raw": "an old woman lighting an oil lamp in a temple courtyard at night",
+    "epic": "Unknown",
+    "characters": [],
+    "setting": {
+      "name": "palace",
+      "visual": "sandstone-pillared courtyard, stone steps with raised planters of potted plants, forest beyond"
+    },
+    "action": "an old woman lighting an oil lamp in a temple courtyard at night",
+    "mood": "",
+    "unknown_entities": [],
+    "kb_version": "kb0.4"
+  }
+]
