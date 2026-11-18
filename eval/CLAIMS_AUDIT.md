@@ -104,7 +104,17 @@ Of the 11 missed characters:
 The wrong epics are mostly "Unknown" in scenes where no character was recognised. So the parser never invents a
 character, but the KB covers too few characters for unseen scenes: H-C1 holds on dev and fails on held-out.
 
-## 9. Summary for owners
+## 9. Status update (18 Nov)
+Resolved in #84:
+- **A3:** `HANDOFF_M4.md` now starts M4 from c1 (`mode="raw"`), with the evidence.
+- **A4:** `docs/TEAM_DECISIONS_M3.md` created (D1-D7).
+- **A5:** `pipeline/PIPELINE.md` completed, with the measured timings (model load 53 s first / ~9 s cached).
+- **A6:** `README.md` added.
+- **CI:** `numpy` and `pillow` installed, so the stats, key and grid tests run.
+
+Still open: **A1** (SHAP), **A2** (token budget), **A7** (LoRA scale for the 2 Nov images), and C's and D's updates.
+
+## 10. Summary for owners
 
 | Owner | Must fix | Updates |
 |---|---|---|
