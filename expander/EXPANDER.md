@@ -2,7 +2,7 @@
 
 `expand(text, scene=None, mode="llm_kb") -> ExpandedPrompt` turns a user's epic-scene sentence into a prompt the M2 model (`rrv_v1`) can render: name-free visual phrases, the trigger first, the style tail last, under the token limit. It runs a **local** instruct LLM (no paid API) with a deterministic template as the fallback.
 
-> **Status (2026-11-16):** the design and all modes are built and tested (`tests/test_expander_*.py`). c2, c3 and c4 are expanded, generated and scored on all 24 dev scenes (§9). Human ratings are in (B, #73). **H-D1 and H-D2: no clear difference**, and raw text with the LoRA (c1) is more faithful than every expanded condition (§9). Held-out rows wait for B's run. **c2 and c3 run on D's interim KB `d-kb0`** (`expander/interim_kb/`), because C's KB and parser were not available (#21); see the Section D deviations. The only open item is the held-out rows (`TODO(B, held-out)`, §9); no number goes in by hand. Contracts referred to: Overview v2 §6 (`config/m3.json`, SceneSpec, ExpandedPrompt, signatures, CLI).
+> **Status (2026-11-18):** the design and all modes are built and tested (`tests/test_expander_*.py`). c2, c3 and c4 are expanded, generated and scored on all 24 dev scenes (§9). Human ratings are in (B, #73). **H-D1 and H-D2: no clear difference**, and raw text with the LoRA (c1) is more faithful than every expanded condition (§9). Held-out (12 unseen scenes, B, #82) replicates the main result and goes against H-D2 (§9). **c2 and c3 run on D's interim KB `d-kb0`** (`expander/interim_kb/`), because C's KB and parser were not available (#21); see the Section D deviations. No number goes in by hand. Contracts referred to: Overview v2 §6 (`config/m3.json`, SceneSpec, ExpandedPrompt, signatures, CLI).
 
 ## 1. Design principle
 
@@ -188,7 +188,39 @@ All conditions pass the memorisation guardrail (`max_train_dino` p95 ≤ M2's `m
 - **Context:** both nulls sit under a larger result. **Raw text with the LoRA (c1) is more faithful than every expanded condition** on human ratings, and the judge points the same way (c1 → c3 −0.055 [−0.113, −0.003]). The default pipeline by B's B.3 rule is `c1_lora_raw`.
 - **What the expander does achieve:** every record is valid, name-free and within 70 tokens. c3 is more Varma-like than the template on the judge (`style_margin`) and rated higher on quality. Which KB c3 uses (D's interim vs C's) makes no clear difference on the judge.
 
-`TODO(B, held-out)`: held-out rows after B's run.
+**Held-out (12 unseen scenes, seeds 1-2; reported, never used to decide).**
+- **Source:** `eval/EVAL_REPORT.md` §4, `results/human_ratings_heldout.json`, `results/*_heldout.json`.
+- **Ratings:** all six conditions rated blind on one sheet, seed 1, two raters per image.
+- **Conditions:** c2 and c4 are D's frozen commands; c3 is `c3_llm_kb_ckb` (C's KB `kb0.2`), as on dev.
+
+| a → b | n | Human faithfulness, b − a [95% CI], W/T/L | Style | Judge checklist |
+|---|---|---|---|---|
+| c2 → c3 (H-D1) | 12 | −0.25 [−0.62, +0.08], 3/4/5 | −0.08 [−0.42, +0.17] | −0.048 [−0.101, +0.003] |
+| c4 → c3 (H-D2) | 12 | **−0.50 [−0.88, −0.12]**, 1/5/6 | **−0.33 [−0.58, −0.08]** | −0.044 [−0.105, +0.011] |
+| c4 → c3 (H-D2), tier 4 | 3 | c4 2.00 → c3 2.00 (means; not resolvable) | — | 0.564 → 0.549 |
+| c1 → c3 | 12 | **−0.50 [−0.83, −0.17]**, 1/4/7 | −0.29 [−0.62, 0.00] | −0.069 [−0.136, +0.001] |
+| c1 → c2 | 12 | −0.25 [−0.54, 0.00], 0/9/3 | **−0.21 [−0.42, −0.04]** | −0.022 [−0.065, +0.023] |
+| c1 → c4 | 12 | 0.00 [−0.42, +0.42], 3/5/4 | +0.04 [−0.17, +0.25] | −0.025 [−0.108, +0.056] |
+
+Human faithfulness means: c1 2.54, c4 2.54, c2 2.29, c3 2.04. Judge vs humans ρ 0.65 and rater agreement ρ 0.65, so both validity bars are met on held-out.
+
+**Reading:**
+- **H-D1** stays null on held-out.
+- **H-D2** goes **against** the prediction: with the KB block, held-out pictures are less faithful than without it (−0.50, CI excludes 0). This is reported, not used to re-decide the dev outcome (D.0: held-out is never used to choose).
+- **Coverage is thin:** only 7 of 19 held-out character mentions are in `kb0.2`.
+- **Where the effect sits:** in h08 and h11 no character is in any KB, so c3 and c4 got identical prompts and images. Without them the effect is −0.60 [−1.05, −0.15] (B, #83). So the loss comes from the scenes where the KB did add descriptions.
+- **Why, plausibly:** this fits §11. Appearance phrases from the KB take the budget from the action and the scene. A tier-4 effect cannot be read from 3 scenes.
+
+**Held-out process metrics** (`check_expansions.py --strict` on `outputs/expansions/*_heldout.json`; B ran D's frozen commands):
+
+| file | n | valid | leaks before repair | leaks after | fallback | tokens mean / max | dropped / rec | s/scene (median) |
+|---|---:|---:|---:|---:|---:|---|---:|---:|
+| `c2_template_heldout.json` (`d-kb0`) | 12 | 100% | 0% | 0 | 0% | 47.5 / 70 | 0.58 | 0.004 |
+| `c3_llm_kb_ckb_heldout.json` (`kb0.2`) | 12 | 100% | 16.7% | 0 | 0% | 58.7 / 68 | 0.33 | 8.6 |
+| `c4_llm_nokb_heldout.json` | 12 | 100% | 33.3% | 0 | 0% | 58.3 / 69 | 0.25 | 10.4 |
+| `c6_llm_kbllm_heldout.json` (`kb0.2-llm`) | 12 | 100% | 41.7% | 0 | 0% | 59.2 / 70 | 0.33 | 10.2 |
+
+Both D.7 targets hold on unseen scenes: ≥ 95% valid and zero names after repair. The template drops far fewer phrases than on dev (0.58 vs 4.46), because `d-kb0` describes few held-out characters: 5 of the 11 scenes that name characters have none covered.
 
 Process table per file from `check_expansions.py --strict` (real CLIP counter):
 
@@ -207,12 +239,12 @@ The LLM rows' mean latency includes the model load in the first scene's `latency
 | `c5_llm_kb_layout` (H-D3) | yes (`--mode llm_kb_layout`) | **not run** | cut (Overview §14); runnable on Colab |
 | `c3_7b` (H-D4) | yes (`--llm large`) | **not run** | cut (Overview §14); runnable on Colab |
 | `c3_neg` (H-D5) | yes (`--scene_negatives`, prompt `v1_neg`) | **not run** | cut (Overview §14); runnable on Colab |
-| `c3_v2` (H-D6) | no | **not run** | needs A's SHAP values (no scores file); cut |
+| `c3_v2` (H-D6) | no | **not run** | A's SHAP values arrived 18 Nov, after the freeze; cut |
 
 **Outcome (2026-11-16): none of the optional experiments was run.** Overview §14 allows cutting them in this order: negatives → LLM size → c5. The reasons:
 - **The deadline.** The core ladder (c2/c3/c4 on 24 scenes), both rating rounds and the report came first.
 - **The core result removed their motivation.** Each optional condition is a variant of c3 (layout phrases, a bigger LLM, scene negatives, a reordered prompt). The human ratings show c3 less faithful than raw text with the LoRA (§9). §11 suggests the budget trade-off between appearance and action as the likely cause, which none of these variants addresses directly.
-- **H-D6 also had a missing input:** it needed A's SHAP values, which have no scores file yet.
+- **H-D6 also had a late input:** A's SHAP values arrived on 18 Nov, after the held-out freeze (`analysis/shap/SHAP_ANALYSIS.md`). They point to the same fix as §11: put the action first in importance, drop mood, never add names. That is the prompt v2 M4 should try.
 
 H-D3, H-D4, H-D5 and H-D6 are therefore reported as **not tested**. The modes for c5, c3_7b and c3_neg are built and unit-tested, so M4 can run them with the commands in §13.
 
@@ -261,6 +293,10 @@ Seen so far at the **expansion** stage (from records, not from scored images):
    - Five character descriptions fill the budget. 17 phrases were dropped, including "the couple seated on the throne" and "the monkey-faced devotee kneeling at their feet".
    - Image `s28_c2_template_s1.png`, checklist 0.48 (c1 0.50, c3 0.51): "a man and a woman seated side by side on a raised throne" 0.06.
    - **Cause:** figure and action phrases dropped by the budget.
+
+**Held-out notes (2026-11-18).**
+- **When the KB knows nobody, c3 = c4.** In h08 and h11 no character is in any KB, so `llm_kb` sends the same user message as `llm_nokb`, and c3, c4 and c6 produced identical prompts and images. Raters scored them identically (14 of 14 pairs, B, #83). The held-out KB effect therefore comes entirely from scenes where the KB added descriptions. Without h08/h11, c4 → c3 is −0.60 [−1.05, −0.15].
+- **Parser fallback in the LLM session.** `rapidfuzz` (needed by C's `kb/parser.py`) is not in `requirements_llm.txt`, so `--parser auto` fell back to D's stand-in for held-out c3/c6 (`parser` field in the records). The two parsers find the same characters in 11 of 12 held-out scenes. The exception is h12 ("hanumaan…"), where C's fuzzy parser finds Hanuman and the stand-in does not. **For M4:** add `rapidfuzz` to the LLM profile, or pass `--parser` explicitly.
 
 **A success, for contrast (c3, s09, tier 1).**
 - Scene: "Sita sitting alone under a tree in the Ashoka grove, sorrowful, the garden quiet at dusk".
