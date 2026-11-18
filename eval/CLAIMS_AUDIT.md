@@ -112,7 +112,9 @@ Resolved in #84:
 - **A6:** `README.md` added.
 - **CI:** `numpy` and `pillow` installed, so the stats, key and grid tests run.
 
-Still open: **A1** (SHAP), **A2** (token budget), **A7** (LoRA scale for the 2 Nov images), and C's and D's updates.
+- **A2:** token budget run and reported in `pipeline/TOKEN_BUDGET.md` (112 images, `results/token_budget*_dev.json`).
+
+Still open: **A1** (SHAP), **A7** (LoRA scale for the 2 Nov images), and C's and D's updates.
 
 ## 10. Summary for owners
 

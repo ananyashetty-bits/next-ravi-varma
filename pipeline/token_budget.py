@@ -34,6 +34,12 @@ CONTRASTS = [
     ("tail on vs off", "no_tail", "full"),
     ("names added", "full", "with_names"),
 ]
+# not pre-registered; reported separately as exploratory
+EXPLORATORY = [
+    ("mood added (no_tail vs char_action_setting)", "char_action_setting", "no_tail"),
+    ("mood + tail added (full vs char_action_setting)", "char_action_setting", "full"),
+]
+EXPANSIONS = os.path.join(ROOT, "outputs", "expansions", "token_budget_dev.json")
 
 
 def _cfg():
@@ -84,13 +90,14 @@ def scene_means(items, metric):
     return out
 
 
-def analyse(items):
+def analyse(items, expansions=None):
     from eval.stats import paired, boot_ci
     variants = sorted({r["coalition"] for r in items})
     if set(variants) != set(VARIANTS):
         raise ValueError(f"expected variants {VARIANTS}, found {variants}")
     tokens = {}
-    for r in items:
+    src = items if all(r.get("token_count") is not None for r in items) else (expansions or [])   # score.py drops token_count
+    for r in src:
         if r.get("token_count") is not None:
             tokens.setdefault(r["coalition"], []).append(r["token_count"])
     res = {"n_images": len(items), "n_scenes": len({r["scene_id"] for r in items}),
@@ -99,7 +106,7 @@ def analyse(items):
         sm = scene_means(items, m)
         res["means"][m] = {v: {"mean": sum(sm[v].values()) / len(sm[v]), "ci95": boot_ci(list(sm[v].values()))}
                            for v in VARIANTS}
-        res["contrasts"][m] = {lab: paired(sm[a], sm[b]) for lab, a, b in CONTRASTS}
+        res["contrasts"][m] = {lab: paired(sm[a], sm[b]) for lab, a, b in CONTRASTS + EXPLORATORY}
     return res
 
 
@@ -112,12 +119,12 @@ def to_markdown(res):
         L.append(f"| `{v}` | {res['mean_tokens'].get(v, float('nan')):.1f} | " + " | ".join(cells) + " |")
     L += ["", "Paired differences (b − a, scene is the unit; win/tie/loss = scenes where b is higher/equal/lower):", "",
           "| Contrast | " + " | ".join(METRICS) + " |", "|---|" + "---|" * len(METRICS)]
-    for lab, _, _ in CONTRASTS:
+    for lab, _a, _b in CONTRASTS + EXPLORATORY:
         cells = []
         for m in METRICS:
             c = res["contrasts"][m][lab]
             cells.append(f"{c['diff']:+.3f} [{c['ci95'][0]:+.3f}, {c['ci95'][1]:+.3f}] ({c['win']}/{c['tie']}/{c['loss']})")
-        L.append(f"| {lab} | " + " | ".join(cells) + " |")
+        L.append(f"| {lab}{' (exploratory)' if (lab, _a, _b) in EXPLORATORY else ''} | " + " | ".join(cells) + " |")
     return "\n".join(L)
 
 
@@ -128,6 +135,7 @@ def main():
     b.add_argument("--out", default=os.path.join(ROOT, "outputs", "expansions", "token_budget_dev.json"))
     a = sub.add_parser("analyse"); a.add_argument("--scores", default=os.path.join(ROOT, "results", "token_budget@rrv_v1_dev.json"))
     a.add_argument("--out", default=os.path.join(ROOT, "results", "token_budget_summary_dev.json"))
+    a.add_argument("--expansions", default=EXPANSIONS, help="token counts, if the scores file has none")
     args = ap.parse_args()
     if args.cmd == "build":
         recs = build(json.load(open(args.scenes, encoding="utf-8")), _cfg())
@@ -136,7 +144,8 @@ def main():
         print(f"wrote {len(recs)} expansions to {args.out}")
     else:
         items = json.load(open(args.scores, encoding="utf-8"))["items"]
-        res = analyse(items)
+        exp = json.load(open(args.expansions, encoding="utf-8")) if os.path.exists(args.expansions) else None
+        res = analyse(items, exp)
         json.dump(res, open(args.out, "w", encoding="utf-8"), indent=2)
         print(to_markdown(res)); print("wrote", args.out)
 
