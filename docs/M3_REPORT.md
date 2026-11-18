@@ -511,4 +511,21 @@ These are known now and hold whatever the results show; owners add their own.
   - **For M4:** start from c1 (raw text + LoRA). Add structure through the image (OpenPose from the `layout` field) rather than through longer prompts.
 - **`layout`:** c5 was not run, so whether layout phrases help is untested (H-D3). The expander already emits a validated `layout` JSON in `llm_kb_layout` mode (`n_figures`; per figure a role, a pose from a fixed vocabulary of 8, and a position from 5). That is the bridge to an OpenPose skeleton in M4.
 - **Default pipeline and known issues:** the default is `c1_lora_raw` (`docs/TEAM_DECISIONS_M3.md` D1); `text_to_image(text, seed)` now defaults to `mode="raw"` and loads the LoRA (#84, #86). For many scenes, M4 should use `expander/batch_expand.py` + `pipeline/run_batch.py`, which is how every evaluated image was made. The full list is in `docs/HANDOFF_M4.md` §4. For prompt content, SHAP and the token budget point the same way: action first, then setting and character, no mood, no names; the tail is a style option.
-- **Cold-start test (Day 6, D):** `TODO(D)`: pass or fail from a fresh runtime using only the README (demo on 3 inputs, CLI once, one image reproduced with the same seed), and the issues filed as `needs:A`.
+- **Cold-start test (D, 18 Nov): passed after a one-line fix; two findings.**
+  - **Setup:** a fresh Colab T4 runtime. D followed only `README.md`, opened `pipeline/demo.ipynb` from GitHub on `main` (after #84-#90) and ran all cells.
+  - **Finding 1, blocking (A, setup):** section 2 failed with `ModuleNotFoundError: No module named 'rapidfuzz'`.
+    - `text_to_image` imports C's `kb/parser.py` in every mode, including `raw`, and the parser needs `rapidfuzz`.
+    - `pipeline/setup_session.sh gen` installs `m2kit/requirements_m2.txt`, which does not include it.
+    - So a new user cannot make one image by following the README.
+    - **Fix:** add `rapidfuzz` to the `gen` (and `llm`) install. With one added cell, `!pip install -q rapidfuzz`, everything after it ran.
+  - **Results after the fix:**
+    - three scenes, with the parser finding Sita, Hanuman + Rama, and Krishna (first image 57.2 s including download and model load; then 4.5 s each);
+    - **same seed → identical image** (max pixel difference 0, `reproducible`);
+    - base vs `rrv_v1` on the same seed (generic framed painting vs the Varma look);
+    - the CLI saved an image (Yashoda, 31 tokens, 20.3 s including model load, negative `ugly, blurry, bad anatomy`);
+    - the template mode ran.
+  - **Finding 2, demo only (C/D, template mode):** through `text_to_image`, the template prompt reads "kneeling before and offering him 's ring, reaching out to take it".
+    - C's `kb/parser.py` cuts names out of the action instead of replacing them with a role.
+    - The evaluated c2 does not have this problem: it used `d-kb0` with D's role-replacing parser (`expander/EXPANDER.md` §11).
+    - It affects only the non-default template mode in the demo. **For M4:** make C's parser return the role-replaced action, as D's stand-in does.
+  - **Also seen:** in the raw (c1) Hanuman image, Hanuman is drawn as an ordinary man. This is the known c1 failure "generic figure (name ignored)" (§5), not a setup problem.
