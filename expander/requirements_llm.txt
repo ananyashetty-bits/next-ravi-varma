@@ -13,5 +13,6 @@ bitsandbytes==0.50.2
 tokenizers==0.23.2
 safetensors==0.8.0
 jinja2>=3.1          # apply_chat_template needs it (preinstalled on Colab)
+rapidfuzz>=3.0       # C's kb/parser.py; without it batch_expand --parser auto falls back to D's stand-in (added 2026-11-18, after the held-out run)
 # sentencepiece: not needed (Qwen tokenizers are BPE, tokenizer.json).
 # huggingface_hub: transformers 5.17 needs >=1.5,<2.0; pip downgrades Colab's copy if it is newer.
