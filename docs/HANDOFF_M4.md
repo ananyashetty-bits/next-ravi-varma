@@ -66,5 +66,9 @@ Raters tagged one main failure per rated image (`results/human_ratings_dev.json`
 - **Fixed settings:** 512×512 only; one base model; LoRA weights at a Google Drive path set in `config/m3.json`.
 - **Negative prompt:** M3 used `ugly, blurry, bad anatomy` throughout. The M2 kit's longer negative is a reasonable
   M4 experiment, but it is untested here.
-- **Not completed in M3:** the SHAP attribution and the token-budget experiment have no scored results
-  (`eval/CLAIMS_AUDIT.md` §5). `max_prompt_tokens = 70` is a design choice, not a measured optimum.
+- **Prompt content, measured (18 Nov):** in SHAP (`analysis/shap/SHAP_ANALYSIS.md`, 512 images) the **action**
+  phrase carries most of the faithfulness (φ +0.230, vs +0.066 for the character and +0.061 for the setting).
+  Mood adds nothing, and the style tail costs faithfulness (−0.043) while adding a little style.
+  In the token budget (`pipeline/TOKEN_BUDGET.md`), faithfulness peaked at about 46 tokens, and adding names
+  lowered it. `max_prompt_tokens = 70` is enough. For M4 expansions: action first in importance, then setting and
+  character, no names.
