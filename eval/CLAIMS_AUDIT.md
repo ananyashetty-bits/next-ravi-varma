@@ -114,7 +114,9 @@ Resolved in #84:
 
 - **A2:** token budget run and reported in `pipeline/TOKEN_BUDGET.md` (112 images, `results/token_budget*_dev.json`).
 
-Still open: **A1** (SHAP), **A7** (LoRA scale for the 2 Nov images), and C's and D's updates.
+- **A1:** SHAP run, scored and reported in `analysis/shap/SHAP_ANALYSIS.md` (512 images, efficiency check passed); the old unbacked numbers are gone.
+
+Still open: **A7** (LoRA scale for the 2 Nov images), and C's and D's updates.
 
 ## 10. Summary for owners
 

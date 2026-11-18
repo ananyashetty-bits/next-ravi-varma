@@ -58,8 +58,10 @@ held-out image was generated (Section B deviation, 16 Nov).
   `expander/EXPANDER.md` §10). c5's `layout` output is built and validated, and is the bridge to M4.
 - **Names-aware LoRA** `C_names`: it passed the M2 guardrails but showed no gain on the pre-registered names test
   (H-C3 not supported), so it was not registered as `rrv_names` (`train/NAMES_MODEL.md`).
-- **SHAP attribution and the token-budget experiment** have no scored results in `results/` as of 18 Nov. Until
-  they do, no document may cite numbers from them (`eval/CLAIMS_AUDIT.md` §5).
+- **SHAP attribution and the token-budget experiment** had no scored results as of the morning of 18 Nov, so no
+  document could cite them. *Update, 18 Nov evening:* both were run and scored (112 + 512 images). Results are in
+  `pipeline/TOKEN_BUDGET.md` and `analysis/shap/SHAP_ANALYSIS.md`, and only those numbers may be cited.
+  `max_prompt_tokens` stays 70 (no config change).
 
 ## D7. Rated images are pinned (14-16 Nov)
 Human ratings refer to specific images. c0, c1 and c4 were regenerated later, so the files that were actually
