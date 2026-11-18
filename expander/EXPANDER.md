@@ -239,12 +239,12 @@ The LLM rows' mean latency includes the model load in the first scene's `latency
 | `c5_llm_kb_layout` (H-D3) | yes (`--mode llm_kb_layout`) | **not run** | cut (Overview §14); runnable on Colab |
 | `c3_7b` (H-D4) | yes (`--llm large`) | **not run** | cut (Overview §14); runnable on Colab |
 | `c3_neg` (H-D5) | yes (`--scene_negatives`, prompt `v1_neg`) | **not run** | cut (Overview §14); runnable on Colab |
-| `c3_v2` (H-D6) | no | **not run** | needs A's SHAP values (no scores file); cut |
+| `c3_v2` (H-D6) | no | **not run** | A's SHAP values arrived 18 Nov, after the freeze; cut |
 
 **Outcome (2026-11-16): none of the optional experiments was run.** Overview §14 allows cutting them in this order: negatives → LLM size → c5. The reasons:
 - **The deadline.** The core ladder (c2/c3/c4 on 24 scenes), both rating rounds and the report came first.
 - **The core result removed their motivation.** Each optional condition is a variant of c3 (layout phrases, a bigger LLM, scene negatives, a reordered prompt). The human ratings show c3 less faithful than raw text with the LoRA (§9). §11 suggests the budget trade-off between appearance and action as the likely cause, which none of these variants addresses directly.
-- **H-D6 also had a missing input:** it needed A's SHAP values, which have no scores file yet.
+- **H-D6 also had a late input:** A's SHAP values arrived on 18 Nov, after the held-out freeze (`analysis/shap/SHAP_ANALYSIS.md`). They point to the same fix as §11: put the action first in importance, drop mood, never add names. That is the prompt v2 M4 should try.
 
 H-D3, H-D4, H-D5 and H-D6 are therefore reported as **not tested**. The modes for c5, c3_7b and c3_neg are built and unit-tested, so M4 can run them with the commands in §13.
 

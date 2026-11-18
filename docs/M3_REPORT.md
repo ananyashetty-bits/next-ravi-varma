@@ -30,7 +30,7 @@ user text ──► [C] parse_scene ──► SceneSpec ──► [D] expand ─
 - **Generator (A):** SD1.5 + `rrv_v1`, DPM++ 30 steps, CFG 7.0, 512×512, settings from `config/m3.json` (`pipeline/PIPELINE.md`). One call: `text_to_image(text, seed)`.
 - **Constraint:** everything runs on a free Colab T4. The LLM, the diffusion model and the judge run in separate sessions and communicate through files.
 
-Generation takes about 5 s per 512×512 image on a T4 once the model is loaded (mean `gen_seconds` in A's run records: c1 5.3 s, c4 5.0 s; `outputs/eval/c{1,4}_*_metrics.json`). `TODO(A)`: load time.
+Generation takes about 5 s per 512×512 image on a T4 once the model is loaded (mean `gen_seconds` in A's run records: c1 5.3 s, c4 5.0 s; `outputs/eval/c{1,4}_*_metrics.json`). Loading the diffusion model takes 53 s on the first run of a session and about 9 s once cached, plus the download on a brand-new runtime (`pipeline/PIPELINE.md` §5, from the held-out manifests).
 
 **Example (dev scene s09, seed 1; `outputs/expansions/c3_llm_kb_dev.json`, `results/c3_llm_kb@rrv_v1_dev.json`):**
 - **Input:** "Sita sitting alone under a tree in the Ashoka grove, sorrowful, the garden quiet at dusk"
@@ -126,7 +126,7 @@ Judge details:
 
 **Statistics.** Comparisons are paired per scene. We report win/tie/loss counts and a paired bootstrap 95% CI over scenes, with no significance claims; a CI that includes 0 means "no clear difference". Tie bands are 0.25 for ratings and M2's 0.0295 for automated scores.
 
-**Choosing the default pipeline.** The default for M4 is chosen at S3 **on dev only**, by the rule fixed in Overview §10: highest mean faithfulness, subject to the style and memorisation guardrails; on a CI including 0, the simpler condition wins. `TODO(A)`: the decision as recorded in `docs/TEAM_DECISIONS_M3.md`.
+**Choosing the default pipeline.** The default for M4 is chosen at S3 **on dev only**, by the rule fixed in Overview §10: highest mean faithfulness, subject to the style and memorisation guardrails; on a CI including 0, the simpler condition wins. **Decision: `c1_lora_raw`** (raw text + LoRA; `text_to_image(text, seed, mode="raw")`), recorded in `docs/TEAM_DECISIONS_M3.md` D1 with the eligibility table (§4.1).
 
 **Hypotheses.** Pre-registered per owner in `experiments/HYPOTHESES.md` (sections A-D). Each section's merge timestamp must precede that owner's first scored run. B's Day-6 audit confirmed this from git history for all four sections (`eval/CLAIMS_AUDIT.md` §1). Section D (expander), merged in #20 before any D condition was scored:
 - **H-D1 (core):** `c3_llm_kb` is more faithful than `c2_template` (the LLM adds composition the template lacks).
@@ -152,7 +152,11 @@ Deviations (dated lines in `experiments/HYPOTHESES.md`):
   - the names LoRA was run late, with 70 of 147 captions named;
   - its guardrails used the step-800 screen rows;
   - the 2×2 was not run, because the names test showed no gain and `run_batch.py` is broken.
-- **A:** `TODO(A)`.
+- **A, 18 Nov (design notes, before any token-budget or SHAP image):**
+  - SHAP and the token budget use 8 dev scenes (2 per tier, 1-4) written as name-free player phrases, at seeds 1-2.
+  - The length ladder is about 22/36/46/64 tokens instead of 15/30/50/70.
+  - H-A6 is tested with an added `with_names` variant.
+  - The earlier s07/s08 SHAP files were discarded.
 
 ## 4. Results
 
@@ -272,7 +276,7 @@ Bold: the CI excludes 0.
 | H-D3: c5 > c3 on tier 2-3 count/pose | — | — | not tested: cut (Overview §14; `EXPANDER.md` §10) |
 | H-D4: 7B not needed | — | — | not tested: cut |
 | H-D5: scene negatives | — | — | not tested: cut |
-| H-D6: prompt v2 (SHAP order) | — | — | not run: no SHAP values with a source file |
+| H-D6: prompt v2 (SHAP order) | — | — | not tested: SHAP values arrived on 18 Nov, after the held-out freeze; their M4 recommendation (action first, no mood, no names) is in §4.4 |
 
 **Secondary measures, as pre-registered.**
 
@@ -321,12 +325,37 @@ Also on the judge:
 Both D.7 targets are met (≥ 95% valid, zero names after repair).
 
 ### 4.4 SHAP attribution
-**Pending (A).** `analysis/shap/SHAP_ANALYSIS.md` lists Shapley values per player, but no scores file exists to source them yet:
-- the SHAP images exist (128 images, 2 scenes);
-- `outputs/eval/shap_metrics.json` holds image counts only;
-- `analysis/shap/shapley.py` does not compute values from it yet.
+**Sources:**
+- `analysis/shap/SHAP_ANALYSIS.md`, `results/shap@rrv_v1_dev.json`, `analysis/shap/shap_values_dev.json`, chart `docs/figures/shap_dev.png`;
+- the token budget: `pipeline/TOKEN_BUDGET.md`, `results/token_budget_summary_dev.json`.
 
-Per this report's rule, the values are not quoted until their scores file is in `results/`. `TODO(A)`: the chart (players × {faithfulness, style}, CI whiskers), the interaction table and the H-A outcomes, from a scored SHAP run.
+**Run.** 8 dev scenes (2 per tier, 1-4), five name-free players (`char`, `action`, `setting`, `mood`, `tail`), all 32 coalitions × seeds 1-2 = 512 images, scored with the judge. Exact Shapley values per scene; the efficiency check passed for every scene and metric. An earlier version of the SHAP document had numbers with no images behind them (`eval/CLAIMS_AUDIT.md` A1). They were removed, and only the 18 Nov run is cited here.
+
+| Player | Mean tokens | φ faithfulness (`checklist`) | φ style (`style_margin`) | Faithfulness per token |
+|---|---|---|---|---|
+| `char` | 16.9 | +0.066 [+0.033, +0.100] | **+0.038** [+0.023, +0.054] | +0.0039 |
+| `action` | 12.8 | **+0.230** [+0.158, +0.310] | +0.004 [−0.008, +0.016] | **+0.0181** |
+| `setting` | 9.0 | +0.061 [+0.004, +0.116] | −0.050 [−0.062, −0.038] | +0.0068 |
+| `mood` | 7.3 | −0.007 [−0.026, +0.018] | −0.041 [−0.052, −0.030] | −0.0010 |
+| `tail` | 9.0 | −0.043 [−0.072, −0.017] | +0.015 [+0.009, +0.022] | −0.0048 |
+
+- **Interactions:** `char × setting` are complements (faithfulness +0.041 [+0.008, +0.071], style +0.070 [+0.043, +0.098]).
+- **Token budget (112 images, same 8 scenes):** faithfulness rises with content up to character + action + setting (0.357 → 0.599 → 0.672, about 46 tokens). Adding mood and tail then lowers it (−0.070 [−0.113, −0.024], exploratory). Adding canonical names lowers it as well (−0.056 [−0.107, −0.012], 6 of 8 scenes). `max_prompt_tokens` stays 70.
+
+| Hypothesis | Result |
+|---|---|
+| H-A1: style falls with length | not supported (`char` → `full` style −0.000; faithfulness +0.244) |
+| H-A2: trigger first gives more style | not supported (+0.002 [−0.008, +0.013]) |
+| H-A3: the tail helps style, may cost faithfulness | not supported (both CIs include 0) |
+| H-A4: `char` and `action` lead faithfulness | partly supported: `action` is clearly first; `char` is not separable from `setting` |
+| H-A5: `tail` > 0 for style, ≈ 0 or < 0 for faithfulness | supported (faithfulness clearly negative) |
+| H-A6: names add ≈ 0 once descriptions are present | not supported: names lowered faithfulness |
+
+**How this connects to the ladder.** These are judge-based numbers on 8 dev scenes. They agree with the human result in §4.1-§4.2 and with the expander failures in `expander/EXPANDER.md` §11:
+- The **action** phrase carries most of the faithfulness.
+- Appearance, mood and tail phrases add little faithfulness or cost it.
+
+The expansions spend much of the 70-token budget on appearance from the KB, and the budget sometimes drops the action. Raw user text is mostly character + action, which is why c1 held up so well.
 
 ### 4.5 Model-side fix and KB grounding
 Sources: `train/NAMES_MODEL.md`, `kb/KB.md`, `results/names_test_*.json`, `results/c6_comparison.json`, `kb/parser_metrics.json`.
@@ -421,7 +450,7 @@ Sources: `train/NAMES_MODEL.md`, `kb/KB.md`, `results/names_test_*.json`, `resul
   - Tier 4 (rare characters, spelling variants) is the lowest tier for most conditions.
   - **Human ratings, seen vs unseen (H-B3, descriptive):** c1 → c3 is −1.10 [−1.30, −1.00] on the 5 seen scenes (worse in all 5) and −0.55 [−1.32, +0.09] on the 11 unseen scenes. The predicted pattern (expansion helping more on unseen scenes) did not appear (`eval/EVAL_REPORT.md` §2.1).
   - **Coverage (H-B4, descriptive):** not supported. Scenes whose worst-covered character has low or no KB coverage are rated no lower than high/medium ones, and higher in 5 of 6 conditions. The groups have 7-14 scenes and are tangled with who wrote which scenes.
-- **Cost:** generation takes about 5 s per image on a T4 (§1; A's run records); `TODO(A)`: model load time. Expander on a Colab T4 (`EXPANDER.md` §12):
+- **Cost:** generation takes about 5 s per image on a T4 (§1; A's run records). Loading the diffusion model takes 53 s on the first run of a session and about 9 s cached (`pipeline/PIPELINE.md` §5). Expander on a Colab T4 (`EXPANDER.md` §12):
   - LLM load: 23-33 s with cached weights, about 2-3 min on a fresh runtime;
   - about 7-8 s per LLM call; 9.7 s per scene for c3 and 13.3 s for c4, including name re-asks;
   - peak VRAM 2.8 GiB, freed before diffusion;
@@ -437,7 +466,10 @@ These are known now and hold whatever the results show; owners add their own.
 - **Raters knew the project.** All raters are team members who wrote the scenes and built the conditions. Blind codes hide the condition, but not the intent of the project.
 - **77 tokens.** CLIP reads at most 77 tokens. Expansions are fitted to 70 (excluding start/end), so long scenes lose detail. The raw text in c0/c1 and in `clip_raw` is truncated, which matters most for tier-5 texts with 100+ words.
 - **One model.** One base model (SD1.5), one LoRA (`rrv_v1`, trained with one seed), one sampler setting and one small local LLM family. Nothing here is shown to transfer to other models.
-- **Style tail.** The model was **not trained with the style tail** we append: the winner's train_v1 captions have no fixed tail. `TODO(A)`: what the token-budget and SHAP results say about it.
+- **Style tail.** The model was **not trained with the style tail** we append: the winner's train_v1 captions have no fixed tail. The measurements:
+  - In SHAP, the tail adds a little style (φ +0.015) and costs faithfulness (φ −0.043).
+  - In the token budget, switching it on or off makes no clear difference to either (`pipeline/TOKEN_BUDGET.md`).
+  - The style comes from the LoRA, not from the prompt.
 - **Name scrub.** It removes every listed name, including rivers and mounts that double as setting words (Ganga, Nandi), so a setting phrase can be lost. Measured on dev: **0 phrases scrubbed** in c2, c3 and c4. The one re-ask removed every leaked name first.
 - **Interim KB.** D's c2 and c3 dev results use D's interim KB `d-kb0` (20 characters, written from train_v1 captions; 2 entries without a training painting), not C's KB. C's KB version of c3 exists (`c3_llm_kb_ckb`) and is not clearly different on the judge.
 - **Interim KB coverage on held-out.** `d-kb0` covers only the dev-scene characters, so held-out scenes with other characters get no description for them in c2 (the parser writes "the figure"). Of the 11 held-out scenes that name characters, 9 include one missing from `d-kb0`, and 5 have none covered. With C's `kb0.2` (used by c3), 9 of 11 also miss one, and 4 have none covered (`eval/CLAIMS_AUDIT.md`, M8; checked against `eval/test_scenes_heldout.json`).
@@ -462,7 +494,11 @@ These are known now and hold whatever the results show; owners add their own.
   - a new `safety_checker` flag.
 
   #79 restored the negative to "ugly, blurry, bad anatomy" (CHANGELOG 1.3), the value every dev image and committed expansion record used. The held-out run uses that same negative (Section B deviation, 16 Nov), so dev and held-out share the pipeline. A regenerated c0/c1 on 16 Nov with the other negative. The rated 2 Nov files are kept in `results/rated/`, so human ratings stay paired with the images that were rated.
-- `TODO(A)`: SHAP-specific limits (position effects, 2 scenes so far).
+- **SHAP and token budget (A).**
+  - 8 dev scenes and 2 seeds, so the per-tier values (2 scenes each) are descriptive only.
+  - Faithfulness is the 2B judge, with no human ratings of the SHAP images.
+  - Each player is one hand-written phrase in a fixed order, so other wording or another order could change the values.
+  - In the token budget, length and content grow together.
 
 ## 7. Handoff to M4
 
@@ -474,5 +510,5 @@ These are known now and hold whatever the results show; owners add their own.
   - **Identity and setting problems** (wrong/missing identity, generic figure, wrong setting) are 50% of c1's failures. This is what a names-aware model or better descriptions would have to fix. The prompt-side KB did not fix it on dev (H-D2), and neither did `C_names` (H-C3).
   - **For M4:** start from c1 (raw text + LoRA). Add structure through the image (OpenPose from the `layout` field) rather than through longer prompts.
 - **`layout`:** c5 was not run, so whether layout phrases help is untested (H-D3). The expander already emits a validated `layout` JSON in `llm_kb_layout` mode (`n_figures`; per figure a role, a pose from a fixed vocabulary of 8, and a position from 5). That is the bridge to an OpenPose skeleton in M4.
-- **Default pipeline and known failure modes:** `TODO(A)`: the default chosen by the Overview §10 rule (recorded in `docs/TEAM_DECISIONS_M3.md`, which does not exist yet) and A's known failure modes. Note for M4: `text_to_image` must load the LoRA before it can be the M4 entry point (§6, Generator).
+- **Default pipeline and known issues:** the default is `c1_lora_raw` (`docs/TEAM_DECISIONS_M3.md` D1); `text_to_image(text, seed)` now defaults to `mode="raw"` and loads the LoRA (#84, #86). For many scenes, M4 should use `expander/batch_expand.py` + `pipeline/run_batch.py`, which is how every evaluated image was made. The full list is in `docs/HANDOFF_M4.md` §4. For prompt content, SHAP and the token budget point the same way: action first, then setting and character, no mood, no names; the tail is a style option.
 - **Cold-start test (Day 6, D):** `TODO(D)`: pass or fail from a fresh runtime using only the README (demo on 3 inputs, CLI once, one image reproduced with the same seed), and the issues filed as `needs:A`.
