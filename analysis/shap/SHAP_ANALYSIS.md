@@ -34,7 +34,7 @@ Mean φ (faithfulness) divided by each player's mean CLIP token count. Pending.
 |---|---|---|
 | H-A4: `char` and `action` have the highest φ for faithfulness | Rank of mean φ (`checklist`), with CIs | pending |
 | H-A5: `tail` > 0 for style, ≈ 0 or < 0 for faithfulness | φ_tail CIs on `style_margin` and `checklist` | pending |
-| H-A6: names add ≈ 0 once descriptions are present | `with_names` − `full` (`pipeline/TOKEN_BUDGET.md`) | pending |
+| H-A6: names add ≈ 0 once descriptions are present | `with_names` − `full` (`pipeline/TOKEN_BUDGET.md`) | **Not supported:** names lowered faithfulness, −0.056 [−0.107, −0.012] on `checklist`, lower in 6 of 8 scenes (18 Nov) |
 
 ## 6. Limits
 Pending.

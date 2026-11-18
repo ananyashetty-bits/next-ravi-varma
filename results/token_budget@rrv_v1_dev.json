@@ -1,0 +1,2231 @@
+{
+ "manifest": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/manifest.json",
+ "scenes_file": "/content/m3/eval/test_scenes_dev.json",
+ "scored_at": "2026-11-18T12:36:33.707308",
+ "judge": "Qwen/Qwen2-VL-2B-Instruct",
+ "n_images": 112,
+ "summary": {
+  "token_budget": {
+   "checklist": {
+    "mean": 0.5693120139206359,
+    "ci95": [
+     0.4835375114530718,
+     0.6648683658142256
+    ],
+    "n_scenes": 8
+   },
+   "clip_raw": {
+    "mean": 0.2497516589771424,
+    "ci95": [
+     0.233124131157196,
+     0.26650984970453595
+    ],
+    "n_scenes": 8
+   },
+   "style_margin": {
+    "mean": 0.10671251213976315,
+    "ci95": [
+     0.08884780437552503,
+     0.1224932254558163
+    ],
+    "n_scenes": 8
+   },
+   "max_train_dino": {
+    "mean": 0.713198217430285,
+    "ci95": [
+     0.6752751764043101,
+     0.7477800596239311
+    ],
+    "n_scenes": 8
+   }
+  }
+ },
+ "per_scene": {
+  "token_budget": {
+   "checklist": {
+    "s09": 0.8104389986939847,
+    "s10": 0.47948034273253554,
+    "s12": 0.5749761529917282,
+    "s27": 0.5568581014605505,
+    "s13": 0.7153941737635742,
+    "s21": 0.4600233808891582,
+    "s23": 0.5776771371592841,
+    "s31": 0.3796478236742717
+   },
+   "clip_raw": {
+    "s09": 0.28472990329776493,
+    "s10": 0.2105743544442313,
+    "s12": 0.22950363797800882,
+    "s27": 0.24464759762798036,
+    "s13": 0.2461000116808074,
+    "s21": 0.2708874280963625,
+    "s23": 0.23180843783276422,
+    "s31": 0.2797619008592197
+   },
+   "style_margin": {
+    "s09": 0.13950042639459884,
+    "s10": 0.10877980504717145,
+    "s12": 0.11033945849963597,
+    "s27": 0.12398450715201241,
+    "s13": 0.06369640145983015,
+    "s21": 0.07349569882665362,
+    "s23": 0.10921810780252729,
+    "s31": 0.12468569193567548
+   },
+   "max_train_dino": {
+    "s09": 0.7338174836976188,
+    "s10": 0.6476288501705442,
+    "s12": 0.749312128339495,
+    "s27": 0.7707660496234894,
+    "s13": 0.6924995098795209,
+    "s21": 0.6139541757958276,
+    "s23": 0.7674540792192731,
+    "s31": 0.7301534627165113
+   }
+  }
+ },
+ "items": [
+  {
+   "scene_id": "s09",
+   "condition": "token_budget",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s09_char_s1.png",
+   "coalition": "char",
+   "prompt": "rrvarma style, a young woman in a red sari with yellow border, gold bangles and necklace",
+   "checklist": 0.5213724987374412,
+   "checklist_detail": {
+    "c1": 0.9006704688072205,
+    "c2": 0.9592138528823853,
+    "c3": 0.14290806651115417,
+    "c4": 0.2561703324317932,
+    "c5": 0.17442704737186432
+   },
+   "clip_raw": 0.2331523448228836,
+   "style_margin": 0.1304483413696289,
+   "max_train_dino": 0.852290153503418
+  },
+  {
+   "scene_id": "s09",
+   "condition": "token_budget",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s09_char_s2.png",
+   "coalition": "char",
+   "prompt": "rrvarma style, a young woman in a red sari with yellow border, gold bangles and necklace",
+   "checklist": 0.46739833222495186,
+   "checklist_detail": {
+    "c1": 0.8312859535217285,
+    "c2": 0.9711514115333557,
+    "c3": 0.19522163271903992,
+    "c4": 0.022953234612941742,
+    "c5": 0.16536052525043488
+   },
+   "clip_raw": 0.2326449453830719,
+   "style_margin": 0.14052432775497437,
+   "max_train_dino": 0.80454421043396
+  },
+  {
+   "scene_id": "s09",
+   "condition": "token_budget",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s09_char_action_s1.png",
+   "coalition": "char_action",
+   "prompt": "rrvarma style, a young woman in a red sari with yellow border, gold bangles and necklace, sitting alone on the ground, head bowed, looking sorrowful",
+   "checklist": 0.7290435040162669,
+   "checklist_detail": {
+    "c1": 0.9020262956619263,
+    "c2": 0.9928830862045288,
+    "c3": 0.9443705081939697,
+    "c4": 0.02153271622955799,
+    "c5": 0.8397663235664368
+   },
+   "clip_raw": 0.26867440342903137,
+   "style_margin": 0.13957685232162476,
+   "max_train_dino": 0.8110605478286743
+  },
+  {
+   "scene_id": "s09",
+   "condition": "token_budget",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s09_char_action_s2.png",
+   "coalition": "char_action",
+   "prompt": "rrvarma style, a young woman in a red sari with yellow border, gold bangles and necklace, sitting alone on the ground, head bowed, looking sorrowful",
+   "checklist": 0.7195469956431124,
+   "checklist_detail": {
+    "c1": 0.9034053087234497,
+    "c2": 0.9895176291465759,
+    "c3": 0.9649744629859924,
+    "c4": 0.019067266955971718,
+    "c5": 0.721993625164032
+   },
+   "clip_raw": 0.2550904154777527,
+   "style_margin": 0.13182860612869263,
+   "max_train_dino": 0.775315523147583
+  },
+  {
+   "scene_id": "s09",
+   "condition": "token_budget",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s09_char_action_setting_s1.png",
+   "coalition": "char_action_setting",
+   "prompt": "rrvarma style, a young woman in a red sari with yellow border, gold bangles and necklace, sitting alone on the ground, head bowed, looking sorrowful, beneath a flowering tree in a quiet palace garden grove",
+   "checklist": 0.8683060937457614,
+   "checklist_detail": {
+    "c1": 0.8502028584480286,
+    "c2": 0.7500181794166565,
+    "c3": 0.9634231328964233,
+    "c4": 0.97314453125,
+    "c5": 0.7411774396896362
+   },
+   "clip_raw": 0.3131476640701294,
+   "style_margin": 0.14052093029022217,
+   "max_train_dino": 0.6771624088287354
+  },
+  {
+   "scene_id": "s09",
+   "condition": "token_budget",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s09_char_action_setting_s2.png",
+   "coalition": "char_action_setting",
+   "prompt": "rrvarma style, a young woman in a red sari with yellow border, gold bangles and necklace, sitting alone on the ground, head bowed, looking sorrowful, beneath a flowering tree in a quiet palace garden grove",
+   "checklist": 0.9015721049573686,
+   "checklist_detail": {
+    "c1": 0.8809203505516052,
+    "c2": 0.9814691543579102,
+    "c3": 0.9674980640411377,
+    "c4": 0.9889141917228699,
+    "c5": 0.47654542326927185
+   },
+   "clip_raw": 0.27375560998916626,
+   "style_margin": 0.18092584609985352,
+   "max_train_dino": 0.709453821182251
+  },
+  {
+   "scene_id": "s09",
+   "condition": "token_budget",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s09_full_s1.png",
+   "coalition": "full",
+   "prompt": "rrvarma style, a young woman in a red sari with yellow border, gold bangles and necklace, sitting alone on the ground, head bowed, looking sorrowful, beneath a flowering tree in a quiet palace garden grove, dusk, soft fading light, still and melancholy, oil painting, canvas texture, classical indian art",
+   "checklist": 0.9250033696492513,
+   "checklist_detail": {
+    "c1": 0.8357309103012085,
+    "c2": 0.9763523936271667,
+    "c3": 0.956824004650116,
+    "c4": 0.9590626358985901,
+    "c5": 0.8690904378890991
+   },
+   "clip_raw": 0.3104107975959778,
+   "style_margin": 0.10912001132965088,
+   "max_train_dino": 0.6698756814002991
+  },
+  {
+   "scene_id": "s09",
+   "condition": "token_budget",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s09_full_s2.png",
+   "coalition": "full",
+   "prompt": "rrvarma style, a young woman in a red sari with yellow border, gold bangles and necklace, sitting alone on the ground, head bowed, looking sorrowful, beneath a flowering tree in a quiet palace garden grove, dusk, soft fading light, still and melancholy, oil painting, canvas texture, classical indian art",
+   "checklist": 0.8983991146087646,
+   "checklist_detail": {
+    "c1": 0.9208973050117493,
+    "c2": 0.9885035157203674,
+    "c3": 0.9680203795433044,
+    "c4": 0.9816496968269348,
+    "c5": 0.3674502372741699
+   },
+   "clip_raw": 0.2943100929260254,
+   "style_margin": 0.1733415126800537,
+   "max_train_dino": 0.7285921573638916
+  },
+  {
+   "scene_id": "s09",
+   "condition": "token_budget",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s09_no_tail_s1.png",
+   "coalition": "no_tail",
+   "prompt": "rrvarma style, a young woman in a red sari with yellow border, gold bangles and necklace, sitting alone on the ground, head bowed, looking sorrowful, beneath a flowering tree in a quiet palace garden grove, dusk, soft fading light, still and melancholy",
+   "checklist": 0.7329600122239854,
+   "checklist_detail": {
+    "c1": 0.850289523601532,
+    "c2": 0.3501400947570801,
+    "c3": 0.9446540474891663,
+    "c4": 0.8354557156562805,
+    "c5": 0.6355613470077515
+   },
+   "clip_raw": 0.30036401748657227,
+   "style_margin": 0.08909916877746582,
+   "max_train_dino": 0.7076661586761475
+  },
+  {
+   "scene_id": "s09",
+   "condition": "token_budget",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s09_no_tail_s2.png",
+   "coalition": "no_tail",
+   "prompt": "rrvarma style, a young woman in a red sari with yellow border, gold bangles and necklace, sitting alone on the ground, head bowed, looking sorrowful, beneath a flowering tree in a quiet palace garden grove, dusk, soft fading light, still and melancholy",
+   "checklist": 0.9158726467026604,
+   "checklist_detail": {
+    "c1": 0.8934578895568848,
+    "c2": 0.9848296046257019,
+    "c3": 0.9623070955276489,
+    "c4": 0.9873045086860657,
+    "c5": 0.5870556235313416
+   },
+   "clip_raw": 0.2980634570121765,
+   "style_margin": 0.16461443901062012,
+   "max_train_dino": 0.7017830610275269
+  },
+  {
+   "scene_id": "s09",
+   "condition": "token_budget",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s09_trigger_last_s1.png",
+   "coalition": "trigger_last",
+   "prompt": "a young woman in a red sari with yellow border, gold bangles and necklace, sitting alone on the ground, head bowed, looking sorrowful, beneath a flowering tree in a quiet palace garden grove, dusk, soft fading light, still and melancholy, oil painting, canvas texture, classical indian art, rrvarma style",
+   "checklist": 0.9432536562283834,
+   "checklist_detail": {
+    "c1": 0.8809817433357239,
+    "c2": 0.9904574155807495,
+    "c3": 0.9699347615242004,
+    "c4": 0.9799296259880066,
+    "c5": 0.8466758131980896
+   },
+   "clip_raw": 0.3061901330947876,
+   "style_margin": 0.0992271900177002,
+   "max_train_dino": 0.6759384870529175
+  },
+  {
+   "scene_id": "s09",
+   "condition": "token_budget",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s09_trigger_last_s2.png",
+   "coalition": "trigger_last",
+   "prompt": "a young woman in a red sari with yellow border, gold bangles and necklace, sitting alone on the ground, head bowed, looking sorrowful, beneath a flowering tree in a quiet palace garden grove, dusk, soft fading light, still and melancholy, oil painting, canvas texture, classical indian art, rrvarma style",
+   "checklist": 0.9019881619347466,
+   "checklist_detail": {
+    "c1": 0.9087366461753845,
+    "c2": 0.989995002746582,
+    "c3": 0.9689754247665405,
+    "c4": 0.9776008129119873,
+    "c5": 0.42727768421173096
+   },
+   "clip_raw": 0.2988627254962921,
+   "style_margin": 0.1730474829673767,
+   "max_train_dino": 0.7245293259620667
+  },
+  {
+   "scene_id": "s09",
+   "condition": "token_budget",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s09_with_names_s1.png",
+   "coalition": "with_names",
+   "prompt": "rrvarma style, Sita, a young woman in a red sari with yellow border, gold bangles and necklace, sitting alone on the ground, head bowed, looking sorrowful, beneath a flowering tree in a quiet palace garden grove, dusk, soft fading light, still and melancholy, oil painting, canvas texture, classical indian art",
+   "checklist": 0.9154482086499532,
+   "checklist_detail": {
+    "c1": 0.8441248536109924,
+    "c2": 0.983620285987854,
+    "c3": 0.9628303050994873,
+    "c4": 0.970616340637207,
+    "c5": 0.7166503071784973
+   },
+   "clip_raw": 0.31165677309036255,
+   "style_margin": 0.10634016990661621,
+   "max_train_dino": 0.7066138982772827
+  },
+  {
+   "scene_id": "s09",
+   "condition": "token_budget",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s09_with_names_s2.png",
+   "coalition": "with_names",
+   "prompt": "rrvarma style, Sita, a young woman in a red sari with yellow border, gold bangles and necklace, sitting alone on the ground, head bowed, looking sorrowful, beneath a flowering tree in a quiet palace garden grove, dusk, soft fading light, still and melancholy, oil painting, canvas texture, classical indian art",
+   "checklist": 0.9059812823931376,
+   "checklist_detail": {
+    "c1": 0.9137768149375916,
+    "c2": 0.9865835309028625,
+    "c3": 0.9716733694076538,
+    "c4": 0.9602017998695374,
+    "c5": 0.489360511302948
+   },
+   "clip_raw": 0.28989526629447937,
+   "style_margin": 0.17439109086990356,
+   "max_train_dino": 0.7286193370819092
+  },
+  {
+   "scene_id": "s10",
+   "condition": "token_budget",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s10_char_s1.png",
+   "coalition": "char",
+   "prompt": "rrvarma style, a bare-chested warrior in golden armour with large gold earrings",
+   "checklist": 0.4107237027751075,
+   "checklist_detail": {
+    "c1": 0.3042108118534088,
+    "c2": 0.7940173745155334,
+    "c3": 0.3968011140823364,
+    "c4": 0.17840418219566345,
+    "c5": 0.34964635968208313
+   },
+   "clip_raw": 0.20489802956581116,
+   "style_margin": 0.10054421424865723,
+   "max_train_dino": 0.716322660446167
+  },
+  {
+   "scene_id": "s10",
+   "condition": "token_budget",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s10_char_s2.png",
+   "coalition": "char",
+   "prompt": "rrvarma style, a bare-chested warrior in golden armour with large gold earrings",
+   "checklist": 0.4005476128723886,
+   "checklist_detail": {
+    "c1": 0.43040353059768677,
+    "c2": 0.8891667127609253,
+    "c3": 0.059680331498384476,
+    "c4": 0.3304150700569153,
+    "c5": 0.185597226023674
+   },
+   "clip_raw": 0.18011939525604248,
+   "style_margin": 0.09329038858413696,
+   "max_train_dino": 0.6890037655830383
+  },
+  {
+   "scene_id": "s10",
+   "condition": "token_budget",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s10_char_action_s1.png",
+   "coalition": "char_action",
+   "prompt": "rrvarma style, a bare-chested warrior in golden armour with large gold earrings, standing tall and proud, holding a great bow upright",
+   "checklist": 0.5144040385882059,
+   "checklist_detail": {
+    "c1": 0.4152183532714844,
+    "c2": 0.8393773436546326,
+    "c3": 0.4051452875137329,
+    "c4": 0.27138781547546387,
+    "c5": 0.7673787474632263
+   },
+   "clip_raw": 0.19768954813480377,
+   "style_margin": 0.11694842576980591,
+   "max_train_dino": 0.6902997493743896
+  },
+  {
+   "scene_id": "s10",
+   "condition": "token_budget",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s10_char_action_s2.png",
+   "coalition": "char_action",
+   "prompt": "rrvarma style, a bare-chested warrior in golden armour with large gold earrings, standing tall and proud, holding a great bow upright",
+   "checklist": 0.4804268437955115,
+   "checklist_detail": {
+    "c1": 0.40011879801750183,
+    "c2": 0.8189104795455933,
+    "c3": 0.05354756489396095,
+    "c4": 0.8011639714241028,
+    "c5": 0.17635996639728546
+   },
+   "clip_raw": 0.22152802348136902,
+   "style_margin": 0.08678138256072998,
+   "max_train_dino": 0.5874035358428955
+  },
+  {
+   "scene_id": "s10",
+   "condition": "token_budget",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s10_char_action_setting_s1.png",
+   "coalition": "char_action_setting",
+   "prompt": "rrvarma style, a bare-chested warrior in golden armour with large gold earrings, standing tall and proud, holding a great bow upright, an open plain under a wide sky at sunrise",
+   "checklist": 0.5179247028297849,
+   "checklist_detail": {
+    "c1": 0.40763962268829346,
+    "c2": 0.7894960045814514,
+    "c3": 0.21725188195705414,
+    "c4": 0.6194487810134888,
+    "c5": 0.5936497449874878
+   },
+   "clip_raw": 0.2217186540365219,
+   "style_margin": 0.11661720275878906,
+   "max_train_dino": 0.595943808555603
+  },
+  {
+   "scene_id": "s10",
+   "condition": "token_budget",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s10_char_action_setting_s2.png",
+   "coalition": "char_action_setting",
+   "prompt": "rrvarma style, a bare-chested warrior in golden armour with large gold earrings, standing tall and proud, holding a great bow upright, an open plain under a wide sky at sunrise",
+   "checklist": 0.5808103034893671,
+   "checklist_detail": {
+    "c1": 0.9060898423194885,
+    "c2": 0.9051311612129211,
+    "c3": 0.07340241223573685,
+    "c4": 0.36023184657096863,
+    "c5": 0.7375822067260742
+   },
+   "clip_raw": 0.20816439390182495,
+   "style_margin": 0.07985275983810425,
+   "max_train_dino": 0.7108157873153687
+  },
+  {
+   "scene_id": "s10",
+   "condition": "token_budget",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s10_full_s1.png",
+   "coalition": "full",
+   "prompt": "rrvarma style, a bare-chested warrior in golden armour with large gold earrings, standing tall and proud, holding a great bow upright, an open plain under a wide sky at sunrise, warm golden morning light, heroic and dignified, oil painting, canvas texture, classical indian art",
+   "checklist": 0.4305291208955977,
+   "checklist_detail": {
+    "c1": 0.32801592350006104,
+    "c2": 0.9178115129470825,
+    "c3": 0.2901245653629303,
+    "c4": 0.11186502873897552,
+    "c5": 0.5791280269622803
+   },
+   "clip_raw": 0.19849884510040283,
+   "style_margin": 0.11624079942703247,
+   "max_train_dino": 0.690162181854248
+  },
+  {
+   "scene_id": "s10",
+   "condition": "token_budget",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s10_full_s2.png",
+   "coalition": "full",
+   "prompt": "rrvarma style, a bare-chested warrior in golden armour with large gold earrings, standing tall and proud, holding a great bow upright, an open plain under a wide sky at sunrise, warm golden morning light, heroic and dignified, oil painting, canvas texture, classical indian art",
+   "checklist": 0.5323138766818576,
+   "checklist_detail": {
+    "c1": 0.7908185720443726,
+    "c2": 0.9401888847351074,
+    "c3": 0.10785870254039764,
+    "c4": 0.14531613886356354,
+    "c5": 0.8224602937698364
+   },
+   "clip_raw": 0.20852847397327423,
+   "style_margin": 0.12498754262924194,
+   "max_train_dino": 0.6337363719940186
+  },
+  {
+   "scene_id": "s10",
+   "condition": "token_budget",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s10_no_tail_s1.png",
+   "coalition": "no_tail",
+   "prompt": "rrvarma style, a bare-chested warrior in golden armour with large gold earrings, standing tall and proud, holding a great bow upright, an open plain under a wide sky at sunrise, warm golden morning light, heroic and dignified",
+   "checklist": 0.4481293617023362,
+   "checklist_detail": {
+    "c1": 0.35250386595726013,
+    "c2": 0.8342637419700623,
+    "c3": 0.0592726431787014,
+    "c4": 0.5352170467376709,
+    "c5": 0.4706496596336365
+   },
+   "clip_raw": 0.23241916298866272,
+   "style_margin": 0.11534291505813599,
+   "max_train_dino": 0.6378419399261475
+  },
+  {
+   "scene_id": "s10",
+   "condition": "token_budget",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s10_no_tail_s2.png",
+   "coalition": "no_tail",
+   "prompt": "rrvarma style, a bare-chested warrior in golden armour with large gold earrings, standing tall and proud, holding a great bow upright, an open plain under a wide sky at sunrise, warm golden morning light, heroic and dignified",
+   "checklist": 0.5183653458952904,
+   "checklist_detail": {
+    "c1": 0.7907595038414001,
+    "c2": 0.9401113390922546,
+    "c3": 0.051386382430791855,
+    "c4": 0.18166662752628326,
+    "c5": 0.7374404072761536
+   },
+   "clip_raw": 0.22444787621498108,
+   "style_margin": 0.13379597663879395,
+   "max_train_dino": 0.4894992411136627
+  },
+  {
+   "scene_id": "s10",
+   "condition": "token_budget",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s10_trigger_last_s1.png",
+   "coalition": "trigger_last",
+   "prompt": "a bare-chested warrior in golden armour with large gold earrings, standing tall and proud, holding a great bow upright, an open plain under a wide sky at sunrise, warm golden morning light, heroic and dignified, oil painting, canvas texture, classical indian art, rrvarma style",
+   "checklist": 0.4108196198940277,
+   "checklist_detail": {
+    "c1": 0.35978272557258606,
+    "c2": 0.8304891586303711,
+    "c3": 0.21033862233161926,
+    "c4": 0.1269349604845047,
+    "c5": 0.6422856450080872
+   },
+   "clip_raw": 0.2132640779018402,
+   "style_margin": 0.10235178470611572,
+   "max_train_dino": 0.6196156740188599
+  },
+  {
+   "scene_id": "s10",
+   "condition": "token_budget",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s10_trigger_last_s2.png",
+   "coalition": "trigger_last",
+   "prompt": "a bare-chested warrior in golden armour with large gold earrings, standing tall and proud, holding a great bow upright, an open plain under a wide sky at sunrise, warm golden morning light, heroic and dignified, oil painting, canvas texture, classical indian art, rrvarma style",
+   "checklist": 0.5324600719743304,
+   "checklist_detail": {
+    "c1": 0.8083040714263916,
+    "c2": 0.9401493072509766,
+    "c3": 0.11934155970811844,
+    "c4": 0.13030098378658295,
+    "c5": 0.7959488034248352
+   },
+   "clip_raw": 0.2115878462791443,
+   "style_margin": 0.12070411443710327,
+   "max_train_dino": 0.6485534906387329
+  },
+  {
+   "scene_id": "s10",
+   "condition": "token_budget",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s10_with_names_s1.png",
+   "coalition": "with_names",
+   "prompt": "rrvarma style, Karna, a bare-chested warrior in golden armour with large gold earrings, standing tall and proud, holding a great bow upright, an open plain under a wide sky at sunrise, warm golden morning light, heroic and dignified, oil painting, canvas texture, classical indian art",
+   "checklist": 0.39680784609582687,
+   "checklist_detail": {
+    "c1": 0.30433839559555054,
+    "c2": 0.8730986714363098,
+    "c3": 0.19138050079345703,
+    "c4": 0.08871228992938995,
+    "c5": 0.6562108993530273
+   },
+   "clip_raw": 0.21657036244869232,
+   "style_margin": 0.09317755699157715,
+   "max_train_dino": 0.7461901903152466
+  },
+  {
+   "scene_id": "s10",
+   "condition": "token_budget",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s10_with_names_s2.png",
+   "coalition": "with_names",
+   "prompt": "rrvarma style, Karna, a bare-chested warrior in golden armour with large gold earrings, standing tall and proud, holding a great bow upright, an open plain under a wide sky at sunrise, warm golden morning light, heroic and dignified, oil painting, canvas texture, classical indian art",
+   "checklist": 0.538462350765864,
+   "checklist_detail": {
+    "c1": 0.777560293674469,
+    "c2": 0.9210778474807739,
+    "c3": 0.14678147435188293,
+    "c4": 0.20592956244945526,
+    "c5": 0.7434628009796143
+   },
+   "clip_raw": 0.2086062729358673,
+   "style_margin": 0.12228220701217651,
+   "max_train_dino": 0.6114155054092407
+  },
+  {
+   "scene_id": "s12",
+   "condition": "token_budget",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s12_char_s1.png",
+   "coalition": "char",
+   "prompt": "rrvarma style, a monkey-faced figure in a red dhoti, a crowned man in a yellow dhoti",
+   "checklist": 0.23054010214077103,
+   "checklist_detail": {
+    "c1": 0.307586669921875,
+    "c2": 0.02886352874338627,
+    "c3": 0.26841971278190613,
+    "c4": 0.3905411958694458,
+    "c5": 0.08403870463371277
+   },
+   "clip_raw": 0.1335720717906952,
+   "style_margin": 0.10440373420715332,
+   "max_train_dino": 0.8269588947296143
+  },
+  {
+   "scene_id": "s12",
+   "condition": "token_budget",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s12_char_s2.png",
+   "coalition": "char",
+   "prompt": "rrvarma style, a monkey-faced figure in a red dhoti, a crowned man in a yellow dhoti",
+   "checklist": 0.32365909301572376,
+   "checklist_detail": {
+    "c1": 0.6226570010185242,
+    "c2": 0.031129557639360428,
+    "c3": 0.3626680374145508,
+    "c4": 0.18135493993759155,
+    "c5": 0.51731276512146
+   },
+   "clip_raw": 0.23075750470161438,
+   "style_margin": 0.06047719717025757,
+   "max_train_dino": 0.6782102584838867
+  },
+  {
+   "scene_id": "s12",
+   "condition": "token_budget",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s12_char_action_s1.png",
+   "coalition": "char_action",
+   "prompt": "rrvarma style, a monkey-faced figure in a red dhoti, a crowned man in a yellow dhoti, the monkey-faced figure kneels offering a ring, the man reaching out for it",
+   "checklist": 0.7294277316994138,
+   "checklist_detail": {
+    "c1": 0.968393862247467,
+    "c2": 0.9499267339706421,
+    "c3": 0.2938368618488312,
+    "c4": 0.9543418884277344,
+    "c5": 0.23185089230537415
+   },
+   "clip_raw": 0.2213517278432846,
+   "style_margin": 0.09658759832382202,
+   "max_train_dino": 0.731622576713562
+  },
+  {
+   "scene_id": "s12",
+   "condition": "token_budget",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s12_char_action_s2.png",
+   "coalition": "char_action",
+   "prompt": "rrvarma style, a monkey-faced figure in a red dhoti, a crowned man in a yellow dhoti, the monkey-faced figure kneels offering a ring, the man reaching out for it",
+   "checklist": 0.7210844490263197,
+   "checklist_detail": {
+    "c1": 0.8808537125587463,
+    "c2": 0.9520145654678345,
+    "c3": 0.1087927520275116,
+    "c4": 0.8779447674751282,
+    "c5": 0.8505484461784363
+   },
+   "clip_raw": 0.24588227272033691,
+   "style_margin": 0.07489228248596191,
+   "max_train_dino": 0.6715044975280762
+  },
+  {
+   "scene_id": "s12",
+   "condition": "token_budget",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s12_char_action_setting_s1.png",
+   "coalition": "char_action_setting",
+   "prompt": "rrvarma style, a monkey-faced figure in a red dhoti, a crowned man in a yellow dhoti, the monkey-faced figure kneels offering a ring, the man reaching out for it, a forest clearing with tall trees and rocks",
+   "checklist": 0.772125909725825,
+   "checklist_detail": {
+    "c1": 0.9637916088104248,
+    "c2": 0.9534093141555786,
+    "c3": 0.20801232755184174,
+    "c4": 0.926735520362854,
+    "c5": 0.8452356457710266
+   },
+   "clip_raw": 0.22825561463832855,
+   "style_margin": 0.15621721744537354,
+   "max_train_dino": 0.7685295343399048
+  },
+  {
+   "scene_id": "s12",
+   "condition": "token_budget",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s12_char_action_setting_s2.png",
+   "coalition": "char_action_setting",
+   "prompt": "rrvarma style, a monkey-faced figure in a red dhoti, a crowned man in a yellow dhoti, the monkey-faced figure kneels offering a ring, the man reaching out for it, a forest clearing with tall trees and rocks",
+   "checklist": 0.5889910575416353,
+   "checklist_detail": {
+    "c1": 0.7218577265739441,
+    "c2": 0.1145794615149498,
+    "c3": 0.7113792300224304,
+    "c4": 0.8403037786483765,
+    "c5": 0.5246791243553162
+   },
+   "clip_raw": 0.235308438539505,
+   "style_margin": 0.11397337913513184,
+   "max_train_dino": 0.7661224007606506
+  },
+  {
+   "scene_id": "s12",
+   "condition": "token_budget",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s12_full_s1.png",
+   "coalition": "full",
+   "prompt": "rrvarma style, a monkey-faced figure in a red dhoti, a crowned man in a yellow dhoti, the monkey-faced figure kneels offering a ring, the man reaching out for it, a forest clearing with tall trees and rocks, solemn and reverent, soft daylight, oil painting, canvas texture, classical indian art",
+   "checklist": 0.7160386045773824,
+   "checklist_detail": {
+    "c1": 0.9553368091583252,
+    "c2": 0.9759954810142517,
+    "c3": 0.32627183198928833,
+    "c4": 0.8969393968582153,
+    "c5": 0.13526040315628052
+   },
+   "clip_raw": 0.21909619867801666,
+   "style_margin": 0.1614353060722351,
+   "max_train_dino": 0.7480226755142212
+  },
+  {
+   "scene_id": "s12",
+   "condition": "token_budget",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s12_full_s2.png",
+   "coalition": "full",
+   "prompt": "rrvarma style, a monkey-faced figure in a red dhoti, a crowned man in a yellow dhoti, the monkey-faced figure kneels offering a ring, the man reaching out for it, a forest clearing with tall trees and rocks, solemn and reverent, soft daylight, oil painting, canvas texture, classical indian art",
+   "checklist": 0.538658125532998,
+   "checklist_detail": {
+    "c1": 0.8267664313316345,
+    "c2": 0.18035268783569336,
+    "c3": 0.20781414210796356,
+    "c4": 0.8227817416191101,
+    "c5": 0.7724931240081787
+   },
+   "clip_raw": 0.25709450244903564,
+   "style_margin": 0.11588537693023682,
+   "max_train_dino": 0.7489495873451233
+  },
+  {
+   "scene_id": "s12",
+   "condition": "token_budget",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s12_no_tail_s1.png",
+   "coalition": "no_tail",
+   "prompt": "rrvarma style, a monkey-faced figure in a red dhoti, a crowned man in a yellow dhoti, the monkey-faced figure kneels offering a ring, the man reaching out for it, a forest clearing with tall trees and rocks, solemn and reverent, soft daylight",
+   "checklist": 0.6360866700609525,
+   "checklist_detail": {
+    "c1": 0.9304819107055664,
+    "c2": 0.9527074098587036,
+    "c3": 0.07292064279317856,
+    "c4": 0.881443977355957,
+    "c5": 0.04967214912176132
+   },
+   "clip_raw": 0.21616774797439575,
+   "style_margin": 0.1448952555656433,
+   "max_train_dino": 0.7790135145187378
+  },
+  {
+   "scene_id": "s12",
+   "condition": "token_budget",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s12_no_tail_s2.png",
+   "coalition": "no_tail",
+   "prompt": "rrvarma style, a monkey-faced figure in a red dhoti, a crowned man in a yellow dhoti, the monkey-faced figure kneels offering a ring, the man reaching out for it, a forest clearing with tall trees and rocks, solemn and reverent, soft daylight",
+   "checklist": 0.5793265302975973,
+   "checklist_detail": {
+    "c1": 0.8500198721885681,
+    "c2": 0.14829972386360168,
+    "c3": 0.6497418880462646,
+    "c4": 0.8317207098007202,
+    "c5": 0.2543743848800659
+   },
+   "clip_raw": 0.2327563315629959,
+   "style_margin": 0.120067298412323,
+   "max_train_dino": 0.749411404132843
+  },
+  {
+   "scene_id": "s12",
+   "condition": "token_budget",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s12_trigger_last_s1.png",
+   "coalition": "trigger_last",
+   "prompt": "a monkey-faced figure in a red dhoti, a crowned man in a yellow dhoti, the monkey-faced figure kneels offering a ring, the man reaching out for it, a forest clearing with tall trees and rocks, solemn and reverent, soft daylight, oil painting, canvas texture, classical indian art, rrvarma style",
+   "checklist": 0.6808261573314667,
+   "checklist_detail": {
+    "c1": 0.8222460150718689,
+    "c2": 0.9684232473373413,
+    "c3": 0.2235693633556366,
+    "c4": 0.958012580871582,
+    "c5": 0.1829330027103424
+   },
+   "clip_raw": 0.25806936621665955,
+   "style_margin": 0.13441288471221924,
+   "max_train_dino": 0.7890946865081787
+  },
+  {
+   "scene_id": "s12",
+   "condition": "token_budget",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s12_trigger_last_s2.png",
+   "coalition": "trigger_last",
+   "prompt": "a monkey-faced figure in a red dhoti, a crowned man in a yellow dhoti, the monkey-faced figure kneels offering a ring, the man reaching out for it, a forest clearing with tall trees and rocks, solemn and reverent, soft daylight, oil painting, canvas texture, classical indian art, rrvarma style",
+   "checklist": 0.5335904326703813,
+   "checklist_detail": {
+    "c1": 0.815291702747345,
+    "c2": 0.20211881399154663,
+    "c3": 0.1928476244211197,
+    "c4": 0.808838963508606,
+    "c5": 0.7641196846961975
+   },
+   "clip_raw": 0.2699214816093445,
+   "style_margin": 0.09240525960922241,
+   "max_train_dino": 0.7345935106277466
+  },
+  {
+   "scene_id": "s12",
+   "condition": "token_budget",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s12_with_names_s1.png",
+   "coalition": "with_names",
+   "prompt": "rrvarma style, Hanuman and Rama, a monkey-faced figure in a red dhoti, a crowned man in a yellow dhoti, the monkey-faced figure kneels offering a ring, the man reaching out for it, a forest clearing with tall trees and rocks, solemn and reverent, soft daylight, oil painting, canvas texture, classical indian art",
+   "checklist": 0.535509877734714,
+   "checklist_detail": {
+    "c1": 0.9859405755996704,
+    "c2": 0.022292420268058777,
+    "c3": 0.17388851940631866,
+    "c4": 0.8587285280227661,
+    "c5": 0.7378888130187988
+   },
+   "clip_raw": 0.21989448368549347,
+   "style_margin": 0.09377044439315796,
+   "max_train_dino": 0.7332147359848022
+  },
+  {
+   "scene_id": "s12",
+   "condition": "token_budget",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s12_with_names_s2.png",
+   "coalition": "with_names",
+   "prompt": "rrvarma style, Hanuman and Rama, a monkey-faced figure in a red dhoti, a crowned man in a yellow dhoti, the monkey-faced figure kneels offering a ring, the man reaching out for it, a forest clearing with tall trees and rocks, solemn and reverent, soft daylight, oil painting, canvas texture, classical indian art",
+   "checklist": 0.46380140052901375,
+   "checklist_detail": {
+    "c1": 0.8539760112762451,
+    "c2": 0.13681727647781372,
+    "c3": 0.10852231085300446,
+    "c4": 0.8337832093238831,
+    "c5": 0.30801498889923096
+   },
+   "clip_raw": 0.2449231892824173,
+   "style_margin": 0.07532918453216553,
+   "max_train_dino": 0.7651215195655823
+  },
+  {
+   "scene_id": "s27",
+   "condition": "token_budget",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s27_char_s1.png",
+   "coalition": "char",
+   "prompt": "rrvarma style, a woman in a draped sari with a flowered bun, a small blue-skinned boy",
+   "checklist": 0.3838508911430836,
+   "checklist_detail": {
+    "c1": 0.47305288910865784,
+    "c2": 0.19946511089801788,
+    "c3": 0.07330569624900818,
+    "c4": 0.9921471476554871,
+    "c5": 0.5870125889778137
+   },
+   "clip_raw": 0.2047450840473175,
+   "style_margin": 0.16006308794021606,
+   "max_train_dino": 0.8040180206298828
+  },
+  {
+   "scene_id": "s27",
+   "condition": "token_budget",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s27_char_s2.png",
+   "coalition": "char",
+   "prompt": "rrvarma style, a woman in a draped sari with a flowered bun, a small blue-skinned boy",
+   "checklist": 0.5305284783244133,
+   "checklist_detail": {
+    "c1": 0.7746882438659668,
+    "c2": 0.39454761147499084,
+    "c3": 0.12179547548294067,
+    "c4": 0.9897145628929138,
+    "c5": 0.672450602054596
+   },
+   "clip_raw": 0.2192906141281128,
+   "style_margin": 0.14201337099075317,
+   "max_train_dino": 0.8078299164772034
+  },
+  {
+   "scene_id": "s27",
+   "condition": "token_budget",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s27_char_action_s1.png",
+   "coalition": "char_action",
+   "prompt": "rrvarma style, a woman in a draped sari with a flowered bun, a small blue-skinned boy, she bends over scolding him, his face smeared with butter",
+   "checklist": 0.5489492267370224,
+   "checklist_detail": {
+    "c1": 0.4226605296134949,
+    "c2": 0.7434623837471008,
+    "c3": 0.22498762607574463,
+    "c4": 0.9932110905647278,
+    "c5": 0.6161616444587708
+   },
+   "clip_raw": 0.24894388020038605,
+   "style_margin": 0.13269275426864624,
+   "max_train_dino": 0.8208754658699036
+  },
+  {
+   "scene_id": "s27",
+   "condition": "token_budget",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s27_char_action_s2.png",
+   "coalition": "char_action",
+   "prompt": "rrvarma style, a woman in a draped sari with a flowered bun, a small blue-skinned boy, she bends over scolding him, his face smeared with butter",
+   "checklist": 0.7588113844394684,
+   "checklist_detail": {
+    "c1": 0.7123690247535706,
+    "c2": 0.8851303458213806,
+    "c3": 0.6007996797561646,
+    "c4": 0.9920958876609802,
+    "c5": 0.6817970871925354
+   },
+   "clip_raw": 0.22873394191265106,
+   "style_margin": 0.1313384771347046,
+   "max_train_dino": 0.7542514801025391
+  },
+  {
+   "scene_id": "s27",
+   "condition": "token_budget",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s27_char_action_setting_s1.png",
+   "coalition": "char_action_setting",
+   "prompt": "rrvarma style, a woman in a draped sari with a flowered bun, a small blue-skinned boy, she bends over scolding him, his face smeared with butter, inside a village house courtyard, a broken clay pot on the floor",
+   "checklist": 0.6639101449400187,
+   "checklist_detail": {
+    "c1": 0.7250125408172607,
+    "c2": 0.9038832783699036,
+    "c3": 0.10763261467218399,
+    "c4": 0.9903310537338257,
+    "c5": 0.847893238067627
+   },
+   "clip_raw": 0.26809486746788025,
+   "style_margin": 0.0829000473022461,
+   "max_train_dino": 0.782423734664917
+  },
+  {
+   "scene_id": "s27",
+   "condition": "token_budget",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s27_char_action_setting_s2.png",
+   "coalition": "char_action_setting",
+   "prompt": "rrvarma style, a woman in a draped sari with a flowered bun, a small blue-skinned boy, she bends over scolding him, his face smeared with butter, inside a village house courtyard, a broken clay pot on the floor",
+   "checklist": 0.6390389427542686,
+   "checklist_detail": {
+    "c1": 0.75791335105896,
+    "c2": 0.7461646199226379,
+    "c3": 0.1534002423286438,
+    "c4": 0.9923219084739685,
+    "c5": 0.8050332069396973
+   },
+   "clip_raw": 0.2582339942455292,
+   "style_margin": 0.10487717390060425,
+   "max_train_dino": 0.7431401610374451
+  },
+  {
+   "scene_id": "s27",
+   "condition": "token_budget",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s27_full_s1.png",
+   "coalition": "full",
+   "prompt": "rrvarma style, a woman in a draped sari with a flowered bun, a small blue-skinned boy, she bends over scolding him, his face smeared with butter, inside a village house courtyard, a broken clay pot on the floor, playful, warm domestic light, oil painting, canvas texture, classical indian art",
+   "checklist": 0.491457711905241,
+   "checklist_detail": {
+    "c1": 0.3108418583869934,
+    "c2": 0.6301089525222778,
+    "c3": 0.12686987221240997,
+    "c4": 0.9927768707275391,
+    "c5": 0.8032434582710266
+   },
+   "clip_raw": 0.25005781650543213,
+   "style_margin": 0.13685238361358643,
+   "max_train_dino": 0.7588561177253723
+  },
+  {
+   "scene_id": "s27",
+   "condition": "token_budget",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s27_full_s2.png",
+   "coalition": "full",
+   "prompt": "rrvarma style, a woman in a draped sari with a flowered bun, a small blue-skinned boy, she bends over scolding him, his face smeared with butter, inside a village house courtyard, a broken clay pot on the floor, playful, warm domestic light, oil painting, canvas texture, classical indian art",
+   "checklist": 0.5284172371029854,
+   "checklist_detail": {
+    "c1": 0.341763973236084,
+    "c2": 0.7648343443870544,
+    "c3": 0.11509907245635986,
+    "c4": 0.9928870797157288,
+    "c5": 0.7910560369491577
+   },
+   "clip_raw": 0.24522539973258972,
+   "style_margin": 0.12916946411132812,
+   "max_train_dino": 0.7672169208526611
+  },
+  {
+   "scene_id": "s27",
+   "condition": "token_budget",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s27_no_tail_s1.png",
+   "coalition": "no_tail",
+   "prompt": "rrvarma style, a woman in a draped sari with a flowered bun, a small blue-skinned boy, she bends over scolding him, his face smeared with butter, inside a village house courtyard, a broken clay pot on the floor, playful, warm domestic light",
+   "checklist": 0.7455799281597137,
+   "checklist_detail": {
+    "c1": 0.8460445404052734,
+    "c2": 0.6495174169540405,
+    "c3": 0.5732445120811462,
+    "c4": 0.9935401082038879,
+    "c5": 0.8334863781929016
+   },
+   "clip_raw": 0.27357548475265503,
+   "style_margin": 0.09175920486450195,
+   "max_train_dino": 0.8176600933074951
+  },
+  {
+   "scene_id": "s27",
+   "condition": "token_budget",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s27_no_tail_s2.png",
+   "coalition": "no_tail",
+   "prompt": "rrvarma style, a woman in a draped sari with a flowered bun, a small blue-skinned boy, she bends over scolding him, his face smeared with butter, inside a village house courtyard, a broken clay pot on the floor, playful, warm domestic light",
+   "checklist": 0.6032596863806248,
+   "checklist_detail": {
+    "c1": 0.6793245673179626,
+    "c2": 0.6608583927154541,
+    "c3": 0.14338110387325287,
+    "c4": 0.9947082996368408,
+    "c5": 0.8642410635948181
+   },
+   "clip_raw": 0.2588653862476349,
+   "style_margin": 0.12238049507141113,
+   "max_train_dino": 0.7319962382316589
+  },
+  {
+   "scene_id": "s27",
+   "condition": "token_budget",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s27_trigger_last_s1.png",
+   "coalition": "trigger_last",
+   "prompt": "a woman in a draped sari with a flowered bun, a small blue-skinned boy, she bends over scolding him, his face smeared with butter, inside a village house courtyard, a broken clay pot on the floor, playful, warm domestic light, oil painting, canvas texture, classical indian art, rrvarma style",
+   "checklist": 0.46269236132502556,
+   "checklist_detail": {
+    "c1": 0.27219340205192566,
+    "c2": 0.575169563293457,
+    "c3": 0.11064164340496063,
+    "c4": 0.9942800998687744,
+    "c5": 0.7912495732307434
+   },
+   "clip_raw": 0.25592508912086487,
+   "style_margin": 0.14451050758361816,
+   "max_train_dino": 0.7665980458259583
+  },
+  {
+   "scene_id": "s27",
+   "condition": "token_budget",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s27_trigger_last_s2.png",
+   "coalition": "trigger_last",
+   "prompt": "a woman in a draped sari with a flowered bun, a small blue-skinned boy, she bends over scolding him, his face smeared with butter, inside a village house courtyard, a broken clay pot on the floor, playful, warm domestic light, oil painting, canvas texture, classical indian art, rrvarma style",
+   "checklist": 0.4100934788584709,
+   "checklist_detail": {
+    "c1": 0.14819158613681793,
+    "c2": 0.3785080015659332,
+    "c3": 0.21085040271282196,
+    "c4": 0.9949572682380676,
+    "c5": 0.8106905817985535
+   },
+   "clip_raw": 0.24810580909252167,
+   "style_margin": 0.11920738220214844,
+   "max_train_dino": 0.7716920375823975
+  },
+  {
+   "scene_id": "s27",
+   "condition": "token_budget",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s27_with_names_s1.png",
+   "coalition": "with_names",
+   "prompt": "rrvarma style, Yashoda and Krishna, a woman in a draped sari with a flowered bun, a small blue-skinned boy, she bends over scolding him, his face smeared with butter, inside a village house courtyard, a broken clay pot on the floor, playful, warm domestic light, oil painting, canvas texture, classical indian art",
+   "checklist": 0.4075400158762932,
+   "checklist_detail": {
+    "c1": 0.13486133515834808,
+    "c2": 0.4755876958370209,
+    "c3": 0.1285514086484909,
+    "c4": 0.9919535517692566,
+    "c5": 0.7903656959533691
+   },
+   "clip_raw": 0.24693727493286133,
+   "style_margin": 0.12367701530456543,
+   "max_train_dino": 0.7704751491546631
+  },
+  {
+   "scene_id": "s27",
+   "condition": "token_budget",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s27_with_names_s2.png",
+   "coalition": "with_names",
+   "prompt": "rrvarma style, Yashoda and Krishna, a woman in a draped sari with a flowered bun, a small blue-skinned boy, she bends over scolding him, his face smeared with butter, inside a village house courtyard, a broken clay pot on the floor, playful, warm domestic light, oil painting, canvas texture, classical indian art",
+   "checklist": 0.6218839325010777,
+   "checklist_detail": {
+    "c1": 0.7123705744743347,
+    "c2": 0.7280781865119934,
+    "c3": 0.15524999797344208,
+    "c4": 0.9932118654251099,
+    "c5": 0.790462076663971
+   },
+   "clip_raw": 0.2183317244052887,
+   "style_margin": 0.11434173583984375,
+   "max_train_dino": 0.6936913132667542
+  },
+  {
+   "scene_id": "s13",
+   "condition": "token_budget",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s13_char_s1.png",
+   "coalition": "char",
+   "prompt": "rrvarma style, a blue-skinned man in a peacock-feather crown, a king in red turban",
+   "checklist": 0.30777744203805923,
+   "checklist_detail": {
+    "c1": 0.03570041060447693,
+    "c2": 0.014042485505342484,
+    "c3": 0.3966011703014374,
+    "c4": 0.5191332697868347,
+    "c5": 0.8390423059463501
+   },
+   "clip_raw": 0.1628929078578949,
+   "style_margin": 0.11945056915283203,
+   "max_train_dino": 0.7333409786224365
+  },
+  {
+   "scene_id": "s13",
+   "condition": "token_budget",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s13_char_s2.png",
+   "coalition": "char",
+   "prompt": "rrvarma style, a blue-skinned man in a peacock-feather crown, a king in red turban",
+   "checklist": 0.38497766355673474,
+   "checklist_detail": {
+    "c1": 0.04960871487855911,
+    "c2": 0.10730932652950287,
+    "c3": 0.2978515326976776,
+    "c4": 0.9038872718811035,
+    "c5": 0.7474852800369263
+   },
+   "clip_raw": 0.1849794238805771,
+   "style_margin": 0.11219519376754761,
+   "max_train_dino": 0.7699884176254272
+  },
+  {
+   "scene_id": "s13",
+   "condition": "token_budget",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s13_char_action_s1.png",
+   "coalition": "char_action",
+   "prompt": "rrvarma style, a blue-skinned man in a peacock-feather crown, a king in red turban, the blue-skinned man stands speaking to the king seated on his throne",
+   "checklist": 0.7859620915518867,
+   "checklist_detail": {
+    "c1": 0.29114025831222534,
+    "c2": 0.9433539509773254,
+    "c3": 0.907459557056427,
+    "c4": 0.9809560179710388,
+    "c5": 0.8278392553329468
+   },
+   "clip_raw": 0.2654028534889221,
+   "style_margin": 0.06390172243118286,
+   "max_train_dino": 0.6900771856307983
+  },
+  {
+   "scene_id": "s13",
+   "condition": "token_budget",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s13_char_action_s2.png",
+   "coalition": "char_action",
+   "prompt": "rrvarma style, a blue-skinned man in a peacock-feather crown, a king in red turban, the blue-skinned man stands speaking to the king seated on his throne",
+   "checklist": 0.7192759149604373,
+   "checklist_detail": {
+    "c1": 0.21494846045970917,
+    "c2": 0.9557076096534729,
+    "c3": 0.6687856316566467,
+    "c4": 0.9426189064979553,
+    "c5": 0.9093620181083679
+   },
+   "clip_raw": 0.23643310368061066,
+   "style_margin": 0.04455024003982544,
+   "max_train_dino": 0.6882854700088501
+  },
+  {
+   "scene_id": "s13",
+   "condition": "token_budget",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s13_char_action_setting_s1.png",
+   "coalition": "char_action_setting",
+   "prompt": "rrvarma style, a blue-skinned man in a peacock-feather crown, a king in red turban, the blue-skinned man stands speaking to the king seated on his throne, a pillared royal hall with watching courtiers",
+   "checklist": 0.7989242772261301,
+   "checklist_detail": {
+    "c1": 0.7311725616455078,
+    "c2": 0.9456683397293091,
+    "c3": 0.6901774406433105,
+    "c4": 0.9836806058883667,
+    "c5": 0.4889205992221832
+   },
+   "clip_raw": 0.286457896232605,
+   "style_margin": 0.015412747859954834,
+   "max_train_dino": 0.599921703338623
+  },
+  {
+   "scene_id": "s13",
+   "condition": "token_budget",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s13_char_action_setting_s2.png",
+   "coalition": "char_action_setting",
+   "prompt": "rrvarma style, a blue-skinned man in a peacock-feather crown, a king in red turban, the blue-skinned man stands speaking to the king seated on his throne, a pillared royal hall with watching courtiers",
+   "checklist": 0.7648422982957628,
+   "checklist_detail": {
+    "c1": 0.2754398286342621,
+    "c2": 0.9559702277183533,
+    "c3": 0.7990579605102539,
+    "c4": 0.9518637657165527,
+    "c5": 0.9189171195030212
+   },
+   "clip_raw": 0.23647871613502502,
+   "style_margin": 0.03755676746368408,
+   "max_train_dino": 0.6491361856460571
+  },
+  {
+   "scene_id": "s13",
+   "condition": "token_budget",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s13_full_s1.png",
+   "coalition": "full",
+   "prompt": "rrvarma style, a blue-skinned man in a peacock-feather crown, a king in red turban, the blue-skinned man stands speaking to the king seated on his throne, a pillared royal hall with watching courtiers, tense and formal, warm lamplight, oil painting, canvas texture, classical indian art",
+   "checklist": 0.8655398554272122,
+   "checklist_detail": {
+    "c1": 0.8741624355316162,
+    "c2": 0.91382896900177,
+    "c3": 0.8524908423423767,
+    "c4": 0.9859977960586548,
+    "c5": 0.5368986129760742
+   },
+   "clip_raw": 0.2935538589954376,
+   "style_margin": 0.026269912719726562,
+   "max_train_dino": 0.6774002313613892
+  },
+  {
+   "scene_id": "s13",
+   "condition": "token_budget",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s13_full_s2.png",
+   "coalition": "full",
+   "prompt": "rrvarma style, a blue-skinned man in a peacock-feather crown, a king in red turban, the blue-skinned man stands speaking to the king seated on his throne, a pillared royal hall with watching courtiers, tense and formal, warm lamplight, oil painting, canvas texture, classical indian art",
+   "checklist": 0.7462784714168973,
+   "checklist_detail": {
+    "c1": 0.3595951497554779,
+    "c2": 0.9170136451721191,
+    "c3": 0.7640351057052612,
+    "c4": 0.9756923913955688,
+    "c5": 0.683833658695221
+   },
+   "clip_raw": 0.25667235255241394,
+   "style_margin": 0.06962549686431885,
+   "max_train_dino": 0.6585409045219421
+  },
+  {
+   "scene_id": "s13",
+   "condition": "token_budget",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s13_no_tail_s1.png",
+   "coalition": "no_tail",
+   "prompt": "rrvarma style, a blue-skinned man in a peacock-feather crown, a king in red turban, the blue-skinned man stands speaking to the king seated on his throne, a pillared royal hall with watching courtiers, tense and formal, warm lamplight",
+   "checklist": 0.8402023414770762,
+   "checklist_detail": {
+    "c1": 0.8689004182815552,
+    "c2": 0.8911609649658203,
+    "c3": 0.8599812388420105,
+    "c4": 0.9843947887420654,
+    "c5": 0.3529462516307831
+   },
+   "clip_raw": 0.3219718337059021,
+   "style_margin": 0.06451249122619629,
+   "max_train_dino": 0.6634020209312439
+  },
+  {
+   "scene_id": "s13",
+   "condition": "token_budget",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s13_no_tail_s2.png",
+   "coalition": "no_tail",
+   "prompt": "rrvarma style, a blue-skinned man in a peacock-feather crown, a king in red turban, the blue-skinned man stands speaking to the king seated on his throne, a pillared royal hall with watching courtiers, tense and formal, warm lamplight",
+   "checklist": 0.698006186220381,
+   "checklist_detail": {
+    "c1": 0.3348225951194763,
+    "c2": 0.9459044337272644,
+    "c3": 0.634522557258606,
+    "c4": 0.9738892912864685,
+    "c5": 0.5037779211997986
+   },
+   "clip_raw": 0.2592085599899292,
+   "style_margin": 0.07626265287399292,
+   "max_train_dino": 0.7063623666763306
+  },
+  {
+   "scene_id": "s13",
+   "condition": "token_budget",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s13_trigger_last_s1.png",
+   "coalition": "trigger_last",
+   "prompt": "a blue-skinned man in a peacock-feather crown, a king in red turban, the blue-skinned man stands speaking to the king seated on his throne, a pillared royal hall with watching courtiers, tense and formal, warm lamplight, oil painting, canvas texture, classical indian art, rrvarma style",
+   "checklist": 0.9066409203741286,
+   "checklist_detail": {
+    "c1": 0.8460333943367004,
+    "c2": 0.9373828172683716,
+    "c3": 0.8463761806488037,
+    "c4": 0.9836665391921997,
+    "c5": 0.9328504204750061
+   },
+   "clip_raw": 0.2783113718032837,
+   "style_margin": 0.04509103298187256,
+   "max_train_dino": 0.6969630718231201
+  },
+  {
+   "scene_id": "s13",
+   "condition": "token_budget",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s13_trigger_last_s2.png",
+   "coalition": "trigger_last",
+   "prompt": "a blue-skinned man in a peacock-feather crown, a king in red turban, the blue-skinned man stands speaking to the king seated on his throne, a pillared royal hall with watching courtiers, tense and formal, warm lamplight, oil painting, canvas texture, classical indian art, rrvarma style",
+   "checklist": 0.7265079683727689,
+   "checklist_detail": {
+    "c1": 0.2912469506263733,
+    "c2": 0.9447798728942871,
+    "c3": 0.7866023182868958,
+    "c4": 0.9801165461540222,
+    "c5": 0.5330803394317627
+   },
+   "clip_raw": 0.21902580559253693,
+   "style_margin": 0.0788993239402771,
+   "max_train_dino": 0.6540752649307251
+  },
+  {
+   "scene_id": "s13",
+   "condition": "token_budget",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s13_with_names_s1.png",
+   "coalition": "with_names",
+   "prompt": "rrvarma style, Krishna and Duryodhana, a blue-skinned man in a peacock-feather crown, a king in red turban, the blue-skinned man stands speaking to the king seated on his throne, a pillared royal hall with watching courtiers, tense and formal, warm lamplight, oil painting, canvas texture, classical indian art",
+   "checklist": 0.7716569503148397,
+   "checklist_detail": {
+    "c1": 0.44199615716934204,
+    "c2": 0.9636762142181396,
+    "c3": 0.7257458567619324,
+    "c4": 0.9844014048576355,
+    "c5": 0.713273286819458
+   },
+   "clip_raw": 0.25004079937934875,
+   "style_margin": 0.07221466302871704,
+   "max_train_dino": 0.7419173717498779
+  },
+  {
+   "scene_id": "s13",
+   "condition": "token_budget",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s13_with_names_s2.png",
+   "coalition": "with_names",
+   "prompt": "rrvarma style, Krishna and Duryodhana, a blue-skinned man in a peacock-feather crown, a king in red turban, the blue-skinned man stands speaking to the king seated on his throne, a pillared royal hall with watching courtiers, tense and formal, warm lamplight, oil painting, canvas texture, classical indian art",
+   "checklist": 0.698926051457723,
+   "checklist_detail": {
+    "c1": 0.25415554642677307,
+    "c2": 0.9371326565742493,
+    "c3": 0.7409831285476685,
+    "c4": 0.9485545754432678,
+    "c5": 0.5286826491355896
+   },
+   "clip_raw": 0.1939706802368164,
+   "style_margin": 0.0658068060874939,
+   "max_train_dino": 0.7655819654464722
+  },
+  {
+   "scene_id": "s21",
+   "condition": "token_budget",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s21_char_s1.png",
+   "coalition": "char",
+   "prompt": "rrvarma style, two princes in yellow dhotis with bows, a monkey-faced figure with a mace",
+   "checklist": 0.176391286496073,
+   "checklist_detail": {
+    "c1": 0.4304255247116089,
+    "c2": 0.1803363412618637,
+    "c3": 0.09553998708724976,
+    "c4": 0.013046620413661003,
+    "c5": 0.006251168437302113,
+    "c6": 0.31896474957466125
+   },
+   "clip_raw": 0.19345858693122864,
+   "style_margin": 0.10194617509841919,
+   "max_train_dino": 0.6687113046646118
+  },
+  {
+   "scene_id": "s21",
+   "condition": "token_budget",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s21_char_s2.png",
+   "coalition": "char",
+   "prompt": "rrvarma style, two princes in yellow dhotis with bows, a monkey-faced figure with a mace",
+   "checklist": 0.33013206217437985,
+   "checklist_detail": {
+    "c1": 0.5661773085594177,
+    "c2": 0.8200820088386536,
+    "c3": 0.09154360741376877,
+    "c4": 0.02101299539208412,
+    "c5": 0.010491447523236275,
+    "c6": 0.2931973338127136
+   },
+   "clip_raw": 0.17109110951423645,
+   "style_margin": 0.10168176889419556,
+   "max_train_dino": 0.6639505624771118
+  },
+  {
+   "scene_id": "s21",
+   "condition": "token_budget",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s21_char_action_s1.png",
+   "coalition": "char_action",
+   "prompt": "rrvarma style, two princes in yellow dhotis with bows, a monkey-faced figure with a mace, sitting together on rocks, talking and planning",
+   "checklist": 0.41867878288030624,
+   "checklist_detail": {
+    "c1": 0.4265100359916687,
+    "c2": 0.64448082447052,
+    "c3": 0.08050686866044998,
+    "c4": 0.13900168240070343,
+    "c5": 0.9913082718849182,
+    "c6": 0.61448073387146
+   },
+   "clip_raw": 0.21534758806228638,
+   "style_margin": 0.12382471561431885,
+   "max_train_dino": 0.6202377080917358
+  },
+  {
+   "scene_id": "s21",
+   "condition": "token_budget",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s21_char_action_s2.png",
+   "coalition": "char_action",
+   "prompt": "rrvarma style, two princes in yellow dhotis with bows, a monkey-faced figure with a mace, sitting together on rocks, talking and planning",
+   "checklist": 0.3865995451807976,
+   "checklist_detail": {
+    "c1": 0.5040788054466248,
+    "c2": 0.49244698882102966,
+    "c3": 0.14073458313941956,
+    "c4": 0.11852113157510757,
+    "c5": 0.993110179901123,
+    "c6": 0.3613222539424896
+   },
+   "clip_raw": 0.2512187063694,
+   "style_margin": 0.10780054330825806,
+   "max_train_dino": 0.6387098431587219
+  },
+  {
+   "scene_id": "s21",
+   "condition": "token_budget",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s21_char_action_setting_s1.png",
+   "coalition": "char_action_setting",
+   "prompt": "rrvarma style, two princes in yellow dhotis with bows, a monkey-faced figure with a mace, sitting together on rocks, talking and planning, a rocky sea shore with crashing waves",
+   "checklist": 0.5492854379117489,
+   "checklist_detail": {
+    "c1": 0.7026795148849487,
+    "c2": 0.4075576663017273,
+    "c3": 0.053403329104185104,
+    "c4": 0.8623661398887634,
+    "c5": 0.9887048602104187,
+    "c6": 0.45213621854782104
+   },
+   "clip_raw": 0.341928631067276,
+   "style_margin": 0.07198059558868408,
+   "max_train_dino": 0.6928850412368774
+  },
+  {
+   "scene_id": "s21",
+   "condition": "token_budget",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s21_char_action_setting_s2.png",
+   "coalition": "char_action_setting",
+   "prompt": "rrvarma style, two princes in yellow dhotis with bows, a monkey-faced figure with a mace, sitting together on rocks, talking and planning, a rocky sea shore with crashing waves",
+   "checklist": 0.6506452649831772,
+   "checklist_detail": {
+    "c1": 0.7343059778213501,
+    "c2": 0.7855631709098816,
+    "c3": 0.1264563351869583,
+    "c4": 0.838676393032074,
+    "c5": 0.9918655753135681,
+    "c6": 0.5445833206176758
+   },
+   "clip_raw": 0.31583699584007263,
+   "style_margin": -0.01193171739578247,
+   "max_train_dino": 0.44915056228637695
+  },
+  {
+   "scene_id": "s21",
+   "condition": "token_budget",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s21_full_s1.png",
+   "coalition": "full",
+   "prompt": "rrvarma style, two princes in yellow dhotis with bows, a monkey-faced figure with a mace, sitting together on rocks, talking and planning, a rocky sea shore with crashing waves, dark cloudy sky, serious and determined, oil painting, canvas texture, classical indian art",
+   "checklist": 0.4187849845737219,
+   "checklist_detail": {
+    "c1": 0.4534655809402466,
+    "c2": 0.3210320472717285,
+    "c3": 0.02759653888642788,
+    "c4": 0.7014099955558777,
+    "c5": 0.9892292022705078,
+    "c6": 0.19161231815814972
+   },
+   "clip_raw": 0.28856807947158813,
+   "style_margin": 0.06709975004196167,
+   "max_train_dino": 0.6238281726837158
+  },
+  {
+   "scene_id": "s21",
+   "condition": "token_budget",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s21_full_s2.png",
+   "coalition": "full",
+   "prompt": "rrvarma style, two princes in yellow dhotis with bows, a monkey-faced figure with a mace, sitting together on rocks, talking and planning, a rocky sea shore with crashing waves, dark cloudy sky, serious and determined, oil painting, canvas texture, classical indian art",
+   "checklist": 0.5944556355476379,
+   "checklist_detail": {
+    "c1": 0.5040816068649292,
+    "c2": 0.5548534989356995,
+    "c3": 0.15864935517311096,
+    "c4": 0.898149847984314,
+    "c5": 0.9733718037605286,
+    "c6": 0.7397159337997437
+   },
+   "clip_raw": 0.27506908774375916,
+   "style_margin": 0.04408925771713257,
+   "max_train_dino": 0.4879751205444336
+  },
+  {
+   "scene_id": "s21",
+   "condition": "token_budget",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s21_no_tail_s1.png",
+   "coalition": "no_tail",
+   "prompt": "rrvarma style, two princes in yellow dhotis with bows, a monkey-faced figure with a mace, sitting together on rocks, talking and planning, a rocky sea shore with crashing waves, dark cloudy sky, serious and determined",
+   "checklist": 0.5427483335137367,
+   "checklist_detail": {
+    "c1": 0.7312126755714417,
+    "c2": 0.38146480917930603,
+    "c3": 0.04747656732797623,
+    "c4": 0.9051593542098999,
+    "c5": 0.9831982254981995,
+    "c6": 0.31365829706192017
+   },
+   "clip_raw": 0.3229793906211853,
+   "style_margin": 0.09168308973312378,
+   "max_train_dino": 0.6881358623504639
+  },
+  {
+   "scene_id": "s21",
+   "condition": "token_budget",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s21_no_tail_s2.png",
+   "coalition": "no_tail",
+   "prompt": "rrvarma style, two princes in yellow dhotis with bows, a monkey-faced figure with a mace, sitting together on rocks, talking and planning, a rocky sea shore with crashing waves, dark cloudy sky, serious and determined",
+   "checklist": 0.41881749369204047,
+   "checklist_detail": {
+    "c1": 0.42657068371772766,
+    "c2": 0.13670897483825684,
+    "c3": 0.017171913757920265,
+    "c4": 0.9561280012130737,
+    "c5": 0.9666982293128967,
+    "c6": 0.14831756055355072
+   },
+   "clip_raw": 0.2622515559196472,
+   "style_margin": 0.01515209674835205,
+   "max_train_dino": 0.3630309998989105
+  },
+  {
+   "scene_id": "s21",
+   "condition": "token_budget",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s21_trigger_last_s1.png",
+   "coalition": "trigger_last",
+   "prompt": "two princes in yellow dhotis with bows, a monkey-faced figure with a mace, sitting together on rocks, talking and planning, a rocky sea shore with crashing waves, dark cloudy sky, serious and determined, oil painting, canvas texture, classical indian art, rrvarma style",
+   "checklist": 0.4322706326842308,
+   "checklist_detail": {
+    "c1": 0.4227159023284912,
+    "c2": 0.2511354684829712,
+    "c3": 0.10121404379606247,
+    "c4": 0.6754845380783081,
+    "c5": 0.9941144585609436,
+    "c6": 0.4274919629096985
+   },
+   "clip_raw": 0.2793000340461731,
+   "style_margin": 0.0810021162033081,
+   "max_train_dino": 0.7092006802558899
+  },
+  {
+   "scene_id": "s21",
+   "condition": "token_budget",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s21_trigger_last_s2.png",
+   "coalition": "trigger_last",
+   "prompt": "two princes in yellow dhotis with bows, a monkey-faced figure with a mace, sitting together on rocks, talking and planning, a rocky sea shore with crashing waves, dark cloudy sky, serious and determined, oil painting, canvas texture, classical indian art, rrvarma style",
+   "checklist": 0.48458490073680877,
+   "checklist_detail": {
+    "c1": 0.4806686341762543,
+    "c2": 0.3108929395675659,
+    "c3": 0.09289683401584625,
+    "c4": 0.7651476860046387,
+    "c5": 0.9826222658157349,
+    "c6": 0.5640145540237427
+   },
+   "clip_raw": 0.2629019618034363,
+   "style_margin": 0.08685386180877686,
+   "max_train_dino": 0.6285189390182495
+  },
+  {
+   "scene_id": "s21",
+   "condition": "token_budget",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s21_with_names_s1.png",
+   "coalition": "with_names",
+   "prompt": "rrvarma style, Rama, Lakshmana and Hanuman, two princes in yellow dhotis with bows, a monkey-faced figure with a mace, sitting together on rocks, talking and planning, a rocky sea shore with crashing waves, dark cloudy sky, serious and determined, oil painting, canvas texture, classical indian art",
+   "checklist": 0.5584985584020614,
+   "checklist_detail": {
+    "c1": 0.5001745223999023,
+    "c2": 0.4924169182777405,
+    "c3": 0.163037970662117,
+    "c4": 0.8877967000007629,
+    "c5": 0.9716488718986511,
+    "c6": 0.526484489440918
+   },
+   "clip_raw": 0.31835490465164185,
+   "style_margin": 0.08355450630187988,
+   "max_train_dino": 0.7352171540260315
+  },
+  {
+   "scene_id": "s21",
+   "condition": "token_budget",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s21_with_names_s2.png",
+   "coalition": "with_names",
+   "prompt": "rrvarma style, Rama, Lakshmana and Hanuman, two princes in yellow dhotis with bows, a monkey-faced figure with a mace, sitting together on rocks, talking and planning, a rocky sea shore with crashing waves, dark cloudy sky, serious and determined, oil painting, canvas texture, classical indian art",
+   "checklist": 0.47843441367149353,
+   "checklist_detail": {
+    "c1": 0.4075051546096802,
+    "c2": 0.523683488368988,
+    "c3": 0.1333576738834381,
+    "c4": 0.7230719327926636,
+    "c5": 0.9872193336486816,
+    "c6": 0.22188830375671387
+   },
+   "clip_raw": 0.29411736130714417,
+   "style_margin": 0.06420302391052246,
+   "max_train_dino": 0.6258065104484558
+  },
+  {
+   "scene_id": "s23",
+   "condition": "token_budget",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s23_char_s1.png",
+   "coalition": "char",
+   "prompt": "rrvarma style, a prince with a bow, his brother, an old bearded sage, a woman",
+   "checklist": 0.42644975293013787,
+   "checklist_detail": {
+    "c1": 0.5197075009346008,
+    "c2": 0.24303627014160156,
+    "c3": 0.5556820034980774,
+    "c4": 0.5861647725105286,
+    "c5": 0.028866682201623917
+   },
+   "clip_raw": 0.2185886800289154,
+   "style_margin": 0.06659543514251709,
+   "max_train_dino": 0.7459242343902588
+  },
+  {
+   "scene_id": "s23",
+   "condition": "token_budget",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s23_char_s2.png",
+   "coalition": "char",
+   "prompt": "rrvarma style, a prince with a bow, his brother, an old bearded sage, a woman",
+   "checklist": 0.33778831942213905,
+   "checklist_detail": {
+    "c1": 0.5079949498176575,
+    "c2": 0.16037695109844208,
+    "c3": 0.38206759095191956,
+    "c4": 0.45009124279022217,
+    "c5": 0.03903340548276901
+   },
+   "clip_raw": 0.2343226671218872,
+   "style_margin": 0.12277323007583618,
+   "max_train_dino": 0.8126699328422546
+  },
+  {
+   "scene_id": "s23",
+   "condition": "token_budget",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s23_char_action_s1.png",
+   "coalition": "char_action",
+   "prompt": "rrvarma style, a prince with a bow, his brother, an old bearded sage, a woman, the woman bows at the prince's feet as he blesses her",
+   "checklist": 0.5501839160505269,
+   "checklist_detail": {
+    "c1": 0.5507461428642273,
+    "c2": 0.4739254117012024,
+    "c3": 0.7834339737892151,
+    "c4": 0.6593927145004272,
+    "c5": 0.016658758744597435
+   },
+   "clip_raw": 0.23887695372104645,
+   "style_margin": 0.08500510454177856,
+   "max_train_dino": 0.7199245691299438
+  },
+  {
+   "scene_id": "s23",
+   "condition": "token_budget",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s23_char_action_s2.png",
+   "coalition": "char_action",
+   "prompt": "rrvarma style, a prince with a bow, his brother, an old bearded sage, a woman, the woman bows at the prince's feet as he blesses her",
+   "checklist": 0.5702477734949853,
+   "checklist_detail": {
+    "c1": 0.7958007454872131,
+    "c2": 0.4087270200252533,
+    "c3": 0.7875605821609497,
+    "c4": 0.5606041550636292,
+    "c5": 0.02684495598077774
+   },
+   "clip_raw": 0.22659027576446533,
+   "style_margin": 0.09287428855895996,
+   "max_train_dino": 0.7236839532852173
+  },
+  {
+   "scene_id": "s23",
+   "condition": "token_budget",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s23_char_action_setting_s1.png",
+   "coalition": "char_action_setting",
+   "prompt": "rrvarma style, a prince with a bow, his brother, an old bearded sage, a woman, the woman bows at the prince's feet as he blesses her, a quiet forest hermitage among trees",
+   "checklist": 0.6665219863255819,
+   "checklist_detail": {
+    "c1": 0.5000882148742676,
+    "c2": 0.7770610451698303,
+    "c3": 0.5826742053031921,
+    "c4": 0.7754507064819336,
+    "c5": 0.7281495332717896
+   },
+   "clip_raw": 0.23440909385681152,
+   "style_margin": 0.11641979217529297,
+   "max_train_dino": 0.7859920859336853
+  },
+  {
+   "scene_id": "s23",
+   "condition": "token_budget",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s23_char_action_setting_s2.png",
+   "coalition": "char_action_setting",
+   "prompt": "rrvarma style, a prince with a bow, his brother, an old bearded sage, a woman, the woman bows at the prince's feet as he blesses her, a quiet forest hermitage among trees",
+   "checklist": 0.7113275395499336,
+   "checklist_detail": {
+    "c1": 0.5235302448272705,
+    "c2": 0.8750840425491333,
+    "c3": 0.7198812365531921,
+    "c4": 0.7585294842720032,
+    "c5": 0.6478978395462036
+   },
+   "clip_raw": 0.17630358040332794,
+   "style_margin": 0.1182205080986023,
+   "max_train_dino": 0.7220245599746704
+  },
+  {
+   "scene_id": "s23",
+   "condition": "token_budget",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s23_full_s1.png",
+   "coalition": "full",
+   "prompt": "rrvarma style, a prince with a bow, his brother, an old bearded sage, a woman, the woman bows at the prince's feet as he blesses her, a quiet forest hermitage among trees, serene, gentle divine glow, oil painting, canvas texture, classical indian art",
+   "checklist": 0.5035888519552019,
+   "checklist_detail": {
+    "c1": 0.7747119665145874,
+    "c2": 0.16048921644687653,
+    "c3": 0.5592543482780457,
+    "c4": 0.4387659430503845,
+    "c5": 0.6658567190170288
+   },
+   "clip_raw": 0.23286192119121552,
+   "style_margin": 0.10710269212722778,
+   "max_train_dino": 0.7763112187385559
+  },
+  {
+   "scene_id": "s23",
+   "condition": "token_budget",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s23_full_s2.png",
+   "coalition": "full",
+   "prompt": "rrvarma style, a prince with a bow, his brother, an old bearded sage, a woman, the woman bows at the prince's feet as he blesses her, a quiet forest hermitage among trees, serene, gentle divine glow, oil painting, canvas texture, classical indian art",
+   "checklist": 0.6763416197564867,
+   "checklist_detail": {
+    "c1": 0.47670671343803406,
+    "c2": 0.7501922845840454,
+    "c3": 0.7064867615699768,
+    "c4": 0.7524074912071228,
+    "c5": 0.715488076210022
+   },
+   "clip_raw": 0.2217455953359604,
+   "style_margin": 0.11192446947097778,
+   "max_train_dino": 0.8064463138580322
+  },
+  {
+   "scene_id": "s23",
+   "condition": "token_budget",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s23_no_tail_s1.png",
+   "coalition": "no_tail",
+   "prompt": "rrvarma style, a prince with a bow, his brother, an old bearded sage, a woman, the woman bows at the prince's feet as he blesses her, a quiet forest hermitage among trees, serene, gentle divine glow",
+   "checklist": 0.6753055453300476,
+   "checklist_detail": {
+    "c1": 0.6115092635154724,
+    "c2": 0.7713951468467712,
+    "c3": 0.6457877159118652,
+    "c4": 0.6013466715812683,
+    "c5": 0.8176723122596741
+   },
+   "clip_raw": 0.20691202580928802,
+   "style_margin": 0.11037969589233398,
+   "max_train_dino": 0.7192966938018799
+  },
+  {
+   "scene_id": "s23",
+   "condition": "token_budget",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s23_no_tail_s2.png",
+   "coalition": "no_tail",
+   "prompt": "rrvarma style, a prince with a bow, his brother, an old bearded sage, a woman, the woman bows at the prince's feet as he blesses her, a quiet forest hermitage among trees, serene, gentle divine glow",
+   "checklist": 0.66154678662618,
+   "checklist_detail": {
+    "c1": 0.36664775013923645,
+    "c2": 0.6323103308677673,
+    "c3": 0.6933079361915588,
+    "c4": 0.8919905424118042,
+    "c5": 0.7854079604148865
+   },
+   "clip_raw": 0.24514316022396088,
+   "style_margin": 0.1181330680847168,
+   "max_train_dino": 0.7257658243179321
+  },
+  {
+   "scene_id": "s23",
+   "condition": "token_budget",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s23_trigger_last_s1.png",
+   "coalition": "trigger_last",
+   "prompt": "a prince with a bow, his brother, an old bearded sage, a woman, the woman bows at the prince's feet as he blesses her, a quiet forest hermitage among trees, serene, gentle divine glow, oil painting, canvas texture, classical indian art, rrvarma style",
+   "checklist": 0.5596808128886752,
+   "checklist_detail": {
+    "c1": 0.5352725386619568,
+    "c2": 0.23944172263145447,
+    "c3": 0.7290422320365906,
+    "c4": 0.6632660627365112,
+    "c5": 0.7030822038650513
+   },
+   "clip_raw": 0.23813511431217194,
+   "style_margin": 0.11816567182540894,
+   "max_train_dino": 0.7734013795852661
+  },
+  {
+   "scene_id": "s23",
+   "condition": "token_budget",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s23_trigger_last_s2.png",
+   "coalition": "trigger_last",
+   "prompt": "a prince with a bow, his brother, an old bearded sage, a woman, the woman bows at the prince's feet as he blesses her, a quiet forest hermitage among trees, serene, gentle divine glow, oil painting, canvas texture, classical indian art, rrvarma style",
+   "checklist": 0.6788544721073575,
+   "checklist_detail": {
+    "c1": 0.44566571712493896,
+    "c2": 0.8352217674255371,
+    "c3": 0.5595725178718567,
+    "c4": 0.8441868424415588,
+    "c5": 0.7403965592384338
+   },
+   "clip_raw": 0.24387818574905396,
+   "style_margin": 0.12957638502120972,
+   "max_train_dino": 0.8272531032562256
+  },
+  {
+   "scene_id": "s23",
+   "condition": "token_budget",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s23_with_names_s1.png",
+   "coalition": "with_names",
+   "prompt": "rrvarma style, Rama and Lakshmana, a prince with a bow, his brother, an old bearded sage, a woman, the woman bows at the prince's feet as he blesses her, a quiet forest hermitage among trees, serene, gentle divine glow, oil painting, canvas texture, classical indian art",
+   "checklist": 0.39516766203774345,
+   "checklist_detail": {
+    "c1": 0.46120211482048035,
+    "c2": 0.18947364389896393,
+    "c3": 0.5126873850822449,
+    "c4": 0.24019382894039154,
+    "c5": 0.7493950128555298
+   },
+   "clip_raw": 0.2749033570289612,
+   "style_margin": 0.14200669527053833,
+   "max_train_dino": 0.7958643436431885
+  },
+  {
+   "scene_id": "s23",
+   "condition": "token_budget",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s23_with_names_s2.png",
+   "coalition": "with_names",
+   "prompt": "rrvarma style, Rama and Lakshmana, a prince with a bow, his brother, an old bearded sage, a woman, the woman bows at the prince's feet as he blesses her, a quiet forest hermitage among trees, serene, gentle divine glow, oil painting, canvas texture, classical indian art",
+   "checklist": 0.6744748817549812,
+   "checklist_detail": {
+    "c1": 0.44181835651397705,
+    "c2": 0.6255770325660706,
+    "c3": 0.7784816026687622,
+    "c4": 0.8444546461105347,
+    "c5": 0.6896106600761414
+   },
+   "clip_raw": 0.2526475191116333,
+   "style_margin": 0.08987647294998169,
+   "max_train_dino": 0.8097988963127136
+  },
+  {
+   "scene_id": "s31",
+   "condition": "token_budget",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s31_char_s1.png",
+   "coalition": "char",
+   "prompt": "rrvarma style, an elderly grey-haired forest woman in simple cloth, two young princes with bows",
+   "checklist": 0.12493073707446456,
+   "checklist_detail": {
+    "c1": 0.02095801755785942,
+    "c2": 0.02047688327729702,
+    "c3": 0.019023116677999496,
+    "c4": 0.16353829205036163,
+    "c5": 0.714991569519043
+   },
+   "clip_raw": 0.16715086996555328,
+   "style_margin": 0.12232083082199097,
+   "max_train_dino": 0.6242530345916748
+  },
+  {
+   "scene_id": "s31",
+   "condition": "token_budget",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s31_char_s2.png",
+   "coalition": "char",
+   "prompt": "rrvarma style, an elderly grey-haired forest woman in simple cloth, two young princes with bows",
+   "checklist": 0.35603310633450747,
+   "checklist_detail": {
+    "c1": 0.9560320973396301,
+    "c2": 0.04300939291715622,
+    "c3": 0.019961146637797356,
+    "c4": 0.03412437066435814,
+    "c5": 0.7761352062225342
+   },
+   "clip_raw": 0.25796186923980713,
+   "style_margin": 0.11866968870162964,
+   "max_train_dino": 0.7566689252853394
+  },
+  {
+   "scene_id": "s31",
+   "condition": "token_budget",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s31_char_action_s1.png",
+   "coalition": "char_action",
+   "prompt": "rrvarma style, an elderly grey-haired forest woman in simple cloth, two young princes with bows, the old woman offers berries to the princes, who accept humbly",
+   "checklist": 0.3765551093965769,
+   "checklist_detail": {
+    "c1": 0.1563432365655899,
+    "c2": 0.9120730757713318,
+    "c3": 0.019293680787086487,
+    "c4": 0.10713203251361847,
+    "c5": 0.7298888564109802
+   },
+   "clip_raw": 0.3153937757015228,
+   "style_margin": 0.10931038856506348,
+   "max_train_dino": 0.7089414596557617
+  },
+  {
+   "scene_id": "s31",
+   "condition": "token_budget",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s31_char_action_s2.png",
+   "coalition": "char_action",
+   "prompt": "rrvarma style, an elderly grey-haired forest woman in simple cloth, two young princes with bows, the old woman offers berries to the princes, who accept humbly",
+   "checklist": 0.5809505991637707,
+   "checklist_detail": {
+    "c1": 0.9275761246681213,
+    "c2": 0.9413837790489197,
+    "c3": 0.053430043160915375,
+    "c4": 0.1783488243818283,
+    "c5": 0.6244760751724243
+   },
+   "clip_raw": 0.29645949602127075,
+   "style_margin": 0.16424685716629028,
+   "max_train_dino": 0.7498880624771118
+  },
+  {
+   "scene_id": "s31",
+   "condition": "token_budget",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s31_char_action_setting_s1.png",
+   "coalition": "char_action_setting",
+   "prompt": "rrvarma style, an elderly grey-haired forest woman in simple cloth, two young princes with bows, the old woman offers berries to the princes, who accept humbly, outside a small thatched hut in the forest",
+   "checklist": 0.5990291745401919,
+   "checklist_detail": {
+    "c1": 0.9469031095504761,
+    "c2": 0.9584375619888306,
+    "c3": 0.013061584904789925,
+    "c4": 0.08545194566249847,
+    "c5": 0.8699769377708435
+   },
+   "clip_raw": 0.29256463050842285,
+   "style_margin": 0.13068145513534546,
+   "max_train_dino": 0.6360347270965576
+  },
+  {
+   "scene_id": "s31",
+   "condition": "token_budget",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s31_char_action_setting_s2.png",
+   "coalition": "char_action_setting",
+   "prompt": "rrvarma style, an elderly grey-haired forest woman in simple cloth, two young princes with bows, the old woman offers berries to the princes, who accept humbly, outside a small thatched hut in the forest",
+   "checklist": 0.4731006743386388,
+   "checklist_detail": {
+    "c1": 0.6800118088722229,
+    "c2": 0.8408463597297668,
+    "c3": 0.05580313876271248,
+    "c4": 0.16742143034934998,
+    "c5": 0.46406134963035583
+   },
+   "clip_raw": 0.3174669146537781,
+   "style_margin": 0.04755282402038574,
+   "max_train_dino": 0.6008114814758301
+  },
+  {
+   "scene_id": "s31",
+   "condition": "token_budget",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s31_full_s1.png",
+   "coalition": "full",
+   "prompt": "rrvarma style, an elderly grey-haired forest woman in simple cloth, two young princes with bows, the old woman offers berries to the princes, who accept humbly, outside a small thatched hut in the forest, warm and devoted, soft dappled daylight, oil painting, canvas texture, classical indian art",
+   "checklist": 0.34682394261471927,
+   "checklist_detail": {
+    "c1": 0.1462872177362442,
+    "c2": 0.7863559722900391,
+    "c3": 0.01313904207199812,
+    "c4": 0.14326375722885132,
+    "c5": 0.7397633194923401
+   },
+   "clip_raw": 0.2552280128002167,
+   "style_margin": 0.16191089153289795,
+   "max_train_dino": 0.8236225843429565
+  },
+  {
+   "scene_id": "s31",
+   "condition": "token_budget",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s31_full_s2.png",
+   "coalition": "full",
+   "prompt": "rrvarma style, an elderly grey-haired forest woman in simple cloth, two young princes with bows, the old woman offers berries to the princes, who accept humbly, outside a small thatched hut in the forest, warm and devoted, soft dappled daylight, oil painting, canvas texture, classical indian art",
+   "checklist": 0.4119511416647583,
+   "checklist_detail": {
+    "c1": 0.9815186262130737,
+    "c2": 0.39578306674957275,
+    "c3": 0.009783913381397724,
+    "c4": 0.056009210646152496,
+    "c5": 0.4654287099838257
+   },
+   "clip_raw": 0.2922091782093048,
+   "style_margin": 0.1359696388244629,
+   "max_train_dino": 0.7550919055938721
+  },
+  {
+   "scene_id": "s31",
+   "condition": "token_budget",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s31_no_tail_s1.png",
+   "coalition": "no_tail",
+   "prompt": "rrvarma style, an elderly grey-haired forest woman in simple cloth, two young princes with bows, the old woman offers berries to the princes, who accept humbly, outside a small thatched hut in the forest, warm and devoted, soft dappled daylight",
+   "checklist": 0.5952969719655812,
+   "checklist_detail": {
+    "c1": 0.9772891402244568,
+    "c2": 0.9542383551597595,
+    "c3": 0.00953962653875351,
+    "c4": 0.05849703028798103,
+    "c5": 0.8217445015907288
+   },
+   "clip_raw": 0.2690994143486023,
+   "style_margin": 0.11578977108001709,
+   "max_train_dino": 0.6612505912780762
+  },
+  {
+   "scene_id": "s31",
+   "condition": "token_budget",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s31_no_tail_s2.png",
+   "coalition": "no_tail",
+   "prompt": "rrvarma style, an elderly grey-haired forest woman in simple cloth, two young princes with bows, the old woman offers berries to the princes, who accept humbly, outside a small thatched hut in the forest, warm and devoted, soft dappled daylight",
+   "checklist": 0.5159671660512686,
+   "checklist_detail": {
+    "c1": 0.9767410755157471,
+    "c2": 0.5664926171302795,
+    "c3": 0.06659076362848282,
+    "c4": 0.30889543890953064,
+    "c5": 0.5991929769515991
+   },
+   "clip_raw": 0.2990797162055969,
+   "style_margin": 0.0856371521949768,
+   "max_train_dino": 0.7413227558135986
+  },
+  {
+   "scene_id": "s31",
+   "condition": "token_budget",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s31_trigger_last_s1.png",
+   "coalition": "trigger_last",
+   "prompt": "an elderly grey-haired forest woman in simple cloth, two young princes with bows, the old woman offers berries to the princes, who accept humbly, outside a small thatched hut in the forest, warm and devoted, soft dappled daylight, oil painting, canvas texture, classical indian art, rrvarma style",
+   "checklist": 0.37648691120557487,
+   "checklist_detail": {
+    "c1": 0.10386396199464798,
+    "c2": 0.9574773907661438,
+    "c3": 0.01253520231693983,
+    "c4": 0.07395070791244507,
+    "c5": 0.7901914715766907
+   },
+   "clip_raw": 0.27084091305732727,
+   "style_margin": 0.14821714162826538,
+   "max_train_dino": 0.803584098815918
+  },
+  {
+   "scene_id": "s31",
+   "condition": "token_budget",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s31_trigger_last_s2.png",
+   "coalition": "trigger_last",
+   "prompt": "an elderly grey-haired forest woman in simple cloth, two young princes with bows, the old woman offers berries to the princes, who accept humbly, outside a small thatched hut in the forest, warm and devoted, soft dappled daylight, oil painting, canvas texture, classical indian art, rrvarma style",
+   "checklist": 0.19539444078691304,
+   "checklist_detail": {
+    "c1": 0.37873008847236633,
+    "c2": 0.1028623878955841,
+    "c3": 0.010948666371405125,
+    "c4": 0.05043867975473404,
+    "c5": 0.5276345610618591
+   },
+   "clip_raw": 0.3175748288631439,
+   "style_margin": 0.15221846103668213,
+   "max_train_dino": 0.7698953151702881
+  },
+  {
+   "scene_id": "s31",
+   "condition": "token_budget",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s31_with_names_s1.png",
+   "coalition": "with_names",
+   "prompt": "rrvarma style, Shabari, Rama and Lakshmana, an elderly grey-haired forest woman in simple cloth, two young princes with bows, the old woman offers berries to the princes, who accept humbly, outside a small thatched hut in the forest, warm and devoted, soft dappled daylight, oil painting, canvas texture, classical indian art",
+   "checklist": 0.1606323792366311,
+   "checklist_detail": {
+    "c1": 0.06568778306245804,
+    "c2": 0.22560450434684753,
+    "c3": 0.007646992336958647,
+    "c4": 0.032683685421943665,
+    "c5": 0.6544967889785767
+   },
+   "clip_raw": 0.2692950665950775,
+   "style_margin": 0.12349402904510498,
+   "max_train_dino": 0.822533905506134
+  },
+  {
+   "scene_id": "s31",
+   "condition": "token_budget",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m3/a_experiments/token_budget@rrv_v1/dev/s31_with_names_s2.png",
+   "coalition": "with_names",
+   "prompt": "rrvarma style, Shabari, Rama and Lakshmana, an elderly grey-haired forest woman in simple cloth, two young princes with bows, the old woman offers berries to the princes, who accept humbly, outside a small thatched hut in the forest, warm and devoted, soft dappled daylight, oil painting, canvas texture, classical indian art",
+   "checklist": 0.20191717706620693,
+   "checklist_detail": {
+    "c1": 0.17602913081645966,
+    "c2": 0.1364557147026062,
+    "c3": 0.10849500447511673,
+    "c4": 0.1471272110939026,
+    "c5": 0.6262505054473877
+   },
+   "clip_raw": 0.2963419258594513,
+   "style_margin": 0.129580557346344,
+   "max_train_dino": 0.7682496309280396
+  }
+ ]
+}
