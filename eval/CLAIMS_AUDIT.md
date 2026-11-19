@@ -120,7 +120,9 @@ Resolved in #84:
 - **D:** M1-M8, M10, E1, E2 and A's TODOs done (#90, #91); cold-start test passed (#91, `rapidfuzz` added to the `gen` setup).
 - **C:** K2 done (#92).
 
-Still open: C's K1, K3, K4 in `kb/KB.md`.
+- **C:** K1, K3, K4 done in `kb/KB.md` (c6 human ratings; checklist W/T/L 12/3/9 with the 0.0295 band, `kb/compare_c6.py` now applies it to every metric; held-out parser line).
+
+**All audit items are resolved.**
 
 ## 10. Summary for owners
 

@@ -76,16 +76,17 @@ On the 24 dev scenes: **precision 1.00, recall 1.00, epic accuracy 1.00** (`kb/e
 ## 7. Grounding experiment (c6, H-C2)
 `kb/kb_llm.json` has the same characters, aliases and settings as `kb.json`, but every `visual` was written by the local LLM (Qwen3-4B, temperature 0) without seeing the paintings, using the prompt from the C guide; moods are copied unchanged. Both KBs were expanded with the same LLM and prompt on the 24 dev scenes (`c3_llm_kb_ckb`, `c6_llm_kbllm`; 24/24 valid, 0 names after repair), rendered with `rrv_v1` at scale 1.0, seeds 1-2, and scored with B's `eval/score.py`. Comparison: B's `paired()` from `eval/stats.py`, scene as unit, bootstrap 95% CI (`kb/compare_c6.py`, `results/c6_comparison.json`). Difference = c3 - c6.
 
-| Metric | c3 (kb.json) | c6 (kb_llm.json) | Diff c3-c6 [95% CI] | W/T/L | Diff, 14 strong-coverage scenes [CI] |
+| Metric | c3 (kb.json) | c6 (kb_llm.json) | Diff c3-c6 [95% CI] | W/T/L (tie band 0.0295) | Diff, 14 strong-coverage scenes [CI] |
 |---|---|---|---|---|---|
-| Checklist judge | 0.522 | 0.509 | +0.013 [-0.045, +0.068] | 13/1/10 | +0.002 [-0.064, +0.068] |
+| Checklist judge | 0.522 | 0.509 | +0.013 [-0.045, +0.068] | 12/3/9 | +0.002 [-0.064, +0.068] |
 | clip_raw | 0.249 | 0.241 | +0.008 [-0.004, +0.020] | 6/14/4 | -0.005 [-0.017, +0.007] |
 | style_margin | 0.110 | 0.111 | -0.001 [-0.012, +0.011] | 4/16/4 | +0.004 [-0.008, +0.017] |
 | max_train_dino | 0.714 | 0.700 | +0.015 [-0.009, +0.041] | 4/16/4 | +0.025 [-0.013, +0.067] |
 
 **Result: no clear difference.** Every CI includes 0, including on the scenes where all characters have medium or high coverage, where the gain was predicted. H-C2 is not supported at this sample size; this does not show that grounding is irrelevant.
-**Limits:** the checklist judge is a 2B-model proxy and no human ratings exist for c6; 24 scenes and 2 seeds give wide CIs; the LLM-written descriptions are also shorter and worded differently, so c6 differs from c3 in more than grounding; the expander rewrites the KB text before generation. Observations only: the c6 descriptions are generic and overlap (several women are 'white saree, golden necklet') and miss defining features (Hanuman has no monkey face), and colours in the images follow the KB wording (red sari vs white saree).
-Images were generated with `kb/gen_c6.py` (M2 generator) because `pipeline/generate_api.py` defines no `generate()`.
+**Human ratings (B, `results/human_ratings_dev.json`):** 2 raters per image, 24 dev scenes, 1 image per scene. Mean faithfulness (1-5): c3 **1.94** [1.67, 2.21], c6 **1.81** [1.56, 2.08]; c3 - c6 = **+0.12 [-0.23, +0.48]**, W/T/L 8/11/5 (tie band 0.25). Style +0.10 [-0.10, +0.31], quality +0.15 [-0.12, +0.42]. Humans also see no measurable difference.
+**Limits:** the checklist judge is a 2B-model proxy and the human ratings cover one seed per scene; 24 scenes and 2 seeds give wide CIs; the LLM-written descriptions are also shorter and worded differently, so c6 differs from c3 in more than grounding; the expander rewrites the KB text before generation. Observations only: the c6 descriptions are generic and overlap (several women are 'white saree, golden necklet') and miss defining features (Hanuman has no monkey face), and colours in the images follow the KB wording (red sari vs white saree).
+Images were generated with `kb/gen_c6.py` (M2 generator) because `pipeline/generate_api.py` had no `generate()` at the time (restored on 16 Nov, #75).
 
 **Version note:** the c3 and c6 expansions, images and scores were produced with kb0.2 (21 characters); `kb/kb_llm.json` (kb0.2-llm) was built for those same 21 characters and was not extended. The KB has since grown to 35 characters (kb0.4); the results stay tied to the kb0.2 commit.
 
@@ -104,7 +105,7 @@ The coverage audit passed the pre-registered gate (67% of the 147 training image
 - Similar looks remain: Radha and Yashoda (bun with flowers, nose ring), Draupadi and Savitri (loose hair).
 - Mood phrases are untested except "dusk" (works) and "oil lamp" / "dramatic cloudy sky" (partly), from M2's VISUAL_VOCAB.md.
 - Misspellings of names shorter than five letters (e.g. 'Raam' for Rama) are not repaired by the fuzzy matcher (kept strict to avoid false matches such as Sita/Sitar); they appear under `unknown_entities`.
-- The parser has not been tested on held-out scenes.
+- **Held-out (12 scenes, B, `eval/CLAIMS_AUDIT.md` §8):** precision 1.00, recall 0.42, epic accuracy 0.58. 9 of the 11 missed characters have no KB entry, so coverage, not the matcher, is the limit; there were no false matches. H-C1 holds on dev but not on held-out.
 
 ## 10. KB versions
 | Version | Characters | Used for |

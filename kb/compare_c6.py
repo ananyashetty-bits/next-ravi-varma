@@ -35,9 +35,9 @@ print(f"\nscenes with all expected characters at medium/high coverage: {len(S)} 
 print(f"{'metric':16s} {'c3':>7s} {'c6':>7s} {'diff':>8s}  95% CI              W/T/L   | strong-coverage scenes: diff [CI] n")
 for k in keys:
     a, b = scene_means(R6, k), scene_means(R3, k)
-    p = paired(a, b, tie=TIE if k in ("clip_raw", "style_margin", "max_train_dino") else 0.0)
+    p = paired(a, b, tie=TIE)
     ps = paired({s: v for s, v in a.items() if s in S}, {s: v for s, v in b.items() if s in S},
-                tie=TIE if k in ("clip_raw", "style_margin", "max_train_dino") else 0.0)
+                tie=TIE)
     m3 = sum(b.values()) / max(len(b), 1); m6 = sum(a.values()) / max(len(a), 1)
     out["metrics"][k] = {"c3_mean": m3, "c6_mean": m6, "all": p, "strong_coverage": ps}
     print(f"{k:16s} {m3:7.3f} {m6:7.3f} {p['diff']:+8.3f}  [{p['ci95'][0]:+.3f}, {p['ci95'][1]:+.3f}]  "
