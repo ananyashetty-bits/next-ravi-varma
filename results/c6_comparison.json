@@ -1,7 +1,7 @@
 {
  "definition": "difference = c3 - c6 (positive = image-grounded KB better)",
  "tie_band": 0.0295,
- "n_scenes_strong_coverage": 14,
+ "n_scenes_strong_coverage": 20,
  "metrics": {
   "checklist": {
    "c3_mean": 0.5215906136023545,
@@ -13,9 +13,9 @@
      0.06844848405599686
     ],
     "n": 24,
-    "win": 13,
-    "tie": 1,
-    "loss": 10
+    "win": 12,
+    "tie": 3,
+    "loss": 9
    },
    "strong_coverage": {
     "diff": 0.0015980169912504585,
@@ -24,8 +24,8 @@
      0.06796856914221913
     ],
     "n": 14,
-    "win": 8,
-    "tie": 0,
+    "win": 7,
+    "tie": 1,
     "loss": 6
    }
   },
