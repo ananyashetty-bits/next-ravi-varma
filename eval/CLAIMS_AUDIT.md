@@ -116,7 +116,11 @@ Resolved in #84:
 
 - **A1:** SHAP run, scored and reported in `analysis/shap/SHAP_ANALYSIS.md` (512 images, efficiency check passed); the old unbacked numbers are gone.
 
-Still open: **A7** (LoRA scale for the 2 Nov images), and C's and D's updates.
+- **A7:** A confirmed LoRA scale 1.0 for the 2 Nov c0/c1 images (19 Nov); filled in `docs/M3_REPORT.md`.
+- **D:** M1-M8, M10, E1, E2 and A's TODOs done (#90, #91); cold-start test passed (#91, `rapidfuzz` added to the `gen` setup).
+- **C:** K2 done (#92).
+
+Still open: C's K1, K3, K4 in `kb/KB.md`.
 
 ## 10. Summary for owners
 

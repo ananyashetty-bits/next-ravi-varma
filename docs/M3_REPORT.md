@@ -487,7 +487,7 @@ These are known now and hold whatever the results show; owners add their own.
   - several characters' descriptions come from a single painting;
   - some looks overlap (Radha and Yashoda; Draupadi and Savitri).
 - **Names LoRA (C).** It was trained late with one seed and 800 steps, and judged only by the 2B judge with checklists written from the KB descriptions. No human ratings.
-- **Generator (A).** From 3 Nov to 16 Nov, `pipeline/generate_api.py` on `main` had no `generate()`, and its `text_to_image` did not load the LoRA. All scored dev images were made with the earlier generator: A's runs before 3 Nov, D's runs with the `e9b5a5d` version, C's `kb/gen_c6.py`. #75 (16 Nov) restored `generate()` on top of the unmodified M2 kit. `TODO(A)`: confirm LoRA scale 1.0 for c0/c1.
+- **Generator (A).** From 3 Nov to 16 Nov, `pipeline/generate_api.py` on `main` had no `generate()`, and its `text_to_image` did not load the LoRA. All scored dev images were made with the earlier generator: A's runs before 3 Nov, D's runs with the `e9b5a5d` version, C's `kb/gen_c6.py`. #75 (16 Nov) restored `generate()` on top of the unmodified M2 kit. LoRA scale 1.0 for c0/c1, confirmed by A on 19 Nov (same as `config/m3.json`).
 - **Config changes on 16 Nov.** #75 changed three things in `config/m3.json`:
   - the `negative` prompt;
   - the `base_model` id (`runwayml/…` → `stable-diffusion-v1-5/stable-diffusion-v1-5`);

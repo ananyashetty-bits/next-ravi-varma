@@ -6,7 +6,7 @@
 set -euo pipefail
 PROFILE=${1:-gen}
 case "$PROFILE" in
-  gen)  pip install -q -r m2kit/requirements_m2.txt ;;
+  gen)  pip install -q -r m2kit/requirements_m2.txt rapidfuzz ;;   # rapidfuzz: kb/parser.py, used by text_to_image
   llm)  pip install -q -r expander/requirements_llm.txt ;;
   eval) pip install -q -r eval/requirements_eval.txt ;;
   *)    echo "unknown profile '$PROFILE' (use gen, llm or eval)"; exit 1 ;;
