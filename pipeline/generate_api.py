@@ -50,7 +50,12 @@ def release():
     torch.cuda.empty_cache()
 
 def generate(positive, negative, seed, model=None, lora_scale=None, control_image=None):
-    pipe = _ensure(model, lora_scale)                 # control_image: reserved for M4, ignored
+    if control_image is not None:                     # M4: delegate to the control engine
+        from pipeline.control_api import generate_controlled
+        ctype = control_image.get("type", "openpose") if isinstance(control_image, dict) else "openpose"
+        return generate_controlled(positive, negative, seed, control_image, control_type=ctype,
+                                   model=model, lora_scale=lora_scale)
+    pipe = _ensure(model, lora_scale)                 # (control_image handled above)
     g = torch.Generator("cuda").manual_seed(int(seed))   # per call, so same inputs give the same image
     return pipe(positive, negative_prompt=negative, num_inference_steps=CFG["steps"],
                 guidance_scale=CFG["cfg"], height=CFG["size"], width=CFG["size"],
