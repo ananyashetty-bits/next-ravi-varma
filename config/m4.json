@@ -1,0 +1,20 @@
+{
+  "m3_default_condition": "c1_lora_raw",
+  "expansions_dev": "outputs/expansions/c1_lora_raw_dev.json",
+  "controlnets": {
+    "openpose": {"repo": "lllyasviel/control_v11p_sd15_openpose", "revision": "9ae9f970358db89e211b87c915f9535c6686d5ba"},
+    "canny":    {"repo": "lllyasviel/control_v11p_sd15_canny",    "revision": "115a470d547982438f70198e353a921996e2e819"}
+  },
+  "pose_detector": {"package": "controlnet_aux", "version": "0.0.10", "weights": "lllyasviel/Annotators",
+                    "include_hand_face": false, "fallback": "none needed (controlnet_aux worked in gen and eval)"},
+  "lora_scale": null,
+  "control": {"type": "openpose",
+              "baseline": {"scale": 1.0, "guidance_start": 0.0, "guidance_end": 1.0},
+              "tuned": null,
+              "note": "baseline = p1 and p3, never changes. tuned = A's sweep winner (Day 2, by PR), used by p2 and the app. lora_scale null = inherit models.rrv_v1.scale from m3.json (1.0); only the sweep and p2 may override it."},
+  "ui": {"style_slider_range": [0.8, 1.0], "pose_slider_range": [0.4, 1.0],
+         "note": "interim; A replaces these with the ranges the sweep actually covered (Day 1 evening)"},
+  "post": {"hires": {"method": "img2img", "size": 768, "strength": 0.35}, "restore": {"method": "none"},
+           "default_on": false},
+  "pose_metric": {"pck_thresh": 0.10, "tie_band_pose": 0.05}
+}

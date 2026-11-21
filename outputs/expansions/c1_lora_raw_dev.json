@@ -1,0 +1,1196 @@
+[
+ {
+  "scene_id": "s01",
+  "condition": "c1_lora_raw",
+  "split": "dev",
+  "positive": "rrvarma style, Karna struggling to lift his chariot wheel from the mud while Arjuna aims an arrow at him and Krishna looks on, oil painting, canvas texture, classical indian art",
+  "negative": "ugly, blurry, bad anatomy",
+  "phrases_kept": [
+   "Karna struggling to lift his chariot wheel from the mud while Arjuna aims an arrow at him and Krishna looks on"
+  ],
+  "phrases_dropped": [],
+  "token_count": 37,
+  "trigger_first": true,
+  "names_leaked": [
+   "Karna",
+   "Arjuna",
+   "Krishna"
+  ],
+  "source": "template",
+  "layout": null,
+  "llm_model": "none",
+  "prompt_version": "raw",
+  "kb_version": "none",
+  "latency_s": 0.0008,
+  "mode": "raw",
+  "phrases_scrubbed": [],
+  "json_retry": false,
+  "name_repair": false,
+  "cache_hits": 0,
+  "llm_calls": 0,
+  "error": null,
+  "note": "raw",
+  "template_version": null,
+  "names_after_repair": [
+   "Karna",
+   "Arjuna",
+   "Krishna"
+  ],
+  "token_counter": "clip"
+ },
+ {
+  "scene_id": "s02",
+  "condition": "c1_lora_raw",
+  "split": "dev",
+  "positive": "rrvarma style, Krishna playing the flute under a kadamba tree while cows graze around him, oil painting, canvas texture, classical indian art",
+  "negative": "ugly, blurry, bad anatomy",
+  "phrases_kept": [
+   "Krishna playing the flute under a kadamba tree while cows graze around him"
+  ],
+  "phrases_dropped": [],
+  "token_count": 31,
+  "trigger_first": true,
+  "names_leaked": [
+   "Krishna"
+  ],
+  "source": "template",
+  "layout": null,
+  "llm_model": "none",
+  "prompt_version": "raw",
+  "kb_version": "none",
+  "latency_s": 0.0006,
+  "mode": "raw",
+  "phrases_scrubbed": [],
+  "json_retry": false,
+  "name_repair": false,
+  "cache_hits": 0,
+  "llm_calls": 0,
+  "error": null,
+  "note": "raw",
+  "template_version": null,
+  "names_after_repair": [
+   "Krishna"
+  ],
+  "token_counter": "clip"
+ },
+ {
+  "scene_id": "s03",
+  "condition": "c1_lora_raw",
+  "split": "dev",
+  "positive": "rrvarma style, Yashoda churning butter in a large pot in the courtyard of her house, oil painting, canvas texture, classical indian art",
+  "negative": "ugly, blurry, bad anatomy",
+  "phrases_kept": [
+   "Yashoda churning butter in a large pot in the courtyard of her house"
+  ],
+  "phrases_dropped": [],
+  "token_count": 31,
+  "trigger_first": true,
+  "names_leaked": [
+   "Yashoda"
+  ],
+  "source": "template",
+  "layout": null,
+  "llm_model": "none",
+  "prompt_version": "raw",
+  "kb_version": "none",
+  "latency_s": 0.0005,
+  "mode": "raw",
+  "phrases_scrubbed": [],
+  "json_retry": false,
+  "name_repair": false,
+  "cache_hits": 0,
+  "llm_calls": 0,
+  "error": null,
+  "note": "raw",
+  "template_version": null,
+  "names_after_repair": [
+   "Yashoda"
+  ],
+  "token_counter": "clip"
+ },
+ {
+  "scene_id": "s04",
+  "condition": "c1_lora_raw",
+  "split": "dev",
+  "positive": "rrvarma style, Sita pointing out a golden deer to Rama, who draws his bow, at the edge of the forest, oil painting, canvas texture, classical indian art",
+  "negative": "ugly, blurry, bad anatomy",
+  "phrases_kept": [
+   "Sita pointing out a golden deer to Rama, who draws his bow, at the edge of the forest"
+  ],
+  "phrases_dropped": [],
+  "token_count": 36,
+  "trigger_first": true,
+  "names_leaked": [
+   "Sita",
+   "Rama"
+  ],
+  "source": "template",
+  "layout": null,
+  "llm_model": "none",
+  "prompt_version": "raw",
+  "kb_version": "none",
+  "latency_s": 0.0007,
+  "mode": "raw",
+  "phrases_scrubbed": [],
+  "json_retry": false,
+  "name_repair": false,
+  "cache_hits": 0,
+  "llm_calls": 0,
+  "error": null,
+  "note": "raw",
+  "template_version": null,
+  "names_after_repair": [
+   "Sita",
+   "Rama"
+  ],
+  "token_counter": "clip"
+ },
+ {
+  "scene_id": "s05",
+  "condition": "c1_lora_raw",
+  "split": "dev",
+  "positive": "rrvarma style, Duryodhana embracing Karna in friendship in the middle of a royal court, oil painting, canvas texture, classical indian art",
+  "negative": "ugly, blurry, bad anatomy",
+  "phrases_kept": [
+   "Duryodhana embracing Karna in friendship in the middle of a royal court"
+  ],
+  "phrases_dropped": [],
+  "token_count": 31,
+  "trigger_first": true,
+  "names_leaked": [
+   "Duryodhana",
+   "Karna"
+  ],
+  "source": "template",
+  "layout": null,
+  "llm_model": "none",
+  "prompt_version": "raw",
+  "kb_version": "none",
+  "latency_s": 0.0005,
+  "mode": "raw",
+  "phrases_scrubbed": [],
+  "json_retry": false,
+  "name_repair": false,
+  "cache_hits": 0,
+  "llm_calls": 0,
+  "error": null,
+  "note": "raw",
+  "template_version": null,
+  "names_after_repair": [
+   "Duryodhana",
+   "Karna"
+  ],
+  "token_counter": "clip"
+ },
+ {
+  "scene_id": "s06",
+  "condition": "c1_lora_raw",
+  "split": "dev",
+  "positive": "rrvarma style, Krishna lifting the Govardhana hill on one raised hand while villagers and cattle shelter beneath it, oil painting, canvas texture, classical indian art",
+  "negative": "ugly, blurry, bad anatomy",
+  "phrases_kept": [
+   "Krishna lifting the Govardhana hill on one raised hand while villagers and cattle shelter beneath it"
+  ],
+  "phrases_dropped": [],
+  "token_count": 34,
+  "trigger_first": true,
+  "names_leaked": [
+   "Krishna"
+  ],
+  "source": "template",
+  "layout": null,
+  "llm_model": "none",
+  "prompt_version": "raw",
+  "kb_version": "none",
+  "latency_s": 0.0006,
+  "mode": "raw",
+  "phrases_scrubbed": [],
+  "json_retry": false,
+  "name_repair": false,
+  "cache_hits": 0,
+  "llm_calls": 0,
+  "error": null,
+  "note": "raw",
+  "template_version": null,
+  "names_after_repair": [
+   "Krishna"
+  ],
+  "token_counter": "clip"
+ },
+ {
+  "scene_id": "s07",
+  "condition": "c1_lora_raw",
+  "split": "dev",
+  "positive": "rrvarma style, Ram, Sita and Laxman crossing the river in a small boat while a boatman rows, oil painting, canvas texture, classical indian art",
+  "negative": "ugly, blurry, bad anatomy",
+  "phrases_kept": [
+   "Ram, Sita and Laxman crossing the river in a small boat while a boatman rows"
+  ],
+  "phrases_dropped": [],
+  "token_count": 34,
+  "trigger_first": true,
+  "names_leaked": [
+   "Rama",
+   "Sita",
+   "Lakshmana"
+  ],
+  "source": "template",
+  "layout": null,
+  "llm_model": "none",
+  "prompt_version": "raw",
+  "kb_version": "none",
+  "latency_s": 0.0006,
+  "mode": "raw",
+  "phrases_scrubbed": [],
+  "json_retry": false,
+  "name_repair": false,
+  "cache_hits": 0,
+  "llm_calls": 0,
+  "error": null,
+  "note": "raw",
+  "template_version": null,
+  "names_after_repair": [
+   "Rama",
+   "Sita",
+   "Lakshmana"
+  ],
+  "token_counter": "clip"
+ },
+ {
+  "scene_id": "s08",
+  "condition": "c1_lora_raw",
+  "split": "dev",
+  "positive": "rrvarma style, Hanuman carrying Rama and Lakshmana on his shoulders up a forested mountain, oil painting, canvas texture, classical indian art",
+  "negative": "ugly, blurry, bad anatomy",
+  "phrases_kept": [
+   "Hanuman carrying Rama and Lakshmana on his shoulders up a forested mountain"
+  ],
+  "phrases_dropped": [],
+  "token_count": 29,
+  "trigger_first": true,
+  "names_leaked": [
+   "Hanuman",
+   "Rama",
+   "Lakshmana"
+  ],
+  "source": "template",
+  "layout": null,
+  "llm_model": "none",
+  "prompt_version": "raw",
+  "kb_version": "none",
+  "latency_s": 0.0006,
+  "mode": "raw",
+  "phrases_scrubbed": [],
+  "json_retry": false,
+  "name_repair": false,
+  "cache_hits": 0,
+  "llm_calls": 0,
+  "error": null,
+  "note": "raw",
+  "template_version": null,
+  "names_after_repair": [
+   "Hanuman",
+   "Rama",
+   "Lakshmana"
+  ],
+  "token_counter": "clip"
+ },
+ {
+  "scene_id": "s09",
+  "condition": "c1_lora_raw",
+  "split": "dev",
+  "positive": "rrvarma style, Sita sitting alone under a tree in the Ashoka grove, sorrowful, the garden quiet at dusk, oil painting, canvas texture, classical indian art",
+  "negative": "ugly, blurry, bad anatomy",
+  "phrases_kept": [
+   "Sita sitting alone under a tree in the Ashoka grove, sorrowful, the garden quiet at dusk"
+  ],
+  "phrases_dropped": [],
+  "token_count": 37,
+  "trigger_first": true,
+  "names_leaked": [
+   "Sita"
+  ],
+  "source": "template",
+  "layout": null,
+  "llm_model": "none",
+  "prompt_version": "raw",
+  "kb_version": "none",
+  "latency_s": 0.0135,
+  "mode": "raw",
+  "phrases_scrubbed": [],
+  "json_retry": false,
+  "name_repair": false,
+  "cache_hits": 0,
+  "llm_calls": 0,
+  "error": null,
+  "note": "raw",
+  "template_version": null,
+  "names_after_repair": [
+   "Sita"
+  ],
+  "token_counter": "clip"
+ },
+ {
+  "scene_id": "s10",
+  "condition": "c1_lora_raw",
+  "split": "dev",
+  "positive": "rrvarma style, Karna standing proudly with his bow at sunrise, golden armour shining, oil painting, canvas texture, classical indian art",
+  "negative": "ugly, blurry, bad anatomy",
+  "phrases_kept": [
+   "Karna standing proudly with his bow at sunrise, golden armour shining"
+  ],
+  "phrases_dropped": [],
+  "token_count": 28,
+  "trigger_first": true,
+  "names_leaked": [
+   "Karna"
+  ],
+  "source": "template",
+  "layout": null,
+  "llm_model": "none",
+  "prompt_version": "raw",
+  "kb_version": "none",
+  "latency_s": 0.0007,
+  "mode": "raw",
+  "phrases_scrubbed": [],
+  "json_retry": false,
+  "name_repair": false,
+  "cache_hits": 0,
+  "llm_calls": 0,
+  "error": null,
+  "note": "raw",
+  "template_version": null,
+  "names_after_repair": [
+   "Karna"
+  ],
+  "token_counter": "clip"
+ },
+ {
+  "scene_id": "s11",
+  "condition": "c1_lora_raw",
+  "split": "dev",
+  "positive": "rrvarma style, Arjuna and Subhadra slipping away together through the palace garden, she holding his arm and looking back nervously, oil painting, canvas texture, classical indian art",
+  "negative": "ugly, blurry, bad anatomy",
+  "phrases_kept": [
+   "Arjuna and Subhadra slipping away together through the palace garden, she holding his arm and looking back nervously"
+  ],
+  "phrases_dropped": [],
+  "token_count": 38,
+  "trigger_first": true,
+  "names_leaked": [
+   "Arjuna",
+   "Subhadra"
+  ],
+  "source": "template",
+  "layout": null,
+  "llm_model": "none",
+  "prompt_version": "raw",
+  "kb_version": "none",
+  "latency_s": 0.0007,
+  "mode": "raw",
+  "phrases_scrubbed": [],
+  "json_retry": false,
+  "name_repair": false,
+  "cache_hits": 0,
+  "llm_calls": 0,
+  "error": null,
+  "note": "raw",
+  "template_version": null,
+  "names_after_repair": [
+   "Arjuna",
+   "Subhadra"
+  ],
+  "token_counter": "clip"
+ },
+ {
+  "scene_id": "s12",
+  "condition": "c1_lora_raw",
+  "split": "dev",
+  "positive": "rrvarma style, Hanuman kneeling before Rama and offering him Sita's ring, Rama reaching out to take it, oil painting, canvas texture, classical indian art",
+  "negative": "ugly, blurry, bad anatomy",
+  "phrases_kept": [
+   "Hanuman kneeling before Rama and offering him Sita's ring, Rama reaching out to take it"
+  ],
+  "phrases_dropped": [],
+  "token_count": 34,
+  "trigger_first": true,
+  "names_leaked": [
+   "Hanuman",
+   "Rama",
+   "Sita"
+  ],
+  "source": "template",
+  "layout": null,
+  "llm_model": "none",
+  "prompt_version": "raw",
+  "kb_version": "none",
+  "latency_s": 0.0007,
+  "mode": "raw",
+  "phrases_scrubbed": [],
+  "json_retry": false,
+  "name_repair": false,
+  "cache_hits": 0,
+  "llm_calls": 0,
+  "error": null,
+  "note": "raw",
+  "template_version": null,
+  "names_after_repair": [
+   "Hanuman",
+   "Rama",
+   "Sita"
+  ],
+  "token_counter": "clip"
+ },
+ {
+  "scene_id": "s13",
+  "condition": "c1_lora_raw",
+  "split": "dev",
+  "positive": "rrvarma style, Krishna as the peace envoy standing in Duryodhana's royal court, speaking to the king on his throne while ministers and courtiers watch, oil painting, canvas texture, classical indian art",
+  "negative": "ugly, blurry, bad anatomy",
+  "phrases_kept": [
+   "Krishna as the peace envoy standing in Duryodhana's royal court, speaking to the king on his throne while ministers and courtiers watch"
+  ],
+  "phrases_dropped": [],
+  "token_count": 43,
+  "trigger_first": true,
+  "names_leaked": [
+   "Krishna",
+   "Duryodhana"
+  ],
+  "source": "template",
+  "layout": null,
+  "llm_model": "none",
+  "prompt_version": "raw",
+  "kb_version": "none",
+  "latency_s": 0.0008,
+  "mode": "raw",
+  "phrases_scrubbed": [],
+  "json_retry": false,
+  "name_repair": false,
+  "cache_hits": 0,
+  "llm_calls": 0,
+  "error": null,
+  "note": "raw",
+  "template_version": null,
+  "names_after_repair": [
+   "Krishna",
+   "Duryodhana"
+  ],
+  "token_counter": "clip"
+ },
+ {
+  "scene_id": "s14",
+  "condition": "c1_lora_raw",
+  "split": "dev",
+  "positive": "rrvarma style, Rama, Sita and Lakshmana leaving for exile on foot through the forest, the people of Ayodhya weeping behind them, oil painting, canvas texture, classical indian art",
+  "negative": "ugly, blurry, bad anatomy",
+  "phrases_kept": [
+   "Rama, Sita and Lakshmana leaving for exile on foot through the forest, the people of Ayodhya weeping behind them"
+  ],
+  "phrases_dropped": [],
+  "token_count": 40,
+  "trigger_first": true,
+  "names_leaked": [
+   "Rama",
+   "Sita",
+   "Lakshmana",
+   "Ayodhya"
+  ],
+  "source": "template",
+  "layout": null,
+  "llm_model": "none",
+  "prompt_version": "raw",
+  "kb_version": "none",
+  "latency_s": 0.0007,
+  "mode": "raw",
+  "phrases_scrubbed": [],
+  "json_retry": false,
+  "name_repair": false,
+  "cache_hits": 0,
+  "llm_calls": 0,
+  "error": null,
+  "note": "raw",
+  "template_version": null,
+  "names_after_repair": [
+   "Rama",
+   "Sita",
+   "Lakshmana",
+   "Ayodhya"
+  ],
+  "token_counter": "clip"
+ },
+ {
+  "scene_id": "s15",
+  "condition": "c1_lora_raw",
+  "split": "dev",
+  "positive": "rrvarma style, Savithri pleading with Yama for her husband's life, Satyavan lying lifeless with his head in her lap in the forest, oil painting, canvas texture, classical indian art",
+  "negative": "ugly, blurry, bad anatomy",
+  "phrases_kept": [
+   "Savithri pleading with Yama for her husband's life, Satyavan lying lifeless with his head in her lap in the forest"
+  ],
+  "phrases_dropped": [],
+  "token_count": 42,
+  "trigger_first": true,
+  "names_leaked": [
+   "Savitri",
+   "Yama",
+   "Satyavan"
+  ],
+  "source": "template",
+  "layout": null,
+  "llm_model": "none",
+  "prompt_version": "raw",
+  "kb_version": "none",
+  "latency_s": 0.0008,
+  "mode": "raw",
+  "phrases_scrubbed": [],
+  "json_retry": false,
+  "name_repair": false,
+  "cache_hits": 0,
+  "llm_calls": 0,
+  "error": null,
+  "note": "raw",
+  "template_version": null,
+  "names_after_repair": [
+   "Savitri",
+   "Yama",
+   "Satyavan"
+  ],
+  "token_counter": "clip"
+ },
+ {
+  "scene_id": "s16",
+  "condition": "c1_lora_raw",
+  "split": "dev",
+  "positive": "rrvarma style, in the middle of the great battel at kurukshetra arjun drops his bow and sits down in his chariot, he cant bring himself to fight his own family. krishn turns around from the horses to talk to him. armies with banners and elephants everywhere, dust in the air, conch shells blowing, like the whole world is waiting. make it epic and sad at the same time, golden evening light, oil painting, canvas texture, classical indian art",
+  "negative": "ugly, blurry, bad anatomy",
+  "phrases_kept": [
+   "in the middle of the great battel at kurukshetra arjun drops his bow and sits down in his chariot, he cant bring himself to fight his own family. krishn turns around from the horses to talk to him. armies with banners and elephants everywhere, dust in the air, conch shells blowing, like the whole world is waiting. make it epic and sad at the same time, golden evening light"
+  ],
+  "phrases_dropped": [],
+  "token_count": 98,
+  "trigger_first": true,
+  "names_leaked": [
+   "Kurukshetra",
+   "Arjuna",
+   "Krishna"
+  ],
+  "source": "template",
+  "layout": null,
+  "llm_model": "none",
+  "prompt_version": "raw",
+  "kb_version": "none",
+  "latency_s": 0.0022,
+  "mode": "raw",
+  "phrases_scrubbed": [],
+  "json_retry": false,
+  "name_repair": false,
+  "cache_hits": 0,
+  "llm_calls": 0,
+  "error": null,
+  "note": "raw",
+  "template_version": null,
+  "names_after_repair": [
+   "Kurukshetra",
+   "Arjuna",
+   "Krishna"
+  ],
+  "token_counter": "clip"
+ },
+ {
+  "scene_id": "s17",
+  "condition": "c1_lora_raw",
+  "split": "dev",
+  "positive": "rrvarma style, Sita waiting alone beside a moonlit lake, gazing anxiously along the shore, oil painting, canvas texture, classical indian art",
+  "negative": "ugly, blurry, bad anatomy",
+  "phrases_kept": [
+   "Sita waiting alone beside a moonlit lake, gazing anxiously along the shore"
+  ],
+  "phrases_dropped": [],
+  "token_count": 31,
+  "trigger_first": true,
+  "names_leaked": [
+   "Sita"
+  ],
+  "source": "template",
+  "layout": null,
+  "llm_model": "none",
+  "prompt_version": "raw",
+  "kb_version": "none",
+  "latency_s": 0.0006,
+  "mode": "raw",
+  "phrases_scrubbed": [],
+  "json_retry": false,
+  "name_repair": false,
+  "cache_hits": 0,
+  "llm_calls": 0,
+  "error": null,
+  "note": "raw",
+  "template_version": null,
+  "names_after_repair": [
+   "Sita"
+  ],
+  "token_counter": "clip"
+ },
+ {
+  "scene_id": "s18",
+  "condition": "c1_lora_raw",
+  "split": "dev",
+  "positive": "rrvarma style, Lakshmana standing guard with his bow outside a thatched hut in the forest at night, oil painting, canvas texture, classical indian art",
+  "negative": "ugly, blurry, bad anatomy",
+  "phrases_kept": [
+   "Lakshmana standing guard with his bow outside a thatched hut in the forest at night"
+  ],
+  "phrases_dropped": [],
+  "token_count": 32,
+  "trigger_first": true,
+  "names_leaked": [
+   "Lakshmana"
+  ],
+  "source": "template",
+  "layout": null,
+  "llm_model": "none",
+  "prompt_version": "raw",
+  "kb_version": "none",
+  "latency_s": 0.0006,
+  "mode": "raw",
+  "phrases_scrubbed": [],
+  "json_retry": false,
+  "name_repair": false,
+  "cache_hits": 0,
+  "llm_calls": 0,
+  "error": null,
+  "note": "raw",
+  "template_version": null,
+  "names_after_repair": [
+   "Lakshmana"
+  ],
+  "token_counter": "clip"
+ },
+ {
+  "scene_id": "s19",
+  "condition": "c1_lora_raw",
+  "split": "dev",
+  "positive": "rrvarma style, Draupadi folding her hands in appeal before Krishna, her long hair loose, oil painting, canvas texture, classical indian art",
+  "negative": "ugly, blurry, bad anatomy",
+  "phrases_kept": [
+   "Draupadi folding her hands in appeal before Krishna, her long hair loose"
+  ],
+  "phrases_dropped": [],
+  "token_count": 30,
+  "trigger_first": true,
+  "names_leaked": [
+   "Draupadi",
+   "Krishna"
+  ],
+  "source": "template",
+  "layout": null,
+  "llm_model": "none",
+  "prompt_version": "raw",
+  "kb_version": "none",
+  "latency_s": 0.0006,
+  "mode": "raw",
+  "phrases_scrubbed": [],
+  "json_retry": false,
+  "name_repair": false,
+  "cache_hits": 0,
+  "llm_calls": 0,
+  "error": null,
+  "note": "raw",
+  "template_version": null,
+  "names_after_repair": [
+   "Draupadi",
+   "Krishna"
+  ],
+  "token_counter": "clip"
+ },
+ {
+  "scene_id": "s20",
+  "condition": "c1_lora_raw",
+  "split": "dev",
+  "positive": "rrvarma style, Sita offering water to Rama outside their leaf hut in the forest, oil painting, canvas texture, classical indian art",
+  "negative": "ugly, blurry, bad anatomy",
+  "phrases_kept": [
+   "Sita offering water to Rama outside their leaf hut in the forest"
+  ],
+  "phrases_dropped": [],
+  "token_count": 28,
+  "trigger_first": true,
+  "names_leaked": [
+   "Sita",
+   "Rama"
+  ],
+  "source": "template",
+  "layout": null,
+  "llm_model": "none",
+  "prompt_version": "raw",
+  "kb_version": "none",
+  "latency_s": 0.0005,
+  "mode": "raw",
+  "phrases_scrubbed": [],
+  "json_retry": false,
+  "name_repair": false,
+  "cache_hits": 0,
+  "llm_calls": 0,
+  "error": null,
+  "note": "raw",
+  "template_version": null,
+  "names_after_repair": [
+   "Sita",
+   "Rama"
+  ],
+  "token_counter": "clip"
+ },
+ {
+  "scene_id": "s21",
+  "condition": "c1_lora_raw",
+  "split": "dev",
+  "positive": "rrvarma style, Rama, Lakshmana and Hanuman sitting on rocks by the sea shore, planning the crossing to Lanka, oil painting, canvas texture, classical indian art",
+  "negative": "ugly, blurry, bad anatomy",
+  "phrases_kept": [
+   "Rama, Lakshmana and Hanuman sitting on rocks by the sea shore, planning the crossing to Lanka"
+  ],
+  "phrases_dropped": [],
+  "token_count": 34,
+  "trigger_first": true,
+  "names_leaked": [
+   "Rama",
+   "Lakshmana",
+   "Hanuman",
+   "Lanka"
+  ],
+  "source": "template",
+  "layout": null,
+  "llm_model": "none",
+  "prompt_version": "raw",
+  "kb_version": "none",
+  "latency_s": 0.0007,
+  "mode": "raw",
+  "phrases_scrubbed": [],
+  "json_retry": false,
+  "name_repair": false,
+  "cache_hits": 0,
+  "llm_calls": 0,
+  "error": null,
+  "note": "raw",
+  "template_version": null,
+  "names_after_repair": [
+   "Rama",
+   "Lakshmana",
+   "Hanuman",
+   "Lanka"
+  ],
+  "token_counter": "clip"
+ },
+ {
+  "scene_id": "s22",
+  "condition": "c1_lora_raw",
+  "split": "dev",
+  "positive": "rrvarma style, Draupadi, her hair loose, kneeling in the Kaurava court pleading before Bhishma and Duryodhana as courtiers look on, oil painting, canvas texture, classical indian art",
+  "negative": "ugly, blurry, bad anatomy",
+  "phrases_kept": [
+   "Draupadi, her hair loose, kneeling in the Kaurava court pleading before Bhishma and Duryodhana as courtiers look on"
+  ],
+  "phrases_dropped": [],
+  "token_count": 46,
+  "trigger_first": true,
+  "names_leaked": [
+   "Draupadi",
+   "Kauravas",
+   "Bhishma",
+   "Duryodhana"
+  ],
+  "source": "template",
+  "layout": null,
+  "llm_model": "none",
+  "prompt_version": "raw",
+  "kb_version": "none",
+  "latency_s": 0.0007,
+  "mode": "raw",
+  "phrases_scrubbed": [],
+  "json_retry": false,
+  "name_repair": false,
+  "cache_hits": 0,
+  "llm_calls": 0,
+  "error": null,
+  "note": "raw",
+  "template_version": null,
+  "names_after_repair": [
+   "Draupadi",
+   "Kauravas",
+   "Bhishma",
+   "Duryodhana"
+  ],
+  "token_counter": "clip"
+ },
+ {
+  "scene_id": "s23",
+  "condition": "c1_lora_raw",
+  "split": "dev",
+  "positive": "rrvarma style, Ram freeing a woman from a curse, Lakshman and a sage standing beside him, the woman bowing at his feet, oil painting, canvas texture, classical indian art",
+  "negative": "ugly, blurry, bad anatomy",
+  "phrases_kept": [
+   "Ram freeing a woman from a curse, Lakshman and a sage standing beside him, the woman bowing at his feet"
+  ],
+  "phrases_dropped": [],
+  "token_count": 39,
+  "trigger_first": true,
+  "names_leaked": [
+   "Rama",
+   "Lakshmana"
+  ],
+  "source": "template",
+  "layout": null,
+  "llm_model": "none",
+  "prompt_version": "raw",
+  "kb_version": "none",
+  "latency_s": 0.0007,
+  "mode": "raw",
+  "phrases_scrubbed": [],
+  "json_retry": false,
+  "name_repair": false,
+  "cache_hits": 0,
+  "llm_calls": 0,
+  "error": null,
+  "note": "raw",
+  "template_version": null,
+  "names_after_repair": [
+   "Rama",
+   "Lakshmana"
+  ],
+  "token_counter": "clip"
+ },
+ {
+  "scene_id": "s24",
+  "condition": "c1_lora_raw",
+  "split": "dev",
+  "positive": "rrvarma style, lady playing a stringed instrument on a terrace at night, no idea who she is, probably a princess from some story, oil painting, canvas texture, classical indian art",
+  "negative": "ugly, blurry, bad anatomy",
+  "phrases_kept": [
+   "lady playing a stringed instrument on a terrace at night, no idea who she is, probably a princess from some story"
+  ],
+  "phrases_dropped": [],
+  "token_count": 39,
+  "trigger_first": true,
+  "names_leaked": [],
+  "source": "template",
+  "layout": null,
+  "llm_model": "none",
+  "prompt_version": "raw",
+  "kb_version": "none",
+  "latency_s": 0.0008,
+  "mode": "raw",
+  "phrases_scrubbed": [],
+  "json_retry": false,
+  "name_repair": false,
+  "cache_hits": 0,
+  "llm_calls": 0,
+  "error": null,
+  "note": "raw",
+  "template_version": null,
+  "names_after_repair": [],
+  "token_counter": "clip"
+ },
+ {
+  "scene_id": "s25",
+  "condition": "c1_lora_raw",
+  "split": "dev",
+  "positive": "rrvarma style, Hanuman flying through the sky carrying a mountain of healing herbs, oil painting, canvas texture, classical indian art",
+  "negative": "ugly, blurry, bad anatomy",
+  "phrases_kept": [
+   "Hanuman flying through the sky carrying a mountain of healing herbs"
+  ],
+  "phrases_dropped": [],
+  "token_count": 26,
+  "trigger_first": true,
+  "names_leaked": [
+   "Hanuman"
+  ],
+  "source": "template",
+  "layout": null,
+  "llm_model": "none",
+  "prompt_version": "raw",
+  "kb_version": "none",
+  "latency_s": 0.0006,
+  "mode": "raw",
+  "phrases_scrubbed": [],
+  "json_retry": false,
+  "name_repair": false,
+  "cache_hits": 0,
+  "llm_calls": 0,
+  "error": null,
+  "note": "raw",
+  "template_version": null,
+  "names_after_repair": [
+   "Hanuman"
+  ],
+  "token_counter": "clip"
+ },
+ {
+  "scene_id": "s26",
+  "condition": "c1_lora_raw",
+  "split": "dev",
+  "positive": "rrvarma style, Show Krishna as the charioteer, turning to counsel a hesitant Arjuna who has lowered his bow, in their chariot just before the battle begins, oil painting, canvas texture, classical indian art",
+  "negative": "ugly, blurry, bad anatomy",
+  "phrases_kept": [
+   "Show Krishna as the charioteer, turning to counsel a hesitant Arjuna who has lowered his bow, in their chariot just before the battle begins"
+  ],
+  "phrases_dropped": [],
+  "token_count": 44,
+  "trigger_first": true,
+  "names_leaked": [
+   "Krishna",
+   "Arjuna"
+  ],
+  "source": "template",
+  "layout": null,
+  "llm_model": "none",
+  "prompt_version": "raw",
+  "kb_version": "none",
+  "latency_s": 0.0009,
+  "mode": "raw",
+  "phrases_scrubbed": [],
+  "json_retry": false,
+  "name_repair": false,
+  "cache_hits": 0,
+  "llm_calls": 0,
+  "error": null,
+  "note": "raw",
+  "template_version": null,
+  "names_after_repair": [
+   "Krishna",
+   "Arjuna"
+  ],
+  "token_counter": "clip"
+ },
+ {
+  "scene_id": "s27",
+  "condition": "c1_lora_raw",
+  "split": "dev",
+  "positive": "rrvarma style, yashodha scolding little krishn, his face smeared with butter and a broken pot lying on the floor beside them, oil painting, canvas texture, classical indian art",
+  "negative": "ugly, blurry, bad anatomy",
+  "phrases_kept": [
+   "yashodha scolding little krishn, his face smeared with butter and a broken pot lying on the floor beside them"
+  ],
+  "phrases_dropped": [],
+  "token_count": 40,
+  "trigger_first": true,
+  "names_leaked": [
+   "Krishna"
+  ],
+  "source": "template",
+  "layout": null,
+  "llm_model": "none",
+  "prompt_version": "raw",
+  "kb_version": "none",
+  "latency_s": 0.0007,
+  "mode": "raw",
+  "phrases_scrubbed": [],
+  "json_retry": false,
+  "name_repair": false,
+  "cache_hits": 0,
+  "llm_calls": 0,
+  "error": null,
+  "note": "raw",
+  "template_version": null,
+  "names_after_repair": [
+   "Krishna"
+  ],
+  "token_counter": "clip"
+ },
+ {
+  "scene_id": "s28",
+  "condition": "c1_lora_raw",
+  "split": "dev",
+  "positive": "rrvarma style, The coronation of Rama and Sita in Ayodhya: the couple seated on the throne, Lakshmana, Bharata and Shatrughna standing beside them, and Hanuman kneeling at their feet, oil painting, canvas texture, classical indian art",
+  "negative": "ugly, blurry, bad anatomy",
+  "phrases_kept": [
+   "The coronation of Rama and Sita in Ayodhya: the couple seated on the throne, Lakshmana, Bharata and Shatrughna standing beside them, and Hanuman kneeling at their feet"
+  ],
+  "phrases_dropped": [],
+  "token_count": 55,
+  "trigger_first": true,
+  "names_leaked": [
+   "Rama",
+   "Sita",
+   "Ayodhya",
+   "Lakshmana",
+   "Bharata",
+   "Shatrughna",
+   "Hanuman"
+  ],
+  "source": "template",
+  "layout": null,
+  "llm_model": "none",
+  "prompt_version": "raw",
+  "kb_version": "none",
+  "latency_s": 0.0009,
+  "mode": "raw",
+  "phrases_scrubbed": [],
+  "json_retry": false,
+  "name_repair": false,
+  "cache_hits": 0,
+  "llm_calls": 0,
+  "error": null,
+  "note": "raw",
+  "template_version": null,
+  "names_after_repair": [
+   "Rama",
+   "Sita",
+   "Ayodhya",
+   "Lakshmana",
+   "Bharata",
+   "Shatrughna",
+   "Hanuman"
+  ],
+  "token_counter": "clip"
+ },
+ {
+  "scene_id": "s29",
+  "condition": "c1_lora_raw",
+  "split": "dev",
+  "positive": "rrvarma style, Bhishma lying on a bed of arrows on the field of Kurukshetra while the Pandavas and Krishna gather around him at dusk, oil painting, canvas texture, classical indian art",
+  "negative": "ugly, blurry, bad anatomy",
+  "phrases_kept": [
+   "Bhishma lying on a bed of arrows on the field of Kurukshetra while the Pandavas and Krishna gather around him at dusk"
+  ],
+  "phrases_dropped": [],
+  "token_count": 43,
+  "trigger_first": true,
+  "names_leaked": [
+   "Bhishma",
+   "Kurukshetra",
+   "Pandavas",
+   "Krishna"
+  ],
+  "source": "template",
+  "layout": null,
+  "llm_model": "none",
+  "prompt_version": "raw",
+  "kb_version": "none",
+  "latency_s": 0.0008,
+  "mode": "raw",
+  "phrases_scrubbed": [],
+  "json_retry": false,
+  "name_repair": false,
+  "cache_hits": 0,
+  "llm_calls": 0,
+  "error": null,
+  "note": "raw",
+  "template_version": null,
+  "names_after_repair": [
+   "Bhishma",
+   "Kurukshetra",
+   "Pandavas",
+   "Krishna"
+  ],
+  "token_counter": "clip"
+ },
+ {
+  "scene_id": "s30",
+  "condition": "c1_lora_raw",
+  "split": "dev",
+  "positive": "rrvarma style, At Draupadi's swayamvara, Arjuna, dressed as a poor brahmin, bends the great bow and aims upward at the fish target turning high above a crowded hall of seated kings, while Draupadi waits holding a garland, oil painting, canvas texture, classical indian art",
+  "negative": "ugly, blurry, bad anatomy",
+  "phrases_kept": [
+   "At Draupadi's swayamvara, Arjuna, dressed as a poor brahmin, bends the great bow and aims upward at the fish target turning high above a crowded hall of seated kings, while Draupadi waits holding a garland"
+  ],
+  "phrases_dropped": [],
+  "token_count": 63,
+  "trigger_first": true,
+  "names_leaked": [
+   "Draupadi",
+   "Arjuna"
+  ],
+  "source": "template",
+  "layout": null,
+  "llm_model": "none",
+  "prompt_version": "raw",
+  "kb_version": "none",
+  "latency_s": 0.0011,
+  "mode": "raw",
+  "phrases_scrubbed": [],
+  "json_retry": false,
+  "name_repair": false,
+  "cache_hits": 0,
+  "llm_calls": 0,
+  "error": null,
+  "note": "raw",
+  "template_version": null,
+  "names_after_repair": [
+   "Draupadi",
+   "Arjuna"
+  ],
+  "token_counter": "clip"
+ },
+ {
+  "scene_id": "s31",
+  "condition": "c1_lora_raw",
+  "split": "dev",
+  "positive": "rrvarma style, old Shabri offerring berries to Ram and Laxman outside her little hut in the forrest, oil painting, canvas texture, classical indian art",
+  "negative": "ugly, blurry, bad anatomy",
+  "phrases_kept": [
+   "old Shabri offerring berries to Ram and Laxman outside her little hut in the forrest"
+  ],
+  "phrases_dropped": [],
+  "token_count": 33,
+  "trigger_first": true,
+  "names_leaked": [
+   "Shabri",
+   "Rama",
+   "Lakshmana"
+  ],
+  "source": "template",
+  "layout": null,
+  "llm_model": "none",
+  "prompt_version": "raw",
+  "kb_version": "none",
+  "latency_s": 0.0006,
+  "mode": "raw",
+  "phrases_scrubbed": [],
+  "json_retry": false,
+  "name_repair": false,
+  "cache_hits": 0,
+  "llm_calls": 0,
+  "error": null,
+  "note": "raw",
+  "template_version": null,
+  "names_after_repair": [
+   "Shabri",
+   "Rama",
+   "Lakshmana"
+  ],
+  "token_counter": "clip"
+ },
+ {
+  "scene_id": "s32",
+  "condition": "c1_lora_raw",
+  "split": "dev",
+  "positive": "rrvarma style, ok so i dont really remember the story, its from an old picture my grandmother kept in her pooja room. there is an old king, very tired and sad, lying on the floor of a dark room in his pallace, his crown fallen off and lying next to him. his young wife is sitting on a low bed a little way off with her back half turned to him, still angry, and her jewelery is thrown all over the floor around her. there is only one small lamp burning so most of the room is in shadow. i think he was begging her to change her mind about something and she wouldnt listen. can you make it look like that, quiet and sad, oil painting, canvas texture, classical indian art",
+  "negative": "ugly, blurry, bad anatomy",
+  "phrases_kept": [
+   "ok so i dont really remember the story, its from an old picture my grandmother kept in her pooja room. there is an old king, very tired and sad, lying on the floor of a dark room in his pallace, his crown fallen off and lying next to him. his young wife is sitting on a low bed a little way off with her back half turned to him, still angry, and her jewelery is thrown all over the floor around her. there is only one small lamp burning so most of the room is in shadow. i think he was begging her to change her mind about something and she wouldnt listen. can you make it look like that, quiet and sad"
+  ],
+  "phrases_dropped": [],
+  "token_count": 152,
+  "trigger_first": true,
+  "names_leaked": [],
+  "source": "template",
+  "layout": null,
+  "llm_model": "none",
+  "prompt_version": "raw",
+  "kb_version": "none",
+  "latency_s": 0.0027,
+  "mode": "raw",
+  "phrases_scrubbed": [],
+  "json_retry": false,
+  "name_repair": false,
+  "cache_hits": 0,
+  "llm_calls": 0,
+  "error": null,
+  "note": "raw",
+  "template_version": null,
+  "names_after_repair": [],
+  "token_counter": "clip"
+ }
+]
