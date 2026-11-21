@@ -2,13 +2,19 @@
 
 python eval/score.py --manifest <images>/manifest.json --out results/<condition>@<model>_<split>.json
        [--scenes eval/test_scenes_dev.json] [--no_judge] [--no_m2] [--cache <judge cache json>]
+       [--pairs eval/test_pairs_dev.json] [--detect_cache <Drive>/m4/cache/detections_<you>.jsonl] [--force]
 
 Per image:
   checklist      weighted mean P(yes) from the judge over the scene's checklist
   clip_raw       CLIP image-text similarity vs the RAW user text (what the user asked for; truncated at 77 tokens)
   style_margin   M2 metric: closer to real Varma than to non-Varma paintings
   max_train_dino M2 metric: similarity to the nearest training image (memorization)
-Resumable: judge answers are cached by (image sha256, model, question).
+M4 (with --pairs):
+  the pair's checklist_override replaces the scene checklist for EVERY condition (p0 included);
+  with --detect_cache also pose_pck, pose_detected, n_people_out, pose_joint_recall, scored against the skeleton
+  actually used (the manifest's control_pose_json for auto-pose conditions, else the pair's pose_json).
+Never overwrites an existing --out unless --force.
+Resumable: judge answers are cached by (image sha256, model, question); detections by (image sha256, detector).
 """
 import argparse
 import json
@@ -54,6 +60,63 @@ def m2_scores(paths, texts):
     return {"clip_raw": per["clip_text"], "style_margin": per["style_margin"], "max_train_dino": per["max_train_dino"]}
 
 
+def load_pairs(path):
+    """scene_id -> pair (eval/test_pairs_dev.json)."""
+    d = json.load(open(path, encoding="utf-8"))
+    d = d if isinstance(d, list) else d.get("pairs", [])
+    return {p["scene_id"]: p for p in d}
+
+
+def apply_overrides(scenes, pairs):
+    """A pair's checklist_override replaces its scene's checklist (copy; M3's scene file is never edited)."""
+    out = dict(scenes)
+    for sid, p in pairs.items():
+        if p.get("checklist_override") and sid in out:
+            out[sid] = dict(out[sid], checklist=p["checklist_override"])
+    return out
+
+
+def _local(p, manifest_dir):
+    if os.path.exists(p):
+        return p
+    q = os.path.join(manifest_dir, os.path.basename(p))
+    return q if os.path.exists(q) else None
+
+
+def control_pose_for(row, pairs, manifest_dir, cache=None):
+    """The skeleton actually used for this image:
+    1. the manifest's sidecar PoseJSON (auto-pose conditions), if present;
+    2. else, if the control PNG is not the pair's own skeleton (auto pose without a sidecar), the detector's reading
+       of that control PNG (it recovers its own drawings reliably);
+    3. else the pair's PoseJSON (p0 included: "how close is an uncontrolled image to the pair's pose?")."""
+    p = row.get("control_pose_json")
+    if p and _local(p, manifest_dir):
+        return json.load(open(_local(p, manifest_dir), encoding="utf-8"))
+    pair = pairs.get(row["scene_id"])
+    cf = row.get("control_file")
+    if cf and pair and os.path.basename(cf) != os.path.basename(pair.get("pose_file") or "") and _local(cf, manifest_dir):
+        from eval.pose_metric import detect
+        return detect(_local(cf, manifest_dir), cache)
+    if pair and pair.get("pose_json"):
+        return json.load(open(os.path.join(ROOT, pair["pose_json"]), encoding="utf-8"))
+    return None
+
+
+def add_pose_flags(rows, pairs, cache_path, manifest_dir):
+    from eval.pose_metric import DetectCache, pose_score
+    m4 = json.load(open(os.path.join(ROOT, "config", "m4.json")))["pose_metric"]
+    cache = DetectCache(cache_path)
+    for i, r in enumerate(rows):
+        ctrl = control_pose_for(r, pairs, manifest_dir, cache)
+        if ctrl is None:
+            continue
+        res = pose_score(ctrl, r["image"], cache=cache, pck_thresh=m4["pck_thresh"])
+        r["pose_pck"], r["pose_detected"] = res["pck"], float(res["ok"])
+        r["n_people_out"], r["n_people_expected"], r["pose_joint_recall"] = res["n_detected"], res["n_expected"], res["joint_recall"]
+        if (i + 1) % 25 == 0:
+            print(f"  pose-scored {i + 1}/{len(rows)}")
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--manifest", required=True)
@@ -62,9 +125,16 @@ def main():
     ap.add_argument("--no_judge", action="store_true", help="skip the VLM checklist judge")
     ap.add_argument("--no_m2", action="store_true", help="skip CLIP/style/memorization (e.g. fixture test without Drive)")
     ap.add_argument("--cache", default=None, help="judge cache (default: Drive m3/cache if mounted, else /content)")
+    ap.add_argument("--pairs", default=None, help="M4 test pairs: checklist_override + control pose per scene")
+    ap.add_argument("--detect_cache", default=None, help="per-owner pose-detection cache (jsonl, on Drive); enables pose flags")
+    ap.add_argument("--force", action="store_true", help="overwrite an existing --out")
     a = ap.parse_args()
+    if os.path.exists(a.out) and not a.force:
+        sys.exit(f"{a.out} exists; score.py never overwrites results. Use a fresh --out name (or --force if you mean it).")
 
     scenes = {s["id"]: s for s in json.load(open(a.scenes))}
+    pairs = load_pairs(a.pairs) if a.pairs else {}
+    scenes = apply_overrides(scenes, pairs)
     meta, items = load_items(a.manifest)
     missing = sorted({it["scene_id"] for it in items} - set(scenes))
     if missing:
@@ -74,7 +144,8 @@ def main():
 
     rows = [{"scene_id": it["scene_id"], "condition": it.get("condition", meta.get("condition", "?")),
              "seed": it.get("seed"), "image": it["path"], "coalition": it.get("coalition"),
-             "prompt": it.get("prompt") or it.get("positive")} for it in items]
+             "prompt": it.get("prompt") or it.get("positive"),
+             "control_pose_json": it.get("control_pose_json"), "control_file": it.get("control_file")} for it in items]
 
     judge_id = None
     if not a.no_judge:
@@ -98,8 +169,12 @@ def main():
             for k, v in m2.items():
                 r[k] = float(v[i])
 
+    if a.detect_cache and rows:
+        add_pose_flags(rows, pairs, a.detect_cache, os.path.dirname(os.path.abspath(a.manifest)))
+
     from eval.stats import boot_ci, scene_means   # numpy; imported here so load_items works without it
-    metrics = [k for k in ("checklist", "clip_raw", "style_margin", "max_train_dino") if any(k in r for r in rows)]
+    metrics = [k for k in ("checklist", "clip_raw", "style_margin", "max_train_dino", "pose_pck", "pose_detected")
+               if any(r.get(k) is not None for r in rows)]
     summary = {}
     for cond in sorted({r["condition"] for r in rows}):
         summary[cond] = {}
@@ -109,7 +184,9 @@ def main():
                 summary[cond][k] = {"mean": sum(sm.values()) / len(sm), "ci95": boot_ci(sm.values()), "n_scenes": len(sm)}
     per_scene = {cond: {k: scene_means(rows, k, cond) for k in metrics} for cond in summary}
 
-    out = {"manifest": os.path.abspath(a.manifest), "scenes_file": a.scenes, "scored_at": datetime.now().isoformat(),
+    out = {"manifest": os.path.abspath(a.manifest), "scenes_file": a.scenes, "pairs_file": a.pairs,
+           "checklist_overrides": sorted(k for k, p in pairs.items() if p.get("checklist_override")),
+           "scored_at": datetime.now().isoformat(),
            "judge": judge_id, "n_images": len(rows), "summary": summary, "per_scene": per_scene, "items": rows}
     os.makedirs(os.path.dirname(os.path.abspath(a.out)), exist_ok=True)
     json.dump(out, open(a.out, "w"), indent=1)

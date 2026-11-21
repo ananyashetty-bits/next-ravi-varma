@@ -1,0 +1,58 @@
+[
+ {
+  "id": "s01",
+  "scene_id": "s01",
+  "split": "dev",
+  "tier": 3,
+  "contributed_by": "A",
+  "pose_file": "eval/poses/dev/s01.png",
+  "pose_json": "eval/poses/dev/s01.json",
+  "pose_source": "photo",
+  "n_people_expected": 3,
+  "pose_full_file": null,
+  "checklist_override": null,
+  "pose_note": "left: one man standing, centre: one man aiming a bow to the right, right: one man bent low toward the ground"
+ },
+ {
+  "id": "s02",
+  "scene_id": "s02",
+  "split": "dev",
+  "tier": 1,
+  "contributed_by": "A",
+  "pose_file": "eval/poses/dev/s02.png",
+  "pose_json": "eval/poses/dev/s02.json",
+  "pose_source": "photo",
+  "n_people_expected": 1,
+  "pose_full_file": null,
+  "checklist_override": null,
+  "pose_note": "one figure standing, arms raised to the side as if playing a flute"
+ },
+ {
+  "id": "s04",
+  "scene_id": "s04",
+  "split": "dev",
+  "tier": 2,
+  "contributed_by": "A",
+  "pose_file": "eval/poses/dev/s04.png",
+  "pose_json": "eval/poses/dev/s04.json",
+  "pose_source": "photo",
+  "n_people_expected": 2,
+  "pose_full_file": null,
+  "checklist_override": null,
+  "pose_note": "left: a figure pointing to the right; right: a figure drawing a bow"
+ },
+ {
+  "id": "s05",
+  "scene_id": "s05",
+  "split": "dev",
+  "tier": 2,
+  "contributed_by": "A",
+  "pose_file": "eval/poses/dev/s05.png",
+  "pose_json": "eval/poses/dev/s05.json",
+  "pose_source": "photo",
+  "n_people_expected": 2,
+  "pose_full_file": null,
+  "checklist_override": null,
+  "pose_note": "two men standing side by side, close together, as in an embrace"
+ }
+]
