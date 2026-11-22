@@ -15,6 +15,7 @@ def build_parser():
     ap.add_argument("--control", choices=CONTROLS, default="none")          # none = p0
     ap.add_argument("--control_profile", choices=["baseline", "tuned"], default="baseline")
     ap.add_argument("--control_source", choices=["pair", "auto"], default="pair")
+    ap.add_argument("--scenes", default="eval/test_scenes_dev.json")   # scene text for --control_source auto (held-out: B's private file)
     for k in ("control_scale", "guidance_start", "guidance_end", "lora_scale"):   # sweep only
         ap.add_argument("--" + k, type=float, default=None)
     return ap

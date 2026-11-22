@@ -59,7 +59,10 @@ def pose_for(args, it, pairs, scene_text):
         except ImportError: from pose.stub import pose_from_text
         if it["scene_id"] not in scene_text:
             sys.exit(f"no scene text for {it['scene_id']} in eval/test_scenes_dev.json")
-        pose_from_text(scene_text[it["scene_id"]])["image"].save(out)
+        ci = pose_from_text(scene_text[it["scene_id"]])
+        ci["image"].save(out)
+        if ci.get("pose_json"):                                   # B's pose metric needs the keypoints, not the drawing
+            json.dump(ci["pose_json"], open(os.path.splitext(out)[0] + ".json", "w", encoding="utf-8"))
     return out
 
 def main():
@@ -78,7 +81,7 @@ def main():
         ctl = BA.settings(args, CA.profile)                       # profile first, sweep flags on top
         cn_rev = CA.CFG4["controlnets"][CA._CN_KEY[args.control]]["revision"]
         if args.control_source == "auto":
-            sc = json.load(open("eval/test_scenes_dev.json", encoding="utf-8"))
+            sc = json.load(open(args.scenes, encoding="utf-8"))
             sc = sc if isinstance(sc, list) else sc.get("scenes", sc)
             scene_text = {s["id"]: s["text"] for s in sc}
 
