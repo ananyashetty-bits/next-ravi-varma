@@ -26,3 +26,98 @@ style_margin 0.0295; pose_pck 0.05.
 - H-A3: at strong control, a LoRA scale above 1.0 (e.g. 1.2) partly restores style, at some cost to prompt following.
 - H-A4: p1 beats p0 on human pose match and figure count, but not on face or hand quality.
 - H-A5 (optional p8): hand and face keypoints do not improve human face/hand ratings much either, because the limit is resolution, not the body-only conditioning.
+
+## Section B (B: evaluation). Written 22 Nov 2026, before any M4 image was generated or scored
+
+### Rating protocol (decided at the contract meeting, from M3's judge validation)
+- **4 human scores, each 1-5:** style fidelity, pose match, faces, hands. Hands also has a "not visible" option, which
+  is not a score.
+- **Human faithfulness is dropped.** The M3 checklist judge passed its pre-registered validation: on dev it reached
+  Spearman 0.41 with human faithfulness, against 0.24 for CLIP, and the bar was ≥ CLIP and ≥ 0.4. On held-out it
+  reached 0.65 (`eval/EVAL_REPORT.md`). The judge supplies faithfulness.
+- **Anchors:**
+  - *Style fidelity:* 1 = photographic or modern-looking; 3 = painted but stiff or cluttered; 5 = reads as a dignified,
+    balanced Varma-style painting.
+  - *Pose match:* 1 = skeleton ignored; 3 = roughly the right figures and posture, limbs wrong; 5 = limbs and placement
+    follow the skeleton.
+  - *Faces:* 1 = distorted or missing; 3 = smeared but recognisable; 5 = convincing as a painted face.
+  - *Hands:* 1 = malformed or merged; 3 = plausible blobs; 5 = convincing.
+- **Failure taxonomy** (one or more per image): pose ignored · pose followed but scene wrong · extra/missing limbs ·
+  merged/duplicated figures · face distorted · hands malformed · style weakened (photographic) ·
+  stiff/over-constrained · post-processing artifacts · other.
+- **Raters and sizes:**
+  - ≥ 2 raters per image, each rating alone; the first 5 rows are rated by all four as calibration.
+  - Dev uses seed 1.
+  - Every condition is rated on a 512×512 copy (post-processed images are downsized with Lanczos).
+- **LoRA scale check:** the LoRA scale for M3's rated baselines was confirmed as 1.0 by A on 19 Nov
+  (`docs/M3_REPORT.md`).
+
+### Pose metric (`eval/pose_metric.py`), fixed before scoring
+- **Matching:** detected people are matched to control people by minimum total distance between body centroids
+  (neck, right hip, left hip). Joints count only with confidence > 0.3.
+- **A correct joint:** within `pck_thresh` = 0.10 × the diagonal of the control person's keypoint bounding box.
+- **Scores:**
+  - `pose_pck` = correct joints / all control joints; missed people and missed joints count as wrong.
+  - `pose_detected` = anyone detected.
+  - Also reported: `n_people_out` and joint recall.
+- **What it's scored against:** the skeleton actually used, which is the pair's PoseJSON. For auto-pose conditions
+  it's the `<name>_pose.json` sidecar. p0 is scored against the pair's pose too, as the "no control" baseline.
+- **Known weaknesses:**
+  - Circularity: the same detector family made the photo skeletons.
+  - Painted robes and stylised bodies reduce detection.
+  - The detector can't read skeleton drawings back (22 Nov: 0 people found on all 4 rendered pair skeletons). The
+    renderer is instead verified to be pixel-identical to controlnet_aux's own drawing (#101).
+  - Detection failures are reported separately, from the detector audit on the 15 real held-out Varma paintings and
+    on p0/p1.
+- **Precedence:** human pose match is the main evidence. **When PCK and humans disagree, humans win.**
+
+### Tie bands
+- Human ratings: **0.25**.
+- `pose_pck`: **0.05**.
+- `style_margin`: **0.0295** (M2 `tie_band`).
+- Memorisation flag: `max_train_dino` p95 ≤ **0.85** (M2 `mem_flag_dino_p95`).
+
+### Statistics
+- **Method:** per-pair paired comparisons (seeds averaged first), giving the mean difference, a 95% bootstrap CI
+  over pairs (5000 resamples, M3's `eval/stats.py`) and win/tie/loss with the bands above.
+- **Breakdowns:** by tier and by people count (1 / 2 / 3).
+- **No significance claims** (16 dev and 6 held-out pairs).
+- **Support rule:** a hypothesis is **supported** only if the 95% CI excludes 0 in the predicted direction. "Does
+  not beat" counts as supported if the CI includes 0 or lies on the predicted side.
+
+### Hypotheses
+- **H-B1:** p1 beats p0 on human **pose match** and on **figure count** (`n_people_out` = `n_people_expected`), in
+  tiers 2-4.
+- **H-B2:** p1 does **not** beat p0 on human **face** or **hand** ratings, because pose control fixes limbs and
+  placement, not faces.
+  - A positive result would mean better posture also gives the model a cleaner layout to draw faces and hands into.
+    We would report that as a finding, not explain it away.
+  - **H-B2b (if p8 runs):** hand and face keypoints improve hands more than faces.
+- **H-B3:** `pose_pck` correlates with human pose match at Spearman ≥ 0.5 per image, and less well on robed or
+  painted figures. If it is < 0.3, PCK is dropped from the headline.
+- **H-B4:** at default settings (p2), pose control lowers the mean human style rating by ≤ 0.3 relative to p0.
+
+### Default-setting rules (Overview §10, rules 1-3, verbatim)
+1. *Control scale, guidance window, LoRA scale (A, Day 2 by 12:30).*
+   - Run 4–5 stage-2 candidates on all 16 dev pairs, seed 1 (at least 12 pairs if some are late, flagged in
+     `CONTROL.md`), compared with **p0's seed-1 images**.
+   - **Eligible** = `max_train_dino` p95 ≤ 0.85 **and** mean `style_margin` ≥ p0's − 0.0295.
+   - Among eligible candidates, pick the highest mean `pose_pck`. If two candidates' paired CI includes 0, pick the
+     lower control scale.
+   - The LoRA scale stays 1.0 unless a candidate with another scale wins by this rule.
+2. *Post-processing in the app (D, S3).* It's on by default only if all three hold:
+   - the mean **face** rating improves by more than 0.25;
+   - **hands** don't drop by more than 0.25;
+   - the mean **style** rating drops by less than 0.3.
+
+   Otherwise it's an opt-in checkbox. Before deciding, D spot-checks the winning method on 4 of A's p2 images; a
+   visible new artifact means opt-in.
+3. *Default pose source in the app:* the better of p1 and p3 by human pose match; a tie goes to p3 (no upload
+   needed).
+
+### Held-out
+- **Pairs:** 6 private pairs written by B (2 single, 2 two-figure, 2 three-figure; ≥ 2 on tiers 4-5; ≥ 2 characters
+  not in the KB).
+- **Prompts:** c1 raw, CPU only.
+- **Images:** generated once at the S2 sha, with a private detection cache.
+- **Scores:** not opened until the S3 decisions are written. Nothing from held-out changes any default.
