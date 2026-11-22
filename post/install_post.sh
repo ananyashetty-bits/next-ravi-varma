@@ -18,6 +18,7 @@ open("setup.py", "w").write(s2)
 print("patched setup.py:", s2 != s)
 PY
 pip install -q --no-build-isolation . 2>&1 | tail -3
+cd "$HOME"          # leave the build folder, or `import basicsr` below loads the unpatched source copy
 # torchvision >= 0.17 removed functional_tensor, which basicsr's degradations.py imports
 python - <<'PY'
 import glob, site
@@ -30,6 +31,6 @@ for sp in site.getsitepackages():
 PY
 pip install -q facexlib opencv-python-headless 2>&1 | tail -2
 pip install -q --no-deps gfpgan 2>&1 | tail -2
-python -c "import basicsr, gfpgan; print('import OK: gfpgan', gfpgan.__version__, 'basicsr', basicsr.__version__)"
+python -c "import basicsr, gfpgan; from importlib.metadata import version as v; print('import OK: gfpgan', v('gfpgan'), 'basicsr', v('basicsr'), basicsr.__file__)"
 pip list 2>/dev/null | grep -iE '^(torch|torchvision|numpy|gfpgan|basicsr|facexlib|opencv-python-headless) '
 echo "install took $(( ($(date +%s) - T0) / 60 )) min"
