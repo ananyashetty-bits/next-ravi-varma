@@ -1,0 +1,219 @@
+{
+ "run_at": "2026-11-22T09:11:03.435054",
+ "detector": "controlnet_aux-0.0.10",
+ "real_paintings": {
+  "dir": "/content/drive/MyDrive/m2/eval/eval_holdout",
+  "detector": {
+   "n_images": 15,
+   "pct_with_person": 100.0,
+   "mean_people_when_found": 2.0,
+   "mean_joints_per_person_of_18": 14.4,
+   "per_image": [
+    {
+     "image": "varma_ahalya_a37.png",
+     "n_people": 1,
+     "joints_per_person": [
+      18
+     ]
+    },
+    {
+     "image": "varma_damayanti_a01.png",
+     "n_people": 3,
+     "joints_per_person": [
+      17,
+      18,
+      7
+     ]
+    },
+    {
+     "image": "varma_draupadi_vastraharan_b09.png",
+     "n_people": 7,
+     "joints_per_person": [
+      15,
+      15,
+      16,
+      17,
+      13,
+      4,
+      10
+     ]
+    },
+    {
+     "image": "varma_expectation_a64.png",
+     "n_people": 1,
+     "joints_per_person": [
+      14
+     ]
+    },
+    {
+     "image": "varma_hamsa_damayanti_c04.png",
+     "n_people": 1,
+     "joints_per_person": [
+      17
+     ]
+    },
+    {
+     "image": "varma_kadambari_sitar_b04.png",
+     "n_people": 1,
+     "joints_per_person": [
+      16
+     ]
+    },
+    {
+     "image": "varma_madalasa_rutadwaja_c17.png",
+     "n_people": 3,
+     "joints_per_person": [
+      17,
+      13,
+      16
+     ]
+    },
+    {
+     "image": "varma_menaka_a30.png",
+     "n_people": 2,
+     "joints_per_person": [
+      16,
+      10
+     ]
+    },
+    {
+     "image": "varma_parsi_lady_c08.png",
+     "n_people": 1,
+     "joints_per_person": [
+      16
+     ]
+    },
+    {
+     "image": "varma_portrait_gentleman_a59.png",
+     "n_people": 1,
+     "joints_per_person": [
+      16
+     ]
+    },
+    {
+     "image": "varma_shankar_milli_c11.png",
+     "n_people": 2,
+     "joints_per_person": [
+      17,
+      18
+     ]
+    },
+    {
+     "image": "varma_shankar_v2_c02.png",
+     "n_people": 2,
+     "joints_per_person": [
+      9,
+      18
+     ]
+    },
+    {
+     "image": "varma_shantanu_matsyagandha_b16.png",
+     "n_people": 2,
+     "joints_per_person": [
+      14,
+      16
+     ]
+    },
+    {
+     "image": "varma_sita_c22.png",
+     "n_people": 1,
+     "joints_per_person": [
+      17
+     ]
+    },
+    {
+     "image": "varma_suckling_child_a52.png",
+     "n_people": 2,
+     "joints_per_person": [
+      12,
+      10
+     ]
+    }
+   ]
+  },
+  "nsfw": {
+   "model": "Falconsai/nsfw_image_detection",
+   "threshold": 0.5,
+   "n_images": 15,
+   "n_flagged": 1,
+   "per_image": [
+    {
+     "image": "varma_ahalya_a37.png",
+     "nsfw_score": 0.0033492485526949167,
+     "flagged": false
+    },
+    {
+     "image": "varma_damayanti_a01.png",
+     "nsfw_score": 0.00012220093049108982,
+     "flagged": false
+    },
+    {
+     "image": "varma_draupadi_vastraharan_b09.png",
+     "nsfw_score": 0.0002793291350826621,
+     "flagged": false
+    },
+    {
+     "image": "varma_expectation_a64.png",
+     "nsfw_score": 0.0001692450896371156,
+     "flagged": false
+    },
+    {
+     "image": "varma_hamsa_damayanti_c04.png",
+     "nsfw_score": 0.00015903986059129238,
+     "flagged": false
+    },
+    {
+     "image": "varma_kadambari_sitar_b04.png",
+     "nsfw_score": 0.00014641412417404354,
+     "flagged": false
+    },
+    {
+     "image": "varma_madalasa_rutadwaja_c17.png",
+     "nsfw_score": 0.0001261592551600188,
+     "flagged": false
+    },
+    {
+     "image": "varma_menaka_a30.png",
+     "nsfw_score": 0.00036846892908215523,
+     "flagged": false
+    },
+    {
+     "image": "varma_parsi_lady_c08.png",
+     "nsfw_score": 0.00012192820577183738,
+     "flagged": false
+    },
+    {
+     "image": "varma_portrait_gentleman_a59.png",
+     "nsfw_score": 0.000112443849502597,
+     "flagged": false
+    },
+    {
+     "image": "varma_shankar_milli_c11.png",
+     "nsfw_score": 0.0007777636055834591,
+     "flagged": false
+    },
+    {
+     "image": "varma_shankar_v2_c02.png",
+     "nsfw_score": 0.00019303729641251266,
+     "flagged": false
+    },
+    {
+     "image": "varma_shantanu_matsyagandha_b16.png",
+     "nsfw_score": 0.00013994451728649437,
+     "flagged": false
+    },
+    {
+     "image": "varma_sita_c22.png",
+     "nsfw_score": 0.0003104891220573336,
+     "flagged": false
+    },
+    {
+     "image": "varma_suckling_child_a52.png",
+     "nsfw_score": 0.9940650463104248,
+     "flagged": true
+    }
+   ]
+  }
+ },
+ "extra": {}
+}
