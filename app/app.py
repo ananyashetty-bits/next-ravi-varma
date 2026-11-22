@@ -106,12 +106,12 @@ class Engine:
                                                     lora_scale=style, control_scale=pose_strength), True
         return self.gen.generate(positive, negative, seed, model=DEFAULTS["model"], lora_scale=style), False
 
-    def postprocess(self, image, positive, negative, seed, hires, restore):
+    def postprocess(self, image, positive, negative, seed, hires, restore, style=None):
         done = []
         if self.post is None:
             return image, done
         if hires:
-            image = self.post.hires(image, positive, negative, seed); done.append("hires")
+            image = self.post.hires(image, positive, negative, seed, lora_scale=style); done.append("hires")
         if restore:
             image = self.post.restore_faces(image); done.append("restore_faces")
         return image, done
@@ -153,7 +153,7 @@ def make_handler(engine: Engine):
                 warnings.append("Pose control is not switched on in this build yet, so the pose is shown but was "
                                 "not applied.")
             image, post_done = engine.postprocess(image, prompt["positive"], prompt["negative"], seed,
-                                                  post_hires, post_restore)
+                                                  post_hires, post_restore, style)
             settings = core.settings_record(text, prompt, seed, style, pose_mode,
                                             pose_strength if pose_used else None,
                                             (ctrl or {}).get("source") if ctrl else None, post_done,
