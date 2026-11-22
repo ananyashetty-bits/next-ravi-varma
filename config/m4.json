@@ -12,8 +12,8 @@
               "baseline": {"scale": 1.0, "guidance_start": 0.0, "guidance_end": 1.0},
               "tuned": null,
               "note": "baseline = p1 and p3, never changes. tuned = A's sweep winner (Day 2, by PR), used by p2 and the app. lora_scale null = inherit models.rrv_v1.scale from m3.json (1.0); only the sweep and p2 may override it."},
-  "ui": {"style_slider_range": [0.8, 1.0], "pose_slider_range": [0.4, 1.0],
-         "note": "interim; A replaces these with the ranges the sweep actually covered (Day 1 evening)"},
+  "ui": {"style_slider_range": [0.6, 1.2], "pose_slider_range": [0.4, 1.2],
+         "note": "tested ranges from the stage 1 sweep (3 fixtures x 2 seeds): style slider = LoRA scale 0.6-1.2, pose slider = control scale 0.4-1.2"},
   "post": {"hires": {"method": "img2img", "size": 768, "strength": 0.35}, "restore": {"method": "none"},
            "default_on": false},
   "pose_metric": {"pck_thresh": 0.10, "tie_band_pose": 0.05}
