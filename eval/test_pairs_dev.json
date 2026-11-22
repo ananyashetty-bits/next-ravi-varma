@@ -54,5 +54,61 @@
   "pose_full_file": null,
   "checklist_override": null,
   "pose_note": "two men standing side by side, close together, as in an embrace"
+ },
+ {
+  "id": "s09",
+  "scene_id": "s09",
+  "split": "dev",
+  "tier": 1,
+  "contributed_by": "B",
+  "pose_file": "eval/poses/dev/s09.png",
+  "pose_json": "eval/poses/dev/s09.json",
+  "pose_source": "photo",
+  "n_people_expected": 1,
+  "pose_full_file": null,
+  "checklist_override": null,
+  "pose_note": "one woman seated on the ground, legs folded to the side"
+ },
+ {
+  "id": "s10",
+  "scene_id": "s10",
+  "split": "dev",
+  "tier": 1,
+  "contributed_by": "B",
+  "pose_file": "eval/poses/dev/s10.png",
+  "pose_json": "eval/poses/dev/s10.json",
+  "pose_source": "photo",
+  "n_people_expected": 1,
+  "pose_full_file": null,
+  "checklist_override": null,
+  "pose_note": "one man standing, one arm extended to the side (holding a bow)"
+ },
+ {
+  "id": "s11",
+  "scene_id": "s11",
+  "split": "dev",
+  "tier": 2,
+  "contributed_by": "B",
+  "pose_file": "eval/poses/dev/s11.png",
+  "pose_json": "eval/poses/dev/s11.json",
+  "pose_source": "photo",
+  "n_people_expected": 2,
+  "pose_full_file": null,
+  "checklist_override": null,
+  "pose_note": "two people walking side by side, close together"
+ },
+ {
+  "id": "s15",
+  "scene_id": "s15",
+  "split": "dev",
+  "tier": 4,
+  "contributed_by": "B",
+  "pose_file": "eval/poses/dev/s15.png",
+  "pose_json": "eval/poses/dev/s15.json",
+  "pose_source": "photo",
+  "n_people_expected": 3,
+  "pose_full_file": null,
+  "checklist_override": null,
+  "pose_note": "left: a figure standing; centre: a woman seated on the ground; right: a man lying with his head in her lap (his upper body hidden in her lap). Composite: the standing figure was added from another stock photo"
  }
 ]
