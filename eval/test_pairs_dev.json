@@ -110,5 +110,61 @@
   "pose_full_file": null,
   "checklist_override": null,
   "pose_note": "left: a figure standing; centre: a woman seated on the ground; right: a man lying with his head in her lap (his upper body hidden in her lap). Composite: the standing figure was added from another stock photo"
+ },
+ {
+  "id": "s25",
+  "scene_id": "s25",
+  "split": "dev",
+  "tier": 1,
+  "contributed_by": "D",
+  "pose_file": "eval/poses/dev/s25.png",
+  "pose_json": "eval/poses/dev/s25.json",
+  "pose_source": "photo",
+  "n_people_expected": 1,
+  "pose_full_file": null,
+  "checklist_override": null,
+  "pose_note": "one figure mid-leap with both arms raised overhead. Skeleton from a free-licence stock photo of a dancer"
+ },
+ {
+  "id": "s26",
+  "scene_id": "s26",
+  "split": "dev",
+  "tier": 2,
+  "contributed_by": "D",
+  "pose_file": "eval/poses/dev/s26.png",
+  "pose_json": "eval/poses/dev/s26.json",
+  "pose_source": "photo",
+  "n_people_expected": 2,
+  "pose_full_file": null,
+  "checklist_override": null,
+  "pose_note": "left a figure with one hand raised toward the right (Krishna; mirrored), right a figure with head bowed (Arjuna). Composite of two stock-photo skeletons"
+ },
+ {
+  "id": "s27",
+  "scene_id": "s27",
+  "split": "dev",
+  "tier": 2,
+  "contributed_by": "D",
+  "pose_file": "eval/poses/dev/s27.png",
+  "pose_json": "eval/poses/dev/s27.json",
+  "pose_source": "photo",
+  "n_people_expected": 2,
+  "pose_full_file": null,
+  "checklist_override": null,
+  "pose_note": "left a woman bending forward toward a small child sitting on the floor (right). Composite of two stock-photo skeletons; woman mirrored"
+ },
+ {
+  "id": "s31",
+  "scene_id": "s31",
+  "split": "dev",
+  "tier": 4,
+  "contributed_by": "D",
+  "pose_file": "eval/poses/dev/s31.png",
+  "pose_json": "eval/poses/dev/s31.json",
+  "pose_source": "photo",
+  "n_people_expected": 3,
+  "pose_full_file": null,
+  "checklist_override": null,
+  "pose_note": "left a small figure with arms reaching toward the right (Shabri), right two men standing side by side (Ram and Lakshman). Composite; the woman's far arm partly off canvas"
  }
 ]
