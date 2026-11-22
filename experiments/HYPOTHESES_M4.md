@@ -121,3 +121,32 @@ style_margin 0.0295; pose_pck 0.05.
 - **Prompts:** c1 raw, CPU only.
 - **Images:** generated once at the S2 sha, with a private detection cache.
 - **Scores:** not opened until the S3 decisions are written. Nothing from held-out changes any default.
+
+## Section D (D: app, post-processing, content policy). Written 22 Nov 2026, before any p5/p6 run was generated or scored
+
+### Conditions and labels
+- p5_hires: the p1 images + img2img hi-res (Lanczos 512 -> 768, then img2img with the same weights, LoRA, c1 prompt and negative; strength from `config/m4.json` `post.hires.strength`). ESRGAN x2 is a variant of p5 (optional; img2img is kept if time runs short, Overview section 14).
+- p6_restore: the p1 images + face restoration (GFPGAN-class).
+- p7_hires_restore (optional): both steps.
+- The optional face-detail inpaint is labelled `p9_face_inpaint`, not p7, so that `p7` means one thing (Overview section 8).
+
+### Same-size rule, and what the automated metrics cannot see
+- Raters see only the 512x512 Lanczos copies (`_512.png`), so resolution cannot unblind p5/p6.
+- CLIP and DINO see a resized image, so hi-res gains are invisible to them. Hi-res detail is judged separately on side-by-side face-crop strips (base | img2img | ESRGAN | restore, 3 pairs) and reported as non-blind.
+
+### Tie band
+ratings 0.25.
+
+### Default-setting rule (Overview section 10, rule 2, verbatim)
+2. **Post-processing in the app (D, S3).** It's on by default only if all three hold:
+   - the mean **face** rating improves by more than 0.25;
+   - **hands** don't drop by more than 0.25;
+   - the mean **style** rating drops by less than 0.3.
+
+   Otherwise it's an opt-in checkbox. Before deciding, D spot-checks the winning method on 4 of A's p2 images; a visible new artifact means opt-in.
+
+### Hypotheses
+- H-D1: img2img hi-res improves detail (non-blind crop comparison) without increasing duplicated figures (counted by eye on all 32 images per condition, against p1). ESRGAN improves sharpness but not faces (face rating change within the 0.25 tie band).
+- H-D2: face restoration raises the face rating (B's separate face score) but lowers the style rating (photographic faces). If faces do not improve, that is reported as the result.
+- H-D3: both post steps keep `max_train_dino` p95 <= 0.85 (from the results files).
+- H-D4: the app's median latency on a T4 is under 60 s for text + pose + hi-res. Measured as the median of 5 warm runs for: text only, text + preset pose, + hi-res, + restore. Peak VRAM and the cold start (model load) are reported separately.
