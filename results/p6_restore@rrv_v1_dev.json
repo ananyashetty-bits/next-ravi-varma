@@ -1,0 +1,613 @@
+{
+ "manifest": "/content/drive/MyDrive/m4/images/p6_restore@rrv_v1/dev/manifest.json",
+ "scenes_file": "/content/m3/eval/test_scenes_dev.json",
+ "pairs_file": "eval/test_pairs_dev.json",
+ "checklist_overrides": [],
+ "scored_at": "2026-11-22T15:54:53.687048",
+ "judge": "Qwen/Qwen2-VL-2B-Instruct",
+ "n_images": 24,
+ "summary": {
+  "p6_restore": {
+   "checklist": {
+    "mean": 0.5942596513506335,
+    "ci95": [
+     0.4867727872623665,
+     0.6955557130254413
+    ],
+    "n_scenes": 12
+   },
+   "clip_raw": {
+    "mean": 0.26722228713333607,
+    "ci95": [
+     0.2485387020589163,
+     0.28830747213214636
+    ],
+    "n_scenes": 12
+   },
+   "style_margin": {
+    "mean": 0.10393752157688141,
+    "ci95": [
+     0.09150536923358837,
+     0.11846456962327162
+    ],
+    "n_scenes": 12
+   },
+   "max_train_dino": {
+    "mean": 0.6834923612574736,
+    "ci95": [
+     0.620740445703268,
+     0.7323488029340903
+    ],
+    "n_scenes": 12
+   }
+  }
+ },
+ "per_scene": {
+  "p6_restore": {
+   "checklist": {
+    "s01": 0.4516521634327041,
+    "s02": 0.7340395185682509,
+    "s04": 0.6558716528945499,
+    "s05": 0.808124041184783,
+    "s09": 0.9184041321277618,
+    "s10": 0.4263918192850219,
+    "s11": 0.6027833129046485,
+    "s15": 0.6124981716275215,
+    "s25": 0.5288411052897573,
+    "s26": 0.48199484453070907,
+    "s27": 0.7165475413203239,
+    "s31": 0.19396751304157078
+   },
+   "clip_raw": {
+    "s01": 0.25858285278081894,
+    "s02": 0.3406388908624649,
+    "s04": 0.258014477789402,
+    "s05": 0.24278952926397324,
+    "s09": 0.30685922503471375,
+    "s10": 0.22867780178785324,
+    "s11": 0.26295721530914307,
+    "s15": 0.31698618829250336,
+    "s25": 0.26053208112716675,
+    "s26": 0.22090310603380203,
+    "s27": 0.27967776358127594,
+    "s31": 0.2300483137369156
+   },
+   "style_margin": {
+    "s01": 0.09167808294296265,
+    "s02": 0.11285233497619629,
+    "s04": 0.09351542592048645,
+    "s05": 0.09243345260620117,
+    "s09": 0.1668265461921692,
+    "s10": 0.0798041820526123,
+    "s11": 0.10189798474311829,
+    "s15": 0.10896453261375427,
+    "s25": 0.06790852546691895,
+    "s26": 0.09740620851516724,
+    "s27": 0.11988106369972229,
+    "s31": 0.11408191919326782
+   },
+   "max_train_dino": {
+    "s01": 0.6751807332038879,
+    "s02": 0.3948383778333664,
+    "s04": 0.7147536873817444,
+    "s05": 0.678339958190918,
+    "s09": 0.6160758137702942,
+    "s10": 0.6857987940311432,
+    "s11": 0.6638391613960266,
+    "s15": 0.7063048481941223,
+    "s25": 0.7418060898780823,
+    "s26": 0.7786447405815125,
+    "s27": 0.7293188869953156,
+    "s31": 0.8170072436332703
+   }
+  }
+ },
+ "items": [
+  {
+   "scene_id": "s01",
+   "condition": "p6_restore",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m4/images/p6_restore@rrv_v1/dev/s01_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Karna struggling to lift his chariot wheel from the mud while Arjuna aims an arrow at him and Krishna looks on, oil painting, canvas texture, classical indian art",
+   "control_pose_json": null,
+   "control_file": "/content/m3/eval/poses/dev/s01.png",
+   "checklist": 0.3147657596402698,
+   "checklist_detail": {
+    "c1": 0.0637640506029129,
+    "c2": 0.22551219165325165,
+    "c3": 0.06583777815103531,
+    "c4": 0.722118079662323,
+    "c5": 0.6784276366233826
+   },
+   "clip_raw": 0.2753947675228119,
+   "style_margin": 0.08888381719589233,
+   "max_train_dino": 0.6998195648193359
+  },
+  {
+   "scene_id": "s01",
+   "condition": "p6_restore",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m4/images/p6_restore@rrv_v1/dev/s01_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Karna struggling to lift his chariot wheel from the mud while Arjuna aims an arrow at him and Krishna looks on, oil painting, canvas texture, classical indian art",
+   "control_pose_json": null,
+   "control_file": "/content/m3/eval/poses/dev/s01.png",
+   "checklist": 0.5885385672251383,
+   "checklist_detail": {
+    "c1": 0.7116692662239075,
+    "c2": 0.43116214871406555,
+    "c3": 0.49803590774536133,
+    "c4": 0.6760177612304688,
+    "c5": 0.6630769371986389
+   },
+   "clip_raw": 0.241770938038826,
+   "style_margin": 0.09447234869003296,
+   "max_train_dino": 0.6505419015884399
+  },
+  {
+   "scene_id": "s02",
+   "condition": "p6_restore",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m4/images/p6_restore@rrv_v1/dev/s02_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Krishna playing the flute under a kadamba tree while cows graze around him, oil painting, canvas texture, classical indian art",
+   "control_pose_json": null,
+   "control_file": "/content/m3/eval/poses/dev/s02.png",
+   "checklist": 0.6901324921184115,
+   "checklist_detail": {
+    "c1": 0.5359946489334106,
+    "c2": 0.37977635860443115,
+    "c3": 0.9326539635658264,
+    "c4": 0.9806364178657532,
+    "c5": 0.5530696511268616
+   },
+   "clip_raw": 0.31855258345603943,
+   "style_margin": 0.11978721618652344,
+   "max_train_dino": 0.37569981813430786
+  },
+  {
+   "scene_id": "s02",
+   "condition": "p6_restore",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m4/images/p6_restore@rrv_v1/dev/s02_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Krishna playing the flute under a kadamba tree while cows graze around him, oil painting, canvas texture, classical indian art",
+   "control_pose_json": null,
+   "control_file": "/content/m3/eval/poses/dev/s02.png",
+   "checklist": 0.7779465450180901,
+   "checklist_detail": {
+    "c1": 0.6044541001319885,
+    "c2": 0.6385985016822815,
+    "c3": 0.9117889404296875,
+    "c4": 0.9756659269332886,
+    "c5": 0.7405039668083191
+   },
+   "clip_raw": 0.3627251982688904,
+   "style_margin": 0.10591745376586914,
+   "max_train_dino": 0.4139769375324249
+  },
+  {
+   "scene_id": "s04",
+   "condition": "p6_restore",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m4/images/p6_restore@rrv_v1/dev/s04_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Sita pointing out a golden deer to Rama, who draws his bow, at the edge of the forest, oil painting, canvas texture, classical indian art",
+   "control_pose_json": null,
+   "control_file": "/content/m3/eval/poses/dev/s04.png",
+   "checklist": 0.6466261827283435,
+   "checklist_detail": {
+    "c1": 0.8153407573699951,
+    "c2": 0.8568859696388245,
+    "c3": 0.6915331482887268,
+    "c4": 0.10705233365297318,
+    "c5": 0.8780112266540527
+   },
+   "clip_raw": 0.23920835554599762,
+   "style_margin": 0.07337355613708496,
+   "max_train_dino": 0.7590686082839966
+  },
+  {
+   "scene_id": "s04",
+   "condition": "p6_restore",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m4/images/p6_restore@rrv_v1/dev/s04_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Sita pointing out a golden deer to Rama, who draws his bow, at the edge of the forest, oil painting, canvas texture, classical indian art",
+   "control_pose_json": null,
+   "control_file": "/content/m3/eval/poses/dev/s04.png",
+   "checklist": 0.6651171230607562,
+   "checklist_detail": {
+    "c1": 0.7636029124259949,
+    "c2": 0.962748110294342,
+    "c3": 0.8089327812194824,
+    "c4": 0.06589915603399277,
+    "c5": 0.7836881875991821
+   },
+   "clip_raw": 0.2768206000328064,
+   "style_margin": 0.11365729570388794,
+   "max_train_dino": 0.6704387664794922
+  },
+  {
+   "scene_id": "s05",
+   "condition": "p6_restore",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m4/images/p6_restore@rrv_v1/dev/s05_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Duryodhana embracing Karna in friendship in the middle of a royal court, oil painting, canvas texture, classical indian art",
+   "control_pose_json": null,
+   "control_file": "/content/m3/eval/poses/dev/s05.png",
+   "checklist": 0.8095964975655079,
+   "checklist_detail": {
+    "c1": 0.979044497013092,
+    "c2": 0.7884339690208435,
+    "c3": 0.7538416385650635,
+    "c4": 0.9541053771972656,
+    "c5": 0.48002639412879944
+   },
+   "clip_raw": 0.2811149060726166,
+   "style_margin": 0.08307921886444092,
+   "max_train_dino": 0.6960070133209229
+  },
+  {
+   "scene_id": "s05",
+   "condition": "p6_restore",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m4/images/p6_restore@rrv_v1/dev/s05_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Duryodhana embracing Karna in friendship in the middle of a royal court, oil painting, canvas texture, classical indian art",
+   "control_pose_json": null,
+   "control_file": "/content/m3/eval/poses/dev/s05.png",
+   "checklist": 0.8066515848040581,
+   "checklist_detail": {
+    "c1": 0.9683931469917297,
+    "c2": 0.5865543484687805,
+    "c3": 0.9452946186065674,
+    "c4": 0.9210218191146851,
+    "c5": 0.5317066311836243
+   },
+   "clip_raw": 0.2044641524553299,
+   "style_margin": 0.10178768634796143,
+   "max_train_dino": 0.6606729030609131
+  },
+  {
+   "scene_id": "s09",
+   "condition": "p6_restore",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m4/images/p6_restore@rrv_v1/dev/s09_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Sita sitting alone under a tree in the Ashoka grove, sorrowful, the garden quiet at dusk, oil painting, canvas texture, classical indian art",
+   "control_pose_json": null,
+   "control_file": "/content/m3/eval/poses/dev/s09.png",
+   "checklist": 0.9097035394774543,
+   "checklist_detail": {
+    "c1": 0.8707892298698425,
+    "c2": 0.9848272800445557,
+    "c3": 0.9616992473602295,
+    "c4": 0.9722362756729126,
+    "c5": 0.6082277894020081
+   },
+   "clip_raw": 0.3009730577468872,
+   "style_margin": 0.19376516342163086,
+   "max_train_dino": 0.6562274694442749
+  },
+  {
+   "scene_id": "s09",
+   "condition": "p6_restore",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m4/images/p6_restore@rrv_v1/dev/s09_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Sita sitting alone under a tree in the Ashoka grove, sorrowful, the garden quiet at dusk, oil painting, canvas texture, classical indian art",
+   "control_pose_json": null,
+   "control_file": "/content/m3/eval/poses/dev/s09.png",
+   "checklist": 0.9271047247780694,
+   "checklist_detail": {
+    "c1": 0.8461784720420837,
+    "c2": 0.9833682179450989,
+    "c3": 0.9587085843086243,
+    "c4": 0.9870424270629883,
+    "c5": 0.7933471202850342
+   },
+   "clip_raw": 0.3127453923225403,
+   "style_margin": 0.13988792896270752,
+   "max_train_dino": 0.5759241580963135
+  },
+  {
+   "scene_id": "s10",
+   "condition": "p6_restore",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m4/images/p6_restore@rrv_v1/dev/s10_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Karna standing proudly with his bow at sunrise, golden armour shining, oil painting, canvas texture, classical indian art",
+   "control_pose_json": null,
+   "control_file": "/content/m3/eval/poses/dev/s10.png",
+   "checklist": 0.37068450782034135,
+   "checklist_detail": {
+    "c1": 0.8178172707557678,
+    "c2": 0.2433272898197174,
+    "c3": 0.13371363282203674,
+    "c4": 0.23264946043491364,
+    "c5": 0.4811452627182007
+   },
+   "clip_raw": 0.23739410936832428,
+   "style_margin": 0.07427799701690674,
+   "max_train_dino": 0.6658182740211487
+  },
+  {
+   "scene_id": "s10",
+   "condition": "p6_restore",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m4/images/p6_restore@rrv_v1/dev/s10_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Karna standing proudly with his bow at sunrise, golden armour shining, oil painting, canvas texture, classical indian art",
+   "control_pose_json": null,
+   "control_file": "/content/m3/eval/poses/dev/s10.png",
+   "checklist": 0.48209913074970245,
+   "checklist_detail": {
+    "c1": 0.8540989756584167,
+    "c2": 0.4247726798057556,
+    "c3": 0.20879362523555756,
+    "c4": 0.6177540421485901,
+    "c5": 0.12805353105068207
+   },
+   "clip_raw": 0.2199614942073822,
+   "style_margin": 0.08533036708831787,
+   "max_train_dino": 0.7057793140411377
+  },
+  {
+   "scene_id": "s11",
+   "condition": "p6_restore",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m4/images/p6_restore@rrv_v1/dev/s11_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Arjuna and Subhadra slipping away together through the palace garden, she holding his arm and looking back nervously, oil painting, canvas texture, classical indian art",
+   "control_pose_json": null,
+   "control_file": "/content/m3/eval/poses/dev/s11.png",
+   "checklist": 0.6873367428779602,
+   "checklist_detail": {
+    "c1": 0.7343547940254211,
+    "c2": 0.6192275881767273,
+    "c3": 0.7374732494354248,
+    "c4": 0.9806712865829468,
+    "c5": 0.3359113931655884
+   },
+   "clip_raw": 0.2742403745651245,
+   "style_margin": 0.10917359590530396,
+   "max_train_dino": 0.6910078525543213
+  },
+  {
+   "scene_id": "s11",
+   "condition": "p6_restore",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m4/images/p6_restore@rrv_v1/dev/s11_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Arjuna and Subhadra slipping away together through the palace garden, she holding his arm and looking back nervously, oil painting, canvas texture, classical indian art",
+   "control_pose_json": null,
+   "control_file": "/content/m3/eval/poses/dev/s11.png",
+   "checklist": 0.5182298829313368,
+   "checklist_detail": {
+    "c1": 0.7282224297523499,
+    "c2": 0.5703645348548889,
+    "c3": 0.2698901295661926,
+    "c4": 0.9864039421081543,
+    "c5": 0.022480932995676994
+   },
+   "clip_raw": 0.2516740560531616,
+   "style_margin": 0.09462237358093262,
+   "max_train_dino": 0.6366704702377319
+  },
+  {
+   "scene_id": "s15",
+   "condition": "p6_restore",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m4/images/p6_restore@rrv_v1/dev/s15_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Savithri pleading with Yama for her husband's life, Satyavan lying lifeless with his head in her lap in the forest, oil painting, canvas texture, classical indian art",
+   "control_pose_json": null,
+   "control_file": "/content/m3/eval/poses/dev/s15.png",
+   "checklist": 0.6425425857305527,
+   "checklist_detail": {
+    "c1": 0.37697112560272217,
+    "c2": 0.7583146095275879,
+    "c3": 0.6161192059516907,
+    "c4": 0.9598193168640137,
+    "c5": 0.6777114868164062
+   },
+   "clip_raw": 0.3152897357940674,
+   "style_margin": 0.14016735553741455,
+   "max_train_dino": 0.7497215270996094
+  },
+  {
+   "scene_id": "s15",
+   "condition": "p6_restore",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m4/images/p6_restore@rrv_v1/dev/s15_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Savithri pleading with Yama for her husband's life, Satyavan lying lifeless with his head in her lap in the forest, oil painting, canvas texture, classical indian art",
+   "control_pose_json": null,
+   "control_file": "/content/m3/eval/poses/dev/s15.png",
+   "checklist": 0.5824537575244904,
+   "checklist_detail": {
+    "c1": 0.19291681051254272,
+    "c2": 0.7588179707527161,
+    "c3": 0.5791963338851929,
+    "c4": 0.9859749674797058,
+    "c5": 0.6117928624153137
+   },
+   "clip_raw": 0.31868264079093933,
+   "style_margin": 0.077761709690094,
+   "max_train_dino": 0.6628881692886353
+  },
+  {
+   "scene_id": "s25",
+   "condition": "p6_restore",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m4/images/p6_restore@rrv_v1/dev/s25_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Hanuman flying through the sky carrying a mountain of healing herbs, oil painting, canvas texture, classical indian art",
+   "control_pose_json": null,
+   "control_file": "/content/m3/eval/poses/dev/s25.png",
+   "checklist": 0.5307932030409575,
+   "checklist_detail": {
+    "c1": 0.9433907866477966,
+    "c2": 0.013855956494808197,
+    "c3": 0.308512806892395,
+    "c4": 0.8811808228492737,
+    "c5": 0.8336457014083862
+   },
+   "clip_raw": 0.26375123858451843,
+   "style_margin": 0.08431679010391235,
+   "max_train_dino": 0.7551063299179077
+  },
+  {
+   "scene_id": "s25",
+   "condition": "p6_restore",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m4/images/p6_restore@rrv_v1/dev/s25_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Hanuman flying through the sky carrying a mountain of healing herbs, oil painting, canvas texture, classical indian art",
+   "control_pose_json": null,
+   "control_file": "/content/m3/eval/poses/dev/s25.png",
+   "checklist": 0.526889007538557,
+   "checklist_detail": {
+    "c1": 0.9060792922973633,
+    "c2": 0.10551618039608002,
+    "c3": 0.2988069951534271,
+    "c4": 0.9037113785743713,
+    "c5": 0.6905957460403442
+   },
+   "clip_raw": 0.25731292366981506,
+   "style_margin": 0.05150026082992554,
+   "max_train_dino": 0.7285058498382568
+  },
+  {
+   "scene_id": "s26",
+   "condition": "p6_restore",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m4/images/p6_restore@rrv_v1/dev/s26_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Show Krishna as the charioteer, turning to counsel a hesitant Arjuna who has lowered his bow, in their chariot just before the battle begins, oil painting, canvas texture, classical indian art",
+   "control_pose_json": null,
+   "control_file": "/content/m3/eval/poses/dev/s26.png",
+   "checklist": 0.5046971462201327,
+   "checklist_detail": {
+    "c1": 0.8856766819953918,
+    "c2": 0.0034814581740647554,
+    "c3": 0.7856810092926025,
+    "c4": 0.4227750599384308,
+    "c5": 0.8381019234657288,
+    "c6": 0.013641119934618473
+   },
+   "clip_raw": 0.20638631284236908,
+   "style_margin": 0.09892535209655762,
+   "max_train_dino": 0.8115460872650146
+  },
+  {
+   "scene_id": "s26",
+   "condition": "p6_restore",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m4/images/p6_restore@rrv_v1/dev/s26_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Show Krishna as the charioteer, turning to counsel a hesitant Arjuna who has lowered his bow, in their chariot just before the battle begins, oil painting, canvas texture, classical indian art",
+   "control_pose_json": null,
+   "control_file": "/content/m3/eval/poses/dev/s26.png",
+   "checklist": 0.45929254284128546,
+   "checklist_detail": {
+    "c1": 0.8634354472160339,
+    "c2": 0.0023946613073349,
+    "c3": 0.9113168716430664,
+    "c4": 0.3963031470775604,
+    "c5": 0.23717713356018066,
+    "c6": 0.008848040364682674
+   },
+   "clip_raw": 0.23541989922523499,
+   "style_margin": 0.09588706493377686,
+   "max_train_dino": 0.7457433938980103
+  },
+  {
+   "scene_id": "s27",
+   "condition": "p6_restore",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m4/images/p6_restore@rrv_v1/dev/s27_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, yashodha scolding little krishn, his face smeared with butter and a broken pot lying on the floor beside them, oil painting, canvas texture, classical indian art",
+   "control_pose_json": null,
+   "control_file": "/content/m3/eval/poses/dev/s27.png",
+   "checklist": 0.7946111261844635,
+   "checklist_detail": {
+    "c1": 0.7957502603530884,
+    "c2": 0.8822561502456665,
+    "c3": 0.6388837099075317,
+    "c4": 0.9945577383041382,
+    "c5": 0.7285510301589966
+   },
+   "clip_raw": 0.2998456656932831,
+   "style_margin": 0.09056359529495239,
+   "max_train_dino": 0.7071988582611084
+  },
+  {
+   "scene_id": "s27",
+   "condition": "p6_restore",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m4/images/p6_restore@rrv_v1/dev/s27_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, yashodha scolding little krishn, his face smeared with butter and a broken pot lying on the floor beside them, oil painting, canvas texture, classical indian art",
+   "control_pose_json": null,
+   "control_file": "/content/m3/eval/poses/dev/s27.png",
+   "checklist": 0.6384839564561844,
+   "checklist_detail": {
+    "c1": 0.7550289630889893,
+    "c2": 0.7675561308860779,
+    "c3": 0.19133445620536804,
+    "c4": 0.9797651171684265,
+    "c5": 0.7002674341201782
+   },
+   "clip_raw": 0.2595098614692688,
+   "style_margin": 0.1491985321044922,
+   "max_train_dino": 0.7514389157295227
+  },
+  {
+   "scene_id": "s31",
+   "condition": "p6_restore",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m4/images/p6_restore@rrv_v1/dev/s31_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, old Shabri offerring berries to Ram and Laxman outside her little hut in the forrest, oil painting, canvas texture, classical indian art",
+   "control_pose_json": null,
+   "control_file": "/content/m3/eval/poses/dev/s31.png",
+   "checklist": 0.18199022533372045,
+   "checklist_detail": {
+    "c1": 0.2257031500339508,
+    "c2": 0.0707554817199707,
+    "c3": 0.007314613088965416,
+    "c4": 0.05598168820142746,
+    "c5": 0.7923936247825623
+   },
+   "clip_raw": 0.22548604011535645,
+   "style_margin": 0.1160820722579956,
+   "max_train_dino": 0.8248897790908813
+  },
+  {
+   "scene_id": "s31",
+   "condition": "p6_restore",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m4/images/p6_restore@rrv_v1/dev/s31_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, old Shabri offerring berries to Ram and Laxman outside her little hut in the forrest, oil painting, canvas texture, classical indian art",
+   "control_pose_json": null,
+   "control_file": "/content/m3/eval/poses/dev/s31.png",
+   "checklist": 0.20594480074942112,
+   "checklist_detail": {
+    "c1": 0.25728732347488403,
+    "c2": 0.054198723286390305,
+    "c3": 0.06765585392713547,
+    "c4": 0.11477155238389969,
+    "c5": 0.7745030522346497
+   },
+   "clip_raw": 0.23461058735847473,
+   "style_margin": 0.11208176612854004,
+   "max_train_dino": 0.8091247081756592
+  }
+ ]
+}
