@@ -1,4 +1,79 @@
-# The Next Ravi Varma: Milestone 3
+# The Next Ravi Varma: Milestone 4 (web app + pose control)
+
+M4 turns the M3 pipeline into something a person can use: type an epic scene, optionally give a pose (a preset, a
+photo, or none), and get back a painting in Raja Ravi Varma's style with a **style-strength** slider and a
+**pose-strength** slider. It adds ControlNet (OpenPose) to SD1.5 + the `rrv_v1` LoRA, optional post-processing
+(hi-res, face restoration) and a content policy. The M3 text-side documentation is kept below, unchanged.
+
+**What the app uses:** the M3 default prompt (c1, raw text, no LLM) + `generate_controlled` (A) + the pose modules (C)
++ `post/` (D). Defaults and slider ranges come from `config/m3.json` and `config/m4.json`, never from the code.
+
+## M4: install (Colab T4)
+```python
+from google.colab import drive; drive.mount('/content/drive')
+import getpass, subprocess
+tok = getpass.getpass("GitHub token (classic, 'repo' scope): ").strip()
+subprocess.run(["git", "clone", f"https://{tok}@github.com/ananyashetty-bits/next-ravi-varma-m3", "/content/m3"], check=True)
+del tok
+%cd /content/m3
+!bash pipeline/setup_session.sh gen        # diffusers, ControlNet, pose detector, Gradio
+!bash post/install_post.sh                 # only for face restoration (GFPGAN); hi-res needs nothing extra
+```
+Tested on a free T4 with Python 3.13, torch 2.14.1+cu130, diffusers 0.40.0, gradio 6.31.0 (post-processing pins in
+`post/requirements_post.txt`). Run the cells in order. A's full pins block: `<<pending: A, CONTROL.md>>`.
+
+## M4: run the app
+```bash
+APP_POST_MODULE=post.api python app/app.py --share --auth user:password
+```
+- `--share` prints a public `*.gradio.live` link. It goes through Gradio's relay, **dies when the Colab session
+  ends**, and anyone who has it can use the GPU, so always set `--auth` (`docs/CONTENT_POLICY.md` §6).
+- `APP_POST_MODULE=post.api` switches on real hi-res and face restoration (the default is the pass-through stub,
+  and the checkboxes stay off by default). `APP_POSE_MODULE` selects the pose module (default `pose.stub` until C's
+  modules are merged).
+- Without a GPU, `python app/app.py --no_model` builds the UI only.
+- Inputs: scene text, pose mode (none / preset / upload photo / auto from text), style slider, pose slider, seed,
+  post-processing boxes. Outputs: the labelled painting, the skeleton, the prompt and parsed characters, and a settings
+  JSON.
+- Every image carries the label *"AI-generated in the style of Raja Ravi Varma. Not an authentic work."* on the
+  image and in the PNG metadata (`docs/CONTENT_POLICY.md` §3).
+
+## M4: command line and batch
+```bash
+# one condition on the 16 dev pairs (p0 = --control none; p1 = baseline pose; p2 = tuned pose)
+python pipeline/run_batch.py --expansions outputs/expansions/c1_lora_raw_dev.json --pairs eval/test_pairs_dev.json \
+    --model rrv_v1 --condition p1_openpose --control openpose --control_profile baseline --control_source pair \
+    --seeds 1 2 --out $IMG/p1_openpose@rrv_v1/dev
+# post-processing on those images (p5 = hi-res, p6 = face restoration); writes full-size and _512 copies
+python post/run_post.py --manifest $IMG/p1_openpose@rrv_v1/dev/manifest.json --condition p5_hires \
+    --method hires_img2img --out $IMG/p5_hires@rrv_v1/dev
+python post/run_post.py --manifest $IMG/p1_openpose@rrv_v1/dev/manifest.json --condition p6_restore \
+    --method restore_gfpgan --out $IMG/p6_restore@rrv_v1/dev
+# score with the M3 metrics (eval session)
+python eval/score.py --manifest $IMG/p5_hires@rrv_v1/dev/manifest.json --pairs eval/test_pairs_dev.json \
+    --out results/p5_hires@rrv_v1_dev.json
+```
+
+## M4: reproduce one image from a seed
+The same inputs give the same image. Every PNG downloaded from the app stores its settings in the file's metadata
+(`parameters`: text, seed, style and pose scale, pose mode, post-processing), and the app's settings JSON has the
+same content. Without a pose, `text_to_image(text, seed=<seed>, mode="raw")` (see the M3 quick start below)
+reproduces the base image. With a pose, use `run_batch.py` with the same `--seeds` and control flags.
+
+## M4: uploads and privacy
+A photo you upload is used **only to extract a skeleton**. The app deletes the uploaded file as soon as the skeleton
+exists (also when the prompt is refused), and Gradio's own temporary copy is cleared by a timer: **uploads are deleted
+after N = `<<pending: D, upload-cache test>>` minutes** (temp path in `docs/APP.md`). We do not claim that uploads are
+"not saved". Photos of people are never committed to the repo or put on the shared Drive.
+
+## M4: documents
+`docs/APP.md` (app, post-processing), `docs/CONTENT_POLICY.md`, `docs/CONTROL.md` (A), `docs/POSE.md` (C),
+`eval/EVAL_REPORT_M4.md` (B), `docs/M4_REPORT.md` (the assembled report). Sections not yet merged are marked
+`<<pending>>` in `docs/M4_REPORT.md`.
+
+---
+
+# Milestone 3 documentation (still valid)
 
 Turn a plain-language scene from the Indian epics ("Hanuman kneeling before Rama, offering Sita's ring") into an
 image in Raja Ravi Varma's style. M3 adds the text side to M2's style model (Stable Diffusion 1.5 + the `rrv_v1`
