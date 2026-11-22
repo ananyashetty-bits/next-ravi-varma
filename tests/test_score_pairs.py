@@ -36,3 +36,18 @@ def test_refuses_to_overwrite(tmp_path):
                         "--no_judge", "--no_m2"], capture_output=True, text=True)
     assert r.returncode != 0 and "never overwrites" in (r.stderr + r.stdout)
     assert out.read_text() == "{}"
+
+
+def test_auto_pose_uses_sidecar_next_to_control_png(tmp_path):
+    pairs = load_pairs(os.path.join(ROOT, "eval", "test_pairs_dev.json"))
+    sid = next(iter(pairs))
+    (tmp_path / f"{sid}_pose.json").write_text(json.dumps({"people": [{"keypoints": [[0.5, 0.5, 1.0]] * 18}] * 3}))
+    row = {"scene_id": sid, "image": "x.png", "control_pose_json": None, "control_file": str(tmp_path / f"{sid}_pose.png")}
+    assert len(control_pose_for(row, pairs, str(tmp_path))["people"]) == 3
+
+
+def test_auto_pose_without_sidecar_gets_no_flags(tmp_path):
+    pairs = load_pairs(os.path.join(ROOT, "eval", "test_pairs_dev.json"))
+    sid = next(iter(pairs))
+    row = {"scene_id": sid, "image": "x.png", "control_pose_json": None, "control_file": str(tmp_path / f"{sid}_pose.png")}
+    assert control_pose_for(row, pairs, str(tmp_path)) is None
