@@ -4,7 +4,8 @@ members can call them before the real post/ functions land. Replaced by post/hir
 from PIL import Image
 
 
-def hires(image: Image.Image, positive: str, negative: str, seed: int, method: str = "img2img") -> Image.Image:
+def hires(image: Image.Image, positive: str, negative: str, seed: int, method: str = "img2img",
+          lora_scale=None, strength=None) -> Image.Image:
     """Stub: returns the input unchanged."""
     return image
 
