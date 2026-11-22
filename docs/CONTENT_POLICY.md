@@ -82,8 +82,9 @@ The checks are deterministic: `app/policy.py` with `app/blocklist.json`.
 - **Background:** the M2 safety checker stays off, because it false-blocked classical paintings.
 
 ## 6. Public link
-- **Access:** `<<pending: decision>>`. Either `--auth user:password` with the password shared only with the class, or
-  the link is open only while demoing.
+- **Access (decision, 22 Nov):** the public link is launched with `--auth user:password`, and the password is shared
+  only with the class and the markers. The link is shared only while demoing or testing, and the Colab session is
+  closed afterwards (the link dies with it).
 - **Why it matters:** the link goes through Gradio's relay and dies with the Colab session. Anyone who has it can use
   our GPU quota.
 
