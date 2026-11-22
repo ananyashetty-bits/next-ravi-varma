@@ -61,11 +61,24 @@ The checks are deterministic: `app/policy.py` with `app/blocklist.json`.
   uploads also stay off if C's p4 finds that composition transfer redraws the painting (`<<pending: C's p4>>`).
 
 ## 5. Output NSFW filter
-- **Status:** `<<pending: B's measurement on the 15 real held-out Varma paintings>>`.
+- **Measurement (B, `results/audit_real_paintings.json`, run 22 Nov 2026):** classifier
+  `Falconsai/nsfw_image_detection`, threshold 0.5, on the 15 real held-out Varma paintings: **1 of 15 flagged**
+  (`varma_suckling_child_a52.png`, score 0.994: a mother nursing a child, a classic false positive on classical
+  painting). The other 14 scored below 0.01.
 - **Rule, fixed in advance:**
   - more than 1 of 15 real paintings flagged → **don't enable** the filter, and rely on the input blocklist and the
     label;
   - otherwise → a soft blur-and-confirm filter, not a hard block.
+- **Decision:** 1 is not more than 1, so by the rule the filter is **enabled as a soft blur-and-confirm** on app
+  output only: a flagged image is shown blurred with a "Show image" button, never blocked, and never applied to
+  evaluation images.
+- **Caveats, stated plainly:**
+  - the result sits exactly on the boundary, and the one flagged painting is a false positive of the kind the M2
+    safety checker also produced, so expect the blur to fire on some innocent images (nursing, bathing, drapery);
+  - the measurement on our own generated outputs is not in the audit file (`extra` is empty), so the flag rate on
+    our images is not measured;
+  - the filter is a backstop, not the main control: the input blocklist and the label do the real work.
+- **Status:** `<<pending: implementation. The decision is recorded, but the output filter is not built into the app yet>>`.
 - **Background:** the M2 safety checker stays off, because it false-blocked classical paintings.
 
 ## 6. Public link
