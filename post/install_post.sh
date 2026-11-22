@@ -18,6 +18,7 @@ open("setup.py", "w").write(s2)
 print("patched setup.py:", s2 != s)
 PY
 pip install -q --no-build-isolation . 2>&1 | tail -3
+cd "$HOME"          # leave the build folder, or `import basicsr` below loads the unpatched source copy
 # torchvision >= 0.17 removed functional_tensor, which basicsr's degradations.py imports
 python - <<'PY'
 import glob, site
