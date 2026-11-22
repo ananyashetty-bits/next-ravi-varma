@@ -166,5 +166,92 @@
   "pose_full_file": null,
   "checklist_override": null,
   "pose_note": "left a small figure with arms reaching toward the right (Shabri), right two men standing side by side (Ram and Lakshman). Composite; the woman's far arm partly off canvas"
+ },
+ {
+  "id": "s22",
+  "scene_id": "s22",
+  "split": "dev",
+  "tier": 3,
+  "contributed_by": "C",
+  "pose_file": "eval/poses/dev/s22.png",
+  "pose_json": "eval/poses/dev/s22.json",
+  "pose_source": "photo",
+  "n_people_expected": 3,
+  "pose_full_file": null,
+  "checklist_override": [
+   {
+    "id": "c1",
+    "q": "Are there exactly three main figures?",
+    "type": "count",
+    "weight": 1.0
+   },
+   {
+    "id": "c2",
+    "q": "Is a woman with long loose hair kneeling or bowed low?",
+    "type": "pose",
+    "weight": 1.0
+   },
+   {
+    "id": "c3",
+    "q": "Is the setting an indoor hall with pillars?",
+    "type": "setting",
+    "weight": 1.0
+   },
+   {
+    "id": "c4",
+    "q": "Is there a raised throne or seat for a king?",
+    "type": "object",
+    "weight": 0.5
+   },
+   {
+    "id": "c5",
+    "q": "Is a man in a blue tunic with a red turban visible?",
+    "type": "attire",
+    "weight": 0.5
+   }
+  ],
+  "pose_note": "woman kneeling at left, two standing figures at right"
+ },
+ {
+  "id": "s18",
+  "scene_id": "s18",
+  "split": "dev",
+  "tier": 1,
+  "contributed_by": "C",
+  "pose_file": "eval/poses/dev/s18.png",
+  "pose_json": "eval/poses/dev/s18.json",
+  "pose_source": "photo",
+  "n_people_expected": 1,
+  "pose_full_file": null,
+  "checklist_override": null,
+  "pose_note": "man standing guard, one arm extended holding a bow"
+ },
+ {
+  "id": "s19",
+  "scene_id": "s19",
+  "split": "dev",
+  "tier": 2,
+  "contributed_by": "C",
+  "pose_file": "eval/poses/dev/s19.png",
+  "pose_json": "eval/poses/dev/s19.json",
+  "pose_source": "photo",
+  "n_people_expected": 2,
+  "pose_full_file": null,
+  "checklist_override": null,
+  "pose_note": "woman with joined hands standing before a standing man"
+ },
+ {
+  "id": "s21",
+  "scene_id": "s21",
+  "split": "dev",
+  "tier": 3,
+  "contributed_by": "C",
+  "pose_file": "eval/poses/dev/s21.png",
+  "pose_json": "eval/poses/dev/s21.json",
+  "pose_source": "photo",
+  "n_people_expected": 3,
+  "pose_full_file": null,
+  "checklist_override": null,
+  "pose_note": "three figures seated, left to right"
  }
 ]
