@@ -85,18 +85,21 @@ def _local(p, manifest_dir):
 
 def control_pose_for(row, pairs, manifest_dir, cache=None):
     """The skeleton actually used for this image:
-    1. the manifest's sidecar PoseJSON (auto-pose conditions), if present;
-    2. else, if the control PNG is not the pair's own skeleton (auto pose without a sidecar), the detector's reading
-       of that control PNG (it recovers its own drawings reliably);
-    3. else the pair's PoseJSON (p0 included: "how close is an uncontrolled image to the pair's pose?")."""
+    1. the manifest's sidecar PoseJSON (auto-pose conditions write <name>_pose.json next to <name>_pose.png);
+    2. else, if the control PNG is the pair's own skeleton (or there is no control: p0), the pair's PoseJSON;
+    3. else (an auto pose without a sidecar) None: the image gets no pose flags and a warning. The detector cannot
+       read a skeleton drawing back (it is trained on photos of people), so there is no safe fallback."""
     p = row.get("control_pose_json")
     if p and _local(p, manifest_dir):
         return json.load(open(_local(p, manifest_dir), encoding="utf-8"))
     pair = pairs.get(row["scene_id"])
     cf = row.get("control_file")
-    if cf and pair and os.path.basename(cf) != os.path.basename(pair.get("pose_file") or "") and _local(cf, manifest_dir):
-        from eval.pose_metric import detect
-        return detect(_local(cf, manifest_dir), cache)
+    if cf and pair and os.path.basename(cf) != os.path.basename(pair.get("pose_file") or ""):
+        sidecar = _local(os.path.splitext(cf)[0] + ".json", manifest_dir)
+        if sidecar:
+            return json.load(open(sidecar, encoding="utf-8"))
+        print(f"WARNING: {row['image']}: auto pose without a PoseJSON sidecar; no pose flags")
+        return None
     if pair and pair.get("pose_json"):
         return json.load(open(os.path.join(ROOT, pair["pose_json"]), encoding="utf-8"))
     return None
