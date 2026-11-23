@@ -2,43 +2,45 @@
  "manifest": "/content/drive/MyDrive/m4/images/p6_restore@rrv_v1/dev/manifest.json",
  "scenes_file": "/content/m3/eval/test_scenes_dev.json",
  "pairs_file": "eval/test_pairs_dev.json",
- "checklist_overrides": [],
- "scored_at": "2026-11-22T15:54:53.687048",
+ "checklist_overrides": [
+  "s22"
+ ],
+ "scored_at": "2026-11-23T18:22:40.763828",
  "judge": "Qwen/Qwen2-VL-2B-Instruct",
- "n_images": 24,
+ "n_images": 32,
  "summary": {
   "p6_restore": {
    "checklist": {
-    "mean": 0.5942596513506335,
+    "mean": 0.5868070392919537,
     "ci95": [
-     0.4867727872623665,
-     0.6955557130254413
+     0.5019897358312058,
+     0.6664583679668956
     ],
-    "n_scenes": 12
+    "n_scenes": 16
    },
    "clip_raw": {
-    "mean": 0.26722228713333607,
+    "mean": 0.26952131697908044,
     "ci95": [
-     0.2485387020589163,
-     0.28830747213214636
+     0.25254791155457496,
+     0.28740855962969364
     ],
-    "n_scenes": 12
+    "n_scenes": 16
    },
    "style_margin": {
-    "mean": 0.10393752157688141,
+    "mean": 0.10203374177217484,
     "ci95": [
-     0.09150536923358837,
-     0.11846456962327162
+     0.09258917085826397,
+     0.1132332137785852
     ],
-    "n_scenes": 12
+    "n_scenes": 16
    },
    "max_train_dino": {
-    "mean": 0.6834923612574736,
+    "mean": 0.6890269806608558,
     "ci95": [
-     0.620740445703268,
-     0.7323488029340903
+     0.638297516759485,
+     0.7302115934900939
     ],
-    "n_scenes": 12
+    "n_scenes": 16
    }
   }
  },
@@ -56,35 +58,47 @@
     "s25": 0.5288411052897573,
     "s26": 0.48199484453070907,
     "s27": 0.7165475413203239,
-    "s31": 0.19396751304157078
+    "s31": 0.19396751304157078,
+    "s18": 0.6245035777489345,
+    "s19": 0.47758520808484817,
+    "s21": 0.4751193359494209,
+    "s22": 0.6805886906804517
    },
    "clip_raw": {
-    "s01": 0.25858285278081894,
-    "s02": 0.3406388908624649,
-    "s04": 0.258014477789402,
-    "s05": 0.24278952926397324,
-    "s09": 0.30685922503471375,
-    "s10": 0.22867780178785324,
-    "s11": 0.26295721530914307,
-    "s15": 0.31698618829250336,
-    "s25": 0.26053208112716675,
-    "s26": 0.22090310603380203,
-    "s27": 0.27967776358127594,
-    "s31": 0.2300483137369156
+    "s01": 0.2585827708244324,
+    "s02": 0.34063881635665894,
+    "s04": 0.25801461189985275,
+    "s05": 0.2427894026041031,
+    "s09": 0.30685949325561523,
+    "s10": 0.22867782413959503,
+    "s11": 0.26295723021030426,
+    "s15": 0.3169863820075989,
+    "s25": 0.2605321556329727,
+    "s26": 0.22090233117341995,
+    "s27": 0.2796775847673416,
+    "s31": 0.2300482988357544,
+    "s18": 0.318476602435112,
+    "s19": 0.22577062994241714,
+    "s21": 0.2857540547847748,
+    "s22": 0.27567288279533386
    },
    "style_margin": {
-    "s01": 0.09167808294296265,
-    "s02": 0.11285233497619629,
-    "s04": 0.09351542592048645,
-    "s05": 0.09243345260620117,
-    "s09": 0.1668265461921692,
-    "s10": 0.0798041820526123,
-    "s11": 0.10189798474311829,
-    "s15": 0.10896453261375427,
-    "s25": 0.06790852546691895,
-    "s26": 0.09740620851516724,
-    "s27": 0.11988106369972229,
-    "s31": 0.11408191919326782
+    "s01": 0.09167817234992981,
+    "s02": 0.11285251379013062,
+    "s04": 0.09351560473442078,
+    "s05": 0.09243354201316833,
+    "s09": 0.16682633757591248,
+    "s10": 0.07980415225028992,
+    "s11": 0.10189810395240784,
+    "s15": 0.1089647114276886,
+    "s25": 0.06790849566459656,
+    "s26": 0.09740665555000305,
+    "s27": 0.11988100409507751,
+    "s31": 0.11408185958862305,
+    "s18": 0.09085148572921753,
+    "s19": 0.10750311613082886,
+    "s21": 0.0813949704170227,
+    "s22": 0.10553914308547974
    },
    "max_train_dino": {
     "s01": 0.6751807332038879,
@@ -98,7 +112,11 @@
     "s25": 0.7418060898780823,
     "s26": 0.7786447405815125,
     "s27": 0.7293188869953156,
-    "s31": 0.8170072436332703
+    "s31": 0.8170072436332703,
+    "s18": 0.6000484228134155,
+    "s19": 0.7202478051185608,
+    "s21": 0.7285427451133728,
+    "s22": 0.7736843824386597
    }
   }
  },
@@ -120,7 +138,7 @@
     "c4": 0.722118079662323,
     "c5": 0.6784276366233826
    },
-   "clip_raw": 0.2753947675228119,
+   "clip_raw": 0.2753947079181671,
    "style_margin": 0.08888381719589233,
    "max_train_dino": 0.6998195648193359
   },
@@ -141,8 +159,8 @@
     "c4": 0.6760177612304688,
     "c5": 0.6630769371986389
    },
-   "clip_raw": 0.241770938038826,
-   "style_margin": 0.09447234869003296,
+   "clip_raw": 0.24177083373069763,
+   "style_margin": 0.09447252750396729,
    "max_train_dino": 0.6505419015884399
   },
   {
@@ -162,8 +180,8 @@
     "c4": 0.9806364178657532,
     "c5": 0.5530696511268616
    },
-   "clip_raw": 0.31855258345603943,
-   "style_margin": 0.11978721618652344,
+   "clip_raw": 0.31855255365371704,
+   "style_margin": 0.11978739500045776,
    "max_train_dino": 0.37569981813430786
   },
   {
@@ -183,8 +201,8 @@
     "c4": 0.9756659269332886,
     "c5": 0.7405039668083191
    },
-   "clip_raw": 0.3627251982688904,
-   "style_margin": 0.10591745376586914,
+   "clip_raw": 0.36272507905960083,
+   "style_margin": 0.10591763257980347,
    "max_train_dino": 0.4139769375324249
   },
   {
@@ -204,8 +222,8 @@
     "c4": 0.10705233365297318,
     "c5": 0.8780112266540527
    },
-   "clip_raw": 0.23920835554599762,
-   "style_margin": 0.07337355613708496,
+   "clip_raw": 0.23920853435993195,
+   "style_margin": 0.07337373495101929,
    "max_train_dino": 0.7590686082839966
   },
   {
@@ -225,8 +243,8 @@
     "c4": 0.06589915603399277,
     "c5": 0.7836881875991821
    },
-   "clip_raw": 0.2768206000328064,
-   "style_margin": 0.11365729570388794,
+   "clip_raw": 0.27682068943977356,
+   "style_margin": 0.11365747451782227,
    "max_train_dino": 0.6704387664794922
   },
   {
@@ -246,8 +264,8 @@
     "c4": 0.9541053771972656,
     "c5": 0.48002639412879944
    },
-   "clip_raw": 0.2811149060726166,
-   "style_margin": 0.08307921886444092,
+   "clip_raw": 0.28111469745635986,
+   "style_margin": 0.08307909965515137,
    "max_train_dino": 0.6960070133209229
   },
   {
@@ -267,8 +285,8 @@
     "c4": 0.9210218191146851,
     "c5": 0.5317066311836243
    },
-   "clip_raw": 0.2044641524553299,
-   "style_margin": 0.10178768634796143,
+   "clip_raw": 0.2044641077518463,
+   "style_margin": 0.1017879843711853,
    "max_train_dino": 0.6606729030609131
   },
   {
@@ -288,8 +306,8 @@
     "c4": 0.9722362756729126,
     "c5": 0.6082277894020081
    },
-   "clip_raw": 0.3009730577468872,
-   "style_margin": 0.19376516342163086,
+   "clip_raw": 0.30097293853759766,
+   "style_margin": 0.19376492500305176,
    "max_train_dino": 0.6562274694442749
   },
   {
@@ -309,8 +327,8 @@
     "c4": 0.9870424270629883,
     "c5": 0.7933471202850342
    },
-   "clip_raw": 0.3127453923225403,
-   "style_margin": 0.13988792896270752,
+   "clip_raw": 0.3127460479736328,
+   "style_margin": 0.1398877501487732,
    "max_train_dino": 0.5759241580963135
   },
   {
@@ -330,8 +348,8 @@
     "c4": 0.23264946043491364,
     "c5": 0.4811452627182007
    },
-   "clip_raw": 0.23739410936832428,
-   "style_margin": 0.07427799701690674,
+   "clip_raw": 0.23739400506019592,
+   "style_margin": 0.07427793741226196,
    "max_train_dino": 0.6658182740211487
   },
   {
@@ -351,7 +369,7 @@
     "c4": 0.6177540421485901,
     "c5": 0.12805353105068207
    },
-   "clip_raw": 0.2199614942073822,
+   "clip_raw": 0.21996164321899414,
    "style_margin": 0.08533036708831787,
    "max_train_dino": 0.7057793140411377
   },
@@ -372,8 +390,8 @@
     "c4": 0.9806712865829468,
     "c5": 0.3359113931655884
    },
-   "clip_raw": 0.2742403745651245,
-   "style_margin": 0.10917359590530396,
+   "clip_raw": 0.27424028515815735,
+   "style_margin": 0.1091737151145935,
    "max_train_dino": 0.6910078525543213
   },
   {
@@ -393,8 +411,8 @@
     "c4": 0.9864039421081543,
     "c5": 0.022480932995676994
    },
-   "clip_raw": 0.2516740560531616,
-   "style_margin": 0.09462237358093262,
+   "clip_raw": 0.25167417526245117,
+   "style_margin": 0.09462249279022217,
    "max_train_dino": 0.6366704702377319
   },
   {
@@ -414,8 +432,8 @@
     "c4": 0.9598193168640137,
     "c5": 0.6777114868164062
    },
-   "clip_raw": 0.3152897357940674,
-   "style_margin": 0.14016735553741455,
+   "clip_raw": 0.3152896761894226,
+   "style_margin": 0.14016711711883545,
    "max_train_dino": 0.7497215270996094
   },
   {
@@ -435,8 +453,8 @@
     "c4": 0.9859749674797058,
     "c5": 0.6117928624153137
    },
-   "clip_raw": 0.31868264079093933,
-   "style_margin": 0.077761709690094,
+   "clip_raw": 0.31868308782577515,
+   "style_margin": 0.07776230573654175,
    "max_train_dino": 0.6628881692886353
   },
   {
@@ -456,8 +474,8 @@
     "c4": 0.8811808228492737,
     "c5": 0.8336457014083862
    },
-   "clip_raw": 0.26375123858451843,
-   "style_margin": 0.08431679010391235,
+   "clip_raw": 0.2637512981891632,
+   "style_margin": 0.08431673049926758,
    "max_train_dino": 0.7551063299179077
   },
   {
@@ -477,7 +495,7 @@
     "c4": 0.9037113785743713,
     "c5": 0.6905957460403442
    },
-   "clip_raw": 0.25731292366981506,
+   "clip_raw": 0.2573130130767822,
    "style_margin": 0.05150026082992554,
    "max_train_dino": 0.7285058498382568
   },
@@ -499,8 +517,8 @@
     "c5": 0.8381019234657288,
     "c6": 0.013641119934618473
    },
-   "clip_raw": 0.20638631284236908,
-   "style_margin": 0.09892535209655762,
+   "clip_raw": 0.20638546347618103,
+   "style_margin": 0.09892600774765015,
    "max_train_dino": 0.8115460872650146
   },
   {
@@ -521,8 +539,8 @@
     "c5": 0.23717713356018066,
     "c6": 0.008848040364682674
    },
-   "clip_raw": 0.23541989922523499,
-   "style_margin": 0.09588706493377686,
+   "clip_raw": 0.23541919887065887,
+   "style_margin": 0.09588730335235596,
    "max_train_dino": 0.7457433938980103
   },
   {
@@ -542,8 +560,8 @@
     "c4": 0.9945577383041382,
     "c5": 0.7285510301589966
    },
-   "clip_raw": 0.2998456656932831,
-   "style_margin": 0.09056359529495239,
+   "clip_raw": 0.29984548687934875,
+   "style_margin": 0.09056347608566284,
    "max_train_dino": 0.7071988582611084
   },
   {
@@ -563,7 +581,7 @@
     "c4": 0.9797651171684265,
     "c5": 0.7002674341201782
    },
-   "clip_raw": 0.2595098614692688,
+   "clip_raw": 0.2595096826553345,
    "style_margin": 0.1491985321044922,
    "max_train_dino": 0.7514389157295227
   },
@@ -584,8 +602,8 @@
     "c4": 0.05598168820142746,
     "c5": 0.7923936247825623
    },
-   "clip_raw": 0.22548604011535645,
-   "style_margin": 0.1160820722579956,
+   "clip_raw": 0.22548596560955048,
+   "style_margin": 0.11608189344406128,
    "max_train_dino": 0.8248897790908813
   },
   {
@@ -605,9 +623,179 @@
     "c4": 0.11477155238389969,
     "c5": 0.7745030522346497
    },
-   "clip_raw": 0.23461058735847473,
-   "style_margin": 0.11208176612854004,
+   "clip_raw": 0.2346106320619583,
+   "style_margin": 0.11208182573318481,
    "max_train_dino": 0.8091247081756592
+  },
+  {
+   "scene_id": "s18",
+   "condition": "p6_restore",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m4/images/p6_restore@rrv_v1/dev/s18_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Lakshmana standing guard with his bow outside a thatched hut in the forest at night, oil painting, canvas texture, classical indian art",
+   "control_pose_json": null,
+   "control_file": "/content/m3/eval/poses/dev/s18.png",
+   "checklist": 0.7956433362430997,
+   "checklist_detail": {
+    "c1": 0.8742415308952332,
+    "c2": 0.9860125184059143,
+    "c3": 0.7382325530052185,
+    "c4": 0.8439252972602844,
+    "c5": 0.27596622705459595
+   },
+   "clip_raw": 0.33040866255760193,
+   "style_margin": 0.12292611598968506,
+   "max_train_dino": 0.6127018928527832
+  },
+  {
+   "scene_id": "s18",
+   "condition": "p6_restore",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m4/images/p6_restore@rrv_v1/dev/s18_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Lakshmana standing guard with his bow outside a thatched hut in the forest at night, oil painting, canvas texture, classical indian art",
+   "control_pose_json": null,
+   "control_file": "/content/m3/eval/poses/dev/s18.png",
+   "checklist": 0.4533638192547692,
+   "checklist_detail": {
+    "c1": 0.8776131272315979,
+    "c2": 0.9619097113609314,
+    "c3": 0.034164126962423325,
+    "c4": 0.011869121342897415,
+    "c5": 0.3091621994972229
+   },
+   "clip_raw": 0.30654454231262207,
+   "style_margin": 0.05877685546875,
+   "max_train_dino": 0.5873949527740479
+  },
+  {
+   "scene_id": "s19",
+   "condition": "p6_restore",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m4/images/p6_restore@rrv_v1/dev/s19_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Draupadi folding her hands in appeal before Krishna, her long hair loose, oil painting, canvas texture, classical indian art",
+   "control_pose_json": null,
+   "control_file": "/content/m3/eval/poses/dev/s19.png",
+   "checklist": 0.49720683693885803,
+   "checklist_detail": {
+    "c1": 0.7720097303390503,
+    "c2": 0.2514394521713257,
+    "c3": 0.39716869592666626,
+    "c4": 0.5886517763137817,
+    "c5": 0.45632222294807434
+   },
+   "clip_raw": 0.23441334068775177,
+   "style_margin": 0.11717808246612549,
+   "max_train_dino": 0.7573227286338806
+  },
+  {
+   "scene_id": "s19",
+   "condition": "p6_restore",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m4/images/p6_restore@rrv_v1/dev/s19_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Draupadi folding her hands in appeal before Krishna, her long hair loose, oil painting, canvas texture, classical indian art",
+   "control_pose_json": null,
+   "control_file": "/content/m3/eval/poses/dev/s19.png",
+   "checklist": 0.45796357923083836,
+   "checklist_detail": {
+    "c1": 0.746406614780426,
+    "c2": 0.16699568927288055,
+    "c3": 0.2232821136713028,
+    "c4": 0.5415262579917908,
+    "c5": 0.7652508616447449
+   },
+   "clip_raw": 0.21712791919708252,
+   "style_margin": 0.09782814979553223,
+   "max_train_dino": 0.683172881603241
+  },
+  {
+   "scene_id": "s21",
+   "condition": "p6_restore",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m4/images/p6_restore@rrv_v1/dev/s21_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Rama, Lakshmana and Hanuman sitting on rocks by the sea shore, planning the crossing to Lanka, oil painting, canvas texture, classical indian art",
+   "control_pose_json": null,
+   "control_file": "/content/m3/eval/poses/dev/s21.png",
+   "checklist": 0.4312644198536873,
+   "checklist_detail": {
+    "c1": 0.7692749500274658,
+    "c2": 0.19450286030769348,
+    "c3": 0.03570710867643356,
+    "c4": 0.5919844508171082,
+    "c5": 0.99196857213974,
+    "c6": 0.13773688673973083
+   },
+   "clip_raw": 0.2750745415687561,
+   "style_margin": 0.0971638560295105,
+   "max_train_dino": 0.7229807376861572
+  },
+  {
+   "scene_id": "s21",
+   "condition": "p6_restore",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m4/images/p6_restore@rrv_v1/dev/s21_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Rama, Lakshmana and Hanuman sitting on rocks by the sea shore, planning the crossing to Lanka, oil painting, canvas texture, classical indian art",
+   "control_pose_json": null,
+   "control_file": "/content/m3/eval/poses/dev/s21.png",
+   "checklist": 0.5189742520451546,
+   "checklist_detail": {
+    "c1": 0.7932336330413818,
+    "c2": 0.26909708976745605,
+    "c3": 0.09290760010480881,
+    "c4": 0.7706090807914734,
+    "c5": 0.9901641011238098,
+    "c6": 0.3478836119174957
+   },
+   "clip_raw": 0.29643356800079346,
+   "style_margin": 0.06562608480453491,
+   "max_train_dino": 0.7341047525405884
+  },
+  {
+   "scene_id": "s22",
+   "condition": "p6_restore",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m4/images/p6_restore@rrv_v1/dev/s22_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Draupadi, her hair loose, kneeling in the Kaurava court pleading before Bhishma and Duryodhana as courtiers look on, oil painting, canvas texture, classical indian art",
+   "control_pose_json": null,
+   "control_file": "/content/m3/eval/poses/dev/s22.png",
+   "checklist": 0.6840735964942724,
+   "checklist_detail": {
+    "c1": 0.8105884194374084,
+    "c2": 0.8537258505821228,
+    "c3": 0.9879587888717651,
+    "c4": 0.14397387206554413,
+    "c5": 0.024068782106041908
+   },
+   "clip_raw": 0.2804098129272461,
+   "style_margin": 0.1087004542350769,
+   "max_train_dino": 0.7574478387832642
+  },
+  {
+   "scene_id": "s22",
+   "condition": "p6_restore",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m4/images/p6_restore@rrv_v1/dev/s22_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Draupadi, her hair loose, kneeling in the Kaurava court pleading before Bhishma and Duryodhana as courtiers look on, oil painting, canvas texture, classical indian art",
+   "control_pose_json": null,
+   "control_file": "/content/m3/eval/poses/dev/s22.png",
+   "checklist": 0.677103784866631,
+   "checklist_detail": {
+    "c1": 0.7578888535499573,
+    "c2": 0.9127729535102844,
+    "c3": 0.9450326561927795,
+    "c4": 0.15946778655052185,
+    "c5": 0.025973565876483917
+   },
+   "clip_raw": 0.27093595266342163,
+   "style_margin": 0.10237783193588257,
+   "max_train_dino": 0.7899209260940552
   }
  ]
 }

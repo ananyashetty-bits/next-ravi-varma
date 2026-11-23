@@ -53,14 +53,20 @@ own handler, so policy, parsing, prompt, pose, generation, post-processing, labe
 - **H-D4 (text + pose + hi-res under 60 s): supported** (40.3 s).
 
 **Automated scores, p5 and p6** (M3 metrics; `results/p5_hires@rrv_v1_dev.json`, `results/p6_restore@rrv_v1_dev.json`;
-12 pairs × 2 seeds at the time of the first run, 16 pairs `<<pending: D, rerun>>`):
+all 16 dev pairs × 2 seeds, rescored 23 Nov with `--pairs`; p1 for reference from `results/p1_openpose@rrv_v1_dev.json`):
 
 | | checklist | style_margin | clip_raw | max_train_dino mean / p95 |
 |---|---|---|---|---|
-| p5 hi-res | 0.589 | 0.095 | 0.274 | 0.691 / 0.812 |
-| p6 restore | 0.594 | 0.104 | 0.267 | 0.683 / 0.811 |
+| p1 (reference: `results/p1_openpose@rrv_v1_dev.json`) | 0.587 | 0.102 | 0.270 | 0.688 / — |
+| p5 hi-res | 0.571 | 0.094 | 0.272 | 0.696 / 0.815 |
+| p6 restore | 0.587 | 0.102 | 0.270 | 0.689 / 0.810 |
 
-H-D3 (`max_train_dino` p95 ≤ 0.85): holds for both on these 12 pairs. **CLIP and DINO see a resized image, so they cannot
+p5 and p6 are made from D's p1 base images on Drive (`run_batch.py`, baseline profile, the same prompts and seeds), not from the images behind the p1 results file, so this row is a reference rather than an exact pair. Paired comparisons with CIs are B's (`<<pending: B, EVAL_REPORT_M4.md>>`). Read as means only:
+- p6 matches p1 on every automated metric. GFPGAN changes only the face region, which these whole-image metrics
+  barely see.
+- p5 is slightly lower on checklist and `style_margin`. This is consistent with img2img redrawing details.
+
+H-D3 (`max_train_dino` p95 ≤ 0.85): **holds for both** on 16 pairs (0.815 and 0.810). **CLIP and DINO see a resized image, so they cannot
 show resolution gains.** The question "do these steps help faces?" is answered by B's blind face, hand and style ratings
 (`<<pending: B, EVAL_REPORT_M4.md>>`) and by the face-crop strips (`docs/figures/post_face_strips.png`, `post/face_strips.py`: s09, s19 and s31, seed 1, p1 | p5 | p6, crops centred on the control skeleton's head; not blind).
 
@@ -88,8 +94,8 @@ out, including if post-processing does not help.
 
 ## 4. Limits
 - Native resolution is 512 (SD1.5). Hi-res is upscale-then-refine, not a true 768 generation.
-- p5 and p6 were first run on **12 of the 16 dev pairs**: C's four pairs merged after the run. They cover A's, B's and
-  D's pairs only. `<<pending: D, 16-pair rerun>>`.
+- p5 and p6 were first run on 12 of the 16 dev pairs, because C's four pairs merged later. On 23 Nov the base images
+  were completed and all 16 pairs were scored.
 - n is small (12–16 pairs, 2 seeds): no significance claims.
 - CLIP and DINO cannot see resolution gains; hi-res detail is judged on crops and is not blind.
 - ESRGAN was not run. GFPGAN was tested on SD paintings only; 23 of 24 images had a face found, and one (`s25_s2`, a
