@@ -122,6 +122,31 @@ style_margin 0.0295; pose_pck 0.05.
 - **Images:** generated once at the S2 sha, with a private detection cache.
 - **Scores:** not opened until the S3 decisions are written. Nothing from held-out changes any default.
 
+## Section C (C: pose inputs, pose-from-text, composition). Written 23 Nov 2026, before any p3 or p4 image was generated or scored
+
+### What was already run, and what was not
+- Unscored ControlNet smoke tests (Colab, T4, fp16, baseline control profile, 2 seeds): the four photo pairs s18, s19, s21, s22 and four presets (`standing`, `seated`, `kneeling`, `kneeling`+`standing`). Looked at by eye only; no setting or prompt was tuned from them. They are not results.
+- No `pose_from_text` output, no p3 image and no p4 image exists yet.
+
+### Definitions fixed before running
+- **Figure count (`pose_from_text`):** the number of people in the PoseJSON that `pose_from_text` returns equals the pair's `n_people_expected`. Measured on the 16 dev pairs, with no image involved.
+- **Posture family:** one of standing, seated, kneeling, lying, raised arms. Reference labels are assigned by C from each pair's own skeleton (not from any `pose_from_text` output) and stored in `eval/pose_families_dev.json` before `pose_from_text` is run. A pair is correct when the multiset of families over its figures equals the reference.
+- **p3 figure count in images:** `n_people_out` = `n_people_expected`, from B's `pose_metric.py`.
+- **Held-out:** B measures `pose_from_text` on the 6 held-out pairs on Day 3. M3's parser recall on held-out was 0.42, so a drop is expected. Nothing from held-out changes any default.
+
+### Tie bands and support rule
+As in Section B: human ratings 0.25, `pose_pck` 0.05, memorisation flag `max_train_dino` p95 <= 0.85. A hypothesis is supported only if the 95% CI excludes 0 in the predicted direction; proportions on 16 pairs are reported as k/16 with no significance claim. Humans win when PCK and human pose match disagree.
+
+### Hypotheses
+- **H-C1:** `pose_from_text` gets the right figure count on at least 80% of the 16 dev pairs (>= 13/16) and the right posture family on at least 60% (>= 10/16). Expected to be worse on held-out.
+- **H-C2:** p3 (text-only pose) is below p1 (photo pose) on human pose match, but above p0 (no control) on figure count (`n_people_out` = `n_people_expected`). The p1-p3 gap is small for tiers 1-2 and large for tier 3 and above (reported by tier).
+- **H-C3 (optional p4):** composition from a held-out painting gives high style and pose adherence but also high similarity to its source: DINOv2 similarity to the source painting is > 0.85 for at least half of the p4 images, so p4 needs a copy guardrail before it is offered in the app.
+
+### Known weaknesses
+- `pose_from_text` is deterministic and uses M3's `parse_scene`, so it inherits the parser's misses (names, counts and postures that the parser did not extract).
+- A skeleton fixes the count and layout of the main figures, not who they are or the extras the prompt asks for: crowd members and gender or costume details come from the prompt and the LoRA. For tier 3 and above scenes, p3 and p1 can therefore lose background figures that the prompt mentions.
+- Reference posture labels are assigned by one person (C), from skeletons, in `eval/pose_families_dev.json`. Three are uncertain (s01, s10, s26; labelled standing from a thumbnail), so H-C1's posture accuracy is reported on all 16 pairs and on the 13 certain ones.
+
 ## Section D (D: app, post-processing, content policy). Written 22 Nov 2026, before any p5/p6 run was generated or scored
 
 ### Conditions and labels
