@@ -1,0 +1,76 @@
+{
+ "gpu": "Tesla T4",
+ "torch": "2.14.1+cu130",
+ "text": "Hanuman kneeling before Rama and offering him Sita's ring",
+ "cold_start_s": 39.0,
+ "cold_start_note": "engine load (weights cached on disk) + first text-only image; a brand-new runtime adds the model download",
+ "pose_module": "pose",
+ "post_module": "post.api",
+ "defaults": {
+  "model": "rrv_v1",
+  "style": 1.0,
+  "style_range": [
+   0.6,
+   1.2
+  ],
+  "pose": 1.0,
+  "pose_range": [
+   0.4,
+   1.2
+  ],
+  "pose_window": [
+   0.0,
+   0.8
+  ],
+  "pose_profile": "tuned",
+  "post_default_on": false
+ },
+ "rows": [
+  {
+   "config": "text_only",
+   "n": 5,
+   "median_s": 5.95,
+   "min_s": 5.64,
+   "max_s": 6.23,
+   "peak_vram_gb": 2.62,
+   "pose_applied": false,
+   "post": []
+  },
+  {
+   "config": "text_preset_pose",
+   "n": 5,
+   "median_s": 22.53,
+   "min_s": 22.33,
+   "max_s": 22.67,
+   "peak_vram_gb": 6.18,
+   "pose_applied": true,
+   "post": []
+  },
+  {
+   "config": "text_pose_hires",
+   "n": 5,
+   "median_s": 40.34,
+   "min_s": 40.05,
+   "max_s": 40.63,
+   "peak_vram_gb": 7.07,
+   "pose_applied": true,
+   "post": [
+    "hires"
+   ]
+  },
+  {
+   "config": "text_pose_hires_restore",
+   "n": 5,
+   "median_s": 40.76,
+   "min_s": 40.55,
+   "max_s": 41.51,
+   "peak_vram_gb": 7.58,
+   "pose_applied": true,
+   "post": [
+    "hires",
+    "restore_faces"
+   ]
+  }
+ ],
+ "h_d4_text_pose_hires_median_under_60s": true
+}
