@@ -3,8 +3,7 @@
 **What this covers:** what the app (`app/app.py`) will and won't make, how that is enforced, and what is still
 open.
 
-**Status:** draft. Three things are `<<pending>>` until they are measured: the upload-deletion time N (§4), the
-NSFW measurement from B (§5) and the access choice for the public link (§6).
+**Status:** N is measured (§4). The NSFW decision (§5) and the link access (§6) are recorded in their sections.
 
 ## 1. Allowed
 - Scenes from the epics and the Puranas, including **non-graphic** battles.
@@ -55,8 +54,15 @@ The checks are deterministic: `app/policy.py` with `app/blocklist.json`.
 - **Purpose:** a photo is used only to extract a stick-figure skeleton (C's `extract_pose`, which writes nothing).
 - **Deletion:** the app deletes the uploaded file in its handler as soon as the skeleton exists, including when the
   prompt is refused. Gradio's own upload cache is cleared on a timer (`delete_cache`).
-- **The app tells the user:** "deleted after **N minutes**" next to the upload box. N = `<<pending: D's
-  upload-cache test>>`, and the temp path is in `APP.md`. **Nothing says "not saved".**
+- **Measured N = 6 minutes** (`results/app_upload_cache.json`, `results/app_upload_cache_timer.json`; measured 23 Nov with the app's real Gradio layer and handler on the pinned Gradio 6.31.0, image generation stubbed on CPU):
+  - **Normal case:** no copy of the upload was left under Gradio's temp folder (`/tmp/gradio`) when the request
+    finished. The handler deletes Gradio's copy itself.
+  - **If the handler never deletes it** (for example a crash before the pose step), Gradio's own `delete_cache`
+    timer (sweep every 60 s, age 300 s) removed it after **360 s**.
+  - **A control upload** to a handler that does not delete stayed in `/tmp/gradio` until that timer, so the check
+    looked in the right place.
+- **The app tells the user,** next to the upload box: the photo is used only for the pose and deleted when the
+  request finishes, and in any case within 6 minutes. **Nothing says "not saved".**
 - **Canny (edge) uploads are not offered for photos of people,** because edges carry a person's silhouette. Painting
   uploads also stay off if C's p4 finds that composition transfer redraws the painting (`<<pending: C's p4>>`).
 

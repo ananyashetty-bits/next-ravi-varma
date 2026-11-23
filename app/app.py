@@ -224,8 +224,8 @@ HELP_POSE = ("Higher = follows the pose more closely, but may look stiffer. Only
 ABOUT = ("**About.** Research and coursework project. Images are AI-generated *in the style of* Raja Ravi Varma and "
          "are never authentic works; don't present them as his. Deities and epic figures are depicted respectfully: "
          "sexualised, demeaning, hateful, gory content and real living people are refused (docs/CONTENT_POLICY.md).")
-UPLOAD_NOTE = ("Your photo is used only to extract a stick-figure pose, and the app deletes it as soon as the pose "
-               "exists; Gradio's own upload cache is cleared within about {n} minutes.")
+UPLOAD_NOTE = ("Your photo is used only to extract a stick-figure pose. The app deletes it when your request finishes, "
+               "and in any case within {n} minutes (measured; docs/APP.md).")
 
 
 def reveal(settings_json: str):

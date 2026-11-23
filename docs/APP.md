@@ -53,7 +53,7 @@ show resolution gains.** The question "do these steps help faces?" is answered b
 **What is on by default:** both post-processing boxes are off (`post.default_on = false` in `config/m4.json`). The S3
 rule (Overview §10, rule 2) is applied once B's dev ratings are in: `<<pending: B ratings; D applies the rule>>`.
 
-**Uploads:** deleted after N = `<<pending: D, upload-cache test>>` minutes; Gradio temp path `<<pending: D>>`.
+**Uploads:** deleted when the request finishes, and **within N = 6 minutes** in any case. The Gradio temp path is `/tmp/gradio` (Gradio's default; `GRADIO_TEMP_DIR` overrides it). Normal case: no copy left at the first check after the response. If the handler never deletes it, Gradio's timer removed it after 360 s. (`results/app_upload_cache.json`, `results/app_upload_cache_timer.json`; measured 23 Nov with the app's real Gradio layer and handler on the pinned Gradio 6.31.0, image generation stubbed on CPU).
 
 ## 3. What it means
 **First look by eye, before any ratings (3 scenes and 2 face crops; not a rating):**
@@ -87,7 +87,8 @@ blocklist: paraphrases, misspellings and other languages can get through, there 
 is not classified (`docs/CONTENT_POLICY.md` §7).
 
 **Where do uploads go?** A photo is used only to extract a skeleton and is deleted by the app as soon as the skeleton
-exists. Gradio's own temporary copy is cleared by a timer, measured at N = `<<pending: D>>` minutes. We do not claim they
+exists (measured: no copy left when the request finished). If that ever fails, Gradio's own timer removes it; measured at 360 s, so the app
+promises deletion within 6 minutes. We do not claim they
 are "not saved".
 
 **Is this a Ravi Varma?** No. The images are *in the style of*, not by, Raja Ravi Varma. They carry that label on the image
