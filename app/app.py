@@ -29,7 +29,7 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from app import core, policy  # noqa: E402
+from app import core, nsfw, policy  # noqa: E402
 
 POSE_MODULE = os.environ.get("APP_POSE_MODULE", "pose.stub")     # S2: switch to C's real module (one line / env)
 POST_MODULE = os.environ.get("APP_POST_MODULE", "post.stub")     # Day 2: switch to D's real post module
@@ -70,6 +70,7 @@ class Engine:
         self.control = _import("pipeline.control_api")
         self.pose = _import(POSE_MODULE)
         self.post = _import(POST_MODULE)
+        self.nsfw = nsfw.Classifier()                            # loads on first use, on CPU
         if self.control is None:
             print("[app] POSE CONTROL IS OFF: pipeline.control_api did not import (reason above). Poses will be "
                   "shown but not applied.", file=sys.stderr)
@@ -115,6 +116,10 @@ class Engine:
                                                     lora_scale=style, control_scale=pose_strength,
                                                     guidance_start=gs, guidance_end=ge), True
         return self.gen.generate(positive, negative, seed, model=DEFAULTS["model"], lora_scale=style), False
+
+    def nsfw_score(self, image):
+        clf = getattr(self, "nsfw", None)
+        return clf.score(image) if clf else None
 
     def postprocess(self, image, positive, negative, seed, hires, restore, style=None):
         done = []
@@ -170,10 +175,24 @@ def make_handler(engine: Engine):
                                             DEFAULTS["model"], DEFAULTS["pose_window"] if pose_used else None)
             labelled = core.add_label(image)
             OUT_DIR.mkdir(parents=True, exist_ok=True)
+            clear_path = OUT_DIR / f"nrv_seed{seed}_clear.png"
+            clear_path.unlink(missing_ok=True)                   # never leave a stale image from an earlier run
+            score_fn = getattr(engine, "nsfw_score", None)
+            score = score_fn(image) if score_fn else None
+            flagged = nsfw.is_flagged(score)
+            if score is not None:
+                settings["nsfw_flagged"] = flagged
+            if flagged:                                          # soft filter: blur, keep the clear copy for "Show"
+                core.save_png(labelled, clear_path, settings)
+                labelled = core.add_label(nsfw.blur(image))
             path = core.save_png(labelled, OUT_DIR / f"nrv_seed{seed}.png", settings)
             chars = [c.get("canonical") for c in (scene or {}).get("characters", [])]
             details = (f"**Prompt:** {prompt['positive']}\n\n**Negative:** {prompt['negative']}\n\n"
                        f"**Characters found:** {', '.join(chars) or 'none'}\n\n**Seed:** {seed}")
+            if flagged:
+                warnings.append("The safety filter flagged this image, so it is blurred. Press \"Show image\" to view "
+                                "it. The filter is a backstop and is often wrong on paintings (nursing, bathing, "
+                                "drapery).")
             notes = [chk["warning"]] + warnings
             status = "Done." + ("".join(f"\n\n- {n}" for n in notes if n))
             skeleton = ctrl.get("image") if isinstance(ctrl, dict) else None
@@ -209,6 +228,17 @@ UPLOAD_NOTE = ("Your photo is used only to extract a stick-figure pose, and the 
                "exists; Gradio's own upload cache is cleared within about {n} minutes.")
 
 
+def reveal(settings_json: str):
+    """The "Show image" button: returns the unblurred copy that make_handler saved for a flagged image."""
+    try:
+        seed = int(json.loads(settings_json)["seed"])
+        from PIL import Image
+        with Image.open(OUT_DIR / f"nrv_seed{seed}_clear.png") as im:
+            return im.convert("RGB")
+    except Exception:                                            # noqa: BLE001
+        return None
+
+
 def _slider(gr, rng, value, label, info):
     """Only tested values: the range comes from config. A one-value range is shown fixed (not editable)."""
     lo, hi = float(rng[0]), float(rng[-1])
@@ -242,9 +272,11 @@ def build(engine: Engine | None):
                 post_hires = gr.Checkbox(value=d["post_default_on"], label="Higher resolution (slower)")
                 post_restore = gr.Checkbox(value=False, label="Face restoration (may look less painted)")
                 go = gr.Button("Generate", variant="primary")
+                gr.Markdown(core.time_note())
             with gr.Column():
                 out = gr.Image(type="pil", label="Painting", format="png")
                 status = gr.Markdown()
+                show = gr.Button("Show image", visible=False)
                 download = gr.File(label="Download (PNG with label and settings in the metadata)")
                 with gr.Accordion("Show details", open=False):
                     skeleton = gr.Image(type="pil", label="Pose used")
@@ -257,8 +289,17 @@ def build(engine: Engine | None):
                     gr.update(visible=m == "upload photo"))
         pose_mode.change(_modes, pose_mode, [preset, photo, photo_note])
         rnd.click(lambda: random.randint(1, 2**31 - 1), None, seed)
-        go.click(run, [text, pose_mode, preset, photo, style, pose_strength, seed, post_hires, post_restore],
-                 [out, skeleton, details, settings, download, status])
+
+        def on_go(*a):
+            r = run(*a)
+            try:
+                flagged = bool(json.loads(r[3]).get("nsfw_flagged"))
+            except Exception:                                    # noqa: BLE001
+                flagged = False
+            return (*r, gr.update(visible=flagged))
+        go.click(on_go, [text, pose_mode, preset, photo, style, pose_strength, seed, post_hires, post_restore],
+                 [out, skeleton, details, settings, download, status, show])
+        show.click(reveal, settings, out)
     demo.queue(max_size=4, default_concurrency_limit=1)
     return demo
 

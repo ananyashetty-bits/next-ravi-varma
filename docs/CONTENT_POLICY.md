@@ -78,7 +78,12 @@ The checks are deterministic: `app/policy.py` with `app/blocklist.json`.
   - the measurement on our own generated outputs is not in the audit file (`extra` is empty), so the flag rate on
     our images is not measured;
   - the filter is a backstop, not the main control: the input blocklist and the label do the real work.
-- **Status:** `<<pending: implementation. The decision is recorded, but the output filter is not built into the app yet>>`.
+- **Status: implemented** (`app/nsfw.py`, wired in `app/app.py`). `Falconsai/nsfw_image_detection` runs on CPU
+  (loaded on first use, so it does not compete for T4 memory), threshold 0.5 as in the audit. A flagged image is
+  shown blurred with the label, the status line says why, and a **Show image** button reveals the unblurred copy.
+  The downloadable file stays the blurred one. `APP_NSFW=0` switches it off; if the model cannot load the filter
+  stays off and the reason is written to the server log. The settings JSON records `nsfw_flagged`.
+  **Not measured:** the flag rate on our own generated images (only the 15 real paintings were audited).
 - **Background:** the M2 safety checker stays off, because it false-blocked classical paintings.
 
 ## 6. Public link

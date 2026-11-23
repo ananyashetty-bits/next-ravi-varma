@@ -111,3 +111,20 @@ def settings_record(text: str, prompt: dict, seed: int, style: float, pose_mode:
             "pose_mode": pose_mode, "control_scale": None if pose_strength is None else float(pose_strength),
             "control_guidance": None if control_window is None else [float(x) for x in control_window],
             "pose_source": pose_source, "post": list(post), "label": LABEL}
+
+
+def time_note(path=None) -> str:
+    """The "how long will this take" line under the Generate button. Uses the measured latency file when it exists
+    (results/app_latency.json, written by the Colab latency cell); otherwise a plain statement with no number."""
+    path = Path(path) if path else Path(__file__).resolve().parents[1] / "results" / "app_latency.json"
+    generic = ("Generation takes a while: adding a pose and higher resolution make it slower, and the first request "
+               "after the app starts is the slowest because the model is still loading.")
+    try:
+        d = json.loads(path.read_text(encoding="utf-8"))
+        c = d["configs"]
+        t = {k: float(c[k]["median_s"]) for k in ("text_only", "text_pose", "text_pose_hires")}
+        return (f"Typical time on a {d.get('gpu', 'T4')} (median of 5 runs): about {t['text_only']:.0f} s for text "
+                f"only, {t['text_pose']:.0f} s with a pose, {t['text_pose_hires']:.0f} s with a pose and higher "
+                "resolution. The first request after the app starts is slower (the model is loading).")
+    except Exception:                              # noqa: BLE001  missing or malformed file: say it without a number
+        return generic

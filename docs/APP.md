@@ -75,8 +75,10 @@ out, including if post-processing does not help.
   leaping figure) had none.
 - Free Colab: one GPU session, one job at a time, the session can time out, and the public link dies with it.
 - Uploads pass through Gradio's temporary cache, and the link goes through Gradio's relay.
-- The output NSFW filter was decided (soft blur-and-confirm) but is **not built into the app**
-  (`docs/CONTENT_POLICY.md` §5).
+- The output NSFW filter is a soft blur-and-confirm backstop (`app/nsfw.py`, `docs/CONTENT_POLICY.md` §5). It sits
+  at the boundary of B's audit (1 of 15 real paintings flagged, a false positive), so it will blur some innocent
+  paintings, and its flag rate on our own outputs is not measured. The pose and the filter were exercised with fakes on
+  CPU; the live GPU run is the S2 check.
 
 ## 5. For the report's Q&A
 **Can a user generate harmful content?** The input blocklist and category lexicon refuse sexualised or nude depictions,
