@@ -4,7 +4,7 @@ Run (Colab, T4, gen profile):   python app/app.py --share [--auth user:password]
 - Prompt = M3's default pipeline c1: expand(text, scene, "raw"). No LLM.
 - Defaults and slider ranges come from config/m3.json + config/m4.json (app/core.py), never from this file.
 - One GPU job at a time (queue). The model is loaded once, at launch.
-- Pose: C's module (APP_POSE_MODULE, default pose.stub until S2) -> A's generate_controlled when it is importable;
+- Pose: C's module (APP_POSE_MODULE, default pose, C's public entry point) -> A's generate_controlled when it is importable;
   before that, the pose is shown but not applied, and the app says so.
 - Every image shown or downloaded carries the content label (caption bar + PNG metadata). Evaluation images never
   go through the app, so they are never labelled.
@@ -31,7 +31,7 @@ if str(ROOT) not in sys.path:
 
 from app import core, nsfw, policy  # noqa: E402
 
-POSE_MODULE = os.environ.get("APP_POSE_MODULE", "pose.stub")     # S2: switch to C's real module (one line / env)
+POSE_MODULE = os.environ.get("APP_POSE_MODULE", "pose")          # C's public entry point (real presets; stubs until each lands)
 POST_MODULE = os.environ.get("APP_POST_MODULE", "post.stub")     # Day 2: switch to D's real post module
 CACHE_EVERY_S, CACHE_MAX_AGE_S = 60, 300                         # Gradio delete_cache; N is measured, see APP.md
 OUT_DIR = Path(tempfile.gettempdir()) / "nrv_app_outputs"
