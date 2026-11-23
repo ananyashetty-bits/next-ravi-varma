@@ -1,0 +1,84 @@
+{
+ "version": 1,
+ "written": "2026-11-23, by C, before pose_from_text was run, from each pair's own skeleton (never from pose_from_text output or generated images)",
+ "families": [
+  "standing",
+  "seated",
+  "kneeling",
+  "lying",
+  "raised_arms"
+ ],
+ "rule": "labels are listed left to right; a pair is correct when the multiset of families equals the reference. raised_arms only if a wrist is clearly above the shoulder line; bent-forward or arms-out figures with straight legs are standing.",
+ "uncertain": [
+  "s01",
+  "s10",
+  "s26"
+ ],
+ "uncertain_note": "labelled from a thumbnail as the closest family (standing); s01 third figure and s26 second figure could be kneeling/seated; s10 is a lean or lunge. Posture accuracy is reported on all 16 and on the 13 certain pairs.",
+ "labels": {
+  "s01": [
+   "standing",
+   "standing",
+   "standing"
+  ],
+  "s02": [
+   "standing"
+  ],
+  "s04": [
+   "standing",
+   "standing"
+  ],
+  "s05": [
+   "standing",
+   "standing"
+  ],
+  "s09": [
+   "seated"
+  ],
+  "s10": [
+   "standing"
+  ],
+  "s11": [
+   "standing",
+   "standing"
+  ],
+  "s15": [
+   "standing",
+   "seated",
+   "lying"
+  ],
+  "s18": [
+   "standing"
+  ],
+  "s19": [
+   "standing",
+   "standing"
+  ],
+  "s21": [
+   "seated",
+   "seated",
+   "seated"
+  ],
+  "s22": [
+   "kneeling",
+   "standing",
+   "standing"
+  ],
+  "s25": [
+   "raised_arms"
+  ],
+  "s26": [
+   "standing",
+   "standing"
+  ],
+  "s27": [
+   "standing",
+   "seated"
+  ],
+  "s31": [
+   "standing",
+   "standing",
+   "standing"
+  ]
+ }
+}
