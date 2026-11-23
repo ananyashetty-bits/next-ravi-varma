@@ -37,12 +37,14 @@ def defaults(m3: dict | None = None, m4: dict | None = None) -> dict:
     style = m4.get("lora_scale") if m4.get("lora_scale") is not None else m3["models"][model]["scale"]
     control = m4.get("control", {})
     prof = control.get("tuned") or control.get("baseline") or {"scale": 1.0}
+    window = [float(prof.get("guidance_start", 0.0)), float(prof.get("guidance_end", 1.0))]
     return {
         "model": model,
         "style": _clamp(style, style_range),
         "style_range": style_range,
         "pose": _clamp(prof.get("scale", 1.0), pose_range),
         "pose_range": pose_range,
+        "pose_window": window,                         # ControlNet guidance window of the active profile
         "pose_profile": "tuned" if control.get("tuned") else "baseline",
         "post_default_on": bool(m4.get("post", {}).get("default_on", False)),
     }
@@ -101,9 +103,11 @@ def save_png(image: Image.Image, path: str | Path, settings: dict) -> Path:
 
 
 def settings_record(text: str, prompt: dict, seed: int, style: float, pose_mode: str, pose_strength: float | None,
-                    pose_source: str | None, post: list[str], model: str) -> dict:
+                    pose_source: str | None, post: list[str], model: str,
+                    control_window: list | None = None) -> dict:
     """The "copy settings" JSON: enough to reproduce the image from the CLI."""
     return {"app_version": APP_VERSION, "text": text, "positive": prompt.get("positive"),
             "negative": prompt.get("negative"), "seed": int(seed), "model": model, "lora_scale": float(style),
             "pose_mode": pose_mode, "control_scale": None if pose_strength is None else float(pose_strength),
+            "control_guidance": None if control_window is None else [float(x) for x in control_window],
             "pose_source": pose_source, "post": list(post), "label": LABEL}

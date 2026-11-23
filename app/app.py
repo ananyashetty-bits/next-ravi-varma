@@ -40,10 +40,15 @@ POSE_MODES = ["none", "preset", "upload photo", "auto from text"]
 DEFAULTS = core.defaults()
 
 
+IMPORT_ERRORS: dict[str, str] = {}      # module name -> why it could not be imported (shown in the server log)
+
+
 def _import(name: str):
     try:
         return importlib.import_module(name)
-    except Exception:            # missing module or missing GPU library: the app degrades, it does not crash
+    except Exception as e:       # missing module or missing GPU library: the app degrades, it does not crash
+        IMPORT_ERRORS[name] = f"{type(e).__name__}: {e}"
+        print(f"[app] could not import {name}: {IMPORT_ERRORS[name]}", file=sys.stderr)   # never silent
         return None
 
 
@@ -65,6 +70,9 @@ class Engine:
         self.control = _import("pipeline.control_api")
         self.pose = _import(POSE_MODULE)
         self.post = _import(POST_MODULE)
+        if self.control is None:
+            print("[app] POSE CONTROL IS OFF: pipeline.control_api did not import (reason above). Poses will be "
+                  "shown but not applied.", file=sys.stderr)
         from kb.parser import parse_scene
         from expander.expand import expand
         self.parse_scene, self.expand = parse_scene, expand
@@ -102,8 +110,10 @@ class Engine:
 
     def generate(self, positive, negative, seed, style, ctrl, pose_strength):
         if ctrl is not None and self.control is not None:
+            gs, ge = DEFAULTS["pose_window"]                      # window of the active (tuned or baseline) profile
             return self.control.generate_controlled(positive, negative, seed, ctrl, model=DEFAULTS["model"],
-                                                    lora_scale=style, control_scale=pose_strength), True
+                                                    lora_scale=style, control_scale=pose_strength,
+                                                    guidance_start=gs, guidance_end=ge), True
         return self.gen.generate(positive, negative, seed, model=DEFAULTS["model"], lora_scale=style), False
 
     def postprocess(self, image, positive, negative, seed, hires, restore, style=None):
@@ -150,14 +160,14 @@ def make_handler(engine: Engine):
             image, pose_used = engine.generate(prompt["positive"], prompt["negative"], seed, style, ctrl,
                                                pose_strength)
             if ctrl is not None and not pose_used:
-                warnings.append("Pose control is not switched on in this build yet, so the pose is shown but was "
-                                "not applied.")
+                warnings.append("Pose control is not available on this server right now, so the pose is shown "
+                                "but was not applied.")
             image, post_done = engine.postprocess(image, prompt["positive"], prompt["negative"], seed,
                                                   post_hires, post_restore, style)
             settings = core.settings_record(text, prompt, seed, style, pose_mode,
                                             pose_strength if pose_used else None,
                                             (ctrl or {}).get("source") if ctrl else None, post_done,
-                                            DEFAULTS["model"])
+                                            DEFAULTS["model"], DEFAULTS["pose_window"] if pose_used else None)
             labelled = core.add_label(image)
             OUT_DIR.mkdir(parents=True, exist_ok=True)
             path = core.save_png(labelled, OUT_DIR / f"nrv_seed{seed}.png", settings)
