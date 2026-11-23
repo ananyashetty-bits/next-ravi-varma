@@ -1,0 +1,19 @@
+{
+ "gradio_temp_dir": "/tmp/gradio",
+ "delete_cache": [
+  60,
+  300
+ ],
+ "engine": "CPUEngine",
+ "request_s": 4.7,
+ "status": "/tmp/gradio/d2d207840b4ebdeb2d7686700021c61d0443385616fb3265981d25c50942aab8/nrv_seed1.png",
+ "all_copies_gone_after_s": 0,
+ "N_minutes": 1,
+ "note": "N = minutes until no file with the upload's sha256 remains under the Gradio temp folder, measured from the end of the request; polled every 10 s.",
+ "log": [
+  {
+   "t_after_response_s": 0,
+   "copies": []
+  }
+ ]
+}
