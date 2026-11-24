@@ -19,12 +19,18 @@ POSES = {
                    r_thigh=-30, r_shin=-4, l_thigh=30, l_shin=4, f={"r_thigh": 0.5, "l_thigh": 0.5}),
     "kneeling": dict(lean=0, r_uarm=-8, r_farm=28, l_uarm=8, l_farm=-28,
                      r_thigh=-4, r_shin=-75, l_thigh=4, l_shin=75, f={"r_shin": 0.4, "l_shin": 0.4}),
+    # arms clearly above the shoulder line and the head; "k" shrinks the figure so the hands stay inside the canvas
+    "raised_arms": dict(lean=0, r_uarm=-150, r_farm=-165, l_uarm=150, l_farm=165,
+                        r_thigh=-3, r_shin=0, l_thigh=3, l_shin=0, k=0.85),
+    # the standing body turned 90 degrees (head to the image left), smaller so a lying figure fits beside others
+    "lying": dict(lean=0, r_uarm=-6, r_farm=-3, l_uarm=6, l_farm=3,
+                  r_thigh=-3, r_shin=0, l_thigh=3, l_shin=0, rot=-90, k=0.55),
 }
 
 
 def _figure(spec, cx, scale):
     """Forward kinematics -> 18 (x, y) points in BODY_POINTS order, ground-anchored, centred on cx."""
-    T, f = TORSO * scale, spec.get("f", {})
+    T, f = TORSO * scale * spec.get("k", 1.0), spec.get("f", {})
 
     def step(p, key, length):
         th = math.radians(spec[key])
@@ -43,8 +49,17 @@ def _figure(spec, cx, scale):
     r_ey, l_ey = (nose[0] - 0.10 * T, nose[1] - 0.12 * T), (nose[0] + 0.10 * T, nose[1] - 0.12 * T)
     r_ea, l_ea = (nose[0] - 0.22 * T, nose[1] - 0.02 * T), (nose[0] + 0.22 * T, nose[1] - 0.02 * T)
     pts = [nose, neck, r_sh, r_el, r_wr, l_sh, l_el, l_wr, r_hp, r_kn, r_an, l_hp, l_kn, l_an, r_ey, l_ey, r_ea, l_ea]
+    rot = spec.get("rot", 0)
+    if rot:                                           # turn the whole figure about the hip centre
+        c, s_ = math.cos(math.radians(rot)), math.sin(math.radians(rot))
+        pts = [(x * c - y * s_, x * s_ + y * c) for x, y in pts]
     dy = GROUND - max(y for _, y in pts)
-    return [(x + cx, y + dy) for x, y in pts]
+    dx = cx
+    if rot:                                           # centre the turned figure on cx, then keep it on the canvas
+        xs = [x for x, _ in pts]
+        dx = cx - (min(xs) + max(xs)) / 2
+        dx = min(max(dx, 0.04 - min(xs)), 0.96 - max(xs))
+    return [(x + dx, y + dy) for x, y in pts]
 
 
 _X = {1: {"center": 0.5}, 2: {"left": 0.28, "right": 0.72}, 3: {"left": 0.2, "center": 0.5, "right": 0.8}}
