@@ -1,0 +1,173 @@
+[
+ {
+  "name": "standing",
+  "label": "Standing",
+  "n_people": 1,
+  "description": "One figure standing upright, arms relaxed.",
+  "pose_json": "standing.json",
+  "thumbnail": "standing.png",
+  "smoke_tested": false
+ },
+ {
+  "name": "seated",
+  "label": "Seated",
+  "n_people": 1,
+  "description": "One figure seated, hands resting.",
+  "pose_json": "seated.json",
+  "thumbnail": "seated.png",
+  "smoke_tested": false
+ },
+ {
+  "name": "kneeling",
+  "label": "Kneeling",
+  "n_people": 1,
+  "description": "One figure kneeling upright.",
+  "pose_json": "kneeling.json",
+  "thumbnail": "kneeling.png",
+  "smoke_tested": false
+ },
+ {
+  "name": "lying",
+  "label": "Resting on the ground",
+  "n_people": 1,
+  "description": "One figure lying at rest on the ground.",
+  "pose_json": "lying.json",
+  "thumbnail": "lying.png",
+  "smoke_tested": false
+ },
+ {
+  "name": "raised_arms",
+  "label": "Arms raised",
+  "n_people": 1,
+  "description": "One figure standing with both arms raised above the head.",
+  "pose_json": "raised_arms.json",
+  "thumbnail": "raised_arms.png",
+  "smoke_tested": false
+ },
+ {
+  "name": "namaste",
+  "label": "Hands joined",
+  "n_people": 1,
+  "description": "One figure standing with hands joined at the chest in greeting.",
+  "pose_json": "namaste.json",
+  "thumbnail": "namaste.png",
+  "smoke_tested": false
+ },
+ {
+  "name": "kneel_namaste",
+  "label": "Kneeling, hands joined",
+  "n_people": 1,
+  "description": "One figure kneeling with hands joined in appeal.",
+  "pose_json": "kneel_namaste.json",
+  "thumbnail": "kneel_namaste.png",
+  "smoke_tested": false
+ },
+ {
+  "name": "archer",
+  "label": "Archer",
+  "n_people": 1,
+  "description": "One figure standing, one arm extended and the other drawn back, as if holding a bow.",
+  "pose_json": "archer.json",
+  "thumbnail": "archer.png",
+  "smoke_tested": false
+ },
+ {
+  "name": "pointing",
+  "label": "Pointing",
+  "n_people": 1,
+  "description": "One figure standing and pointing to one side.",
+  "pose_json": "pointing.json",
+  "thumbnail": "pointing.png",
+  "smoke_tested": false
+ },
+ {
+  "name": "walking",
+  "label": "Walking",
+  "n_people": 1,
+  "description": "One figure walking, mid-stride.",
+  "pose_json": "walking.json",
+  "thumbnail": "walking.png",
+  "smoke_tested": false
+ },
+ {
+  "name": "embrace",
+  "label": "Embrace",
+  "n_people": 2,
+  "description": "Two figures standing close, each with an arm around the other.",
+  "pose_json": "embrace.json",
+  "thumbnail": "embrace.png",
+  "smoke_tested": false
+ },
+ {
+  "name": "kneeling_before_standing",
+  "label": "Kneeling before a standing figure",
+  "n_people": 2,
+  "description": "One figure kneels at the left before a standing figure.",
+  "pose_json": "kneeling_before_standing.json",
+  "thumbnail": "kneeling_before_standing.png",
+  "smoke_tested": false
+ },
+ {
+  "name": "seated_with_attendant",
+  "label": "Seated, with an attendant",
+  "n_people": 2,
+  "description": "One figure seated, another standing beside them.",
+  "pose_json": "seated_with_attendant.json",
+  "thumbnail": "seated_with_attendant.png",
+  "smoke_tested": false
+ },
+ {
+  "name": "bowing_pair",
+  "label": "Bowing pair",
+  "n_people": 2,
+  "description": "Two figures facing each other, bowing slightly with hands joined.",
+  "pose_json": "bowing_pair.json",
+  "thumbnail": "bowing_pair.png",
+  "smoke_tested": false
+ },
+ {
+  "name": "standing_pair",
+  "label": "Two standing",
+  "n_people": 2,
+  "description": "Two figures standing side by side with space between them.",
+  "pose_json": "standing_pair.json",
+  "thumbnail": "standing_pair.png",
+  "smoke_tested": false
+ },
+ {
+  "name": "walking_pair",
+  "label": "Walking together",
+  "n_people": 2,
+  "description": "Two figures walking side by side.",
+  "pose_json": "walking_pair.json",
+  "thumbnail": "walking_pair.png",
+  "smoke_tested": false
+ },
+ {
+  "name": "standing_trio",
+  "label": "Three standing",
+  "n_people": 3,
+  "description": "Three figures standing in a row.",
+  "pose_json": "standing_trio.json",
+  "thumbnail": "standing_trio.png",
+  "smoke_tested": false
+ },
+ {
+  "name": "seated_trio",
+  "label": "Three seated",
+  "n_people": 3,
+  "description": "Three figures seated side by side.",
+  "pose_json": "seated_trio.json",
+  "thumbnail": "seated_trio.png",
+  "smoke_tested": false
+ },
+ {
+  "name": "kneeling_before_two",
+  "label": "Kneeling before two",
+  "n_people": 3,
+  "description": "One figure kneels at the left before two standing figures.",
+  "pose_json": "kneeling_before_two.json",
+  "thumbnail": "kneeling_before_two.png",
+  "smoke_tested": false
+ }
+]

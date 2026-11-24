@@ -93,6 +93,14 @@ def make_posejson(name, n=1, positions=None):
 
 
 def make_pose(name, n=1, positions=None):
-    """name: a posture, or a list with one posture per figure. positions: 'left'/'center'/'right' or x in 0-1."""
+    """name: a posture, a list with one posture per figure, or a library preset (pose/library.py, e.g. "embrace",
+    "namaste", "kneeling_before_standing"). positions: 'left'/'center'/'right' or x in 0-1."""
+    if isinstance(name, str) and name not in POSES and positions is None:
+        from pose.library import LIBRARY, library_posejson          # lazy: library imports this module
+        if name in LIBRARY:
+            if n not in (1, len(LIBRARY[name][2])):
+                raise ValueError(f"library preset {name!r} has {len(LIBRARY[name][2])} figure(s); n={n} does not fit")
+            pj = library_posejson(name)
+            return to_control(pj, source=pj["source"])
     pj = make_posejson(name, n, positions)
     return to_control(pj, source=pj["source"])
