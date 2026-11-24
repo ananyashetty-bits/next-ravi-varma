@@ -1,9 +1,8 @@
 """Photo -> ControlImage and Painting -> Canny ControlImage (owner C; Overview §6.5).
 Privacy: processes strictly in memory; writes nothing to disk and holds no reference to the input image.
 """
-import cv2
 import numpy as np
-from PIL import Image
+from PIL import Image, ImageFilter, ImageOps
 from eval.pose_io import make_posejson
 from pose.skeleton import letterbox_xy, to_control
 
@@ -46,7 +45,6 @@ def extract_pose(image: Image.Image) -> dict:
     if not poses:
         return _empty_control(["no person detected in uploaded photo; suggest a clearer full-body photo"])
 
-    # Extract 18-point body keypoints, mapped via letterbox_xy so proportions never distort
     scored_people = []
     for p in poses:
         kps = []
@@ -73,7 +71,6 @@ def extract_pose(image: Image.Image) -> dict:
     if not scored_people:
         return _empty_control(["detected figure had too few visible joints; try cropping closer"])
 
-    # Keep the 3 largest people by bounding-box area
     scored_people.sort(key=lambda item: item[0], reverse=True)
     if len(scored_people) > 3:
         warnings.append(f"detected {len(scored_people)} people; kept the 3 largest")
@@ -81,27 +78,26 @@ def extract_pose(image: Image.Image) -> dict:
 
     people = []
     for idx, (area, kps) in enumerate(scored_people):
-        # Check for cropped legs (ankles are indices 10 and 13)
         if kps[10][2] == 0.0 and kps[13][2] == 0.0:
             warnings.append(f"person {idx} legs/ankles not visible (possibly cropped)")
-        # Check low average joint confidence
         valid_confs = [k[2] for k in kps if k[2] > 0]
         if valid_confs and (sum(valid_confs) / len(valid_confs)) < 0.45:
             warnings.append(f"person {idx} has low keypoint confidence")
         people.append(kps)
 
     pj = make_posejson(people, source="photo", producer="C")
-    # to_control automatically adds layout_warnings (small figure, edge clipping, torso overlap)
     return to_control(pj, source="photo", warnings=warnings)
 
 
 def extract_edges(image: Image.Image, low: int = 100, high: int = 200) -> dict:
-    """Extract Canny edges (white on black, 512x512 RGB) for composition study (p4)."""
-    from PIL import ImageOps
+    """Extract white-on-black edges (512x512 RGB) using pure PIL/numpy so CI works without cv2."""
     padded = ImageOps.pad(image.convert("RGB"), (512, 512), color=(0, 0, 0))
-    gray = cv2.cvtColor(np.array(padded), cv2.COLOR_RGB2GRAY)
+    gray = padded.convert("L").filter(ImageFilter.FIND_EDGES)
     del padded
-    edges = cv2.Canny(gray, low, high)
+    arr = np.array(gray)
+    # Threshold edges cleanly to white (255) on black (0)
+    thresh = max(20, min(low, 250))
+    edges = np.where(arr >= thresh, 255, 0).astype(np.uint8)
     edge_rgb = Image.fromarray(edges).convert("RGB")
     return {
         "image": edge_rgb,
