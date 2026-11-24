@@ -1,0 +1,75 @@
+{
+ "note": "Two dev numbers for EVAL_REPORT_M4.md that eval/tables_m4.py does not print (B, 24 Nov 2026).",
+ "figure_count": {
+  "per_condition_seed1": {
+   "p0_m3_default": "9/16",
+   "p1_openpose": "13/16",
+   "p2_openpose_tuned": "13/16",
+   "p3_pose_auto": "15/16",
+   "p5_hires": "13/16",
+   "p6_restore": "13/16"
+  },
+  "paired": {
+   "p0_m3_default -> p1_openpose, all tiers": {
+    "n_pairs": 16,
+    "a_right": 9,
+    "b_right": 13,
+    "only_b_right": 5,
+    "only_a_right": 1
+   },
+   "p0_m3_default -> p1_openpose, tiers 2-4": {
+    "n_pairs": 11,
+    "a_right": 5,
+    "b_right": 8,
+    "only_b_right": 4,
+    "only_a_right": 1
+   },
+   "p0_m3_default -> p3_pose_auto, all tiers": {
+    "n_pairs": 16,
+    "a_right": 9,
+    "b_right": 15,
+    "only_b_right": 6,
+    "only_a_right": 0
+   },
+   "p0_m3_default -> p3_pose_auto, tiers 2-4": {
+    "n_pairs": 11,
+    "a_right": 5,
+    "b_right": 11,
+    "only_b_right": 6,
+    "only_a_right": 0
+   },
+   "p1_openpose -> p3_pose_auto, all tiers": {
+    "n_pairs": 16,
+    "a_right": 13,
+    "b_right": 15,
+    "only_b_right": 3,
+    "only_a_right": 1
+   },
+   "p1_openpose -> p3_pose_auto, tiers 2-4": {
+    "n_pairs": 11,
+    "a_right": 8,
+    "b_right": 11,
+    "only_b_right": 3,
+    "only_a_right": 0
+   }
+  }
+ },
+ "pose_pck_vs_human_pose_match": {
+  "all six conditions (pre-registered)": {
+   "n_images": 96,
+   "spearman": 0.1495348126255831
+  },
+  "without p3 (post-hoc)": {
+   "n_images": 80,
+   "spearman": 0.5841924350434211
+  },
+  "p0 and p1 only (post-hoc)": {
+   "n_images": 32,
+   "spearman": 0.7167933444993694
+  },
+  "controlled photo-pose conditions p1, p2, p5, p6 (post-hoc)": {
+   "n_images": 64,
+   "spearman": 0.23207795187251115
+  }
+ }
+}
