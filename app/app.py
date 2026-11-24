@@ -32,7 +32,7 @@ if str(ROOT) not in sys.path:
 from app import core, nsfw, policy  # noqa: E402
 
 POSE_MODULE = os.environ.get("APP_POSE_MODULE", "pose")          # C's public entry point (real presets; stubs until each lands)
-POST_MODULE = os.environ.get("APP_POST_MODULE", "post.stub")     # Day 2: switch to D's real post module
+POST_MODULE = os.environ.get("APP_POST_MODULE", "post.api")      # D's real hi-res and GFPGAN (lazy imports)
 CACHE_EVERY_S, CACHE_MAX_AGE_S = 60, 300                         # Gradio delete_cache; N is measured, see APP.md
 OUT_DIR = Path(tempfile.gettempdir()) / "nrv_app_outputs"
 POSE_MODES = ["none", "preset", "upload photo", "auto from text"]
@@ -40,6 +40,8 @@ POSE_MODES = ["none", "preset", "upload photo", "auto from text"]
 DEFAULTS = core.defaults()
 
 
+STUB_POSE_WARNING = ("Reading a pose from your input is not available in this build yet: a fixed standing figure was "
+                     "used instead.")
 IMPORT_ERRORS: dict[str, str] = {}      # module name -> why it could not be imported (shown in the server log)
 
 
@@ -105,6 +107,8 @@ class Engine:
             if photo_path:
                 _delete(photo_path)                              # the photo is not needed once we have a skeleton
         warnings = list(ctrl.get("warnings", [])) if isinstance(ctrl, dict) else []
+        if any(str(w).startswith("stub:") for w in warnings):    # pose/stub.py: the input was ignored
+            warnings = [w for w in warnings if not str(w).startswith("stub:")] + [STUB_POSE_WARNING]
         if isinstance(ctrl, dict) and ctrl.get("n_people", 1) == 0:
             return None, warnings + ["No person was found, so no pose was used."]
         return ctrl, warnings
@@ -123,12 +127,15 @@ class Engine:
 
     def postprocess(self, image, positive, negative, seed, hires, restore, style=None):
         done = []
-        if self.post is None:
+        if self.post is None or getattr(self.post, "IS_STUB", False):    # never record a step that did nothing
             return image, done
         if hires:
             image = self.post.hires(image, positive, negative, seed, lora_scale=style); done.append("hires")
         if restore:
-            image = self.post.restore_faces(image); done.append("restore_faces")
+            try:
+                image = self.post.restore_faces(image); done.append("restore_faces")
+            except ImportError as e:                             # GFPGAN is an optional install (post/install_post.sh)
+                print(f"[app] face restoration unavailable: {e}", file=sys.stderr)
         return image, done
 
 
@@ -169,6 +176,10 @@ def make_handler(engine: Engine):
                                 "but was not applied.")
             image, post_done = engine.postprocess(image, prompt["positive"], prompt["negative"], seed,
                                                   post_hires, post_restore, style)
+            for wanted, key, label in ((post_hires, "hires", "Higher resolution"),
+                                       (post_restore, "restore_faces", "Face restoration")):
+                if wanted and key not in post_done:
+                    warnings.append(f"{label} is not available on this server, so it was not applied.")
             settings = core.settings_record(text, prompt, seed, style, pose_mode,
                                             pose_strength if pose_used else None,
                                             (ctrl or {}).get("source") if ctrl else None, post_done,
@@ -230,6 +241,14 @@ ABOUT = ("**About.** Research and coursework project. Images are AI-generated *i
          "sexualised, demeaning, hateful, gory content and real living people are refused (docs/CONTENT_POLICY.md).")
 UPLOAD_NOTE = ("Your photo is used only to extract a stick-figure pose. The app deletes it when your request finishes, "
                "and in any case within {n} minutes (measured; docs/APP.md).")
+UPLOAD_STUB_NOTE = ("**Reading the pose from a photo is not available in this build yet:** any photo gives the same fixed "
+                    "standing pose.\n\n")
+
+
+def _extract_is_stub() -> bool:
+    """True while `extract_pose` still comes from pose/stub.py; the note disappears when C's real one lands."""
+    fn = getattr(_import(POSE_MODULE), "extract_pose", None)
+    return getattr(fn, "__module__", "") == "pose.stub"
 
 
 def reveal(settings_json: str):
@@ -266,7 +285,7 @@ def build(engine: Engine | None):
                 pose_mode = gr.Radio(POSE_MODES, value="none", label="Pose")
                 preset = gr.Dropdown(presets, label="Preset pose", visible=False)
                 photo = gr.Image(type="filepath", sources=["upload"], label="Pose photo", visible=False)
-                photo_note = gr.Markdown(UPLOAD_NOTE.format(n=round(CACHE_MAX_AGE_S / 60 + CACHE_EVERY_S / 60)),
+                photo_note = gr.Markdown((UPLOAD_STUB_NOTE if _extract_is_stub() else "") + UPLOAD_NOTE.format(n=round(CACHE_MAX_AGE_S / 60 + CACHE_EVERY_S / 60)),
                                          visible=False)
                 style = _slider(gr, d["style_range"], d["style"], "Style strength", HELP_STYLE)
                 pose_strength = _slider(gr, d["pose_range"], d["pose"], "Pose strength", HELP_POSE)

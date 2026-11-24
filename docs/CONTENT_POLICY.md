@@ -51,7 +51,8 @@ The checks are deterministic: `app/policy.py` with `app/blocklist.json`.
   see the raw image.
 
 ## 4. Uploads
-- **Purpose:** a photo is used only to extract a stick-figure skeleton (C's `extract_pose`, which writes nothing).
+- **Purpose:** a photo is used only to extract a stick-figure skeleton (C's `extract_pose`, which writes nothing; still a stub on
+  `main`, so the photo's pose is not read yet).
 - **Deletion:** the app deletes the uploaded file in its handler as soon as the skeleton exists, including when the
   prompt is refused. Gradio's own upload cache is cleared on a timer (`delete_cache`).
 - **Measured N = 6 minutes** (`results/app_upload_cache.json`, `results/app_upload_cache_timer.json`; measured 23 Nov with the app's real Gradio layer and handler on the pinned Gradio 6.31.0, image generation stubbed on CPU):

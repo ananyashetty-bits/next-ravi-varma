@@ -3,6 +3,8 @@ members can call them before the real post/ functions land. Replaced by post/hir
 
 from PIL import Image
 
+IS_STUB = True        # the app does not record these steps as applied
+
 
 def hires(image: Image.Image, positive: str, negative: str, seed: int, method: str = "img2img",
           lora_scale=None, strength=None) -> Image.Image:
