@@ -19,8 +19,9 @@ baseline [−0.016, +0.069] and against `c1.0_ge0.8` [−0.014, +0.066], so the 
 among the three: **control 1.0, window 0-0.8, LoRA 1.0** (`results/control_rule_16pairs.json`,
 `docs/CONTROL.md` §2; merged into `config/m4.json`, approved by D).
 
-**What the ratings add** (not part of the rule): p1 → p2 is within the 0.25 band on style (+0.09), pose match
-(+0.16) and hands (+0.16); faces +0.25 [+0.03, +0.47] is the only CI clear of 0. The tuned window costs nothing.
+**What the ratings add** (not part of the rule): nothing. p1 and p2 images are near-identical (median pixel
+difference 2.1 of 255 vs 39.1 for p0 vs p1; `results/m4_p1_p2_similarity_dev.json`), so their rating differences
+(faces +0.25, others ≤ +0.16) are rater noise. The tuned window costs nothing and gains nothing.
 
 ## D2. Post-processing default: hi-res (p5) passes the rating test; face restoration (p6) is opt-in (S3)
 **Rule** (Overview §10 rule 2): post-processing is on by default only if, against p1, the mean **face** rating
@@ -40,8 +41,9 @@ no new artifact**; otherwise it stays opt-in. Face restoration stays an opt-in c
   spot-check result and makes the config-only change: `<<pending: D, spot check + config PR>>`.
 - p5 and p6 were made from D's own p1 base run (same prompts, seeds and baseline profile). B checked s09 seed 1:
   D's base image is byte-identical to A's rated p1 image (sha256 `8d63f5db…`), so p1 → p5/p6 compares the same base.
-- Caveats: faces passed by 0.06 and hands agreement between raters is low (weighted kappa 0.14), so the hands
-  half of the test is weak evidence.
+- Caveats: faces passed by 0.06, and two raters scoring the near-identical p1/p2 images already differ by 0.25 on
+  faces, so the pass is narrow. Hands agreement between raters is low (weighted kappa 0.14), so the hands half of
+  the test is weak evidence. p1 and p5 were rated in different rounds. The rule is applied as written.
 
 ## D3. Default pose source: a supplied pose (photo or preset), not "auto from text" (S3)
 **Rule** (Overview §10 rule 3): the better of p1 (photo skeleton) and p3 (`pose_from_text`) by human pose match;

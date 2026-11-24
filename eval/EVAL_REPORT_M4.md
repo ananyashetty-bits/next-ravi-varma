@@ -6,11 +6,12 @@ or the `results/<condition>@rrv_v1_dev_pose.json` files (#130, #143). Hypotheses
 
 **The short answer.** ControlNet fixes posture, not faces or hands. Adding OpenPose control (p0 → p1) raised human
 pose match by +1.59 points (1-5 scale; 95% CI [+1.09, +2.03], better on 14 of 16 pairs), but faces got **worse**
-(−0.44 [−0.78, −0.09]) and hands did not improve (−0.25 [−0.56, +0.06]). With the tuned setting the app uses (p2),
-faces and hands are back level with no control (−0.19 and −0.09, both CIs include 0). Hi-res post-processing (p5)
-is the one step that lifted faces past our 0.25 bar (+0.31 [+0.12, +0.53] over p1) without costing style; face
-restoration (p6) helped less (+0.19). Hands ratings are the least reliable score we collected (rater agreement
-kappa 0.14), so read every hands number as weak.
+(−0.44 [−0.78, −0.09]) and hands did not improve (−0.25 [−0.56, +0.06]). The tuned setting the app uses (p2)
+produces near-identical images to p1 (median pixel difference 2.1 of 255), so it does not change this. Hi-res
+post-processing (p5) is the one step that lifted faces past our 0.25 bar (+0.31 [+0.12, +0.53] over p1) without
+costing style, but only just: two raters scoring the same p1/p2 images already differ by 0.25 on faces (§2.8).
+Face restoration (p6) helped less (+0.19). Hands ratings are the least reliable score we collected (rater
+agreement kappa 0.14), so read every hands number as weak.
 
 ## 1. Setup
 
@@ -90,6 +91,9 @@ b − a, 95% CI, (win/tie/loss over 16 pairs).
 | p1 → p5 | −0.03 [−0.25, +0.22] (4/7/5) | +0.00 [−0.19, +0.19] (3/9/4) | **+0.31 [+0.12, +0.53] (8/7/1)** | +0.25 [+0.00, +0.50] (6/8/2) | +0.01 (2/13/1) |
 | p1 → p6 | +0.12 [−0.06, +0.31] (5/9/2) | +0.09 [−0.12, +0.31] (6/6/4) | +0.19 [+0.00, +0.34] (8/6/2) | +0.25 [+0.09, +0.41] (8/7/1) | −0.00 (0/16/0) |
 
+**p1 → p2 compares near-identical images** (§2.8): the window change alters the last 20% of the steps only, and the
+two images differ by a median of 2.1 of 255 per pixel. Its rating differences measure rater noise, not the setting.
+
 **Read with care:** p1 was rated in round 1 and p3/p5/p6 in round 2, on different sheets and days. Comparisons
 across rounds (p1 → p3, p5, p6) include any shift in how raters used the scale between sessions; comparisons inside
 a round (p0, p1, p2) do not.
@@ -141,8 +145,18 @@ over 32 ratings per condition (2 raters × 16 pairs; a rating can tick several b
 control is on (0 → 9), matching the face ratings. Nobody ticked "post-processing artifacts" for p5 or p6.
 
 ### 2.6 Comparison grids
-`<<pending: 6 grids (best, typical and worst p0 → p1 pairs, plus p3 and p5/p6 examples, including failures), made
-from the contact sheets with eval/grids.py>>`
+Seed-1 images cut from the blind contact sheets and labelled after unblinding (`eval/grids_m4.py`), each row:
+control skeleton | p0 | p1 | p2 | p3 | p5 | p6, with the two raters' mean style / pose / faces / hands. Failures are
+included on purpose.
+
+| Grid | Why it was picked |
+|---|---|
+| `docs/figures/grid_m4_dev_s02.png` | largest pose-match gain with control (p0 → p1 +3.0) |
+| `docs/figures/grid_m4_dev_s11.png` | the one pair where control lost on pose match (−0.5); faces −1.5 with control |
+| `docs/figures/grid_m4_dev_s15.png` | 3 figures, tier 4: faces −1.5 with control |
+| `docs/figures/grid_m4_dev_s18.png` | largest hi-res face gain (p1 → p5 +1.0); hands −1.5 with control |
+| `docs/figures/grid_m4_dev_s26.png` | failure: "pose followed but scene wrong" for p1, p2, p5 and p6 (no chariot) |
+| `docs/figures/grid_m4_dev_s31.png` | failure: p3 ignores the pose; control alone gives no pose gain here (0.0) |
 
 ### 2.7 Held-out
 `<<pending: held-out run (p0, p1, p2, p3, p5, p6 on the 6 private pairs, at the frozen sha; private detection
@@ -158,6 +172,13 @@ cache), held-out ratings, the same tables, and pose_from_text figure-count accur
 | style | 0.33 | 0.31 |
 | hands | 0.16 | 0.14 |
 
+**Rating noise, measured on near-identical images.** p1 and p2 differ by a median of 2.1 of 255 per pixel on the
+contact sheets (max 2.98; p0 vs p1: median 39.1, min 28.9; `results/m4_p1_p2_similarity_dev.json`). In all 16
+pairs the p1 and p2 images were rated by different raters. Their pair-mean ratings still differ by 0.34 (style,
+pose match, hands) to 0.44 (faces) on average, and on faces p2 came out +0.25 [+0.03, +0.47] higher. So a
+difference of about 0.25 can appear between two raters looking at the same picture; differences near the 0.25
+tie band (p1 → p5 faces +0.31, p1 → p6 +0.19) should be read as small.
+
 **`pose_pck` vs human pose match:** Spearman 0.15 per image over all six conditions (pre-registered). By the H-B3
 rule (< 0.3), PCK is dropped from the headline. Post-hoc: p3's PCK measures something different (its own
 skeleton); without p3 the correlation is 0.58 (80 images), and p0 + p1 alone give 0.72 (32 images). Inside the
@@ -167,13 +188,14 @@ controlled photo-pose conditions (p1, p2, p5, p6) it is 0.23, because they all s
 ## 3. What it means
 
 - **ControlNet fixes posture, not faces or hands.** Pose match rose 1.6-1.75 points with control and won on 14 of 16
-  pairs, and the right figure count went from 9/16 to 13/16. Faces got worse with baseline control and only came
-  back to level with the tuned window. This is the result H-B2 predicted (better posture does not give better
+  pairs, and the right figure count went from 9/16 to 13/16. Faces got worse with control (−0.44 for p1; p2's −0.19
+  is the same images rated by other raters). This is the result H-B2 predicted (better posture does not give better
   faces), and the raters' failure boxes say the same thing: "face distorted" appears only once control is on.
-- **The tuned window (p2) is worth keeping.** It changes nothing on the automated metrics, but raters gave it
-  slightly better faces than p1 (+0.25 [+0.03, +0.47]), and against p0 its style and face CIs both include 0
-  (p1's do not).
-- **Post-processing:** hi-res helps faces (+0.31) without costing style or pose; face restoration helps faces a
+- **The tuned window (p2) changes nothing we can measure.** Its images are near-identical to p1's (§2.8), so its
+  rating differences from p1 are rater noise. It stays the app default because the pre-registered rule picked it
+  (D1), and it costs nothing.
+- **Post-processing:** hi-res helps faces (+0.31, just above the 0.25 that rater noise alone produced) without
+  costing style or pose; face restoration helps faces a
   little less (+0.19) and, unexpectedly, did not cost style (+0.12). Under the pre-registered rule, hi-res passes
   and restoration does not (`docs/TEAM_DECISIONS_M4.md` D2).
 - **Pose from text (p3)** gets the head count right (15/16) but not the posture: raters scored it 1.78 on pose
@@ -201,6 +223,8 @@ controlled photo-pose conditions (p1, p2, p5, p6) it is 0.23, because they all s
 - **Raters:** the four team members, who knew the project and photographed the poses (rows were
   assigned at random, so raters could rate pairs made from their own photos). Calibration was skipped. Agreement is good for pose match, fair for faces and style, and poor
   for hands (kappa 0.14).
+- **Rater noise is about the size of the tie band:** two raters scoring near-identical images (p1, p2) differ by
+  0.25 on faces on average (§2.8).
 - **Two rating rounds:** p1 → p3/p5/p6 crosses rounds (§2.2). On sheet 2, p5 and p6 share a base image and often
   look alike, which could hint that two of the three codes are variants of each other (p1 was not on that sheet).
 - **Poses** come from 4 people's photos; body-only OpenPose (no hands or face keypoints, p8 not run).
