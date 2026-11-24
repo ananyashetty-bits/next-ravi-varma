@@ -230,7 +230,7 @@ ranges A's sweep covered).
 - ESRGAN ×2 is implemented (`--method hires_esrgan`) but **was not run**, so it is not evaluated (cut list, Overview §14).
 
 ```
-APP_POST_MODULE=post.api python app/app.py --share --auth user:password
+python app/app.py --share --auth user:password
 python post/run_post.py --manifest $IMG/p1_openpose@rrv_v1/dev/manifest.json --condition p5_hires --method hires_img2img --out $IMG/p5_hires@rrv_v1/dev
 python post/run_post.py --manifest $IMG/p1_openpose@rrv_v1/dev/manifest.json --condition p6_restore --method restore_gfpgan --out $IMG/p6_restore@rrv_v1/dev
 ```
@@ -331,6 +331,8 @@ not a rating, and B's blind ratings decide:
 - ESRGAN was not run. GFPGAN was tested on SD paintings only. In the first 12-pair run, 23 of 24 images had a face
   found and one (`s25_s2`, a leaping figure) had none (from the p6 run log; not in `results/`).
 - Free Colab: one GPU session, one job at a time, the session can time out, and the public link dies with it.
+- **Photo poses are not live yet:** `extract_pose` on `main` is C's stub, so any uploaded photo gives a fixed standing
+  figure (the app says so). p1's photo skeletons came from `eval/make_pair_pose.py`, not from this path.
 - Uploads pass through Gradio's temporary cache, and the link goes through Gradio's relay.
 - The output NSFW filter is a soft blur-and-confirm backstop (`app/nsfw.py`, `docs/CONTENT_POLICY.md` §5). It sits
   at the boundary of B's audit (1 of 15 real paintings flagged, a false positive), so it will blur some innocent
@@ -343,7 +345,7 @@ demeaning depictions of deities, hateful content, real named living people and g
 blocklist: paraphrases, misspellings and other languages can get through. The output passes a soft NSFW blur-and-confirm
 filter (§4, `docs/CONTENT_POLICY.md` §5). There is no human moderation (`docs/CONTENT_POLICY.md` §7).
 
-**Where do uploads go?** A photo is used only to extract a skeleton and is deleted by the app as soon as the skeleton
+**Where do uploads go?** A photo is meant only for extracting a skeleton (still a stub, §4) and is deleted by the app as soon as the skeleton
 exists (measured: no copy left when the request finished). If that ever fails, Gradio's own timer removes it; measured at 360 s, so the app
 promises deletion within 6 minutes. We do not claim they
 are "not saved".
@@ -403,7 +405,8 @@ The checks are deterministic: `app/policy.py` with `app/blocklist.json`.
   see the raw image.
 
 #### 4. Uploads
-- **Purpose:** a photo is used only to extract a stick-figure skeleton (C's `extract_pose`, which writes nothing).
+- **Purpose:** a photo is used only to extract a stick-figure skeleton (C's `extract_pose`, which writes nothing; still a stub on
+  `main`, so the photo's pose is not read yet).
 - **Deletion:** the app deletes the uploaded file in its handler as soon as the skeleton exists, including when the
   prompt is refused. Gradio's own upload cache is cleared on a timer (`delete_cache`).
 - **Measured N = 6 minutes** (`results/app_upload_cache.json`, `results/app_upload_cache_timer.json`; measured 23 Nov with the app's real Gradio layer and handler on the pinned Gradio 6.31.0, image generation stubbed on CPU):

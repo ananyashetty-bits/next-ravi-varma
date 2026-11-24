@@ -26,13 +26,14 @@ controlnet_aux 0.0.10, gradio 6.31.0, torch 2.14.1+cu130; OpenPose ControlNet re
 
 ## M4: run the app
 ```bash
-APP_POST_MODULE=post.api python app/app.py --share --auth user:password
+python app/app.py --share --auth user:password
 ```
 - `--share` prints a public `*.gradio.live` link. It goes through Gradio's relay, **dies when the Colab session
   ends**, and anyone who has it can use the GPU, so always set `--auth` (`docs/CONTENT_POLICY.md` §6).
-- `APP_POST_MODULE=post.api` switches on real hi-res and face restoration (the default is the pass-through stub,
-  and the checkboxes stay off by default). `APP_POSE_MODULE` selects the pose module (default `pose`, C's public entry point:
-  real presets; `pose_from_text` and photo extraction switch to C's real code there as they land).
+- Hi-res and face restoration are opt-in checkboxes. Face restoration needs `post/install_post.sh`; without it the app
+  says it was not applied (`APP_POST_MODULE=post.stub` turns both off). `APP_POSE_MODULE` selects the pose module (default `pose`, C's public entry point:
+  real presets and `pose_from_text`). **Photo extraction (`extract_pose`) is still a stub: any uploaded photo gives the
+  same fixed standing pose, and the app says so**.
 - Without a GPU, `python app/app.py --no_model` builds the UI only.
 - Inputs: scene text, pose mode (none / preset / upload photo / auto from text), style slider, pose slider, seed,
   post-processing boxes. Outputs: the labelled painting, the skeleton, the prompt and parsed characters, and a settings
@@ -63,7 +64,7 @@ same content. Without a pose, `text_to_image(text, seed=<seed>, mode="raw")` (se
 reproduces the base image. With a pose, use `run_batch.py` with the same `--seeds` and control flags.
 
 ## M4: uploads and privacy
-A photo you upload is used **only to extract a skeleton**. The app deletes the uploaded file as soon as the skeleton
+A photo you upload is meant **only for extracting a skeleton** (extraction is still a stub, see above). The app deletes the uploaded file as soon as the skeleton
 exists (also when the prompt is refused): measured, no copy is left when the request finishes. If that ever fails,
 Gradio's own timer removes it (measured at 360 s), so **uploads are deleted within N = 6 minutes**
 (`results/app_upload_cache*.json`; temp path `/tmp/gradio`, `docs/APP.md`). We do not claim that uploads are

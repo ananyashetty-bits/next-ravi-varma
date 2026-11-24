@@ -89,3 +89,41 @@ def test_handler_records_window_and_no_not_switched_on_warning():
     status, settings = out[5], json.loads(out[3])
     assert "not available" not in status and "not switched on" not in status
     assert settings["control_scale"] == 0.8 and settings["control_guidance"] == A.DEFAULTS["pose_window"]
+
+
+def _post_engine(post):
+    e = object.__new__(A.Engine)
+    e.post = post
+    return e
+
+
+def test_default_post_module_is_real_and_stub_is_never_recorded():
+    import importlib
+    import os
+    if "APP_POST_MODULE" not in os.environ:
+        assert A.POST_MODULE == "post.api"
+    img = Image.new("RGB", (8, 8))
+    assert _post_engine(importlib.import_module("post.stub")).postprocess(img, "p", "n", 1, True, True) == (img, [])
+
+
+def test_missing_gfpgan_keeps_the_image_and_is_not_recorded():
+    def no_gfpgan(image):
+        raise ModuleNotFoundError("gfpgan")
+    post = types.SimpleNamespace(hires=lambda im, *a, **k: im, restore_faces=no_gfpgan)
+    img = Image.new("RGB", (8, 8))
+    assert _post_engine(post).postprocess(img, "p", "n", 1, True, True) == (img, ["hires"])
+
+
+def test_handler_says_when_post_was_not_applied():
+    out = A.make_handler(_PoseEngine())("Sita under a tree", "none", None, None, 1.0, 0.8, 5, True, False)
+    assert "Higher resolution is not available" in out[5] and json.loads(out[3])["post"] == []
+
+
+def test_stub_photo_pose_is_announced(tmp_path):
+    import importlib
+    e = object.__new__(A.Engine)
+    e.pose = importlib.import_module("pose.stub")
+    p = tmp_path / "x.png"
+    Image.new("RGB", (8, 8)).save(p)
+    ctrl, warnings = e.control_image("upload photo", None, str(p), None, "")
+    assert ctrl is not None and warnings == [A.STUB_POSE_WARNING] and not p.exists()
