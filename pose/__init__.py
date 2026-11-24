@@ -4,6 +4,6 @@ make_pose and pose_from_text are real. extract_pose and extract_edges are stubs 
 replaces its stub import below, so nobody else has to change an import line."""
 from pose.presets import make_pose                          # real
 from pose.text import pose_from_text                        # real
-from pose.stub import extract_pose, extract_edges           # stubs for now
+from pose.extract import extract_pose, extract_edges           # stubs for now
 
 __all__ = ["make_pose", "pose_from_text", "extract_pose", "extract_edges"]
