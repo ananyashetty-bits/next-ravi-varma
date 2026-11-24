@@ -1,0 +1,24 @@
+{
+ "note": "tested = drawn by pose.presets and obeyed by ControlNet (baseline profile, 2 seeds, neutral prompt, T4). untested = valid PoseJSON that passes the CI layout checks but has NOT been run through ControlNet yet.",
+ "status": {
+  "standing": "tested",
+  "seated": "tested",
+  "kneeling": "tested",
+  "lying": "untested",
+  "raised_arms": "untested",
+  "namaste": "untested",
+  "kneel_namaste": "untested",
+  "archer": "untested",
+  "pointing": "untested",
+  "walking": "untested",
+  "embrace": "untested",
+  "kneeling_before_standing": "tested",
+  "seated_with_attendant": "untested",
+  "bowing_pair": "untested",
+  "standing_pair": "untested",
+  "walking_pair": "untested",
+  "standing_trio": "untested",
+  "seated_trio": "untested",
+  "kneeling_before_two": "untested"
+ }
+}
