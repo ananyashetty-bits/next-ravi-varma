@@ -1,0 +1,32 @@
+{
+ "n_scenes": 16,
+ "scenes": [
+  "s01",
+  "s02",
+  "s04",
+  "s05",
+  "s09",
+  "s10",
+  "s11",
+  "s15",
+  "s18",
+  "s19",
+  "s21",
+  "s22",
+  "s25",
+  "s26",
+  "s27",
+  "s31"
+ ],
+ "winner": "c1.0_ge0.8",
+ "tied": [
+  "c1.2_l1.0",
+  "p1 baseline",
+  "c1.0_ge0.8"
+ ],
+ "settings": {
+  "control_scale": 1.0,
+  "lora_scale": 1.0,
+  "guidance_end": 0.8
+ }
+}
