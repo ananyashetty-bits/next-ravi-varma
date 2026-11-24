@@ -20,7 +20,9 @@ del tok
 !bash post/install_post.sh                 # only for face restoration (GFPGAN); hi-res needs nothing extra
 ```
 Tested on a free T4 with Python 3.13, torch 2.14.1+cu130, diffusers 0.40.0, gradio 6.31.0 (post-processing pins in
-`post/requirements_post.txt`). Run the cells in order. A's full pins block: `<<pending: A, CONTROL.md>>`.
+`post/requirements_post.txt`). Run the cells in order. A's pins (`docs/CONTROL.md` §1): diffusers 0.40.0, transformers 5.17.0, peft 0.21.0, accelerate 1.15.0,
+controlnet_aux 0.0.10, gradio 6.31.0, torch 2.14.1+cu130; OpenPose ControlNet revision
+`9ae9f970358db89e211b87c915f9535c6686d5ba`.
 
 ## M4: run the app
 ```bash

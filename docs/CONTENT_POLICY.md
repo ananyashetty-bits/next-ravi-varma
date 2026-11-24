@@ -64,7 +64,8 @@ The checks are deterministic: `app/policy.py` with `app/blocklist.json`.
 - **The app tells the user,** next to the upload box: the photo is used only for the pose and deleted when the
   request finishes, and in any case within 6 minutes. **Nothing says "not saved".**
 - **Canny (edge) uploads are not offered for photos of people,** because edges carry a person's silhouette. Painting
-  uploads also stay off if C's p4 finds that composition transfer redraws the painting (`<<pending: C's p4>>`).
+  uploads also stay off: p4 (composition from a painting) was not run (`docs/TEAM_DECISIONS_M4.md` D5), so
+  there is no evidence about whether it copies the painting.
 
 ## 5. Output NSFW filter
 - **Measurement (B, `results/audit_real_paintings.json`, run 22 Nov 2026):** classifier
