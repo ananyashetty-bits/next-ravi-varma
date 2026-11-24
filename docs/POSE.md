@@ -23,7 +23,7 @@ Updated 25 Nov 2026 with B's dev and held-out evaluation metrics (`results/m4_ex
 - **H-C1 (`pose_from_text` figure count & pose match):** Figure count accuracy is high on dev (15/16) and moderate on held-out (4/6), while human pose-match rating for coarse rule-based templates (`1.78` dev / `2.25` held-out) is far below photo-extracted poses (`3.72` dev / `3.83` held-out).
 
 ### Photo extraction (`pose/extract.py`) & Cold-start verification
-- **Unit & robustness suite:** `pytest -q tests` on `main` passes (**435 passed, 10 skipped** on CPU without GPU/ControlNet weights), covering valid single/multi-person skeletons, blank/no-person images (returns empty people list + friendly warning without raising), grayscale/RGBA inputs, and small/non-square aspect ratios.
+- **Unit & robustness suite:** `pytest -q tests` on `main` passes (**452 passed, 1 skipped** in Colab (435 passed, 10 skipped on CPU without optional packages)), covering valid single/multi-person skeletons, blank/no-person images (returns empty people list + friendly warning without raising), grayscale/RGBA inputs, and small/non-square aspect ratios.
 - **Cold-start test (`docs/cold_start_25nov.md`, fresh Colab T4 session, 25 Nov 2026):**
   - **CLI seed reproduction:** Verified (`s01_s1.png` reproduced deterministically).
   - **Gradio UI (`app/app.py --share --auth user:password`):** Verified all 6 UI paths (misspelled name `"Arjunaah..."` with `auto from text`, 2-figure `preset`, `upload photo`, empty prompt, 300-word prompt, and no-person photo) complete with friendly UI messages and no Python tracebacks. Filed issue #158 (`needs:D`) regarding uploaded input photos remaining in `/tmp/gradio` until Gradio's 360 s timer when the handler finishes.
