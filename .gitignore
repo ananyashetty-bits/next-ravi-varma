@@ -10,3 +10,5 @@ __pycache__/
 !docs/figures/*.png
 !fixtures/pairs/*.png
 !eval/poses/**/*.png
+!pose/library/*.png
+*.egg-info/
