@@ -43,7 +43,11 @@ def facing_camera_ok(pj):
     bad = []
     for i, p in enumerate(pj["people"]):
         rs, ls = p["keypoints"][2], p["keypoints"][5]
-        if present(rs, 0) and present(ls, 0) and rs[0] >= ls[0]:
+        if not (present(rs, 0) and present(ls, 0)):
+            continue
+        if abs(rs[1] - ls[1]) > abs(rs[0] - ls[0]):      # shoulders more vertical than horizontal: a lying figure
+            continue
+        if rs[0] >= ls[0]:
             bad.append(i)
     return bad
 
@@ -72,8 +76,8 @@ def layout_warnings(pj, margin=0.03, min_height=0.30, max_torso_iou=0.10):
         x0, y0, x1, y1 = _box(pts)
         if x0 < margin or y0 < margin or x1 > 1 - margin or y1 > 1 - margin:
             warnings.append(f"person {i} touches or leaves the canvas edge")
-        if y1 - y0 < min_height:
-            warnings.append(f"person {i} is small ({y1 - y0:.0%} of the canvas height)")
+        if max(y1 - y0, x1 - x0) < min_height:
+            warnings.append(f"person {i} is small ({max(y1 - y0, x1 - x0):.0%} of the canvas)")
         torso = [(p["keypoints"][j][0], p["keypoints"][j][1]) for j in (2, 5, 8, 11) if present(p["keypoints"][j], 0)]
         torsos.append((i, _box(torso)) if len(torso) >= 2 else None)
     torsos = [t for t in torsos if t]
