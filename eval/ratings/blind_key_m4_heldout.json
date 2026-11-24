@@ -1,0 +1,158 @@
+{
+ "m4h01": {
+  "C4": {
+   "condition": "p5_hires",
+   "image": "/content/drive/MyDrive/m4/heldout_private/run/images/p5_hires@rrv_v1/heldout/m4h01_s1_512.png"
+  },
+  "R3": {
+   "condition": "p0_m3_default",
+   "image": "/content/drive/MyDrive/m4/heldout_private/run/images/p0_m3_default@rrv_v1/heldout/m4h01_s1.png"
+  },
+  "D2": {
+   "condition": "p6_restore",
+   "image": "/content/drive/MyDrive/m4/heldout_private/run/images/p6_restore@rrv_v1/heldout/m4h01_s1_512.png"
+  },
+  "L7": {
+   "condition": "p3_pose_auto",
+   "image": "/content/drive/MyDrive/m4/heldout_private/run/images/p3_pose_auto@rrv_v1/heldout/m4h01_s1.png"
+  },
+  "S7": {
+   "condition": "p1_openpose",
+   "image": "/content/drive/MyDrive/m4/heldout_private/run/images/p1_openpose@rrv_v1/heldout/m4h01_s1.png"
+  },
+  "B8": {
+   "condition": "p2_openpose_tuned",
+   "image": "/content/drive/MyDrive/m4/heldout_private/run/images/p2_openpose_tuned@rrv_v1/heldout/m4h01_s1.png"
+  }
+ },
+ "m4h02": {
+  "N5": {
+   "condition": "p2_openpose_tuned",
+   "image": "/content/drive/MyDrive/m4/heldout_private/run/images/p2_openpose_tuned@rrv_v1/heldout/m4h02_s1.png"
+  },
+  "C3": {
+   "condition": "p6_restore",
+   "image": "/content/drive/MyDrive/m4/heldout_private/run/images/p6_restore@rrv_v1/heldout/m4h02_s1_512.png"
+  },
+  "H7": {
+   "condition": "p3_pose_auto",
+   "image": "/content/drive/MyDrive/m4/heldout_private/run/images/p3_pose_auto@rrv_v1/heldout/m4h02_s1.png"
+  },
+  "C9": {
+   "condition": "p0_m3_default",
+   "image": "/content/drive/MyDrive/m4/heldout_private/run/images/p0_m3_default@rrv_v1/heldout/m4h02_s1.png"
+  },
+  "R7": {
+   "condition": "p1_openpose",
+   "image": "/content/drive/MyDrive/m4/heldout_private/run/images/p1_openpose@rrv_v1/heldout/m4h02_s1.png"
+  },
+  "N6": {
+   "condition": "p5_hires",
+   "image": "/content/drive/MyDrive/m4/heldout_private/run/images/p5_hires@rrv_v1/heldout/m4h02_s1_512.png"
+  }
+ },
+ "m4h03": {
+  "S5": {
+   "condition": "p1_openpose",
+   "image": "/content/drive/MyDrive/m4/heldout_private/run/images/p1_openpose@rrv_v1/heldout/m4h03_s1.png"
+  },
+  "S7": {
+   "condition": "p2_openpose_tuned",
+   "image": "/content/drive/MyDrive/m4/heldout_private/run/images/p2_openpose_tuned@rrv_v1/heldout/m4h03_s1.png"
+  },
+  "M7": {
+   "condition": "p3_pose_auto",
+   "image": "/content/drive/MyDrive/m4/heldout_private/run/images/p3_pose_auto@rrv_v1/heldout/m4h03_s1.png"
+  },
+  "B6": {
+   "condition": "p6_restore",
+   "image": "/content/drive/MyDrive/m4/heldout_private/run/images/p6_restore@rrv_v1/heldout/m4h03_s1_512.png"
+  },
+  "H2": {
+   "condition": "p5_hires",
+   "image": "/content/drive/MyDrive/m4/heldout_private/run/images/p5_hires@rrv_v1/heldout/m4h03_s1_512.png"
+  },
+  "B5": {
+   "condition": "p0_m3_default",
+   "image": "/content/drive/MyDrive/m4/heldout_private/run/images/p0_m3_default@rrv_v1/heldout/m4h03_s1.png"
+  }
+ },
+ "m4h04": {
+  "R4": {
+   "condition": "p3_pose_auto",
+   "image": "/content/drive/MyDrive/m4/heldout_private/run/images/p3_pose_auto@rrv_v1/heldout/m4h04_s1.png"
+  },
+  "D8": {
+   "condition": "p0_m3_default",
+   "image": "/content/drive/MyDrive/m4/heldout_private/run/images/p0_m3_default@rrv_v1/heldout/m4h04_s1.png"
+  },
+  "S4": {
+   "condition": "p6_restore",
+   "image": "/content/drive/MyDrive/m4/heldout_private/run/images/p6_restore@rrv_v1/heldout/m4h04_s1_512.png"
+  },
+  "J8": {
+   "condition": "p2_openpose_tuned",
+   "image": "/content/drive/MyDrive/m4/heldout_private/run/images/p2_openpose_tuned@rrv_v1/heldout/m4h04_s1.png"
+  },
+  "R9": {
+   "condition": "p1_openpose",
+   "image": "/content/drive/MyDrive/m4/heldout_private/run/images/p1_openpose@rrv_v1/heldout/m4h04_s1.png"
+  },
+  "V8": {
+   "condition": "p5_hires",
+   "image": "/content/drive/MyDrive/m4/heldout_private/run/images/p5_hires@rrv_v1/heldout/m4h04_s1_512.png"
+  }
+ },
+ "m4h05": {
+  "R6": {
+   "condition": "p2_openpose_tuned",
+   "image": "/content/drive/MyDrive/m4/heldout_private/run/images/p2_openpose_tuned@rrv_v1/heldout/m4h05_s1.png"
+  },
+  "W8": {
+   "condition": "p5_hires",
+   "image": "/content/drive/MyDrive/m4/heldout_private/run/images/p5_hires@rrv_v1/heldout/m4h05_s1_512.png"
+  },
+  "C2": {
+   "condition": "p3_pose_auto",
+   "image": "/content/drive/MyDrive/m4/heldout_private/run/images/p3_pose_auto@rrv_v1/heldout/m4h05_s1.png"
+  },
+  "S2": {
+   "condition": "p6_restore",
+   "image": "/content/drive/MyDrive/m4/heldout_private/run/images/p6_restore@rrv_v1/heldout/m4h05_s1_512.png"
+  },
+  "B9": {
+   "condition": "p0_m3_default",
+   "image": "/content/drive/MyDrive/m4/heldout_private/run/images/p0_m3_default@rrv_v1/heldout/m4h05_s1.png"
+  },
+  "T8": {
+   "condition": "p1_openpose",
+   "image": "/content/drive/MyDrive/m4/heldout_private/run/images/p1_openpose@rrv_v1/heldout/m4h05_s1.png"
+  }
+ },
+ "m4h06": {
+  "S7": {
+   "condition": "p0_m3_default",
+   "image": "/content/drive/MyDrive/m4/heldout_private/run/images/p0_m3_default@rrv_v1/heldout/m4h06_s1.png"
+  },
+  "O6": {
+   "condition": "p2_openpose_tuned",
+   "image": "/content/drive/MyDrive/m4/heldout_private/run/images/p2_openpose_tuned@rrv_v1/heldout/m4h06_s1.png"
+  },
+  "L6": {
+   "condition": "p6_restore",
+   "image": "/content/drive/MyDrive/m4/heldout_private/run/images/p6_restore@rrv_v1/heldout/m4h06_s1_512.png"
+  },
+  "J6": {
+   "condition": "p5_hires",
+   "image": "/content/drive/MyDrive/m4/heldout_private/run/images/p5_hires@rrv_v1/heldout/m4h06_s1_512.png"
+  },
+  "H9": {
+   "condition": "p3_pose_auto",
+   "image": "/content/drive/MyDrive/m4/heldout_private/run/images/p3_pose_auto@rrv_v1/heldout/m4h06_s1.png"
+  },
+  "Z5": {
+   "condition": "p1_openpose",
+   "image": "/content/drive/MyDrive/m4/heldout_private/run/images/p1_openpose@rrv_v1/heldout/m4h06_s1.png"
+  }
+ }
+}

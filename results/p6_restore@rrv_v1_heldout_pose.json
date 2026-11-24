@@ -1,0 +1,427 @@
+{
+ "manifest": "/content/drive/MyDrive/m4/heldout_private/run/images/p6_restore@rrv_v1/heldout/manifest.json",
+ "scenes_file": "/content/ho_private/eval/test_scenes_heldout_m4.json",
+ "pairs_file": "/content/ho_private/eval/test_pairs_heldout.json",
+ "checklist_overrides": [],
+ "scored_at": "2026-11-24T16:54:59.565448",
+ "judge": "Qwen/Qwen2-VL-2B-Instruct",
+ "n_images": 12,
+ "summary": {
+  "p6_restore": {
+   "checklist": {
+    "mean": 0.6797107282888005,
+    "ci95": [
+     0.6017865985631943,
+     0.7573902507623037
+    ],
+    "n_scenes": 6
+   },
+   "clip_raw": {
+    "mean": 0.2852868512272835,
+    "ci95": [
+     0.2573960820833842,
+     0.31220866243044537
+    ],
+    "n_scenes": 6
+   },
+   "style_margin": {
+    "mean": 0.11256320277849834,
+    "ci95": [
+     0.09824337065219879,
+     0.122100164492925
+    ],
+    "n_scenes": 6
+   },
+   "max_train_dino": {
+    "mean": 0.6703723867734274,
+    "ci95": [
+     0.6270303080479304,
+     0.7098181545734406
+    ],
+    "n_scenes": 6
+   },
+   "pose_pck": {
+    "mean": 0.8503637566137566,
+    "ci95": [
+     0.7465277777777777,
+     0.9371693121693122
+    ],
+    "n_scenes": 6
+   },
+   "pose_detected": {
+    "mean": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ],
+    "n_scenes": 6
+   }
+  }
+ },
+ "per_scene": {
+  "p6_restore": {
+   "checklist": {
+    "m4h01": 0.7482913509011269,
+    "m4h02": 0.8283668326006995,
+    "m4h03": 0.557257236705886,
+    "m4h04": 0.7054375741216872,
+    "m4h05": 0.685587563448482,
+    "m4h06": 0.5533238119549222
+   },
+   "clip_raw": {
+    "m4h01": 0.3146310895681381,
+    "m4h02": 0.32500994205474854,
+    "m4h03": 0.2621847838163376,
+    "m4h04": 0.32320810854434967,
+    "m4h05": 0.24069499969482422,
+    "m4h06": 0.24599218368530273
+   },
+   "style_margin": {
+    "m4h01": 0.11933714151382446,
+    "m4h02": 0.07891291379928589,
+    "m4h03": 0.11731112003326416,
+    "m4h04": 0.11398288607597351,
+    "m4h05": 0.11809924244880676,
+    "m4h06": 0.1277359127998352
+   },
+   "max_train_dino": {
+    "m4h01": 0.5847958028316498,
+    "m4h02": 0.6451734304428101,
+    "m4h03": 0.6347486078739166,
+    "m4h04": 0.7281095087528229,
+    "m4h05": 0.7015345692634583,
+    "m4h06": 0.7278724014759064
+   },
+   "pose_pck": {
+    "m4h01": 0.9722222222222222,
+    "m4h02": 0.75,
+    "m4h03": 0.9285714285714286,
+    "m4h04": 0.6388888888888888,
+    "m4h05": 0.875,
+    "m4h06": 0.9375
+   },
+   "pose_detected": {
+    "m4h01": 1.0,
+    "m4h02": 1.0,
+    "m4h03": 1.0,
+    "m4h04": 1.0,
+    "m4h05": 1.0,
+    "m4h06": 1.0
+   }
+  }
+ },
+ "items": [
+  {
+   "scene_id": "m4h01",
+   "condition": "p6_restore",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m4/heldout_private/run/images/p6_restore@rrv_v1/heldout/m4h01_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Draupadi standing alone at a palace window at dusk, her long hair loose, looking out, oil painting, canvas texture, classical indian art",
+   "control_pose_json": null,
+   "control_file": "/content/next-ravi-varma-m3/eval/poses/heldout/m4h01.png",
+   "checklist": 0.7363983616232872,
+   "checklist_detail": {
+    "c1": 0.8598424196243286,
+    "c2": 0.9548491835594177,
+    "c3": 0.5170589089393616,
+    "c4": 0.6202595829963684,
+    "c5": 0.5042256116867065
+   },
+   "clip_raw": 0.33268076181411743,
+   "style_margin": 0.11468225717544556,
+   "max_train_dino": 0.5810104012489319,
+   "pose_pck": 0.9444444444444444,
+   "pose_detected": 1.0,
+   "n_people_out": 1,
+   "n_people_expected": 1,
+   "pose_joint_recall": 0.9444444444444444
+  },
+  {
+   "scene_id": "m4h01",
+   "condition": "p6_restore",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m4/heldout_private/run/images/p6_restore@rrv_v1/heldout/m4h01_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Draupadi standing alone at a palace window at dusk, her long hair loose, looking out, oil painting, canvas texture, classical indian art",
+   "control_pose_json": null,
+   "control_file": "/content/next-ravi-varma-m3/eval/poses/heldout/m4h01.png",
+   "checklist": 0.7601843401789665,
+   "checklist_detail": {
+    "c1": 0.8598778247833252,
+    "c2": 0.9289376735687256,
+    "c3": 0.4979243278503418,
+    "c4": 0.7215677499771118,
+    "c5": 0.5627838969230652
+   },
+   "clip_raw": 0.2965814173221588,
+   "style_margin": 0.12399202585220337,
+   "max_train_dino": 0.5885812044143677,
+   "pose_pck": 1.0,
+   "pose_detected": 1.0,
+   "n_people_out": 1,
+   "n_people_expected": 1,
+   "pose_joint_recall": 1.0
+  },
+  {
+   "scene_id": "m4h02",
+   "condition": "p6_restore",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m4/heldout_private/run/images/p6_restore@rrv_v1/heldout/m4h02_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Kunti standing on a riverbank at dawn, both hands raised, offering water to the rising sun, oil painting, canvas texture, classical indian art",
+   "control_pose_json": null,
+   "control_file": "/content/next-ravi-varma-m3/eval/poses/heldout/m4h02.png",
+   "checklist": 0.8809138536453247,
+   "checklist_detail": {
+    "c1": 0.8654991984367371,
+    "c2": 0.7618871331214905,
+    "c3": 0.9797526597976685,
+    "c4": 0.8621112704277039,
+    "c5": 0.9897241592407227
+   },
+   "clip_raw": 0.3329589366912842,
+   "style_margin": 0.08527493476867676,
+   "max_train_dino": 0.6700956225395203,
+   "pose_pck": 0.7857142857142857,
+   "pose_detected": 1.0,
+   "n_people_out": 1,
+   "n_people_expected": 1,
+   "pose_joint_recall": 1.0
+  },
+  {
+   "scene_id": "m4h02",
+   "condition": "p6_restore",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m4/heldout_private/run/images/p6_restore@rrv_v1/heldout/m4h02_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Kunti standing on a riverbank at dawn, both hands raised, offering water to the rising sun, oil painting, canvas texture, classical indian art",
+   "control_pose_json": null,
+   "control_file": "/content/next-ravi-varma-m3/eval/poses/heldout/m4h02.png",
+   "checklist": 0.7758198115560744,
+   "checklist_detail": {
+    "c1": 0.8672707080841064,
+    "c2": 0.31852325797080994,
+    "c3": 0.9770917296409607,
+    "c4": 0.841396689414978,
+    "c5": 0.973813533782959
+   },
+   "clip_raw": 0.3170609474182129,
+   "style_margin": 0.07255089282989502,
+   "max_train_dino": 0.6202512383460999,
+   "pose_pck": 0.7142857142857143,
+   "pose_detected": 1.0,
+   "n_people_out": 1,
+   "n_people_expected": 1,
+   "pose_joint_recall": 0.9285714285714286
+  },
+  {
+   "scene_id": "m4h03",
+   "condition": "p6_restore",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m4/heldout_private/run/images/p6_restore@rrv_v1/heldout/m4h03_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Shiva seated in meditation on a tiger skin while Parvati stands beside him holding a garland, oil painting, canvas texture, classical indian art",
+   "control_pose_json": null,
+   "control_file": "/content/next-ravi-varma-m3/eval/poses/heldout/m4h03.png",
+   "checklist": 0.5204502377245162,
+   "checklist_detail": {
+    "c1": 0.861591637134552,
+    "c2": 0.8461667895317078,
+    "c3": 0.234028622508049,
+    "c4": 0.19588173925876617,
+    "c5": 0.40871456265449524
+   },
+   "clip_raw": 0.2884337604045868,
+   "style_margin": 0.0957534909248352,
+   "max_train_dino": 0.5140360593795776,
+   "pose_pck": 0.8857142857142857,
+   "pose_detected": 1.0,
+   "n_people_out": 2,
+   "n_people_expected": 2,
+   "pose_joint_recall": 0.9714285714285714
+  },
+  {
+   "scene_id": "m4h03",
+   "condition": "p6_restore",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m4/heldout_private/run/images/p6_restore@rrv_v1/heldout/m4h03_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Shiva seated in meditation on a tiger skin while Parvati stands beside him holding a garland, oil painting, canvas texture, classical indian art",
+   "control_pose_json": null,
+   "control_file": "/content/next-ravi-varma-m3/eval/poses/heldout/m4h03.png",
+   "checklist": 0.5940642356872559,
+   "checklist_detail": {
+    "c1": 0.6724711656570435,
+    "c2": 0.8889666199684143,
+    "c3": 0.6590220928192139,
+    "c4": 0.15121081471443176,
+    "c5": 0.603236734867096
+   },
+   "clip_raw": 0.23593580722808838,
+   "style_margin": 0.13886874914169312,
+   "max_train_dino": 0.7554611563682556,
+   "pose_pck": 0.9714285714285714,
+   "pose_detected": 1.0,
+   "n_people_out": 3,
+   "n_people_expected": 2,
+   "pose_joint_recall": 1.0
+  },
+  {
+   "scene_id": "m4h04",
+   "condition": "p6_restore",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m4/heldout_private/run/images/p6_restore@rrv_v1/heldout/m4h04_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, King Dasharatha lying on his bed in grief while Queen Kaikeyi stands beside him, turning her face away, oil painting, canvas texture, classical indian art",
+   "control_pose_json": null,
+   "control_file": "/content/next-ravi-varma-m3/eval/poses/heldout/m4h04.png",
+   "checklist": 0.6273234685262045,
+   "checklist_detail": {
+    "c1": 0.6298630833625793,
+    "c2": 0.6387767791748047,
+    "c3": 0.26095885038375854,
+    "c4": 0.9374831914901733,
+    "c5": 0.8246152997016907
+   },
+   "clip_raw": 0.32530930638313293,
+   "style_margin": 0.08427292108535767,
+   "max_train_dino": 0.7380014061927795,
+   "pose_pck": 0.5833333333333334,
+   "pose_detected": 1.0,
+   "n_people_out": 2,
+   "n_people_expected": 2,
+   "pose_joint_recall": 0.8611111111111112
+  },
+  {
+   "scene_id": "m4h04",
+   "condition": "p6_restore",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m4/heldout_private/run/images/p6_restore@rrv_v1/heldout/m4h04_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, King Dasharatha lying on his bed in grief while Queen Kaikeyi stands beside him, turning her face away, oil painting, canvas texture, classical indian art",
+   "control_pose_json": null,
+   "control_file": "/content/next-ravi-varma-m3/eval/poses/heldout/m4h04.png",
+   "checklist": 0.7835516797171699,
+   "checklist_detail": {
+    "c1": 0.740248441696167,
+    "c2": 0.564347505569458,
+    "c3": 0.9232115149497986,
+    "c4": 0.7569050788879395,
+    "c5": 0.9197225570678711
+   },
+   "clip_raw": 0.3211069107055664,
+   "style_margin": 0.14369285106658936,
+   "max_train_dino": 0.7182176113128662,
+   "pose_pck": 0.6944444444444444,
+   "pose_detected": 1.0,
+   "n_people_out": 3,
+   "n_people_expected": 2,
+   "pose_joint_recall": 0.9444444444444444
+  },
+  {
+   "scene_id": "m4h05",
+   "condition": "p6_restore",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m4/heldout_private/run/images/p6_restore@rrv_v1/heldout/m4h05_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Yudhishthira seated on a throne in the royal court while Bhima and Arjuna stand on either side of him, oil painting, canvas texture, classical indian art",
+   "control_pose_json": null,
+   "control_file": "/content/next-ravi-varma-m3/eval/poses/heldout/m4h05.png",
+   "checklist": 0.6823133495118883,
+   "checklist_detail": {
+    "c1": 0.7828055024147034,
+    "c2": 0.5101585984230042,
+    "c3": 0.5784751176834106,
+    "c4": 0.5966231822967529,
+    "c5": 0.9006592631340027
+   },
+   "clip_raw": 0.24785259366035461,
+   "style_margin": 0.12231981754302979,
+   "max_train_dino": 0.7258875370025635,
+   "pose_pck": 0.8409090909090909,
+   "pose_detected": 1.0,
+   "n_people_out": 3,
+   "n_people_expected": 3,
+   "pose_joint_recall": 0.9318181818181818
+  },
+  {
+   "scene_id": "m4h05",
+   "condition": "p6_restore",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m4/heldout_private/run/images/p6_restore@rrv_v1/heldout/m4h05_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Yudhishthira seated on a throne in the royal court while Bhima and Arjuna stand on either side of him, oil painting, canvas texture, classical indian art",
+   "control_pose_json": null,
+   "control_file": "/content/next-ravi-varma-m3/eval/poses/heldout/m4h05.png",
+   "checklist": 0.6888617773850759,
+   "checklist_detail": {
+    "c1": 0.7636049389839172,
+    "c2": 0.8937358260154724,
+    "c3": 0.39695772528648376,
+    "c4": 0.28988733887672424,
+    "c5": 0.900635838508606
+   },
+   "clip_raw": 0.23353740572929382,
+   "style_margin": 0.11387866735458374,
+   "max_train_dino": 0.677181601524353,
+   "pose_pck": 0.9090909090909091,
+   "pose_detected": 1.0,
+   "n_people_out": 3,
+   "n_people_expected": 3,
+   "pose_joint_recall": 0.9772727272727273
+  },
+  {
+   "scene_id": "m4h06",
+   "condition": "p6_restore",
+   "seed": 1,
+   "image": "/content/drive/MyDrive/m4/heldout_private/run/images/p6_restore@rrv_v1/heldout/m4h06_s1.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Gandhari tying a cloth over her eyes while blind King Dhritarashtra sits beside her and a maid holds a lamp, oil painting, canvas texture, classical indian art",
+   "control_pose_json": null,
+   "control_file": "/content/next-ravi-varma-m3/eval/poses/heldout/m4h06.png",
+   "checklist": 0.5669684376981523,
+   "checklist_detail": {
+    "c1": 0.8081928491592407,
+    "c2": 0.4842795431613922,
+    "c3": 0.688037097454071,
+    "c4": 0.10036338865756989,
+    "c5": 0.9409701824188232
+   },
+   "clip_raw": 0.2396329939365387,
+   "style_margin": 0.12673503160476685,
+   "max_train_dino": 0.6936995387077332,
+   "pose_pck": 0.9166666666666666,
+   "pose_detected": 1.0,
+   "n_people_out": 3,
+   "n_people_expected": 3,
+   "pose_joint_recall": 1.0
+  },
+  {
+   "scene_id": "m4h06",
+   "condition": "p6_restore",
+   "seed": 2,
+   "image": "/content/drive/MyDrive/m4/heldout_private/run/images/p6_restore@rrv_v1/heldout/m4h06_s2.png",
+   "coalition": null,
+   "prompt": "rrvarma style, Gandhari tying a cloth over her eyes while blind King Dhritarashtra sits beside her and a maid holds a lamp, oil painting, canvas texture, classical indian art",
+   "control_pose_json": null,
+   "control_file": "/content/next-ravi-varma-m3/eval/poses/heldout/m4h06.png",
+   "checklist": 0.539679186211692,
+   "checklist_detail": {
+    "c1": 0.812972903251648,
+    "c2": 0.22612041234970093,
+    "c3": 0.22430656850337982,
+    "c4": 0.73054039478302,
+    "c5": 0.8692321181297302
+   },
+   "clip_raw": 0.2523513734340668,
+   "style_margin": 0.12873679399490356,
+   "max_train_dino": 0.7620452642440796,
+   "pose_pck": 0.9583333333333334,
+   "pose_detected": 1.0,
+   "n_people_out": 3,
+   "n_people_expected": 3,
+   "pose_joint_recall": 0.9791666666666666
+  }
+ ]
+}

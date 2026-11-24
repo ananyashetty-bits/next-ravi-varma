@@ -1,0 +1,271 @@
+[
+ {
+  "id": "m4h01",
+  "tier": 2,
+  "expected_epic": "Mahabharata",
+  "expected_characters": [
+   "Draupadi"
+  ],
+  "text": "Draupadi standing alone at a palace window at dusk, her long hair loose, looking out",
+  "checklist": [
+   {
+    "id": "c1",
+    "q": "Is there exactly one person in the image?",
+    "type": "count",
+    "weight": 1.0
+   },
+   {
+    "id": "c2",
+    "q": "Is the person a woman standing upright?",
+    "type": "pose",
+    "weight": 1.0
+   },
+   {
+    "id": "c3",
+    "q": "Is her hair long and loose?",
+    "type": "attire",
+    "weight": 0.5
+   },
+   {
+    "id": "c4",
+    "q": "Is there a window or an opening in a wall?",
+    "type": "setting",
+    "weight": 1.0
+   },
+   {
+    "id": "c5",
+    "q": "Is the light that of dusk or evening?",
+    "type": "mood",
+    "weight": 0.5
+   }
+  ],
+  "split": "heldout",
+  "seen_in_training": false,
+  "contributed_by": "B"
+ },
+ {
+  "id": "m4h02",
+  "tier": 4,
+  "expected_epic": "Mahabharata",
+  "expected_characters": [
+   "Kunti"
+  ],
+  "text": "Kunti standing on a riverbank at dawn, both hands raised, offering water to the rising sun",
+  "checklist": [
+   {
+    "id": "c1",
+    "q": "Is there exactly one person in the image?",
+    "type": "count",
+    "weight": 1.0
+   },
+   {
+    "id": "c2",
+    "q": "Is the person a woman with both hands raised?",
+    "type": "pose",
+    "weight": 1.0
+   },
+   {
+    "id": "c3",
+    "q": "Is there a river or water nearby?",
+    "type": "setting",
+    "weight": 1.0
+   },
+   {
+    "id": "c4",
+    "q": "Is the sun or a sunrise visible?",
+    "type": "object",
+    "weight": 1.0
+   },
+   {
+    "id": "c5",
+    "q": "Is she wearing a sari?",
+    "type": "attire",
+    "weight": 0.5
+   }
+  ],
+  "split": "heldout",
+  "seen_in_training": false,
+  "contributed_by": "B"
+ },
+ {
+  "id": "m4h03",
+  "tier": 2,
+  "expected_epic": "Puranic",
+  "expected_characters": [
+   "Shiva",
+   "Parvati"
+  ],
+  "text": "Shiva seated in meditation on a tiger skin while Parvati stands beside him holding a garland",
+  "checklist": [
+   {
+    "id": "c1",
+    "q": "Are there exactly two main figures?",
+    "type": "count",
+    "weight": 1.0
+   },
+   {
+    "id": "c2",
+    "q": "Is one figure seated cross-legged, as in meditation?",
+    "type": "pose",
+    "weight": 1.0
+   },
+   {
+    "id": "c3",
+    "q": "Is the other figure a woman standing?",
+    "type": "pose",
+    "weight": 1.0
+   },
+   {
+    "id": "c4",
+    "q": "Is she holding a garland of flowers?",
+    "type": "object",
+    "weight": 1.0
+   },
+   {
+    "id": "c5",
+    "q": "Does the seated figure have matted hair or a crescent moon?",
+    "type": "identity",
+    "weight": 0.5
+   }
+  ],
+  "split": "heldout",
+  "seen_in_training": false,
+  "contributed_by": "B"
+ },
+ {
+  "id": "m4h04",
+  "tier": 4,
+  "expected_epic": "Ramayana",
+  "expected_characters": [
+   "Dasharatha",
+   "Kaikeyi"
+  ],
+  "text": "King Dasharatha lying on his bed in grief while Queen Kaikeyi stands beside him, turning her face away",
+  "checklist": [
+   {
+    "id": "c1",
+    "q": "Are there exactly two main figures?",
+    "type": "count",
+    "weight": 1.0
+   },
+   {
+    "id": "c2",
+    "q": "Is a man lying down on a bed or couch?",
+    "type": "pose",
+    "weight": 1.0
+   },
+   {
+    "id": "c3",
+    "q": "Is a woman standing beside him?",
+    "type": "pose",
+    "weight": 1.0
+   },
+   {
+    "id": "c4",
+    "q": "Is the man wearing a crown or royal jewellery?",
+    "type": "identity",
+    "weight": 0.5
+   },
+   {
+    "id": "c5",
+    "q": "Is the scene inside a palace room?",
+    "type": "setting",
+    "weight": 1.0
+   }
+  ],
+  "split": "heldout",
+  "seen_in_training": false,
+  "contributed_by": "B"
+ },
+ {
+  "id": "m4h05",
+  "tier": 3,
+  "expected_epic": "Mahabharata",
+  "expected_characters": [
+   "Yudhishthira",
+   "Bhima",
+   "Arjuna"
+  ],
+  "text": "Yudhishthira seated on a throne in the royal court while Bhima and Arjuna stand on either side of him",
+  "checklist": [
+   {
+    "id": "c1",
+    "q": "Are there exactly three main figures?",
+    "type": "count",
+    "weight": 1.0
+   },
+   {
+    "id": "c2",
+    "q": "Is the middle figure seated on a throne?",
+    "type": "pose",
+    "weight": 1.0
+   },
+   {
+    "id": "c3",
+    "q": "Are the two side figures standing?",
+    "type": "pose",
+    "weight": 1.0
+   },
+   {
+    "id": "c4",
+    "q": "Is one standing figure holding a mace or a bow?",
+    "type": "object",
+    "weight": 0.5
+   },
+   {
+    "id": "c5",
+    "q": "Is the scene a royal hall or court?",
+    "type": "setting",
+    "weight": 1.0
+   }
+  ],
+  "split": "heldout",
+  "seen_in_training": false,
+  "contributed_by": "B"
+ },
+ {
+  "id": "m4h06",
+  "tier": 5,
+  "expected_epic": "Mahabharata",
+  "expected_characters": [
+   "Gandhari",
+   "Dhritarashtra"
+  ],
+  "text": "Gandhari tying a cloth over her eyes while blind King Dhritarashtra sits beside her and a maid holds a lamp",
+  "checklist": [
+   {
+    "id": "c1",
+    "q": "Are there exactly three figures?",
+    "type": "count",
+    "weight": 1.0
+   },
+   {
+    "id": "c2",
+    "q": "Is a woman raising her hands to her eyes or tying a cloth?",
+    "type": "pose",
+    "weight": 1.0
+   },
+   {
+    "id": "c3",
+    "q": "Is a man seated?",
+    "type": "pose",
+    "weight": 1.0
+   },
+   {
+    "id": "c4",
+    "q": "Is someone holding a lamp?",
+    "type": "object",
+    "weight": 1.0
+   },
+   {
+    "id": "c5",
+    "q": "Is the scene indoors in a palace?",
+    "type": "setting",
+    "weight": 0.5
+   }
+  ],
+  "split": "heldout",
+  "seen_in_training": false,
+  "contributed_by": "B"
+ }
+]
