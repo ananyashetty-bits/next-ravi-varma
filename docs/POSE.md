@@ -1,15 +1,15 @@
 # POSE.md: pose conditioning, presets, text-to-pose and photo extraction (owner C)
 
-Updated 25 Nov 2026 with B's dev and held-out evaluation metrics (`results/m4_extras_dev.json`, `eval/EVAL_REPORT_M4.md` §2.7).
+Updated 25 Nov 2026 with B's dev and held-out evaluation metrics (`results/m4_extras_dev.json`, `eval/EVAL_REPORT_M4.md` §2.7) and cold-start verification log (`docs/cold_start_25nov.md`).
 
 ## 1. What I built
 
-- **Canonical `PoseJSON` schema & renderer (`pose/schema.py`, `pose/render.py`):** 18-point OpenPose body keypoint format (plus optional face/hand points and figure labels) rendered onto a 512×512 black canvas with standard OpenPose limb colors and joint circles for ControlNet (`lllyasviel/control_v11p_sd15_openpose`).
+- **Canonical `PoseJSON` schema & renderer (`pose/skeleton.py`):** 18-point OpenPose body keypoint format (plus optional face/hand points and figure labels) rendered onto a 512×512 black canvas with standard OpenPose limb colors and joint circles for ControlNet (`lllyasviel/control_v11p_sd15_openpose`).
 - **Preset pose library (`pose/presets.py`, `pose/library/`):** 19 curated `PoseJSON` templates covering single-figure, two-figure, and three-figure compositions (`pose/library/status.json`).
   - **ControlNet-tested (`4/19`, baseline profile, 2 seeds, neutral prompt, T4):** `standing`, `seated`, `kneeling`, `kneeling_before_standing`.
   - **Untested (`15/19`, valid `PoseJSON` passing CI layout/bounds checks, not yet run through ControlNet):** `lying`, `raised_arms`, `namaste`, `kneel_namaste`, `archer`, `pointing`, `walking`, `embrace`, `seated_with_attendant`, `bowing_pair`, `standing_pair`, `walking_pair`, `standing_trio`, `seated_trio`, `kneeling_before_two`.
-- **Rule-based `pose_from_text` (`pose/from_text.py`):** Parses scene text via M3's character/action parser (`kb/parser.py`) to count figures (1–3) and map verbs/roles (e.g., kneeling before a standing/seated figure, seated, standing, walking, bowing) to layout presets (`p3_pose_from_text`).
-- **Real photo pose extraction (`pose/extract.py`, wired in `pose/__init__.py`):** Extracts OpenPose body skeletons (`extract_pose`) and Canny/HED edge maps (`extract_edges`) from user-uploaded photos using `controlnet_aux` (`OpenposeDetector`), resizing cleanly and returning structured warnings when no person is detected or input dimensions are invalid.
+- **Rule-based `pose_from_text` (`pose/text.py`):** Parses scene text via M3's character/action parser (`kb/parser.py`) to count figures (1–3) and map verbs/roles (e.g., kneeling before a standing/seated figure, seated, standing, walking, bowing) to layout presets (`p3_pose_from_text`).
+- **Real photo pose extraction (`pose/extract.py`, wired in `pose/__init__.py`):** Extracts OpenPose body skeletons (`extract_pose`) and edge maps (`extract_edges`) from user-uploaded photos using `controlnet_aux` (`OpenposeDetector`), resizing cleanly and returning structured warnings when no person is detected or input dimensions are invalid.
 
 ## 2. Result
 
@@ -20,17 +20,17 @@ Updated 25 Nov 2026 with B's dev and held-out evaluation metrics (`results/m4_ex
 - **Human pose-match rating (`p3` vs photo-extracted `p1`):**
   - **Dev:** `p3` scores **1.78** vs `p1` **3.72** (`eval/EVAL_REPORT_M4.md`).
   - **Held-out:** `p3` scores **2.25** vs `p1` **3.83** (`eval/EVAL_REPORT_M4.md` §2.7).
-- **H-C1 (`pose_from_text` figure count & pose match):** Figure count accuracy is high on dev (15/16) and moderate on held-out (4/6), but human pose-match rating for coarse rule-based templates (`1.78` dev / `2.25` held-out) is far below photo-extracted poses (`3.72` dev / `3.83` held-out).
+- **H-C1 (`pose_from_text` figure count & pose match):** Figure count accuracy is high on dev (15/16) and moderate on held-out (4/6), while human pose-match rating for coarse rule-based templates (`1.78` dev / `2.25` held-out) is far below photo-extracted poses (`3.72` dev / `3.83` held-out).
 
 ### Photo extraction (`pose/extract.py`) & Cold-start verification
-- **Unit & robustness suite:** `pytest -q tests` passes (467 CPU tests), covering valid single/multi-person skeletons, blank/no-person images (returns empty people list + friendly warning without raising), grayscale/RGBA inputs, and small/non-square aspect ratios.
-- **Cold-start test (fresh Colab T4 session, `README.md` instructions):**
+- **Unit & robustness suite:** `pytest -q tests` on `main` passes (**435 passed, 10 skipped** on CPU without GPU/ControlNet weights), covering valid single/multi-person skeletons, blank/no-person images (returns empty people list + friendly warning without raising), grayscale/RGBA inputs, and small/non-square aspect ratios.
+- **Cold-start test (`docs/cold_start_25nov.md`, fresh Colab T4 session, 25 Nov 2026):**
   - **CLI seed reproduction:** Verified (`s01_s1.png` reproduced deterministically).
-  - **Gradio UI (`app/app.py --share --auth user:password`):** Verified all 6 UI paths (misspelled name `"Arjunaah..."` with `auto from text`, 2-figure `preset`, `upload photo`, empty prompt, 300-word prompt, and no-person photo) complete with friendly UI messages and no Python tracebacks. Filed a `needs:D` issue regarding uploaded input photos remaining in `/tmp/gradio` until Gradio's 360 s timer when the handler finishes.
+  - **Gradio UI (`app/app.py --share --auth user:password`):** Verified all 6 UI paths (misspelled name `"Arjunaah..."` with `auto from text`, 2-figure `preset`, `upload photo`, empty prompt, 300-word prompt, and no-person photo) complete with friendly UI messages and no Python tracebacks. Filed issue #158 (`needs:D`) regarding uploaded input photos remaining in `/tmp/gradio` until Gradio's 360 s timer when the handler finishes.
 
 ## 3. What it means
 
-- **Figure count works; fine articulation does not:** `pose_from_text` reliably allocates the right number of skeletons on dev scenes (15/16), preventing missing characters in simple two-person scenes, but generic preset poses cannot capture scene-specific limb angles, hand gestures, or interactions—explaining the 1.5–1.9 point gap in human pose-match ratings behind `p1`.
+- **Figure count works on simple scenes, misses harder multi-figure phrasing; fine articulation does not:** `pose_from_text` got the right number of figures on **15/16** dev images, but only **4/6** held-out scenes (drawing `m4h04` [2 people] and `m4h06` [3 people] as a single figure). Even when headcount is right, generic preset poses cannot capture scene-specific limb angles, hand gestures, or interactions—explaining the 1.5–1.9 point gap in human pose-match ratings behind `p1`.
 - **Presets are dependable for core postures:** The 4 ControlNet-tested presets (`standing`, `seated`, `kneeling`, `kneeling_before_standing`) give reliable spatial anchoring for common epic compositions without needing a reference photo.
 - **Photo extraction closes the gap when a reference exists:** Real `extract_pose` provides the exact keypoint geometry that gave `p1` its 3.72–3.83 human pose-match scores, while degrading gracefully on non-person images.
 
