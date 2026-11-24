@@ -28,5 +28,52 @@
   "control_scale": 1.0,
   "lora_scale": 1.0,
   "guidance_end": 0.8
+ },
+ "p0_seed1_style_margin": 0.1101,
+ "style_margin_floor": 0.0806,
+ "candidates": {
+  "p1 baseline": {
+   "pose_pck": 0.807,
+   "style_margin": 0.107,
+   "max_train_dino_p95": 0.817
+  },
+  "c0.8_l1.0": {
+   "pose_pck": 0.792,
+   "style_margin": 0.1038,
+   "max_train_dino_p95": 0.78
+  },
+  "c1.2_l1.0": {
+   "pose_pck": 0.832,
+   "style_margin": 0.1029,
+   "max_train_dino_p95": 0.808
+  },
+  "c0.8_l1.2": {
+   "pose_pck": 0.787,
+   "style_margin": 0.1069,
+   "max_train_dino_p95": 0.797
+  },
+  "c1.0_ge0.8": {
+   "pose_pck": 0.809,
+   "style_margin": 0.1086,
+   "max_train_dino_p95": 0.817
+  }
+ },
+ "paired_pose_pck_ci95_vs_c1.2_l1.0": {
+  "p1 baseline": [
+   -0.016,
+   0.069
+  ],
+  "c0.8_l1.0": [
+   0.009,
+   0.075
+  ],
+  "c0.8_l1.2": [
+   0.02,
+   0.074
+  ],
+  "c1.0_ge0.8": [
+   -0.014,
+   0.066
+  ]
  }
 }
