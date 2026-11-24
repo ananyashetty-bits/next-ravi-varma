@@ -87,6 +87,6 @@ Six private pairs, all six conditions at `main` `9ab0765`, rated blind in one ro
 - **D2 (post-processing default): not confirmed.** Dev p1 → p5: faces +0.31, hands +0.25, style −0.03 (passed, narrowly). Held-out
   p1 → p5: faces −0.08 [−0.42, +0.25], hands −0.17, style −0.17 (would not pass). p6: faces −0.33.
   **Decision (B, recommended to the team):** keep `post.default_on: false`. Hi-res stays an opt-in checkbox for
-  everyone. This is the conservative outcome of the rule on the full evidence; D's spot check and a config PR are no longer
-  needed. The dev pass and the held-out miss are both reported in the report; neither is hidden.
+  everyone. This is the conservative outcome of the rule on the full evidence. D's spot check (D2) had already found artifacts, so both the
+  spot check and the held-out result point the same way; no config PR is needed. The dev pass and the held-out miss are both reported in the report; neither is hidden.
 

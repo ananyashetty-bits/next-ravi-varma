@@ -88,3 +88,27 @@ The three §10 default rules are copied verbatim into Section B (and rule 2 into
   tier pattern not supported).
 - Held-out results and the reveal (`eval/test_pairs_heldout.json`, skeletons, key, ratings).
 - The final `M4_REPORT.md` once all sections are pasted.
+
+## Re-run, 25 Nov 2026 (after #152-#159; main `7790d75`)
+
+**Closed since the first audit:** CONTROL.md numbers now in `results/control_rule_16pairs.json` (A, #149); APP/CONTENT_POLICY/M4_REPORT
+fixes R1-R4, R7, D1-D4 (D, #148, #154, #155); hi-res stays opt-in (D2 + D7); post timings in `results/post_timing_dev.json`
+(31 of 32 faces; 32/32 base shas match D's p1); POSE.md and real `extract_pose` merged (C, #156, #157, #159); `needs:D` issue #158 filed by C.
+
+**Must fix before `m4-v1.0`:**
+- **P1 (D, privacy claim): uploaded photos are not deleted when the request finishes.** README, `docs/APP.md` §4/§5 and `docs/CONTENT_POLICY.md` say the handler
+  deletes the upload as soon as the skeleton is extracted. C's cold-start test (issue #158) found the file still in `/tmp/gradio` after the response. Either fix the handler and re-test, or
+  change the text to what is true (file removed by Gradio's timer, within N = 6 min) in all three places.
+- **P2 (C): POSE.md names files that do not exist:** `pose/schema.py`, `pose/render.py`, `pose/from_text.py`. The real files are `pose/skeleton.py`,
+  `pose/presets.py`, `pose/text.py` (+ `pose/extract.py`).
+- **P3 (C): "467 CPU tests" is not reproducible.** `pytest -q tests` on `7790d75` (CPU, Python 3.13): 435 passed, 10 skipped. Cite the actual run or the real count.
+- **P4 (C): "reliably allocates the right number of skeletons" (POSE.md §3) overstates.** Dev 15/16 but held-out 4/6 (m4h04 and m4h06 drawn as one figure).
+  Say "right on 15/16 dev images, 4/6 held-out scenes; misses multi-person phrasing".
+- **P5 (D): stale "photo poses are a stub" text.** `docs/APP.md` lines 122 and 136 and `docs/M4_REPORT.md` lines 335, 349, 409 still say `extract_pose` is a stub; it is real since #157.
+  Update, retake the preset and uploaded-photo screenshots, and clear the last `<<pending: D, retake ...>>` marker (APP.md line 28, M4_REPORT line 241).
+- **P6 (C): cold-start claims have no committed evidence** (fresh-session results, "all 6 UI paths"). Add a short log or note in `docs/` or `results/`, or label it as "reported by C, not committed".
+
+**Minor (B, this PR):** D7 said D's spot check "is no longer needed"; D had already run it (found artifacts in s09 and s27), so D2 and D7 now agree: both reasons keep hi-res off.
+
+**Verified OK:** POSE.md figure counts (15/16 dev, 4/6 held-out) and pose-match numbers (1.78 / 3.72 dev; 2.25 / 3.83 held-out) match `results/m4_extras_dev.json` and EVAL_REPORT_M4 §2.2/§2.7;
+status.json = 4 tested, 15 untested (matches POSE.md); `post.default_on` is `false`; remaining `<<pending: ...>>` markers: 1 (P5).
