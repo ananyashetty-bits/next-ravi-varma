@@ -1,6 +1,6 @@
 # M4 evaluation report (Member B)
 
-Draft, 24 Nov 2026. Dev results are final; held-out sections are marked `<<pending>>` until the held-out run.
+24 Nov 2026. Dev results (§2.1-2.6, 2.8) and the held-out run (§2.7) are final.
 Every number below traces to `results/m4_tables_dev.md` / `.json` (#144), `results/m4_extras_dev.json`
 or the `results/<condition>@rrv_v1_dev_pose.json` files (#130, #143). Hypotheses: `experiments/HYPOTHESES_M4.md`.
 
@@ -19,7 +19,8 @@ agreement kappa 0.14), so read every hands number as weak.
 photo the team took of itself (photos deleted; skeletons only in git). Mix: 5 single-figure, 6 two-figure and
 5 three-figure scenes; tiers 1/2/3/4 = 5/6/3/2. s22 has a `checklist_override` (its M3 item needed more than three
 people). Held-out: 6 private pairs written by B (2 single, 2 two-figure, 2 three-figure), not opened before the
-S3 decisions: `<<pending: held-out run>>`.
+S3 decisions: all three were applied to dev ratings and recorded in `docs/TEAM_DECISIONS_M4.md` (#145) before the
+held-out images were generated or scored; the held-out run is a check, not a tuning set (§2.7).
 
 **Conditions** (16 pairs × seeds 1-2 = 32 images each; SD1.5 + `rrv_v1` LoRA 1.0, M3's c1 raw prompt, 512×512):
 
@@ -159,8 +160,50 @@ included on purpose.
 | `docs/figures/grid_m4_dev_s31.png` | failure: p3 ignores the pose; control alone gives no pose gain here (0.0) |
 
 ### 2.7 Held-out
-`<<pending: held-out run (p0, p1, p2, p3, p5, p6 on the 6 private pairs, at the frozen sha; private detection
-cache), held-out ratings, the same tables, and pose_from_text figure-count accuracy on the 6 scenes>>`
+Six private pairs written by B (m4h01-m4h06: 2 single, 2 two-figure, 2 three-figure; `eval/test_pairs_heldout.json`,
+scenes in `eval/test_scenes_heldout_m4.json`), kept private until now. All six conditions were generated at `main`
+`9ab0765` (config hashes as in D4), seeds 1-2, on a Colab T4, scored with a private detection cache, and rated blind
+in one round of 36 images (6 conditions × 6 pairs, 2 of 4 raters each, no calibration rows). Files: `results/m4_tables_heldout.md`/`.json`,
+`results/<condition>@rrv_v1_heldout_pose.json`, `eval/ratings/ratings_m4_heldout.csv`, `eval/ratings/blind_key_m4_heldout.json`.
+Means over 6 pairs, seed 1, 95% bootstrap CI (one round, so p1 and p3/p5/p6 were rated together this time):
+
+| Condition | style | pose match | faces | hands |
+|---|---|---|---|---|
+| `p0_m3_default` | 3.25 [2.83, 3.67] | 2.08 [1.50, 2.75] | 2.83 [2.50, 3.00] | 2.83 [2.50, 3.00] |
+| `p1_openpose` | 3.42 [3.00, 3.83] | 3.83 [3.33, 4.33] | 3.00 [2.75, 3.25] | 2.75 [2.33, 3.17] |
+| `p2_openpose_tuned` | 3.25 [3.08, 3.42] | 3.67 [3.25, 4.08] | 2.92 [2.50, 3.25] | 2.75 [2.33, 3.17] |
+| `p3_pose_auto` | 3.67 [3.33, 4.00] | 2.25 [1.50, 3.08] | 3.25 [2.83, 3.67] | 3.08 [3.00, 3.25] |
+| `p5_hires` | 3.25 [2.83, 3.58] | 3.67 [3.08, 4.17] | 2.92 [2.67, 3.17] | 2.58 [2.00, 3.08] |
+| `p6_restore` | 3.17 [2.83, 3.42] | 3.75 [3.17, 4.17] | 2.67 [2.17, 3.08] | 2.67 [2.17, 3.08] |
+
+Paired comparisons (b − a, win/tie/loss within the tie bands):
+
+| Comparison | pose match | faces | hands | style |
+|---|---|---|---|---|
+| p0 → p1 | +1.75 [+0.75, +2.58] (5/0/1) | +0.17 [−0.17, +0.58] (2/3/1) | −0.08 [−0.50, +0.25] | +0.17 [−0.17, +0.50] |
+| p1 → p2 | −0.17 [−0.50, +0.00] (0/5/1) | −0.08 [−0.50, +0.25] | +0.00 [−0.25, +0.25] | −0.17 [−0.58, +0.17] |
+| p1 → p3 | −1.58 [−2.58, −0.66] (0/1/5) | +0.25 [−0.17, +0.83] | +0.33 [+0.00, +0.67] | +0.25 [−0.17, +0.83] |
+| p1 → p5 | −0.17 [−0.33, +0.00] | −0.08 [−0.42, +0.25] (2/1/3) | −0.17 [−0.33, +0.00] | −0.17 [−0.33, +0.00] |
+| p1 → p6 | −0.08 [−0.58, +0.50] | −0.33 [−0.83, +0.17] (1/2/3) | −0.08 [−0.42, +0.25] | −0.25 [−0.58, +0.17] |
+
+What held and what did not:
+- **Held:** a supplied pose fixes posture (+1.75 pose match, better on 5 of 6 pairs, dev +1.59). Auto-from-text loses to
+  a photo skeleton on pose match (−1.58, 0/1/5; dev −1.94). The tuned window changes nothing (p1 → p2 within the
+  tie band on every score, as in dev). Figure count right: p0 0.58, p1 0.83, p2 0.83, p3 0.83, p5 0.75, p6 0.83
+  (share of pairs, seed 1).
+- **Did not hold:** the dev claim that control makes faces worse. Held-out faces and hands barely move with control
+  (+0.17 and −0.08, CIs include 0), so with 6 pairs we cannot say control hurts faces; the safest reading is "control
+  does not help faces or hands" (H-B2 is still supported in the sense that it does not improve them).
+- **Did not hold:** the hi-res face gain. Dev p1 → p5 faces was +0.31; held-out it is −0.08 [−0.42, +0.25], and hands
+  −0.17. By the D2 rule (faces > +0.25) hi-res would **not** pass on the held-out pairs. Restoration is lower still
+  (faces −0.33). Six pairs is a small test, but the dev pass was already narrow (§3).
+- **Pose from text, figure count:** `pose_from_text` drew the right number of figures for 4 of 6 scenes (m4h01, 02, 03
+  and 05); it drew 1 figure for m4h04 (two people: Dasharatha and Kaikeyi) and for m4h06 (three: Gandhari,
+  Dhritarashtra and a maid). These two scenes are also p3's lowest on automated pose score (m4h04 pck 0.11 / 0.00).
+- **Agreement (36 images, 2 raters each):** pose match κw 0.80, hands 0.62, faces 0.53, style 0.38: better than dev
+  for hands and faces, from a single round with fewer, simpler scenes.
+- **Metric validation:** `pose_pck` vs human pose match 0.46 (n=36), `style_margin` vs human style 0.08. The H-B3 rule
+  was applied to dev (0.15) and is not re-decided; held-out PCK sits above 0.3, within the noise of n=36.
 
 ### 2.8 Metric validation and rater agreement
 **Rater agreement** (the two raters of each image, 96 images):
@@ -232,7 +275,10 @@ controlled photo-pose conditions (p1, p2, p5, p6) it is 0.23, because they all s
   rated blind.
 - **Gaze and drapery** were not tested.
 - **PCK** is circular and weak on painted figures; for p3 it measures a different target.
-- `<<pending: held-out limits>>`
+- **Held-out is 6 pairs, 36 images, one rating round, two raters per image:** the held-out confidence intervals are
+  wide, p1 → p5 and p1 → p6 differences are within rater noise, and pairs are composites/stock photos written by B,
+  who also rated. No held-out result changed a decision already recorded in `TEAM_DECISIONS_M4.md`; D2's hi-res default
+  is revisited in D7 because the held-out did not replicate the dev gain.
 
 ## 5. Hard questions
 - **"Is the pose metric trustworthy?"** Only for the coarse question. Per image it correlates 0.15 with human pose
@@ -241,7 +287,7 @@ controlled photo-pose conditions (p1, p2, p5, p6) it is 0.23, because they all s
   barely separates anything (0.23). Human pose match is the evidence.
 - **"Did you tune on the held-out?"** No. All three default rules were applied to dev ratings and recorded in
   `docs/TEAM_DECISIONS_M4.md` before the held-out scores were opened; the held-out pairs live only in B's private
-  Drive until the reveal. `<<pending: held-out sha and dates>>`
+  Drive until the reveal. Held-out generated and scored 24 Nov 2026 at `main` `9ab0765`; rated 24 Nov; revealed in this PR.
 - **"Why only OpenPose body?"** Time and hardware: one ControlNet on a T4. The hands/face variant (p8) was planned
   as optional and not run, so whether hand keypoints would help hands is untested. Our data say the body skeleton
   does not fix faces or hands by itself.

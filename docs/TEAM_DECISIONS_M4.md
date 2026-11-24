@@ -79,3 +79,14 @@ the user supplies one (preset or photo).
 - Post-hoc and labelled as such: p3's `pose_pck` is scored against its own auto skeleton, not the pair pose the
   raters saw. Without p3 the Spearman is 0.58 (80 images); p0 and p1 alone give 0.72 (32 images)
   (`results/m4_extras_dev.json`). This does not change D6, because the rule was fixed on all conditions.
+
+## D7. Held-out check of D1-D3 (24 Nov 2026, after the run; nothing was tuned on it)
+Six private pairs, all six conditions at `main` `9ab0765`, rated blind in one round (`eval/EVAL_REPORT_M4.md` §2.7).
+- **D1 (control settings):** confirmed. p1 → p2 is within the tie band on every score (pose match −0.17, 0/5/1).
+- **D3 (pose source):** confirmed. p1 → p3 pose match −1.58 [−2.58, −0.66], 0/1/5; supplied pose stays the default.
+- **D2 (post-processing default): not confirmed.** Dev p1 → p5: faces +0.31, hands +0.25, style −0.03 (passed, narrowly). Held-out
+  p1 → p5: faces −0.08 [−0.42, +0.25], hands −0.17, style −0.17 (would not pass). p6: faces −0.33.
+  **Decision (B, recommended to the team):** keep `post.default_on: false`. Hi-res stays an opt-in checkbox for
+  everyone. This is the conservative outcome of the rule on the full evidence; D's spot check and a config PR are no longer
+  needed. The dev pass and the held-out miss are both reported in the report; neither is hidden.
+
