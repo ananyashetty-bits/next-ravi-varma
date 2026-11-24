@@ -219,8 +219,12 @@ def _free_gpu():
 
 
 # ---------------------------------------------------------------------------------------------------- UI
-HELP_STYLE = "Higher = closer to Ravi Varma's painted look. Only tested values are offered."
-HELP_POSE = ("Higher = follows the pose more closely, but may look stiffer. Only tested values are offered.")
+# Slider help text: A's wording (CONTROL.md section 3), from the stage-1 sweep and the 16-pair rule.
+HELP_STYLE = ("How strongly the picture follows Varma's painted look. Lower numbers look more generic and glossy. "
+              "1.0 is the default. Going above 1.0 did not add more style in our tests.")
+HELP_POSE = ("How closely the figures follow your pose. Below about 0.6 they often ignore it. 0.8 to 1.0 follows it "
+             "well. Above 1.0 adds little for simple poses. Unusual poses, such as bending right over, can be "
+             "misread (in one test a bent-over figure turned into a horse).")
 ABOUT = ("**About.** Research and coursework project. Images are AI-generated *in the style of* Raja Ravi Varma and "
          "are never authentic works; don't present them as his. Deities and epic figures are depicted respectfully: "
          "sexualised, demeaning, hateful, gory content and real living people are refused (docs/CONTENT_POLICY.md).")
