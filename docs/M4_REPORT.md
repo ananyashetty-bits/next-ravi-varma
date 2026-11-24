@@ -207,8 +207,7 @@ Stage 1 used 3 fixtures (f03 is dev scene s01, because M3's fixtures have no 3-f
 ![Trade-off plot](figures/tradeoff.png)
 
 ## 5. Pose inputs and the copy check (C)
-`<<pending: C, POSE.md>>`: the renderer, the preset library, `pose_from_text` accuracy (H-C1), photo extraction
-robustness, p3 vs p1 (from B's tables), and p4 with the copy check, if it ran.
+See `docs/POSE.md` for full details on the 18-point OpenPose renderer, the 19-preset library (4 ControlNet-tested, 15 schema-validated in `pose/library/status.json`), `pose_from_text` (`p3`), and real photo extraction (`pose/extract.py`). On dev (`results/m4_extras_dev.json`), `p3` draws the right number of figures in **15/16** seed-1 images; on held-out (`eval/EVAL_REPORT_M4.md` §2.7), it gets **4/6** scenes right (drawing 1 figure for `m4h04` [2 people] and `m4h06` [3 people]). Human pose-match ratings for `p3` are far below photo-extracted `p1` poses (**dev 1.78 vs 3.72**; **held-out 2.25 vs 3.83**). `p4` was not run.
 
 ## 6. App, post-processing and content policy (D)
 *Pasted from `docs/APP.md` and `docs/CONTENT_POLICY.md` on 24 Nov.*
