@@ -79,3 +79,8 @@ def test_accepts_a_parsed_scene_dict():
     pytest.importorskip("cv2")
     c = pt.pose_from_text(fake_parse("Sita sitting alone"))
     assert c["n_people"] == 1 and c["pose_json"]["families"] == ["seated"]
+
+
+def test_begin_is_not_beg():
+    assert fam("Krishna counsels Arjuna just before the battle begins") == ["standing", "standing"]
+    assert fam("Sita begging Rama") == ["kneeling", "standing"]

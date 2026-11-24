@@ -18,7 +18,7 @@ from pose.skeleton import to_control
 # (family, pattern), in priority order; the EARLIEST match inside a window wins, ties go to the earlier entry.
 LEXICON = [
     ("kneeling", r"\bkneel\w*|\bbows?\s+(?:down|low|before)\b|\bbow(?:ed|ing)\b|\bpray\w*|\bplead\w*|\bprostrat\w*"
-                 r"|\btouch\w*\s+(?:\w+\s+){0,2}feet\b|\bbeg\w*|\bsupplicat\w*"),
+                 r"|\btouch\w*\s+(?:\w+\s+){0,2}feet\b|\bbeg(?:s|ged|ging)?\b|\bsupplicat\w*"),
     ("lying", r"\blie\b|\blies\b|\blying\b|\bfallen\b|\blifeless\b|\bsleep\w*|\basleep\b|\breclin\w*"),
     ("seated", r"\bsit\b|\bsits\b|\bsitting\b|\bseated\b|\bthrone\b|\bmeditat\w*|\blisten\w*"),
     ("raised_arms", r"\braise\w*|\baloft\b|\boverhead\b|\bbless\w*"),
