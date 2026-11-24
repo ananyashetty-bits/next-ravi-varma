@@ -1,0 +1,289 @@
+{
+ "experiment": "H-C1 pose_from_text dev, POST-HOC after bug fix",
+ "code_commit": "5351c83",
+ "note": "registered run is results/c_pose_from_text_dev.json (commit 1ce1e70)",
+ "rows": [
+  {
+   "id": "s01",
+   "tier": 3,
+   "count_ok": true,
+   "got": [
+    "standing",
+    "standing",
+    "standing"
+   ],
+   "reference": [
+    "standing",
+    "standing",
+    "standing"
+   ],
+   "posture_ok": true,
+   "uncertain_ref": true,
+   "warnings": [
+    "posture guessed (standing) for Karna",
+    "posture guessed (standing) for Krishna"
+   ]
+  },
+  {
+   "id": "s02",
+   "tier": 1,
+   "count_ok": true,
+   "got": [
+    "standing"
+   ],
+   "reference": [
+    "standing"
+   ],
+   "posture_ok": true,
+   "uncertain_ref": false,
+   "warnings": [
+    "posture guessed (standing) for Krishna"
+   ]
+  },
+  {
+   "id": "s04",
+   "tier": 2,
+   "count_ok": true,
+   "got": [
+    "standing",
+    "standing"
+   ],
+   "reference": [
+    "standing",
+    "standing"
+   ],
+   "posture_ok": true,
+   "uncertain_ref": false,
+   "warnings": []
+  },
+  {
+   "id": "s05",
+   "tier": 2,
+   "count_ok": true,
+   "got": [
+    "standing",
+    "standing"
+   ],
+   "reference": [
+    "standing",
+    "standing"
+   ],
+   "posture_ok": true,
+   "uncertain_ref": false,
+   "warnings": [
+    "posture guessed (standing) for Karna"
+   ]
+  },
+  {
+   "id": "s09",
+   "tier": 1,
+   "count_ok": true,
+   "got": [
+    "seated"
+   ],
+   "reference": [
+    "seated"
+   ],
+   "posture_ok": true,
+   "uncertain_ref": false,
+   "warnings": []
+  },
+  {
+   "id": "s10",
+   "tier": 1,
+   "count_ok": true,
+   "got": [
+    "standing"
+   ],
+   "reference": [
+    "standing"
+   ],
+   "posture_ok": true,
+   "uncertain_ref": true,
+   "warnings": []
+  },
+  {
+   "id": "s11",
+   "tier": 2,
+   "count_ok": true,
+   "got": [
+    "standing",
+    "standing"
+   ],
+   "reference": [
+    "standing",
+    "standing"
+   ],
+   "posture_ok": true,
+   "uncertain_ref": false,
+   "warnings": []
+  },
+  {
+   "id": "s15",
+   "tier": 4,
+   "count_ok": true,
+   "got": [
+    "kneeling",
+    "standing",
+    "lying"
+   ],
+   "reference": [
+    "standing",
+    "seated",
+    "lying"
+   ],
+   "posture_ok": false,
+   "uncertain_ref": false,
+   "warnings": [
+    "posture guessed (standing) for Yama"
+   ]
+  },
+  {
+   "id": "s18",
+   "tier": 1,
+   "count_ok": true,
+   "got": [
+    "standing"
+   ],
+   "reference": [
+    "standing"
+   ],
+   "posture_ok": true,
+   "uncertain_ref": false,
+   "warnings": []
+  },
+  {
+   "id": "s19",
+   "tier": 2,
+   "count_ok": true,
+   "got": [
+    "standing",
+    "standing"
+   ],
+   "reference": [
+    "standing",
+    "standing"
+   ],
+   "posture_ok": true,
+   "uncertain_ref": false,
+   "warnings": [
+    "posture guessed (standing) for Draupadi",
+    "posture guessed (standing) for Krishna"
+   ]
+  },
+  {
+   "id": "s21",
+   "tier": 3,
+   "count_ok": true,
+   "got": [
+    "seated",
+    "seated",
+    "seated"
+   ],
+   "reference": [
+    "seated",
+    "seated",
+    "seated"
+   ],
+   "posture_ok": true,
+   "uncertain_ref": false,
+   "warnings": []
+  },
+  {
+   "id": "s22",
+   "tier": 3,
+   "count_ok": true,
+   "got": [
+    "kneeling",
+    "standing",
+    "standing"
+   ],
+   "reference": [
+    "kneeling",
+    "standing",
+    "standing"
+   ],
+   "posture_ok": true,
+   "uncertain_ref": false,
+   "warnings": [
+    "posture guessed (standing) for Bhishma",
+    "posture guessed (standing) for Duryodhana"
+   ]
+  },
+  {
+   "id": "s25",
+   "tier": 1,
+   "count_ok": true,
+   "got": [
+    "standing"
+   ],
+   "reference": [
+    "raised_arms"
+   ],
+   "posture_ok": false,
+   "uncertain_ref": false,
+   "warnings": [
+    "posture guessed (standing) for Hanuman"
+   ]
+  },
+  {
+   "id": "s26",
+   "tier": 2,
+   "count_ok": true,
+   "got": [
+    "standing",
+    "standing"
+   ],
+   "reference": [
+    "standing",
+    "standing"
+   ],
+   "posture_ok": true,
+   "uncertain_ref": true,
+   "warnings": [
+    "posture guessed (standing) for Krishna",
+    "posture guessed (standing) for Arjuna"
+   ]
+  },
+  {
+   "id": "s27",
+   "tier": 2,
+   "count_ok": true,
+   "got": [
+    "standing",
+    "lying"
+   ],
+   "reference": [
+    "standing",
+    "seated"
+   ],
+   "posture_ok": false,
+   "uncertain_ref": false,
+   "warnings": [
+    "posture guessed (standing) for yashodha"
+   ]
+  },
+  {
+   "id": "s31",
+   "tier": 4,
+   "count_ok": true,
+   "got": [
+    "standing",
+    "standing",
+    "standing"
+   ],
+   "reference": [
+    "standing",
+    "standing",
+    "standing"
+   ],
+   "posture_ok": true,
+   "uncertain_ref": false,
+   "warnings": [
+    "posture guessed (standing) for Shabri",
+    "posture guessed (standing) for Ram",
+    "posture guessed (standing) for Laxman"
+   ]
+  }
+ ]
+}
