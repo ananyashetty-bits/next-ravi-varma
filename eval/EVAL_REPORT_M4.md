@@ -13,6 +13,11 @@ costing style, but only just: two raters scoring the same p1/p2 images already d
 Face restoration (p6) helped less (+0.19). Hands ratings are the least reliable score we collected (rater
 agreement kappa 0.14), so read every hands number as weak.
 
+**Held-out check (6 private pairs, §2.7).** Posture result held: supplied pose +1.75 pose match, auto-from-text −1.58 vs a
+photo pose, tuned window no different. Two dev findings did **not** replicate: control did not measurably hurt faces
+(+0.17, CI includes 0), and hi-res did not lift faces (−0.08 [−0.42, +0.25]; dev +0.31), so the hi-res default is
+kept off (`TEAM_DECISIONS_M4.md` D7).
+
 ## 1. Setup
 
 **Pairs.** 16 dev pairs (`eval/test_pairs_dev.json`): each is an M3 dev scene plus an OpenPose skeleton made from a
