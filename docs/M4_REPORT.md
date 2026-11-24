@@ -79,13 +79,14 @@ hands), and what does it cost in style?*
   4-bit local LLM.
 
 ## 3. Method
-*Pasted from `eval/EVAL_REPORT_M4.md` §1 (B, #145/#146) on 24 Nov; held-out parts pending there.*
+*Pasted from `eval/EVAL_REPORT_M4.md` §1 (B, #145/#146/#152) on 24 Nov.*
 
 **Pairs.** 16 dev pairs (`eval/test_pairs_dev.json`): each is an M3 dev scene plus an OpenPose skeleton made from a
 photo the team took of itself (photos deleted; skeletons only in git). Mix: 5 single-figure, 6 two-figure and
 5 three-figure scenes; tiers 1/2/3/4 = 5/6/3/2. s22 has a `checklist_override` (its M3 item needed more than three
 people). Held-out: 6 private pairs written by B (2 single, 2 two-figure, 2 three-figure), not opened before the
-S3 decisions: `<<pending: held-out run>>`.
+S3 decisions: all three were applied to dev ratings and recorded in `docs/TEAM_DECISIONS_M4.md` (#145) before the
+held-out images were generated or scored; the held-out run is a check, not a tuning set (§7.7).
 
 **Conditions** (16 pairs × seeds 1-2 = 32 images each; SD1.5 + `rrv_v1` LoRA 1.0, M3's c1 raw prompt, 512×512):
 
@@ -135,7 +136,7 @@ owner's first scored result (B confirms in the audit):
 - **D**, H-D1–D4: hi-res, face restoration vs style, the memorisation guardrail, app latency.
 
 ## 4. Control engine and the style/pose trade-off (A)
-*Pasted from `docs/CONTROL.md` (A, #139) on 24 Nov. Edit it there; this copy is refreshed at assembly.*
+*Pasted from `docs/CONTROL.md` (A, #139, #149) on 24 Nov. Edit it there; this copy is refreshed at assembly.*
 
 Final. Numbers trace to `results/`; human ratings are in B's `EVAL_REPORT_M4.md`.
 
@@ -188,8 +189,8 @@ Files behind these numbers (all in `results/`): `control_stage1_cells.json`, `co
 ### 4.3 What it means
 - The pose knee is at control 0.6 to 0.8: f01 goes from 0.25 to 0.81 between 0.4 and 0.6.
 - style_margin shows no clear cost of control: at LoRA 1.0 it spans 0.015 across control 0.4-1.2, half the 0.0295 tie band. Only LoRA 0.6 loses style as control rises.
-- H-A1: the pose half held; the style half is not shown by this metric. H-A2: pose is unchanged at guidance_end 0.8 vs 1.0 (0.817 both) and style differs within the tie band, so neither supported nor refuted. H-A3: not supported; LoRA 1.2 gives no consistent style gain (control 1.0: 0.1098 vs 0.1145; control 1.2: 0.1161 vs 0.1141). H-A4 (p1 beats p0 on human pose match and figure count, but not on faces or hands) is decided on B's blind ratings in `EVAL_REPORT_M4.md`; automated pose_pck rises from 0.100 (p0) to 0.816 (p1). H-A5: p8 not run.
-- On 16 pairs the tuned setting is indistinguishable from the baseline (pose_pck 0.809 vs 0.807, style 0.1086 vs 0.1070; identical on 8 of 16 pairs), and the three-way tie has CI edges of -0.016 and -0.014. Tuning gives no gain over the baseline; the 0-0.8 window costs nothing and gains nothing.
+- H-A1: the pose half held; the style half is not shown by this metric. H-A2: pose is unchanged at guidance_end 0.8 vs 1.0 (0.817 both) and style differs within the tie band, so neither supported nor refuted. H-A3: not supported; LoRA 1.2 gives no consistent style gain (control 1.0: 0.1098 vs 0.1145; control 1.2: 0.1161 vs 0.1141). H-A4 held: p1 beats p0 on human pose match (+1.59, 95% CI [+1.09, +2.03]) but is worse on faces (-0.44 [-0.78, -0.09]) and style (-0.28 [-0.53, -0.03]), with hands not distinguishable from zero (-0.25 [-0.56, +0.06]) (B's blind ratings, `eval/EVAL_REPORT_M4.md` section 2.2).
+- On 16 pairs the tuned setting is indistinguishable from the baseline (pose_pck 0.809 vs 0.807, style 0.1086 vs 0.1070; identical on 8 of 16 pairs), and the three-way tie has CI edges of -0.016 and -0.014. Tuning gives no gain over the baseline; the 0-0.8 window costs nothing and gains nothing; p1 and p2 images differ by a median of 2.1/255 per pixel (`results/m4_p1_p2_similarity_dev.json`).
 - c1.2_l1.0 has the highest pose match on 16 pairs (+0.025 over the baseline, CI includes 0), driven by s02 (+0.235) and s01 (+0.126), and it loses 0.1 or more on s18, s19 and s27, so it is not shown to be better.
 - Slider help text (in the app, #137). Style strength (0.6 to 1.2, default 1.0): "How strongly the picture follows Varma's painted look. Lower numbers look more generic and glossy. 1.0 is the default. Going above 1.0 did not add more style in our tests." Pose strength (0.4 to 1.2, default 1.0): "How closely the figures follow your pose. Below about 0.6 they often ignore it. 0.8 to 1.0 follows it well. Above 1.0 adds little for simple poses. Unusual poses, such as bending right over, can be misread (in one test a bent-over figure turned into a horse)."
 
@@ -197,11 +198,13 @@ Files behind these numbers (all in `results/`): `control_stage1_cells.json`, `co
 Stage 1 used 3 fixtures (f03 is dev scene s01, because M3's fixtures have no 3-figure scene) and 2 seeds, and only finds the region. Stage 2 used 16 pairs, one seed, bootstrap over 16 pairs. pose_pck uses the detector family that drew the skeletons (circular), and painted figures are hard to detect, so human pose-match ratings are the main evidence. style_margin measures similarity to Varma references and cannot see stiffness, faces or hands. One base model (SD1.5, 512x512), fp16 not quantized, hardware on one T4. Gaze and drapery were not tested.
 
 ### 4.5 For the report's Q&A
-- Does ControlNet fix faces? That is answered by B's blind face and hand ratings (`EVAL_REPORT_M4.md`). None of our automated metrics scores faces, and body-only OpenPose carries only coarse head keypoints.
+- Does ControlNet fix faces? No: p0 to p1 changes faces by -0.44 [-0.78, -0.09] and hands by -0.25 [-0.56, +0.06] in B's blind ratings (`eval/EVAL_REPORT_M4.md` section 2.2), i.e. faces get slightly worse, not better. Body-only OpenPose carries only coarse head keypoints and does not target faces.
 - Why this pose strength? Pose match rises steeply up to control 0.6-0.8 and flattens after 1.0 (stage 1: 0.46 to 0.72 to 0.82 to 0.86 at 0.4, 0.6, 1.0, 1.2). On 16 pairs, 1.2 is not shown to beat 1.0 (paired CI against the baseline [-0.016, +0.069]) and style_margin does not fall at any tested setting, so we keep 1.0 and the rule's 0-0.8 window, which costs nothing.
-- Does the style survive? By style_margin, yes (within the tie band at every tested setting). That metric does not measure stiffness, so B's style ratings decide.
+- Does the style survive? Mostly by the automated metric, less so to human raters. style_margin stays within the tie band at every tested setting, but blind raters score p1 lower on style than p0 (-0.28 [-0.53, -0.03]), and style_margin and human style correlate only 0.17 (B), so the metric cannot be relied on to detect this loss.
 
-**Figure:** the stage-1 grids and the trade-off plot are on A's Drive (`m4/sweep/stage1_results/`: `grid_f01`, `grid_f02`, `grid_f03`, `grid_window`, `tradeoff.png`). `<<pending: A or D, copy tradeoff.png into docs/figures/>>`.
+**Figure:** the style/pose trade-off from stage 1 (`docs/figures/tradeoff.png`). The stage-1 grids are on A's Drive (`m4/sweep/stage1_results/`).
+
+![Trade-off plot](figures/tradeoff.png)
 
 ## 5. Pose inputs and the copy check (C)
 `<<pending: C, POSE.md>>`: the renderer, the preset library, `pose_from_text` accuracy (H-C1), photo extraction
@@ -236,15 +239,15 @@ python post/run_post.py --manifest $IMG/p1_openpose@rrv_v1/dev/manifest.json --c
 ```
 Versions (Colab T4, Python 3.13): torch 2.14.1+cu130, diffusers 0.40.0, gradio 6.31.0, gfpgan 1.3.8, basicsr 1.4.2
 (pins in `post/requirements_post.txt`). GFPGAN does not install on Python 3.13 with plain `pip`; `post/install_post.sh`
-builds a patched basicsr from source. **Screenshots** (dev scenes only, 23 Nov, on a phone over mobile data through the public link with `--auth`), on Drive `m4/demo/`: text only; a preset pose (skeleton shown); an uploaded photo; style 0.6; style 1.2; a blocked prompt. Drive link: https://drive.google.com/drive/folders/1lWFiRzGHe-4JRSgDlchg0xX0xRCYOhSr
+builds a patched basicsr from source. **Screenshots** (dev scenes only, 23 Nov, on a phone over mobile data through the public link with `--auth`), on Drive `m4/demo/`: three paintings of one scene (recorded on 23 Nov as text only, style 0.6 and style 1.2); one run with preset mode on but no preset picked, so no pose was used; a blocked prompt; and a failed run (TypeError; probably the scale bug fixed later in #140). **No screenshot in that folder shows a working preset or uploaded-photo pose** (A's S2 check, Status issue 17, 24 Nov, has a preset one), and none shows a photo of a person. `<<pending: D, retake the preset and uploaded-photo shots on main after #140>>`. Drive link: https://drive.google.com/drive/folders/1lWFiRzGHe-4JRSgDlchg0xX0xRCYOhSr
 
 #### 2. Result
-**Post-processing time on a T4** (post step only; excludes the base image). Source: the per-image `seconds` in D's p5/p6 manifests on Drive (`m4/images/p5_hires@rrv_v1/dev/manifest.json`, `m4/images/p6_restore@rrv_v1/dev/manifest.json`); the end-to-end app numbers below are in `results/app_latency.json`:
+**Post-processing time on a T4** (post step only; excludes the base image). Source: `results/post_timing_dev.json` (all 32 images; from D's p5/p6 manifests on Drive); the end-to-end app numbers below are in `results/app_latency.json`:
 
 | step | median per image | note |
 |---|---|---|
-| p5 hi-res (img2img 768, 10 steps) | about 17.2 s | about 1.39 s/step |
-| p6 face restoration (GFPGAN) | 0.84 s | first image 8.9 s (model load) |
+| p5 hi-res (img2img 768, 10 steps) | 17.3 s | slowest 48.6 s (probably model load) |
+| p6 face restoration (GFPGAN) | 0.84 s | slowest 12.1 s (model load) |
 
 **End-to-end latency and peak VRAM** (`results/app_latency.json`; Tesla T4, torch 2.14.1+cu130; through the app's
 own handler, so policy, parsing, prompt, pose, generation, post-processing, label and PNG save are all included; scene
@@ -272,7 +275,7 @@ all 16 dev pairs × 2 seeds, rescored 23 Nov with `--pairs`; p1 for reference fr
 | p5 hi-res | 0.571 | 0.094 | 0.272 | 0.696 / 0.815 |
 | p6 restore | 0.587 | 0.102 | 0.270 | 0.689 / 0.810 |
 
-p5 and p6 are made from D's own p1 base run (`run_batch.py`, baseline profile, the same prompts and seeds). B checked s09 seed 1: D's base image is byte-identical to A's rated p1 image (sha256 `8d63f5db…`, `docs/TEAM_DECISIONS_M4.md` D2), so p1 → p5/p6 compares the same base (checked on one image; the same code, settings and seeds produced the rest). Paired comparisons with CIs are in `eval/EVAL_REPORT_M4.md`. Read as means only:
+p5 and p6 are made from D's own p1 base run (`run_batch.py`, baseline profile, the same prompts and seeds). B checked s09 seed 1: D's base image is byte-identical to A's rated p1 image (sha256 `8d63f5db…`, `docs/TEAM_DECISIONS_M4.md` D2), so p1 → p5/p6 compares the same base (compared with A on one image; the same code, settings and seeds produced the rest). All 32 p5 and 32 p6 rows record a `source_sha256` that matches D's p1 base file (`results/post_timing_dev.json`). Paired comparisons with CIs are in `eval/EVAL_REPORT_M4.md`. Read as means only:
 - p6 matches p1 on every automated metric. GFPGAN changes only the face region, which these whole-image metrics
   barely see.
 - p5 is slightly lower on checklist and `style_margin`. This is consistent with img2img redrawing details.
@@ -289,8 +292,7 @@ show resolution gains.** The question "do these steps help faces?" is answered b
 | p6 face restore | +0.19 [+0.00, +0.34] | +0.25 [+0.09, +0.41] | +0.12 [−0.06, +0.31] | no (faces) |
 
 **What is on by default** (Overview §10 rule 2, applied at S3):
-- **Hi-res** passes the rating test. It goes on by default only if D's spot check on 4 of A's p2 images shows no new
-  artifact: `<<pending: D spot check, then config PR post.default_on>>`.
+- **Hi-res** passes the rating test, but not the spot check. D's spot check (24 Nov, T4; s09, s19, s27, s31, seed 1) found visible new artifacts, so by the rule hi-res stays an **opt-in checkbox** and `post.default_on` stays `false`. s09: dark marks on the toes, and the resting hand loses its fingers. s27: specks on the child's chest, and the child's foot becomes hand-like. s19 and s31 showed no clear new artifact (s19's faces improved; s31's bottom-left hand looked softer but was not examined closely). No figure was duplicated. The four p2 images were regenerated with the tuned profile and were not compared with A's files; the check was by eye, not blind, read from the notebook output by Claude, and the opt-in decision was D's. B's held-out run agrees: p1 → p5 faces −0.08 [−0.42, +0.25], which would not pass the rule (`docs/TEAM_DECISIONS_M4.md` D7).
 - **Face restoration** stays an opt-in checkbox.
 
 **Caveats (B):** faces passed by 0.06, while two raters scoring the near-identical p1/p2 images already differ by
@@ -320,7 +322,7 @@ not a rating, and B's blind ratings decide:
 - **H-D2 (restoration raises faces but lowers style):** not supported as predicted. Faces rose only +0.19 (under the
   bar), and style did not drop (+0.12, CI includes 0). "Style weakened (photographic)" was ticked twice for both p1 and p6.
 - **Neither step fixes faces or hands in a large way.** The largest face gain (+0.31) is about the size of the
-  rater-to-rater noise (0.25).
+  rater-to-rater noise (0.25), and it did not replicate on the held-out pairs (−0.08).
 
 #### 4. Limits
 - Native resolution is 512 (SD1.5). Hi-res is upscale-then-refine, not a true 768 generation.
@@ -328,8 +330,8 @@ not a rating, and B's blind ratings decide:
   were completed and all 16 pairs were scored.
 - n is small (12–16 pairs, 2 seeds): no significance claims.
 - CLIP and DINO cannot see resolution gains; hi-res detail is judged on crops and is not blind.
-- ESRGAN was not run. GFPGAN was tested on SD paintings only. In the first 12-pair run, 23 of 24 images had a face
-  found and one (`s25_s2`, a leaping figure) had none (from the p6 run log; not in `results/`).
+- ESRGAN was not run. GFPGAN was tested on SD paintings only. A face was found in 31 of 32
+  p6 images; `s25_s2` (a leaping figure) had none (`results/post_timing_dev.json`).
 - Free Colab: one GPU session, one job at a time, the session can time out, and the public link dies with it.
 - Uploads pass through Gradio's temporary cache, and the link goes through Gradio's relay.
 - The output NSFW filter is a soft blur-and-confirm backstop (`app/nsfw.py`, `docs/CONTENT_POLICY.md` §5). It sits
@@ -464,7 +466,7 @@ Research and coursework use only. Outputs are *in the style of*, not *by*, Raja 
 passed off as authentic works. Not for demeaning or sexualised depictions of deities or anyone else.
 
 ## 7. Results (B)
-*Pasted from `eval/EVAL_REPORT_M4.md` §2–§3 (B) on 24 Nov. Dev results are final; held-out is pending there.*
+*Pasted from `eval/EVAL_REPORT_M4.md` §2–§3 (B, #152) on 24 Nov. Dev and held-out results are final.*
 
 **The short answer.** ControlNet fixes posture, not faces or hands. Adding OpenPose control (p0 → p1) raised human
 pose match by +1.59 points (1-5 scale; 95% CI [+1.09, +2.03], better on 14 of 16 pairs), but faces got **worse**
@@ -474,6 +476,11 @@ post-processing (p5) is the one step that lifted faces past our 0.25 bar (+0.31 
 costing style, but only just: two raters scoring the same p1/p2 images already differ by 0.25 on faces (§8).
 Face restoration (p6) helped less (+0.19). Hands ratings are the least reliable score we collected (rater
 agreement kappa 0.14), so read every hands number as weak.
+
+**Held-out check (6 private pairs, §7.7).** Posture result held: supplied pose +1.75 pose match, auto-from-text −1.58 vs a
+photo pose, tuned window no different. Two dev findings did **not** replicate: control did not measurably hurt faces
+(+0.17, CI includes 0), and hi-res did not lift faces (−0.08 [−0.42, +0.25]; dev +0.31), so the hi-res default is
+kept off (`TEAM_DECISIONS_M4.md` D7).
 
 ### 7.1 Means per condition
 Pair means (seed 1, raters averaged) with 95% CIs. Figure count = share of images with the right number of people.
@@ -571,8 +578,50 @@ included on purpose.
 | `docs/figures/grid_m4_dev_s31.png` | failure: p3 ignores the pose; control alone gives no pose gain here (0.0) |
 
 ### 7.7 Held-out
-`<<pending: held-out run (p0, p1, p2, p3, p5, p6 on the 6 private pairs, at the frozen sha; private detection
-cache), held-out ratings, the same tables, and pose_from_text figure-count accuracy on the 6 scenes>>`
+Six private pairs written by B (m4h01-m4h06: 2 single, 2 two-figure, 2 three-figure; `eval/test_pairs_heldout.json`,
+scenes in `eval/test_scenes_heldout_m4.json`), kept private until now. All six conditions were generated at `main`
+`9ab0765` (config hashes as in D4), seeds 1-2, on a Colab T4, scored with a private detection cache, and rated blind
+in one round of 36 images (6 conditions × 6 pairs, 2 of 4 raters each, no calibration rows). Files: `results/m4_tables_heldout.md`/`.json`,
+`results/<condition>@rrv_v1_heldout_pose.json`, `eval/ratings/ratings_m4_heldout.csv`, `eval/ratings/blind_key_m4_heldout.json`.
+Means over 6 pairs, seed 1, 95% bootstrap CI (one round, so p1 and p3/p5/p6 were rated together this time):
+
+| Condition | style | pose match | faces | hands |
+|---|---|---|---|---|
+| `p0_m3_default` | 3.25 [2.83, 3.67] | 2.08 [1.50, 2.75] | 2.83 [2.50, 3.00] | 2.83 [2.50, 3.00] |
+| `p1_openpose` | 3.42 [3.00, 3.83] | 3.83 [3.33, 4.33] | 3.00 [2.75, 3.25] | 2.75 [2.33, 3.17] |
+| `p2_openpose_tuned` | 3.25 [3.08, 3.42] | 3.67 [3.25, 4.08] | 2.92 [2.50, 3.25] | 2.75 [2.33, 3.17] |
+| `p3_pose_auto` | 3.67 [3.33, 4.00] | 2.25 [1.50, 3.08] | 3.25 [2.83, 3.67] | 3.08 [3.00, 3.25] |
+| `p5_hires` | 3.25 [2.83, 3.58] | 3.67 [3.08, 4.17] | 2.92 [2.67, 3.17] | 2.58 [2.00, 3.08] |
+| `p6_restore` | 3.17 [2.83, 3.42] | 3.75 [3.17, 4.17] | 2.67 [2.17, 3.08] | 2.67 [2.17, 3.08] |
+
+Paired comparisons (b − a, win/tie/loss within the tie bands):
+
+| Comparison | pose match | faces | hands | style |
+|---|---|---|---|---|
+| p0 → p1 | +1.75 [+0.75, +2.58] (5/0/1) | +0.17 [−0.17, +0.58] (2/3/1) | −0.08 [−0.50, +0.25] | +0.17 [−0.17, +0.50] |
+| p1 → p2 | −0.17 [−0.50, +0.00] (0/5/1) | −0.08 [−0.50, +0.25] | +0.00 [−0.25, +0.25] | −0.17 [−0.58, +0.17] |
+| p1 → p3 | −1.58 [−2.58, −0.66] (0/1/5) | +0.25 [−0.17, +0.83] | +0.33 [+0.00, +0.67] | +0.25 [−0.17, +0.83] |
+| p1 → p5 | −0.17 [−0.33, +0.00] | −0.08 [−0.42, +0.25] (2/1/3) | −0.17 [−0.33, +0.00] | −0.17 [−0.33, +0.00] |
+| p1 → p6 | −0.08 [−0.58, +0.50] | −0.33 [−0.83, +0.17] (1/2/3) | −0.08 [−0.42, +0.25] | −0.25 [−0.58, +0.17] |
+
+What held and what did not:
+- **Held:** a supplied pose fixes posture (+1.75 pose match, better on 5 of 6 pairs, dev +1.59). Auto-from-text loses to
+  a photo skeleton on pose match (−1.58, 0/1/5; dev −1.94). The tuned window changes nothing (p1 → p2 within the
+  tie band on every score, as in dev). Figure count right: p0 0.58, p1 0.83, p2 0.83, p3 0.83, p5 0.75, p6 0.83
+  (share of pairs, seed 1).
+- **Did not hold:** the dev claim that control makes faces worse. Held-out faces and hands barely move with control
+  (+0.17 and −0.08, CIs include 0), so with 6 pairs we cannot say control hurts faces; the safest reading is "control
+  does not help faces or hands" (H-B2 is still supported in the sense that it does not improve them).
+- **Did not hold:** the hi-res face gain. Dev p1 → p5 faces was +0.31; held-out it is −0.08 [−0.42, +0.25], and hands
+  −0.17. By the D2 rule (faces > +0.25) hi-res would **not** pass on the held-out pairs. Restoration is lower still
+  (faces −0.33). Six pairs is a small test, but the dev pass was already narrow (§7.8).
+- **Pose from text, figure count:** `pose_from_text` drew the right number of figures for 4 of 6 scenes (m4h01, 02, 03
+  and 05); it drew 1 figure for m4h04 (two people: Dasharatha and Kaikeyi) and for m4h06 (three: Gandhari,
+  Dhritarashtra and a maid). These two scenes are also p3's lowest on automated pose score (m4h04 pck 0.11 / 0.00).
+- **Agreement (36 images, 2 raters each):** pose match κw 0.80, hands 0.62, faces 0.53, style 0.38: better than dev
+  for hands and faces, from a single round with fewer, simpler scenes.
+- **Metric validation:** `pose_pck` vs human pose match 0.46 (n=36), `style_margin` vs human style 0.08. The H-B3 rule
+  was applied to dev (0.15) and is not re-decided; held-out PCK sits above 0.3, within the noise of n=36.
 
 ### 7.8 What it means
 
@@ -611,7 +660,7 @@ cache), held-out ratings, the same tables, and pose_from_text figure-count accur
 
 | Weak spot (since M2) | What M4 did | M4 result |
 |---|---|---|
-| Faces and hands | pose control (p1/p2); hi-res (p5); face restoration (p6) | **Not fixed.** p0 → p1: faces −0.44 [−0.78, −0.09], hands −0.25 [−0.56, +0.06]. Hi-res p1 → p5: faces +0.31 [+0.12, +0.53], just past the bar and about the size of rater noise. Restoration p1 → p6: faces +0.19 |
+| Faces and hands | pose control (p1/p2); hi-res (p5); face restoration (p6) | **Not fixed.** p0 → p1: faces −0.44 [−0.78, −0.09], hands −0.25 [−0.56, +0.06]. Hi-res p1 → p5: faces +0.31 [+0.12, +0.53], just past the bar and about the size of rater noise. Restoration p1 → p6: faces +0.19. Held-out (6 pairs): control faces +0.17 [−0.17, +0.58] (no measurable harm, no fix), hi-res faces −0.08 [−0.42, +0.25] (dev gain did not replicate), so both post steps are opt-in |
 | Figure count and posture | OpenPose from a photo (p1) or from the text (p3) | **Posture fixed with a photo pose:** p0 → p1 pose match +1.59 [+1.09, +2.03], 14 of 16 pairs; right figure count 9/16 → 13/16. A text-made pose gets the count (15/16) but not the posture (p1 → p3 −1.94) |
 | No human test of the system | blind ratings of style, pose match, faces and hands; 2 raters per image, 192 ratings | **Done within the team.** Agreement: pose match kappa 0.75, faces 0.36, style 0.31, hands 0.14. Still no test with people outside the team |
 | Safety checker blocks paintings | M2 checker off; input blocklist + label; output filter by the pre-set rule | 1 of 15 real paintings flagged by the NSFW classifier → soft blur-and-confirm (`results/audit_real_paintings.json`, `docs/CONTENT_POLICY.md` §5) |
@@ -656,6 +705,10 @@ These hold whatever the results show; owners add their own:
     by 0.25 on faces);
   - p1 and p3/p5/p6 were rated in different rounds;
   - hands agreement is poor (weighted kappa 0.14).
+- **Held-out is 6 pairs, 36 images, one rating round, two raters per image:** the held-out confidence intervals are
+  wide, p1 → p5 and p1 → p6 differences are within rater noise, and pairs are composites/stock photos written by B,
+  who also rated. No held-out result changed a decision already recorded in `TEAM_DECISIONS_M4.md`; D2's hi-res default
+  is revisited in D7 because the held-out did not replicate the dev gain.
 - **One model:** SD1.5 at 512×512, one LoRA, one ControlNet family (OpenPose body; Canny optional).
 - **Poses from a few sources:** team photos, stock photos of models (D's pairs; team decision, 21 Nov), and
   templated presets. **Body keypoints only,** except the optional p8.

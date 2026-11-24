@@ -25,15 +25,15 @@ python post/run_post.py --manifest $IMG/p1_openpose@rrv_v1/dev/manifest.json --c
 ```
 Versions (Colab T4, Python 3.13): torch 2.14.1+cu130, diffusers 0.40.0, gradio 6.31.0, gfpgan 1.3.8, basicsr 1.4.2
 (pins in `post/requirements_post.txt`). GFPGAN does not install on Python 3.13 with plain `pip`; `post/install_post.sh`
-builds a patched basicsr from source. **Screenshots** (dev scenes only, 23 Nov, on a phone over mobile data through the public link with `--auth`), on Drive `m4/demo/`: text only; a preset pose (skeleton shown); an uploaded photo; style 0.6; style 1.2; a blocked prompt. Drive link: https://drive.google.com/drive/folders/1lWFiRzGHe-4JRSgDlchg0xX0xRCYOhSr
+builds a patched basicsr from source. **Screenshots** (dev scenes only, 23 Nov, on a phone over mobile data through the public link with `--auth`), on Drive `m4/demo/`: three paintings of one scene (recorded on 23 Nov as text only, style 0.6 and style 1.2); one run with preset mode on but no preset picked, so no pose was used; a blocked prompt; and a failed run (TypeError; probably the scale bug fixed later in #140). **No screenshot in that folder shows a working preset or uploaded-photo pose** (A's S2 check, Status issue 17, 24 Nov, has a preset one), and none shows a photo of a person. `<<pending: D, retake the preset and uploaded-photo shots on main after #140>>`. Drive link: https://drive.google.com/drive/folders/1lWFiRzGHe-4JRSgDlchg0xX0xRCYOhSr
 
 ## 2. Result
-**Post-processing time on a T4** (post step only; excludes the base image). Source: the per-image `seconds` in D's p5/p6 manifests on Drive (`m4/images/p5_hires@rrv_v1/dev/manifest.json`, `m4/images/p6_restore@rrv_v1/dev/manifest.json`); the end-to-end app numbers below are in `results/app_latency.json`:
+**Post-processing time on a T4** (post step only; excludes the base image). Source: `results/post_timing_dev.json` (all 32 images; from D's p5/p6 manifests on Drive); the end-to-end app numbers below are in `results/app_latency.json`:
 
 | step | median per image | note |
 |---|---|---|
-| p5 hi-res (img2img 768, 10 steps) | about 17.2 s | about 1.39 s/step |
-| p6 face restoration (GFPGAN) | 0.84 s | first image 8.9 s (model load) |
+| p5 hi-res (img2img 768, 10 steps) | 17.3 s | slowest 48.6 s (probably model load) |
+| p6 face restoration (GFPGAN) | 0.84 s | slowest 12.1 s (model load) |
 
 **End-to-end latency and peak VRAM** (`results/app_latency.json`; Tesla T4, torch 2.14.1+cu130; through the app's
 own handler, so policy, parsing, prompt, pose, generation, post-processing, label and PNG save are all included; scene
@@ -61,7 +61,7 @@ all 16 dev pairs × 2 seeds, rescored 23 Nov with `--pairs`; p1 for reference fr
 | p5 hi-res | 0.571 | 0.094 | 0.272 | 0.696 / 0.815 |
 | p6 restore | 0.587 | 0.102 | 0.270 | 0.689 / 0.810 |
 
-p5 and p6 are made from D's own p1 base run (`run_batch.py`, baseline profile, the same prompts and seeds). B checked s09 seed 1: D's base image is byte-identical to A's rated p1 image (sha256 `8d63f5db…`, `docs/TEAM_DECISIONS_M4.md` D2), so p1 → p5/p6 compares the same base (checked on one image; the same code, settings and seeds produced the rest). Paired comparisons with CIs are in `eval/EVAL_REPORT_M4.md`. Read as means only:
+p5 and p6 are made from D's own p1 base run (`run_batch.py`, baseline profile, the same prompts and seeds). B checked s09 seed 1: D's base image is byte-identical to A's rated p1 image (sha256 `8d63f5db…`, `docs/TEAM_DECISIONS_M4.md` D2), so p1 → p5/p6 compares the same base (compared with A on one image; the same code, settings and seeds produced the rest). All 32 p5 and 32 p6 rows record a `source_sha256` that matches D's p1 base file (`results/post_timing_dev.json`). Paired comparisons with CIs are in `eval/EVAL_REPORT_M4.md`. Read as means only:
 - p6 matches p1 on every automated metric. GFPGAN changes only the face region, which these whole-image metrics
   barely see.
 - p5 is slightly lower on checklist and `style_margin`. This is consistent with img2img redrawing details.
@@ -78,8 +78,7 @@ show resolution gains.** The question "do these steps help faces?" is answered b
 | p6 face restore | +0.19 [+0.00, +0.34] | +0.25 [+0.09, +0.41] | +0.12 [−0.06, +0.31] | no (faces) |
 
 **What is on by default** (Overview §10 rule 2, applied at S3):
-- **Hi-res** passes the rating test. It goes on by default only if D's spot check on 4 of A's p2 images shows no new
-  artifact: `<<pending: D spot check, then config PR post.default_on>>`.
+- **Hi-res** passes the rating test, but not the spot check. D's spot check (24 Nov, T4; s09, s19, s27, s31, seed 1) found visible new artifacts, so by the rule hi-res stays an **opt-in checkbox** and `post.default_on` stays `false`. s09: dark marks on the toes, and the resting hand loses its fingers. s27: specks on the child's chest, and the child's foot becomes hand-like. s19 and s31 showed no clear new artifact (s19's faces improved; s31's bottom-left hand looked softer but was not examined closely). No figure was duplicated. The four p2 images were regenerated with the tuned profile and were not compared with A's files; the check was by eye, not blind, read from the notebook output by Claude, and the opt-in decision was D's. B's held-out run agrees: p1 → p5 faces −0.08 [−0.42, +0.25], which would not pass the rule (`docs/TEAM_DECISIONS_M4.md` D7).
 - **Face restoration** stays an opt-in checkbox.
 
 **Caveats (B):** faces passed by 0.06, while two raters scoring the near-identical p1/p2 images already differ by
@@ -109,7 +108,7 @@ not a rating, and B's blind ratings decide:
 - **H-D2 (restoration raises faces but lowers style):** not supported as predicted. Faces rose only +0.19 (under the
   bar), and style did not drop (+0.12, CI includes 0). "Style weakened (photographic)" was ticked twice for both p1 and p6.
 - **Neither step fixes faces or hands in a large way.** The largest face gain (+0.31) is about the size of the
-  rater-to-rater noise (0.25).
+  rater-to-rater noise (0.25), and it did not replicate on the held-out pairs (−0.08).
 
 ## 4. Limits
 - Native resolution is 512 (SD1.5). Hi-res is upscale-then-refine, not a true 768 generation.
@@ -117,8 +116,8 @@ not a rating, and B's blind ratings decide:
   were completed and all 16 pairs were scored.
 - n is small (12–16 pairs, 2 seeds): no significance claims.
 - CLIP and DINO cannot see resolution gains; hi-res detail is judged on crops and is not blind.
-- ESRGAN was not run. GFPGAN was tested on SD paintings only. In the first 12-pair run, 23 of 24 images had a face
-  found and one (`s25_s2`, a leaping figure) had none (from the p6 run log; not in `results/`).
+- ESRGAN was not run. GFPGAN was tested on SD paintings only. A face was found in 31 of 32
+  p6 images; `s25_s2` (a leaping figure) had none (`results/post_timing_dev.json`).
 - Free Colab: one GPU session, one job at a time, the session can time out, and the public link dies with it.
 - Uploads pass through Gradio's temporary cache, and the link goes through Gradio's relay.
 - The output NSFW filter is a soft blur-and-confirm backstop (`app/nsfw.py`, `docs/CONTENT_POLICY.md` §5). It sits
