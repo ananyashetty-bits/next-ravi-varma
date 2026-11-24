@@ -1,0 +1,8 @@
+{
+ "source": "D's Drive manifests m4/images/{p5_hires,p6_restore}@rrv_v1/dev/manifest.json, read on Colab 24 Nov 2026",
+ "note": "post_seconds per image (post step only; max probably includes model load). source_sha_matches = the manifest's source_sha256 equals the sha256 of D's own p1 base file; it does not compare with A's p1 files",
+ "p5_hires": {"n": 32, "post_median_s": 17.31, "post_min_s": 16.99, "post_max_s": 48.6, "n_with_source_sha": 32, "source_sha_matches_p1_on_D_drive": 32},
+ "p6_restore": {"n": 32, "post_median_s": 0.84, "post_min_s": 0.27, "post_max_s": 12.1, "n_with_source_sha": 32, "source_sha_matches_p1_on_D_drive": 32,
+  "images_with_face": 31, "no_face": ["s25_s2"], "settings": {"method": "restore_gfpgan", "weight": 0.5}},
+ "s09_s1_base_sha256": "8d63f5db284985687064ee2de2f1b232a5991e7255ccd6216ce92401e30a1fe2"
+}

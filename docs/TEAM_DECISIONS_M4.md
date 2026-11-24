@@ -23,7 +23,7 @@ among the three: **control 1.0, window 0-0.8, LoRA 1.0** (`results/control_rule_
 difference 2.1 of 255 vs 39.1 for p0 vs p1; `results/m4_p1_p2_similarity_dev.json`), so their rating differences
 (faces +0.25, others ≤ +0.16) are rater noise. The tuned window costs nothing and gains nothing.
 
-## D2. Post-processing default: hi-res (p5) passes the rating test; face restoration (p6) is opt-in (S3)
+## D2. Post-processing default: hi-res (p5) passes the rating test but not the spot check; both steps are opt-in (S3)
 **Rule** (Overview §10 rule 2): post-processing is on by default only if, against p1, the mean **face** rating
 improves by more than 0.25, **hands** do not drop by more than 0.25 and the mean **style** rating drops by less
 than 0.3. D then spot-checks the winning method on 4 of A's p2 images; a visible new artifact makes it opt-in.
@@ -35,10 +35,10 @@ than 0.3. D then spot-checks the winning method on 4 of A's p2 images; a visible
 | p5 hi-res (img2img 768) | +0.31 [+0.12, +0.53] ✓ | +0.25 [+0.00, +0.50] ✓ | −0.03 [−0.25, +0.22] ✓ | **yes** |
 | p6 face restore | +0.19 [+0.00, +0.34] ✗ | +0.25 [+0.09, +0.41] ✓ | +0.12 [−0.06, +0.31] ✓ | no (faces) |
 
-**Outcome:** hi-res is the winning method. **It goes on by default if D's spot check on 4 of A's p2 images shows
-no new artifact**; otherwise it stays opt-in. Face restoration stays an opt-in checkbox.
-- In the app this is `post.default_on` in `config/m4.json` (it drives the "Higher resolution" box). D records the
-  spot-check result and makes the config-only change: `<<pending: D, spot check + config PR>>`.
+**Outcome:** hi-res is the winning method. **It stays opt-in, because D's spot check
+found visible new artifacts.** Face restoration stays an opt-in checkbox.
+- In the app this is `post.default_on` in `config/m4.json` (it drives the "Higher resolution" box). No config change is
+  needed. D's spot check (24 Nov, T4; s09, s19, s27, s31, seed 1) found visible new artifacts, so by the rule hi-res stays an **opt-in checkbox** and `post.default_on` stays `false`. s09: dark marks on the toes, and the resting hand loses its fingers. s27: specks on the child's chest, and the child's foot becomes hand-like. s19 and s31 showed no clear new artifact (s19's faces improved; s31's bottom-left hand looked softer but was not examined closely). No figure was duplicated. The four p2 images were regenerated with the tuned profile and were not compared with A's files; the check was by eye, not blind, read from the notebook output by Claude, and the opt-in decision was D's (`docs/APP.md` §2).
 - p5 and p6 were made from D's own p1 base run (same prompts, seeds and baseline profile). B checked s09 seed 1:
   D's base image is byte-identical to A's rated p1 image (sha256 `8d63f5db…`), so p1 → p5/p6 compares the same base.
 - Caveats: faces passed by 0.06, and two raters scoring the near-identical p1/p2 images already differ by 0.25 on
