@@ -1,23 +1,108 @@
-# The Next Ravi Varma: Milestone 4 (web app + pose control)
+# The Next Ravi Varma
 
-M4 turns the M3 pipeline into something a person can use: type an epic scene, optionally give a pose (a preset, a
-photo, or none), and get back a painting in Raja Ravi Varma's style with a **style-strength** slider and a
-**pose-strength** slider. It adds ControlNet (OpenPose) to SD1.5 + the `rrv_v1` LoRA, optional post-processing
-(hi-res, face restoration) and a content policy. The M3 text-side documentation is kept below, unchanged.
+**Type a scene from the Indian epics, get a painting in the style of Raja Ravi Varma.**
+
+A four-person course project (BITS Pilani, Goa). We fine-tuned **Stable Diffusion 1.5** with a **LoRA** on Ravi
+Varma's paintings, added a text-understanding layer for epic scenes, then **pose control** (ControlNet OpenPose) and a
+**web app** where a user types a scene, optionally gives a pose, and gets a painting back. Every claim in the reports
+is tied to a result file in this repository, and each milestone was checked with blind human ratings on a held-out set
+that was kept private until the end.
+
+![Dev pair s02: the pose skeleton and the same scene under each M4 condition](docs/figures/grid_m4_dev_s02.png)
+*One test scene: the pose skeleton (left) and the generated images under the M4 conditions (no pose, pose, tuned pose,
+pose from text, hi-res, face restoration). From `eval/EVAL_REPORT_M4.md` §2.6.*
+
+## The project in four milestones
+
+| Milestone | What we built | Main result | Read this |
+|---|---|---|---|
+| **M1: data** | A provenance-logged dataset of Ravi Varma paintings (source, rights note, resolution per image), with captions | 147 paintings used for training; every source recorded | [`milestone1_2/m1_data/`](milestone1_2/m1_data/), [`TEAM_DECISIONS_M1`](milestone1_2/docs/TEAM_DECISIONS_M1.md) |
+| **M2: style model** | A rank-16 LoRA (6.4 MB) on SD 1.5, trigger phrase `rrvarma style`; four training runs compared | Style score +0.037 (95% CI 0.025 to 0.049) over the best plain-SD baseline, better on 14 of 15 held-out prompts, no loss in prompt-following | [`EVAL_REPORT_M2`](milestone1_2/hub/rrvarma_lora_v1/EVAL_REPORT_M2.md), [model card](milestone1_2/hub/rrvarma_lora_v1/README.md) |
+| **M3: text side** | Scene parser and knowledge base for epic characters, an LLM prompt expander, a checklist judge, and a SHAP attribution of prompt parts | Raw text + LoRA (**c1**) was at least as faithful as every expansion pipeline (c1 vs full system: −0.72 [−1.25, −0.25] dev, −0.50 [−0.83, −0.17] held-out), so c1 is the default. The *action* phrase carries most of the faithfulness (SHAP +0.230) | [`M3_REPORT`](docs/M3_REPORT.md), [`EVAL_REPORT`](eval/EVAL_REPORT.md), [`SHAP_ANALYSIS`](analysis/shap/SHAP_ANALYSIS.md) |
+| **M4: pose + app** | ControlNet OpenPose, a pose library and pose-from-text, photo pose extraction, hi-res and face restoration, a Gradio app with a content policy | **A pose fixes posture** (human pose-match +1.59 dev, +1.75 held-out) but **not faces or hands**. Pose from text loses to a photo pose (−1.94 dev, −1.58 held-out). Hi-res stays opt-in (its dev gain did not replicate) | [`M4_REPORT`](docs/M4_REPORT.md), [`EVAL_REPORT_M4`](eval/EVAL_REPORT_M4.md), [`APP`](docs/APP.md) |
+
+## Where everything is
+
+| Folder | What is in it | Milestone |
+|---|---|---|
+| [`milestone1_2/`](milestone1_2/README.md) | M1 data and provenance, the M2 training kit, M2 evaluation tables, and the released LoRA (`hub/rrvarma_lora_v1/`) | M1, M2 |
+| `m2kit/` | The M2 kit copied unchanged; the later pipeline calls it | M2 → M3 |
+| `kb/`, `train/` | Character knowledge base and scene parser ([`KB.md`](kb/KB.md)) | M3 |
+| `expander/` | LLM and template prompt expansion ([`EXPANDER.md`](expander/EXPANDER.md)) | M3 |
+| `pipeline/` | `generate()`, `text_to_image()`, batch runner, token budget, controlled generation ([`PIPELINE.md`](pipeline/PIPELINE.md)) | M3, M4 |
+| `analysis/shap/` | Shapley attribution of prompt parts | M3 |
+| `pose/` | Pose skeletons, preset library, pose from text, photo pose extraction ([`POSE.md`](docs/POSE.md)) | M4 |
+| `post/` | Hi-res and face-restoration steps | M4 |
+| `app/` | The Gradio web app ([`APP.md`](docs/APP.md), [`CONTENT_POLICY.md`](docs/CONTENT_POLICY.md)) | M4 |
+| `eval/` | Test scenes and pose pairs, scoring, judge, contact sheets, blind ratings and keys, evaluation reports, claims audit | M3, M4 |
+| `results/` | Every score file the reports cite | M3, M4 |
+| `docs/` | Milestone reports, team decision logs, figures, handoff notes | all |
+| `config/`, `contracts/` | Shared settings (`m3.json`, `m4.json`) and data contracts; no setting is hard-coded | M3, M4 |
+| `tests/` | CPU test suite (`pytest -q tests`) | all |
+
+Images, model downloads and training runs live on Google Drive, not in git; manifests in the repo point to them. The
+heavy M1/M2 files (paintings, grids, checkpoints) are in the original repository, linked from
+[`milestone1_2/README.md`](milestone1_2/README.md).
+
+## Try it
+
+On a free Colab T4, run the [install cell](#m4-install-colab-t4) (it clones the repo, installs the `gen` profile and
+post-processing), then:
+```bash
+python app/app.py --share --auth user:password
+```
+Then type a scene ("Hanuman kneeling before Rama, offering Sita's ring"), pick a pose (none, a preset, a photo or
+"auto from text") and set the style and pose strength. Full instructions are in the [detailed guide](#detailed-guide) below.
+
+## How we evaluated
+
+- **Fixed test sets:** dev scenes for development, plus held-out scenes written privately and opened only after all
+  decisions were made (M3: 12 scenes; M4: 6 scene+pose pairs).
+- **Blind human ratings:** all four members rated coded images without knowing the condition (style, scene
+  faithfulness; in M4 also pose match, faces and hands), two raters per image, with agreement reported.
+- **Automated metrics:** a vision-language checklist judge, CLIP style margin, a pose-keypoint score (PCK), and a
+  memorisation check against the training paintings. Each metric was checked against the human ratings; where it
+  disagreed (M4's pose score), it was dropped from the headline.
+- **Decisions before results:** hypotheses and decision rules were committed before the scored runs
+  ([`experiments/`](experiments/), [`TEAM_DECISIONS_M3`](docs/TEAM_DECISIONS_M3.md),
+  [`TEAM_DECISIONS_M4`](docs/TEAM_DECISIONS_M4.md)). A claims audit ([`CLAIMS_AUDIT_M4`](eval/CLAIMS_AUDIT_M4.md))
+  checked every number in the M4 reports against a file.
+
+## Limits and ethics
+
+- Faces and hands are still often distorted; pose control does not fix them.
+- Held-out sets are small (M4: 6 pairs, 36 rated images), so differences inside the confidence intervals are not claims.
+- OpenPose gives body posture only: hand gestures (mudras), gaze and drapery are not controlled.
+- The images imitate a style; they are not Ravi Varma's works. Ravi Varma died in 1906 and the paintings are public
+  domain, but some museum scans have their own reuse terms (recorded in the provenance log).
+- Uploaded photos are used only to extract a skeleton and are deleted when the request ends. No photo of a person
+  is stored in this repository. The app has its own content filter; the SD safety checker is off because it blocks
+  classical paintings ([`CONTENT_POLICY.md`](docs/CONTENT_POLICY.md)).
+
+## Team
+
+| Member | GitHub | M3 | M4 |
+|---|---|---|---|
+| Ananya Ranjit Shetty (A) | [@ananyashetty-bits](https://github.com/ananyashetty-bits) | Repository, generation pipeline, token budget, SHAP | ControlNet integration, control settings sweep |
+| Kanupriya Vyas (B) | [@kanuvyas](https://github.com/kanuvyas) | Evaluation: test sets, judge, blind ratings, statistics | Evaluation: pose pairs and metric, ratings, held-out run, claims audit |
+| Meghana M. (C) | [@mmeghana13](https://github.com/mmeghana13) | Knowledge base, scene parser, name-aware LoRA | Pose library, pose from text, photo pose extraction |
+| Vaijayanthimala Navneet (D) | [@f20240393-pixel](https://github.com/f20240393-pixel) | Prompt expander, report assembly | Web app, hi-res and face restoration, content policy, release |
+
+All four built the M1 dataset together, and each ran one of the four LoRA training runs in M2 (`milestone1_2/bundles/`). Releases: `m3-v1.0`, `m4-v1.0`.
+
+---
+
+# Detailed guide
 
 **What the app uses:** the M3 default prompt (c1, raw text, no LLM) + `generate_controlled` (A) + the pose modules (C)
 + `post/` (D). Defaults and slider ranges come from `config/m3.json` and `config/m4.json`, never from the code.
-
-## Milestones 1 and 2
-
-The M1 (data) and M2 (LoRA training and evaluation) work is in [`milestone1_2/`](milestone1_2/README.md): documents, data provenance, the M2 kit and results, and the released adapter. Heavy images and weights stay in the original repository (`kanuvyas/next-ravi-varma`), linked from that README.
 
 ## M4: install (Colab T4)
 ```python
 from google.colab import drive; drive.mount('/content/drive')
 import getpass, subprocess
 tok = getpass.getpass("GitHub token (classic, 'repo' scope): ").strip()
-subprocess.run(["git", "clone", f"https://{tok}@github.com/ananyashetty-bits/next-ravi-varma-m3", "/content/m3"], check=True)
+subprocess.run(["git", "clone", f"https://{tok}@github.com/ananyashetty-bits/next-ravi-varma", "/content/m3"], check=True)
 del tok
 %cd /content/m3
 !bash pipeline/setup_session.sh gen        # diffusers, ControlNet, pose detector, Gradio
@@ -75,8 +160,7 @@ Gradio's own timer removes it (measured at 360 s), so **uploads are deleted with
 
 ## M4: documents
 `docs/APP.md` (app, post-processing), `docs/CONTENT_POLICY.md`, `docs/CONTROL.md` (A), `docs/POSE.md` (C),
-`eval/EVAL_REPORT_M4.md` (B), `docs/M4_REPORT.md` (the assembled report). Sections not yet merged are marked
-`<<pending>>` in `docs/M4_REPORT.md`.
+`eval/EVAL_REPORT_M4.md` (B), `docs/M4_REPORT.md` (the assembled report).
 
 ---
 
@@ -112,7 +196,7 @@ so they run in **separate Colab sessions** and exchange files on Google Drive.
 from google.colab import drive; drive.mount('/content/drive')
 import getpass, subprocess
 tok = getpass.getpass("GitHub token (classic, 'repo' scope): ").strip()   # the repo is private
-subprocess.run(["git", "clone", f"https://{tok}@github.com/ananyashetty-bits/next-ravi-varma-m3", "/content/m3"], check=True)
+subprocess.run(["git", "clone", f"https://{tok}@github.com/ananyashetty-bits/next-ravi-varma", "/content/m3"], check=True)
 del tok
 %cd /content/m3
 !bash pipeline/setup_session.sh gen
