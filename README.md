@@ -81,14 +81,19 @@ Then type a scene ("Hanuman kneeling before Rama, offering Sita's ring"), pick a
 
 ## Team
 
-| Member | GitHub | M3 | M4 |
-|---|---|---|---|
-| Ananya Ranjit Shetty (A) | [@ananyashetty-bits](https://github.com/ananyashetty-bits) | Repository, generation pipeline, token budget, SHAP | ControlNet integration, control settings sweep |
-| Kanupriya Vyas (B) | [@kanuvyas](https://github.com/kanuvyas) | Evaluation: test sets, judge, blind ratings, statistics | Evaluation: pose pairs and metric, ratings, held-out run, claims audit |
-| Meghana M. (C) | [@mmeghana13](https://github.com/mmeghana13) | Knowledge base, scene parser, name-aware LoRA | Pose library, pose from text, photo pose extraction |
-| Vaijayanthimala Navneet (D) | [@f20240393-pixel](https://github.com/f20240393-pixel) | Prompt expander, report assembly | Web app, hi-res and face restoration, content policy, release |
+| Member | GitHub | M2 | M3 | M4 |
+|---|---|---|---|---|
+| Ananya Ranjit Shetty (A) | [@ananyashetty-bits](https://github.com/ananyashetty-bits) | Training environment and launch scripts; baseline run `A_base`; efficiency numbers, M3 handoff, cold-load test | Repository, generation pipeline, token budget, SHAP | ControlNet integration, control settings sweep |
+| Kanupriya Vyas (B) | [@kanuvyas](https://github.com/kanuvyas) | Evaluation kit (leak check, metrics, `eval_run.py`, `compare.py`); caption run `B_v2caps`; M2 evaluation report, blind test, claims audit | Evaluation: test sets, judge, blind ratings, statistics | Evaluation: pose pairs and metric, ratings, held-out run, claims audit |
+| Meghana M. (C) | [@mmeghana13](https://github.com/mmeghana13) | Generation and sweep tools, control-art set; rank-32 run `C_r32`; inference notes, names test, visual vocabulary | Knowledge base, scene parser, name-aware LoRA | Pose library, pose from text, photo pose extraction |
+| Vaijayanthimala Navneet (D) | [@f20240393-pixel](https://github.com/f20240393-pixel) | Training datasets (`train_v1`, `train_v2`); learning-rate run `D_lr2e-4` (the selected model); model card, dataset card, hub release | Prompt expander, report assembly | Web app, hi-res and face restoration, content policy, release |
 
-All four built the M1 dataset together, and each ran one of the four LoRA training runs in M2 (`milestone1_2/bundles/`). Releases: `m3-v1.0`, `m4-v1.0`.
+**Milestone 1 was done by all four together:** collecting the paintings, recording each one's source and rights in the
+provenance log, and writing and checking the captions ([`milestone1_2/m1_data/`](milestone1_2/m1_data/)). In M2 each
+member trained one LoRA variant that changed one setting against the baseline; the four runs are in
+[`milestone1_2/bundles/`](milestone1_2/bundles/).
+
+Releases: `m3-v1.0`, `m4-v1.0`.
 
 ---
 
