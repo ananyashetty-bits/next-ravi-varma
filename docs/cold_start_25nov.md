@@ -20,3 +20,6 @@
   3. Photo with no person (landscape/empty room) → returned friendly UI warning, no Python traceback.
 - **Upload temp file check:**
   - Inspected `/tmp/gradio` immediately after the photo upload request finished; the uploaded JPEG remained in `/tmp/gradio/<session_hash>/` instead of being deleted immediately by the handler (relying on Gradio's 360 s timer). Filed issue #158 (`needs:D`).
+
+## 4. Re-test after #162 (added by B from C's comment on issue #158, 25 Nov 2026 04:57 UTC)
+- Same JPEG, current `main` (after #162): `/tmp/gradio` had 0 files right after the request. Issue #158 closed by C. Not re-run by B.
