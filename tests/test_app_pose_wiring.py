@@ -127,3 +127,30 @@ def test_stub_photo_pose_is_announced(tmp_path):
     Image.new("RGB", (8, 8)).save(p)
     ctrl, warnings = e.control_image("upload photo", None, str(p), None, "")
     assert ctrl is not None and warnings == [A.STUB_POSE_WARNING] and not p.exists()
+
+
+def test_upload_is_deleted_in_every_pose_mode(tmp_path):
+    for mode in A.POSE_MODES:
+        p = tmp_path / "x.png"
+        Image.new("RGB", (8, 8)).save(p)
+        A.make_handler(_PoseEngine())("Sita under a tree", mode, None, str(p), 1.0, 0.8, 5, False, False)
+        assert not p.exists(), mode
+
+
+def test_exif_rotation_is_applied_before_extraction(tmp_path):
+    import types
+    seen = []
+    e = object.__new__(A.Engine)
+    e.pose = types.SimpleNamespace(extract_pose=lambda im: seen.append(im.size) or {"n_people": 0, "warnings": []})
+    exif = Image.Exif()
+    exif[274] = 6                                                # stored landscape, shown portrait
+    p = tmp_path / "phone.jpg"
+    Image.new("RGB", (80, 40)).save(p, exif=exif)
+    e.control_image("upload photo", None, str(p), None, "")
+    assert seen == [(40, 80)]
+
+
+def test_gradio_does_not_copy_uploads():
+    gr = __import__("pytest").importorskip("gradio")
+    photo = [b for b in A.build(None).blocks.values() if isinstance(b, gr.Image) and b.label == "Pose photo"]
+    assert len(photo) == 1 and photo[0].image_mode is None       # issue 158

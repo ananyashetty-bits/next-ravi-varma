@@ -238,7 +238,7 @@ python post/run_post.py --manifest $IMG/p1_openpose@rrv_v1/dev/manifest.json --c
 ```
 Versions (Colab T4, Python 3.13): torch 2.14.1+cu130, diffusers 0.40.0, gradio 6.31.0, gfpgan 1.3.8, basicsr 1.4.2
 (pins in `post/requirements_post.txt`). GFPGAN does not install on Python 3.13 with plain `pip`; `post/install_post.sh`
-builds a patched basicsr from source. **Screenshots** (dev scenes only, 23 Nov, on a phone over mobile data through the public link with `--auth`), on Drive `m4/demo/`: three paintings of one scene (recorded on 23 Nov as text only, style 0.6 and style 1.2); one run with preset mode on but no preset picked, so no pose was used; a blocked prompt; and a failed run (TypeError; probably the scale bug fixed later in #140). **No screenshot in that folder shows a working preset or uploaded-photo pose** (A's S2 check, Status issue 17, 24 Nov, has a preset one), and none shows a photo of a person. `<<pending: D, retake the preset and uploaded-photo shots on main after #140>>`. Drive link: https://drive.google.com/drive/folders/1lWFiRzGHe-4JRSgDlchg0xX0xRCYOhSr
+builds a patched basicsr from source. **Screenshots** (dev scenes only, 23 Nov, on a phone over mobile data through the public link with `--auth`), on Drive `m4/demo/`: three paintings of one scene (recorded on 23 Nov as text only, style 0.6 and style 1.2); one run with preset mode on but no preset picked, so no pose was used; a blocked prompt; and a failed run (TypeError; probably the scale bug fixed later in #140). **No screenshot in that folder shows a working preset or uploaded-photo pose** (A's S2 check, Status issue 17, 24 Nov, has a preset one), and none shows a photo of a person. The preset and uploaded-photo shots were not retaken. Drive link: https://drive.google.com/drive/folders/1lWFiRzGHe-4JRSgDlchg0xX0xRCYOhSr
 
 #### 2. Result
 **Post-processing time on a T4** (post step only; excludes the base image). Source: `results/post_timing_dev.json` (all 32 images; from D's p5/p6 manifests on Drive); the end-to-end app numbers below are in `results/app_latency.json`:
@@ -298,6 +298,7 @@ show resolution gains.** The question "do these steps help faces?" is answered b
 0.25 on faces. Hands agreement is low (weighted kappa 0.14). p1 and p5/p6 were rated in different rounds.
 
 **Uploads:** deleted when the request finishes, and **within N = 6 minutes** in any case. The Gradio temp path is `/tmp/gradio` (Gradio's default; `GRADIO_TEMP_DIR` overrides it). Normal case: no copy left at the first check after the response. If the handler never deletes it, Gradio's timer removed it after 360 s. (`results/app_upload_cache.json`, `results/app_upload_cache_timer.json`; measured 23 Nov with the app's real Gradio layer and handler on the pinned Gradio 6.31.0, image generation stubbed on CPU).
+Photo uploads were re-checked on 25 Nov after C's cold-start test found a file left behind (issue 158): Gradio converted non-RGB images (grayscale, CMYK, transparent PNG) into a second file and the handler deleted only that copy, and an upload sent with pose mode "none" was not deleted. A plain RGB JPEG did not reproduce it. Fixed; 12 upload cases now leave nothing under the temp folder when the request ends (5 left a file before the fix; `results/app_upload_formats.json`, `app/measure_uploads.py`; real Gradio layer, fake pose and generation, CPU; not re-run on a GPU). An image that is uploaded but never submitted is removed only by Gradio's timer.
 
 #### 3. What it means
 **First look by eye, before any ratings** (face-crop strips for s09, s19 and s31, plus a few full images). This is
@@ -332,8 +333,8 @@ not a rating, and B's blind ratings decide:
 - ESRGAN was not run. GFPGAN was tested on SD paintings only. A face was found in 31 of 32
   p6 images; `s25_s2` (a leaping figure) had none (`results/post_timing_dev.json`).
 - Free Colab: one GPU session, one job at a time, the session can time out, and the public link dies with it.
-- **Photo poses are not live yet:** `extract_pose` on `main` is C's stub, so any uploaded photo gives a fixed standing
-  figure (the app says so). p1's photo skeletons came from `eval/make_pair_pose.py`, not from this path.
+- **Photo poses are live** (`pose/extract.py`, C, #156 and #157; live run reported in `docs/cold_start_25nov.md`), but they were not rated:
+  p1's photo skeletons came from `eval/make_pair_pose.py`, not from this path.
 - Uploads pass through Gradio's temporary cache, and the link goes through Gradio's relay.
 - The output NSFW filter is a soft blur-and-confirm backstop (`app/nsfw.py`, `docs/CONTENT_POLICY.md` §5). It sits
   at the boundary of B's audit (1 of 15 real paintings flagged, a false positive), so it will blur some innocent
@@ -346,8 +347,8 @@ demeaning depictions of deities, hateful content, real named living people and g
 blocklist: paraphrases, misspellings and other languages can get through. The output passes a soft NSFW blur-and-confirm
 filter (§4, `docs/CONTENT_POLICY.md` §5). There is no human moderation (`docs/CONTENT_POLICY.md` §7).
 
-**Where do uploads go?** A photo is meant only for extracting a skeleton (still a stub, §4) and is deleted by the app as soon as the skeleton
-exists (measured: no copy left when the request finished). If that ever fails, Gradio's own timer removes it; measured at 360 s, so the app
+**Where do uploads go?** A photo is meant only for extracting a skeleton and is deleted by the app as soon as the skeleton
+exists (measured: no copy left when the request finished, after the issue 158 fix, §2). If that ever fails, Gradio's own timer removes it; measured at 360 s, so the app
 promises deletion within 6 minutes. We do not claim they
 are "not saved".
 
@@ -406,15 +407,16 @@ The checks are deterministic: `app/policy.py` with `app/blocklist.json`.
   see the raw image.
 
 #### 4. Uploads
-- **Purpose:** a photo is used only to extract a stick-figure skeleton (C's `extract_pose`, which writes nothing; still a stub on
-  `main`, so the photo's pose is not read yet).
+- **Purpose:** a photo is used only to extract a stick-figure skeleton (C's `extract_pose`, which writes nothing).
 - **Deletion:** the app deletes the uploaded file in its handler as soon as the skeleton exists, including when the
-  prompt is refused. Gradio's own upload cache is cleared on a timer (`delete_cache`).
+  prompt is refused, whatever the pose mode (fixed 25 Nov, issue 158). Gradio's own upload cache is cleared on a timer (`delete_cache`).
 - **Measured N = 6 minutes** (`results/app_upload_cache.json`, `results/app_upload_cache_timer.json`; measured 23 Nov with the app's real Gradio layer and handler on the pinned Gradio 6.31.0, image generation stubbed on CPU):
   - **Normal case:** no copy of the upload was left under Gradio's temp folder (`/tmp/gradio`) when the request
     finished. The handler deletes Gradio's copy itself.
   - **If the handler never deletes it** (for example a crash before the pose step), Gradio's own `delete_cache`
     timer (sweep every 60 s, age 300 s) removed it after **360 s**.
+  - **Every format (25 Nov, issue 158):** non-RGB uploads and pose mode "none" used to leave the original until the timer; after the fix,
+    12 upload cases left nothing (`results/app_upload_formats.json`; CPU, not re-run on a GPU).
   - **A control upload** to a handler that does not delete stayed in `/tmp/gradio` until that timer, so the check
     looked in the right place.
 - **The app tells the user,** next to the upload box: the photo is used only for the pose and deleted when the

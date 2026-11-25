@@ -1,0 +1,103 @@
+{
+ "gradio": "6.31.0",
+ "engine": "FakeEngine (CPU)",
+ "n_left": 0,
+ "rows": [
+  {
+   "file": "rgb.png",
+   "mode": "RGB",
+   "pose_mode": "upload photo",
+   "exif_rotated": false,
+   "prompt": "ok",
+   "left": []
+  },
+  {
+   "file": "rgb.jpg",
+   "mode": "RGB",
+   "pose_mode": "upload photo",
+   "exif_rotated": false,
+   "prompt": "ok",
+   "left": []
+  },
+  {
+   "file": "my photo (1).jpg",
+   "mode": "RGB",
+   "pose_mode": "upload photo",
+   "exif_rotated": false,
+   "prompt": "ok",
+   "left": []
+  },
+  {
+   "file": "grey.jpg",
+   "mode": "L",
+   "pose_mode": "upload photo",
+   "exif_rotated": false,
+   "prompt": "ok",
+   "left": []
+  },
+  {
+   "file": "cmyk.jpg",
+   "mode": "CMYK",
+   "pose_mode": "upload photo",
+   "exif_rotated": false,
+   "prompt": "ok",
+   "left": []
+  },
+  {
+   "file": "rgba.png",
+   "mode": "RGBA",
+   "pose_mode": "upload photo",
+   "exif_rotated": false,
+   "prompt": "ok",
+   "left": []
+  },
+  {
+   "file": "exif.jpg",
+   "mode": "RGB",
+   "pose_mode": "upload photo",
+   "exif_rotated": true,
+   "prompt": "ok",
+   "left": []
+  },
+  {
+   "file": "rgb.webp",
+   "mode": "RGB",
+   "pose_mode": "upload photo",
+   "exif_rotated": false,
+   "prompt": "ok",
+   "left": []
+  },
+  {
+   "file": "none.jpg",
+   "mode": "RGB",
+   "pose_mode": "none",
+   "exif_rotated": false,
+   "prompt": "ok",
+   "left": []
+  },
+  {
+   "file": "preset.jpg",
+   "mode": "RGB",
+   "pose_mode": "preset",
+   "exif_rotated": false,
+   "prompt": "ok",
+   "left": []
+  },
+  {
+   "file": "blocked.jpg",
+   "mode": "RGB",
+   "pose_mode": "upload photo",
+   "exif_rotated": false,
+   "prompt": "blocked",
+   "left": []
+  },
+  {
+   "file": "empty.jpg",
+   "mode": "L",
+   "pose_mode": "upload photo",
+   "exif_rotated": false,
+   "prompt": "empty",
+   "left": []
+  }
+ ]
+}

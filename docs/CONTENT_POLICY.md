@@ -51,15 +51,16 @@ The checks are deterministic: `app/policy.py` with `app/blocklist.json`.
   see the raw image.
 
 ## 4. Uploads
-- **Purpose:** a photo is used only to extract a stick-figure skeleton (C's `extract_pose`, which writes nothing; still a stub on
-  `main`, so the photo's pose is not read yet).
+- **Purpose:** a photo is used only to extract a stick-figure skeleton (C's `extract_pose`, which writes nothing).
 - **Deletion:** the app deletes the uploaded file in its handler as soon as the skeleton exists, including when the
-  prompt is refused. Gradio's own upload cache is cleared on a timer (`delete_cache`).
+  prompt is refused, whatever the pose mode (fixed 25 Nov, issue 158). Gradio's own upload cache is cleared on a timer (`delete_cache`).
 - **Measured N = 6 minutes** (`results/app_upload_cache.json`, `results/app_upload_cache_timer.json`; measured 23 Nov with the app's real Gradio layer and handler on the pinned Gradio 6.31.0, image generation stubbed on CPU):
   - **Normal case:** no copy of the upload was left under Gradio's temp folder (`/tmp/gradio`) when the request
     finished. The handler deletes Gradio's copy itself.
   - **If the handler never deletes it** (for example a crash before the pose step), Gradio's own `delete_cache`
     timer (sweep every 60 s, age 300 s) removed it after **360 s**.
+  - **Every format (25 Nov, issue 158):** non-RGB uploads and pose mode "none" used to leave the original until the timer; after the fix,
+    12 upload cases left nothing (`results/app_upload_formats.json`; CPU, not re-run on a GPU).
   - **A control upload** to a handler that does not delete stayed in `/tmp/gradio` until that timer, so the check
     looked in the right place.
 - **The app tells the user,** next to the upload box: the photo is used only for the pose and deleted when the

@@ -96,9 +96,9 @@ class Engine:
             elif mode == "upload photo":
                 if not photo_path:
                     return None, ["Upload a photo first; no pose was used."]
-                from PIL import Image
-                with Image.open(photo_path) as im:
-                    ctrl = self.pose.extract_pose(im.convert("RGB"))
+                from PIL import Image, ImageOps
+                with Image.open(photo_path) as im:               # phone photos: apply the EXIF rotation first
+                    ctrl = self.pose.extract_pose(ImageOps.exif_transpose(im).convert("RGB"))
             else:
                 ctrl = self.pose.pose_from_text(scene if scene else text)
         except Exception as e:                                   # noqa: BLE001
@@ -148,19 +148,23 @@ def _delete(path) -> None:
 
 # ---------------------------------------------------------------------------------------------------- handler
 def make_handler(engine: Engine):
-    def run(text, pose_mode, preset, photo_path, style, pose_strength, seed, post_hires, post_restore):
+    def run(text, pose_mode, preset, photo_path, *rest):
+        """Whatever happens (any pose mode, refused prompt, error), the upload is gone when the request ends."""
+        try:
+            return _run(text, pose_mode, preset, photo_path, *rest)
+        finally:
+            if photo_path:
+                _delete(photo_path)
+
+    def _run(text, pose_mode, preset, photo_path, style, pose_strength, seed, post_hires, post_restore):
         """-> (labelled image, skeleton, details markdown, settings json, download path, status markdown)"""
         empty = (None, None, "", "", None)
         try:
             chk = core.check_text(text)
             if not chk["ok"]:
-                if photo_path:
-                    _delete(photo_path)
                 return (*empty, chk["message"])
             pol = policy.check(text)
             if not pol["allowed"]:
-                if photo_path:
-                    _delete(photo_path)
                 return (*empty, pol["message"])
             seed = int(seed) if seed is not None else random.randint(1, 2**31 - 1)
             scene = engine.parse_scene(text)
@@ -209,8 +213,6 @@ def make_handler(engine: Engine):
             skeleton = ctrl.get("image") if isinstance(ctrl, dict) else None
             return labelled, skeleton, details, json.dumps(settings, indent=1, ensure_ascii=False), str(path), status
         except Exception as e:                                   # noqa: BLE001
-            if photo_path:
-                _delete(photo_path)
             if type(e).__name__ == "OutOfMemoryError" or "out of memory" in str(e).lower():
                 _free_gpu()
                 return (*empty, "The GPU ran out of memory. Please try again, ideally without the post-processing "
@@ -239,8 +241,8 @@ HELP_POSE = ("How closely the figures follow your pose. Below about 0.6 they oft
 ABOUT = ("**About.** Research and coursework project. Images are AI-generated *in the style of* Raja Ravi Varma and "
          "are never authentic works; don't present them as his. Deities and epic figures are depicted respectfully: "
          "sexualised, demeaning, hateful, gory content and real living people are refused (docs/CONTENT_POLICY.md).")
-UPLOAD_NOTE = ("Your photo is used only to extract a stick-figure pose. The app deletes it when your request finishes, "
-               "and in any case within {n} minutes (measured; docs/APP.md).")
+UPLOAD_NOTE = ("Your photo is used only to extract a stick-figure pose. The app deletes it when your request finishes "
+               "(upload it again for another run), and in any case within {n} minutes (measured; docs/APP.md).")
 UPLOAD_STUB_NOTE = ("**Reading the pose from a photo is not available in this build yet:** any photo gives the same fixed "
                     "standing pose.\n\n")
 
@@ -284,7 +286,10 @@ def build(engine: Engine | None):
                                   placeholder="Sita sitting alone under a tree in the Ashoka grove, sorrowful")
                 pose_mode = gr.Radio(POSE_MODES, value="none", label="Pose")
                 preset = gr.Dropdown(presets, label="Preset pose", visible=False)
-                photo = gr.Image(type="filepath", sources=["upload"], label="Pose photo", visible=False)
+                # image_mode=None: the default ("RGB") makes Gradio convert other modes into a second file, and the
+                # handler would then delete the copy and leave the original upload behind (issue 158)
+                photo = gr.Image(type="filepath", image_mode=None, sources=["upload"], label="Pose photo",
+                                 visible=False)
                 photo_note = gr.Markdown((UPLOAD_STUB_NOTE if _extract_is_stub() else "") + UPLOAD_NOTE.format(n=round(CACHE_MAX_AGE_S / 60 + CACHE_EVERY_S / 60)),
                                          visible=False)
                 style = _slider(gr, d["style_range"], d["style"], "Style strength", HELP_STYLE)
@@ -319,9 +324,9 @@ def build(engine: Engine | None):
                 flagged = bool(json.loads(r[3]).get("nsfw_flagged"))
             except Exception:                                    # noqa: BLE001
                 flagged = False
-            return (*r, gr.update(visible=flagged))
+            return (*r, gr.update(visible=flagged), None)          # None: the photo is deleted, so clear its box
         go.click(on_go, [text, pose_mode, preset, photo, style, pose_strength, seed, post_hires, post_restore],
-                 [out, skeleton, details, settings, download, status, show])
+                 [out, skeleton, details, settings, download, status, show, photo])
         show.click(reveal, settings, out)
     demo.queue(max_size=4, default_concurrency_limit=1)
     return demo
