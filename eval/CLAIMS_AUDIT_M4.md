@@ -112,3 +112,13 @@ fixes R1-R4, R7, D1-D4 (D, #148, #154, #155); hi-res stays opt-in (D2 + D7); pos
 
 **Verified OK:** POSE.md figure counts (15/16 dev, 4/6 held-out) and pose-match numbers (1.78 / 3.72 dev; 2.25 / 3.83 held-out) match `results/m4_extras_dev.json` and EVAL_REPORT_M4 §2.2/§2.7;
 status.json = 4 tested, 15 untested (matches POSE.md); `post.default_on` is `false`; remaining `<<pending: ...>>` markers: 1 (P5).
+
+### Closed, 25 Nov 2026 (main `9fbd1df` + this PR)
+- **P1** closed by #162: handler deletes uploads when the request ends; `results/app_upload_formats.json` (12 cases, 5 left a file before, 0 now; CPU, real Gradio layer);
+  C re-tested her photo on `main` (0 files, #158 closed). Not run on a GPU by D; C's re-test was on Colab.
+- **P2-P4** closed by #161 (file names, test count, figure-count wording). **P6** closed: `docs/cold_start_25nov.md`; re-test line added here.
+- **P5** closed by #162 (no "stub" text; no `<<pending>>` left). The preset and upload screenshots were **not retaken**; APP.md says so. Accepted as a disclosed limit.
+- **New, from D (found in re-read, fixed in this PR):** POSE.md said the test suite covers photo extraction (no test runs the real `extract_pose`), and that
+  `extract_pose` gave `p1` its pose scores (they came from `eval/make_pair_pose.py`). Both lines corrected.
+- **Not checked by B:** that the cold-start steps ran as described (C's log, no output attached); the upload fix on a GPU; the demo-folder screenshots beyond D's thumbnail check.
+- **Result:** no open claim in the docs contradicts a file in the repo. **OK to tag `m4-v1.0`** once A confirms §2.7 does not change CONTROL.md and this PR is merged.

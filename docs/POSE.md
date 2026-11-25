@@ -23,7 +23,7 @@ Updated 25 Nov 2026 with B's dev and held-out evaluation metrics (`results/m4_ex
 - **H-C1 (`pose_from_text` figure count & pose match):** Figure count accuracy is high on dev (15/16) and moderate on held-out (4/6), while human pose-match rating for coarse rule-based templates (`1.78` dev / `2.25` held-out) is far below photo-extracted poses (`3.72` dev / `3.83` held-out).
 
 ### Photo extraction (`pose/extract.py`) & Cold-start verification
-- **Unit & robustness suite:** `pytest -q tests` on `main` passes (**452 passed, 1 skipped** in Colab (435 passed, 10 skipped on CPU without optional packages)), covering valid single/multi-person skeletons, blank/no-person images (returns empty people list + friendly warning without raising), grayscale/RGBA inputs, and small/non-square aspect ratios.
+- **Automated tests:** `pytest -q tests` on `main` passes (**452 passed, 1 skipped** in Colab; 435 passed, 10 skipped on CPU without optional packages). **No automated test runs the real `extract_pose`**: the tests that mention it use fakes or the stub (`tests/test_app_pose_wiring.py`, `tests/test_app_handler.py`, `tests/test_pose_stub.py`), and `tests/test_pose_api.py` only checks that the name is exported. What was checked on the real function was done by hand in the cold-start run below (one photo with a person, one with no person, which gave a friendly warning and no traceback). Grayscale, RGBA and non-square inputs were not tested.
 - **Cold-start test (`docs/cold_start_25nov.md`, fresh Colab T4 session, 25 Nov 2026):**
   - **CLI seed reproduction:** Verified (`s01_s1.png` reproduced deterministically).
   - **Gradio UI (`app/app.py --share --auth user:password`):** Verified all 6 UI paths (misspelled name `"Arjunaah..."` with `auto from text`, 2-figure `preset`, `upload photo`, empty prompt, 300-word prompt, and no-person photo) complete with friendly UI messages and no Python tracebacks. Filed issue #158 (`needs:D`) regarding uploaded input photos remaining in `/tmp/gradio` until Gradio's 360 s timer when the handler finishes.
@@ -32,7 +32,7 @@ Updated 25 Nov 2026 with B's dev and held-out evaluation metrics (`results/m4_ex
 
 - **Figure count works on simple scenes, misses harder multi-figure phrasing; fine articulation does not:** `pose_from_text` got the right number of figures on **15/16** dev images, but only **4/6** held-out scenes (drawing `m4h04` [2 people] and `m4h06` [3 people] as a single figure). Even when headcount is right, generic preset poses cannot capture scene-specific limb angles, hand gestures, or interactions—explaining the 1.5–1.9 point gap in human pose-match ratings behind `p1`.
 - **Presets are dependable for core postures:** The 4 ControlNet-tested presets (`standing`, `seated`, `kneeling`, `kneeling_before_standing`) give reliable spatial anchoring for common epic compositions without needing a reference photo.
-- **Photo extraction closes the gap when a reference exists:** Real `extract_pose` provides the exact keypoint geometry that gave `p1` its 3.72–3.83 human pose-match scores, while degrading gracefully on non-person images.
+- **A reference photo gives a much better pose than text:** The `p1` skeletons (human pose match 3.72 dev, 3.83 held-out) were made from the reference photos with `eval/make_pair_pose.py` (B's script), not with `pose/extract.py`. `extract_pose` is the same kind of step inside the app (photo in, OpenPose skeleton out), but it has not been scored on its own; the one manual no-person check gave a friendly warning (`docs/cold_start_25nov.md`).
 
 ## 4. Limits
 
