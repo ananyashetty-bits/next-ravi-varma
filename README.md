@@ -8,6 +8,10 @@ photo, or none), and get back a painting in Raja Ravi Varma's style with a **sty
 **What the app uses:** the M3 default prompt (c1, raw text, no LLM) + `generate_controlled` (A) + the pose modules (C)
 + `post/` (D). Defaults and slider ranges come from `config/m3.json` and `config/m4.json`, never from the code.
 
+## Milestones 1 and 2
+
+The M1 (data) and M2 (LoRA training and evaluation) work is in [`milestone1_2/`](milestone1_2/README.md): documents, data provenance, the M2 kit and results, and the released adapter. Heavy images and weights stay in the original repository (`kanuvyas/next-ravi-varma`), linked from that README.
+
 ## M4: install (Colab T4)
 ```python
 from google.colab import drive; drive.mount('/content/drive')
